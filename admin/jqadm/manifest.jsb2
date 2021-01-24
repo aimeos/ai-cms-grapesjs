@@ -1,0 +1,22 @@
+{
+	"projectName": "ai-cms-grapejs",
+	"licenseText": "proprietary",
+	"pkgs": [{
+		"name": "ai-cms-grapejs CSS",
+		"file": "ai-cms-grapejs.css",
+		"isDebug": true,
+		"fileIncludes": [{
+			"text": "custom.css",
+			"path": "themes/"
+		}]
+	}, {
+		"name": "ai-cms-grapejs JS",
+		"file": "ai-cms-grapejs.js",
+		"isDebug": true,
+		"fileIncludes": [{
+			"text": "custom.js",
+			"path": "themes/"
+		}]
+	}],
+	"resources" : []
+}

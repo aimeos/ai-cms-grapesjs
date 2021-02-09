@@ -44,7 +44,7 @@ class Standard
 	 *
 	 * @return string URL of the cms item
 	 */
-	public function getURL() : string
+	public function getUrl() : string
 	{
 		return $this->get( 'cms.url', '' );
 	}
@@ -53,12 +53,16 @@ class Standard
 	/**
 	 * Sets the URL of the cms item.
 	 *
-	 * @param string $cms URL of the cms item
+	 * @param string $value URL of the cms item
 	 * @return \Aimeos\MShop\Cms\Item\Iface Cms item for chaining method calls
 	 */
-	public function setURL( string $cms ) : \Aimeos\MShop\Cms\Item\Iface
+	public function setUrl( string $value ) : \Aimeos\MShop\Cms\Item\Iface
 	{
-		return $this->set( 'cms.url', \Aimeos\MW\Str::slug( $cms ) );
+		$url = \Aimeos\Map::explode( '/', trim( $value, '/' ) )->map( function( $segment ) {
+			return \Aimeos\MW\Str::slug( $segment );
+		} )->join( '/' );
+
+		return $this->set( 'cms.url', '/' . $url );
 	}
 
 

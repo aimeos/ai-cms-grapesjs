@@ -42,9 +42,9 @@ $params = $this->get( 'pageParams', [] );
 
 	<div class="row item-container">
 
-		<div class="col-md-3 item-navbar">
+		<div class="col-xl-3 item-navbar">
 			<div class="navbar-content">
-				<ul class="nav nav-tabs flex-md-column flex-wrap d-flex justify-content-between" role="tablist">
+				<ul class="nav nav-tabs flex-xl-column flex-wrap d-flex box" role="tablist">
 
 					<li class="nav-item basic">
 						<a class="nav-link active" href="#basic" data-bs-toggle="tab" role="tab" aria-expanded="true" aria-controls="basic">
@@ -79,11 +79,11 @@ $params = $this->get( 'pageParams', [] );
 			</div>
 		</div>
 
-		<div class="col-md-9 item-content tab-content">
+		<div class="col-xl-9 item-content tab-content">
 
-			<div id="basic" class="row item-basic tab-pane fade show active" role="tabpanel" aria-labelledby="basic">
+			<div id="basic" class="row box item-basic tab-pane fade show active" role="tabpanel" aria-labelledby="basic">
 
-				<div class="col-xl-6 content-block <?= $this->site()->readonly( $this->get( 'itemData/cms.lists.type.siteid' ) ); ?>">
+				<div class="col-xl-6 <?= $this->site()->readonly( $this->get( 'itemData/cms.lists.type.siteid' ) ); ?>">
 					<div class="form-group row mandatory">
 						<label class="col-sm-4 form-control-label"><?= $enc->html( $this->translate( 'admin', 'Domain' ) ); ?></label>
 						<div class="col-sm-8">

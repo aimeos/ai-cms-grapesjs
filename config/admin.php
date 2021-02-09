@@ -2,6 +2,14 @@
 
 return [
 	'jqadm' => [
+		'cms' => [
+			'domains' => [
+				'text' => 'text',
+			],
+			'subparts' => [
+				'text' => 'text',
+			],
+		],
 		'navbar' => [
 			55 => 'cms'
 		],

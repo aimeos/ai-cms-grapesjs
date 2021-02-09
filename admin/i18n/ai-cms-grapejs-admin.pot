@@ -1,0 +1,343 @@
+#: jqadm/templates/type/cms/lists/list-standard.php:61
+#: jqadm/templates/cms/list-standard.php:65
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ai-cms-grapejs\n"
+"Report-Msgid-Bugs-To: aimeos@aimeos.org\n"
+"POT-Creation-Date: 2021-01-24 16:58+0100\n"
+"PO-Revision-Date: 2021-01-24 16:58+0100\n"
+"Last-Translator: Aimeos <aimeos@aimeos.org>\n"
+"Language-Team: LANGUAGE <aimeos@aimeos.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: jqadm/templates/type/cms/lists/list-standard.php:144
+#: jqadm/templates/cms/list-standard.php:146
+msgid "Add"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:189
+msgid "Advanced"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:129
+msgid "All"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/item-standard.php:51
+#: jqadm/templates/cms/item-standard.php:56
+msgid "Basic"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/item-standard.php:33
+msgid "CMS Lists Type"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:92
+msgid "CMS Lists Types"
+msgstr ""
+
+#: jqadm/templates/cms/item-standard.php:38
+msgid "CMS page"
+msgstr ""
+
+#: jqadm/templates/cms/list-standard.php:94
+msgid "CMS pages"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:72
+#: jqadm/templates/type/cms/lists/item-standard.php:130
+msgid "Code"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:218
+#: jqadm/templates/cms/list-standard.php:209
+msgid "Copy"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:217
+#: jqadm/templates/cms/list-standard.php:208
+msgid "Copy this entry"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:75
+#: jqadm/templates/type/cms/lists/item-standard.php:71
+#: jqadm/templates/cms/list-standard.php:77
+#: jqadm/templates/cms/item-standard.php:76
+msgid "Created"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:130
+#: jqadm/templates/type/cms/lists/list-standard.php:224
+#: jqadm/templates/cms/list-standard.php:132
+#: jqadm/templates/cms/list-standard.php:215
+msgid "Delete"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:129
+#: jqadm/templates/cms/list-standard.php:131
+msgid "Delete selected entries"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:223
+#: jqadm/templates/cms/item-text-standard.php:65
+#: jqadm/templates/cms/list-standard.php:214
+msgid "Delete this entry"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:176
+msgid "Description of the text content if it's in a foreign language"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:70
+#: jqadm/templates/type/cms/lists/item-standard.php:88
+msgid "Domain"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:77
+#: jqadm/templates/type/cms/lists/item-standard.php:75
+#: jqadm/templates/cms/list-standard.php:79
+#: jqadm/templates/cms/item-standard.php:80
+msgid "Editor"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:231
+msgid "End date"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:69
+#: jqadm/templates/cms/list-standard.php:73
+msgid "ID"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:143
+#: jqadm/templates/cms/item-text-standard.php:263
+#: jqadm/templates/cms/list-standard.php:145
+msgid "Insert new entry (Ctrl+I)"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/item-standard.php:147
+#: jqadm/templates/cms/item-standard.php:134
+msgid "Internal name (required)"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/item-standard.php:152
+msgid "Internal type name shown in the administration interface"
+msgstr ""
+
+#: jqadm/src/Admin/JQAdm/Cms/Factory.php:75
+#: jqadm/src/Admin/JQAdm/Type/Cms/Lists/Factory.php:75
+#, php-format
+msgid "Invalid characters in class name \"%1$s\""
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:73
+#: jqadm/templates/type/cms/lists/item-standard.php:143
+#: jqadm/templates/cms/item-text-standard.php:167
+#: jqadm/templates/cms/item-text-standard.php:171
+msgid "Label"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:123
+msgid "Language"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:135
+msgid "Language of the entered text"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:196
+msgid "List type"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:76
+#: jqadm/templates/type/cms/lists/item-standard.php:67
+#: jqadm/templates/cms/list-standard.php:78
+#: jqadm/templates/cms/item-standard.php:72
+msgid "Modified"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:61
+msgid "Move this entry up/down"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/item-standard.php:35
+#: jqadm/templates/cms/item-standard.php:40
+msgid "New"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:234
+#: jqadm/templates/cms/list-standard.php:225
+msgid "No items found"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/item-standard.php:165
+msgid "Order of the types in the frontend"
+msgstr ""
+
+#: jqadm/templates/cms/item-standard.php:139
+msgid "Page title, will be used on the web site if no title for the language is available"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/item-standard.php:94
+#: jqadm/templates/type/cms/lists/item-standard.php:112
+#: jqadm/templates/cms/item-text-standard.php:104
+#: jqadm/templates/cms/item-text-standard.php:128
+#: jqadm/templates/cms/item-text-standard.php:151
+#: jqadm/templates/cms/item-text-standard.php:201
+#: jqadm/templates/cms/item-standard.php:99
+msgid "Please select"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:74
+#: jqadm/templates/type/cms/lists/item-standard.php:156
+msgid "Position"
+msgstr ""
+
+#: jqadm/src/Admin/JQAdm/Cms/Standard.php:51
+#: jqadm/src/Admin/JQAdm/Cms/Standard.php:115
+#: jqadm/src/Admin/JQAdm/Cms/Standard.php:155
+#, php-format
+msgid "Required parameter \"%1$s\" is missing"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:207
+msgid "Second level type for grouping items"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:97
+#: jqadm/templates/type/cms/lists/list-standard.php:98
+#: jqadm/templates/cms/list-standard.php:99
+#: jqadm/templates/cms/list-standard.php:100
+msgid "Show search form"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:186
+msgid "Show/hide advanced data"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:42
+msgid "Show/hide this entry"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:217
+msgid "Start date"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:71
+#: jqadm/templates/type/cms/lists/item-standard.php:106
+#: jqadm/templates/cms/item-text-standard.php:98
+#: jqadm/templates/cms/list-standard.php:74
+#: jqadm/templates/cms/item-standard.php:93
+msgid "Status"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:227
+msgid "The item is only shown on the web site after that date and time"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:241
+msgid "The item is only shown on the web site until that date and time"
+msgstr ""
+
+#: jqadm/templates/cms/list-standard.php:76
+#: jqadm/templates/cms/item-standard.php:130
+msgid "Title"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:51
+msgid "Translate text"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:146
+msgid "Type"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/item-standard.php:161
+msgid "Type position (optional)"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:157
+msgid "Types for additional texts like per one lb/kg or per month"
+msgstr ""
+
+#: jqadm/templates/cms/list-standard.php:75
+#: jqadm/templates/cms/item-standard.php:117
+msgid "URL"
+msgstr ""
+
+#: jqadm/templates/cms/item-standard.php:121
+msgid "Unique page URL (required)"
+msgstr ""
+
+#: jqadm/templates/cms/item-standard.php:126
+msgid "Unique page URL, e.g. \"/page-name\""
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/item-standard.php:139
+msgid "Unique type code"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/item-standard.php:134
+msgid "Unique type code (required)"
+msgstr ""
+
+#: jqadm/templates/cms/item-text-standard.php:221
+#: jqadm/templates/cms/item-text-standard.php:235
+msgid "YYYY-MM-DD hh:mm:ss (optional)"
+msgstr ""
+
+#: jqadm/src/Admin/JQAdm/Cms/Standard.php:13
+#, php-format
+msgid "cms"
+msgstr "CMS"
+
+#: jqadm/templates/type/cms/lists/list-standard.php:163
+msgid "media"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:169
+#: jqadm/templates/type/cms/lists/item-standard.php:121
+#: jqadm/templates/cms/item-text-standard.php:112
+#: jqadm/templates/cms/list-standard.php:167
+#: jqadm/templates/cms/item-standard.php:108
+msgid "status:-1"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:170
+#: jqadm/templates/type/cms/lists/item-standard.php:124
+#: jqadm/templates/cms/item-text-standard.php:115
+#: jqadm/templates/cms/list-standard.php:168
+#: jqadm/templates/cms/item-standard.php:111
+msgid "status:-2"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:168
+#: jqadm/templates/type/cms/lists/item-standard.php:118
+#: jqadm/templates/cms/item-text-standard.php:109
+#: jqadm/templates/cms/list-standard.php:166
+#: jqadm/templates/cms/item-standard.php:105
+msgid "status:0"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:167
+#: jqadm/templates/type/cms/lists/item-standard.php:115
+#: jqadm/templates/cms/item-text-standard.php:106
+#: jqadm/templates/cms/list-standard.php:165
+#: jqadm/templates/cms/item-standard.php:102
+msgid "status:1"
+msgstr ""
+
+#: jqadm/templates/type/cms/lists/list-standard.php:164
+#: jqadm/src/Admin/JQAdm/Cms/Text/Standard.php:13
+#, php-format
+msgid "text"
+msgstr ""
+
+#: jqadm/src/Admin/JQAdm/Type/Cms/Lists/Standard.php:13
+#, php-format
+msgid "type/cms/lists"
+msgstr "CMS List"

@@ -9,4 +9,10 @@ return [
 	'cms/lists/type' => [
 		['domain' => 'text', 'code' => 'default', 'label' => 'Standard', 'status' => 1],
 	],
+
+	'text/type' => [
+		['domain' => 'cms', 'code' => 'name', 'label' => 'Name', 'status' => 1],
+		['domain' => 'cms', 'code' => 'meta-keyword', 'label' => 'Meta keywords', 'status' => 1],
+		['domain' => 'cms', 'code' => 'meta-description', 'label' => 'Meta description', 'status' => 1],
+	],
 ];

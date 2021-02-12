@@ -136,7 +136,7 @@ $params = $this->get( 'pageParams', [] );
 
 					<div class="col-xl-12 item-content tab-content">
 
-						<div id="basic" class="item-basic tab-pane fade show active box" role="tabpanel" aria-labelledby="basic">
+						<div id="basic" class="item-basic tab-pane fade show active" role="tabpanel" aria-labelledby="basic">
 
 							<div class="box">
 								<div class="row">

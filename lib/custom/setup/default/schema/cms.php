@@ -8,27 +8,35 @@
 
 return [
 	'table' => [
-		'mshop_cms' => function ( \Doctrine\DBAL\Schema\Schema $schema ) {
+        'mshop_cms' => function ( \Doctrine\DBAL\Schema\Schema $schema ) {
 
-			$table = $schema->createTable( 'mshop_cms' );
-			$table->addOption( 'engine', 'InnoDB' );
+            $table = $schema->createTable( 'mshop_cms' );
+            $table->addOption( 'engine', 'InnoDB' );
 
-			$table->addColumn( 'id', 'integer', ['autoincrement' => true] );
-			$table->addColumn( 'siteid', 'string', ['length' => 255] );
-			$table->addColumn( 'url', 'string', ['length' => 255] );
-			$table->addColumn( 'label', 'string', ['length' => 255] );
-			$table->addColumn( 'status', 'smallint', [] );
-			$table->addColumn( 'ctime', 'datetime', [] );
-			$table->addColumn( 'mtime', 'datetime', [] );
-			$table->addColumn( 'editor', 'string', ['length' => 255] );
+            $table->addColumn( 'id', 'integer', ['autoincrement' => true] );
+            $table->addColumn( 'siteid', 'string', ['length' => 255] );
+            $table->addColumn( 'url', 'string', ['length' => 255] );
+            $table->addColumn( 'label', 'string', ['length' => 255] );
+            $table->addColumn( 'status', 'smallint', [] );
+            $table->addColumn( 'ctime', 'datetime', [] );
+            $table->addColumn( 'mtime', 'datetime', [] );
+            $table->addColumn( 'editor', 'string', ['length' => 255] );
 
-			$table->setPrimaryKey( ['id'], 'pk_mscms_id' );
-			$table->addUniqueIndex( ['siteid', 'url'], 'unq_mscms_sid_url' );
-			$table->addIndex( ['siteid', 'status'], 'unq_mscms_sid_status' );
-			$table->addIndex( ['siteid', 'label'], 'unq_mscms_sid_label' );
+            $table->addColumn( 'code', 'string', array( 'length' => 64, 'customSchemaOptions' => ['charset' => 'binary'] ) );
+            $table->addColumn( 'config', 'text', array( 'default' => '', 'length' => 0xffff ) );
+            $table->addColumn( 'parentid', 'integer', ['notnull' => false] );
+            $table->addColumn( 'target', 'string', array( 'length' => 255 ) );
+            $table->addColumn( 'level', 'smallint', [] );
+            $table->addColumn( 'nleft', 'integer', [] );
+            $table->addColumn( 'nright', 'integer', [] );
 
-			return $schema;
-		},
+            $table->setPrimaryKey( ['id'], 'pk_mscms_id' );
+            $table->addUniqueIndex( ['siteid', 'url'], 'unq_mscms_sid_url' );
+            $table->addIndex( ['siteid', 'status'], 'unq_mscms_sid_status' );
+            $table->addIndex( ['siteid', 'label'], 'unq_mscms_sid_label' );
+
+            return $schema;
+        },
 
 		'mshop_cms_list_type' => function( \Doctrine\DBAL\Schema\Schema $schema ) {
 

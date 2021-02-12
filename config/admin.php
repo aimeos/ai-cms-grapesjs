@@ -35,5 +35,11 @@ return [
 		]
 	],
 	'jsonadm' => [
+        'domains' => [
+            'cms' => 'cms',
+        ],
+        'resources' => [
+            'cms/lists/type' => 'cms/lists/type',
+        ],
 	],
 ];

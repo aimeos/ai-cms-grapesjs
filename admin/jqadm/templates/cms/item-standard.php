@@ -76,7 +76,7 @@ $params = $this->get( 'pageParams', [] );
 
 	<div class="row item-container">
 
-		<div class="col-lg-3 cms-tree">
+		<div class="col-xl-3 cms-tree">
 			<div class="box">
 				<div class="tree-toolbar input-group">
 					<div class="input-group-prepend"><!--
@@ -94,7 +94,7 @@ $params = $this->get( 'pageParams', [] );
 		</div>
 
 		<?php if( isset( $this->itemData ) ) : ?>
-			<div class="col-lg-9 cms-content">
+			<div class="col-xl-9 cms-content">
 				<div class="row">
 
 					<div class="col-xl-12 item-navbar">
@@ -193,25 +193,12 @@ $params = $this->get( 'pageParams', [] );
 										</div>
 									</div>
 
-									<div class="grapejs-editor">
-										<div class="panel__top">
-											<div class="panel__basic-actions"></div>
-											<div class="panel__devices"></div>
-											<div class="panel__switcher"></div>
-										</div>
-										<div class="editor-row">
-											<div class="editor-canvas">
-												<div id="gjs" class="cms-preview">
-													<h1>Hello World Component!</h1>
-												</div>
-											</div>
-											<div class="panel__right">
-												<div class="layers-container"></div>
-												<div class="styles-container"></div>
-												<div class="traits-container"></div>
+									<div class="col-sm-12 <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?>">
+										<div class="grapejs-editor">
+											<div id="gjs" class="cms-preview">
+												<h1>Headline</h1>
 											</div>
 										</div>
-										<div id="blocks"></div>
 									</div>
 
 								</div>

@@ -211,59 +211,136 @@ return [
 					'sqlanywhere' => 'SELECT @@IDENTITY',
 				),
 			),
-			'delete' => array(
-				'ansi' => '
-					DELETE FROM "mshop_cms"
-					WHERE :cond AND siteid = ?
-				'
-			),
-			'insert' => array(
-				'ansi' => '
-					INSERT INTO "mshop_cms" ( :names
-						"url", "label", "status", "mtime", "editor", "siteid", "ctime"
-					) VALUES ( :values
-						?, ?, ?, ?, ?, ?, ?
-					)
-				'
-			),
-			'update' => array(
-				'ansi' => '
-					UPDATE "mshop_cms"
-					SET :names
-						"url" = ?, "label" = ?, "status" = ?, "mtime" = ?, "editor" = ?
-					WHERE "siteid" = ? AND "id" = ?
-				'
-			),
-			'search' => array(
-				'ansi' => '
-					SELECT :columns
-						mcms."id" AS "cms.id", mcms."siteid" AS "cms.siteid",
-						mcms."url" AS "cms.url", mcms."label" AS "cms.label",
-						mcms."status" AS "cms.status", mcms."mtime" AS "cms.mtime",
-						mcms."editor" AS "cms.editor", mcms."ctime" AS "cms.ctime"
-					FROM "mshop_cms" AS mcms
-					:joins
-					WHERE :cond
-					GROUP BY :columns :group
-						mcms."id", mcms."siteid", mcms."url", mcms."label",
-						mcms."status", mcms."mtime", mcms."editor", mcms."ctime"
-					ORDER BY :order
-					OFFSET :start ROWS FETCH NEXT :size ROWS ONLY
-				',
-				'mysql' => '
-					SELECT :columns
-						mcms."id" AS "cms.id", mcms."siteid" AS "cms.siteid",
-						mcms."url" AS "cms.url", mcms."label" AS "cms.label",
-						mcms."status" AS "cms.status", mcms."mtime" AS "cms.mtime",
-						mcms."editor" AS "cms.editor", mcms."ctime" AS "cms.ctime"
-					FROM "mshop_cms" AS mcms
-					:joins
-					WHERE :cond
-					GROUP BY :group mcms."id"
-					ORDER BY :order
-					LIMIT :size OFFSET :start
-				'
-			),
+            'cleanup' => array(
+                'ansi' => '
+				DELETE FROM "mshop_cms"
+				WHERE :siteid AND "nleft" >= ? AND "nright" <= ?
+			'
+            ),
+            'delete' => array(
+                'ansi' => '
+				DELETE FROM "mshop_cms"
+				WHERE "siteid" = :siteid AND "nleft" >= ? AND "nright" <= ?
+			'
+            ),
+            'get' => array(
+                'ansi' => '
+				SELECT :columns
+					mcms."id", mcms."code", mcms."url", mcms."label", mcms."config",
+					mcms."status", mcms."level", mcms."parentid", mcms."siteid",
+					mcms."nleft" AS "left", mcms."nright" AS "right",
+					mcms."mtime", mcms."editor", mcms."ctime", mcms."target"
+				FROM "mshop_cms" AS mcms, "mshop_cms" AS parent
+				WHERE mcms."siteid" = :siteid AND mcms."nleft" >= parent."nleft"
+					AND mcms."nleft" <= parent."nright"
+					AND parent."siteid" = :siteid AND parent."id" = ?
+					AND mcms."level" <= parent."level" + ? AND :cond
+				GROUP BY :columns
+					mcms."id", mcms."code", mcms."url", mcms."label", mcms."config",
+					mcms."status", mcms."level", mcms."parentid", mcms."siteid",
+					mcms."nleft", mcms."nright", mcms."target",
+					mcms."mtime", mcms."editor", mcms."ctime"
+				ORDER BY mcms."nleft"
+			'
+            ),
+            'insert' => array(
+                'ansi' => '
+				INSERT INTO "mshop_cms" (
+					"siteid", "label", "code", "status", "parentid", "level",
+					"nleft", "nright", "config", "mtime", "ctime", "editor", "target"
+				) VALUES (
+					:siteid, ?, ?, ?, ?, ?, ?, ?, \'\', \'1970-01-01 00:00:00\', \'1970-01-01 00:00:00\', \'\', \'\'
+				)
+			'
+            ),
+            'insert-usage' => array(
+                'ansi' => '
+				UPDATE "mshop_cms"
+				SET :names "url" = ?, "config" = ?, "mtime" = ?, "editor" = ?, "target" = ?, "ctime" = ?
+				WHERE "siteid" = ? AND "id" = ?
+			'
+            ),
+            'update' => array(
+                'ansi' => '
+				UPDATE "mshop_cms"
+				SET "label" = ?, "code" = ?, "status" = ?
+				WHERE "siteid" = :siteid AND "id" = ?
+			'
+            ),
+            'update-parentid' => array(
+                'ansi' => '
+				UPDATE "mshop_cms"
+				SET "parentid" = ?
+				WHERE "siteid" = :siteid AND "id" = ?
+			'
+            ),
+            'update-usage' => array(
+                'ansi' => '
+				UPDATE "mshop_cms"
+				SET "url" = ?, "config" = ?, "mtime" = ?, "editor" = ?, "target" = ?
+				WHERE "siteid" = ? AND "id" = ?
+			'
+            ),
+            'move-left' => array(
+                'ansi' => '
+				UPDATE "mshop_cms"
+				SET "nleft" = "nleft" + ?, "level" = "level" + ?
+				WHERE "siteid" = :siteid AND "nleft" >= ? AND "nleft" <= ?
+			'
+            ),
+            'move-right' => array(
+                'ansi' => '
+				UPDATE "mshop_cms"
+				SET "nright" = "nright" + ?
+				WHERE "siteid" = :siteid AND "nright" >= ? AND "nright" <= ?
+			'
+            ),
+            'search' => array(
+                'ansi' => '
+				SELECT :columns
+					mcms."id", mcms."code", mcms."url", mcms."label", mcms."config",
+					mcms."status", mcms."level", mcms."parentid", mcms."siteid",
+					mcms."nleft" AS "left", mcms."nright" AS "right",
+					mcms."mtime", mcms."editor", mcms."ctime", mcms."target"
+				FROM "mshop_cms" AS mcms
+				WHERE mcms."siteid" = :siteid AND mcms."nleft" >= ?
+					AND mcms."nright" <= ? AND :cond
+				ORDER BY :order
+			'
+            ),
+            'search-item' => array(
+                'ansi' => '
+				SELECT :columns
+					mcms."id", mcms."code", mcms."url", mcms."label", mcms."config",
+					mcms."status", mcms."level", mcms."parentid", mcms."siteid",
+					mcms."nleft" AS "left", mcms."nright" AS "right",
+					mcms."mtime", mcms."editor", mcms."ctime", mcms."target"
+				FROM "mshop_cms" AS mcms
+				:joins
+				WHERE :cond
+				GROUP BY :columns :group
+					mcms."id", mcms."code", mcms."url", mcms."label", mcms."config",
+					mcms."status", mcms."level", mcms."parentid", mcms."siteid",
+					mcms."nleft", mcms."nright", mcms."mtime", mcms."editor",
+					mcms."ctime", mcms."target"
+				ORDER BY :order
+				OFFSET :start ROWS FETCH NEXT :size ROWS ONLY
+			',
+                'mysql' => '
+				SELECT :columns
+					mcms."id", mcms."code", mcms."url", mcms."label", mcms."config",
+					mcms."status", mcms."level", mcms."parentid", mcms."siteid",
+					mcms."nleft" AS "left", mcms."nright" AS "right",
+					mcms."mtime", mcms."editor", mcms."ctime", mcms."target"
+				FROM "mshop_cms" AS mcms
+				:joins
+				WHERE :cond
+				GROUP BY :group mcms."id"
+				ORDER BY :order
+				LIMIT :size OFFSET :start
+			'
+            ),
+
 			'count' => array(
 				'ansi' => '
 					SELECT COUNT(*) AS "count"

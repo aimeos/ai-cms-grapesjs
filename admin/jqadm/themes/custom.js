@@ -428,3 +428,393 @@ Aimeos.GrapeJS = {
 (function() {
 	Aimeos.GrapeJS.init();
 })();
+
+
+
+/**
+ * @license LGPLv3, http://opensource.org/licenses/LGPL-3.0
+ * @copyright Aimeos (aimeos.org), 2017-2018
+ */
+
+
+/**
+ * Attention:
+ *
+ * Updating tree.jquery.js requires removing or overwriting these lines from
+ * NodeElement.prototype.select() and NodeElement.prototype.deselect():
+ *
+ * var $span = this.getSpan();
+ * $span.attr("tabindex", 0);
+ * $span.focus();
+ */
+
+
+
+/**
+ * Load categories and create cms tree
+ */
+Aimeos.options.done(function(result) {
+
+    if(!result || !result.meta || !result.meta.resources || !result.meta.resources.cms || $(".aimeos .item-cms").length === 0) {
+        return;
+    }
+
+    if(result.meta.prefix) {
+        Aimeos.Cms.prefix = result.meta.prefix;
+    }
+
+    var params = {};
+
+    if(result.meta.prefix) {
+        params[result.meta.prefix] = {id: 0, include: "cms"};
+    } else {
+        params = {id: 0, include: "cms"};
+    }
+
+
+
+    $.ajax(result.meta.resources.cms, {
+        "data": params,
+        "dataType": "json"
+    }).done(function(result) {
+
+        if(!result || !result.data || !result.meta) {
+            throw {"msg": "No valid data in response", "result": result};
+        }
+
+        if(result.meta.csrf) {
+            Aimeos.Cms.csrf = result.meta.csrf;
+        }
+
+        var root = Aimeos.Cms.createTree(Aimeos.Cms.transformNodes(result));
+
+        root.bind("tree.click", Aimeos.Cms.onClick);
+        root.bind("tree.move", Aimeos.Cms.onMove);
+    });
+});
+
+
+
+Aimeos.Cms = {
+
+    csrf : null,
+    element : null,
+    prefix : null,
+
+
+    init : function() {
+
+        this.askDelete();
+        this.confirmDelete();
+
+        this.setupAdd();
+        this.setupSearch();
+        this.setupExpandAll();
+        this.setupCollapseAll();
+    },
+
+
+    createTree : function(data) {
+
+        var tree = $(".aimeos .item-cms .tree-content").tree({
+            "data": [data],
+            "dragAndDrop": true,
+            "closedIcon": " ",
+            "openedIcon": " ",
+            "saveState": true,
+            "slide": false,
+            "dataFilter": function(result) {
+                var list = [];
+
+                for(var i in result.included) {
+                    if(result.included[i].type !== 'cms') {
+                        continue;
+                    }
+                    list.push({
+                        id: result.included[i].id,
+                        name: result.included[i].attributes['cms.label'],
+                        load_on_demand: result.included[i].attributes['cms.hasChildren'],
+                        children: []
+                    });
+                }
+
+                return list;
+            },
+            "dataUrl": function(node) {
+
+                var params = {};
+
+                if(Aimeos.Cms.prefix) {
+                    params[Aimeos.Cms.prefix] = {'include': 'cms'};
+                } else {
+                    params = {'include': 'cms'};
+                }
+
+                var result = {
+                    'url': $(".aimeos .item-tree").data("jsonurl"),
+                    'data': params,
+                    'method': 'GET'
+                };
+
+                if(node) {
+                    var name = $(".aimeos .item-tree").data("idname");
+                    result['data'][name] = node.id;
+                }
+
+                return result;
+            },
+            "onCanMoveTo": function(node, target, position) {
+                if(target === tree.tree('getTree').children[0] && position !== 'inside') {
+                    return false;
+                }
+                return true;
+            },
+            "onCreateLi": function(node, li, isselected) {
+                $(".jqtree-toggler", li).attr("tabindex", 1);
+                $(".jqtree-title", li).attr("tabindex", 1);
+            }
+        });
+
+        return tree;
+    },
+
+
+    onClick : function(event) {
+        window.location = $(".aimeos .item-cms").data("geturl").replace("_ID_", event.node.id);
+    },
+
+
+    onMove : function(event) {
+        event.preventDefault();
+
+        Aimeos.options.done(function(result) {
+
+            if(!result || !result.meta || !result.meta.resources || !result.meta.resources.cms) {
+                throw {"msg": "No valid data in response", "result": result};
+            }
+
+            var params = {};
+            var url = result.meta.resources.cms;
+
+            if(result.meta.prefix) {
+                params[result.meta.prefix] = {id: event.move_info.moved_node.id};
+            } else {
+                params = {id: event.move_info.moved_node.id};
+            }
+
+            if(Aimeos.Cms.csrf) {
+                params[Aimeos.Cms.csrf.name] = Aimeos.Cms.csrf.value;
+            }
+
+            var targetid = event.move_info.target_node.id;
+            var entry = {
+                attributes: {},
+                id: event.move_info.moved_node.id,
+                parentid: event.move_info.previous_parent.id,
+                targetid: targetid
+            };
+
+            if(event.move_info.position === 'inside') {
+                var children = event.move_info.target_node.children;
+                entry.refid = children && children[0] && children[0].id || null;
+            }
+            else if(event.move_info.position === 'before') {
+                entry.refid = targetid;
+            }
+            else if(event.move_info.position === 'after') {
+                var children = event.move_info.target_node.parent.children;
+                entry.targetid = event.move_info.target_node.parent.id;
+
+                for(var i = 0; i < children.length; i++) {
+                    if(children[i].id === targetid && i+1 < children.length) {
+                        entry.refid = children[i+1].id;
+                        break;
+                    }
+                }
+            }
+
+            $.ajax(url + (url.indexOf('?') !== -1 ? '&' : '?') + jQuery.param(params), {
+                "dataType": "json",
+                "method": "PATCH",
+                "data": JSON.stringify({"data": entry})
+            }).done(function(result) {
+                event.move_info.do_move();
+
+                if(result.meta.csrf) {
+                    Aimeos.Cms.csrf = result.meta.csrf;
+                }
+            });
+        });
+    },
+
+
+    transformNodes : function(result) {
+        let root = {
+            id: '0',
+            name: 'Pages',
+            children: []
+        };
+
+        var getChildren = function(list, parentId) {
+            var result = [];
+
+            for(var i in list) {
+                if(list[i].attributes['cms.parentid'] == parentId) {
+                    result.push({
+                        id: list[i].id,
+                        name: list[i].attributes['cms.label'],
+                        load_on_demand: list[i].attributes['cms.hasChildren'],
+                        children: getChildren(list, list[i].id)
+                    });
+                }
+            }
+
+            return result;
+        };
+
+
+        result.data.forEach(item => {
+            let node = {
+                id: item.id,
+                name: item.attributes && item.attributes['cms.label'] || '',
+                children: []
+            };
+            if(result.included && result.included.length > 0) {
+                node.children = getChildren(result.included, item.id);
+            }
+            root.children.push(node);
+        });
+
+        return root;
+    },
+
+
+    askDelete : function() {
+        var self = this;
+
+        $(".aimeos .item-cms").on("click", ".tree-toolbar .act-delete", function(ev) {
+
+            self.element = $(".tree-content", ev.delegateTarget).tree("getSelectedNode");
+
+            var dialog = $("#confirm-delete > div");
+            var item = $('<li>').text(self.element.name);
+
+            $(".modal-body ul.items", dialog).append(item);
+            dialog.modal("show", $(this));
+
+            return false;
+        });
+    },
+
+
+    confirmDelete : function() {
+        var self = this;
+
+        $("#confirm-delete").on("click", ".btn-danger", function(e) {
+            if(self.element) {
+                self.deleteNode(self.element, self.element.parent || null);
+            }
+        });
+    },
+
+
+    deleteNode : function(node, parent) {
+
+        Aimeos.options.done(function(result) {
+
+            if(!result || !result.meta || !result.meta.resources || !result.meta.resources.cms) {
+                throw {"msg": "No valid data in response", "result": result};
+            }
+
+            var params = {};
+            var url = result.meta.resources.cms;
+
+            if(result.meta.prefix) {
+                params[result.meta.prefix] = {id: node.id};
+            } else {
+                params = {id: node.id};
+            }
+
+            if(Aimeos.Cms.csrf) {
+                params[Aimeos.Cms.csrf.name] = Aimeos.Cms.csrf.value;
+            }
+
+            $.ajax(url + (url.indexOf('?') !== -1 ? '&' : '?') + jQuery.param(params), {
+                "dataType": "json",
+                "method": "DELETE"
+            }).done(function(result) {
+
+                if(result.meta.csrf) {
+                    Aimeos.Cms.csrf = result.meta.csrf;
+                }
+
+                if(!result.errors) {
+                    window.location = $(".aimeos .item-cms").data("createurl").replace("_ID_", (parent && parent.id ? parent.id : ''));
+                }
+            });
+        });
+    },
+
+
+    setupAdd : function() {
+
+        $(".aimeos .item-cms").on("click", ".tree-toolbar .act-add", function(ev) {
+
+            var root = $(".tree-content", ev.delegateTarget);
+            var node = root.tree("getSelectedNode");
+
+            if(!node) {
+                node = root.tree("getNodeByHtmlElement", $(".jqtree-tree > .jqtree-folder", root));
+            }
+
+            window.location = $(ev.delegateTarget).data("createurl").replace("_ID_", (node ? node.id : ''));
+        });
+    },
+
+
+    setupCollapseAll : function() {
+
+        $(".aimeos .item-cms .cms-tree").on("click", ".tree-toolbar .collapse-all", function(ev) {
+            $(".tree-content .jqtree-folder .jqtree-toggler", ev.delegateTarget).addClass("jqtree-closed");
+            $(".tree-content .jqtree-folder", ev.delegateTarget).addClass("jqtree-closed");
+            $('.tree-content ul.jqtree_common[role="group"]', ev.delegateTarget).css("display", "none");
+        });
+    },
+
+
+    setupExpandAll : function() {
+
+        $(".aimeos .item-cms .cms-tree").on("click", ".tree-toolbar .expand-all", function(ev) {
+            $(".tree-content .jqtree-folder .jqtree-toggler.jqtree-closed", ev.delegateTarget).removeClass("jqtree-closed");
+            $(".tree-content .jqtree-folder.jqtree-closed", ev.delegateTarget).removeClass("jqtree-closed");
+            $('.tree-content ul.jqtree_common[role="group"]', ev.delegateTarget).css("display", "block");
+        });
+    },
+
+
+    setupSearch : function() {
+
+        $(".aimeos .cms-tree .tree-toolbar").on("input", ".search-input", function() {
+            var name = $(this).val();
+
+            $('.aimeos .cms-tree .tree-content .jqtree_common[role="treeitem"]').each(function(idx, node) {
+                var regex = new RegExp(name, 'i');
+                var node = $(node);
+
+                if(regex.test(node.html())) {
+                    node.parents("li.jqtree_common").show();
+                    node.show();
+                } else {
+                    node.hide();
+                }
+            });
+        });
+    }
+};
+
+
+
+$(function() {
+
+    Aimeos.Cms.init();
+});

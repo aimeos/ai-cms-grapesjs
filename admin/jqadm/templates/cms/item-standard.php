@@ -2,11 +2,13 @@
 
 /**
  * @license LGPLv3, http://opensource.org/licenses/LGPL-3.0
- * @copyright Aimeos (aimeos.org), 2021
+ * @copyright Aimeos (aimeos.org), 2017-2021
+ *
+ * @var \Aimeos\MW\View\Standard $this
  */
 
 $selected = function( $key, $code ) {
-	return ( $key == $code ? 'selected="selected"' : '' );
+    return ( $key == $code ? 'selected="selected"' : '' );
 };
 
 
@@ -40,185 +42,241 @@ $jsonConfig = $this->config( 'admin/jsonadm/url/config', [] );
 $params = $this->get( 'pageParams', [] );
 
 
+/** admin/jqadm/cms/item/config/suggest
+ * List of suggested configuration keys in cms item panel
+ *
+ * Cms items can store arbitrary key value pairs. This setting gives editors
+ * a hint which config keys are available and are used in the templates.
+ *
+ * @param string List of suggested config keys
+ * @since 2017.10
+ * @category Developer
+ * @see admin/jqadm/product/item/config/suggest
+ */
+$cfgSuggest = $this->config( 'admin/jqadm/cms/item/config/suggest', ['css-class'] );
+
+
 ?>
 <?php $this->block()->start( 'jqadm_content' ); ?>
 
 <form class="item item-cms item-tree form-horizontal container-fluid" method="POST" enctype="multipart/form-data"
-	action="<?= $enc->attr( $this->url( $target, $cntl, $action, $params, [], $config ) ); ?>"
-	data-rootid="<?= $enc->attr( $this->get( 'itemRootId' ) ); ?>"
-	data-geturl="<?= $enc->attr( $this->url( $getTarget, $getCntl, $getAction, ['resource' => 'cms', 'id' => '_ID_'] + $params, [], $getConfig ) ); ?>"
-	data-createurl="<?= $enc->attr( $this->url( $newTarget, $newCntl, $newAction, ['resource' => 'cms', 'id' => '_ID_'] + $params, [], $newConfig ) ); ?>"
-	data-jsonurl="<?= $enc->attr( $this->url( $jsonTarget, $jsonCntl, $jsonAction, ['resource' => 'cms'], [], $jsonConfig ) ); ?>"
-	data-idname="<?= $this->formparam( 'id' ); ?>" >
+      action="<?= $enc->attr( $this->url( $target, $cntl, $action, $params, [], $config ) ); ?>"
+      data-rootid="<?= $enc->attr( $this->get( 'itemRootId' ) ); ?>"
+      data-geturl="<?= $enc->attr( $this->url( $getTarget, $getCntl, $getAction, ['resource' => 'cms', 'id' => '_ID_'] + $params, [], $getConfig ) ); ?>"
+      data-createurl="<?= $enc->attr( $this->url( $newTarget, $newCntl, $newAction, ['resource' => 'cms', 'id' => '_ID_'] + $params, [], $newConfig ) ); ?>"
+      data-jsonurl="<?= $enc->attr( $this->url( $jsonTarget, $jsonCntl, $jsonAction, ['resource' => 'cms'], [], $jsonConfig ) ); ?>"
+      data-idname="<?= $this->formparam( 'id' ); ?>" >
 
-	<input id="item-id" type="hidden" name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.id' ) ) ); ?>"
-		value="<?= $enc->attr( $this->get( 'itemData/cms.id' ) ); ?>" />
-	<input id="item-parentid" type="hidden" name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.parentid' ) ) ); ?>"
-		value="<?= $enc->attr( $this->get( 'itemData/cms.parentid', $this->param( 'parentid', $this->param( 'id', $this->get( 'itemRootId' ) ) ) ) ); ?>" />
-	<input id="item-next" type="hidden" name="<?= $enc->attr( $this->formparam( array( 'next' ) ) ); ?>" value="get" />
-	<?= $this->csrf()->formfield(); ?>
+    <input id="item-id" type="hidden" name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.id' ) ) ); ?>"
+           value="<?= $enc->attr( $this->get( 'itemData/cms.id' ) ); ?>" />
+    <input id="item-parentid" type="hidden" name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.parentid' ) ) ); ?>"
+           value="<?= $enc->attr( $this->get( 'itemData/cms.parentid', $this->param( 'parentid', $this->param( 'id', 0 ) ) ) ); ?>" />
+    <input id="item-next" type="hidden" name="<?= $enc->attr( $this->formparam( array( 'next' ) ) ); ?>" value="get" />
+    <?= $this->csrf()->formfield(); ?>
 
-	<nav class="main-navbar">
-		<h1 class="navbar-brand">
-			<span class="navbar-title"><?= $enc->html( $this->translate( 'admin', 'CMS page' ) ); ?></span>
-			<span class="navbar-id"><?= $enc->html( $this->get( 'itemData/cms.id' ) ); ?></span>
-			<span class="navbar-label"><?= $enc->html( $this->get( 'itemData/cms.label' ) ?: $this->translate( 'admin', 'New' ) ); ?></span>
-			<span class="navbar-site"><?= $enc->html( $this->site()->match( $this->get( 'itemData/cms.siteid' ) ) ); ?></span>
-		</h1>
-		<div class="item-actions">
-			<?php if( isset( $this->itemData ) ) : ?>
-				<?= $this->partial( $this->config( 'admin/jqadm/partial/itemactions', 'common/partials/itemactions-standard' ), ['params' => $params] ); ?>
-			<?php else : ?>
-				<span class="placeholder">&nbsp;</span>
-			<?php endif; ?>
-		</div>
-	</nav>
+    <nav class="main-navbar">
+        <h1 class="navbar-brand">
+            <span class="navbar-title"><?= $enc->html( $this->translate( 'admin', 'Cms' ) ); ?></span>
+            <span class="navbar-id"><?= $enc->html( $this->get( 'itemData/cms.id' ) ); ?></span>
+            <span class="navbar-label"><?= $enc->html( $this->get( 'itemData/cms.label' ) ?: $this->translate( 'admin', 'New' ) ); ?></span>
+            <span class="navbar-site"><?= $enc->html( $this->site()->match( $this->get( 'itemData/cms.siteid' ) ) ); ?></span>
+        </h1>
+        <div class="item-actions">
+            <?php if( isset( $this->itemData ) ) : ?>
+                <?= $this->partial( $this->config( 'admin/jqadm/partial/itemactions', 'common/partials/itemactions-standard' ), ['params' => $params] ); ?>
+            <?php else : ?>
+                <span class="placeholder">&nbsp;</span>
+            <?php endif; ?>
+        </div>
+    </nav>
 
-	<div class="row item-container">
+    <div class="row item-container">
 
-		<div class="col-xl-3 cms-tree">
-			<div class="box">
-				<div class="tree-toolbar input-group">
-					<div class="input-group-prepend"><!--
+        <div class="col-lg-3 cms-tree">
+            <div class="box">
+                <div class="tree-toolbar input-group">
+                    <div class="input-group-prepend"><!--
 						--><span class="btn btn-secondary fa expand-all" tabindex="1"></span><!--
 						--><span class="btn btn-secondary fa collapse-all" tabindex="1"></span><!--
 					--></div><!--
-					--><input type="text" class="form-control search-input" tabindex="1" placeholder="<?= $enc->attr( $this->translate( 'admin', 'Find page' ) ); ?>"><!--
+					--><input type="text" class="form-control search-input" tabindex="1" placeholder="<?= $enc->attr( $this->translate( 'admin', 'Find category' ) ); ?>"><!--
 					--><div class="input-group-append"><!--
 						--><span class="btn btn-secondary fa act-delete " tabindex="1"></span><!--
 						--><span class="btn btn-primary fa act-add" tabindex="1"></span><!--
 					--></div>
-				</div>
-				<div class="tree-content"></div>
-			</div>
-		</div>
+                </div>
+                <div class="tree-content"></div>
+            </div>
+        </div>
 
-		<?php if( isset( $this->itemData ) ) : ?>
-			<div class="col-xl-9 cms-content">
-				<div class="row">
+        <?php if( isset( $this->itemData ) && ($this->get('action') != 'get' || $this->itemData['cms.id'])) : ?>
+            <div class="col-lg-9 cms-content">
+                <div class="row">
 
-					<div class="col-xl-12 item-navbar">
-						<div class="navbar-content">
-							<ul class="nav nav-tabs flex-row flex-wrap d-flex box" role="tablist">
-								<li class="nav-item basic">
-									<a class="nav-link active" href="#basic" data-bs-toggle="tab" role="tab" aria-expanded="true" aria-controls="basic" tabindex="1">
-										<?= $enc->html( $this->translate( 'admin', 'Basic' ) ); ?>
-									</a>
-								</li>
+                    <div class="col-xl-12 item-navbar">
+                        <div class="navbar-content">
+                            <ul class="nav nav-tabs flex-row flex-wrap d-flex box" role="tablist">
+                                <li class="nav-item basic">
+                                    <a class="nav-link active" href="#basic" data-bs-toggle="tab" role="tab" aria-expanded="true" aria-controls="basic" tabindex="1">
+                                        <?= $enc->html( $this->translate( 'admin', 'Basic' ) ); ?>
+                                    </a>
+                                </li>
 
-								<?php foreach( array_values( $this->get( 'itemSubparts', [] ) ) as $idx => $subpart ) : ?>
-									<li class="nav-item <?= $enc->attr( $subpart ); ?>">
-										<a class="nav-link" href="#<?= $enc->attr( $subpart ); ?>" data-bs-toggle="tab" role="tab" tabindex="<?= ++$idx + 1; ?>">
-											<?= $enc->html( $this->translate( 'admin', $subpart ) ); ?>
-										</a>
-									</li>
-								<?php endforeach; ?>
-							</ul>
+                                <?php foreach( array_values( $this->get( 'itemSubparts', [] ) ) as $idx => $subpart ) : ?>
+                                    <li class="nav-item <?= $enc->attr( $subpart ); ?>">
+                                        <a class="nav-link" href="#<?= $enc->attr( $subpart ); ?>" data-bs-toggle="tab" role="tab" tabindex="<?= ++$idx + 1; ?>">
+                                            <?= $enc->html( $this->translate( 'admin', $subpart ) ); ?>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
 
-							<div class="item-meta text-muted">
-								<small>
-									<?= $enc->html( $this->translate( 'admin', 'Modified' ) ); ?>:
-									<span class="meta-value"><?= $enc->html( $this->get( 'itemData/cms.mtime' ) ); ?></span>
-								</small>
-								<small>
-									<?= $enc->html( $this->translate( 'admin', 'Created' ) ); ?>:
-									<span class="meta-value"><?= $enc->html( $this->get( 'itemData/cms.ctime' ) ); ?></span>
-								</small>
-								<small>
-									<?= $enc->html( $this->translate( 'admin', 'Editor' ) ); ?>:
-									<span class="meta-value"><?= $enc->html( $this->get( 'itemData/cms.editor' ) ); ?></span>
-								</small>
-							</div>
+                            <div class="item-meta text-muted">
+                                <small>
+                                    <?= $enc->html( $this->translate( 'admin', 'Modified' ) ); ?>:
+                                    <span class="meta-value"><?= $enc->html( $this->get( 'itemData/cms.mtime' ) ); ?></span>
+                                </small>
+                                <small>
+                                    <?= $enc->html( $this->translate( 'admin', 'Created' ) ); ?>:
+                                    <span class="meta-value"><?= $enc->html( $this->get( 'itemData/cms.ctime' ) ); ?></span>
+                                </small>
+                                <small>
+                                    <?= $enc->html( $this->translate( 'admin', 'Editor' ) ); ?>:
+                                    <span class="meta-value"><?= $enc->html( $this->get( 'itemData/cms.editor' ) ); ?></span>
+                                </small>
+                            </div>
 
-							<div class="more"></div>
-						</div>
-					</div>
+                            <div class="more"></div>
+                        </div>
+                    </div>
 
-					<div class="col-xl-12 item-content tab-content">
+                    <div class="col-xl-12 item-content tab-content">
 
-						<div id="basic" class="item-basic tab-pane fade show active" role="tabpanel" aria-labelledby="basic">
+                        <div id="basic" class="item-basic tab-pane fade show active box" role="tabpanel" aria-labelledby="basic">
 
-							<div class="box">
-								<div class="row">
-									<div class="col-xl-6 <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?>">
-										<div class="form-group row mandatory">
-											<label class="col-sm-4 form-control-label"><?= $enc->html( $this->translate( 'admin', 'Status' ) ); ?></label>
-											<div class="col-sm-8">
-												<select class="form-control form-select item-status" required="required" tabindex="1"
-													name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.status' ) ) ); ?>"
-													<?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?> >
-													<option value="">
-														<?= $enc->html( $this->translate( 'admin', 'Please select' ) ); ?>
-													</option>
-													<option value="1" <?= $selected( $this->get( 'itemData/cms.status', 1 ), 1 ); ?> >
-														<?= $enc->html( $this->translate( 'mshop/code', 'status:1' ) ); ?>
-													</option>
-													<option value="0" <?= $selected( $this->get( 'itemData/cms.status', 1 ), 0 ); ?> >
-														<?= $enc->html( $this->translate( 'mshop/code', 'status:0' ) ); ?>
-													</option>
-													<option value="-1" <?= $selected( $this->get( 'itemData/cms.status', 1 ), -1 ); ?> >
-														<?= $enc->html( $this->translate( 'mshop/code', 'status:-1' ) ); ?>
-													</option>
-													<option value="-2" <?= $selected( $this->get( 'itemData/cms.status', 1 ), -2 ); ?> >
-														<?= $enc->html( $this->translate( 'mshop/code', 'status:-2' ) ); ?>
-													</option>
-												</select>
-											</div>
-										</div>
-										<div class="form-group row mandatory">
-											<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'URL' ) ); ?></label>
-											<div class="col-sm-8">
-												<input class="form-control item-url" type="text" required="required" tabindex="1"
-													name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.url' ) ) ); ?>"
-													placeholder="<?= $enc->attr( $this->translate( 'admin', 'Unique page URL (required)' ) ); ?>"
-													value="<?= $enc->attr( $this->get( 'itemData/cms.url' ) ); ?>"
-													<?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?> />
-											</div>
-											<div class="col-sm-12 form-text text-muted help-text">
-												<?= $enc->html( $this->translate( 'admin', 'Unique page URL, e.g. "/page-name"' ) ); ?>
-											</div>
-										</div>
-										<div class="form-group row mandatory">
-											<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'Title' ) ); ?></label>
-											<div class="col-sm-8">
-												<input class="form-control item-label" type="text" required="required" tabindex="1"
-													name="<?= $this->formparam( array( 'item', 'cms.label' ) ); ?>"
-													placeholder="<?= $enc->attr( $this->translate( 'admin', 'Internal name (required)' ) ); ?>"
-													value="<?= $enc->attr( $this->get( 'itemData/cms.label' ) ); ?>"
-													<?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?> />
-											</div>
-											<div class="col-sm-12 form-text text-muted help-text">
-												<?= $enc->html( $this->translate( 'admin', 'Page title, will be used on the web site if no title for the language is available' ) ); ?>
-											</div>
-										</div>
-									</div>
+                            <div class="box">
+                                <div class="row">
+                                    <div class="col-xl-6 <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?>">
+                                        <div class="form-group row mandatory">
+                                            <label class="col-sm-4 form-control-label"><?= $enc->html( $this->translate( 'admin', 'Status' ) ); ?></label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control form-select item-status" required="required" tabindex="1"
+                                                        name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.status' ) ) ); ?>"
+                                                    <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?> >
+                                                    <option value="">
+                                                        <?= $enc->html( $this->translate( 'admin', 'Please select' ) ); ?>
+                                                    </option>
+                                                    <option value="1" <?= $selected( $this->get( 'itemData/cms.status', 1 ), 1 ); ?> >
+                                                        <?= $enc->html( $this->translate( 'mshop/code', 'status:1' ) ); ?>
+                                                    </option>
+                                                    <option value="0" <?= $selected( $this->get( 'itemData/cms.status', 1 ), 0 ); ?> >
+                                                        <?= $enc->html( $this->translate( 'mshop/code', 'status:0' ) ); ?>
+                                                    </option>
+                                                    <option value="-1" <?= $selected( $this->get( 'itemData/cms.status', 1 ), -1 ); ?> >
+                                                        <?= $enc->html( $this->translate( 'mshop/code', 'status:-1' ) ); ?>
+                                                    </option>
+                                                    <option value="-2" <?= $selected( $this->get( 'itemData/cms.status', 1 ), -2 ); ?> >
+                                                        <?= $enc->html( $this->translate( 'mshop/code', 'status:-2' ) ); ?>
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mandatory">
+                                            <label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'Code' ) ); ?></label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control item-code" type="text" required="required" tabindex="1"
+                                                       name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.code' ) ) ); ?>"
+                                                       placeholder="<?= $enc->attr( $this->translate( 'admin', 'Unique category code (required)' ) ); ?>"
+                                                       value="<?= $enc->attr( $this->get( 'itemData/cms.code' ) ); ?>"
+                                                    <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?> />
+                                            </div>
+                                            <div class="col-sm-12 form-text text-muted help-text">
+                                                <?= $enc->html( $this->translate( 'admin', 'Unique category code, either from external system or self-invented' ) ); ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mandatory">
+                                            <label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'Label' ) ); ?></label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control item-label" type="text" required="required" tabindex="1"
+                                                       name="<?= $this->formparam( array( 'item', 'cms.label' ) ); ?>"
+                                                       placeholder="<?= $enc->attr( $this->translate( 'admin', 'Internal name (required)' ) ); ?>"
+                                                       value="<?= $enc->attr( $this->get( 'itemData/cms.label' ) ); ?>"
+                                                    <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?> />
+                                            </div>
+                                            <div class="col-sm-12 form-text text-muted help-text">
+                                                <?= $enc->html( $this->translate( 'admin', 'Internal category name, will be used on the web site if no name for the language is available' ) ); ?>
+                                            </div>
+                                        </div>
 
-									<div class="col-sm-12 <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?>">
-										<div class="grapejs-editor">
-											<div id="gjs" class="cms-preview">
-												<h1>Headline</h1>
-											</div>
-										</div>
-									</div>
+                                        <div class="separator"><i class="icon more"></i></div>
 
-								</div>
-							</div>
-						</div>
+                                        <div class="form-group row optional advanced">
+                                            <label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'URL segment' ) ); ?></label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control item-label" type="text" tabindex="1"
+                                                       name="<?= $this->formparam( array( 'item', 'cms.url' ) ); ?>"
+                                                       placeholder="<?= $enc->attr( $this->translate( 'admin', 'Name in URL (optional)' ) ); ?>"
+                                                       value="<?= $enc->attr( $this->get( 'itemData/cms.url' ) ); ?>"
+                                                    <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?> />
+                                            </div>
+                                            <div class="col-sm-12 form-text text-muted help-text">
+                                                <?= $enc->html( $this->translate( 'admin', 'The name of the category shown in the URL, will be used if no language specific URL segment exists' ) ); ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row optional advanced warning">
+                                            <label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'URL target' ) ); ?></label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control item-target" type="text" tabindex="1"
+                                                       name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.target' ) ) ); ?>"
+                                                       placeholder="<?= $enc->attr( $this->translate( 'admin', 'Route or page ID (optional)' ) ); ?>"
+                                                       value="<?= $enc->attr( $this->get( 'itemData/cms.target' ) ); ?>"
+                                                    <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?> />
+                                            </div>
+                                            <div class="col-sm-12 form-text text-muted help-text">
+                                                <?= $enc->html( $this->translate( 'admin', 'Route name or page ID of the category page if this category should shown on a different page' ) ); ?>
+                                            </div>
+                                        </div>
+                                    </div><!--
 
-						<?= $this->get( 'itemBody' ); ?>
+									--><div class="col-xl-6 vue <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?>"
+                                            data-data="<?= $enc->attr( $this->get( 'itemData', new stdClass() ) ) ?>">
 
-					</div>
+                                        <config-table
+                                                v-bind:keys="JSON.parse('<?= $enc->attr( $this->config( 'admin/jqadm/cms/item/config/suggest', ['css-class'] ) ) ?>')"
+                                                v-bind:name="'<?= $enc->attr( $this->formparam( array( 'item', 'config', '_pos_', '_key_' ) ) ); ?>'"
+                                                v-bind:readonly="data['cms.siteid'] != '<?= $this->site()->siteid() ?>'"
+                                                v-bind:items="data['config']" v-on:change="data['config'] = $event">
 
-					<div class="item-actions">
-						<?= $this->partial( $this->config( 'admin/jqadm/partial/itemactions', 'common/partials/itemactions-standard' ), ['params' => $params] ); ?>
-					</div>
-				</div>
+                                            <table class="item-config table">
+                                                <thead>
+                                                <tr>
+                                                    <th class="config-row-key"><span class="help"><?= $enc->html( $this->translate( 'admin', 'Option' ) ); ?></span></th>
+                                                    <th class="config-row-value"><?= $enc->html( $this->translate( 'admin', 'Value' ) ); ?></th>
+                                                    <th class="actions"><div class="btn act-add fa"></div></th>
+                                                </tr>
+                                                </thead>
+                                            </table>
+                                        </config-table>
+                                    </div>
 
-			</div>
+                                </div>
+                            </div>
+                        </div>
 
-		<?php endif; ?>
+                        <?= $this->get( 'itemBody' ); ?>
 
-	</div>
+                    </div>
+
+                    <div class="item-actions">
+                        <?= $this->partial( $this->config( 'admin/jqadm/partial/itemactions', 'common/partials/itemactions-standard' ), ['params' => $params] ); ?>
+                    </div>
+                </div>
+
+            </div>
+
+        <?php endif; ?>
+
+    </div>
 </form>
 
 <?php $this->block()->stop(); ?>

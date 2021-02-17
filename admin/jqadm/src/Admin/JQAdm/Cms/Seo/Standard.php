@@ -8,13 +8,13 @@
  */
 
 
-namespace Aimeos\Admin\JQAdm\Cms\Text;
+namespace Aimeos\Admin\JQAdm\Cms\Seo;
 
-sprintf( 'text' ); // for translation
+sprintf( 'seo' ); // for translation
 
 
 /**
- * Default implementation of cms text JQAdm client.
+ * Default implementation of cms SEO JQAdm client.
  *
  * @package Admin
  * @subpackage JQAdm
@@ -23,8 +23,8 @@ class Standard
 	extends \Aimeos\Admin\JQAdm\Common\Admin\Factory\Base
 	implements \Aimeos\Admin\JQAdm\Common\Admin\Factory\Iface
 {
-	/** admin/jqadm/cms/text/name
-	 * Name of the text subpart used by the JQAdm cms implementation
+	/** admin/jqadm/cms/seo/name
+	 * Name of the SEO subpart used by the JQAdm cms implementation
 	 *
 	 * Use "Myname" if your class is named "\Aimeos\Admin\Jqadm\Cms\Text\Myname".
 	 * The name is case-sensitive and you should avoid camel case names like "MyName".
@@ -43,8 +43,8 @@ class Standard
 	public function copy() : ?string
 	{
 		$view = $this->getObject()->addData( $this->getView() );
-		$view->textData = $this->toArray( $view->item, true );
-		$view->textBody = parent::copy();
+		$view->seoData = $this->toArray( $view->item, true );
+		$view->seoBody = parent::copy();
 
 		return $this->render( $view );
 	}
@@ -67,8 +67,8 @@ class Standard
 			$data[$idx]['text.siteid'] = $siteid;
 		}
 
-		$view->textData = $data;
-		$view->textBody = parent::create();
+		$view->seoData = $data;
+		$view->seoBody = parent::create();
 
 		return $this->render( $view );
 	}
@@ -98,8 +98,8 @@ class Standard
 	public function get() : ?string
 	{
 		$view = $this->getObject()->addData( $this->getView() );
-		$view->textData = $this->toArray( $view->item );
-		$view->textBody = parent::get();
+		$view->seoData = $this->toArray( $view->item );
+		$view->seoBody = parent::get();
 
 		return $this->render( $view );
 	}
@@ -114,8 +114,8 @@ class Standard
 	{
 		$view = $this->getView();
 
-		$view->item = $this->fromArray( $view->item, $view->param( 'text', [] ) );
-		$view->textBody = parent::save();
+		$view->item = $this->fromArray( $view->item, $view->param( 'seo', [] ) );
+		$view->seoBody = parent::save();
 
 		return null;
 	}
@@ -130,7 +130,7 @@ class Standard
 	 */
 	public function getSubClient( string $type, string $name = null ) : \Aimeos\Admin\JQAdm\Iface
 	{
-		/** admin/jqadm/cms/text/decorators/excludes
+		/** admin/jqadm/cms/seo/decorators/excludes
 		 * Excludes decorators added by the "common" option from the cms JQAdm client
 		 *
 		 * Decorators extend the functionality of a class by adding new aspects
@@ -142,7 +142,7 @@ class Standard
 		 * "admin/jqadm/common/decorators/default" before they are wrapped
 		 * around the JQAdm client.
 		 *
-		 *  admin/jqadm/cms/text/decorators/excludes = array( 'decorator1' )
+		 *  admin/jqadm/cms/seo/decorators/excludes = array( 'decorator1' )
 		 *
 		 * This would remove the decorator named "decorator1" from the list of
 		 * common decorators ("\Aimeos\Admin\JQAdm\Common\Decorator\*") added via
@@ -152,11 +152,11 @@ class Standard
 		 * @since 2020.10
 		 * @category Developer
 		 * @see admin/jqadm/common/decorators/default
-		 * @see admin/jqadm/cms/text/decorators/global
-		 * @see admin/jqadm/cms/text/decorators/local
+		 * @see admin/jqadm/cms/seo/decorators/global
+		 * @see admin/jqadm/cms/seo/decorators/local
 		 */
 
-		/** admin/jqadm/cms/text/decorators/global
+		/** admin/jqadm/cms/seo/decorators/global
 		 * Adds a list of globally available decorators only to the cms JQAdm client
 		 *
 		 * Decorators extend the functionality of a class by adding new aspects
@@ -167,7 +167,7 @@ class Standard
 		 * This option allows you to wrap global decorators
 		 * ("\Aimeos\Admin\JQAdm\Common\Decorator\*") around the JQAdm client.
 		 *
-		 *  admin/jqadm/cms/text/decorators/global = array( 'decorator1' )
+		 *  admin/jqadm/cms/seo/decorators/global = array( 'decorator1' )
 		 *
 		 * This would add the decorator named "decorator1" defined by
 		 * "\Aimeos\Admin\JQAdm\Common\Decorator\Decorator1" only to the JQAdm client.
@@ -176,11 +176,11 @@ class Standard
 		 * @since 2020.10
 		 * @category Developer
 		 * @see admin/jqadm/common/decorators/default
-		 * @see admin/jqadm/cms/text/decorators/excludes
-		 * @see admin/jqadm/cms/text/decorators/local
+		 * @see admin/jqadm/cms/seo/decorators/excludes
+		 * @see admin/jqadm/cms/seo/decorators/local
 		 */
 
-		/** admin/jqadm/cms/text/decorators/local
+		/** admin/jqadm/cms/seo/decorators/local
 		 * Adds a list of local decorators only to the cms JQAdm client
 		 *
 		 * Decorators extend the functionality of a class by adding new aspects
@@ -191,7 +191,7 @@ class Standard
 		 * This option allows you to wrap local decorators
 		 * ("\Aimeos\Admin\JQAdm\Cms\Decorator\*") around the JQAdm client.
 		 *
-		 *  admin/jqadm/cms/text/decorators/local = array( 'decorator2' )
+		 *  admin/jqadm/cms/seo/decorators/local = array( 'decorator2' )
 		 *
 		 * This would add the decorator named "decorator2" defined by
 		 * "\Aimeos\Admin\JQAdm\Cms\Decorator\Decorator2" only to the JQAdm client.
@@ -200,10 +200,10 @@ class Standard
 		 * @since 2020.10
 		 * @category Developer
 		 * @see admin/jqadm/common/decorators/default
-		 * @see admin/jqadm/cms/text/decorators/excludes
-		 * @see admin/jqadm/cms/text/decorators/global
+		 * @see admin/jqadm/cms/seo/decorators/excludes
+		 * @see admin/jqadm/cms/seo/decorators/global
 		 */
-		return $this->createSubClient( 'cms/text/' . $type, $name );
+		return $this->createSubClient( 'cms/seo/' . $type, $name );
 	}
 
 
@@ -214,8 +214,8 @@ class Standard
 	 */
 	protected function getSubClientNames() : array
 	{
-		/** admin/jqadm/cms/text/subparts
-		 * List of JQAdm sub-clients rendered within the cms text section
+		/** admin/jqadm/cms/seo/subparts
+		 * List of JQAdm sub-clients rendered within the cms seo section
 		 *
 		 * The output of the frontend is composed of the code generated by the JQAdm
 		 * clients. Each JQAdm client can consist of serveral (or none) sub-clients
@@ -247,12 +247,12 @@ class Standard
 		 * @since 2020.10
 		 * @category Developer
 		 */
-		return $this->getContext()->getConfig()->get( 'admin/jqadm/cms/text/subparts', [] );
+		return $this->getContext()->getConfig()->get( 'admin/jqadm/cms/seo/subparts', [] );
 	}
 
 
 	/**
-	 * Adds the required data used in the text template
+	 * Adds the required data used in the seo template
 	 *
 	 * @param \Aimeos\MW\View\Iface $view View object
 	 * @return \Aimeos\MW\View\Iface View object with assigned parameters
@@ -265,15 +265,18 @@ class Standard
 		$listTypeManager = \Aimeos\MShop::create( $context, 'cms/lists/type' );
 
 		$search = $textTypeManager->filter( true )->slice( 0, 10000 );
-		$search->setConditions( $search->compare( '==', 'text.type.domain', 'cms' ) );
+		$search->add( $search->and( [
+			$search->is( 'text.type.domain', '==', 'cms' ),
+			$search->is( 'text.type.code', '!=', 'content' )
+		] ) );
 		$search->setSortations( [$search->sort( '+', 'text.type.position' )] );
 
 		$listSearch = $listTypeManager->filter( true )->slice( 0, 10000 );
 		$listSearch->setConditions( $listSearch->compare( '==', 'cms.lists.type.domain', 'text' ) );
 		$listSearch->setSortations( [$listSearch->sort( '+', 'cms.lists.type.position' )] );
 
-		$view->textTypes = $textTypeManager->search( $search );
-		$view->textListTypes = $listTypeManager->search( $listSearch );
+		$view->seoTypes = $textTypeManager->search( $search );
+		$view->seoListTypes = $listTypeManager->search( $listSearch );
 
 		return $view;
 	}
@@ -347,7 +350,7 @@ class Standard
 
 		foreach( $item->getListItems( 'text', null, null, false ) as $listItem )
 		{
-			if( ( $refItem = $listItem->getRefItem() ) === null ) {
+			if( ( $refItem = $listItem->getRefItem() ) === null || $refItem->getType() === 'content' ) {
 				continue;
 			}
 
@@ -384,8 +387,8 @@ class Standard
 	 */
 	protected function render( \Aimeos\MW\View\Iface $view ) : string
 	{
-		/** admin/jqadm/cms/text/template-item
-		 * Relative path to the HTML body template of the text subpart for cmss.
+		/** admin/jqadm/cms/seo/template-item
+		 * Relative path to the HTML body template of the seo subpart for cmss.
 		 *
 		 * The template file contains the HTML code and processing instructions
 		 * to generate the result shown in the body of the frontend. The
@@ -403,8 +406,8 @@ class Standard
 		 * @since 2020.10
 		 * @category Developer
 		 */
-		$tplconf = 'admin/jqadm/cms/text/template-item';
-		$default = 'cms/item-text-standard';
+		$tplconf = 'admin/jqadm/cms/seo/template-item';
+		$default = 'cms/item-seo-standard';
 
 		return $view->render( $view->config( $tplconf, $default ) );
 	}

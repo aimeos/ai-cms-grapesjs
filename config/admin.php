@@ -7,7 +7,7 @@ return [
 				'text' => 'text',
 			],
 			'subparts' => [
-				'text' => 'text',
+				'seo' => 'seo',
 			],
 		],
 		'navbar' => [

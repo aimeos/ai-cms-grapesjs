@@ -6,7 +6,7 @@
  */
 
 
-namespace Aimeos\Admin\JQAdm\Cms\Text;
+namespace Aimeos\Admin\JQAdm\Cms\Seo;
 
 
 class StandardTest extends \PHPUnit\Framework\TestCase
@@ -26,7 +26,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->view->pageLanguages = $langManager->search( $langManager->filter() );
 		$this->view->item = \Aimeos\MShop::create( $this->context, 'cms' )->create();
 
-		$this->object = new \Aimeos\Admin\JQAdm\Cms\Text\Standard( $this->context );
+		$this->object = new \Aimeos\Admin\JQAdm\Cms\Seo\Standard( $this->context );
 		$this->object = new \Aimeos\Admin\JQAdm\Common\Decorator\Page( $this->object, $this->context );
 		$this->object->setAimeos( \TestHelperJqadm::getAimeos() );
 		$this->object->setView( $this->view );
@@ -46,7 +46,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->view->item = $manager->create();
 		$result = $this->object->create();
 
-		$this->assertStringContainsString( 'item-text', $result );
+		$this->assertStringContainsString( 'item-seo', $result );
 		$this->assertEmpty( $this->view->get( 'errors' ) );
 	}
 
@@ -94,7 +94,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 		$param = array(
 			'site' => 'unittest',
-			'text' => array(
+			'seo' => array(
 				array(
 					'text.id' => '',
 					'text.content' => 'test name',
@@ -141,7 +141,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testSaveException()
 	{
-		$object = $this->getMockBuilder( \Aimeos\Admin\JQAdm\Cms\Text\Standard::class )
+		$object = $this->getMockBuilder( \Aimeos\Admin\JQAdm\Cms\Seo\Standard::class )
 			->setConstructorArgs( array( $this->context, \TestHelperJqadm::getTemplatePaths() ) )
 			->setMethods( array( 'fromArray' ) )
 			->getMock();
@@ -161,7 +161,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testSaveMShopException()
 	{
-		$object = $this->getMockBuilder( \Aimeos\Admin\JQAdm\Cms\Text\Standard::class )
+		$object = $this->getMockBuilder( \Aimeos\Admin\JQAdm\Cms\Seo\Standard::class )
 			->setConstructorArgs( array( $this->context, \TestHelperJqadm::getTemplatePaths() ) )
 			->setMethods( array( 'fromArray' ) )
 			->getMock();

@@ -6,8 +6,8 @@
  */
 
 
-/** admin/jqadm/cms/item/text/config/suggest
- * List of suggested configuration keys in cms text panel
+/** admin/jqadm/cms/item/seo/config/suggest
+ * List of suggested configuration keys in cms seo panel
  *
  * Item references can store arbitrary key value pairs. This setting gives
  * editors a hint which config keys are available and are used in the templates.
@@ -22,11 +22,11 @@ $enc = $this->encoder();
 
 
 ?>
-<div id="text" class="item-text tab-pane fade" role="tablist" aria-labelledby="text">
+<div id="seo" class="item-seo tab-pane fade" role="tablist" aria-labelledby="seo">
 
 	<div id="item-text-group"
 		data-translate="<?= $enc->attr( $this->config( 'admin/jqadm/api/translate', [] ) ) ?>"
-		data-items="<?= $enc->attr( $this->get( 'textData', [] ) ); ?>"
+		data-items="<?= $enc->attr( $this->get( 'seoData', [] ) ); ?>"
 		data-siteid="<?= $this->site()->siteid() ?>"
 		data-domain="cms" >
 
@@ -72,7 +72,7 @@ $enc = $this->encoder();
 						v-bind:aria-labelledby="'item-text-group-item-' + idx" role="tabpanel" class="card-block collapse row">
 
 						<input type="hidden" v-model="item['text.id']"
-							v-bind:name="'<?= $enc->attr( $this->formparam( array( 'text', '_idx_', 'text.id' ) ) ); ?>'.replace('_idx_', idx)" />
+							v-bind:name="'<?= $enc->attr( $this->formparam( array( 'seo', '_idx_', 'text.id' ) ) ); ?>'.replace('_idx_', idx)" />
 
 						<div class="col-xl-6">
 
@@ -82,7 +82,7 @@ $enc = $this->encoder();
 										v-bind:key="idx"
 										v-bind:id="'cke-' + idx"
 										v-bind:value="item['text.content']"
-										v-bind:name="'<?= $enc->attr( $this->formparam( array( 'text', '_idx_', 'text.content' ) ) ); ?>'.replace('_idx_', idx)"
+										v-bind:name="'<?= $enc->attr( $this->formparam( array( 'seo', '_idx_', 'text.content' ) ) ); ?>'.replace('_idx_', idx)"
 										v-bind:readonly="item['text.siteid'] != siteid"
 										v-bind:tabindex="<?= $this->get( 'tabindex' ); ?>"
 										v-model="item['text.content']"
@@ -98,7 +98,7 @@ $enc = $this->encoder();
 								<label class="col-sm-4 form-control-label"><?= $enc->html( $this->translate( 'admin', 'Status' ) ); ?></label>
 								<div class="col-sm-8">
 									<select class="form-control form-select item-status" required="required" tabindex="<?= $this->get( 'tabindex' ); ?>"
-										v-bind:name="'<?= $enc->attr( $this->formparam( array( 'text', '_idx_', 'text.status' ) ) ); ?>'.replace('_idx_', idx)"
+										v-bind:name="'<?= $enc->attr( $this->formparam( array( 'seo', '_idx_', 'text.status' ) ) ); ?>'.replace('_idx_', idx)"
 										v-bind:readonly="item['text.siteid'] != siteid"
 										v-model="item['text.status']" >
 										<option value=""><?= $enc->html( $this->translate( 'admin', 'Please select' ) ); ?></option>
@@ -124,7 +124,7 @@ $enc = $this->encoder();
 									<div class="col-sm-8">
 										<select is="select-component" required class="form-control form-select item-languageid" tabindex="<?= $enc->attr( $this->get( 'tabindex' ) ); ?>"
 											v-bind:items="JSON.parse('<?= $enc->attr( $languages->col( 'locale.language.label', 'locale.language.id' )->toArray() ) ?>')"
-											v-bind:name="'<?= $enc->attr( $this->formparam( ['text', '_idx_', 'text.languageid'] ) ); ?>'.replace('_idx_', idx)"
+											v-bind:name="'<?= $enc->attr( $this->formparam( ['seo', '_idx_', 'text.languageid'] ) ); ?>'.replace('_idx_', idx)"
 											v-bind:text="'<?= $enc->html( $this->translate( 'admin', 'Please select' ) ); ?>'"
 											v-bind:all="'<?= $enc->html( $this->translate( 'admin', 'All' ) ); ?>'"
 											v-bind:readonly="item['text.siteid'] != siteid"
@@ -137,7 +137,7 @@ $enc = $this->encoder();
 								</div>
 							<?php else : ?>
 								<input class="text-langid" type="hidden"
-									v-bind:name="'<?= $enc->attr( $this->formparam( array( 'text', '_idx_', 'text.languageid' ) ) ); ?>'.replace('_idx_', idx)"
+									v-bind:name="'<?= $enc->attr( $this->formparam( array( 'seo', '_idx_', 'text.languageid' ) ) ); ?>'.replace('_idx_', idx)"
 									value="<?= $enc->attr( $languages->getCode()->first() ) ?>" />
 							<?php endif; ?>
 
@@ -147,7 +147,7 @@ $enc = $this->encoder();
 									<div class="col-sm-8">
 										<select is="select-component" required class="form-control form-select item-type" tabindex="<?= $enc->attr( $this->get( 'tabindex' ) ); ?>"
 											v-bind:items="JSON.parse('<?= $enc->attr( $textTypes->col( 'text.type.label', 'text.type.code' )->toArray() ) ?>')"
-											v-bind:name="'<?= $enc->attr( $this->formparam( ['text', '_idx_', 'text.type'] ) ); ?>'.replace('_idx_', idx)"
+											v-bind:name="'<?= $enc->attr( $this->formparam( ['seo', '_idx_', 'text.type'] ) ); ?>'.replace('_idx_', idx)"
 											v-bind:text="'<?= $enc->html( $this->translate( 'admin', 'Please select' ) ); ?>'"
 											v-bind:readonly="item['text.siteid'] != siteid"
 											v-model="item['text.type']" >
@@ -159,7 +159,7 @@ $enc = $this->encoder();
 								</div>
 							<?php else : ?>
 								<input class="item-type" type="hidden"
-									v-bind:name="'<?= $enc->attr( $this->formparam( array( 'text', '_idx_', 'text.type' ) ) ); ?>'.replace('_idx_', idx)"
+									v-bind:name="'<?= $enc->attr( $this->formparam( array( 'seo', '_idx_', 'text.type' ) ) ); ?>'.replace('_idx_', idx)"
 									value="<?= $enc->attr( $textTypes->getCode()->first() ) ?>" />
 							<?php endif; ?>
 
@@ -167,7 +167,7 @@ $enc = $this->encoder();
 									<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'Label' ) ); ?></label>
 								<div class="col-sm-8">
 									<input class="form-control item-label" type="text" tabindex="<?= $this->get( 'tabindex' ); ?>"
-										v-bind:name="'<?= $enc->attr( $this->formparam( array( 'text', '_idx_', 'text.label' ) ) ); ?>'.replace('_idx_', idx)"
+										v-bind:name="'<?= $enc->attr( $this->formparam( array( 'seo', '_idx_', 'text.label' ) ) ); ?>'.replace('_idx_', idx)"
 										placeholder="<?= $enc->attr( $this->translate( 'admin', 'Label' ) ); ?>"
 										v-bind:readonly="item['text.siteid'] != siteid"
 										v-model="item['text.label']" />
@@ -197,7 +197,7 @@ $enc = $this->encoder();
 									<div class="col-sm-8">
 										<select is="select-component" required class="form-control form-select listitem-type" tabindex="<?= $enc->attr( $this->get( 'tabindex' ) ); ?>"
 											v-bind:items="JSON.parse('<?= $enc->attr( $listTypes->col( 'cms.lists.type.label', 'cms.lists.type.code' )->toArray() ) ?>')"
-											v-bind:name="'<?= $enc->attr( $this->formparam( ['text', '_idx_', 'cms.lists.type'] ) ); ?>'.replace('_idx_', idx)"
+											v-bind:name="'<?= $enc->attr( $this->formparam( ['seo', '_idx_', 'cms.lists.type'] ) ); ?>'.replace('_idx_', idx)"
 											v-bind:text="'<?= $enc->html( $this->translate( 'admin', 'Please select' ) ); ?>'"
 											v-bind:readonly="item['cms.lists.siteid'] != siteid"
 											v-model="item['cms.lists.type']" >
@@ -209,7 +209,7 @@ $enc = $this->encoder();
 								</div>
 							<?php else : ?>
 								<input class="listitem-type" type="hidden"
-									v-bind:name="'<?= $enc->attr( $this->formparam( array( 'text', '_idx_', 'cms.lists.type' ) ) ); ?>'.replace('_idx_', idx)"
+									v-bind:name="'<?= $enc->attr( $this->formparam( array( 'seo', '_idx_', 'cms.lists.type' ) ) ); ?>'.replace('_idx_', idx)"
 									value="<?= $enc->attr( $listTypes->getCode()->first() ) ?>" />
 							<?php endif; ?>
 
@@ -217,7 +217,7 @@ $enc = $this->encoder();
 								<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'Start date' ) ); ?></label>
 								<div class="col-sm-8">
 									<input is="flat-pickr" class="form-control listitem-datestart" type="datetime-local" tabindex="<?= $this->get( 'tabindex' ); ?>"
-										v-bind:name="'<?= $enc->attr( $this->formparam( array( 'text', '_idx_', 'cms.lists.datestart' ) ) ); ?>'.replace('_idx_', idx)"
+										v-bind:name="'<?= $enc->attr( $this->formparam( array( 'seo', '_idx_', 'cms.lists.datestart' ) ) ); ?>'.replace('_idx_', idx)"
 										placeholder="<?= $enc->attr( $this->translate( 'admin', 'YYYY-MM-DD hh:mm:ss (optional)' ) ); ?>"
 										v-bind:disabled="item['cms.lists.siteid'] != siteid"
 										v-bind:config="Aimeos.flatpickr.datetime"
@@ -231,7 +231,7 @@ $enc = $this->encoder();
 								<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'End date' ) ); ?></label>
 								<div class="col-sm-8">
 									<input is="flat-pickr" class="form-control listitem-dateend" type="datetime-local" tabindex="<?= $this->get( 'tabindex' ); ?>"
-										v-bind:name="'<?= $enc->attr( $this->formparam( array( 'text', '_idx_', 'cms.lists.dateend' ) ) ); ?>'.replace('_idx_', idx)"
+										v-bind:name="'<?= $enc->attr( $this->formparam( array( 'seo', '_idx_', 'cms.lists.dateend' ) ) ); ?>'.replace('_idx_', idx)"
 										placeholder="<?= $enc->attr( $this->translate( 'admin', 'YYYY-MM-DD hh:mm:ss (optional)' ) ); ?>"
 										v-bind:disabled="item['cms.lists.siteid'] != siteid"
 										v-bind:config="Aimeos.flatpickr.datetime"
@@ -245,14 +245,14 @@ $enc = $this->encoder();
 
 						<div v-show="item['_ext']" class="col-xl-6 secondary" v-bind:class="{readonly: item['cms.lists.siteid'] != siteid}">
 							<config-table v-bind:tabindex="<?= $this->get( 'tabindex' ); ?>"
-								v-bind:keys="JSON.parse('<?= $enc->attr( $this->config( 'admin/jqadm/cms/item/text/config/suggest', [] ) ) ?>')"
-								v-bind:name="'<?= $enc->attr( $this->formparam( ['text', '_idx_', 'config', '_pos_', '_key_'] ) ); ?>'"
+								v-bind:keys="JSON.parse('<?= $enc->attr( $this->config( 'admin/jqadm/cms/item/seo/config/suggest', [] ) ) ?>')"
+								v-bind:name="'<?= $enc->attr( $this->formparam( ['seo', '_idx_', 'config', '_pos_', '_key_'] ) ); ?>'"
 								v-bind:index="idx" v-bind:readonly="item['cms.lists.siteid'] != siteid"
 								v-bind:items="item['config']" v-on:update:config="item['config'] = $event">
 							</config-table>
 						</div>
 
-						<?= $this->get( 'textBody' ); ?>
+						<?= $this->get( 'seoBody' ); ?>
 
 					</div>
 				</div>

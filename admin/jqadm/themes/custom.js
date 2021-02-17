@@ -76,6 +76,7 @@ Vue.component('grapesjs', {
 			load(keys, success, error) {},
 			store(data, success, error) {
 				self.$emit('input', data['gjs-html'] || '');
+				self.data = data['gjs-html'] || '';
 				success();
 			}
 		});
@@ -100,7 +101,7 @@ Vue.component('grapesjs', {
 
 Aimeos.CMSContent = {
 
-	GrapesJS = {
+	GrapesJS: {
 		config: {
 			container: null,
 			components: '',
@@ -530,7 +531,7 @@ Aimeos.CMSContent = {
 
 
 			label: function(idx) {
-				return (this.items[idx]['text.languageid'] ? this.items[idx]['text.languageid'].toUpperCase() : '');
+				return (this.items[idx]['text.languageid'] ? this.items[idx]['text.languageid'].toUpperCase() : '***');
 			},
 
 

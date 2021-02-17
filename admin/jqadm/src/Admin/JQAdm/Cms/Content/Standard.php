@@ -288,14 +288,15 @@ class Standard
 
 		$listItems = $item->getListItems( 'text', null, 'content', false );
 
-
 		foreach( $data as $idx => $entry )
 		{
 			if( trim( $this->getValue( $entry, 'text.content', '' ) ) === '' ) {
 				continue;
 			}
 
-			if( ( $listItem = $item->getListItem( 'text', $entry['cms.lists.type'], $entry['text.id'], false ) ) === null ) {
+			$listType = $entry['cms.lists.type'] ?? 'default';
+
+			if( ( $listItem = $item->getListItem( 'text', $listType, $entry['text.id'], false ) ) === null ) {
 				$listItem = $listManager->create();
 			}
 
@@ -303,7 +304,7 @@ class Standard
 				$refItem = $textManager->create();
 			}
 
-			$refItem->fromArray( $entry, true );
+			$refItem->fromArray( $entry, true )->setType( 'content' );
 			$conf = [];
 
 			foreach( (array) $this->getValue( $entry, 'config', [] ) as $cfg )

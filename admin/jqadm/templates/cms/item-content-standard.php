@@ -41,7 +41,7 @@ $enc = $this->encoder();
 								title="<?= $enc->attr( $this->translate( 'admin', 'Show/hide this entry' ) ); ?>">
 							</div>
 						</div>
-						<span class="item-label header-label">{{ label(idx) }}</span>
+						<span class="item-label header-label" v-bind:class="{disabled: !active(idx)}">{{ label(idx) }}</span>
 						&nbsp;
 						<div class="card-tools-right">
 							<div v-if="item['cms.lists.siteid'] == siteid && !item['_nosort']"
@@ -87,6 +87,9 @@ $enc = $this->encoder();
 									</select>
 								</div>
 							</div>
+
+						</div>
+						<div class="col-xl-6">
 
 							<?php if( !( $languages = $this->get( 'pageLangItems', map() ) )->isEmpty() ) : ?>
 								<div class="form-group row mandatory">
@@ -141,10 +144,6 @@ $enc = $this->encoder();
 										<?= $enc->html( $this->translate( 'admin', 'Second level type for grouping items' ) ); ?>
 									</div>
 								</div>
-							<?php else : ?>
-								<input class="listitem-type" type="hidden"
-									v-bind:name="'<?= $enc->attr( $this->formparam( array( 'content', '_idx_', 'cms.lists.type' ) ) ); ?>'.replace('_idx_', idx)"
-									value="<?= $enc->attr( $listTypes->getCode()->first() ) ?>" />
 							<?php endif; ?>
 
 							<div class="form-group row optional">
@@ -195,7 +194,6 @@ $enc = $this->encoder();
 								v-bind:readonly="item['text.siteid'] != siteid"
 								v-bind:value="item['text.content']"
 								v-model="item['text.content']"
-								v-bind:key="idx"
 							></grapesjs>
 						</div>
 

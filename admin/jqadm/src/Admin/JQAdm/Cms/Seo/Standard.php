@@ -86,7 +86,7 @@ class Standard
 		$item = $this->getView()->item;
 
 		$listItems = $item->getListItems( 'text', null, null, false )->filter( function( $item ) {
-			return $item->getType() !== 'content';
+			return $item->getRefItem() === null || $item->getRefItem()->getType() !== 'content';
 		} );
 
 		$item->deleteListItems( $listItems, true );
@@ -302,7 +302,7 @@ class Standard
 		$listManager = \Aimeos\MShop::create( $context, 'cms/lists' );
 
 		$listItems = $item->getListItems( 'text', null, null, false )->filter( function( $item ) {
-			return $item->getType() !== 'content';
+			return $item->getRefItem() === null || $item->getRefItem()->getType() !== 'content';
 		} );
 
 
@@ -312,7 +312,9 @@ class Standard
 				continue;
 			}
 
-			if( ( $listItem = $item->getListItem( 'text', $entry['cms.lists.type'], $entry['text.id'], false ) ) === null ) {
+			$listType = $entry['cms.lists.type'] ?? 'default';
+
+			if( ( $listItem = $item->getListItem( 'text', $listType, $entry['text.id'], false ) ) === null ) {
 				$listItem = $listManager->create();
 			}
 
@@ -356,7 +358,7 @@ class Standard
 		$siteId = $this->getContext()->getLocale()->getSiteId();
 
 		$listItems = $item->getListItems( 'text', null, null, false )->filter( function( $item ) {
-			return $item->getType() !== 'content';
+			return $item->getRefItem() === null || $item->getRefItem()->getType() !== 'content';
 		} );
 
 		foreach( $listItems as $listItem )

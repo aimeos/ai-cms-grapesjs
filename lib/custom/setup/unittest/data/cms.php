@@ -16,6 +16,10 @@ return [
 				'cms.lists.type' => 'default', 'cms.lists.position' => 1,
 				'text.languageid' => 'en', 'text.type' => 'meta-keywords', 'text.domain' => 'cms',
 				'text.label' => 'contact', 'text.content' => 'contact, about us'
+			],[
+				'cms.lists.type' => 'default', 'cms.lists.position' => 1,
+				'text.languageid' => 'en', 'text.type' => 'content', 'text.domain' => 'cms',
+				'text.label' => 'Hello', 'text.content' => '<h1>Hello!</h1>'
 			]]
 		]
 	], [
@@ -29,6 +33,10 @@ return [
 				'cms.lists.type' => 'default', 'cms.lists.position' => 1,
 				'text.languageid' => 'de', 'text.type' => 'meta-keywords', 'text.domain' => 'cms',
 				'text.label' => 'kontakt', 'text.content' => 'kontakt, über uns'
+			],[
+				'cms.lists.type' => 'default', 'cms.lists.position' => 1,
+				'text.languageid' => 'de', 'text.type' => 'content', 'text.domain' => 'cms',
+				'text.label' => 'Hallo', 'text.content' => '<h1>Hallo!</h1>'
 			]]
 		]
 	]]

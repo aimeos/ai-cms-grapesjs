@@ -28,14 +28,16 @@ var G=n(54),J=n(55),$=n(24);t.Buffer=a,t.SlowBuffer=m,t.INSPECT_MAX_BYTES=50,a.T
 
 
 /*
- * Custom ai-cms-grapejs JS
+ * Custom ai-cms-grapesjs JS
  */
 
-Aimeos.GrapeJS = {
+Aimeos.GrapesJS = {
 
 	config: {
-		container: '#gjs',
-		fromElement: true,
+		container: null,
+		components: '',
+		fromElement: false,
+		noticeOnUnload: false,
 		height: 'calc(100vh - 10rem)',
 		width: '100%',
 		plugins: ['grapesjs-plugin-header'],
@@ -70,17 +72,6 @@ Aimeos.GrapeJS = {
 				width: '320px', // this value will be used on canvas width
 				widthMedia: '480px', // this value will be used in CSS @media
 			}]
-		},
-		storageManager: {
-			id: 'gjs-',             // Prefix identifier that will be used inside storing and loading
-			type: null,          // Type of the storage
-			autosave: true,         // Store data automatically
-			autoload: true,         // Autoload stored data on init
-			stepsBeforeSave: 1,     // If autosave enabled, indicates how many changes are necessary before store method is triggered
-			storeComponents: true,  // Enable/Disable storing of components in JSON format
-			storeStyles: true,      // Enable/Disable storing of rules in JSON format
-			storeHtml: true,        // Enable/Disable storing of components as HTML string
-			storeCss: true,         // Enable/Disable storing of rules as CSS string
 		},
 	},
 
@@ -242,46 +233,8 @@ Aimeos.GrapeJS = {
 		},
 	},
 
-	styles: `
-		.gjs-dashed .row, .gjs-dashed .col, .gjs-dashed [class^="col-"] {
-			min-height: 1.5rem !important;
-		}
-		img {
-			max-width: 100%;
-		}
-		.row {
-			display: flex; padding: 10px 0; width: auto;
-		}
-		.table {
-			border-collapse: initial;
-		}
-		.table .row {
-			display: table-row;
-		}
-		.table .cell {
-			width: auto; height: auto;
-		}
-		::-webkit-scrollbar {
-			background-color: var(--bs-bg, #f8fafc); width: 0.25rem;
-		}
-		::-webkit-scrollbar-thumb {
-			background-color: var(--bs-secondary, #505860); outline: none;
-		}
-		body {
-			scrollbar-color: var(--bs-secondary, #505860) transparent; scrollbar-width: thin;
-		}
-	`,
-
-	editor: null,
-
-
-	init: function() {
-
-		this.config.i18n.messages.de = {
-
-		};
-
-		this.config.plugins.push(editor => {
+	components: {
+		'btn': function(editor) {
 			editor.DomComponents.addType('btn', {
 				extend: 'link',
 				isComponent: el => el.tagName === 'A' && el.classList.contains('btn') ? {type: 'btn'} : false,
@@ -310,9 +263,9 @@ Aimeos.GrapeJS = {
 					}
 				},
 			});
-		});
+		},
 
-		this.config.plugins.push(editor => {
+		'cols': function(editor) {
 			editor.DomComponents.addType('cols', {
 				isComponent: el => el.tagName === 'DIV' && el.classList.contains('row') ? {type: 'cols'} : false,
 				model: {
@@ -368,39 +321,70 @@ Aimeos.GrapeJS = {
 					}
 				}
 			});
-		});
+		}
+	},
 
-		const editor = grapesjs.init(this.config);
+	styles: `
+		.gjs-dashed .row, .gjs-dashed .col, .gjs-dashed [class^="col-"] {
+			min-height: 1.5rem !important;
+		}
+		img {
+			max-width: 100%;
+		}
+		.row {
+			display: flex; padding: 10px 0; width: auto;
+		}
+		.table {
+			border-collapse: initial;
+		}
+		.table .row {
+			display: table-row;
+		}
+		.table .cell {
+			width: auto; height: auto;
+		}
+		::-webkit-scrollbar {
+			background-color: var(--bs-bg, #f8fafc); width: 0.25rem;
+		}
+		::-webkit-scrollbar-thumb {
+			background-color: var(--bs-secondary, #505860); outline: none;
+		}
+		body {
+			scrollbar-color: var(--bs-secondary, #505860) transparent; scrollbar-width: thin;
+		}
+	`,
+
+
+	pre: function(setup) {
+		for(const cmp in setup.components) {
+			setup.config.plugins.push(setup.components[cmp]);
+		}
+	},
+
+
+	post: function(setup, editor) {
 
 		editor.I18n.setLocale(document.querySelector('.aimeos').attributes.lang.nodeValue);
 
 		// only add own panels
-		editor.Panels.getPanels().reset(this.panels);
+		editor.Panels.getPanels().reset(setup.panels);
 
 		// add custom blocks
-		for(const block in this.blocks) {
-			editor.BlockManager.add(block, this.blocks[block]);
+		for(const block in setup.blocks) {
+			editor.BlockManager.add(block, setup.blocks[block]);
 		}
 
 		// load plugins after blocks to enforce order
-		const opts = this.config.pluginsOpts;
+		const opts = setup.config.pluginsOpts;
 		grapesjs.plugins.add('grapesjs-table', window['grapesjs-table'].default(editor, opts['grapesjs-table']));
 
 		// reorder table block
-		const table = editor.BlockManager.get('table');
-		table.set('attributes', Object.assign(table.get('attributes'), {style: 'order:4'}));
+//		const table = editor.BlockManager.get('table');
+//		table.set('attributes', Object.assign(table.get('attributes'), {style: 'order:4'}));
 
 		// add custom styles
 		editor.DomComponents.getWrapper().set('attributes', {'class': 'container-fluid'});
-		editor.getComponents().add('<style>' + this.styles + '</style>');
-
-		this.showManagers(editor);
-
-		this.editor = editor;
-	},
-
-
-	showManagers: function(editor) {
+		editor.getComponents().add('<style>' + setup.styles + '</style>');
 
 		// Show Blocks Manager by default
 		const blocks = editor.Panels.getButton('views', 'open-blocks');
@@ -425,6 +409,59 @@ Aimeos.GrapeJS = {
 
 
 
-(function() {
-	Aimeos.GrapeJS.init();
-})();
+Vue.component('grapesjs', {
+	template: `<div class="grapesjs-editor">
+		<input type="hidden" v-bind:name="name" v-bind:value="data" />
+		<div v-if="!readonly" class="gjs cms-preview"></div>
+		<iframe v-else v-bind:srcdoc="'<html><head>' + style + '</head><body>' + value + '</body></html>'"></iframe>
+	</div>`,
+	props: ['setup', 'name', 'value', 'readonly', 'tabindex'],
+
+	data: function() {
+		return {
+			data: ''
+		}
+	},
+
+	computed: {
+		style: function() {
+			let result = '';
+			(this.setup.config.canvas.styles || []).forEach(item => {
+				result += '<link rel="stylesheet" src="' + item + '" />';
+			});
+			return result;
+		}
+	},
+
+	mounted: function() {
+		if(this.readonly) {
+			return;
+		}
+
+		const self = this;
+		this.data = this.value;
+
+		this.setup.config.components = this.value;
+		this.setup.config.storageManager = {type: 'simple'};
+		this.setup.config.container = this.$el.querySelector('.gjs');
+
+		this.setup.pre(this.setup);
+		this.instance = grapesjs.init(this.setup.config);
+		this.setup.post(this.setup, this.instance);
+
+		this.instance.StorageManager.add('simple', {
+			load(keys, success, error) {},
+			store(data, success, error) {
+				self.data = data['gjs-html'] || '';
+				success();
+			}
+		});
+	},
+
+	beforeDestroy: function() {
+		if(this.instance) {
+			this.instance.destroy();
+			this.instance = null;
+		}
+	}
+});

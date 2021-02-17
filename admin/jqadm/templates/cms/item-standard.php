@@ -193,12 +193,13 @@ $params = $this->get( 'pageParams', [] );
 										</div>
 									</div>
 
-									<div class="col-sm-12 <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?>">
-										<div class="grapejs-editor">
-											<div id="gjs" class="cms-preview">
-												<h1>Headline</h1>
-											</div>
-										</div>
+									<div class="col-sm-12 vue <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ); ?>">
+										<grapesjs v-bind:setup="Aimeos.GrapesJS"
+											v-bind:tabindex="<?= $this->get( 'tabindex' ); ?>"
+											v-bind:name="'<?= $enc->attr( $this->formparam( array( 'text', '_idx_', 'text.content' ) ) ); ?>'.replace('_idx_', 0)"
+											v-bind:readonly="false"
+											v-bind:value="'<h1>Hello</h1>'"
+										></grapesjs>
 									</div>
 
 								</div>

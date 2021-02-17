@@ -59,7 +59,7 @@ class Standard
 	{
 		$view = $this->getObject()->addData( $this->getView() );
 		$siteid = $this->getContext()->getLocale()->getSiteId();
-		$data = $view->param( 'text', [] );
+		$data = $view->param( 'seo', [] );
 
 		foreach( $data as $idx => $entry )
 		{
@@ -84,7 +84,12 @@ class Standard
 		parent::delete();
 
 		$item = $this->getView()->item;
-		$item->deleteListItems( $item->getListItems( 'text', null, null, false )->toArray(), true );
+
+		$listItems = $item->getListItems( 'text', null, null, false )->filter( function( $item ) {
+			return $item->getType() !== 'content';
+		} );
+
+		$item->deleteListItems( $listItems, true );
 
 		return null;
 	}
@@ -296,7 +301,9 @@ class Standard
 		$textManager = \Aimeos\MShop::create( $context, 'text' );
 		$listManager = \Aimeos\MShop::create( $context, 'cms/lists' );
 
-		$listItems = $item->getListItems( 'text', null, null, false );
+		$listItems = $item->getListItems( 'text', null, null, false )->filter( function( $item ) {
+			return $item->getType() !== 'content';
+		} );
 
 
 		foreach( $data as $idx => $entry )
@@ -348,7 +355,11 @@ class Standard
 		$data = [];
 		$siteId = $this->getContext()->getLocale()->getSiteId();
 
-		foreach( $item->getListItems( 'text', null, null, false ) as $listItem )
+		$listItems = $item->getListItems( 'text', null, null, false )->filter( function( $item ) {
+			return $item->getType() !== 'content';
+		} );
+
+		foreach( $listItems as $listItem )
 		{
 			if( ( $refItem = $listItem->getRefItem() ) === null || $refItem->getType() === 'content' ) {
 				continue;

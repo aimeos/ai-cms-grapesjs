@@ -7,6 +7,7 @@ return [
 				'text' => 'text',
 			],
 			'subparts' => [
+				'content' => 'content',
 				'seo' => 'seo',
 			],
 		],

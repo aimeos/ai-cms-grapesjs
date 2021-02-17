@@ -31,384 +31,6 @@ var G=n(54),J=n(55),$=n(24);t.Buffer=a,t.SlowBuffer=m,t.INSPECT_MAX_BYTES=50,a.T
  * Custom ai-cms-grapesjs JS
  */
 
-Aimeos.GrapesJS = {
-
-	config: {
-		container: null,
-		components: '',
-		fromElement: false,
-		noticeOnUnload: false,
-		height: 'calc(100vh - 10rem)',
-		width: '100%',
-		plugins: ['grapesjs-plugin-header'],
-		pluginsOpts: {
-			'grapesjs-table': {
-				classTable: 'table',
-				tableProps: {
-					footer: false
-				}
-			}
-		},
-		canvas: {
-			styles: [
-			  'https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css'
-			],
-		},
-		i18n: {
-			locale: 'en',
-			localeFallback: 'en',
-			messages: {}
-		},
-		deviceManager: {
-			devices: [{
-				name: 'Desktop',
-				width: '', // default size
-			}, {
-				name: 'Tablet',
-				width: '768px', // this value will be used on canvas width
-				widthMedia: '992px', // this value will be used in CSS @media
-			}, {
-				name: 'Mobile',
-				width: '320px', // this value will be used on canvas width
-				widthMedia: '480px', // this value will be used in CSS @media
-			}]
-		},
-	},
-
-	panels: [{
-		id: 'device',
-		buttons: [{
-			id: 'desktop',
-			className: 'fa fa-desktop',
-			command: e => e.setDevice('Desktop'),
-/*		},{
-			id: 'tablet',
-			className: 'fa fa-tablet',
-			command: e => e.setDevice('Tablet')
-*/		},{
-			id: 'mobile',
-			className: 'fa fa-mobile',
-			command: e => e.setDevice('Mobile'),
-		}],
-	},{
-		id: 'show',
-		buttons: [{
-			id: 'preview',
-			className: 'fa fa-eye',
-			command: e => e.runCommand('preview'),
-			context: 'preview',
-		},{
-			id: 'fullscreen',
-			className: 'fa fa-arrows-alt',
-			command: 'fullscreen',
-			context: 'fullscreen',
-		}]
-	},{
-		id: 'edit',
-		buttons: [{
-			id: 'undo',
-			className: 'fa fa-undo',
-			command: e => e.runCommand('core:undo'),
-		},{
-			id: 'redo',
-			className: 'fa fa-repeat',
-			command: e => e.runCommand('core:redo'),
-		}]
-/*	},{
-		id: 'impexp',
-		buttons: [{
-			id: 'export-template',
-			className: 'fa fa-code',
-			command: e => e.runCommand('export-template'),
-		},{
-			id: 'gjs-open-import-webpage',
-			className: 'fa fa-upload',
-			command: e => e.runCommand('gjs-open-import-webpage'),
-		},{
-			id: 'canvas-clear',
-			className: 'fa fa-trash',
-			command: e => e.runCommand('canvas-clear'),
-		}],
-*/	},{
-		id: 'views',
-		buttons  : [{
-/*			id: 'open-sm',
-			command: 'open-sm',
-			className: 'fa fa-paint-brush',
-		},{
-*/			id: 'open-tm',
-			command: 'open-tm',
-			className: 'fa fa-cog',
-		},{
-/*			id: 'open-layers',
-			command: 'open-layers',
-			className: 'fa fa-bars',
-		},{
-*/			id: 'open-blocks',
-			command: 'open-blocks',
-			className: 'fa fa-th-large',
-			active: true,
-		}],
-	}],
-
-	blocks: {
-		'text': {
-			category: 'Basic',
-			label: 'Text',
-			attributes: { class: 'fa fa-font' },
-			content: '<span data-gjs-name="Text">Insert text here</span>'
-		},
-		'paragraph': {
-			category: 'Basic',
-			label: 'Paragraph',
-			attributes: { class: 'fa fa-paragraph' },
-			content: '<p data-gjs-name="Paragraph">Insert paragraph here</p>'
-		},
-		'link': {
-			category: 'Basic',
-			label: 'Button',
-			attributes: { class: 'fa fa-link' },
-			content: {
-				type: 'btn',
-				content: 'More',
-				classes: 'btn'
-			}
-		},
-		'image': {
-			category: 'Basic',
-			label: 'Image',
-			attributes: { class: 'fa fa-picture-o' },
-			content: {
-				type: 'image',
-				activeOnRender: 1
-			}
-		},
-		'video': {
-			category: 'Basic',
-			label: 'Video',
-			attributes: { class: 'fa fa-youtube-play' },
-			content: {
-			  type: 'video',
-			  src: '',
-			  style: {'max-width': '100%'}
-			}
-		},
-		'col-2': {
-			category: 'Columns',
-			label: '2 cols',
-			attributes: { class: 'fa fa-columns' },
-			content: {
-				type: 'cols',
-				rows: 2
-			},
-		},
-		'col-3': {
-			category: 'Columns',
-			label: '3 cols',
-			attributes: { class: 'fa fa-columns' },
-			content: {
-				type: 'cols',
-				rows: 3
-			},
-		},
-		'col-1:2': {
-			category: 'Columns',
-			label: '1:2 cols',
-			attributes: { class: 'fa fa-columns' },
-			content: {
-				type: 'cols',
-				rows: 2,
-				widths: [4, 8]
-			},
-		},
-		'col-2:1': {
-			category: 'Columns',
-			label: '2:1 cols',
-			attributes: { class: 'fa fa-columns' },
-			content: {
-				type: 'cols',
-				rows: 2,
-				widths: [8, 4]
-			},
-		},
-	},
-
-	components: {
-		'btn': function(editor) {
-			editor.DomComponents.addType('btn', {
-				extend: 'link',
-				isComponent: el => el.tagName === 'A' && el.classList.contains('btn') ? {type: 'btn'} : false,
-				extendFn: ['init'],
-				model: {
-					defaults: {
-						tagName: 'a',
-						traits: [{
-							type: 'select',
-							label: 'Type',
-							name: 'type',
-							options: [
-								{id: '', name: 'Standard'},
-								{id: 'btn-primary', name: 'Primary'},
-								{id: 'btn-secondary', name: 'Secondary'},
-							],
-						},
-						...editor.DomComponents.getType('link').model.prototype.defaults.traits
-						]
-					},
-					init() {
-						this.on('change:attributes:type', this.onTypeChange);
-					},
-					onTypeChange() {
-						this.setClass('btn ' + this.getAttributes().type);
-					}
-				},
-			});
-		},
-
-		'cols': function(editor) {
-			editor.DomComponents.addType('cols', {
-				isComponent: el => el.tagName === 'DIV' && el.classList.contains('row') ? {type: 'cols'} : false,
-				model: {
-					defaults: {
-						tagName: 'div',
-						draggable: '.container-fluid, .col',
-						droppable: true,
-						attributes: {
-							class: 'row',
-							'data-gjs-droppable': '.col',
-							'data-gjs-name': 'Row'
-						},
-						components: model => {
-							const rows = model.props().rows || 2;
-							const widths = model.props().widths || [];
-							let result = '';
-
-							for(let i=0; i<rows; i++) {
-								const name = widths[i] ? 'col-' + widths[i] : '';
-								result += '<div class="col ' + name + '" data-gjs-draggable=".row" data-gjs-name="Column"></div>';
-							}
-							return result;
-						},
-						traits: [{
-							type: 'select',
-							label: 'Breakpoint',
-							name: 'break',
-							options: [
-								{id: '', name: 'None'},
-								{id: 'col-sm', name: 'S (576px)'},
-								{id: 'col-md', name: 'M (768px)'},
-								{id: 'col-lg', name: 'L (992px)'},
-								{id: 'col-xl', name: 'XL (1200px)'},
-							]}
-						],
-					},
-					init() {
-						this.on('change:attributes:break', this.onBreakpointChange);
-					},
-					onBreakpointChange() {
-						const widths = this.props().widths || [];
-						const bsclass = this.getAttributes().break || '';
-
-						if(bsclass) {
-							this.attributes.components.models.forEach(function(item, idx){
-								const width = bsclass + (widths[idx] ? '-' + widths[idx] : '');
-
-								if(item.attributes.tagName === 'div') {
-									item.setClass('col ' + width);
-								}
-							});
-						}
-					}
-				}
-			});
-		}
-	},
-
-	styles: `
-		.gjs-dashed .row, .gjs-dashed .col, .gjs-dashed [class^="col-"] {
-			min-height: 1.5rem !important;
-		}
-		img {
-			max-width: 100%;
-		}
-		.row {
-			display: flex; padding: 10px 0; width: auto;
-		}
-		.table {
-			border-collapse: initial;
-		}
-		.table .row {
-			display: table-row;
-		}
-		.table .cell {
-			width: auto; height: auto;
-		}
-		::-webkit-scrollbar {
-			background-color: var(--bs-bg, #f8fafc); width: 0.25rem;
-		}
-		::-webkit-scrollbar-thumb {
-			background-color: var(--bs-secondary, #505860); outline: none;
-		}
-		body {
-			scrollbar-color: var(--bs-secondary, #505860) transparent; scrollbar-width: thin;
-		}
-	`,
-
-
-	pre: function(setup) {
-		for(const cmp in setup.components) {
-			setup.config.plugins.push(setup.components[cmp]);
-		}
-	},
-
-
-	post: function(setup, editor) {
-
-		editor.I18n.setLocale(document.querySelector('.aimeos').attributes.lang.nodeValue);
-
-		// only add own panels
-		editor.Panels.getPanels().reset(setup.panels);
-
-		// add custom blocks
-		for(const block in setup.blocks) {
-			editor.BlockManager.add(block, setup.blocks[block]);
-		}
-
-		// load plugins after blocks to enforce order
-		const opts = setup.config.pluginsOpts;
-		grapesjs.plugins.add('grapesjs-table', window['grapesjs-table'].default(editor, opts['grapesjs-table']));
-
-		// reorder table block
-//		const table = editor.BlockManager.get('table');
-//		table.set('attributes', Object.assign(table.get('attributes'), {style: 'order:4'}));
-
-		// add custom styles
-		editor.DomComponents.getWrapper().set('attributes', {'class': 'container-fluid'});
-		editor.getComponents().add('<style>' + setup.styles + '</style>');
-
-		// Show Blocks Manager by default
-		const blocks = editor.Panels.getButton('views', 'open-blocks');
-		editor.on('load', () => blocks && blocks.set('active', 1));
-
-		// On component delete show the Blocks Manager
-		editor.on('component:deselected', () => {
-			const btn = editor.Panels.getButton('views', 'open-blocks');
-			btn && btn.set('active', 1);
-		});
-
-		// On component change show the Traits Manager
-		editor.on('component:selected', () => {
-			if(editor.getSelected()) {
-				const btn = editor.Panels.getButton('views', 'open-tm');
-				btn && btn.set('active', 1);
-			}
-		});
-	}
-
-};
-
-
-
 Vue.component('grapesjs', {
 	template: `<div class="grapesjs-editor">
 		<input type="hidden" v-bind:name="name" v-bind:value="data" />
@@ -419,6 +41,7 @@ Vue.component('grapesjs', {
 
 	data: function() {
 		return {
+			instance: null,
 			data: ''
 		}
 	},
@@ -452,7 +75,7 @@ Vue.component('grapesjs', {
 		this.instance.StorageManager.add('simple', {
 			load(keys, success, error) {},
 			store(data, success, error) {
-				self.data = data['gjs-html'] || '';
+				self.$emit('input', data['gjs-html'] || '');
 				success();
 			}
 		});
@@ -463,5 +86,468 @@ Vue.component('grapesjs', {
 			this.instance.destroy();
 			this.instance = null;
 		}
+	},
+
+	watch: {
+		value: function(val, oldval) {
+			if(val !== oldval && val !== this.data ) {
+				this.instance.setComponents(val);
+			}
+		}
 	}
+});
+
+
+Aimeos.CMSContent = {
+
+	GrapesJS = {
+		config: {
+			container: null,
+			components: '',
+			fromElement: false,
+			noticeOnUnload: false,
+			height: 'calc(100vh - 10rem)',
+			width: '100%',
+			plugins: ['grapesjs-plugin-header'],
+			pluginsOpts: {
+				'grapesjs-table': {
+					classTable: 'table',
+					tableProps: {
+						footer: false
+					}
+				}
+			},
+			canvas: {
+				styles: [
+					'https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css'
+				],
+			},
+			i18n: {
+				locale: 'en',
+				localeFallback: 'en',
+				messages: {}
+			},
+			deviceManager: {
+				devices: [{
+					name: 'Desktop',
+					width: '', // default size
+				}, {
+					name: 'Tablet',
+					width: '768px', // this value will be used on canvas width
+					widthMedia: '992px', // this value will be used in CSS @media
+				}, {
+					name: 'Mobile',
+					width: '320px', // this value will be used on canvas width
+					widthMedia: '480px', // this value will be used in CSS @media
+				}]
+			},
+		},
+
+		panels: [{
+			id: 'device',
+			buttons: [{
+				id: 'desktop',
+				className: 'fa fa-desktop',
+				command: e => e.setDevice('Desktop'),
+/*			},{
+				id: 'tablet',
+				className: 'fa fa-tablet',
+				command: e => e.setDevice('Tablet')
+*/			},{
+				id: 'mobile',
+				className: 'fa fa-mobile',
+				command: e => e.setDevice('Mobile'),
+			}],
+		},{
+			id: 'show',
+			buttons: [{
+				id: 'preview',
+				className: 'fa fa-eye',
+				command: e => e.runCommand('preview'),
+				context: 'preview',
+			},{
+				id: 'fullscreen',
+				className: 'fa fa-arrows-alt',
+				command: 'fullscreen',
+				context: 'fullscreen',
+			}]
+		},{
+			id: 'edit',
+			buttons: [{
+				id: 'undo',
+				className: 'fa fa-undo',
+				command: e => e.runCommand('core:undo'),
+			},{
+				id: 'redo',
+				className: 'fa fa-repeat',
+				command: e => e.runCommand('core:redo'),
+			}]
+/*		},{
+			id: 'impexp',
+			buttons: [{
+				id: 'export-template',
+				className: 'fa fa-code',
+				command: e => e.runCommand('export-template'),
+			},{
+				id: 'gjs-open-import-webpage',
+				className: 'fa fa-upload',
+				command: e => e.runCommand('gjs-open-import-webpage'),
+			},{
+				id: 'canvas-clear',
+				className: 'fa fa-trash',
+				command: e => e.runCommand('canvas-clear'),
+			}],
+*/		},{
+			id: 'views',
+			buttons  : [{
+/*				id: 'open-sm',
+				command: 'open-sm',
+				className: 'fa fa-paint-brush',
+			},{
+*/				id: 'open-tm',
+				command: 'open-tm',
+				className: 'fa fa-cog',
+			},{
+/*				id: 'open-layers',
+				command: 'open-layers',
+				className: 'fa fa-bars',
+			},{
+*/				id: 'open-blocks',
+				command: 'open-blocks',
+				className: 'fa fa-th-large',
+				active: true,
+			}],
+		}],
+
+		blocks: {
+			'text': {
+				category: 'Basic',
+				label: 'Text',
+				attributes: { class: 'fa fa-font' },
+				content: '<span data-gjs-name="Text">Insert text here</span>'
+			},
+			'paragraph': {
+				category: 'Basic',
+				label: 'Paragraph',
+				attributes: { class: 'fa fa-paragraph' },
+				content: '<p data-gjs-name="Paragraph">Insert paragraph here</p>'
+			},
+			'link': {
+				category: 'Basic',
+				label: 'Button',
+				attributes: { class: 'fa fa-link' },
+				content: {
+					type: 'btn',
+					content: 'More',
+					classes: 'btn'
+				}
+			},
+			'image': {
+				category: 'Basic',
+				label: 'Image',
+				attributes: { class: 'fa fa-picture-o' },
+				content: {
+					type: 'image',
+					activeOnRender: 1
+				}
+			},
+			'video': {
+				category: 'Basic',
+				label: 'Video',
+				attributes: { class: 'fa fa-youtube-play' },
+				content: {
+					type: 'video',
+					src: '',
+					style: {'max-width': '100%'}
+				}
+			},
+			'col-2': {
+				category: 'Columns',
+				label: '2 cols',
+				attributes: { class: 'fa fa-columns' },
+				content: {
+					type: 'cols',
+					rows: 2
+				},
+			},
+			'col-3': {
+				category: 'Columns',
+				label: '3 cols',
+				attributes: { class: 'fa fa-columns' },
+				content: {
+					type: 'cols',
+					rows: 3
+				},
+			},
+			'col-1:2': {
+				category: 'Columns',
+				label: '1:2 cols',
+				attributes: { class: 'fa fa-columns' },
+				content: {
+					type: 'cols',
+					rows: 2,
+					widths: [4, 8]
+				},
+			},
+			'col-2:1': {
+				category: 'Columns',
+				label: '2:1 cols',
+				attributes: { class: 'fa fa-columns' },
+				content: {
+					type: 'cols',
+					rows: 2,
+					widths: [8, 4]
+				},
+			},
+		},
+
+		components: {
+			'btn': function(editor) {
+				editor.DomComponents.addType('btn', {
+					extend: 'link',
+					isComponent: el => el.tagName === 'A' && el.classList.contains('btn') ? {type: 'btn'} : false,
+					extendFn: ['init'],
+					model: {
+						defaults: {
+							tagName: 'a',
+							traits: [{
+								type: 'select',
+								label: 'Type',
+								name: 'type',
+								options: [
+									{id: '', name: 'Standard'},
+									{id: 'btn-primary', name: 'Primary'},
+									{id: 'btn-secondary', name: 'Secondary'},
+								],
+							},
+							...editor.DomComponents.getType('link').model.prototype.defaults.traits
+							]
+						},
+						init() {
+							this.on('change:attributes:type', this.onTypeChange);
+						},
+						onTypeChange() {
+							this.setClass('btn ' + this.getAttributes().type);
+						}
+					},
+				});
+			},
+
+			'cols': function(editor) {
+				editor.DomComponents.addType('cols', {
+					isComponent: el => el.tagName === 'DIV' && el.classList.contains('row') ? {type: 'cols'} : false,
+					model: {
+						defaults: {
+							tagName: 'div',
+							draggable: '.container-fluid, .col',
+							droppable: true,
+							attributes: {
+								class: 'row',
+								'data-gjs-droppable': '.col',
+								'data-gjs-name': 'Row'
+							},
+							components: model => {
+								const rows = model.props().rows || 2;
+								const widths = model.props().widths || [];
+								let result = '';
+
+								for(let i=0; i<rows; i++) {
+									const name = widths[i] ? 'col-' + widths[i] : '';
+									result += '<div class="col ' + name + '" data-gjs-draggable=".row" data-gjs-name="Column"></div>';
+								}
+								return result;
+							},
+							traits: [{
+								type: 'select',
+								label: 'Breakpoint',
+								name: 'break',
+								options: [
+									{id: '', name: 'None'},
+									{id: 'col-sm', name: 'S (576px)'},
+									{id: 'col-md', name: 'M (768px)'},
+									{id: 'col-lg', name: 'L (992px)'},
+									{id: 'col-xl', name: 'XL (1200px)'},
+								]}
+							],
+						},
+						init() {
+							this.on('change:attributes:break', this.onBreakpointChange);
+						},
+						onBreakpointChange() {
+							const widths = this.props().widths || [];
+							const bsclass = this.getAttributes().break || '';
+
+							if(bsclass) {
+								this.attributes.components.models.forEach(function(item, idx){
+									const width = bsclass + (widths[idx] ? '-' + widths[idx] : '');
+
+									if(item.attributes.tagName === 'div') {
+										item.setClass('col ' + width);
+									}
+								});
+							}
+						}
+					}
+				});
+			}
+		},
+
+		styles: `
+			.gjs-dashed .row, .gjs-dashed .col, .gjs-dashed [class^="col-"] {
+				min-height: 1.5rem !important;
+			}
+			img {
+				max-width: 100%;
+			}
+			.row {
+				display: flex; padding: 10px 0; width: auto;
+			}
+			.table {
+				border-collapse: initial;
+			}
+			.table .row {
+				display: table-row;
+			}
+			.table .cell {
+				width: auto; height: auto;
+			}
+			::-webkit-scrollbar {
+				background-color: var(--bs-bg, #f8fafc); width: 0.25rem;
+			}
+			::-webkit-scrollbar-thumb {
+				background-color: var(--bs-secondary, #505860); outline: none;
+			}
+			body {
+				scrollbar-color: var(--bs-secondary, #505860) transparent; scrollbar-width: thin;
+			}
+		`,
+
+
+		pre: function(setup) {
+			for(const cmp in setup.components) {
+				setup.config.plugins.push(setup.components[cmp]);
+			}
+		},
+
+
+		post: function(setup, editor) {
+
+			editor.I18n.setLocale(document.querySelector('.aimeos').attributes.lang.nodeValue);
+
+			// only add own panels
+			editor.Panels.getPanels().reset(setup.panels);
+
+			// add custom blocks
+			for(const block in setup.blocks) {
+				editor.BlockManager.add(block, setup.blocks[block]);
+			}
+
+			// load plugins after blocks to enforce order
+			const opts = setup.config.pluginsOpts;
+			grapesjs.plugins.add('grapesjs-table', window['grapesjs-table'].default(editor, opts['grapesjs-table']));
+
+			// reorder table block
+//			const table = editor.BlockManager.get('table');
+//			table.set('attributes', Object.assign(table.get('attributes'), {style: 'order:4'}));
+
+			// add custom styles
+			editor.DomComponents.getWrapper().set('attributes', {'class': 'container-fluid'});
+			editor.getComponents().add('<style>' + setup.styles + '</style>');
+
+			// Show Blocks Manager by default
+			const blocks = editor.Panels.getButton('views', 'open-blocks');
+			editor.on('load', () => blocks && blocks.set('active', 1));
+
+			// On component delete show the Blocks Manager
+			editor.on('component:deselected', () => {
+				const btn = editor.Panels.getButton('views', 'open-blocks');
+				btn && btn.set('active', 1);
+			});
+
+			// On component change show the Traits Manager
+			editor.on('component:selected', () => {
+				if(editor.getSelected()) {
+					const btn = editor.Panels.getButton('views', 'open-tm');
+					btn && btn.set('active', 1);
+				}
+			});
+		}
+	},
+
+	init: function() {
+
+		Aimeos.components['cms-content'] = new Vue({
+			el: '#item-content-group',
+			data: {
+				items: [],
+				siteid: null,
+				domain: null
+			},
+			mounted: function() {
+				this.items = JSON.parse(this.$el.dataset.items || '{}');
+				this.siteid = this.$el.dataset.siteid;
+				this.domain = this.$el.dataset.domain;
+
+				if(this.items[0]) {
+					this.$set(this.items[0], '_show', true);
+				}
+			},
+			mixins: [this.mixins]
+		});
+	},
+
+	mixins: {
+		methods: {
+			active: function(idx) {
+				return this.items[idx] && this.items[idx]['text.status'] > 0;
+			},
+
+
+			add: function(data) {
+				let entry = {};
+
+				entry[this.domain + '.lists.id'] = null;
+				entry[this.domain + '.lists.type'] = 'default';
+				entry[this.domain + '.lists.siteid'] = this.siteid;
+				entry[this.domain + '.lists.datestart'] = null;
+				entry[this.domain + '.lists.dateend'] = null;
+
+				entry['text.id'] = null;
+				entry['text.type'] = 'content';
+				entry['text.languageid'] = '';
+				entry['text.siteid'] = this.siteid;
+				entry['text.content'] = '';
+				entry['text.label'] = '';
+				entry['text.status'] = 1;
+
+				entry['property'] = [];
+				entry['config'] = [];
+				entry['_show'] = true;
+				entry['_nosort'] = true;
+
+				this.items.push(Object.assign(entry, data));
+			},
+
+
+			label: function(idx) {
+				return (this.items[idx]['text.languageid'] ? this.items[idx]['text.languageid'].toUpperCase() : '');
+			},
+
+
+			remove: function(idx) {
+				this.items.splice(idx, 1);
+			},
+
+
+			toggle: function(what, idx) {
+				this.$set(this.items[idx], what, (!this.items[idx][what] ? true : false));
+			},
+		}
+	}
+};
+
+
+$(function() {
+
+	Aimeos.CMSContent.init();
 });

@@ -17,6 +17,7 @@ jobs:
     steps:
       - checkout
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/aimeos-core.git ../aimeos-core
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jqadm ../aimeos-core/ext/ai-admin-jqadm
       - run: cd .. && mv project aimeos-core/ext/ai-cms-grapesjs && mv aimeos-core project && cd project
       - restore_cache:
           keys:
@@ -41,6 +42,7 @@ jobs:
     steps:
       - checkout
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/aimeos-core.git ../aimeos-core
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jqadm ../aimeos-core/ext/ai-admin-jqadm
       - run: cd .. && mv project aimeos-core/ext/ai-cms-grapesjs && mv aimeos-core project && cd project
       - restore_cache:
           keys:
@@ -64,6 +66,7 @@ jobs:
     steps:
       - checkout
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/aimeos-core.git ../aimeos-core
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jqadm ../aimeos-core/ext/ai-admin-jqadm
       - run: cd .. && mv project aimeos-core/ext/ai-cms-grapesjs && mv aimeos-core project && cd project
       - restore_cache:
           keys:
@@ -88,6 +91,7 @@ jobs:
     steps:
       - checkout
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/aimeos-core.git ../aimeos-core
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jqadm ../aimeos-core/ext/ai-admin-jqadm
       - run: cd .. && mv project aimeos-core/ext/ai-cms-grapesjs && mv aimeos-core project && cd project
       - restore_cache:
           keys:
@@ -113,6 +117,7 @@ jobs:
     steps:
       - checkout
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/aimeos-core.git ../aimeos-core
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jqadm ../aimeos-core/ext/ai-admin-jqadm
       - run: cd .. && mv project aimeos-core/ext/ai-cms-grapesjs && mv aimeos-core project && cd project
       - restore_cache:
           keys:

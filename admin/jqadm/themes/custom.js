@@ -33,7 +33,7 @@ var G=n(54),J=n(55),$=n(24);t.Buffer=a,t.SlowBuffer=m,t.INSPECT_MAX_BYTES=50,a.T
 
 Vue.component('grapesjs', {
 	template: `<div class="grapesjs-editor">
-		<input type="hidden" v-bind:name="name" v-bind:value="data" />
+		<input type="hidden" v-bind:name="name" v-bind:value="value" />
 		<div v-if="!readonly" class="gjs cms-preview"></div>
 		<iframe v-else v-bind:srcdoc="'<html><head>' + style + '</head><body>' + value + '</body></html>'"></iframe>
 	</div>`,
@@ -41,8 +41,7 @@ Vue.component('grapesjs', {
 
 	data: function() {
 		return {
-			instance: null,
-			data: ''
+			instance: null
 		}
 	},
 
@@ -62,7 +61,6 @@ Vue.component('grapesjs', {
 		}
 
 		const self = this;
-		this.data = this.value;
 
 		this.setup.config.components = this.value;
 		this.setup.config.storageManager = {type: 'simple'};
@@ -76,7 +74,6 @@ Vue.component('grapesjs', {
 			load(keys, success, error) {},
 			store(data, success, error) {
 				self.$emit('input', data['gjs-html'] || '');
-				self.data = data['gjs-html'] || '';
 				success();
 			}
 		});
@@ -91,7 +88,7 @@ Vue.component('grapesjs', {
 
 	watch: {
 		value: function(val, oldval) {
-			if(val !== oldval && val !== this.data ) {
+			if(val !== oldval) {
 				this.instance.setComponents(val);
 			}
 		}

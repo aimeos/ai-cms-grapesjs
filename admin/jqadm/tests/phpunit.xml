@@ -11,7 +11,4 @@
 			<directory suffix=".php">../src</directory>
 		</whitelist>
 	</filter>
-	<logging>
-		<log type="junit" target="ai-cms-grapejs_admin-jqadm_test.junit.xml" />
-	</logging>
 </phpunit>

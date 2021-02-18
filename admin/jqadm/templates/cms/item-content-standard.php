@@ -44,6 +44,10 @@ $enc = $this->encoder();
 						<span class="item-label header-label" v-bind:class="{disabled: !active(idx)}">{{ label(idx) }}</span>
 						&nbsp;
 						<div class="card-tools-right">
+							<div class="btn btn-card-header act-copy fa" tabindex="<?= $this->get( 'tabindex' ); ?>"
+								title="<?= $enc->attr( $this->translate( 'admin', 'Duplicate entry (Ctrl+D)' ) ); ?>"
+								v-on:click.stop="duplicate(idx)">
+							</div>
 							<div v-if="item['cms.lists.siteid'] == siteid && !item['_nosort']"
 								class="btn btn-card-header act-move fa" tabindex="<?= $this->get( 'tabindex' ); ?>"
 								title="<?= $enc->attr( $this->translate( 'admin', 'Move this entry up/down' ) ); ?>">

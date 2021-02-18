@@ -527,6 +527,21 @@ Aimeos.CMSContent = {
 			},
 
 
+			duplicate : function(idx) {
+
+				var len = this.items.length;
+
+				if(!this.items[len]) {
+					this.$set(this.items, len, {});
+				}
+
+				for(key in this.keys) {
+					key = this.keys[key]; this.items[len][key] = this.items[idx][key];
+				}
+			},
+
+
+
 			label: function(idx) {
 				return (this.items[idx]['text.languageid'] ? this.items[idx]['text.languageid'].toUpperCase() : '***');
 			},

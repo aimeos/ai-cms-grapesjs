@@ -18,6 +18,10 @@ jobs:
       - checkout
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/aimeos-core.git ../aimeos-core
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jqadm ../aimeos-core/ext/ai-admin-jqadm
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jsonadm ../aimeos-core/ext/ai-admin-jsonadm
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-client-html ../aimeos-core/ext/ai-client-html
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-client-jsonapi ../aimeos-core/ext/ai-client-jsonapi
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-controller-frontend ../aimeos-core/ext/ai-controller-frontend
       - run: cd .. && mv project aimeos-core/ext/ai-cms-grapesjs && mv aimeos-core project && cd project
       - restore_cache:
           keys:
@@ -43,6 +47,10 @@ jobs:
       - checkout
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/aimeos-core.git ../aimeos-core
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jqadm ../aimeos-core/ext/ai-admin-jqadm
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jsonadm ../aimeos-core/ext/ai-admin-jsonadm
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-client-html ../aimeos-core/ext/ai-client-html
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-client-jsonapi ../aimeos-core/ext/ai-client-jsonapi
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-controller-frontend ../aimeos-core/ext/ai-controller-frontend
       - run: cd .. && mv project aimeos-core/ext/ai-cms-grapesjs && mv aimeos-core project && cd project
       - restore_cache:
           keys:
@@ -67,6 +75,10 @@ jobs:
       - checkout
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/aimeos-core.git ../aimeos-core
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jqadm ../aimeos-core/ext/ai-admin-jqadm
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jsonadm ../aimeos-core/ext/ai-admin-jsonadm
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-client-html ../aimeos-core/ext/ai-client-html
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-client-jsonapi ../aimeos-core/ext/ai-client-jsonapi
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-controller-frontend ../aimeos-core/ext/ai-controller-frontend
       - run: cd .. && mv project aimeos-core/ext/ai-cms-grapesjs && mv aimeos-core project && cd project
       - restore_cache:
           keys:
@@ -92,6 +104,10 @@ jobs:
       - checkout
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/aimeos-core.git ../aimeos-core
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jqadm ../aimeos-core/ext/ai-admin-jqadm
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jsonadm ../aimeos-core/ext/ai-admin-jsonadm
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-client-html ../aimeos-core/ext/ai-client-html
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-client-jsonapi ../aimeos-core/ext/ai-client-jsonapi
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-controller-frontend ../aimeos-core/ext/ai-controller-frontend
       - run: cd .. && mv project aimeos-core/ext/ai-cms-grapesjs && mv aimeos-core project && cd project
       - restore_cache:
           keys:
@@ -118,6 +134,10 @@ jobs:
       - checkout
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/aimeos-core.git ../aimeos-core
       - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jqadm ../aimeos-core/ext/ai-admin-jqadm
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-admin-jsonadm ../aimeos-core/ext/ai-admin-jsonadm
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-client-html ../aimeos-core/ext/ai-client-html
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-client-jsonapi ../aimeos-core/ext/ai-client-jsonapi
+      - run: git clone --depth=50 --branch=master git://github.com/aimeos/ai-controller-frontend ../aimeos-core/ext/ai-controller-frontend
       - run: cd .. && mv project aimeos-core/ext/ai-cms-grapesjs && mv aimeos-core project && cd project
       - restore_cache:
           keys:

@@ -2,8 +2,8 @@
 
 <phpunit bootstrap="bootstrap.php">
 	<testsuites>
-		<testsuite name="Controller suite">
-			<directory>Controller/</directory>
+		<testsuite name="Admin JsonAdm suite">
+			<directory>Admin/</directory>
 		</testsuite>
 	</testsuites>
 	<logging>

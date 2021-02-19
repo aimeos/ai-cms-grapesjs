@@ -2,7 +2,7 @@
 
 <phpunit bootstrap="bootstrap.php">
 	<testsuites>
-		<testsuite name="Admin suite">
+		<testsuite name="Admin JsonAdm suite">
 			<directory>Admin/</directory>
 		</testsuite>
 	</testsuites>

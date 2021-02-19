@@ -120,6 +120,15 @@ $enc = $this->encoder();
 
 						</div>
 
+						<div class="col-xl-12">
+							<grapesjs v-bind:setup="Aimeos.CMSContent.GrapesJS"
+								v-bind:tabindex="<?= $this->get( 'tabindex' ); ?>"
+								v-bind:name="'<?= $enc->attr( $this->formparam( array( 'content', '_idx_', 'text.content' ) ) ); ?>'.replace('_idx_', idx)"
+								v-bind:readonly="item['text.siteid'] != siteid"
+								v-bind:value="item['text.content']"
+								v-model="item['text.content']"
+							></grapesjs>
+						</div>
 
 						<div v-on:click="toggle('_ext', idx)" class="col-xl-12 advanced" v-bind:class="{'collapsed': !item['_ext']}">
 							<div class="card-tools-left">
@@ -194,16 +203,6 @@ $enc = $this->encoder();
 						</div>
 
 						<?= $this->get( 'contentBody' ); ?>
-
-						<div class="col-xl-12">
-							<grapesjs v-bind:setup="Aimeos.CMSContent.GrapesJS"
-								v-bind:tabindex="<?= $this->get( 'tabindex' ); ?>"
-								v-bind:name="'<?= $enc->attr( $this->formparam( array( 'content', '_idx_', 'text.content' ) ) ); ?>'.replace('_idx_', idx)"
-								v-bind:readonly="item['text.siteid'] != siteid"
-								v-bind:value="item['text.content']"
-								v-model="item['text.content']"
-							></grapesjs>
-						</div>
 
 					</div>
 				</div>

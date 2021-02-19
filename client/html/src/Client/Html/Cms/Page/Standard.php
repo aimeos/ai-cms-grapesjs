@@ -413,7 +413,7 @@ class Standard
 		 */
 		$domains = $context->getConfig()->get( 'client/html/cms/page/domains', ['media', 'text'] );
 
-		$page = $controller->uses( $domains )->find( $view->param( 'path', '/' ) );
+		$page = $controller->uses( $domains )->find( '/' . trim( $view->param( 'path' ), '/' ) );
 
 		$this->addMetaItems( $page, $expire, $tags );
 

@@ -215,7 +215,7 @@ class Standard
 		try
 		{
 			$total = 0;
-			$params = $this->storeSearchParams( $view->param(), 'cms' );
+			$params = $this->storeFilter( $view->param(), 'cms' );
 			$manager = \Aimeos\MShop::create( $this->getContext(), 'cms' );
 			$search = $this->initCriteria( $manager->filter()->order( 'cms.url' ), $params );
 

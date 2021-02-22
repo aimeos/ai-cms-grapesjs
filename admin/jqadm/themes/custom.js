@@ -453,10 +453,6 @@ Aimeos.CMSContent = {
 			const opts = setup.config.pluginsOpts;
 			grapesjs.plugins.add('grapesjs-table', window['grapesjs-table'].default(editor, opts['grapesjs-table']));
 
-			// reorder table block
-//			const table = editor.BlockManager.get('table');
-//			table.set('attributes', Object.assign(table.get('attributes'), {style: 'order:4'}));
-
 			// add custom styles
 			editor.DomComponents.getWrapper().set('attributes', {'class': 'container-fluid'});
 			editor.getComponents().add('<style>' + setup.styles + '</style>');
@@ -563,6 +559,5 @@ Aimeos.CMSContent = {
 
 
 $(function() {
-
 	Aimeos.CMSContent.init();
 });

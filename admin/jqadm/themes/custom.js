@@ -259,13 +259,22 @@ Aimeos.CMSContent = {
 					style: {'max-width': '100%'}
 				}
 			},
+			'col-1': {
+				category: 'Columns',
+				label: '1 col',
+				attributes: { class: 'fa fa-window-maximize' },
+				content: {
+					type: 'cols',
+					cols: 1
+				},
+			},
 			'col-2': {
 				category: 'Columns',
 				label: '2 cols',
 				attributes: { class: 'fa fa-columns' },
 				content: {
 					type: 'cols',
-					rows: 2
+					cols: 2
 				},
 			},
 			'col-3': {
@@ -274,7 +283,7 @@ Aimeos.CMSContent = {
 				attributes: { class: 'fa fa-columns' },
 				content: {
 					type: 'cols',
-					rows: 3
+					cols: 3
 				},
 			},
 			'col-1:2': {
@@ -283,7 +292,7 @@ Aimeos.CMSContent = {
 				attributes: { class: 'fa fa-columns' },
 				content: {
 					type: 'cols',
-					rows: 2,
+					cols: 2,
 					widths: [4, 8]
 				},
 			},
@@ -293,7 +302,7 @@ Aimeos.CMSContent = {
 				attributes: { class: 'fa fa-columns' },
 				content: {
 					type: 'cols',
-					rows: 2,
+					cols: 2,
 					widths: [8, 4]
 				},
 			},
@@ -345,11 +354,11 @@ Aimeos.CMSContent = {
 								'data-gjs-name': 'Row'
 							},
 							components: model => {
-								const rows = model.props().rows || 2;
+								const cols = model.props().cols || 2;
 								const widths = model.props().widths || [];
 								let result = '';
 
-								for(let i=0; i<rows; i++) {
+								for(let i=0; i<cols; i++) {
 									const name = widths[i] ? 'col-' + widths[i] : '';
 									result += '<div class="col ' + name + '" data-gjs-draggable=".row" data-gjs-name="Column"></div>';
 								}

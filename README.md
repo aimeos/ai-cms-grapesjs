@@ -26,3 +26,16 @@ composer req "aimeos/ai-cms-grapesjs"
 ```
 
 These command will install the Aimeos extension into the extension directory and it will be available immediately.
+
+## Integration
+
+### Laravel
+
+To show the content for the CMS page URLs, you have to add this at the **end** of the `./routes/web.php` file in your Laravel application:
+
+```php
+Route::get('{path?}', '\Aimeos\Shop\Controller\PageController@indexAction')
+    ->name('aimeos_page')->where( 'path', '.*' );
+```
+
+This will add a "catch all" route for every URL that hasn't been matched before so **don't put routes after** that line because they won't be used any more!

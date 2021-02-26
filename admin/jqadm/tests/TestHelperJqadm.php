@@ -56,6 +56,9 @@ class TestHelperJqadm
 		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, ['site' => 'unittest'] );
 		$view->addHelper( 'param', $helper );
 
+		$helper = new \Aimeos\MW\View\Helper\Access\All( $view );
+		$view->addHelper( 'access', $helper );
+
 		$trans = new \Aimeos\MW\Translation\None( 'de_DE' );
 		$helper = new \Aimeos\MW\View\Helper\Translate\Standard( $view, $trans );
 		$view->addHelper( 'translate', $helper );
@@ -85,10 +88,6 @@ class TestHelperJqadm
 
 		$helper = new \Aimeos\MW\View\Helper\Csrf\Standard( $view, '_csrf_token', '_csrf_value' );
 		$view->addHelper( 'csrf', $helper );
-
-		$fcn = function() { return array( 'admin' ); };
-		$helper = new \Aimeos\MW\View\Helper\Access\Standard( $view, $fcn );
-		$view->addHelper( 'access', $helper );
 
 		$view->pageSitePath = [];
 

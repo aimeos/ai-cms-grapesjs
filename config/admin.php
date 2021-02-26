@@ -14,14 +14,13 @@ return [
 		'navbar' => [
 			55 => 'cms'
 		],
-		'navbar-limit' => 7,
 		'resource' => [
 			'cms' => [
 				/** admin/jqadm/resource/cms/groups
 				 * List of user groups that are allowed to access the CMS panel
 				 *
 				 * @param array List of user group names
-				 * @since 2020.10
+				 * @since 2021.04
 				 */
 				'groups' => ['admin', 'editor', 'super'],
 
@@ -29,7 +28,7 @@ return [
 				 * Shortcut key to switch to the CMS panel by using the keyboard
 				 *
 				 * @param string Single character in upper case
-				 * @since 2020.10
+				 * @since 2021.04
 				 */
 				'key' => 'M',
 			],

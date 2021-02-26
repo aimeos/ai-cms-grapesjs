@@ -8,7 +8,7 @@
  */
 
 
- .aimeos .main-sidebar .cms .icon:before {
+ .aimeos .main-sidebar .menuitem-cms .icon:before {
 	content: "\f00a";
 }
 

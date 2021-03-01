@@ -76,25 +76,8 @@ $params = $this->get( 'pageParams', [] );
 
 	<div class="row item-container">
 
-		<div class="col-xl-3 cms-tree">
-			<div class="box">
-				<div class="tree-toolbar input-group">
-					<div class="input-group-prepend"><!--
-						--><span class="btn btn-secondary fa expand-all" tabindex="1"></span><!--
-						--><span class="btn btn-secondary fa collapse-all" tabindex="1"></span><!--
-					--></div><!--
-					--><input type="text" class="form-control search-input" tabindex="1" placeholder="<?= $enc->attr( $this->translate( 'admin', 'Find page' ) ); ?>"><!--
-					--><div class="input-group-append"><!--
-						--><span class="btn btn-secondary fa act-delete " tabindex="1"></span><!--
-						--><span class="btn btn-primary fa act-add" tabindex="1"></span><!--
-					--></div>
-				</div>
-				<div class="tree-content"></div>
-			</div>
-		</div>
-
 		<?php if( isset( $this->itemData ) ) : ?>
-			<div class="col-xl-9 cms-content">
+			<div class="col-xl-12 cms-content">
 				<div class="row">
 
 					<div class="col-xl-12 item-navbar">

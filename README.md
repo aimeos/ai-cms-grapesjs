@@ -31,6 +31,12 @@ These command will install the Aimeos extension into the extension directory and
 
 ### Laravel
 
+First, you have to create the new tables required for the pages by executing this command in the **root directory of your Laravel application**:
+
+```bash
+php artisan aimeos:setup
+```
+
 To show the content for the CMS page URLs, you have to add this at the **end** of the `./routes/web.php` file in your Laravel application:
 
 ```php

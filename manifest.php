@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'name' => 'ai-cms-grapejs',
+	'name' => 'ai-cms-grapesjs',
 	'depends' => array(
 		'aimeos-core',
 		'ai-admin-jqadm',

@@ -34,7 +34,7 @@ class CmsAddTestData extends \Aimeos\MW\Setup\Task\BaseAddTestData
 
 		$this->msg( 'Adding cms test data', 0 );
 
-		$this->additional->setEditor( 'ai-cms-grapejs:lib/custom' );
+		$this->additional->setEditor( 'ai-cms-grapesjs:lib/custom' );
 		$this->process( $this->getData() );
 
 		$this->status( 'done' );

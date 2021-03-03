@@ -139,7 +139,7 @@ class TestHelperJqadm
 		$ctx->setLocale( $locale );
 
 
-		$ctx->setEditor( 'ai-cms-grapejs:admin/jqadm' );
+		$ctx->setEditor( 'ai-cms-grapesjs:admin/jqadm' );
 
 		return $ctx;
 	}

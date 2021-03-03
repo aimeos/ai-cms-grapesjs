@@ -32,7 +32,7 @@ class MShopAddTypeDataCms extends \Aimeos\MW\Setup\Task\MShopAddTypeData
 	{
 		\Aimeos\MW\Common\Base::checkClass( \Aimeos\MShop\Context\Item\Iface::class, $this->additional );
 
-		$this->additional->setEditor( 'ai-cms-grapejs:lib/custom' );
+		$this->additional->setEditor( 'ai-cms-grapesjs:lib/custom' );
 		$sitecode = $this->additional->getLocale()->getSiteItem()->getCode();
 		$this->msg( sprintf( 'Adding CMS type data for site "%1$s"', $sitecode ), 0, '' );
 

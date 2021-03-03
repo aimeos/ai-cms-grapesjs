@@ -82,7 +82,7 @@ class TestHelper
 
 		$ctx->setLocale( $localeItem );
 
-		$ctx->setEditor( 'ai-cms-grapejs:lib/custom' );
+		$ctx->setEditor( 'ai-cms-grapesjs:lib/custom' );
 
 		return $ctx;
 	}

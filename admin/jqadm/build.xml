@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="ai-cms-grapejs extension - JQAdm client" default="all">
+<project name="ai-cms-grapesjs extension - JQAdm client" default="all">
 
 	<target name="test" description="Executes unit tests">
 		<echo msg="Executing unit tests" />
@@ -24,7 +24,7 @@
 	</target>
 
 	<target name="clean" description="Cleans up temporary files">
-		<delete file="tests/ai-cms-grapejs_client-html_test.junit.xml" quiet="true" failonerror="false" />
+		<delete file="tests/ai-cms-grapesjs_client-html_test.junit.xml" quiet="true" failonerror="false" />
 		<delete dir="tests/coverage" quiet="true" failonerror="false" />
 		<delete quiet="true" failonerror="false" >
 			<fileset dir="tests">

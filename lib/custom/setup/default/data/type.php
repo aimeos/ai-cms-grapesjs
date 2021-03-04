@@ -8,6 +8,7 @@
 return [
 	'cms/lists/type' => [
 		['domain' => 'text', 'code' => 'default', 'label' => 'Standard', 'status' => 1],
+		['domain' => 'media', 'code' => 'default', 'label' => 'Standard', 'status' => 1],
 	],
 
 	'text/type' => [
@@ -16,4 +17,8 @@ return [
 		['domain' => 'cms', 'code' => 'meta-description', 'label' => 'Meta description', 'status' => 1],
 		['domain' => 'cms', 'code' => 'content', 'label' => 'Content', 'status' => 1],
 	],
+
+	'media/type' => [
+		['domain' => 'cms', 'code' => 'default', 'label' => 'Standard', 'status' => 1],
+	]
 ];

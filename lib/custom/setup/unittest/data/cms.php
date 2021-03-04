@@ -20,6 +20,12 @@ return [
 				'cms.lists.type' => 'default', 'cms.lists.position' => 1,
 				'text.languageid' => 'en', 'text.type' => 'content', 'text.domain' => 'cms',
 				'text.label' => 'Hello', 'text.content' => '<h1>Hello!</h1>'
+			]],
+			'media' => [[
+				'cms.lists.type' => 'default', 'cms.lists.position' => 0,
+				'media.languageid' => null, 'media.type' => 'default', 'media.domain' => 'cms',
+				'media.label' => 'Test image', 'media.url' => 'path/to/image.jpg',
+				'media.previews' => [1 => 'path/to/image-small.jpg']
 			]]
 		]
 	], [
@@ -37,6 +43,12 @@ return [
 				'cms.lists.type' => 'default', 'cms.lists.position' => 1,
 				'text.languageid' => 'de', 'text.type' => 'content', 'text.domain' => 'cms',
 				'text.label' => 'Hallo', 'text.content' => '<h1>Hallo!</h1>'
+			]],
+			'media' => [[
+				'cms.lists.type' => 'default', 'cms.lists.position' => 0,
+				'media.languageid' => null, 'media.type' => 'default', 'media.domain' => 'cms',
+				'media.label' => 'Test image', 'media.url' => 'path/to/image-2.jpg',
+				'media.previews' => [1 => 'path/to/image-small-2.jpg']
 			]]
 		]
 	]]

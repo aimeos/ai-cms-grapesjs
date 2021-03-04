@@ -5,10 +5,12 @@ return [
 		'cms' => [
 			'domains' => [
 				'text' => 'text',
+				'media' => 'media',
 			],
 			'subparts' => [
 				'content' => 'content',
 				'seo' => 'seo',
+				'media' => 'media',
 			],
 		],
 		'navbar' => [

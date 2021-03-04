@@ -35,9 +35,9 @@ Vue.component('grapesjs', {
 	template: `<div class="grapesjs-editor">
 		<input type="hidden" v-bind:name="name" v-bind:value="value" />
 		<div v-if="!readonly" class="gjs cms-preview"></div>
-		<iframe v-else v-bind:srcdoc="'<html><head>' + style + '</head><body>' + value + '</body></html>'"></iframe>
+		<iframe v-else v-bind:srcdoc="'<html><head>' + style + '</head><body>' + value + '</body></html>'" v-bind:tabindex="tabindex"></iframe>
 	</div>`,
-	props: ['setup', 'name', 'value', 'readonly', 'tabindex'],
+	props: ['setup', 'name', 'value', 'readonly', 'tabindex', 'update'],
 
 	data: function() {
 		return {
@@ -63,20 +63,11 @@ Vue.component('grapesjs', {
 		const self = this;
 
 		this.setup.config.components = this.value;
-		this.setup.config.storageManager = {type: 'simple'};
 		this.setup.config.container = this.$el.querySelector('.gjs');
 
 		this.setup.pre(this.setup);
 		this.instance = grapesjs.init(this.setup.config);
 		this.setup.post(this.setup, this.instance);
-
-		this.instance.StorageManager.add('simple', {
-			load(keys, success, error) {},
-			store(data, success, error) {
-				self.$emit('input', data['gjs-html'] || '');
-				success();
-			}
-		});
 	},
 
 	beforeDestroy: function() {
@@ -90,6 +81,11 @@ Vue.component('grapesjs', {
 		value: function(val, oldval) {
 			if(val !== oldval) {
 				this.instance.setComponents(val);
+			}
+		},
+		update: function() {
+			if(this.instance) {
+				this.$emit('input', this.instance.getHtml());
 			}
 		}
 	}
@@ -139,6 +135,9 @@ Aimeos.CMSContent = {
 					widthMedia: '480px', // this value will be used in CSS @media
 				}]
 			},
+			storageManager: {
+				type: null
+			}
 		},
 
 		panels: [{
@@ -222,13 +221,21 @@ Aimeos.CMSContent = {
 				category: 'Basic',
 				label: 'Text',
 				attributes: { class: 'fa fa-font' },
-				content: '<span data-gjs-name="Text">Insert text here</span>'
+				content: {
+					type: 'text',
+					content: '<span data-gjs-name="Text">Insert text here</span>',
+					activeOnRender: 1
+				}
 			},
 			'paragraph': {
 				category: 'Basic',
 				label: 'Paragraph',
 				attributes: { class: 'fa fa-paragraph' },
-				content: '<p data-gjs-name="Paragraph">Insert paragraph here</p>'
+				content: {
+					type: 'text',
+					content: '<p data-gjs-name="Paragraph">Insert paragraph here</p>',
+					activeOnRender: 1
+				}
 			},
 			'link': {
 				category: 'Basic',
@@ -484,7 +491,8 @@ Aimeos.CMSContent = {
 			data: {
 				items: [],
 				siteid: null,
-				domain: null
+				domain: null,
+				version: 0
 			},
 			mounted: function() {
 				this.items = JSON.parse(this.$el.dataset.items || '{}');
@@ -496,6 +504,12 @@ Aimeos.CMSContent = {
 				}
 			},
 			mixins: [this.mixins]
+		});
+
+		document.querySelectorAll('.btn').forEach(function(el) {
+			el.addEventListener('mousedown', function() {
+				Aimeos.components['cms-content'].change();
+			})
 		});
 	},
 
@@ -532,7 +546,12 @@ Aimeos.CMSContent = {
 			},
 
 
-			duplicate : function(idx) {
+			change: function() {
+				this.version++;
+			},
+
+
+			duplicate: function(idx) {
 				if(idx < this.items.length) {
 					this.$set(this.items, this.items.length, JSON.parse(JSON.stringify(this.items[idx])));
 				}

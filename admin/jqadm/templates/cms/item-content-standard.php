@@ -35,7 +35,8 @@ $enc = $this->encoder();
 
 					<div v-bind:id="'item-text-group-item-' + idx" v-bind:class="item['_show'] ? 'show' : 'collapsed'"
 						v-bind:data-target="'#item-text-group-data-' + idx" data-bs-toggle="collapse" role="tab" class="card-header header"
-						v-bind:aria-controls="'item-text-group-data-' + idx" aria-expanded="false" v-on:click="toggle('_show', idx)">
+						v-bind:aria-controls="'item-text-group-data-' + idx" aria-expanded="false" v-on:click="toggle('_show', idx)"
+						v-on:mousedown="change()">
 						<div class="card-tools-left">
 							<div class="btn btn-card-header act-show fa" tabindex="<?= $this->get( 'tabindex' ); ?>"
 								title="<?= $enc->attr( $this->translate( 'admin', 'Show/hide this entry' ) ); ?>">
@@ -121,8 +122,8 @@ $enc = $this->encoder();
 						</div>
 
 						<div class="col-xl-12">
-							<grapesjs v-bind:setup="Aimeos.CMSContent.GrapesJS"
-								v-bind:tabindex="<?= $this->get( 'tabindex' ); ?>"
+							<grapesjs tabindex="<?= $this->get( 'tabindex' ); ?>"
+								v-bind:setup="Aimeos.CMSContent.GrapesJS" v-bind:update="version"
 								v-bind:name="'<?= $enc->attr( $this->formparam( array( 'content', '_idx_', 'text.content' ) ) ); ?>'.replace('_idx_', idx)"
 								v-bind:readonly="item['text.siteid'] != siteid"
 								v-bind:value="item['text.content']"

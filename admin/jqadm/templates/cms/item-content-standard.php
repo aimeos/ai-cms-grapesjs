@@ -26,6 +26,7 @@ $enc = $this->encoder();
 
 	<div id="item-content-group"
 		data-items="<?= $enc->attr( $this->get( 'contentData', [] ) ); ?>"
+		data-media="<?= $enc->attr( $this->get( 'contentMedia', [] ) ); ?>"
 		data-siteid="<?= $this->site()->siteid() ?>"
 		data-domain="cms" >
 
@@ -123,7 +124,7 @@ $enc = $this->encoder();
 
 						<div class="col-xl-12">
 							<grapesjs tabindex="<?= $this->get( 'tabindex' ); ?>"
-								v-bind:setup="Aimeos.CMSContent.GrapesJS" v-bind:update="version"
+								v-bind:setup="Aimeos.CMSContent.GrapesJS" v-bind:update="version" v-bind:media="media"
 								v-bind:name="'<?= $enc->attr( $this->formparam( array( 'content', '_idx_', 'text.content' ) ) ); ?>'.replace('_idx_', idx)"
 								v-bind:readonly="item['text.siteid'] != siteid"
 								v-bind:value="item['text.content']"

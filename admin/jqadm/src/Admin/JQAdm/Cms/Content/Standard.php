@@ -259,6 +259,7 @@ class Standard
 	 */
 	public function addData( \Aimeos\MW\View\Iface $view ) : \Aimeos\MW\View\Iface
 	{
+		$media = [];
 		$context = $this->getContext();
 		$listTypeManager = \Aimeos\MShop::create( $context, 'cms/lists/type' );
 
@@ -268,7 +269,23 @@ class Standard
 
 		$view->contentListTypes = $listTypeManager->search( $listSearch );
 
-		return $view;
+		foreach( $view->item->getRefItems( 'media' ) as $mediaItem )
+		{
+			$srcset = [];
+
+			foreach( $mediaItem->getPreviews() as $width => $path ) {
+				$srcset[] = $view->content( $path ) . ' ' . $width . 'w';
+			}
+
+			$media[] = [
+				'name' => $mediaItem->getLabel(),
+				'src' => $view->content( $mediaItem->getPreview() ),
+				'srcset' => join( ', ', $srcset),
+				'type' => 'imageset' // @todo: remove after GrapesJs update
+			];
+		}
+
+		return $view->set( 'contentMedia', $media );
 	}
 
 

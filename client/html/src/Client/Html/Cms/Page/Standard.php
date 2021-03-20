@@ -147,16 +147,19 @@ class Standard
 			}
 			catch( \Aimeos\Client\Html\Exception $e )
 			{
+				$tplconf = 'client/html/cms/page/template-error';
 				$error = array( $context->getI18n()->dt( 'client', $e->getMessage() ) );
 				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
 			}
 			catch( \Aimeos\Controller\Frontend\Exception $e )
 			{
+				$tplconf = 'client/html/cms/page/template-error';
 				$error = array( $context->getI18n()->dt( 'controller/frontend', $e->getMessage() ) );
 				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
 			}
 			catch( \Aimeos\MShop\Exception $e )
 			{
+				$tplconf = 'client/html/cms/page/template-error';
 				$error = array( $context->getI18n()->dt( 'mshop', $e->getMessage() ) );
 				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
 			}

@@ -240,7 +240,7 @@ class Standard
 			}
 			catch( \Exception $e )
 			{
-				$this->logException( $e );
+				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), [$e->getMessage()] );
 			}
 		}
 		else

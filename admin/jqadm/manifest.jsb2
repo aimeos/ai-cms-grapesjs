@@ -14,6 +14,12 @@
 		"file": "ai-cms-grapesjs.js",
 		"isDebug": true,
 		"fileIncludes": [{
+			"text": "grapesjs.js",
+			"path": "themes/"
+		},{
+			"text": "grapesjs-ext.js",
+			"path": "themes/"
+		},{
 			"text": "custom.js",
 			"path": "themes/"
 		}]

@@ -183,7 +183,6 @@ Aimeos.CMSContent = {
 */				id: 'open-blocks',
 				command: 'open-blocks',
 				className: 'fa fa-th-large',
-				active: true,
 			}],
 		}],
 

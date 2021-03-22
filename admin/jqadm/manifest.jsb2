@@ -6,6 +6,9 @@
 		"file": "ai-cms-grapesjs.css",
 		"isDebug": true,
 		"fileIncludes": [{
+			"text": "grapesjs.css",
+			"path": "themes/"
+		},{
 			"text": "custom.css",
 			"path": "themes/"
 		}]

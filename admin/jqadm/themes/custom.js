@@ -247,7 +247,7 @@ Aimeos.CMSContent = {
 			},
 			'col-2': {
 				category: 'Columns',
-				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke:#505860;stroke-width:2" width="12" height="18" x="8" y="9" ry="2" ry="1"></rect><rect style="fill:none;stroke:#505860;stroke-width:2" width="12" height="18" x="20" y="9" ry="2" ry="1"></rect></svg><div class="gjs-block-label">1 col</div>',
+				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke:#505860;stroke-width:2" width="12" height="18" x="8" y="9" ry="2" ry="1"></rect><rect style="fill:none;stroke:#505860;stroke-width:2" width="12" height="18" x="20" y="9" ry="2" ry="1"></rect></svg><div class="gjs-block-label">2 cols</div>',
 				attributes: { class: 'fa' },
 				content: {
 					type: 'cols',

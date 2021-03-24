@@ -284,7 +284,7 @@ Aimeos.CMSContent = {
 				},
 			},
 			'contact': {
-				category: 'Forms',
+				category: 'Extra',
 				label: 'Contact',
 				attributes: { class: 'fa fa-envelope-o' },
 				content: `<form class="contact-form">

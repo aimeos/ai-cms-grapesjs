@@ -2,27 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Aimeos, 2021
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-10 11:50+0100\n"
+"POT-Creation-Date: 2021-04-01 18:35+0200\n"
 "PO-Revision-Date: 2021-03-10 09:08+0000\n"
 "Last-Translator: Aimeos, 2021\n"
 "Language-Team: German (https://www.transifex.com/aimeos/teams/39015/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: jqadm/templates/type/cms/lists/list-standard.php:61
-#: jqadm/templates/cms/list-standard.php:65
 #: jqadm/templates/type/cms/lists/list-standard.php:61
 #: jqadm/templates/cms/list-standard.php:65
 msgid " "
@@ -30,14 +28,9 @@ msgstr " "
 
 #: jqadm/templates/type/cms/lists/list-standard.php:144
 #: jqadm/templates/cms/list-standard.php:155
-#: jqadm/templates/type/cms/lists/list-standard.php:144
-#: jqadm/templates/cms/list-standard.php:155
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: jqadm/templates/cms/item-seo-standard.php:188
-#: jqadm/templates/cms/item-media-standard.php:170
-#: jqadm/templates/cms/item-content-standard.php:140
 #: jqadm/templates/cms/item-seo-standard.php:188
 #: jqadm/templates/cms/item-media-standard.php:170
 #: jqadm/templates/cms/item-content-standard.php:140
@@ -48,54 +41,39 @@ msgstr "Erweitert"
 #: jqadm/templates/cms/item-seo-standard.php:128
 #: jqadm/templates/cms/item-media-standard.php:151
 #: jqadm/templates/cms/item-content-standard.php:107
-#: jqadm/templates/cms/item-media-property-standard.php:23
-#: jqadm/templates/cms/item-seo-standard.php:128
-#: jqadm/templates/cms/item-media-standard.php:151
-#: jqadm/templates/cms/item-content-standard.php:107
 msgid "All"
 msgstr "Alle"
 
-#: jqadm/templates/type/cms/lists/item-standard.php:51
-#: jqadm/templates/cms/item-standard.php:88
 #: jqadm/templates/type/cms/lists/item-standard.php:51
 #: jqadm/templates/cms/item-standard.php:88
 msgid "Basic"
 msgstr "Basis"
 
 #: jqadm/templates/type/cms/lists/item-standard.php:33
-#: jqadm/templates/type/cms/lists/item-standard.php:33
 msgid "CMS Lists Type"
 msgstr "CMS-Listentyp"
 
-#: jqadm/templates/type/cms/lists/list-standard.php:92
 #: jqadm/templates/type/cms/lists/list-standard.php:92
 msgid "CMS Lists Types"
 msgstr "CMS-Listentypen"
 
 #: jqadm/templates/cms/item-standard.php:63
-#: jqadm/templates/cms/item-standard.php:63
 msgid "CMS page"
 msgstr "CMS Seite"
 
-#: jqadm/templates/cms/list-standard.php:95
 #: jqadm/templates/cms/list-standard.php:95
 msgid "CMS pages"
 msgstr "CMS Seiten"
 
 #: jqadm/templates/type/cms/lists/list-standard.php:72
 #: jqadm/templates/type/cms/lists/item-standard.php:130
-#: jqadm/templates/type/cms/lists/list-standard.php:72
-#: jqadm/templates/type/cms/lists/item-standard.php:130
 msgid "Code"
 msgstr "Schlüssel"
 
 #: jqadm/templates/cms/list-standard.php:159
-#: jqadm/templates/cms/list-standard.php:159
 msgid "Columns"
 msgstr "Spalten"
 
-#: jqadm/templates/type/cms/lists/list-standard.php:218
-#: jqadm/templates/cms/list-standard.php:217
 #: jqadm/templates/type/cms/lists/list-standard.php:218
 #: jqadm/templates/cms/list-standard.php:217
 msgid "Copy"
@@ -103,15 +81,9 @@ msgstr "Kopieren"
 
 #: jqadm/templates/type/cms/lists/list-standard.php:217
 #: jqadm/templates/cms/list-standard.php:216
-#: jqadm/templates/type/cms/lists/list-standard.php:217
-#: jqadm/templates/cms/list-standard.php:216
 msgid "Copy this entry"
 msgstr "Eintrag kopieren"
 
-#: jqadm/templates/type/cms/lists/list-standard.php:75
-#: jqadm/templates/type/cms/lists/item-standard.php:71
-#: jqadm/templates/cms/list-standard.php:77
-#: jqadm/templates/cms/item-standard.php:107
 #: jqadm/templates/type/cms/lists/list-standard.php:75
 #: jqadm/templates/type/cms/lists/item-standard.php:71
 #: jqadm/templates/cms/list-standard.php:77
@@ -123,15 +95,9 @@ msgstr "Erstellt am"
 #: jqadm/templates/type/cms/lists/list-standard.php:224
 #: jqadm/templates/cms/list-standard.php:141
 #: jqadm/templates/cms/list-standard.php:223
-#: jqadm/templates/type/cms/lists/list-standard.php:130
-#: jqadm/templates/type/cms/lists/list-standard.php:224
-#: jqadm/templates/cms/list-standard.php:141
-#: jqadm/templates/cms/list-standard.php:223
 msgid "Delete"
 msgstr "Löschen"
 
-#: jqadm/templates/type/cms/lists/list-standard.php:129
-#: jqadm/templates/cms/list-standard.php:140
 #: jqadm/templates/type/cms/lists/list-standard.php:129
 #: jqadm/templates/cms/list-standard.php:140
 msgid "Delete selected entries"
@@ -144,38 +110,22 @@ msgstr "Ausgewählte Einträge löschen"
 #: jqadm/templates/cms/item-media-standard.php:236
 #: jqadm/templates/cms/item-content-standard.php:58
 #: jqadm/templates/cms/list-standard.php:222
-#: jqadm/templates/type/cms/lists/list-standard.php:223
-#: jqadm/templates/cms/item-media-property-standard.php:24
-#: jqadm/templates/cms/item-seo-standard.php:64
-#: jqadm/templates/cms/item-media-standard.php:52
-#: jqadm/templates/cms/item-media-standard.php:236
-#: jqadm/templates/cms/item-content-standard.php:58
-#: jqadm/templates/cms/list-standard.php:222
 msgid "Delete this entry"
 msgstr "Eintrag löschen"
 
 #: jqadm/templates/cms/item-seo-standard.php:175
-#: jqadm/templates/cms/item-seo-standard.php:175
 msgid "Description of the text content if it's in a foreign language"
-msgstr ""
-"Beschreibung des Inhalts falls er in einer anderen Sprache geschrieben ist"
+msgstr "Beschreibung des Inhalts falls er in einer anderen Sprache geschrieben ist"
 
-#: jqadm/templates/type/cms/lists/list-standard.php:70
-#: jqadm/templates/type/cms/lists/item-standard.php:88
 #: jqadm/templates/type/cms/lists/list-standard.php:70
 #: jqadm/templates/type/cms/lists/item-standard.php:88
 msgid "Domain"
 msgstr "Domäne"
 
 #: jqadm/templates/cms/item-content-standard.php:49
-#: jqadm/templates/cms/item-content-standard.php:49
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Eintrag duplizieren (Strg+D)"
 
-#: jqadm/templates/type/cms/lists/list-standard.php:77
-#: jqadm/templates/type/cms/lists/item-standard.php:75
-#: jqadm/templates/cms/list-standard.php:79
-#: jqadm/templates/cms/item-standard.php:111
 #: jqadm/templates/type/cms/lists/list-standard.php:77
 #: jqadm/templates/type/cms/lists/item-standard.php:75
 #: jqadm/templates/cms/list-standard.php:79
@@ -186,35 +136,18 @@ msgstr "Bearbeiter"
 #: jqadm/templates/cms/item-seo-standard.php:230
 #: jqadm/templates/cms/item-media-standard.php:210
 #: jqadm/templates/cms/item-content-standard.php:182
-#: jqadm/templates/cms/item-seo-standard.php:230
-#: jqadm/templates/cms/item-media-standard.php:210
-#: jqadm/templates/cms/item-content-standard.php:182
 msgid "End date"
 msgstr "Enddatum"
 
-#: jqadm/templates/type/cms/lists/list-standard.php:69
-#: jqadm/templates/cms/list-standard.php:73
 #: jqadm/templates/type/cms/lists/list-standard.php:69
 #: jqadm/templates/cms/list-standard.php:73
 msgid "ID"
 msgstr "ID"
 
 #: jqadm/templates/cms/item-media-standard.php:157
-#: jqadm/templates/cms/item-media-standard.php:157
-msgid ""
-"Images will only be shown for that language, useful if the media contains "
-"text or is language sepecific"
-msgstr ""
-"Bilder werden nur für diese Sprache angezeigt. Ist nützlich falls das Bild "
-"Text beinhaltet oder spezifisch für eine Sprache ist"
+msgid "Images will only be shown for that language, useful if the media contains text or is language sepecific"
+msgstr "Bilder werden nur für diese Sprache angezeigt. Ist nützlich falls das Bild Text beinhaltet oder spezifisch für eine Sprache ist"
 
-#: jqadm/templates/type/cms/lists/list-standard.php:143
-#: jqadm/templates/cms/item-media-property-standard.php:27
-#: jqadm/templates/cms/item-seo-standard.php:262
-#: jqadm/templates/cms/item-media-standard.php:235
-#: jqadm/templates/cms/item-media-standard.php:249
-#: jqadm/templates/cms/item-content-standard.php:214
-#: jqadm/templates/cms/list-standard.php:154
 #: jqadm/templates/type/cms/lists/list-standard.php:143
 #: jqadm/templates/cms/item-media-property-standard.php:27
 #: jqadm/templates/cms/item-seo-standard.php:262
@@ -227,18 +160,13 @@ msgstr "Eintrag hinzufügen (Strg+I)"
 
 #: jqadm/templates/type/cms/lists/item-standard.php:147
 #: jqadm/templates/cms/item-standard.php:169
-#: jqadm/templates/type/cms/lists/item-standard.php:147
-#: jqadm/templates/cms/item-standard.php:169
 msgid "Internal name (required)"
 msgstr "Interner Name (benötigt)"
 
 #: jqadm/templates/type/cms/lists/item-standard.php:152
-#: jqadm/templates/type/cms/lists/item-standard.php:152
 msgid "Internal type name shown in the administration interface"
 msgstr "Interner Name, der in der Administrationsoberfläche angezeigt wird"
 
-#: jqadm/src/Admin/JQAdm/Cms/Factory.php:75
-#: jqadm/src/Admin/JQAdm/Type/Cms/Lists/Factory.php:75
 #: jqadm/src/Admin/JQAdm/Cms/Factory.php:75
 #: jqadm/src/Admin/JQAdm/Type/Cms/Lists/Factory.php:75
 #, php-format
@@ -246,18 +174,9 @@ msgid "Invalid characters in class name \"%1$s\""
 msgstr "Klassenname \"%1$s\" enthält unerlaubte Zeichen"
 
 #: jqadm/templates/cms/item-media-standard.php:234
-#: jqadm/templates/cms/item-media-standard.php:234
-msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
-msgstr ""
-"Konfigurationsoptionen spezifisch für diesen Eintrag, sind in den Templates "
-"als Schlüssel/Wert Paare verfügbar"
+msgid "Item specific configuration options, will be available as key/value pairs in the templates"
+msgstr "Konfigurationsoptionen spezifisch für diesen Eintrag, sind in den Templates als Schlüssel/Wert Paare verfügbar"
 
-#: jqadm/templates/type/cms/lists/list-standard.php:73
-#: jqadm/templates/type/cms/lists/item-standard.php:143
-#: jqadm/templates/cms/item-seo-standard.php:166
-#: jqadm/templates/cms/item-seo-standard.php:170
 #: jqadm/templates/type/cms/lists/list-standard.php:73
 #: jqadm/templates/type/cms/lists/item-standard.php:143
 #: jqadm/templates/cms/item-seo-standard.php:166
@@ -268,14 +187,9 @@ msgstr "Bezeichnung"
 #: jqadm/templates/cms/item-seo-standard.php:122
 #: jqadm/templates/cms/item-media-standard.php:146
 #: jqadm/templates/cms/item-content-standard.php:101
-#: jqadm/templates/cms/item-seo-standard.php:122
-#: jqadm/templates/cms/item-media-standard.php:146
-#: jqadm/templates/cms/item-content-standard.php:101
 msgid "Language"
 msgstr "Sprache"
 
-#: jqadm/templates/cms/item-seo-standard.php:134
-#: jqadm/templates/cms/item-content-standard.php:113
 #: jqadm/templates/cms/item-seo-standard.php:134
 #: jqadm/templates/cms/item-content-standard.php:113
 msgid "Language of the entered text"
@@ -284,21 +198,13 @@ msgstr "Sprache des eingegebenen Texts"
 #: jqadm/templates/cms/item-seo-standard.php:195
 #: jqadm/templates/cms/item-media-standard.php:176
 #: jqadm/templates/cms/item-content-standard.php:147
-#: jqadm/templates/cms/item-seo-standard.php:195
-#: jqadm/templates/cms/item-media-standard.php:176
-#: jqadm/templates/cms/item-content-standard.php:147
 msgid "List type"
 msgstr "Listentyp"
 
 #: jqadm/templates/cms/item-media-property-standard.php:25
-#: jqadm/templates/cms/item-media-property-standard.php:25
 msgid "Media properties"
 msgstr "Medieneigenschaften"
 
-#: jqadm/templates/type/cms/lists/list-standard.php:76
-#: jqadm/templates/type/cms/lists/item-standard.php:67
-#: jqadm/templates/cms/list-standard.php:78
-#: jqadm/templates/cms/item-standard.php:103
 #: jqadm/templates/type/cms/lists/list-standard.php:76
 #: jqadm/templates/type/cms/lists/item-standard.php:67
 #: jqadm/templates/cms/list-standard.php:78
@@ -309,14 +215,9 @@ msgstr "Geändert"
 #: jqadm/templates/cms/item-seo-standard.php:60
 #: jqadm/templates/cms/item-media-standard.php:48
 #: jqadm/templates/cms/item-content-standard.php:54
-#: jqadm/templates/cms/item-seo-standard.php:60
-#: jqadm/templates/cms/item-media-standard.php:48
-#: jqadm/templates/cms/item-content-standard.php:54
 msgid "Move this entry up/down"
 msgstr "Eintrag nach oben/unten schieben"
 
-#: jqadm/templates/type/cms/lists/item-standard.php:35
-#: jqadm/templates/cms/item-standard.php:65
 #: jqadm/templates/type/cms/lists/item-standard.php:35
 #: jqadm/templates/cms/item-standard.php:65
 msgid "New"
@@ -324,49 +225,25 @@ msgstr "Neu"
 
 #: jqadm/templates/type/cms/lists/list-standard.php:234
 #: jqadm/templates/cms/list-standard.php:233
-#: jqadm/templates/type/cms/lists/list-standard.php:234
-#: jqadm/templates/cms/list-standard.php:233
 msgid "No items found"
 msgstr "Kein Eintrag gefunden"
 
-#: jqadm/templates/cms/item-media-property-standard.php:26
 #: jqadm/templates/cms/item-media-property-standard.php:26
 msgid "Non-shared properties for the media item"
 msgstr "Eigenschaften von Medieneinträgen"
 
 #: jqadm/templates/cms/item-media-standard.php:233
-#: jqadm/templates/cms/item-media-standard.php:233
 msgid "Option"
 msgstr "Option"
 
-#: jqadm/templates/type/cms/lists/item-standard.php:165
 #: jqadm/templates/type/cms/lists/item-standard.php:165
 msgid "Order of the types in the frontend"
 msgstr "Reihenfolge der Typen im Frontend"
 
 #: jqadm/templates/cms/item-standard.php:174
-#: jqadm/templates/cms/item-standard.php:174
-msgid ""
-"Page title, will be used on the web site if no title for the language is "
-"available"
-msgstr ""
-"Seitentitel, der auf der Webseite ausgegeben wird, wenn kein "
-"sprachspezifischer Titel verfügbar ist"
+msgid "Page title, will be used on the web site if no title for the language is available"
+msgstr "Seitentitel, der auf der Webseite ausgegeben wird, wenn kein sprachspezifischer Titel verfügbar ist"
 
-#: jqadm/templates/type/cms/lists/item-standard.php:94
-#: jqadm/templates/type/cms/lists/item-standard.php:112
-#: jqadm/templates/cms/item-media-property-standard.php:29
-#: jqadm/templates/cms/item-seo-standard.php:103
-#: jqadm/templates/cms/item-seo-standard.php:127
-#: jqadm/templates/cms/item-seo-standard.php:150
-#: jqadm/templates/cms/item-seo-standard.php:200
-#: jqadm/templates/cms/item-media-standard.php:93
-#: jqadm/templates/cms/item-media-standard.php:116
-#: jqadm/templates/cms/item-media-standard.php:181
-#: jqadm/templates/cms/item-content-standard.php:79
-#: jqadm/templates/cms/item-content-standard.php:106
-#: jqadm/templates/cms/item-content-standard.php:152
-#: jqadm/templates/cms/item-standard.php:134
 #: jqadm/templates/type/cms/lists/item-standard.php:94
 #: jqadm/templates/type/cms/lists/item-standard.php:112
 #: jqadm/templates/cms/item-media-property-standard.php:29
@@ -386,19 +263,13 @@ msgstr "Bitte wählen"
 
 #: jqadm/templates/type/cms/lists/list-standard.php:74
 #: jqadm/templates/type/cms/lists/item-standard.php:156
-#: jqadm/templates/type/cms/lists/list-standard.php:74
-#: jqadm/templates/type/cms/lists/item-standard.php:156
 msgid "Position"
 msgstr "Position"
 
 #: jqadm/templates/cms/item-media-property-standard.php:28
-#: jqadm/templates/cms/item-media-property-standard.php:28
 msgid "Property value (required)"
 msgstr "Eigenschaftswert (benötigt)"
 
-#: jqadm/src/Admin/JQAdm/Cms/Standard.php:51
-#: jqadm/src/Admin/JQAdm/Cms/Standard.php:115
-#: jqadm/src/Admin/JQAdm/Cms/Standard.php:155
 #: jqadm/src/Admin/JQAdm/Cms/Standard.php:51
 #: jqadm/src/Admin/JQAdm/Cms/Standard.php:115
 #: jqadm/src/Admin/JQAdm/Cms/Standard.php:155
@@ -409,21 +280,13 @@ msgstr "Notwendiger Parameter \"%1$s\" fehlt"
 #: jqadm/templates/cms/item-seo-standard.php:206
 #: jqadm/templates/cms/item-media-standard.php:187
 #: jqadm/templates/cms/item-content-standard.php:158
-#: jqadm/templates/cms/item-seo-standard.php:206
-#: jqadm/templates/cms/item-media-standard.php:187
-#: jqadm/templates/cms/item-content-standard.php:158
 msgid "Second level type for grouping items"
 msgstr "Zweiter Typ zur Gruppierung von Einträgen"
 
 #: jqadm/templates/cms/item-media-standard.php:78
-#: jqadm/templates/cms/item-media-standard.php:78
 msgid "Select file"
 msgstr "Datei auswählen"
 
-#: jqadm/templates/type/cms/lists/list-standard.php:97
-#: jqadm/templates/type/cms/lists/list-standard.php:98
-#: jqadm/templates/cms/list-standard.php:100
-#: jqadm/templates/cms/list-standard.php:101
 #: jqadm/templates/type/cms/lists/list-standard.php:97
 #: jqadm/templates/type/cms/lists/list-standard.php:98
 #: jqadm/templates/cms/list-standard.php:100
@@ -434,24 +297,15 @@ msgstr "Suchformular anzeigen"
 #: jqadm/templates/cms/item-seo-standard.php:185
 #: jqadm/templates/cms/item-media-standard.php:167
 #: jqadm/templates/cms/item-content-standard.php:137
-#: jqadm/templates/cms/item-seo-standard.php:185
-#: jqadm/templates/cms/item-media-standard.php:167
-#: jqadm/templates/cms/item-content-standard.php:137
 msgid "Show/hide advanced data"
 msgstr "Erweiterte Daten zeigen/verstecken"
 
 #: jqadm/templates/cms/item-seo-standard.php:42
 #: jqadm/templates/cms/item-media-standard.php:41
 #: jqadm/templates/cms/item-content-standard.php:43
-#: jqadm/templates/cms/item-seo-standard.php:42
-#: jqadm/templates/cms/item-media-standard.php:41
-#: jqadm/templates/cms/item-content-standard.php:43
 msgid "Show/hide this entry"
 msgstr "Eintrag zeigen/verstecken"
 
-#: jqadm/templates/cms/item-seo-standard.php:216
-#: jqadm/templates/cms/item-media-standard.php:196
-#: jqadm/templates/cms/item-content-standard.php:168
 #: jqadm/templates/cms/item-seo-standard.php:216
 #: jqadm/templates/cms/item-media-standard.php:196
 #: jqadm/templates/cms/item-content-standard.php:168
@@ -465,39 +319,21 @@ msgstr "Startdatum"
 #: jqadm/templates/cms/item-content-standard.php:73
 #: jqadm/templates/cms/list-standard.php:74
 #: jqadm/templates/cms/item-standard.php:128
-#: jqadm/templates/type/cms/lists/list-standard.php:71
-#: jqadm/templates/type/cms/lists/item-standard.php:106
-#: jqadm/templates/cms/item-seo-standard.php:97
-#: jqadm/templates/cms/item-media-standard.php:87
-#: jqadm/templates/cms/item-content-standard.php:73
-#: jqadm/templates/cms/list-standard.php:74
-#: jqadm/templates/cms/item-standard.php:128
 msgid "Status"
 msgstr "Status"
 
 #: jqadm/templates/cms/item-seo-standard.php:226
 #: jqadm/templates/cms/item-media-standard.php:206
 #: jqadm/templates/cms/item-content-standard.php:178
-#: jqadm/templates/cms/item-seo-standard.php:226
-#: jqadm/templates/cms/item-media-standard.php:206
-#: jqadm/templates/cms/item-content-standard.php:178
 msgid "The item is only shown on the web site after that date and time"
-msgstr ""
-"Dieser Eintrag wird auf der Webseite erst nach dem Datum und der Uhrzeit "
-"angezeigt"
+msgstr "Dieser Eintrag wird auf der Webseite erst nach dem Datum und der Uhrzeit angezeigt"
 
-#: jqadm/templates/cms/item-seo-standard.php:240
-#: jqadm/templates/cms/item-media-standard.php:220
-#: jqadm/templates/cms/item-content-standard.php:192
 #: jqadm/templates/cms/item-seo-standard.php:240
 #: jqadm/templates/cms/item-media-standard.php:220
 #: jqadm/templates/cms/item-content-standard.php:192
 msgid "The item is only shown on the web site until that date and time"
-msgstr ""
-"Dieser Eintrag wird auf der Webseite bis zu dem Datum und der Uhrzeit "
-"angezeigt"
+msgstr "Dieser Eintrag wird auf der Webseite bis zu dem Datum und der Uhrzeit angezeigt"
 
-#: jqadm/templates/cms/item-media-standard.php:141
 #: jqadm/templates/cms/item-media-standard.php:141
 msgid "The media title is used for the title tag of the media on the web site"
 msgstr "Wird für den Titel des Bildes auf der Webseite verwendet"
@@ -506,68 +342,51 @@ msgstr "Wird für den Titel des Bildes auf der Webseite verwendet"
 #: jqadm/templates/cms/item-media-standard.php:136
 #: jqadm/templates/cms/list-standard.php:76
 #: jqadm/templates/cms/item-standard.php:165
-#: jqadm/templates/cms/item-media-standard.php:132
-#: jqadm/templates/cms/item-media-standard.php:136
-#: jqadm/templates/cms/list-standard.php:76
-#: jqadm/templates/cms/item-standard.php:165
 msgid "Title"
 msgstr "Titel"
 
-#: jqadm/templates/cms/item-seo-standard.php:50
 #: jqadm/templates/cms/item-seo-standard.php:50
 msgid "Translate text"
 msgstr "Text übersetzen"
 
 #: jqadm/templates/cms/item-seo-standard.php:145
 #: jqadm/templates/cms/item-media-standard.php:111
-#: jqadm/templates/cms/item-seo-standard.php:145
-#: jqadm/templates/cms/item-media-standard.php:111
 msgid "Type"
 msgstr "Typ"
 
-#: jqadm/templates/type/cms/lists/item-standard.php:161
 #: jqadm/templates/type/cms/lists/item-standard.php:161
 msgid "Type position (optional)"
 msgstr "Typenposition (optional)"
 
 #: jqadm/templates/cms/item-media-standard.php:122
-#: jqadm/templates/cms/item-media-standard.php:122
 msgid "Types for additional images like icons"
 msgstr "Typen für zusätzliche Bilder wie Icons"
 
-#: jqadm/templates/cms/item-seo-standard.php:156
 #: jqadm/templates/cms/item-seo-standard.php:156
 msgid "Types for additional texts like per one lb/kg or per month"
 msgstr "Typen für zusätzliche Texte, z.B. pro kg oder pro Monat"
 
 #: jqadm/templates/cms/list-standard.php:75
 #: jqadm/templates/cms/item-standard.php:152
-#: jqadm/templates/cms/list-standard.php:75
-#: jqadm/templates/cms/item-standard.php:152
 msgid "URL"
 msgstr "URL"
 
-#: jqadm/templates/cms/item-standard.php:156
 #: jqadm/templates/cms/item-standard.php:156
 msgid "Unique page URL (required)"
 msgstr "Eindeutige Seiten-URL (benötigt)"
 
 #: jqadm/templates/cms/item-standard.php:161
-#: jqadm/templates/cms/item-standard.php:161
 msgid "Unique page URL, e.g. \"/page-name\""
 msgstr "Eindeutige Seiten-URL, z.B. \"/seiten-name\""
 
-#: jqadm/templates/type/cms/lists/item-standard.php:139
 #: jqadm/templates/type/cms/lists/item-standard.php:139
 msgid "Unique type code"
 msgstr "Eindeutiger Typcode"
 
 #: jqadm/templates/type/cms/lists/item-standard.php:134
-#: jqadm/templates/type/cms/lists/item-standard.php:134
 msgid "Unique type code (required)"
 msgstr "Eindeutiger Typcode (benötigt)"
 
-#: jqadm/templates/cms/item-media-standard.php:232
 #: jqadm/templates/cms/item-media-standard.php:232
 msgid "Value"
 msgstr "Wert"
@@ -578,22 +397,14 @@ msgstr "Wert"
 #: jqadm/templates/cms/item-media-standard.php:214
 #: jqadm/templates/cms/item-content-standard.php:172
 #: jqadm/templates/cms/item-content-standard.php:186
-#: jqadm/templates/cms/item-seo-standard.php:220
-#: jqadm/templates/cms/item-seo-standard.php:234
-#: jqadm/templates/cms/item-media-standard.php:200
-#: jqadm/templates/cms/item-media-standard.php:214
-#: jqadm/templates/cms/item-content-standard.php:172
-#: jqadm/templates/cms/item-content-standard.php:186
 msgid "YYYY-MM-DD hh:mm:ss (optional)"
 msgstr "JJJJ-MM-TT hh:mm:ss (optional)"
 
-#: jqadm/src/Admin/JQAdm/Cms/Standard.php:13
 #: jqadm/src/Admin/JQAdm/Cms/Standard.php:13
 #, php-format
 msgid "cms"
 msgstr "CMS Seiten"
 
-#: jqadm/src/Admin/JQAdm/Cms/Content/Standard.php:13
 #: jqadm/src/Admin/JQAdm/Cms/Content/Standard.php:13
 #, php-format
 msgid "content"
@@ -601,19 +412,15 @@ msgstr "Inhalt"
 
 #: jqadm/templates/type/cms/lists/list-standard.php:163
 #: jqadm/src/Admin/JQAdm/Cms/Media/Standard.php:13
-#: jqadm/templates/type/cms/lists/list-standard.php:163
-#: jqadm/src/Admin/JQAdm/Cms/Media/Standard.php:13
 #, php-format
 msgid "media"
 msgstr "Medien"
 
 #: jqadm/src/Admin/JQAdm/Cms/Media/Property/Standard.php:13
-#: jqadm/src/Admin/JQAdm/Cms/Media/Property/Standard.php:13
 #, php-format
 msgid "property"
 msgstr "Eigenschaften"
 
-#: jqadm/src/Admin/JQAdm/Cms/Seo/Standard.php:13
 #: jqadm/src/Admin/JQAdm/Cms/Seo/Standard.php:13
 #, php-format
 msgid "seo"
@@ -660,11 +467,9 @@ msgid "status:1"
 msgstr "Verfügbar"
 
 #: jqadm/templates/type/cms/lists/list-standard.php:164
-#: jqadm/templates/type/cms/lists/list-standard.php:164
 msgid "text"
 msgstr "Text"
 
-#: jqadm/src/Admin/JQAdm/Type/Cms/Lists/Standard.php:13
 #: jqadm/src/Admin/JQAdm/Type/Cms/Lists/Standard.php:13
 #, php-format
 msgid "type/cms/lists"

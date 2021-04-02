@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-10 11:50+0100\n"
+"POT-Creation-Date: 2021-04-01 18:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -605,9 +605,23 @@ msgstr ""
 #: jqadm/templates/cms/item-content-standard.php:87
 #: jqadm/templates/cms/list-standard.php:175
 #: jqadm/templates/cms/item-standard.php:143
+#: jqadm/templates/type/cms/lists/list-standard.php:169
+#: jqadm/templates/type/cms/lists/item-standard.php:121
+#: jqadm/templates/cms/item-seo-standard.php:111
+#: jqadm/templates/cms/item-media-standard.php:101
+#: jqadm/templates/cms/item-content-standard.php:87
+#: jqadm/templates/cms/list-standard.php:175
+#: jqadm/templates/cms/item-standard.php:143
 msgid "status:-1"
 msgstr ""
 
+#: jqadm/templates/type/cms/lists/list-standard.php:170
+#: jqadm/templates/type/cms/lists/item-standard.php:124
+#: jqadm/templates/cms/item-seo-standard.php:114
+#: jqadm/templates/cms/item-media-standard.php:104
+#: jqadm/templates/cms/item-content-standard.php:90
+#: jqadm/templates/cms/list-standard.php:176
+#: jqadm/templates/cms/item-standard.php:146
 #: jqadm/templates/type/cms/lists/list-standard.php:170
 #: jqadm/templates/type/cms/lists/item-standard.php:124
 #: jqadm/templates/cms/item-seo-standard.php:114
@@ -625,9 +639,23 @@ msgstr ""
 #: jqadm/templates/cms/item-content-standard.php:84
 #: jqadm/templates/cms/list-standard.php:174
 #: jqadm/templates/cms/item-standard.php:140
+#: jqadm/templates/type/cms/lists/list-standard.php:168
+#: jqadm/templates/type/cms/lists/item-standard.php:118
+#: jqadm/templates/cms/item-seo-standard.php:108
+#: jqadm/templates/cms/item-media-standard.php:98
+#: jqadm/templates/cms/item-content-standard.php:84
+#: jqadm/templates/cms/list-standard.php:174
+#: jqadm/templates/cms/item-standard.php:140
 msgid "status:0"
 msgstr ""
 
+#: jqadm/templates/type/cms/lists/list-standard.php:167
+#: jqadm/templates/type/cms/lists/item-standard.php:115
+#: jqadm/templates/cms/item-seo-standard.php:105
+#: jqadm/templates/cms/item-media-standard.php:95
+#: jqadm/templates/cms/item-content-standard.php:81
+#: jqadm/templates/cms/list-standard.php:173
+#: jqadm/templates/cms/item-standard.php:137
 #: jqadm/templates/type/cms/lists/list-standard.php:167
 #: jqadm/templates/type/cms/lists/item-standard.php:115
 #: jqadm/templates/cms/item-seo-standard.php:105

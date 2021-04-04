@@ -289,22 +289,22 @@ Aimeos.CMSContent = {
 				attributes: { class: 'fa fa-envelope-o' },
 				content: `<form class="contact-form" method="POST" action="">
 					<!-- cms.page.contact.csrf -->
-					<input type="hidden" name="<?= $this->csrf()->name() ?>" value="<?= $this->csrf()->value() ?>' />
+					<input class="csrf-token" type="hidden" name="%csrf.name%" value="%csrf.value%" />
 					<!-- cms.page.contact.csrf -->
 					<div class="form-group row contact-name">
 						<label class="col-sm-4 form-control-label">Name</label>
-						<div class="col-sm-8"><input class="form-control" name="<?= $this->formparam( ['contact', 'name']) ?>" required /></div>
+						<div class="col-sm-8"><input class="form-control" name="contact[name]" required /></div>
 					</div>
 					<div class="form-group row contact-email">
 						<label class="col-sm-4 form-control-label">E-Mail</label>
-						<div class="col-sm-8"><input class="form-control" name="<?= $this->formparam( ['contact', 'email']) ?>" required /></div>
+						<div class="col-sm-8"><input class="form-control" name="contact[email]" required /></div>
 					</div>
 					<div class="form-group row contact-message">
 						<label class="col-sm-4 form-control-label">Text</label>
-						<div class="col-sm-8"><textarea class="form-control" name="<?= $this->formparam( ['contact', 'message']) ?>" required rows="6"></textarea></div>
+						<div class="col-sm-8"><textarea class="form-control" name="contact[message]" required rows="6"></textarea></div>
 					</div>
 					<div class="contact-pot">
-						<input name="<?= $this->formparam( ['contact', 'url']) ?>" />
+						<input name="contact[url]" />
 					</div>
 					<div class="form-group contact-button">
 						<button type="submit" class="btn btn-primary d-block mx-auto">Submit</button>

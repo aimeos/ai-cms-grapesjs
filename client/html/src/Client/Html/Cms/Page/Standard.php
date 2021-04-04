@@ -140,7 +140,7 @@ class Standard
 				}
 				$view->pageBody = $html;
 
-				$html = $view->render( $view->config( $tplconf, $default ) );
+				$html = $this->csrf( $view->render( $view->config( $tplconf, $default ) ) );
 				$this->setCached( 'body', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
 
 				return $html;
@@ -378,17 +378,6 @@ class Standard
 
 
 	/**
-	 * Returns the list of sub-client names configured for the client.
-	 *
-	 * @return array List of HTML client names
-	 */
-	protected function getSubClientNames() : array
-	{
-		return $this->getContext()->getConfig()->get( $this->subPartPath, $this->subPartNames );
-	}
-
-
-	/**
 	 * Sets the necessary parameter values in the view.
 	 *
 	 * @param \Aimeos\MW\View\Iface $view The view object which generates the HTML output
@@ -423,5 +412,28 @@ class Standard
 		$view->pageCmsItem = $page;
 
 		return parent::addData( $view, $tags, $expire );
+	}
+
+
+	/**
+	 * Returns the list of sub-client names configured for the client.
+	 *
+	 * @return array List of HTML client names
+	 */
+	protected function getSubClientNames() : array
+	{
+		return $this->getContext()->getConfig()->get( $this->subPartPath, $this->subPartNames );
+	}
+
+
+	/**
+	 * Returns the passed HTML code with CSRF tokens replaced
+	 *
+	 * @return string HTML code
+	 */
+	protected function csrf( string $html ) : string
+	{
+		$csrf = $this->getView()->csrf();
+		return str_replace( ['%csrf.name%', '%csrf.value%'], [$csrf->name(), $csrf->value()], $html );
 	}
 }

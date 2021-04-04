@@ -34,15 +34,7 @@ $config = $this->config( 'client/html/cms/page/url/config', [] );
 ?>
 <?php if( (bool) $this->config( 'client/html/cms/page/metatags', true ) === true ) : ?>
 	<?php if( isset( $this->pageCmsItem ) ) : ?>
-		<title><?= $enc->html( $this->pageCmsItem->getName() ); ?></title>
-
-		<?php foreach( $this->pageCmsItem->getRefItems( 'text', 'meta-keyword', 'default' ) as $textItem ) : ?>
-			<meta name="keywords" content="<?= $enc->attr( strip_tags( $textItem->getContent() ) ); ?>" />
-		<?php endforeach; ?>
-
-		<?php foreach( $this->pageCmsItem->getRefItems( 'text', 'meta-description', 'default' ) as $textItem ) : ?>
-			<meta name="description" content="<?= $enc->attr( strip_tags( $textItem->getContent() ) ); ?>" />
-		<?php endforeach; ?>
+		<title><?= $enc->html( strip_tags( $this->pageCmsItem->getName() ) ) ?> | <?= $enc->html( $this->get( 'contextSiteLabel', 'Aimeos' ) ) ?></title>
 
 		<link rel="canonical" href="<?= $enc->attr( $this->url( $target, $cntl, $action, ['path' => $this->pageCmsItem->getUrl()], $config + ['absoluteUri' => true] ) ); ?>" />
 
@@ -50,15 +42,25 @@ $config = $this->config( 'client/html/cms/page/url/config', [] );
 		<meta property="og:title" content="<?= $enc->html( $this->pageCmsItem->getName() ); ?>" />
 		<meta property="og:url" content="<?= $enc->attr( $this->url( $target, $cntl, $action, ['path' => $this->pageCmsItem->getUrl()], $config + ['absoluteUri' => true] ) ); ?>" />
 
-		<?php foreach( $this->pageCmsItem->getRefItems( 'text', 'short', 'default' ) as $textItem ) : ?>
-			<meta property="og:description" content="<?= $enc->attr( $textItem->getContent() ) ?>" />
-		<?php endforeach ?>
-
 		<?php foreach( $this->pageCmsItem->getRefItems( 'media', 'default', 'default' ) as $mediaItem ) : ?>
 			<meta property="og:image" content="<?= $enc->attr( $this->content( $mediaItem->getUrl() ) ) ?>" />
 		<?php endforeach ?>
 
+		<?php foreach( $this->pageCmsItem->getRefItems( 'text', 'meta-description', 'default' ) as $textItem ) : ?>
+			<meta property="og:description" content="<?= $enc->attr( $textItem->getContent() ) ?>" />
+			<meta name="description" content="<?= $enc->attr( strip_tags( $textItem->getContent() ) ); ?>" />
+		<?php endforeach ?>
+
+		<?php foreach( $this->pageCmsItem->getRefItems( 'text', 'meta-keyword', 'default' ) as $textItem ) : ?>
+			<meta name="keywords" content="<?= $enc->attr( strip_tags( $textItem->getContent() ) ); ?>" />
+		<?php endforeach; ?>
+
 		<meta name="twitter:card" content="summary_large_image" />
+
+	<?php else : ?>
+
+		<title><?= $enc->html( $this->get( 'contextSiteLabel', 'Aimeos' ) ) ?></title>
+
 	<?php endif; ?>
 
 	<meta name="application-name" content="Aimeos" />

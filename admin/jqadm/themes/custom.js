@@ -289,7 +289,7 @@ Aimeos.CMSContent = {
 				attributes: { class: 'fa fa-envelope-o' },
 				content: `<form class="contact-form" method="POST" action="">
 					<!-- cms.page.contact.csrf -->
-					<?= $this->csrf()->formfield(); ?>
+					<input type="hidden" name="<?= $this->csrf()->name() ?>" value="<?= $this->csrf()->value() ?>' />
 					<!-- cms.page.contact.csrf -->
 					<div class="form-group row contact-name">
 						<label class="col-sm-4 form-control-label">Name</label>

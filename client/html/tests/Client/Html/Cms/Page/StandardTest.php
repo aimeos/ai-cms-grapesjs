@@ -43,7 +43,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->object->setView( $this->object->addData( $this->object->getView(), $tags, $expire ) );
 		$output = $this->object->getHeader();
 
-		$this->assertStringContainsString( '<title>Contact page</title>', $output );
+		$this->assertStringContainsString( '<title>Contact page | Aimeos</title>', $output );
 		$this->assertEquals( null, $expire );
 		$this->assertEquals( 3, count( $tags ) );
 	}

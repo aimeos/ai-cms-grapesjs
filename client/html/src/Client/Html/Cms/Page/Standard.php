@@ -55,7 +55,7 @@ class Standard
 	 * @category Developer
 	 */
 	private $subPartPath = 'client/html/cms/page/subparts';
-	private $subPartNames = [];
+	private $subPartNames = ['contact'];
 
 	private $tags = [];
 	private $expire;

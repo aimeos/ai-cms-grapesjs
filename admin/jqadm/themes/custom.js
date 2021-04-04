@@ -287,18 +287,24 @@ Aimeos.CMSContent = {
 				category: 'Extra',
 				label: 'Contact',
 				attributes: { class: 'fa fa-envelope-o' },
-				content: `<form class="contact-form">
+				content: `<form class="contact-form" method="POST" action="">
+					<!-- cms.page.contact.csrf -->
+					<?= $this->csrf()->formfield(); ?>
+					<!-- cms.page.contact.csrf -->
 					<div class="form-group row contact-name">
 						<label class="col-sm-4 form-control-label">Name</label>
-						<div class="col-sm-8"><input class="form-control" name="name" required /></div>
+						<div class="col-sm-8"><input class="form-control" name="<?= $this->formparam( ['contact', 'name']) ?>" required /></div>
 					</div>
 					<div class="form-group row contact-email">
 						<label class="col-sm-4 form-control-label">E-Mail</label>
-						<div class="col-sm-8"><input class="form-control" name="email" required /></div>
+						<div class="col-sm-8"><input class="form-control" name="<?= $this->formparam( ['contact', 'email']) ?>" required /></div>
 					</div>
 					<div class="form-group row contact-message">
 						<label class="col-sm-4 form-control-label">Text</label>
-						<div class="col-sm-8"><textarea class="form-control" name="message" required rows="6"></textarea></div>
+						<div class="col-sm-8"><textarea class="form-control" name="<?= $this->formparam( ['contact', 'message']) ?>" required rows="6"></textarea></div>
+					</div>
+					<div class="contact-pot">
+						<input name="<?= $this->formparam( ['contact', 'url']) ?>" />
 					</div>
 					<div class="form-group contact-button">
 						<button type="submit" class="btn btn-primary d-block mx-auto">Submit</button>
@@ -428,6 +434,9 @@ Aimeos.CMSContent = {
 			}
 			body {
 				scrollbar-color: var(--bs-secondary, #505860) transparent; scrollbar-width: thin;
+			}
+			.contact-form .contact-pot {
+				display: none;
 			}
 		`,
 

@@ -104,6 +104,10 @@ class TestHelperHtml
 		$ctx->setSession( $session );
 
 
+		$mail = new \Aimeos\MW\Mail\None();
+		$ctx->setMail( $mail );
+
+
 		$localeManager = \Aimeos\MShop\Locale\Manager\Factory::create( $ctx );
 		$locale = $localeManager->bootstrap( $site, '', '', false );
 		$ctx->setLocale( $locale );

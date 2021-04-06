@@ -40,8 +40,33 @@ php artisan aimeos:setup
 To show the content for the CMS page URLs, you have to add this at the **end** of the `./routes/web.php` file in your Laravel application:
 
 ```php
-Route::get('{path?}', '\Aimeos\Shop\Controller\PageController@indexAction')
+Route::match(['GET', 'POST'], '{path?}', '\Aimeos\Shop\Controller\PageController@indexAction')
     ->name('aimeos_page')->where( 'path', '.*' );
+```
+
+When using a multi-vendor setup, then use one of these alternatives:
+
+```php
+// prefix: yourdomain.com/vendor1
+Route::group(['prefix' => '{site}', 'middleware' => ['web']], function () {
+    Route::match(['GET', 'POST'], '{path?}', '\Aimeos\Shop\Controller\PageController@indexAction')
+        ->name('aimeos_page')->where( 'path', '.*' )->where( ['site' => '[a-z0-9\-]+'] );
+});
+
+// subdomain: vendor1.yourdomain.com
+Route::group(['domain' => '{site}.yourdomain.com', 'middleware' => ['web']], function () {
+    Route::match(['GET', 'POST'], '{path?}', '\Aimeos\Shop\Controller\PageController@indexAction')
+        ->name('aimeos_page')->where( 'path', '.*' )->where( ['site' => '[a-z0-9\-]+'] );
+});
+
+// custom domain: vendor1.com
+Route::group(['domain' => '{site}', 'middleware' => ['web']], function () {
+    Route::match(['GET', 'POST'], '{path?}', '\Aimeos\Shop\Controller\PageController@indexAction')
+        ->name('aimeos_page')->where( 'path', '.*' )->where( ['site' => '[a-z0-9\.\-]+'] );
+});
+```
+
+```php
 ```
 
 This will add a "catch all" route for every URL that hasn't been matched before so **don't put routes after** that line because they won't be used any more!

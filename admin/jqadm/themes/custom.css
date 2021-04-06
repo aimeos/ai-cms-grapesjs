@@ -13,6 +13,10 @@
 	width: 100%;
 }
 
+.aimeos .grapesjs-editor iframe {
+	width: 100%;
+}
+
 .gjs-one-bg{background-color:var(--bs-bg-dark, #f4f8fb)}
 .gjs-one-color{color:var(--bs-bg, #f8fafc)}
 .gjs-one-color-h:hover{color:var(--bs-bg-light, #ffffff)}

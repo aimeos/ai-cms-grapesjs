@@ -14,7 +14,7 @@ return [
 			],
 		],
 		'navbar' => [
-			55 => 'cms'
+			45 => 'cms'
 		],
 		'resource' => [
 			'cms' => [

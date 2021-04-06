@@ -39,7 +39,7 @@ $config = $this->config( 'client/html/cms/page/url/config', [] );
 		<link rel="canonical" href="<?= $enc->attr( $this->url( $target, $cntl, $action, ['path' => $this->pageCmsItem->getUrl()], $config + ['absoluteUri' => true] ) ); ?>" />
 
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="<?= $enc->html( $this->pageCmsItem->getName() ); ?>" />
+		<meta property="og:title" content="<?= $enc->attr( $this->pageCmsItem->getName() ); ?>" />
 		<meta property="og:url" content="<?= $enc->attr( $this->url( $target, $cntl, $action, ['path' => $this->pageCmsItem->getUrl()], $config + ['absoluteUri' => true] ) ); ?>" />
 
 		<?php foreach( $this->pageCmsItem->getRefItems( 'media', 'default', 'default' ) as $mediaItem ) : ?>

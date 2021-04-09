@@ -77,8 +77,8 @@ return [
 			$table->addColumn( 'editor', 'string', array( 'length' => 255 ) );
 
 			$table->setPrimaryKey( array( 'id' ), 'pk_mscmsli_id' );
-			$table->addUniqueIndex( array( 'parentid', 'siteid', 'domain', 'type', 'refid' ), 'unq_mscmsli_pid_sid_dm_ty_rid' );
-			$table->addIndex( array( 'siteid', 'key' ), 'idx_mscmsli_sid_key' );
+			$table->addUniqueIndex( array( 'parentid', 'domain', 'siteid', 'type', 'refid' ), 'unq_mscmsli_pid_dm_sid_ty_rid' );
+			$table->addIndex( array( 'key', 'siteid' ), 'idx_mscmsli_key_sid' );
 			$table->addIndex( array( 'parentid' ), 'fk_mscmsli_pid' );
 
 			$table->addForeignKeyConstraint( 'mshop_cms', array( 'parentid' ), array( 'id' ),

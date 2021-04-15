@@ -25,7 +25,10 @@ To add the extionsion to your composer-based installation, execute:
 composer req "aimeos/ai-cms-grapesjs"
 ```
 
-These command will install the Aimeos extension into the extension directory and it will be available immediately.
+These command will install the Aimeos extension into the extension directory and it will be available after you execute the database migration:
+
+![Aimeos CMS](https://user-images.githubusercontent.com/8647429/114858024-407ff300-9de9-11eb-8f51-b6da1f9a5798.png)
+
 
 ## Integration
 

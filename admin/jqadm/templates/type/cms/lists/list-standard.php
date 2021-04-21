@@ -78,7 +78,7 @@ $columnList = [
 ];
 
 ?>
-<?php $this->block()->start( 'jqadm_content' ); ?>
+<?php $this->block()->start( 'jqadm_content' ) ?>
 
 <?= $this->partial( $this->config( 'admin/jqadm/partial/navsearch', 'common/partials/navsearch-standard' ) ) ?>
 
@@ -89,21 +89,21 @@ $columnList = [
 <nav class="main-navbar">
 
 	<span class="navbar-brand">
-		<?= $enc->html( $this->translate( 'admin', 'CMS Lists Types' ) ); ?>
-		<span class="navbar-secondary">(<?= $enc->html( $this->site()->label() ); ?>)</span>
+		<?= $enc->html( $this->translate( 'admin', 'CMS Lists Types' ) ) ?>
+		<span class="navbar-secondary">(<?= $enc->html( $this->site()->label() ) ?>)</span>
 	</span>
 
 	<div class="btn fa act-search" v-on:click="search = true"
 		title="<?= $enc->attr( $this->translate( 'admin', 'Show search form' ) ) ?>"
-		aria-label="<?= $enc->attr( $this->translate( 'admin', 'Show search form' ) ); ?>">
+		aria-label="<?= $enc->attr( $this->translate( 'admin', 'Show search form' ) ) ?>">
 	</div>
 </nav>
 
 <nav-search v-bind:show="search" v-on:close="search = false"
-	v-bind:url="'<?= $enc->attr( $this->link( 'admin/jqadm/url/search', map( $searchParams )->except( 'filter' )->all() ) ) ?>'"
+	v-bind:url="`<?= $enc->js( $this->link( 'admin/jqadm/url/search', map( $searchParams )->except( 'filter' )->all() ) ) ?>`"
 	v-bind:filter="<?= $enc->attr( $this->session( 'aimeos/admin/jqadm/type/cms/lists/filter', [] ) ) ?>"
 	v-bind:operators="<?= $enc->attr( $operators ) ?>"
-	v-bind:name="'<?= $enc->formparam( ['filter', '_key_', '0'] ) ?>'"
+	v-bind:name="`<?= $enc->js( $this->formparam( ['filter', '_key_', '0'] ) ) ?>`"
 	v-bind:attributes="<?= $enc->attr( $searchAttributes ) ?>">
 </nav-search>
 
@@ -115,10 +115,10 @@ $columnList = [
 ?>
 
 <form ref="form" class="list list-cms-lists-type" method="POST"
-	action="<?= $enc->attr( $this->url( $target, $controller, $action, $searchParams, [], $config ) ); ?>"
-	data-deleteurl="<?= $enc->attr( $this->url( $delTarget, $delCntl, $delAction, $params, [], $delConfig ) ); ?>">
+	action="<?= $enc->attr( $this->url( $target, $controller, $action, $searchParams, [], $config ) ) ?>"
+	data-deleteurl="<?= $enc->attr( $this->url( $delTarget, $delCntl, $delAction, $params, [], $delConfig ) ) ?>">
 
-	<?= $this->csrf()->formfield(); ?>
+	<?= $this->csrf()->formfield() ?>
 
 	<table class="list-items table table-hover table-striped">
 		<thead class="list-header">
@@ -126,8 +126,8 @@ $columnList = [
 				<th class="select">
 					<a href="#" class="btn act-delete fa" tabindex="1"
 						v-on:click.prevent.stop="askDelete()"
-						title="<?= $enc->attr( $this->translate( 'admin', 'Delete selected entries' ) ); ?>"
-						aria-label="<?= $enc->attr( $this->translate( 'admin', 'Delete' ) ); ?>">
+						title="<?= $enc->attr( $this->translate( 'admin', 'Delete selected entries' ) ) ?>"
+						aria-label="<?= $enc->attr( $this->translate( 'admin', 'Delete' ) ) ?>">
 					</a>
 				</th>
 
@@ -139,9 +139,9 @@ $columnList = [
 
 				<th class="actions">
 					<a class="btn fa act-add" tabindex="1"
-						href="<?= $enc->attr( $this->url( $newTarget, $newCntl, $newAction, $params, [], $newConfig ) ); ?>"
-						title="<?= $enc->attr( $this->translate( 'admin', 'Insert new entry (Ctrl+I)' ) ); ?>"
-						aria-label="<?= $enc->attr( $this->translate( 'admin', 'Add' ) ); ?>">
+						href="<?= $enc->attr( $this->url( $newTarget, $newCntl, $newAction, $params, [], $newConfig ) ) ?>"
+						title="<?= $enc->attr( $this->translate( 'admin', 'Insert new entry (Ctrl+I)' ) ) ?>"
+						aria-label="<?= $enc->attr( $this->translate( 'admin', 'Add' ) ) ?>">
 					</a>
 
 					<?= $this->partial(
@@ -180,59 +180,59 @@ $columnList = [
 			?>
 
 			<?php foreach( $this->get( 'items', [] ) as $id => $item ) : ?>
-				<?php $url = $enc->attr( $this->url( $getTarget, $getCntl, $getAction, ['id' => $id] + $params, [], $getConfig ) ); ?>
-				<tr class="list-item <?= $this->site()->readonly( $item->getSiteId() ); ?>" data-label="<?= $enc->attr( $item->getLabel() ) ?>">
-					<td class="select"><input v-on:click="toggle('<?= $id ?>')" v-bind:checked="items['<?= $id ?>'].checked" class="form-check-input" type="checkbox" tabindex="1" name="<?= $enc->attr( $this->formparam( ['id', ''] ) ) ?>" value="<?= $enc->attr( $item->getId() ) ?>" /></td>
+				<?php $url = $enc->attr( $this->url( $getTarget, $getCntl, $getAction, ['id' => $id] + $params, [], $getConfig ) ) ?>
+				<tr class="list-item <?= $this->site()->readonly( $item->getSiteId() ) ?>" data-label="<?= $enc->attr( $item->getLabel() ) ?>">
+					<td class="select"><input v-on:click="toggle(`<?= $enc->js( $id ) ?>')" v-bind:checked="items[`<?= $enc->js( $id ) ?>`].checked" class="form-check-input" type="checkbox" tabindex="1" name="<?= $enc->attr( $this->formparam( ['id', ''] ) ) ?>" value="<?= $enc->attr( $item->getId() ) ?>" /></td>
 					<?php if( in_array( 'cms.lists.type.id', $fields ) ) : ?>
-						<td class="cms-type-id"><a class="items-field" href="<?= $url; ?>"><?= $enc->html( $item->getId() ); ?></a></td>
-					<?php endif; ?>
+						<td class="cms-type-id"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getId() ) ?></a></td>
+					<?php endif ?>
 					<?php if( in_array( 'cms.lists.type.domain', $fields ) ) : ?>
-						<td class="cms-type-domain"><a class="items-field" href="<?= $url; ?>"><?= $enc->html( $item->getDomain() ); ?></a></td>
-					<?php endif; ?>
+						<td class="cms-type-domain"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getDomain() ) ?></a></td>
+					<?php endif ?>
 					<?php if( in_array( 'cms.lists.type.status', $fields ) ) : ?>
-						<td class="cms-type-status"><a class="items-field" href="<?= $url; ?>"><div class="fa status-<?= $enc->attr( $item->getStatus() ); ?>"></div></a></td>
-					<?php endif; ?>
+						<td class="cms-type-status"><a class="items-field" href="<?= $url ?>"><div class="fa status-<?= $enc->attr( $item->getStatus() ) ?>"></div></a></td>
+					<?php endif ?>
 					<?php if( in_array( 'cms.lists.type.code', $fields ) ) : ?>
-						<td class="cms-type-code"><a class="items-field" href="<?= $url; ?>" tabindex="1"><?= $enc->html( $item->getCode() ); ?></a></td>
-					<?php endif; ?>
+						<td class="cms-type-code"><a class="items-field" href="<?= $url ?>" tabindex="1"><?= $enc->html( $item->getCode() ) ?></a></td>
+					<?php endif ?>
 					<?php if( in_array( 'cms.lists.type.label', $fields ) ) : ?>
-						<td class="cms-type-label"><a class="items-field" href="<?= $url; ?>"><?= $enc->html( $item->getLabel() ); ?></a></td>
-					<?php endif; ?>
+						<td class="cms-type-label"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getLabel() ) ?></a></td>
+					<?php endif ?>
 					<?php if( in_array( 'cms.lists.type.position', $fields ) ) : ?>
-						<td class="cms-type-position"><a class="items-field" href="<?= $url; ?>"><?= $enc->html( $item->getPosition() ); ?></a></td>
-					<?php endif; ?>
+						<td class="cms-type-position"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getPosition() ) ?></a></td>
+					<?php endif ?>
 					<?php if( in_array( 'cms.lists.type.ctime', $fields ) ) : ?>
-						<td class="cms-type-ctime"><a class="items-field" href="<?= $url; ?>"><?= $enc->html( $item->getTimeCreated() ); ?></a></td>
-					<?php endif; ?>
+						<td class="cms-type-ctime"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getTimeCreated() ) ?></a></td>
+					<?php endif ?>
 					<?php if( in_array( 'cms.lists.type.mtime', $fields ) ) : ?>
-						<td class="cms-type-mtime"><a class="items-field" href="<?= $url; ?>"><?= $enc->html( $item->getTimeModified() ); ?></a></td>
-					<?php endif; ?>
+						<td class="cms-type-mtime"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getTimeModified() ) ?></a></td>
+					<?php endif ?>
 					<?php if( in_array( 'cms.lists.type.editor', $fields ) ) : ?>
-						<td class="cms-type-editor"><a class="items-field" href="<?= $url; ?>"><?= $enc->html( $item->getEditor() ); ?></a></td>
-					<?php endif; ?>
+						<td class="cms-type-editor"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getEditor() ) ?></a></td>
+					<?php endif ?>
 
 					<td class="actions">
 						<a class="btn act-copy fa" tabindex="1"
-							href="<?= $enc->attr( $this->url( $copyTarget, $copyCntl, $copyAction, ['id' => $id] + $params, [], $copyConfig ) ); ?>"
-							title="<?= $enc->attr( $this->translate( 'admin', 'Copy this entry' ) ); ?>"
-							aria-label="<?= $enc->attr( $this->translate( 'admin', 'Copy' ) ); ?>">
+							href="<?= $enc->attr( $this->url( $copyTarget, $copyCntl, $copyAction, ['id' => $id] + $params, [], $copyConfig ) ) ?>"
+							title="<?= $enc->attr( $this->translate( 'admin', 'Copy this entry' ) ) ?>"
+							aria-label="<?= $enc->attr( $this->translate( 'admin', 'Copy' ) ) ?>">
 						</a>
 						<?php if( !$this->site()->readonly( $item->getSiteId() ) ) : ?>
 							<a class="btn act-delete fa" tabindex="1" href="#"
-								v-on:click.prevent.stop="askDelete('<?= $enc->attr( $id ) ?>')"
-								title="<?= $enc->attr( $this->translate( 'admin', 'Delete this entry' ) ); ?>"
-								aria-label="<?= $enc->attr( $this->translate( 'admin', 'Delete' ) ); ?>">
+								v-on:click.prevent.stop="askDelete(`<?= $enc->js( $id ) ?>`)"
+								title="<?= $enc->attr( $this->translate( 'admin', 'Delete this entry' ) ) ?>"
+								aria-label="<?= $enc->attr( $this->translate( 'admin', 'Delete' ) ) ?>">
 							</a>
-						<?php endif; ?>
+						<?php endif ?>
 					</td>
 				</tr>
-			<?php endforeach; ?>
+			<?php endforeach ?>
 		</tbody>
 	</table>
 
 	<?php if( $this->get( 'items', map() )->isEmpty() ) : ?>
-		<div class="noitems"><?= $enc->html( sprintf( $this->translate( 'admin', 'No items found' ) ) ); ?></div>
-	<?php endif; ?>
+		<div class="noitems"><?= $enc->html( sprintf( $this->translate( 'admin', 'No items found' ) ) ) ?></div>
+	<?php endif ?>
 </form>
 
 <?= $this->partial(
@@ -246,6 +246,6 @@ $columnList = [
 	v-on:close="confirmDelete(false)" v-on:confirm="confirmDelete(true)"></confirm-delete>
 
 </div>
-<?php $this->block()->stop(); ?>
+<?php $this->block()->stop() ?>
 
-<?= $this->render( $this->config( 'admin/jqadm/template/page', 'common/page-standard' ) ); ?>
+<?= $this->render( $this->config( 'admin/jqadm/template/page', 'common/page-standard' ) ) ?>

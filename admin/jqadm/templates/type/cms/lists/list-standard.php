@@ -81,6 +81,7 @@ $columnList = [
 <?php $this->block()->start( 'jqadm_content' ) ?>
 
 <?= $this->partial( $this->config( 'admin/jqadm/partial/navsearch', 'common/partials/navsearch-standard' ) ) ?>
+<?= $this->partial( $this->config( 'admin/jqadm/partial/columns', 'common/partials/columns-standard' ) ) ?>
 
 <div class="list-view"
 	data-domain="cms/lists/type"
@@ -120,115 +121,124 @@ $columnList = [
 
 	<?= $this->csrf()->formfield() ?>
 
-	<table class="list-items table table-hover table-striped">
-		<thead class="list-header">
-			<tr>
-				<th class="select">
-					<a href="#" class="btn act-delete fa" tabindex="1"
-						v-on:click.prevent.stop="askDelete()"
-						title="<?= $enc->attr( $this->translate( 'admin', 'Delete selected entries' ) ) ?>"
-						aria-label="<?= $enc->attr( $this->translate( 'admin', 'Delete' ) ) ?>">
-					</a>
-				</th>
+	<column-select tabindex="<?= $this->get( 'tabindex', 1 ) ?>"
+		name="<?= $enc->attr( $this->formparam( ['fields', ''] ) ) ?>"
+		v-bind:titles="<?= $enc->attr( $columnList ) ?>"
+		v-bind:fields="<?= $enc->attr( $fields ) ?>"
+		v-bind:show="columns"
+		v-on:close="columns = false">
+	</column-select>
 
-				<?= $this->partial(
-						$this->config( 'admin/jqadm/partial/listhead', 'common/partials/listhead-standard' ),
-						['fields' => $fields, 'params' => $params, 'data' => $columnList, 'sort' => $this->session( 'aimeos/admin/jqadm/type/cms/lists/sort' )]
-					);
-				?>
-
-				<th class="actions">
-					<a class="btn fa act-add" tabindex="1"
-						href="<?= $enc->attr( $this->url( $newTarget, $newCntl, $newAction, $params, [], $newConfig ) ) ?>"
-						title="<?= $enc->attr( $this->translate( 'admin', 'Insert new entry (Ctrl+I)' ) ) ?>"
-						aria-label="<?= $enc->attr( $this->translate( 'admin', 'Add' ) ) ?>">
-					</a>
+	<div class="table-responsive">
+		<table class="list-items table table-hover table-striped">
+			<thead class="list-header">
+				<tr>
+					<th class="select">
+						<a href="#" class="btn act-delete fa" tabindex="1"
+							v-on:click.prevent.stop="askDelete()"
+							title="<?= $enc->attr( $this->translate( 'admin', 'Delete selected entries' ) ) ?>"
+							aria-label="<?= $enc->attr( $this->translate( 'admin', 'Delete' ) ) ?>">
+						</a>
+					</th>
 
 					<?= $this->partial(
-							$this->config( 'admin/jqadm/partial/columns', 'common/partials/columns-standard' ),
-							['fields' => $fields, 'data' => $columnList]
+							$this->config( 'admin/jqadm/partial/listhead', 'common/partials/listhead-standard' ),
+							['fields' => $fields, 'params' => $params, 'data' => $columnList, 'sort' => $this->session( 'aimeos/admin/jqadm/type/cms/lists/sort' )]
 						);
 					?>
-				</th>
-			</tr>
-		</thead>
-		<tbody>
 
-			<?= $this->partial(
-				$this->config( 'admin/jqadm/partial/listsearch', 'common/partials/listsearch-standard' ), [
-					'fields' => array_merge( $fields, ['select'] ), 'filter' => $this->session( 'aimeos/admin/jqadm/type/cms/lists/filter', [] ),
-					'data' => [
-						'cms.lists.type.id' => ['op' => '=='],
-						'cms.lists.type.domain' => ['op' => '==', 'type' => 'select', 'val' => [
-							'media' => $this->translate( 'admin', 'media' ),
-							'text' => $this->translate( 'admin', 'text' ),
-						]],
-						'cms.lists.type.status' => ['op' => '==', 'type' => 'select', 'val' => [
-							'1' => $this->translate( 'mshop/code', 'status:1' ),
-							'0' => $this->translate( 'mshop/code', 'status:0' ),
-							'-1' => $this->translate( 'mshop/code', 'status:-1' ),
-							'-2' => $this->translate( 'mshop/code', 'status:-2' ),
-						]],
-						'cms.lists.type.code' => [],
-						'cms.lists.type.label' => [],
-						'cms.lists.type.position' => ['op' => '>=', 'type' => 'number'],
-						'cms.lists.type.ctime' => ['op' => '-', 'type' => 'datetime-local'],
-						'cms.lists.type.mtime' => ['op' => '-', 'type' => 'datetime-local'],
-						'cms.lists.type.editor' => [],
-					]
-				] );
-			?>
-
-			<?php foreach( $this->get( 'items', [] ) as $id => $item ) : ?>
-				<?php $url = $enc->attr( $this->url( $getTarget, $getCntl, $getAction, ['id' => $id] + $params, [], $getConfig ) ) ?>
-				<tr class="list-item <?= $this->site()->readonly( $item->getSiteId() ) ?>" data-label="<?= $enc->attr( $item->getLabel() ) ?>">
-					<td class="select"><input v-on:click="toggle(`<?= $enc->js( $id ) ?>')" v-bind:checked="items[`<?= $enc->js( $id ) ?>`].checked" class="form-check-input" type="checkbox" tabindex="1" name="<?= $enc->attr( $this->formparam( ['id', ''] ) ) ?>" value="<?= $enc->attr( $item->getId() ) ?>" /></td>
-					<?php if( in_array( 'cms.lists.type.id', $fields ) ) : ?>
-						<td class="cms-type-id"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getId() ) ?></a></td>
-					<?php endif ?>
-					<?php if( in_array( 'cms.lists.type.domain', $fields ) ) : ?>
-						<td class="cms-type-domain"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getDomain() ) ?></a></td>
-					<?php endif ?>
-					<?php if( in_array( 'cms.lists.type.status', $fields ) ) : ?>
-						<td class="cms-type-status"><a class="items-field" href="<?= $url ?>"><div class="fa status-<?= $enc->attr( $item->getStatus() ) ?>"></div></a></td>
-					<?php endif ?>
-					<?php if( in_array( 'cms.lists.type.code', $fields ) ) : ?>
-						<td class="cms-type-code"><a class="items-field" href="<?= $url ?>" tabindex="1"><?= $enc->html( $item->getCode() ) ?></a></td>
-					<?php endif ?>
-					<?php if( in_array( 'cms.lists.type.label', $fields ) ) : ?>
-						<td class="cms-type-label"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getLabel() ) ?></a></td>
-					<?php endif ?>
-					<?php if( in_array( 'cms.lists.type.position', $fields ) ) : ?>
-						<td class="cms-type-position"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getPosition() ) ?></a></td>
-					<?php endif ?>
-					<?php if( in_array( 'cms.lists.type.ctime', $fields ) ) : ?>
-						<td class="cms-type-ctime"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getTimeCreated() ) ?></a></td>
-					<?php endif ?>
-					<?php if( in_array( 'cms.lists.type.mtime', $fields ) ) : ?>
-						<td class="cms-type-mtime"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getTimeModified() ) ?></a></td>
-					<?php endif ?>
-					<?php if( in_array( 'cms.lists.type.editor', $fields ) ) : ?>
-						<td class="cms-type-editor"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getEditor() ) ?></a></td>
-					<?php endif ?>
-
-					<td class="actions">
-						<a class="btn act-copy fa" tabindex="1"
-							href="<?= $enc->attr( $this->url( $copyTarget, $copyCntl, $copyAction, ['id' => $id] + $params, [], $copyConfig ) ) ?>"
-							title="<?= $enc->attr( $this->translate( 'admin', 'Copy this entry' ) ) ?>"
-							aria-label="<?= $enc->attr( $this->translate( 'admin', 'Copy' ) ) ?>">
+					<th class="actions">
+						<a class="btn fa act-add" tabindex="1"
+							href="<?= $enc->attr( $this->url( $newTarget, $newCntl, $newAction, $params, [], $newConfig ) ) ?>"
+							title="<?= $enc->attr( $this->translate( 'admin', 'Insert new entry (Ctrl+I)' ) ) ?>"
+							aria-label="<?= $enc->attr( $this->translate( 'admin', 'Add' ) ) ?>">
 						</a>
-						<?php if( !$this->site()->readonly( $item->getSiteId() ) ) : ?>
-							<a class="btn act-delete fa" tabindex="1" href="#"
-								v-on:click.prevent.stop="askDelete(`<?= $enc->js( $id ) ?>`)"
-								title="<?= $enc->attr( $this->translate( 'admin', 'Delete this entry' ) ) ?>"
-								aria-label="<?= $enc->attr( $this->translate( 'admin', 'Delete' ) ) ?>">
-							</a>
-						<?php endif ?>
-					</td>
+
+						<a class="btn act-columns fa" href="#" tabindex="<?= $this->get( 'tabindex', 1 ) ?>"
+							title="<?= $enc->attr( $this->translate( 'admin', 'Columns' ) ) ?>"
+							v-on:click.prevent.stop="columns = true">
+						</a>
+					</th>
 				</tr>
-			<?php endforeach ?>
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+
+				<?= $this->partial(
+					$this->config( 'admin/jqadm/partial/listsearch', 'common/partials/listsearch-standard' ), [
+						'fields' => array_merge( $fields, ['select'] ), 'filter' => $this->session( 'aimeos/admin/jqadm/type/cms/lists/filter', [] ),
+						'data' => [
+							'cms.lists.type.id' => ['op' => '=='],
+							'cms.lists.type.domain' => ['op' => '==', 'type' => 'select', 'val' => [
+								'media' => $this->translate( 'admin', 'media' ),
+								'text' => $this->translate( 'admin', 'text' ),
+							]],
+							'cms.lists.type.status' => ['op' => '==', 'type' => 'select', 'val' => [
+								'1' => $this->translate( 'mshop/code', 'status:1' ),
+								'0' => $this->translate( 'mshop/code', 'status:0' ),
+								'-1' => $this->translate( 'mshop/code', 'status:-1' ),
+								'-2' => $this->translate( 'mshop/code', 'status:-2' ),
+							]],
+							'cms.lists.type.code' => [],
+							'cms.lists.type.label' => [],
+							'cms.lists.type.position' => ['op' => '>=', 'type' => 'number'],
+							'cms.lists.type.ctime' => ['op' => '-', 'type' => 'datetime-local'],
+							'cms.lists.type.mtime' => ['op' => '-', 'type' => 'datetime-local'],
+							'cms.lists.type.editor' => [],
+						]
+					] );
+				?>
+
+				<?php foreach( $this->get( 'items', [] ) as $id => $item ) : ?>
+					<?php $url = $enc->attr( $this->url( $getTarget, $getCntl, $getAction, ['id' => $id] + $params, [], $getConfig ) ) ?>
+					<tr class="list-item <?= $this->site()->readonly( $item->getSiteId() ) ?>" data-label="<?= $enc->attr( $item->getLabel() ) ?>">
+						<td class="select"><input v-on:click="toggle(`<?= $enc->js( $id ) ?>`)" v-bind:checked="items[`<?= $enc->js( $id ) ?>`].checked" class="form-check-input" type="checkbox" tabindex="1" name="<?= $enc->attr( $this->formparam( ['id', ''] ) ) ?>" value="<?= $enc->attr( $item->getId() ) ?>" /></td>
+						<?php if( in_array( 'cms.lists.type.id', $fields ) ) : ?>
+							<td class="cms-type-id"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getId() ) ?></a></td>
+						<?php endif ?>
+						<?php if( in_array( 'cms.lists.type.domain', $fields ) ) : ?>
+							<td class="cms-type-domain"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getDomain() ) ?></a></td>
+						<?php endif ?>
+						<?php if( in_array( 'cms.lists.type.status', $fields ) ) : ?>
+							<td class="cms-type-status"><a class="items-field" href="<?= $url ?>"><div class="fa status-<?= $enc->attr( $item->getStatus() ) ?>"></div></a></td>
+						<?php endif ?>
+						<?php if( in_array( 'cms.lists.type.code', $fields ) ) : ?>
+							<td class="cms-type-code"><a class="items-field" href="<?= $url ?>" tabindex="1"><?= $enc->html( $item->getCode() ) ?></a></td>
+						<?php endif ?>
+						<?php if( in_array( 'cms.lists.type.label', $fields ) ) : ?>
+							<td class="cms-type-label"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getLabel() ) ?></a></td>
+						<?php endif ?>
+						<?php if( in_array( 'cms.lists.type.position', $fields ) ) : ?>
+							<td class="cms-type-position"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getPosition() ) ?></a></td>
+						<?php endif ?>
+						<?php if( in_array( 'cms.lists.type.ctime', $fields ) ) : ?>
+							<td class="cms-type-ctime"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getTimeCreated() ) ?></a></td>
+						<?php endif ?>
+						<?php if( in_array( 'cms.lists.type.mtime', $fields ) ) : ?>
+							<td class="cms-type-mtime"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getTimeModified() ) ?></a></td>
+						<?php endif ?>
+						<?php if( in_array( 'cms.lists.type.editor', $fields ) ) : ?>
+							<td class="cms-type-editor"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getEditor() ) ?></a></td>
+						<?php endif ?>
+
+						<td class="actions">
+							<a class="btn act-copy fa" tabindex="1"
+								href="<?= $enc->attr( $this->url( $copyTarget, $copyCntl, $copyAction, ['id' => $id] + $params, [], $copyConfig ) ) ?>"
+								title="<?= $enc->attr( $this->translate( 'admin', 'Copy this entry' ) ) ?>"
+								aria-label="<?= $enc->attr( $this->translate( 'admin', 'Copy' ) ) ?>">
+							</a>
+							<?php if( !$this->site()->readonly( $item->getSiteId() ) ) : ?>
+								<a class="btn act-delete fa" tabindex="1" href="#"
+									v-on:click.prevent.stop="askDelete(`<?= $enc->js( $id ) ?>`)"
+									title="<?= $enc->attr( $this->translate( 'admin', 'Delete this entry' ) ) ?>"
+									aria-label="<?= $enc->attr( $this->translate( 'admin', 'Delete' ) ) ?>">
+								</a>
+							<?php endif ?>
+						</td>
+					</tr>
+				<?php endforeach ?>
+			</tbody>
+		</table>
+	</div>
 
 	<?php if( $this->get( 'items', map() )->isEmpty() ) : ?>
 		<div class="noitems"><?= $enc->html( sprintf( $this->translate( 'admin', 'No items found' ) ) ) ?></div>

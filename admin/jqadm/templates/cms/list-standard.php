@@ -107,7 +107,7 @@ $columnList = [
 		v-bind:filter="<?= $enc->attr( $this->session( 'aimeos/admin/jqadm/cms/filter', [] ) ) ?>"
 		v-bind:operators="<?= $enc->attr( $operators ) ?>"
 		v-bind:name="`<?= $enc->js( $this->formparam( ['filter', '_key_', '0'] ) ) ?>`"
-		v-bind:cmss="<?= $enc->attr( $searchAttributes ) ?>">
+		v-bind:attributes="<?= $enc->attr( $searchAttributes ) ?>">
 	</nav-search>
 
 	<?= $this->partial(
@@ -187,7 +187,7 @@ $columnList = [
 				<?php foreach( $this->get( 'items', [] ) as $id => $item ) : ?>
 					<?php $url = $enc->attr( $this->url( $getTarget, $getCntl, $getAction, ['id' => $id] + $params, [], $getConfig ) ) ?>
 					<tr class="list-item <?= $this->site()->readonly( $item->getSiteId() ) ?>" data-label="<?= $enc->attr( $item->getLabel() ) ?>">
-						<td class="select"><input v-on:click="toggle(`<?= $enc->js( $id ) ?>')" v-bind:checked="items[`<?= $enc->js( $id ) ?>`].checked" class="form-check-input" type="checkbox" tabindex="1" name="<?= $enc->attr( $this->formparam( ['id', ''] ) ) ?>" value="<?= $enc->attr( $item->getId() ) ?>" /></td>
+						<td class="select"><input v-on:click="toggle(`<?= $enc->js( $id ) ?>`)" v-bind:checked="items[`<?= $enc->js( $id ) ?>`].checked" class="form-check-input" type="checkbox" tabindex="1" name="<?= $enc->attr( $this->formparam( ['id', ''] ) ) ?>" value="<?= $enc->attr( $item->getId() ) ?>" /></td>
 						<?php if( in_array( 'cms.id', $fields ) ) : ?>
 							<td class="cms-id"><a class="items-field" href="<?= $url ?>"><?= $enc->html( $item->getId() ) ?></a></td>
 						<?php endif ?>

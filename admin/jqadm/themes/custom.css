@@ -57,6 +57,14 @@
     z-index: 3;
 }
 
+.gjs-pn-panels .gjs-block svg * {
+	stroke: var(--bs-secondary, #505860);
+}
+
+.gjs-pn-panels .gjs-block:hover svg * {
+	stroke: var(--bs-primary-light, #9098A0);
+}
+
 .gjs-pn-panel:not(.gjs-pn-views-container) {
 	position: relative;
     z-index: 4;

@@ -238,7 +238,7 @@ Aimeos.CMSContent = {
 			},
 			'col-1': {
 				category: 'Columns',
-				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke:#505860;stroke-width:2" width="24" height="18" x="10" y="9" ry="2" ry="3"></rect></svg><div class="gjs-block-label">1 col</div>',
+				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke-width:2" width="24" height="18" x="10" y="9" ry="2" ry="3"></rect></svg><div class="gjs-block-label">1 col</div>',
 				attributes: { class: 'fa' },
 				content: {
 					type: 'cols',
@@ -247,7 +247,7 @@ Aimeos.CMSContent = {
 			},
 			'col-2': {
 				category: 'Columns',
-				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke:#505860;stroke-width:2" width="12" height="18" x="8" y="9" ry="2" ry="1"></rect><rect style="fill:none;stroke:#505860;stroke-width:2" width="12" height="18" x="20" y="9" ry="2" ry="1"></rect></svg><div class="gjs-block-label">2 cols</div>',
+				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke-width:2" width="12" height="18" x="8" y="9" ry="2" ry="1"></rect><rect style="fill:none;stroke-width:2" width="12" height="18" x="20" y="9" ry="2" ry="1"></rect></svg><div class="gjs-block-label">2 cols</div>',
 				attributes: { class: 'fa' },
 				content: {
 					type: 'cols',
@@ -256,7 +256,7 @@ Aimeos.CMSContent = {
 			},
 			'col-1:2': {
 				category: 'Columns',
-				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke:#505860;stroke-width:2" width="9" height="18" x="8" y="9" ry="2" ry="1"></rect><rect style="fill:none;stroke:#505860;stroke-width:2" width="15" height="18" x="17" y="9" ry="2" ry="1"></rect></svg><div class="gjs-block-label">1:2 cols</div>',
+				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke-width:2" width="9" height="18" x="8" y="9" ry="2" ry="1"></rect><rect style="fill:none;stroke-width:2" width="15" height="18" x="17" y="9" ry="2" ry="1"></rect></svg><div class="gjs-block-label">1:2 cols</div>',
 				attributes: { class: 'fa' },
 				content: {
 					type: 'cols',
@@ -266,7 +266,7 @@ Aimeos.CMSContent = {
 			},
 			'col-2:1': {
 				category: 'Columns',
-				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke:#505860;stroke-width:2" width="15" height="18" x="8" y="9" ry="2" ry="1"></rect><rect style="fill:none;stroke:#505860;stroke-width:2" width="9" height="18" x="23" y="9" ry="2" ry="1"></rect></svg><div class="gjs-block-label">2:1 cols</div>',
+				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke-width:2" width="15" height="18" x="8" y="9" ry="2" ry="1"></rect><rect style="fill:none;stroke-width:2" width="9" height="18" x="23" y="9" ry="2" ry="1"></rect></svg><div class="gjs-block-label">2:1 cols</div>',
 				attributes: { class: 'fa' },
 				content: {
 					type: 'cols',
@@ -276,7 +276,7 @@ Aimeos.CMSContent = {
 			},
 			'col-3': {
 				category: 'Columns',
-				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke:#505860;stroke-width:2" width="8" height="18" x="8" y="9" ry="2" ry="1"></rect><rect style="fill:none;stroke:#505860;stroke-width:2" width="8" height="18" x="16" y="9" ry="2" ry="1"></rect><rect style="fill:none;stroke:#505860;stroke-width:2" width="8" height="18" x="24" y="9" ry="2" ry="1"></rect></svg><div class="gjs-block-label">3 cols</div>',
+				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke-width:2" width="8" height="18" x="8" y="9" ry="2" ry="1"></rect><rect style="fill:none;stroke-width:2" width="8" height="18" x="16" y="9" ry="2" ry="1"></rect><rect style="fill:none;stroke-width:2" width="8" height="18" x="24" y="9" ry="2" ry="1"></rect></svg><div class="gjs-block-label">3 cols</div>',
 				attributes: { class: 'fa' },
 				content: {
 					type: 'cols',

@@ -433,7 +433,7 @@ Aimeos.CMSContent = {
 				background-color: var(--bs-secondary, #505860); outline: none;
 			}
 			body {
-				scrollbar-color: var(--bs-secondary, #505860) transparent; scrollbar-width: thin;
+				background-color: #F8FAFC, scrollbar-color: var(--bs-secondary, #505860) transparent; scrollbar-width: thin;
 			}
 			.contact-form .contact-pot {
 				display: none;

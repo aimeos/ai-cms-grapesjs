@@ -127,7 +127,7 @@ $params = $this->get( 'pageParams', [] );
 										<div class="form-group row mandatory">
 											<label class="col-sm-4 form-control-label"><?= $enc->html( $this->translate( 'admin', 'Status' ) ) ?></label>
 											<div class="col-sm-8">
-												<select class="form-control form-select item-status" required="required" tabindex="1"
+												<select class="form-select item-status" required="required" tabindex="1"
 													name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.status' ) ) ) ?>"
 													<?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ) ?> >
 													<option value="">

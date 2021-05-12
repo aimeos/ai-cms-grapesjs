@@ -415,7 +415,7 @@ Aimeos.CMSContent = {
 				padding: 10px 0;
 			}
 			.row {
-				display: flex; padding: 10px 0; width: auto;
+				display: flex; padding: 10px 0; width: auto; min-height: 3.5rem;
 			}
 			.table {
 				border-collapse: initial;

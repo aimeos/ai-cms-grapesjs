@@ -21,17 +21,17 @@
 .gjs-one-color{color:var(--bs-bg, #f8fafc)}
 .gjs-one-color-h:hover{color:var(--bs-bg-light, #ffffff)}
 
-.gjs-two-bg{background-color:var(--bs-secondary-dark, #101820)}
+.gjs-two-bg{background-color:var(--bs-bg-dark, #f4f8fb)}
 .gjs-two-color{color:var(--bs-secondary, #505860)}
 .gjs-two-color-h:hover{color:var(--bs-secondary-light, #9098a0)}
 
-.gjs-three-bg{background-color:var(--bs-primary-alt-dark, #00998c)}
-.gjs-three-color{color:var(--bs-primary-alt, #00b0a0)}
-.gjs-three-color-h:hover{color:var(--bs-primary-alt-light, #00ccbb)}
+.gjs-three-bg{background-color:var(--bs-bg-dark, #f4f8fb)}
+.gjs-three-color{color:var(--bs-primary, #30a0e0)}
+.gjs-three-color-h:hover{color:var(--bs-primary-light, #5bb3e6)}
 
-.gjs-four-bg{background-color:var(--bs-primary-dark, #2093d5)}
-.gjs-four-color{color:var(--bs-primary, #30a0e0)}
-.gjs-four-color-h:hover{color:var(--bs-primary-light, #5bb3e6)}
+.gjs-four-bg{background-color:var(--bs-bg-dark, #f4f8fb)}
+.gjs-four-color{color:var(--bs-secondary-dark, #101820)}
+.gjs-four-color-h:hover{color:var(--bs-secondary-light, #9098a0)}
 
 .gjs-mdl-container,
 .gjs-mdl-dialog {

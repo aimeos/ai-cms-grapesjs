@@ -405,14 +405,14 @@ Aimeos.CMSContent = {
 		},
 
 		styles: `
-			.gjs-dashed .row, .gjs-dashed .col, .gjs-dashed [class^="col-"] {
-				min-height: 1.5rem !important;
-			}
 			img {
 				max-width: 100%;
 			}
 			form {
 				padding: 10px 0;
+			}
+			.row, .col, [class^="col-"] {
+				min-height: 1.5rem !important;
 			}
 			.row {
 				display: flex; padding: 10px 0; width: auto;

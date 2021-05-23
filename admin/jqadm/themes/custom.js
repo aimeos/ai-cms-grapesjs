@@ -359,13 +359,11 @@ Aimeos.CMSContent = {
 								'data-gjs-name': 'Row'
 							},
 							components: model => {
-								const cols = model.props().cols || 2;
-								const widths = model.props().widths || [];
+								const cols = model.props().cols || 1;
 								let result = '';
 
 								for(let i=0; i<cols; i++) {
-									const name = widths[i] ? 'col-' + widths[i] : '';
-									result += '<div class="col ' + name + '" data-gjs-draggable=".row" data-gjs-name="Column"></div>';
+									result += '<div class="col" data-gjs-draggable=".row" data-gjs-name="Column"></div>';
 								}
 								return result;
 							},
@@ -374,7 +372,7 @@ Aimeos.CMSContent = {
 								label: 'Breakpoint',
 								name: 'break',
 								options: [
-									{id: '', name: 'None'},
+									{id: 'col', name: 'None'},
 									{id: 'col-sm', name: 'S (576px)'},
 									{id: 'col-md', name: 'M (768px)'},
 									{id: 'col-lg', name: 'L (992px)'},
@@ -386,18 +384,13 @@ Aimeos.CMSContent = {
 							this.on('change:attributes:break', this.onBreakpointChange);
 						},
 						onBreakpointChange() {
-							const widths = this.props().widths || [];
-							const bsclass = this.getAttributes().break || '';
+							const bsclass = this.getAttributes().break || 'col';
 
-							if(bsclass) {
-								this.attributes.components.models.forEach(function(item, idx){
-									const width = bsclass + (widths[idx] ? '-' + widths[idx] : '');
-
-									if(item.attributes.tagName === 'div') {
-										item.setClass('col ' + width);
-									}
-								});
-							}
+							this.attributes.components.models.forEach(function(item, idx) {
+								if(item.attributes.tagName === 'div') {
+									item.setClass(bsclass);
+								}
+							});
 						}
 					}
 				});
@@ -412,7 +405,7 @@ Aimeos.CMSContent = {
 				padding: 10px 0;
 			}
 			.row, .col, [class^="col-"] {
-				min-height: 1.5rem !important;
+				min-height: 2.5rem !important;
 			}
 			.row {
 				display: flex; padding: 10px 0; width: auto;

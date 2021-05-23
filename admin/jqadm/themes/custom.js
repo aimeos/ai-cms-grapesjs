@@ -588,7 +588,9 @@ Aimeos.CMSContent = {
 
 			duplicate: function(idx) {
 				if(idx < this.items.length) {
-					this.$set(this.items, this.items.length, JSON.parse(JSON.stringify(this.items[idx])));
+					let entry = JSON.parse(JSON.stringify(this.items[idx]));
+					entry['text.id'] = null;
+					this.$set(this.items, this.items.length, entry);
 				}
 			},
 

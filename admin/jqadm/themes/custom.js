@@ -303,7 +303,7 @@ Aimeos.CMSContent = {
 						<label class="col-sm-4 form-control-label">Text</label>
 						<div class="col-sm-8"><textarea class="form-control" name="contact[message]" required rows="6"></textarea></div>
 					</div>
-					<div class="contact-pot">
+					<div class="contact-pot" style="display: none">
 						<input name="contact[url]" />
 					</div>
 					<div class="form-group contact-button">

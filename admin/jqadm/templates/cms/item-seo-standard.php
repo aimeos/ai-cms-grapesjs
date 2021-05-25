@@ -141,12 +141,12 @@ $enc = $this->encoder();
 									value="<?= $enc->attr( $languages->getCode()->first() ) ?>" />
 							<?php endif ?>
 
-							<?php if( ( $textTypes = $this->get( 'textTypes', map() ) )->count() !== 1 ) : ?>
+							<?php if( ( $seoTypes = $this->get( 'seoTypes', map() ) )->count() !== 1 ) : ?>
 								<div class="form-group row mandatory">
 									<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'Type' ) ) ?></label>
 									<div class="col-sm-8">
 										<select is="select-component" required class="form-select item-type" tabindex="<?= $enc->attr( $this->get( 'tabindex' ) ) ?>"
-											v-bind:items="<?= $enc->attr( $textTypes->col( 'text.type.label', 'text.type.code' )->toArray() ) ?>"
+											v-bind:items="<?= $enc->attr( $seoTypes->col( 'text.type.label', 'text.type.code' )->toArray() ) ?>"
 											v-bind:name="`<?= $enc->js( $this->formparam( ['seo', '_idx_', 'text.type'] ) ) ?>`.replace('_idx_', idx)"
 											v-bind:text="`<?= $enc->js( $this->translate( 'admin', 'Please select' ) ) ?>`"
 											v-bind:readonly="item['text.siteid'] != siteid"
@@ -160,7 +160,7 @@ $enc = $this->encoder();
 							<?php else : ?>
 								<input class="item-type" type="hidden"
 									v-bind:name="`<?= $enc->js( $this->formparam( array( 'seo', '_idx_', 'text.type' ) ) ) ?>`.replace('_idx_', idx)"
-									value="<?= $enc->attr( $textTypes->getCode()->first() ) ?>" />
+									value="<?= $enc->attr( $seoTypes->getCode()->first() ) ?>" />
 							<?php endif ?>
 
 							<div class="form-group row optional">

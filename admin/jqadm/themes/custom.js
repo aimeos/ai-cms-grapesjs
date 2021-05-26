@@ -207,14 +207,30 @@ Aimeos.CMSContent = {
 					activeOnRender: 1
 				}
 			},
-			'link': {
+			'button': {
 				category: 'Basic',
 				label: 'Button',
-				attributes: { class: 'fa fa-link' },
+				attributes: { class: 'fa fa-external-link' },
 				content: {
 					type: 'btn',
 					content: 'More',
 					classes: 'btn'
+				}
+			},
+			'link-block': {
+				category: 'Basic',
+				label: 'Link block',
+				attributes: { class: 'fa fa-link' },
+				content: {
+					type: 'link',
+					editable: false,
+					droppable: true,
+					style: {
+						display: 'inline-block',
+						padding: '5px',
+						'min-height': '50px',
+						'min-width': '50px'
+					}
 				}
 			},
 			'image': {

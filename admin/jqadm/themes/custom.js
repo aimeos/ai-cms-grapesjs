@@ -393,20 +393,38 @@ Aimeos.CMSContent = {
 									{id: 'col-md', name: 'M (768px)'},
 									{id: 'col-lg', name: 'L (992px)'},
 									{id: 'col-xl', name: 'XL (1200px)'},
-								]}
-							],
+								]
+							},{
+								type: 'select',
+								label: 'Spacing',
+								name: 'gutters',
+								options: [
+									{id: 'no-gutters', name: 'No'},
+									{id: '', name: 'Yes'},
+								]
+							}]
 						},
 						init() {
 							this.on('change:attributes:break', this.onBreakpointChange);
+							this.on('change:attributes:gutters', this.onGutterChange);
 						},
 						onBreakpointChange() {
 							const bsclass = this.getAttributes().break || 'col';
 
 							this.attributes.components.models.forEach(function(item, idx) {
 								if(item.attributes.tagName === 'div') {
-									item.setClass(bsclass);
+									item.removeClass('col');
+									item.removeClass('col-sm');
+									item.removeClass('col-md');
+									item.removeClass('col-lg');
+									item.removeClass('col-xl');
+									item.addClass(bsclass);
 								}
 							});
+						},
+						onGutterChange() {
+							this.removeClass('no-gutters');
+							this.addClass(this.getAttributes().gutters || '');
 						}
 					}
 				});
@@ -424,7 +442,10 @@ Aimeos.CMSContent = {
 				min-height: 2.5rem !important;
 			}
 			.row {
-				display: flex; padding: 10px 0; width: auto;
+				display: flex; width: auto;
+			}
+			.gjs-dashed .row {
+				padding: 10px 0;
 			}
 			.table {
 				border-collapse: initial;

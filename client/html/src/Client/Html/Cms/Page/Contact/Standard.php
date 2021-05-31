@@ -187,6 +187,12 @@ class Standard
 		$msg = $view->param( 'contact/message' );
 		$honeypot = $view->param( 'contact/url' );
 
+		if( !( $email || $msg ) )
+		{
+			$error = [$context->getI18n()->dt( 'client', 'The e-mail address and message are mandatory' )];
+			$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
+		}
+
 		if( !$honeypot && $name && $email && $msg )
 		{
 			$context = $this->getContext();

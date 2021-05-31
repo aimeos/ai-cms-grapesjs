@@ -313,7 +313,7 @@ Aimeos.CMSContent = {
 					</div>
 					<div class="form-group row contact-email">
 						<label class="col-sm-4 form-control-label">E-Mail</label>
-						<div class="col-sm-8"><input class="form-control" name="contact[email]" required /></div>
+						<div class="col-sm-8"><input class="form-control" name="contact[email]" type="email" required /></div>
 					</div>
 					<div class="form-group row contact-message">
 						<label class="col-sm-4 form-control-label">Text</label>

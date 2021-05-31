@@ -192,7 +192,7 @@ class Standard
 			$context = $this->getContext();
 			$config = $context->getConfig();
 
-			$toAddr = $config->get( 'resource/email/from-address' );
+			$toAddr = $config->get( 'resource/email/from-email' );
 			$toName = $config->get( 'resource/email/from-name' );
 
 			if( $toAddr )

@@ -191,23 +191,27 @@ class Standard
 		{
 			$context = $this->getContext();
 			$config = $context->getConfig();
+			$i18n = $context->getI18n();
 
 			$toAddr = $config->get( 'resource/email/from-email' );
 			$toName = $config->get( 'resource/email/from-name' );
 
 			if( $toAddr )
 			{
+				$label = $context->getLocale()->getSiteItem()->getLabel();
+
 				$context->mail()->createMessage()
 				->addTo( $toAddr, $toName )
 				->addFrom( $email, $name )
+				->setSubject( $i18n->dt( 'client', 'Your request' ) . ' - ' . $label )
 				->setBody( $msg )
 				->send();
 
-				$error = [$context->getI18n()->dt( 'client', 'Message sent successfully' )];
+				$error = [$i18n->dt( 'client', 'Message sent successfully' )];
 			}
 			else
 			{
-				$error = [$context->getI18n()->dt( 'client', 'No recipient configured' )];
+				$error = [$i18n->dt( 'client', 'No recipient configured' )];
 			}
 
 			$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );

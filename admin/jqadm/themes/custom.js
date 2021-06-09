@@ -436,7 +436,7 @@ Aimeos.CMSContent = {
 				max-width: 100%;
 			}
 			form {
-				padding: 10px 0;
+				padding-top: 10px;
 			}
 			.row, .col, [class^="col-"] {
 				min-height: 2.5rem !important;
@@ -445,7 +445,7 @@ Aimeos.CMSContent = {
 				display: flex; width: auto;
 			}
 			.gjs-dashed .row, .gjs-dashed .space {
-				padding: 10px 0;
+				padding-top: 10px;
 			}
 			.table {
 				border-collapse: initial;

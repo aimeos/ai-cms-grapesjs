@@ -225,11 +225,11 @@ Aimeos.CMSContent = {
 					type: 'link',
 					editable: false,
 					droppable: true,
+					attributes: { class: 'space' },
 					style: {
 						display: 'inline-block',
-						padding: '5px',
 						'min-height': '50px',
-						'min-width': '50px'
+						width: '100%'
 					}
 				}
 			},
@@ -444,7 +444,7 @@ Aimeos.CMSContent = {
 			.row {
 				display: flex; width: auto;
 			}
-			.gjs-dashed .row {
+			.gjs-dashed .row, .gjs-dashed .space {
 				padding: 10px 0;
 			}
 			.table {

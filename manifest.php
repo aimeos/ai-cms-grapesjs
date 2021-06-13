@@ -1,52 +1,54 @@
 <?php
 
-return array(
+return [
 	'name' => 'ai-cms-grapesjs',
-	'depends' => array(
+	'depends' => [
 		'aimeos-core',
 		'ai-admin-jqadm',
 		'ai-admin-jsonadm',
 		'ai-client-html',
 		'ai-client-jsonapi',
 		'ai-controller-frontend',
-	),
-	'include' => array(
+	],
+	'include' => [
 		'lib/custom/src',
 		'client/html/src',
 		'client/jsonapi/src',
 		'controller/frontend/src',
 		'admin/jsonadm/src',
 		'admin/jqadm/src',
-	),
-	'i18n' => array(
+	],
+	'i18n' => [
 		'admin' => 'admin/i18n',
 		'admin/jsonadm' => 'admin/jsonadm/i18n',
 		'client' => 'client/i18n',
 		'client/code' => 'client/i18n/code',
 		'controller/frontend' => 'controller/frontend/i18n',
 		'mshop' => 'lib/custom/i18n',
-	),
-	'config' => array(
+	],
+	'config' => [
 		'config',
-	),
-	'custom' => array(
-		'admin/jqadm' => array(
-			'admin/jqadm/manifest.jsb2',
-		),
-		'admin/jqadm/templates' => array(
-			'admin/jqadm/templates',
-		),
-		'admin/jsonadm/templates' => array(
-			'admin/jsonadm/templates',
-		),
-		'client/html/templates' => array(
-			'client/html/templates',
-		),
-		'client/jsonapi/templates' => array(
-			'client/jsonapi/templates',
-		),
-	),
-	'setup' => array(
+	],
+	'setup' => [
 		'lib/custom/setup',
-	),
-);
+	],
+	'template' => [
+		'admin/jqadm/templates' => [
+			'admin/jqadm/templates',
+		],
+		'admin/jsonadm/templates' => [
+			'admin/jsonadm/templates',
+		],
+		'client/html/templates' => [
+			'client/html/templates',
+		],
+		'client/jsonapi/templates' => [
+			'client/jsonapi/templates',
+		],
+	],
+	'custom' => [
+		'admin/jqadm' => [
+			'admin/jqadm/manifest.jsb2',
+		],
+	],
+];

@@ -8,7 +8,6 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": "~7.1||~8.0",
-		"composer/installers": "^1.0",
 		"aimeos/aimeos-core": "dev-master",
 		"aimeos/ai-admin-jqadm": "dev-master",
 		"aimeos/ai-admin-jsonadm": "dev-master",

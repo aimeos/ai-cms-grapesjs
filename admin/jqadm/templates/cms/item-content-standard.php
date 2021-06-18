@@ -197,7 +197,7 @@ $enc = $this->encoder();
 						<div v-show="item['_ext']" class="col-xl-6 secondary" v-bind:class="{readonly: item['cms.lists.siteid'] != siteid}">
 							<config-table v-bind:tabindex="`<?= $enc->js( $this->get( 'tabindex' ) ) ?>`"
 								v-bind:keys="<?= $enc->attr( $this->config( 'admin/jqadm/cms/item/content/config/suggest', [] ) ) ?>"
-								v-bind:name="`<?= $enc->js( $this->formparam( ['content', '_idx_', 'config', '_pos_', '_key_'] ) ) ?>`"
+								v-bind:name="`<?= $enc->js( $this->formparam( ['content', '_idx_', 'config', '_pos_', '_key_'] ) ) ?>`.replace('_idx_', idx)"
 								v-bind:index="idx" v-bind:readonly="item['cms.lists.siteid'] != siteid"
 								v-bind:items="item['config']" v-on:update:config="item['config'] = $event">
 							</config-table>

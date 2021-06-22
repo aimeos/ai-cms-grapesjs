@@ -167,8 +167,9 @@ class Standard
 	public function modifyBody( string $content, string $uid ) : string
 	{
 		$content = parent::modifyBody( $content, $uid );
+		$token = !$this->getView()->access( ['editor', 'admin', 'super'] ) ? $this->getView()->csrf()->formfield() : '';
 
-		return $this->replaceSection( $content, $this->getView()->csrf()->formfield(), 'cms.page.contact.csrf' );
+		return $this->replaceSection( $content, $token, 'cms.page.contact.csrf' );
 	}
 
 

@@ -140,10 +140,10 @@ class Standard
 				}
 				$view->pageBody = $html;
 
-				$html = $this->csrf( $view->render( $view->config( $tplconf, $default ) ) );
+				$html = $view->render( $view->config( $tplconf, $default ) );
 				$this->setCached( 'body', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
 
-				return $html;
+				return $this->modifyBody( $html, $uid );
 			}
 			catch( \Aimeos\Client\Html\Exception $e )
 			{
@@ -423,17 +423,5 @@ class Standard
 	protected function getSubClientNames() : array
 	{
 		return $this->getContext()->getConfig()->get( $this->subPartPath, $this->subPartNames );
-	}
-
-
-	/**
-	 * Returns the passed HTML code with CSRF tokens replaced
-	 *
-	 * @return string HTML code
-	 */
-	protected function csrf( string $html ) : string
-	{
-		$csrf = $this->getView()->csrf();
-		return str_replace( ['%csrf.name%', '%csrf.value%'], [$csrf->name(), $csrf->value()], $html );
 	}
 }

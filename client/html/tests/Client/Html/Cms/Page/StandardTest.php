@@ -33,14 +33,15 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testGetHeader()
 	{
-		$view = $this->object->getView();
-		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, array( 'path' => '/contact' ) );
-		$view->addHelper( 'param', $helper );
-
 		$tags = [];
 		$expire = null;
+		$view = $this->object->getView();
 
-		$this->object->setView( $this->object->addData( $this->object->getView(), $tags, $expire ) );
+		$psr17Factory = new \Nyholm\Psr7\Factory\Psr17Factory();
+		$helper = new \Aimeos\MW\View\Helper\Request\Standard( $view, $psr17Factory->createServerRequest( 'GET', 'https://aimeos.org/contact' ) );
+		$view->addHelper( 'request', $helper );
+
+		$this->object->setView( $this->object->addData( $view, $tags, $expire ) );
 		$output = $this->object->getHeader();
 
 		$this->assertStringContainsString( '<title>Contact page | Aimeos</title>', $output );
@@ -69,12 +70,13 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testGetBody()
 	{
-		$view = $this->object->getView();
-		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, array( 'path' => '/contact' ) );
-		$view->addHelper( 'param', $helper );
-
 		$tags = [];
 		$expire = null;
+		$view = $this->object->getView();
+
+		$psr17Factory = new \Nyholm\Psr7\Factory\Psr17Factory();
+		$helper = new \Aimeos\MW\View\Helper\Request\Standard( $view, $psr17Factory->createServerRequest( 'GET', 'https://aimeos.org/contact' ) );
+		$view = $view->addHelper( 'request', $helper );
 
 		$this->object->setView( $this->object->addData( $view, $tags, $expire ) );
 		$output = $this->object->getBody();

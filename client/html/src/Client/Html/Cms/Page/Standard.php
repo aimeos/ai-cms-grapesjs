@@ -405,11 +405,13 @@ class Standard
 		 */
 		$domains = $context->getConfig()->get( 'client/html/cms/page/domains', ['media', 'text'] );
 
-		$page = $controller->uses( $domains )->find( '/' . trim( $view->request()->getUri()->getPath(), '/' ) );
+		$path = '/' . trim( $view->request()->getUri()->getPath(), '/' );
 
-		$this->addMetaItems( $page, $expire, $tags );
-
-		$view->pageCmsItem = $page;
+		if( $page = $controller->uses( $domains )->compare( '==', 'cms.url', $path )->search()->first() )
+		{
+			$this->addMetaItems( $page, $expire, $tags );
+			$view->pageCmsItem = $page;
+		}
 
 		return parent::addData( $view, $tags, $expire );
 	}

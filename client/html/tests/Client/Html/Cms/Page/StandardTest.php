@@ -57,9 +57,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 			->setMethods( array( 'addData' ) )
 			->getMock();
 
-		$view = $this->object->getView();
-		$view->addHelper( 'param', new \Aimeos\MW\View\Helper\Param\Standard( $view, ['path' => 'invalid'] ) );
-		$mock->setView( $view );
+		$mock->setView( $this->object->getView() );
 
 		$mock->expects( $this->once() )->method( 'addData' )
 			->will( $this->throwException( new \RuntimeException() ) );
@@ -96,9 +94,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 			->setMethods( array( 'addData' ) )
 			->getMock();
 
-		$view = $this->object->getView();
-		$view->addHelper( 'param', new \Aimeos\MW\View\Helper\Param\Standard( $view, ['path' => 'invalid'] ) );
-		$mock->setView( $view );
+		$mock->setView( $this->object->getView() );
 
 		$mock->expects( $this->once() )->method( 'addData' )
 			->will( $this->throwException( new \Aimeos\Client\Html\Exception() ) );
@@ -114,9 +110,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 			->setMethods( array( 'addData' ) )
 			->getMock();
 
-		$view = $this->object->getView();
-		$view->addHelper( 'param', new \Aimeos\MW\View\Helper\Param\Standard( $view, ['path' => 'invalid'] ) );
-		$mock->setView( $view );
+		$mock->setView( $this->object->getView() );
 
 		$mock->expects( $this->once() )->method( 'addData' )
 			->will( $this->throwException( new \Aimeos\Controller\Frontend\Exception() ) );
@@ -132,9 +126,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 			->setMethods( array( 'addData' ) )
 			->getMock();
 
-		$view = $this->object->getView();
-		$view->addHelper( 'param', new \Aimeos\MW\View\Helper\Param\Standard( $view, ['path' => 'invalid'] ) );
-		$mock->setView( $view );
+		$mock->setView( $this->object->getView() );
 
 		$mock->expects( $this->once() )->method( 'addData' )
 			->will( $this->throwException( new \Aimeos\MShop\Exception() ) );
@@ -150,9 +142,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 			->setMethods( array( 'addData' ) )
 			->getMock();
 
-		$view = $this->object->getView();
-		$view->addHelper( 'param', new \Aimeos\MW\View\Helper\Param\Standard( $view, ['path' => 'invalid'] ) );
-		$mock->setView( $view );
+		$mock->setView( $this->object->getView() );
 
 		$mock->expects( $this->once() )->method( 'addData' )
 			->will( $this->throwException( new \RuntimeException() ) );

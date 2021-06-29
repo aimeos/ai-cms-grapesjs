@@ -104,6 +104,46 @@ class Standard
 		{
 			$view = $this->getView();
 
+			try
+			{
+				$html = '';
+
+				if( !isset( $this->view ) ) {
+					$view = $this->view = $this->getObject()->addData( $view, $this->tags, $this->expire );
+				}
+
+				foreach( $this->getSubClients() as $subclient ) {
+					$html .= $subclient->setView( $view )->getBody( $uid );
+				}
+				$view->pageBody = $html;
+
+				$html = $view->render( $view->config( $tplconf, $default ) );
+				$this->setCached( 'body', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
+
+				return $this->modifyBody( $html, $uid );
+			}
+			catch( \Aimeos\Client\Html\Exception $e )
+			{
+				$error = array( $context->getI18n()->dt( 'client', $e->getMessage() ) );
+				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
+			}
+			catch( \Aimeos\Controller\Frontend\Exception $e )
+			{
+				$error = array( $context->getI18n()->dt( 'controller/frontend', $e->getMessage() ) );
+				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
+			}
+			catch( \Aimeos\MShop\Exception $e )
+			{
+				$error = array( $context->getI18n()->dt( 'mshop', $e->getMessage() ) );
+				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
+			}
+			catch( \Exception $e )
+			{
+				$error = array( $context->getI18n()->dt( 'client', 'A non-recoverable error occured' ) );
+				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
+				$this->logException( $e );
+			}
+
 			/** client/html/cms/page/template-body
 			 * Relative path to the HTML body template of the cms page client.
 			 *
@@ -126,49 +166,6 @@ class Standard
 			 */
 			$tplconf = 'client/html/cms/page/template-body';
 			$default = 'cms/page/body-standard';
-
-			try
-			{
-				$html = '';
-
-				if( !isset( $this->view ) ) {
-					$view = $this->view = $this->getObject()->addData( $view, $this->tags, $this->expire );
-				}
-
-				foreach( $this->getSubClients() as $subclient ) {
-					$html .= $subclient->setView( $view )->getBody( $uid );
-				}
-				$view->pageBody = $html;
-
-				$html = $view->render( $view->config( $tplconf, $default ) );
-				$this->setCached( 'body', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
-
-				return $this->modifyBody( $html, $uid );
-			}
-			catch( \Aimeos\Client\Html\Exception $e )
-			{
-				$tplconf = 'client/html/cms/page/template-error';
-				$error = array( $context->getI18n()->dt( 'client', $e->getMessage() ) );
-				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
-			}
-			catch( \Aimeos\Controller\Frontend\Exception $e )
-			{
-				$tplconf = 'client/html/cms/page/template-error';
-				$error = array( $context->getI18n()->dt( 'controller/frontend', $e->getMessage() ) );
-				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
-			}
-			catch( \Aimeos\MShop\Exception $e )
-			{
-				$tplconf = 'client/html/cms/page/template-error';
-				$error = array( $context->getI18n()->dt( 'mshop', $e->getMessage() ) );
-				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
-			}
-			catch( \Exception $e )
-			{
-				$error = array( $context->getI18n()->dt( 'client', 'A non-recoverable error occured' ) );
-				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
-				$this->logException( $e );
-			}
 
 			$html = $view->render( $view->config( $tplconf, $default ) );
 		}

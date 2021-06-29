@@ -41,6 +41,12 @@ class TestHelper
 	}
 
 
+	public static function getHtmlTemplatePaths()
+	{
+		return self::getAimeos()->getTemplatePaths( 'client/html/templates' );
+	}
+
+
 	/**
 	 * @param string $site
 	 */
@@ -85,5 +91,44 @@ class TestHelper
 		$ctx->setEditor( 'ai-cms-grapesjs:lib/custom' );
 
 		return $ctx;
+	}
+
+
+	public static function getView( $site = 'unittest', \Aimeos\MW\Config\Iface $config = null )
+	{
+		if( $config === null ) {
+			$config = self::getContext( $site )->getConfig();
+		}
+
+		$view = new \Aimeos\MW\View\Standard( self::getHtmlTemplatePaths() );
+
+		$trans = new \Aimeos\MW\Translation\None( 'de_DE' );
+		$helper = new \Aimeos\MW\View\Helper\Translate\Standard( $view, $trans );
+		$view->addHelper( 'translate', $helper );
+
+		$helper = new \Aimeos\MW\View\Helper\Url\Standard( $view, 'http://baseurl' );
+		$view->addHelper( 'url', $helper );
+
+		$helper = new \Aimeos\MW\View\Helper\Number\Standard( $view, '.', '' );
+		$view->addHelper( 'number', $helper );
+
+		$helper = new \Aimeos\MW\View\Helper\Date\Standard( $view, 'Y-m-d' );
+		$view->addHelper( 'date', $helper );
+
+		$config = new \Aimeos\MW\Config\Decorator\Protect( $config, ['client', 'resource/fs/baseurl'] );
+		$helper = new \Aimeos\MW\View\Helper\Config\Standard( $view, $config );
+		$view->addHelper( 'config', $helper );
+
+		$helper = new \Aimeos\MW\View\Helper\Csrf\Standard( $view, '_csrf_token', '_csrf_value' );
+		$view->addHelper( 'csrf', $helper );
+
+		$psr17Factory = new \Nyholm\Psr7\Factory\Psr17Factory();
+		$helper = new \Aimeos\MW\View\Helper\Request\Standard( $view, $psr17Factory->createServerRequest( 'GET', 'https://aimeos.org' ) );
+		$view->addHelper( 'request', $helper );
+
+		$helper = new \Aimeos\MW\View\Helper\Response\Standard( $view, $psr17Factory->createResponse() );
+		$view->addHelper( 'response', $helper );
+
+		return $view;
 	}
 }

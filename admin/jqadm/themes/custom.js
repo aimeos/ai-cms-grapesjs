@@ -2,6 +2,7 @@
  * Custom ai-cms-grapesjs JS
  */
 
+
 Vue.component('grapesjs', {
 	template: `<div class="grapesjs-editor">
 		<input type="hidden" v-bind:name="name" v-bind:value="value" />
@@ -299,6 +300,16 @@ Aimeos.CMSContent = {
 					cols: 3
 				},
 			},
+			'cataloglist': {
+				category: 'Extra',
+				label: 'Products',
+				attributes: { class: 'fa fa-cubes' },
+				content: `<cataloglist limit="3" type="default">
+					<div class="product" data-gjs-name="Product"></div>
+					<div class="product" data-gjs-name="Product"></div>
+					<div class="product" data-gjs-name="Product"></div>
+				</cataloglist>`
+			},
 			'contact': {
 				category: 'Extra',
 				label: 'Contact',
@@ -428,6 +439,108 @@ Aimeos.CMSContent = {
 						}
 					}
 				});
+			},
+
+			'cataloglist': function(editor) {
+				editor.DomComponents.addType('cataloglist', {
+					isComponent: el => el.tagName === 'CATALOGLIST' ? {type: 'cataloglist'} : false,
+					model: {
+						defaults: {
+							tagName: 'cataloglist',
+							draggable: true,
+							droppable: true,
+							attributes: {
+								class: 'cataloglist',
+							},
+							components: model => {
+								const limit = model.props().limit || 3;
+								let result = '';
+
+								for(let i=0; i<limit; i++) {
+									result += '<div class="product" data-gjs-name="Product"></div>';
+								}
+								return result;
+							},
+							traits: [{
+								type: 'select',
+								label: 'Category',
+								name: 'catid'
+							},{
+								type: 'select',
+								label: 'List type',
+								name: 'type',
+								options: [
+									{id: 'default', name: 'Default'},
+									{id: 'promotion', name: 'Promotion'},
+								]
+							},{
+								type: 'number',
+								label: 'Limit',
+								name: 'limit',
+								min: 1,
+								max: 100,
+								step: 1
+							}]
+						},
+						init() {
+							this.on('change:attributes:limit', this.onLimitChange);
+							this.fetch();
+						},
+						fetch() {
+							Aimeos.options.done(options => {
+								if(options.meta && options.meta.resources && options.meta.resources['catalog'] ) {
+									const args = {
+										fields: {catalog: 'catalog.id,catalog.label,catalog.level'},
+										page: {limit: 100}
+									};
+
+									const config = {
+										'paramsSerializer': function(params) {
+											return jQuery.param(params); // workaround, Axios and QS fail on [==]
+										},
+										'params': {}
+									};
+
+									if(options.meta.prefix && options.meta.prefix) {
+										config['params'][options.meta.prefix] = args;
+									} else {
+										config['params'] = args;
+									}
+
+									axios.get(options.meta.resources['catalog'], config).then(response => {
+										const items = [{id: '', name: '---'}];
+
+										(response.data.data || []).forEach(entry => {
+											if(entry['id'] && entry['attributes']) {
+												items.push({id: entry['id'], name: '-'.repeat(entry['attributes']['catalog.level'] || 0) + ' ' + (entry['attributes']['catalog.label'] || '')});
+											}
+										});
+
+										const catid = this.get('traits').where({name: 'catid'})[0];
+										catid.set('options', items);
+									});
+								}
+							});
+						},
+						onLimitChange() {
+							let items = '';
+							const view = this.getView();
+							const limit = this.getAttributes().limit;
+
+							for(let i=0; i<limit; i++) {
+								items += '<div class="product" data-gjs-name="Product"></div>';
+							}
+
+							this.empty().append(items);
+							view && view.render();
+						},
+						updated(property, value) {
+							if(property === 'components' && this.getAttributes().limit !== value.length) {
+								this.getTrait('limit').set('value', value.length);
+							}
+						}
+					}
+				});
 			}
 		},
 
@@ -464,6 +577,12 @@ Aimeos.CMSContent = {
 			}
 			body {
 				background-color: #F8FAFC; scrollbar-color: #505860 transparent; scrollbar-width: thin;
+			}
+			.cataloglist {
+				display: block;
+			}
+			.product {
+				display: inline-block; width: 240px; height: 320px; margin: 14px; background-color: #E8ECEF;
 			}
 			.contact-form .contact-pot {
 				display: none;

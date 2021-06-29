@@ -59,7 +59,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->assertEquals( 2, count( $result ) );
 		$this->assertArrayHasKey( 'text', $result );
 		$this->assertArrayHasKey( 'media', $result );
-		$this->assertEquals( 6, $result['text'] );
+		$this->assertEquals( 7, $result['text'] );
 		$this->assertEquals( 2, $result['media'] );
 	}
 
@@ -168,7 +168,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$search = $this->object->filter();
 		$search->setConditions( $search->compare( '==', 'cms.lists.editor', $this->editor ) );
-		$this->assertEquals( 8, count( $this->object->search( $search )->toArray() ) );
+		$this->assertEquals( 9, count( $this->object->search( $search )->toArray() ) );
 	}
 
 
@@ -184,7 +184,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$search->slice( 0, 1 );
 		$results = $this->object->search( $search, [], $total )->toArray();
 		$this->assertEquals( 1, count( $results ) );
-		$this->assertEquals( 8, $total );
+		$this->assertEquals( 9, $total );
 
 		foreach( $results as $itemId => $item ) {
 			$this->assertEquals( $itemId, $item->getId() );

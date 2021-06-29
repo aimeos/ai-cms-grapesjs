@@ -51,5 +51,30 @@ return [
 				'media.previews' => [1 => 'path/to/image-small-2.jpg']
 			]]
 		]
+	],[
+		'cms.url' => '/catlist', 'cms.label' => 'With catalog list', 'cms.status' => 1,
+		'lists' => [
+			'text' => [[
+				'cms.lists.type' => 'default', 'cms.lists.position' => 1,
+				'text.languageid' => 'de', 'text.type' => 'content', 'text.domain' => 'cms',
+				'text.label' => 'catlist test', 'text.content' => '
+					<div>
+						<h1>Catalog list example</h1>
+						<div>
+							<div>
+								<cataloglist class="cataloglist" catid="_cat1_" type="promotion" limit="1">
+									<div class="product"></div>
+								</cataloglist>
+							</div>
+							<div></div>
+						</div>
+						<h2>All products</h2>
+						<cataloglist class="cataloglist" catid="_cat2_" type="default" limit="3">
+							<div class="product"></div>
+						</cataloglist>
+					</div>
+				'
+			]]
+		]
 	]]
 ];

@@ -46,7 +46,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 			$textItem->setContent( str_replace( ['_cat1_', '_cat2_'], [$catId1, $catId2], $textItem->getContent() ) );
 		}
 
-		$view = $this->object->addData( $view );
+		$this->object->addData( $view );
 
 		foreach( $textItems as $textItem ) {
 			$this->assertStringContainsString( 'class="list-items', $textItem->getContent() );

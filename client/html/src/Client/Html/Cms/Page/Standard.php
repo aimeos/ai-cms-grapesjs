@@ -400,7 +400,7 @@ class Standard
 		 * @param array List of domain names
 		 * @since 2021.04
 		 */
-		$domains = $context->getConfig()->get( 'client/html/cms/page/domains', ['media', 'text'] );
+		$domains = $context->getConfig()->get( 'client/html/cms/page/domains', ['text'] );
 
 		$path = '/' . trim( $view->request()->getUri()->getPath(), '/' );
 

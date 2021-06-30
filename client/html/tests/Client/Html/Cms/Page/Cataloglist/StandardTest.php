@@ -48,7 +48,9 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 		$this->object->addData( $view );
 
-		foreach( $textItems as $textItem ) {
+		foreach( $textItems as $textItem )
+		{
+			$this->assertStringContainsString( '<div class="catalog-list">', $textItem->getContent() );
 			$this->assertStringContainsString( 'class="list-items', $textItem->getContent() );
 		}
 	}

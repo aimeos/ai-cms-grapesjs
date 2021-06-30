@@ -175,7 +175,7 @@ class Standard
 		$config = $context->getConfig();
 		$cntl = \Aimeos\Controller\Frontend::create( $context, 'product' );
 
-		$template = $config->get( 'client/html/common/partials/products', 'common/partials/products-standard' );
+		$template = $config->get( 'client/html/cms/page/template-cataloglist', 'cms/page/cataloglist/list-standard' );
 		$domains = $config->get( 'client/html/catalog/lists/domains', ['media', 'media/property', 'price', 'text'] );
 
 		libxml_use_internal_errors( true );

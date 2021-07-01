@@ -24,10 +24,8 @@ $enc = $this->encoder();
 		</ul>
 	<?php endif; ?>
 
-	<?php if( isset( $this->pageCmsItem ) ) : ?>
-		<?php foreach( $this->pageCmsItem->getRefItems( 'text', 'content' ) as $textItem ) : ?>
-			<?= $textItem->getContent() ?>
-		<?php endforeach ?>
-	<?php endif; ?>
+	<?php foreach( $this->get( 'pageContent', [] ) as $content ) : ?>
+		<?= $content ?>
+	<?php endforeach ?>
 
 </section>

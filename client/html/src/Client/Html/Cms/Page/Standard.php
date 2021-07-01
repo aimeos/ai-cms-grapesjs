@@ -407,7 +407,11 @@ class Standard
 		if( $page = $controller->uses( $domains )->compare( '==', 'cms.url', $path )->search()->first() )
 		{
 			$this->addMetaItems( $page, $expire, $tags );
-			$view->pageCmsItem = $page;
+
+			$view->pageContent = $page->getRefItems('text', 'content')->map( function( $item ) {
+				$json = json_decode( $item->getContent(), true );
+				return $json['html'] ?? $item->getContent();
+			} );
 		}
 
 		return parent::addData( $view, $tags, $expire );

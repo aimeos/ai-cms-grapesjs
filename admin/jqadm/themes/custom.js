@@ -17,6 +17,13 @@ Vue.component('grapesjs', {
 		}
 	},
 
+	beforeDestroy: function() {
+		if(this.instance) {
+			this.instance.destroy();
+			this.instance = null;
+		}
+	},
+
 	computed: {
 		style: function() {
 			let result = '';
@@ -27,37 +34,39 @@ Vue.component('grapesjs', {
 		}
 	},
 
+	methods: {
+		setData(val) {
+			try {
+				const json = JSON.parse(val);
+				this.instance.setComponents(json.html || '');
+				this.instance.setStyle((json.css || '') + this.setup.styles);
+			} catch(e) {
+				this.instance.setComponents(val);
+			}
+		}
+	},
+
 	mounted: function() {
 		if(this.readonly) {
 			return;
 		}
 
-		const self = this;
-
-		this.setup.config.components = this.value;
 		this.setup.config.container = this.$el.querySelector('.gjs');
-
-		this.setup.pre(this.setup);
 		this.instance = grapesjs.init(this.setup.config);
-		this.setup.post(this.setup, this.instance, this.media);
-	},
 
-	beforeDestroy: function() {
-		if(this.instance) {
-			this.instance.destroy();
-			this.instance = null;
-		}
+		this.setup.initialize(this.instance, this.setup, this.media);
+		this.setData(this.value);
 	},
 
 	watch: {
 		value: function(val, oldval) {
 			if(val !== oldval) {
-				this.instance.setComponents(val);
+				this.setData(val);
 			}
 		},
 		update: function() {
 			if(this.instance) {
-				this.$emit('input', this.instance.getHtml());
+				this.$emit('input', JSON.stringify({css: this.instance.getCss(), html: this.instance.getHtml()}));
 			}
 		}
 	}
@@ -85,7 +94,8 @@ Aimeos.CMSContent = {
 			},
 			canvas: {
 				styles: [
-					'https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css'
+					'https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css',
+					'/vendor/shop/themes/elegance/aimeos.css'
 				],
 			},
 			i18n: {
@@ -309,6 +319,12 @@ Aimeos.CMSContent = {
 					<div class="product" data-gjs-name="Product"></div>
 					<div class="product" data-gjs-name="Product"></div>
 				</cataloglist>`
+			},
+			'parallax': {
+				category: 'Extra',
+				label: 'Parallax',
+				attributes: { class: 'fa fa-film' },
+				content: `<section class="parallax" data-type="background" data-speed="16"></section>`
 			},
 			'contact': {
 				category: 'Extra',
@@ -541,6 +557,47 @@ Aimeos.CMSContent = {
 						}
 					}
 				});
+			},
+
+			'parallax': function(editor) {
+				editor.DomComponents.addType('parallax', {
+					isComponent: el => el.tagName === 'SECTION' && el.classList.contains('parallax') ? {type: 'parallax'} : false,
+					model: {
+						defaults: {
+							tagName: 'section',
+							draggable: true,
+							droppable: true,
+							attributes: {
+								class: 'parallax',
+							},
+							components: model => {
+								return '<div class="parallax-container"></div>';
+							},
+							traits: [{
+								type: 'select',
+								label: 'Background',
+								name: 'data-background'
+							}]
+						},
+						init() {
+							const options = [];
+							const bg = this.getTrait('data-background');
+
+							editor.AssetManager.getAll().each(function(item) {
+								options.push({id: item.attributes.srcset || item.attributes.src, name: item.attributes.name});
+							});
+
+							bg && bg.set('options', options);
+							this.on('change:attributes:data-background', this.onBackgroundChange);
+						},
+						onBackgroundChange() {
+							const bg = this.getAttributes()['data-background'];
+							const url = (bg.split(',').pop() || '').trim().split(' ').shift();
+
+							url && this.setStyle({'background-image': `url('${url}')`});
+						}
+					}
+				});
 			}
 		},
 
@@ -587,19 +644,54 @@ Aimeos.CMSContent = {
 			.contact-form .contact-pot {
 				display: none;
 			}
+			.parallax-container {
+				min-height: 2.5rem;
+			}
 		`,
 
 
-		pre: function(setup) {
-			for(const cmp in setup.components) {
-				setup.config.plugins.push(setup.components[cmp]);
-			}
-		},
+		initialize: function(editor, setup, media) {
 
+			// @todo: Use different implementation
+			editor.AssetManager.addType('imageset', {
+				isType(value) {
+					if (typeof value == 'object' && value.type == 'imageset') {
+						return value;
+					}
+				},
+				model: {
+					defaults: {
+					  type:  'imageset',
+					  srcset: {},
+					  name: 'Responsive image set',
+					},
+					getName() {
+					  return this.get('name');
+					}
+				},
+				view: {
+					getPreview() {
+					  return `<img src="${this.model.get('src') || ''}" style="text-align: center" />`;
+					},
+					getInfo() {
+					  return `<div>${this.model.get('name')}</div>`;
+					},
+					updateTarget(target) {
+						if (target.get('type') == 'image') {
+							target.set('srcset', this.model.get('srcset'));
+							target.set('src', this.model.get('src'));
+						}
+					},
+				},
+			});
 
-		post: function(setup, editor, media) {
-
+			editor.Canvas.getFrames().forEach(frame => frame.view.getBody().classList.add('aimeos'));
 			editor.I18n.setLocale(document.querySelector('.aimeos').attributes.lang.nodeValue);
+			editor.AssetManager.add(media);
+
+			for(const cmp in setup.components) {
+				setup.components[cmp](editor);
+			}
 
 			// only add own panels
 			editor.Panels.getPanels().reset(setup.panels);
@@ -634,42 +726,6 @@ Aimeos.CMSContent = {
 					btn && btn.set('active', 1);
 				}
 			});
-
-
-			// @todo: Remove after GrapesJS version update
-			editor.AssetManager.addType('imageset', {
-				isType(value) {
-					if (typeof value == 'object' && value.type == 'imageset') {
-						return value;
-					}
-				},
-				model: {
-					defaults: {
-					  type:  'imageset',
-					  srcset: {},
-					  name: 'Responsive image set',
-					},
-					getName() {
-					  return this.get('name');
-					}
-				},
-				view: {
-					getPreview() {
-					  return `<img src="${this.model.get('src') || ''}" style="text-align: center" />`;
-					},
-					getInfo() {
-					  return `<div>${this.model.get('name')}</div>`;
-					},
-					updateTarget(target) {
-						if (target.get('type') == 'image') {
-							target.set('srcset', this.model.get('srcset'));
-							target.set('src', this.model.get('src'));
-						}
-					},
-				},
-			});
-
-			editor.AssetManager.add(media);
 		}
 	},
 

@@ -253,7 +253,8 @@ Aimeos.CMSContent = {
 				attributes: { class: 'fa fa-picture-o' },
 				content: {
 					type: 'image',
-					activeOnRender: 1
+					activeOnRender: 1,
+					attributes: { loading: "lazy" }
 				}
 			},
 			'video': {
@@ -270,7 +271,9 @@ Aimeos.CMSContent = {
 				category: 'Columns',
 				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke-width:2" width="24" height="18" x="10" y="9" ry="2" ry="3"></rect></svg><div class="gjs-block-label">Container</div>',
 				attributes: { class: 'fa' },
-				content: '<div class="container" data-gjs-name="Container"></div>'
+				content: {
+					type: 'container'
+				}
 			},
 			'col-2': {
 				category: 'Columns',
@@ -397,7 +400,7 @@ Aimeos.CMSContent = {
 							attributes: {
 								class: 'container',
 								'data-gjs-name': 'Container'
-							}
+							},
 						}
 					}
 				});
@@ -678,7 +681,7 @@ Aimeos.CMSContent = {
 					defaults: {
 						type:  'imageset',
 						srcset: {},
-						name: 'Responsive image set',
+						name: 'Responsive image set'
 					},
 					getName() {
 					  return this.get('name');

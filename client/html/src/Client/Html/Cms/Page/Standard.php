@@ -404,7 +404,7 @@ class Standard
 
 			$view->pageCmsItem = $page;
 			$view->pageContent = $page->getRefItems( 'text', 'content' )->map( function( $item ) {
-				$data = ( $json = json_decode( $item->getContent(), true ) ? $json['html'] : $item->getContent() );
+				$data = ( $json = json_decode( $item->getContent(), true ) ) ? $json['html'] : $item->getContent();
 				return '<div class="cms-content">' . $data . '</div>';
 			} )->all();
 		}

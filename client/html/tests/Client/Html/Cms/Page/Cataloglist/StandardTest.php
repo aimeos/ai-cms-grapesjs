@@ -40,7 +40,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$view->pageCmsItem = \Aimeos\MShop::create( $this->context, 'cms' )->find( '/catlist', ['text'] );
 
 		$textItems = $view->pageCmsItem->getRefItems( 'text', 'content' )->map( function( $item ) {
-			$data = ( $json = json_decode( $item->getContent(), true ) ? $json['html'] : $item->getContent() );
+			$data = ( $json = json_decode( $item->getContent(), true ) ) ? $json['html'] : $item->getContent();
 			return '<div class="cms-content>' . $data . '</div>';
 		} )->all();
 

@@ -39,7 +39,7 @@ Vue.component('grapesjs', {
 			try {
 				const json = JSON.parse(val);
 				this.instance.setComponents(json.html || '');
-				this.instance.setStyle((json.css || '') + this.setup.styles);
+				this.instance.setStyle((json.css || this.setup.styles));
 			} catch(e) {
 				this.instance.setComponents(val);
 			}
@@ -66,7 +66,10 @@ Vue.component('grapesjs', {
 		},
 		update: function() {
 			if(this.instance) {
-				this.$emit('input', JSON.stringify({css: this.instance.getCss(), html: this.instance.getHtml()}));
+				this.$emit('input', JSON.stringify({
+					css: this.instance.getCss({avoidProtected: true}),
+					html: this.instance.getHtml()
+				}));
 			}
 		}
 	}
@@ -365,7 +368,7 @@ Aimeos.CMSContent = {
 							traits: [{
 								type: 'select',
 								label: 'Type',
-								name: 'type',
+								name: 'data-type',
 								options: [
 									{id: '', name: 'Standard'},
 									{id: 'btn-primary', name: 'Primary'},
@@ -376,10 +379,10 @@ Aimeos.CMSContent = {
 							]
 						},
 						init() {
-							this.on('change:attributes:type', this.onTypeChange);
+							this.on('change:attributes:data-type', this.onTypeChange);
 						},
 						onTypeChange() {
-							this.setClass('btn ' + this.getAttributes().type);
+							this.setClass('btn ' + this.getAttributes()['data-type']);
 						}
 					},
 				});
@@ -425,7 +428,7 @@ Aimeos.CMSContent = {
 							traits: [{
 								type: 'select',
 								label: 'Breakpoint',
-								name: 'break',
+								name: 'data-break',
 								options: [
 									{id: 'col', name: 'None'},
 									{id: 'col-sm', name: 'S (576px)'},
@@ -436,7 +439,7 @@ Aimeos.CMSContent = {
 							},{
 								type: 'select',
 								label: 'Spacing',
-								name: 'gutters',
+								name: 'data-gutters',
 								options: [
 									{id: 'no-gutters', name: 'No'},
 									{id: '', name: 'Yes'},
@@ -444,11 +447,11 @@ Aimeos.CMSContent = {
 							}]
 						},
 						init() {
-							this.on('change:attributes:break', this.onBreakpointChange);
-							this.on('change:attributes:gutters', this.onGutterChange);
+							this.on('change:attributes:data-break', this.onBreakpointChange);
+							this.on('change:attributes:data-gutters', this.onGutterChange);
 						},
 						onBreakpointChange() {
-							const bsclass = this.getAttributes().break || 'col';
+							const bsclass = this.getAttributes()['data-break'] || 'col';
 
 							this.attributes.components.models.forEach(function(item, idx) {
 								if(item.attributes.tagName === 'div') {
@@ -463,7 +466,7 @@ Aimeos.CMSContent = {
 						},
 						onGutterChange() {
 							this.removeClass('no-gutters');
-							this.addClass(this.getAttributes().gutters || '');
+							this.addClass(this.getAttributes()['data-gutters'] || '');
 						}
 					}
 				});
@@ -673,9 +676,9 @@ Aimeos.CMSContent = {
 				},
 				model: {
 					defaults: {
-					  type:  'imageset',
-					  srcset: {},
-					  name: 'Responsive image set',
+						type:  'imageset',
+						srcset: {},
+						name: 'Responsive image set',
 					},
 					getName() {
 					  return this.get('name');

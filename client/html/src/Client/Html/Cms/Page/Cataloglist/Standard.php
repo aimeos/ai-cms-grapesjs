@@ -167,23 +167,46 @@ class Standard
 	 */
 	public function addData( \Aimeos\MW\View\Iface $view, array &$tags = [], string &$expire = null ) : \Aimeos\MW\View\Iface
 	{
-		if( !isset( $view->pageCmsItem ) ) {
+		if( !isset( $view->pageContent ) ) {
 			return parent::addData( $view, $tags, $expire );
 		}
 
+		$texts = [];
 		$context = $this->getContext();
 		$config = $context->getConfig();
 		$cntl = \Aimeos\Controller\Frontend::create( $context, 'product' );
 
+		/** client/html/cms/page/template-cataloglist
+		 * Relative path to the HTML template of the page catalog list client.
+		 *
+		 * The template file contains the HTML code and processing instructions
+		 * to generate the HTML code that is inserted into the HTML page
+		 * of the rendered page in the frontend. The configuration string is the
+		 * path to the template file relative to the templates directory (usually
+		 * in client/html/templates).
+		 *
+		 * You can overwrite the template file configuration in extensions and
+		 * provide alternative templates. These alternative templates should be
+		 * named like the default one but with the string "standard" replaced by
+		 * an unique name. You may use the name of your project for this. If
+		 * you've implemented an alternative client class as well, "standard"
+		 * should be replaced by the name of the new class.
+		 *
+		 * @param string Relative path to the template creating code for the catalog list
+		 * @since 2021.07
+		 * @category Developer
+		 * @see client/html/cms/page/template-body
+		 * @see client/html/cms/page/template-header
+		*/
 		$template = $config->get( 'client/html/cms/page/template-cataloglist', 'cms/page/cataloglist/list-standard' );
 		$domains = $config->get( 'client/html/catalog/lists/domains', ['media', 'media/property', 'price', 'text'] );
 
 		libxml_use_internal_errors( true );
 
-		foreach( $view->pageCmsItem->getRefItems( 'text', 'content' ) as $textItem )
+		foreach( $view->pageContent as $content )
 		{
 			$dom = new \DOMDocument();
-			$dom->loadHTML( $textItem->getContent(), LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
+			$dom->loadHTML( $content, LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
 			$nodes = $dom->getElementsByTagName( 'cataloglist' );
 
 			while( $nodes->length > 0 )
@@ -209,10 +232,12 @@ class Standard
 				$node->parentNode->replaceChild( $pnode, $node );
 			}
 
-			$textItem->setContent( $dom->saveHTML() );
+			$texts[] = $dom->saveHTML();
 		}
 
 		libxml_clear_errors();
+
+		$view->pageContent = $texts;
 
 		return parent::addData( $view, $tags, $expire );
 	}

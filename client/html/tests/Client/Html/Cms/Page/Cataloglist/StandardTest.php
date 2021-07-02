@@ -38,20 +38,26 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 		$view = $this->object->getView();
 		$view->pageCmsItem = \Aimeos\MShop::create( $this->context, 'cms' )->find( '/catlist', ['text'] );
-		$textItems = $view->pageCmsItem->getRefItems( 'text', 'content' );
+
+		$textItems = $view->pageCmsItem->getRefItems( 'text', 'content' )->map( function( $item ) {
+			$data = ( $json = json_decode( $item->getContent(), true ) ? $json['html'] : $item->getContent() );
+			return '<div class="cms-content>' . $data . '</div>';
+		} )->all();
 
 		$this->assertEquals( 1, count( $textItems ) );
 
 		foreach( $textItems as $textItem ) {
-			$textItem->setContent( str_replace( ['_cat1_', '_cat2_'], [$catId1, $catId2], $textItem->getContent() ) );
+			$textItem = str_replace( ['_cat1_', '_cat2_'], [$catId1, $catId2], $textItem );
 		}
 
-		$this->object->addData( $view );
+		$view->pageContent = $textItems;
 
-		foreach( $textItems as $textItem )
+		$view = $this->object->addData( $view );
+
+		foreach( $view->pageContent as $text )
 		{
-			$this->assertStringContainsString( '<div class="catalog-list">', $textItem->getContent() );
-			$this->assertStringContainsString( 'class="list-items', $textItem->getContent() );
+			$this->assertStringContainsString( '<div class="catalog-list">', $text );
+			$this->assertStringContainsString( 'class="list-items', $text );
 		}
 	}
 

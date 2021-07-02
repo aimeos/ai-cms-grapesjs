@@ -95,7 +95,7 @@ Aimeos.CMSContent = {
 			canvas: {
 				styles: [
 					'https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css',
-					'/vendor/shop/themes/elegance/aimeos.css'
+					'/vendor/shop/themes/default/aimeos.css'
 				],
 			},
 			i18n: {
@@ -263,14 +263,11 @@ Aimeos.CMSContent = {
 					style: {'max-width': '100%'}
 				}
 			},
-			'col-1': {
+			'container': {
 				category: 'Columns',
-				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke-width:2" width="24" height="18" x="10" y="9" ry="2" ry="3"></rect></svg><div class="gjs-block-label">1 col</div>',
+				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke-width:2" width="24" height="18" x="10" y="9" ry="2" ry="3"></rect></svg><div class="gjs-block-label">Container</div>',
 				attributes: { class: 'fa' },
-				content: {
-					type: 'cols',
-					cols: 1
-				},
+				content: '<div class="container" data-gjs-name="Container"></div>'
 			},
 			'col-2': {
 				category: 'Columns',
@@ -388,13 +385,28 @@ Aimeos.CMSContent = {
 				});
 			},
 
+			'container': function(editor) {
+				editor.DomComponents.addType('container', {
+					isComponent: el => el.tagName === 'DIV' && el.classList.contains('container') ? {type: 'container'} : false,
+					model: {
+						defaults: {
+							tagName: 'div',
+							attributes: {
+								class: 'container',
+								'data-gjs-name': 'Container'
+							}
+						}
+					}
+				});
+			},
+
 			'cols': function(editor) {
 				editor.DomComponents.addType('cols', {
 					isComponent: el => el.tagName === 'DIV' && el.classList.contains('row') ? {type: 'cols'} : false,
 					model: {
 						defaults: {
 							tagName: 'div',
-							draggable: '.container-fluid, .col',
+							draggable: '.container, .container-fluid, .col',
 							droppable: true,
 							attributes: {
 								class: 'row',
@@ -608,14 +620,14 @@ Aimeos.CMSContent = {
 			form {
 				padding-top: 10px;
 			}
-			.row, .col, [class^="col-"] {
+			.container, .row, .col, [class^="col-"] {
 				min-height: 2.5rem !important;
 			}
 			.row {
 				display: flex; width: auto;
 			}
-			.gjs-dashed .row, .gjs-dashed .space {
-				padding-top: 10px;
+			.gjs-dashed .container, .gjs-dashed .row, .gjs-dashed .space {
+				padding: 10px 0;
 			}
 			.table {
 				border-collapse: initial;
@@ -805,7 +817,6 @@ Aimeos.CMSContent = {
 					this.$set(this.items, this.items.length, entry);
 				}
 			},
-
 
 
 			label: function(idx) {

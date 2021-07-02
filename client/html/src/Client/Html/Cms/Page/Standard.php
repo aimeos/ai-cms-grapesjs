@@ -102,6 +102,8 @@ class Standard
 
 		if( ( $html = $this->getCached( 'body', $uid, $prefixes, $confkey ) ) === null )
 		{
+			$view = $this->getView();
+
 			/** client/html/cms/page/template-body
 			 * Relative path to the HTML body template of the cms page client.
 			 *
@@ -125,15 +127,10 @@ class Standard
 			$tplconf = 'client/html/cms/page/template-body';
 			$default = 'cms/page/body-standard';
 
-			$view = $this->getView();
-
 			try
 			{
 				$html = '';
-
-				if( !isset( $this->view ) ) {
-					$view = $this->view = $this->getObject()->addData( $view, $this->tags, $this->expire );
-				}
+				$view = $this->view = $this->view ?? $this->getObject()->addData( $view, $this->tags, $this->expire );
 
 				foreach( $this->getSubClients() as $subclient ) {
 					$html .= $subclient->setView( $view )->getBody( $uid );
@@ -220,10 +217,7 @@ class Standard
 			try
 			{
 				$html = '';
-
-				if( !isset( $this->view ) ) {
-					$view = $this->view = $this->getObject()->addData( $view, $this->tags, $this->expire );
-				}
+				$view = $this->view = $this->view ?? $this->getObject()->addData( $view, $this->tags, $this->expire );
 
 				foreach( $this->getSubClients() as $subclient ) {
 					$html .= $subclient->setView( $view )->getHeader( $uid );
@@ -408,10 +402,11 @@ class Standard
 		{
 			$this->addMetaItems( $page, $expire, $tags );
 
-			$view->pageContent = $page->getRefItems('text', 'content')->map( function( $item ) {
-				$json = json_decode( $item->getContent(), true );
-				return $json['html'] ?? $item->getContent();
-			} );
+			$view->pageCmsItem = $page;
+			$view->pageContent = $page->getRefItems( 'text', 'content' )->map( function( $item ) {
+				$data = ( $json = json_decode( $item->getContent(), true ) ? $json['html'] : $item->getContent() );
+				return '<div class="cms-content">' . $data . '</div>';
+			} )->all();
 		}
 
 		return parent::addData( $view, $tags, $expire );

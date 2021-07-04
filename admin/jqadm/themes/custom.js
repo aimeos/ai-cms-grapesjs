@@ -407,7 +407,7 @@ Aimeos.CMSContent = {
 							}]
 						},
 						init() {
-							const options = [{id: '', name: 'None'}];
+							const options = [{id: '', name: ''}];
 							const bg = this.getTrait('data-background');
 
 							editor.AssetManager.getAll().each(function(item) {
@@ -579,7 +579,7 @@ Aimeos.CMSContent = {
 									}
 
 									axios.get(options.meta.resources['catalog'], config).then(response => {
-										const items = [{id: '', name: '---'}];
+										const items = [{id: '', name: ''}];
 
 										(response.data.data || []).forEach(entry => {
 											if(entry['id'] && entry['attributes']) {

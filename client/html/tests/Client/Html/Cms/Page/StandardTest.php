@@ -79,7 +79,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->object->setView( $this->object->addData( $view, $tags, $expire ) );
 		$output = $this->object->getBody();
 
-		$this->assertStringStartsWith( '<section class="aimeos cms-page"', $output );
+		$this->assertStringStartsWith( '<section class="aimeos cms-page', $output );
 		$this->assertStringContainsString( '<h1>Hello!</h1>', $output );
 
 		$this->assertEquals( null, $expire );

@@ -206,7 +206,7 @@ class Standard
 		foreach( $view->pageContent as $content )
 		{
 			$dom = new \DOMDocument( '1.0', 'UTF-8' );
-			$dom->loadHTML( $content, LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
+			$dom->loadHTML( '<?xml encoding="utf-8" ?>' . $content, LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
 			$nodes = $dom->getElementsByTagName( 'cataloglist' );
 
 			while( $nodes->length > 0 )
@@ -232,7 +232,7 @@ class Standard
 				$node->parentNode->replaceChild( $pnode, $node );
 			}
 
-			$texts[] = $dom->saveHTML();
+			$texts[] = substr( $dom->saveHTML(), 25 );
 		}
 
 		libxml_clear_errors();

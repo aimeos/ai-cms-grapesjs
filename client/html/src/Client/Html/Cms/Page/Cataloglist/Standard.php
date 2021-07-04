@@ -205,7 +205,7 @@ class Standard
 
 		foreach( $view->pageContent as $content )
 		{
-			$dom = new \DOMDocument();
+			$dom = new \DOMDocument( '1.0', 'UTF-8' );
 			$dom->loadHTML( $content, LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
 			$nodes = $dom->getElementsByTagName( 'cataloglist' );
 
@@ -225,8 +225,8 @@ class Standard
 
 				$view = $context->getView()->set( 'products', $products );
 
-				$pdom = new \DOMDocument();
-				$pdom->loadHTML( $view->render( $template ), LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
+				$pdom = new \DOMDocument( '1.0', 'UTF-8' );
+				$pdom->loadHTML( '<?xml encoding="utf-8" ?>' . $view->render( $template ), LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
 
 				$pnode = $dom->importNode( $pdom->documentElement, true );
 				$node->parentNode->replaceChild( $pnode, $node );

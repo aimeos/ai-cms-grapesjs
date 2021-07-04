@@ -267,6 +267,12 @@ Aimeos.CMSContent = {
 					style: {'max-width': '100%'}
 				}
 			},
+			'background': {
+				category: 'Basic',
+				label: 'Background',
+				attributes: { class: 'fa fa-film' },
+				content: `<div class="background"></div>`
+			},
 			'container': {
 				category: 'Columns',
 				label: '<svg width="40" height="36" viewBox="0 0 40 36"><rect style="fill:none;stroke-width:2" width="24" height="18" x="10" y="9" ry="2" ry="3"></rect></svg><div class="gjs-block-label">Container</div>',
@@ -322,12 +328,6 @@ Aimeos.CMSContent = {
 					<div class="product" data-gjs-name="Product"></div>
 					<div class="product" data-gjs-name="Product"></div>
 				</cataloglist>`
-			},
-			'parallax': {
-				category: 'Extra',
-				label: 'Parallax',
-				attributes: { class: 'fa fa-film' },
-				content: `<section class="parallax" data-type="background" data-speed="16"></section>`
 			},
 			'contact': {
 				category: 'Extra',
@@ -388,6 +388,43 @@ Aimeos.CMSContent = {
 							this.setClass('btn ' + this.getAttributes()['data-type']);
 						}
 					},
+				});
+			},
+
+			'background': function(editor) {
+				editor.DomComponents.addType('background', {
+					isComponent: el => el.tagName === 'DIV' && el.classList.contains('background') ? {type: 'background'} : false,
+					model: {
+						defaults: {
+							tagName: 'div',
+							attributes: {
+								class: 'background',
+							},
+							traits: [{
+								type: 'select',
+								label: 'Background',
+								name: 'data-background'
+							}]
+						},
+						init() {
+							const options = [{id: '', name: 'None'}];
+							const bg = this.getTrait('data-background');
+
+							editor.AssetManager.getAll().each(function(item) {
+								options.push({id: item.attributes.srcset || item.attributes.src, name: item.attributes.name});
+							});
+
+							bg && bg.set('options', options);
+							this.on('change:attributes:data-background', this.onBackgroundChange);
+						},
+						onBackgroundChange() {
+							const bg = this.getAttributes()['data-background'];
+							const url = (bg.split(',').pop() || '').trim().split(' ').shift();
+
+							this.setStyle({'background-image': 'none'}) && this.removeClass( 'lazy-image' )
+							url && this.setStyle({'background-image': `url('${url}')`}) && this.addClass( 'lazy-image' );
+						}
+					}
 				});
 			},
 
@@ -575,47 +612,6 @@ Aimeos.CMSContent = {
 						}
 					}
 				});
-			},
-
-			'parallax': function(editor) {
-				editor.DomComponents.addType('parallax', {
-					isComponent: el => el.tagName === 'SECTION' && el.classList.contains('parallax') ? {type: 'parallax'} : false,
-					model: {
-						defaults: {
-							tagName: 'section',
-							draggable: true,
-							droppable: true,
-							attributes: {
-								class: 'parallax',
-							},
-							components: model => {
-								return '<div class="parallax-container"></div>';
-							},
-							traits: [{
-								type: 'select',
-								label: 'Background',
-								name: 'data-background'
-							}]
-						},
-						init() {
-							const options = [];
-							const bg = this.getTrait('data-background');
-
-							editor.AssetManager.getAll().each(function(item) {
-								options.push({id: item.attributes.srcset || item.attributes.src, name: item.attributes.name});
-							});
-
-							bg && bg.set('options', options);
-							this.on('change:attributes:data-background', this.onBackgroundChange);
-						},
-						onBackgroundChange() {
-							const bg = this.getAttributes()['data-background'];
-							const url = (bg.split(',').pop() || '').trim().split(' ').shift();
-
-							url && this.setStyle({'background-image': `url('${url}')`});
-						}
-					}
-				});
 			}
 		},
 
@@ -654,16 +650,13 @@ Aimeos.CMSContent = {
 				background-color: #F8FAFC; scrollbar-color: #505860 transparent; scrollbar-width: thin;
 			}
 			.cataloglist {
-				display: block;
+				display: block; max-height: 350px; overflow: hidden; white-space: nowrap;
 			}
 			.product {
 				display: inline-block; width: 240px; height: 320px; margin: 14px; background-color: #E8ECEF;
 			}
 			.contact-form .contact-pot {
 				display: none;
-			}
-			.parallax-container {
-				min-height: 2.5rem;
 			}
 		`,
 
@@ -684,15 +677,15 @@ Aimeos.CMSContent = {
 						name: 'Responsive image set'
 					},
 					getName() {
-					  return this.get('name');
+						return this.get('name');
 					}
 				},
 				view: {
 					getPreview() {
-					  return `<img src="${this.model.get('src') || ''}" style="text-align: center" />`;
+						return `<img src="${this.model.get('src') || ''}" style="text-align: center" />`;
 					},
 					getInfo() {
-					  return `<div>${this.model.get('name')}</div>`;
+						return `<div>${this.model.get('name')}</div>`;
 					},
 					updateTarget(target) {
 						if (target.get('type') == 'image') {

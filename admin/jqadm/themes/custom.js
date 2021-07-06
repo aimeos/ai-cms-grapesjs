@@ -430,12 +430,12 @@ Aimeos.CMSContent = {
 
 			'container': function(editor) {
 				editor.DomComponents.addType('container', {
-					isComponent: el => el.tagName === 'DIV' && el.classList.contains('container') ? {type: 'container'} : false,
+					isComponent: el => el.tagName === 'DIV' && el.classList.contains('container-xl') ? {type: 'container'} : false,
 					model: {
 						defaults: {
 							tagName: 'div',
 							attributes: {
-								class: 'container',
+								class: 'container-xl',
 								'data-gjs-name': 'Container'
 							},
 						}
@@ -449,7 +449,7 @@ Aimeos.CMSContent = {
 					model: {
 						defaults: {
 							tagName: 'div',
-							draggable: '.container, .container-fluid, .col',
+							draggable: '.container-xl, .container-fluid, .col',
 							droppable: true,
 							attributes: {
 								class: 'row',
@@ -631,13 +631,13 @@ Aimeos.CMSContent = {
 			form {
 				padding-top: 10px;
 			}
-			.container, .row, .col, [class^="col-"] {
+			.container-xl, .row, .col, [class^="col-"] {
 				min-height: 2.5rem !important;
 			}
 			.row {
 				display: flex; width: auto;
 			}
-			.gjs-dashed .container, .gjs-dashed .row, .gjs-dashed .space {
+			.gjs-dashed .container-xl, .gjs-dashed .row, .gjs-dashed .space {
 				padding: 10px 0;
 			}
 			.table {

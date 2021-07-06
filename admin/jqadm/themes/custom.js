@@ -616,6 +616,15 @@ Aimeos.CMSContent = {
 		},
 
 		styles: `
+			::-webkit-scrollbar {
+				background-color: var(--bs-bg, #f8fafc); width: 0.25rem;
+			}
+			::-webkit-scrollbar-thumb {
+				background-color: #505860; outline: none;
+			}
+			body {
+				background-image: none; background-color: #F8FAFC; scrollbar-color: #505860 transparent; scrollbar-width: thin;
+			}
 			img {
 				max-width: 100%;
 			}
@@ -639,15 +648,6 @@ Aimeos.CMSContent = {
 			}
 			.table .cell {
 				width: auto; height: auto;
-			}
-			::-webkit-scrollbar {
-				background-color: var(--bs-bg, #f8fafc); width: 0.25rem;
-			}
-			::-webkit-scrollbar-thumb {
-				background-color: #505860; outline: none;
-			}
-			body {
-				background-color: #F8FAFC; scrollbar-color: #505860 transparent; scrollbar-width: thin;
 			}
 			.cataloglist {
 				display: block; max-height: 350px; overflow: hidden; white-space: nowrap;

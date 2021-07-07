@@ -499,10 +499,10 @@ Aimeos.CMSContent = {
 				},
 				view: {
 					getPreview() {
-					  return `<img src="${this.model.get('src') || ''}" style="text-align: center" />`;
+					  return `<img src="${(this.model.get('src') || '').replace(/&|<|>|"|`|'/g, '')}" style="text-align: center" />`;
 					},
 					getInfo() {
-					  return `<div>${this.model.get('name')}</div>`;
+					  return `<div>${this.model.get('name').replace(/&|<|>|"|`|'/g, '')}</div>`;
 					},
 					updateTarget(target) {
 						if (target.get('type') == 'image') {

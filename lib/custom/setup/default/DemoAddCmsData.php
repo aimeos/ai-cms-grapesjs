@@ -105,9 +105,16 @@ class DemoAddCmsData extends \Aimeos\MW\Setup\Task\MShopAddDataAbstract
 
 		foreach( $data as $entry )
 		{
-			$item = $manager->create()->fromArray( $entry );
-			$this->addRefItems( $item, $entry );
-			$manager->save( $item );
+			try
+			{
+				$manager->find( $entry['cms.url'] );
+			}
+			catch( \Aimeos\MShop\Exception $e )
+			{
+				$item = $manager->create()->fromArray( $entry );
+				$this->addRefItems( $item, $entry );
+				$manager->save( $item );
+			}
 		}
 	}
 

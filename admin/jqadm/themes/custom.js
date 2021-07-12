@@ -216,7 +216,7 @@ Aimeos.CMSContent = {
 				label: 'Paragraph',
 				attributes: { class: 'fa fa-paragraph' },
 				content: {
-					type: 'text',
+					type: 'paragraph',
 					content: '<p data-gjs-name="Paragraph">Insert paragraph here</p>',
 					activeOnRender: 1
 				}
@@ -612,7 +612,14 @@ Aimeos.CMSContent = {
 						}
 					}
 				});
-			}
+			},
+
+			'paragraph': function(editor) {
+				editor.DomComponents.addType('paragraph', {
+					extend: 'text',
+					isComponent: el => el.tagName === 'P' ? {type: 'paragraph'} : false,
+				});
+			},
 		},
 
 		styles: `

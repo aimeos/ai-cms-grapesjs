@@ -399,7 +399,7 @@ msgstr "CMS"
 #: jqadm/src/Admin/JQAdm/Cms/Content/Standard.php:13
 #, php-format
 msgid "content"
-msgstr ""
+msgstr "Content"
 
 #: jqadm/templates/type/cms/lists/list-standard.php:163
 #: jqadm/src/Admin/JQAdm/Cms/Media/Standard.php:13
@@ -415,7 +415,7 @@ msgstr ""
 #: jqadm/src/Admin/JQAdm/Cms/Seo/Standard.php:13
 #, php-format
 msgid "seo"
-msgstr ""
+msgstr "SEO"
 
 #: jqadm/templates/type/cms/lists/list-standard.php:169
 #: jqadm/templates/type/cms/lists/item-standard.php:121

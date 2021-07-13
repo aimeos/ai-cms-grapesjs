@@ -100,8 +100,8 @@ class DemoAddCmsData extends \Aimeos\MW\Setup\Task\MShopAddDataAbstract
 			throw new \Aimeos\MShop\Exception( sprintf( 'No file "%1$s" found for CMS domain', $path ) );
 		}
 
-		$context = $this->getContext();
-		$manager = \Aimeos\MShop::create( $context, 'cms' );
+		$data = $this->replaceIds( $data );
+		$manager = \Aimeos\MShop::create( $this->getContext(), 'cms' );
 
 		foreach( $data as $entry )
 		{
@@ -149,5 +149,42 @@ class DemoAddCmsData extends \Aimeos\MW\Setup\Task\MShopAddDataAbstract
 		}
 
 		return $item;
+	}
+
+
+	/**
+	 * Replaces the IDs in the demo data with the actual ones
+	 *
+	 * @param array $data Associative list of CMS demo data
+	 * @return array Modfied CMS demo data
+	 */
+	protected function replaceIds( array $data ) : array
+	{
+		$manager = \Aimeos\MShop::create( $this->getContext(), 'catalog' );
+		$filter = $manager->filter()->add( 'catalog.code', '=~', 'demo-' );
+
+		$map = [];
+		foreach( $manager->search( $filter ) as $id => $item ) {
+			$map[$item->getCode()] = $id;
+		}
+
+		foreach( $data as $pos => $entry )
+		{
+			foreach( $entry['text'] ?? [] as $idx => $text )
+			{
+				$content = $text['text.content'] ?? '';
+
+				foreach( ['2' => 'demo-best', '3' => 'demo-new', '4' => 'demo-deals'] as $id => $code )
+				{
+					if( $newId = $map[$code] ?? null ) {
+						$content = str_replace( 'catid=\"' . $id . '\"', 'catid=\"' . $newId . '\"', $content );
+					}
+				}
+
+				$data[$pos]['text'][$idx]['text.content'] = $content;
+			}
+		}
+
+		return $data;
 	}
 }

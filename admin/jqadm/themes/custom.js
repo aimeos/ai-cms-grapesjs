@@ -696,7 +696,7 @@ Aimeos.CMSContent = {
 					},
 					updateTarget(target) {
 						if (target.get('type') == 'image') {
-							target.set('attributes', clone(target.get('attributes')));
+							target.set('attributes', target.get('attributes'));
 							target.set('srcset', this.model.get('srcset'));
 							target.set('src', this.model.get('src'));
 						}

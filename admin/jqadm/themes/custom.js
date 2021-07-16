@@ -106,6 +106,9 @@ Aimeos.CMSContent = {
 				localeFallback: 'en',
 				messages: {}
 			},
+			assetManager: {
+				showUrlInput: false
+			},
 			deviceManager: {
 				devices: [{
 					name: 'Desktop',

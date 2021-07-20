@@ -104,9 +104,11 @@ class Standard
 	 */
 	public function delete() : ?string
 	{
+		$tags = ['cms'];
 		$view = $this->getView();
+		$context = $this->getContext();
 
-		$manager = \Aimeos\MShop::create( $this->getContext(), 'cms' );
+		$manager = \Aimeos\MShop::create( $context, 'cms' );
 		$manager->begin();
 
 		try
@@ -121,12 +123,15 @@ class Standard
 
 			foreach( $items as $item )
 			{
+				$tags[] = 'cms-' . $item->getId();
 				$view->item = $item;
 				parent::delete();
 			}
 
 			$manager->delete( $items->toArray() );
 			$manager->commit();
+
+			$context->cache()->deleteByTags( $tags );
 
 			return $this->redirect( 'cms', 'search', null, 'delete' );
 		}
@@ -178,8 +183,9 @@ class Standard
 	public function save() : ?string
 	{
 		$view = $this->getView();
+		$context = $this->getContext();
 
-		$manager = \Aimeos\MShop::create( $this->getContext(), 'cms' );
+		$manager = \Aimeos\MShop::create( $context, 'cms' );
 		$manager->begin();
 
 		try
@@ -190,6 +196,8 @@ class Standard
 
 			$manager->save( clone $view->item );
 			$manager->commit();
+
+			$context->cache()->deleteByTags( ['cms', 'cms-' . $view->item->getId()] );
 
 			return $this->redirect( 'cms', $view->param( 'next' ), $view->item->getId(), 'save' );
 		}

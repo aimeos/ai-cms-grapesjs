@@ -201,6 +201,10 @@ class Standard
 		$template = $config->get( 'client/html/cms/page/template-cataloglist', 'cms/page/cataloglist/list-standard' );
 		$domains = $config->get( 'client/html/catalog/lists/domains', ['media', 'media/property', 'price', 'text'] );
 
+		if( $view->config( 'client/html/cms/page/basket-add', false ) ) {
+			$domains = array_merge_recursive( $domains, ['product' => ['default'], 'attribute'] );
+		}
+
 		libxml_use_internal_errors( true );
 
 		foreach( $view->pageContent as $content )

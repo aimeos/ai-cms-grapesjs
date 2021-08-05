@@ -364,7 +364,7 @@ class Standard
 		 *
 		 * Removes the records specified by the given IDs from the cms database.
 		 * The records must be from the site that is configured via the
-		 * concms item.
+		 * context item.
 		 *
 		 * The ":cond" placeholder is replaced by the name of the ID column and
 		 * the given ID or list of IDs while the site ID is bound to the question
@@ -529,12 +529,12 @@ class Standard
 			 *
 			 * Fetches the records matched by the given criteria from the cms
 			 * database. The records must be from one of the sites that are
-			 * configured via the concms item. If the current site is part of
+			 * configured via the context item. If the current site is part of
 			 * a tree of sites, the SELECT statement can retrieve all records
 			 * from the current site and the complete sub-tree of sites.
 			 *
 			 * As the records can normally be limited by criteria from sub-managers,
-			 * their tables must be joined in the SQL concms. This is done by
+			 * their tables must be joined in the SQL context. This is done by
 			 * using the "internaldeps" property from the definition of the ID
 			 * column of the sub-managers. These internal dependencies specify
 			 * the JOIN between the tables and the used columns for joining. The
@@ -588,12 +588,12 @@ class Standard
 			 *
 			 * Counts all records matched by the given criteria from the cms
 			 * database. The records must be from one of the sites that are
-			 * configured via the concms item. If the current site is part of
+			 * configured via the context item. If the current site is part of
 			 * a tree of sites, the statement can count all records from the
 			 * current site and the complete sub-tree of sites.
 			 *
 			 * As the records can normally be limited by criteria from sub-managers,
-			 * their tables must be joined in the SQL concms. This is done by
+			 * their tables must be joined in the SQL context. This is done by
 			 * using the "internaldeps" property from the definition of the ID
 			 * column of the sub-managers. These internal dependencies specify
 			 * the JOIN between the tables and the used columns for joining. The

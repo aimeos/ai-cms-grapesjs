@@ -12,22 +12,22 @@ namespace Aimeos\MShop\Cms\Manager\Lists;
 class StandardTest extends \PHPUnit\Framework\TestCase
 {
 	private $object;
-	private $concms;
+	private $context;
 	private $editor = '';
 
 
 	protected function setUp() : void
 	{
-		$this->concms = \TestHelper::getContext();
-		$this->editor = $this->concms->getEditor();
-		$manager = \Aimeos\MShop\Cms\Manager\Factory::create( $this->concms, 'Standard' );
+		$this->context = \TestHelper::getContext();
+		$this->editor = $this->context->getEditor();
+		$manager = \Aimeos\MShop\Cms\Manager\Factory::create( $this->context, 'Standard' );
 		$this->object = $manager->getSubManager( 'lists', 'Standard' );
 	}
 
 
 	protected function tearDown() : void
 	{
-		unset( $this->object, $this->concms );
+		unset( $this->object, $this->context );
 	}
 
 

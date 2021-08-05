@@ -24,13 +24,13 @@ class Factory
 	/**
 	 *	Creates a cms manager DAO object.
 	 *
-	 * @param \Aimeos\MShop\Context\Item\Iface $concms Shop concms instance with necessary objects
+	 * @param \Aimeos\MShop\Context\Item\Iface $context Shop context instance with necessary objects
 	 * @param string|null $name Manager name
 	 * @return \Aimeos\MShop\Common\Manager\Iface Manager object implementing the manager interface
 	 * @throws \Aimeos\MShop\Cms\Exception|\Aimeos\MShop\Exception If requested manager
 	 * implementation couldn't be found or initialisation fails
 	 */
-	public static function create( \Aimeos\MShop\Context\Item\Iface $concms, string $name = null ) : \Aimeos\MShop\Common\Manager\Iface
+	public static function create( \Aimeos\MShop\Context\Item\Iface $context, string $name = null ) : \Aimeos\MShop\Common\Manager\Iface
 	{
 		/** mshop/cms/manager/name
 		 * Class name of the used cms manager implementation
@@ -66,7 +66,7 @@ class Factory
 		 * @category Developer
 		 */
 		if( $name === null ) {
-			$name = $concms->getConfig()->get( 'mshop/cms/manager/name', 'Standard' );
+			$name = $context->getConfig()->get( 'mshop/cms/manager/name', 'Standard' );
 		}
 
 		$iface = \Aimeos\MShop\Cms\Manager\Iface::class;
@@ -76,7 +76,7 @@ class Factory
 			throw new \Aimeos\MShop\Cms\Exception( sprintf( 'Invalid characters in class name "%1$s"', $classname ) );
 		}
 
-		$manager = self::createManager( $concms, $classname, $iface );
+		$manager = self::createManager( $context, $classname, $iface );
 
 		/** mshop/cms/manager/decorators/excludes
 		 * Excludes decorators added by the "common" option from the cms manager
@@ -153,6 +153,6 @@ class Factory
 		 * @see mshop/cms/manager/decorators/excludes
 		 * @see mshop/cms/manager/decorators/global
 		 */
-		return self::addManagerDecorators( $concms, $manager, 'cms' );
+		return self::addManagerDecorators( $context, $manager, 'cms' );
 	}
 }

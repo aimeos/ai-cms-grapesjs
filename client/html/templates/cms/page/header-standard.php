@@ -61,7 +61,7 @@ $config = $this->config( 'client/html/cms/page/url/config', [] );
 
 	<?php endif; ?>
 
-<?php elseif( $this->param( 'path' ) ) : ?>
+<?php elseif( strcmp( $this->param( 'path' ), '/' ) > 0 ) : ?>
 
 	<title><?= $enc->html( $this->get( 'contextSiteLabel', 'Aimeos' ) ) ?></title>
 

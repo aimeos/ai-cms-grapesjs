@@ -47,6 +47,13 @@ Route::match(['GET', 'POST'], '{path?}', '\Aimeos\Shop\Controller\PageController
     ->name('aimeos_page')->where( 'path', '.*' );
 ```
 
+In multi-language setups, you should add the `locale` as parameter to the route:
+
+```php
+Route::match(['GET', 'POST'], '{locale}/{path?}', '\Aimeos\Shop\Controller\PageController@indexAction')
+    ->name('aimeos_page')->where( 'path', '.*' );
+```
+
 When using a multi-vendor setup, then use one of these alternatives:
 
 ```php

@@ -762,6 +762,9 @@ Aimeos.CMSContent = {
 				domain: null,
 				version: 0
 			},
+			beforeMount() {
+				this.Aimeos = Aimeos;
+			},
 			mounted: function() {
 				this.items = JSON.parse(this.$el.dataset.items || '{}');
 				this.media = JSON.parse(this.$el.dataset.media || '{}');

@@ -191,7 +191,7 @@ $enc = $this->encoder();
 
 						<div v-show="item['_ext']" class="col-xl-6 secondary">
 
-							<?php if( !( $listTypes = $this->get( 'textListTypes', map() ) )->count() !== 1 ) : ?>
+							<?php if( !( $listTypes = $this->get( 'seoListTypes', map() ) )->count() !== 1 ) : ?>
 								<div class="form-group row mandatory">
 									<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'List type' ) ) ?></label>
 									<div class="col-sm-8">
@@ -248,7 +248,14 @@ $enc = $this->encoder();
 								v-bind:keys="<?= $enc->attr( $this->config( 'admin/jqadm/cms/item/seo/config/suggest', [] ) ) ?>"
 								v-bind:name="`<?= $enc->js( $this->formparam( ['seo', '_idx_', 'config', '_pos_', '_key_'] ) ) ?>`"
 								v-bind:index="idx" v-bind:readonly="item['cms.lists.siteid'] != siteid"
-								v-bind:items="item['config']" v-on:update:config="item['config'] = $event">
+								v-bind:items="item['config']" v-on:update:config="item['config'] = $event"
+								v-bind:i18n="{
+									value: `<?= $enc->js( $this->translate( 'admin', 'Value' ) ) ?>`,
+									option: `<?= $enc->js( $this->translate( 'admin', 'Option' ) ) ?>`,
+									help: `<?= $enc->js( $this->translate( 'admin', 'Item specific configuration options, will be available as key/value pairs in the templates' ) ) ?>`,
+									insert: `<?= $enc->js( $this->translate( 'admin', 'Insert new entry (Ctrl+I)' ) ) ?>`,
+									delete: `<?= $enc->js( $this->translate( 'admin', 'Delete this entry' ) ) ?>`,
+								}">
 							</config-table>
 						</div>
 

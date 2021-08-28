@@ -673,38 +673,25 @@ Aimeos.CMSContent = {
 
 		initialize: function(editor, setup, media) {
 
-			// @todo: Use different implementation
-			editor.AssetManager.addType('imageset', {
-				isType(value) {
-					if (typeof value == 'object' && value.type == 'imageset') {
-						return value;
-					}
-				},
-				model: {
-					defaults: {
-						type:  'imageset',
-						srcset: {},
-						name: 'Responsive image set'
-					},
-					getName() {
-						return this.get('name');
-					}
-				},
+			editor.Components.addType('image', {
 				view: {
-					getPreview() {
-						return `<img src="${(this.model.get('src') || '').replace(/&|<|>|"|`|'/g, '')}" style="text-align: center" />`;
-					},
-					getInfo() {
-						return `<div>${this.model.get('name').replace(/&|<|>|"|`|'/g, '')}</div>`;
-					},
-					updateTarget(target) {
-						if (target.get('type') == 'image') {
-							target.set('attributes', target.get('attributes'));
-							target.set('srcset', this.model.get('srcset'));
-							target.set('src', this.model.get('src'));
-						}
-					},
-				},
+					onActive(ev) {
+						ev && ev.stopPropagation();
+						const { model } = this;
+						editor.runCommand('core:open-assets', {
+							target: model,
+							types: ['image'],
+							onClick(asset) {
+								const srcset = asset.get('srcset');
+								srcset && model.addAttributes({ srcset })
+							},
+							onSelect(asset) {
+								const srcset = asset.get('srcset');
+								srcset && model.addAttributes({ srcset })
+							}
+						});
+					}
+				}
 			});
 
 			editor.Canvas.getFrames().forEach(frame => frame.view.getBody().classList.add('aimeos'));

@@ -281,7 +281,7 @@ class Standard
 				'name' => $mediaItem->getLabel(),
 				'src' => $view->content( $mediaItem->getPreview( true ) ),
 				'srcset' => join( ', ', $srcset),
-				'type' => 'imageset' // @todo: remove after GrapesJs update
+				'type' => 'image'
 			];
 		}
 

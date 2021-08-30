@@ -280,7 +280,7 @@ class Standard
 			$media[] = [
 				'name' => $mediaItem->getLabel(),
 				'src' => $view->content( $mediaItem->getPreview( true ) ),
-				'srcset' => join( ', ', $srcset),
+				'srcset' => join( ', ', $srcset ),
 				'type' => 'image'
 			];
 		}

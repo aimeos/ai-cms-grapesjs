@@ -37,9 +37,8 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$expire = null;
 		$view = $this->object->getView();
 
-		$psr17Factory = new \Nyholm\Psr7\Factory\Psr17Factory();
-		$helper = new \Aimeos\MW\View\Helper\Request\Standard( $view, $psr17Factory->createServerRequest( 'GET', 'https://aimeos.org/contact' ) );
-		$view->addHelper( 'request', $helper );
+		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, ['path' => 'contact'] );
+		$view->addHelper( 'param', $helper );
 
 		$this->object->setView( $this->object->addData( $view, $tags, $expire ) );
 		$output = $this->object->getHeader();
@@ -72,9 +71,8 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$expire = null;
 		$view = $this->object->getView();
 
-		$psr17Factory = new \Nyholm\Psr7\Factory\Psr17Factory();
-		$helper = new \Aimeos\MW\View\Helper\Request\Standard( $view, $psr17Factory->createServerRequest( 'GET', 'https://aimeos.org/contact' ) );
-		$view = $view->addHelper( 'request', $helper );
+		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, ['path' => 'contact'] );
+		$view->addHelper( 'param', $helper );
 
 		$this->object->setView( $this->object->addData( $view, $tags, $expire ) );
 		$output = $this->object->getBody();

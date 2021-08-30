@@ -396,7 +396,7 @@ class Standard
 		 */
 		$domains = $context->getConfig()->get( 'client/html/cms/page/domains', ['text'] );
 
-		$path = '/' . trim( $view->request()->getUri()->getPath(), '/' );
+		$path = '/' . trim( $view->param( 'path' ), '/' );
 
 		if( $page = $controller->uses( $domains )->compare( '==', 'cms.url', $path )->search()->first() )
 		{

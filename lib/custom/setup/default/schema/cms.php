@@ -8,7 +8,7 @@
 
 return [
 	'table' => [
-		'mshop_cms' => function ( \Doctrine\DBAL\Schema\Schema $schema ) {
+		'mshop_cms' => function( \Doctrine\DBAL\Schema\Schema $schema ) {
 
 			$table = $schema->createTable( 'mshop_cms' );
 			$table->addOption( 'engine', 'InnoDB' );

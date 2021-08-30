@@ -353,7 +353,7 @@ class Standard
 			{
 				$refItem = $cntl->add( $refItem, $file );
 
-				if( $preview &&  $preview->getError() !== UPLOAD_ERR_NO_FILE ) {
+				if( $preview && $preview->getError() !== UPLOAD_ERR_NO_FILE ) {
 					$refItem = $cntl->addPreview( $refItem, $preview );
 				}
 			}

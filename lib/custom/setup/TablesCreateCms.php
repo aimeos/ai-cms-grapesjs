@@ -6,20 +6,20 @@
  */
 
 
-namespace Aimeos\MW\Setup\Task;
+namespace Aimeos\Upscheme\Task;
 
 
 /**
  * Creates all CMS tables.
  */
-class TablesCreateCms extends \Aimeos\MW\Setup\Task\TablesCreateMShop
+class TablesCreateCms extends Base
 {
 	/**
 	 * Returns the list of task names which depends on this task.
 	 *
 	 * @return string[] List of task names
 	 */
-	public function getPostDependencies() : array
+	public function before() : array
 	{
 		return ['MShopAddLocaleLangCurData'];
 	}
@@ -28,11 +28,20 @@ class TablesCreateCms extends \Aimeos\MW\Setup\Task\TablesCreateMShop
 	/**
 	 * Creates the CMS tables
 	 */
-	public function migrate()
+	public function up()
 	{
-		$this->msg( 'Creating CMS tables', 0, '' );
+		$this->info( 'Creating CMS tables', 'v' );
+		$db = $this->db( 'db-cms' );
 
-		$ds = DIRECTORY_SEPARATOR;
-		$this->setupSchema( ['db-cms' => 'default' . $ds . 'schema' . $ds . 'cms.php'] );
+		foreach( $this->paths( 'default/schema/cms.php' ) as $filepath )
+		{
+			if( ( $list = include( $filepath ) ) === false ) {
+				throw new \RuntimeException( sprintf( 'Unable to get schema from file "%1$s"', $filepath ) );
+			}
+
+			foreach( $list['table'] ?? [] as $name => $fcn ) {
+				$db->table( $name, $fcn );
+			}
+		}
 	}
 }

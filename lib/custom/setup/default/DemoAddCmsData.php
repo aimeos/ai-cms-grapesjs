@@ -6,20 +6,20 @@
  */
 
 
-namespace Aimeos\MW\Setup\Task;
+namespace Aimeos\Upscheme\Task;
 
 
 /**
  * Adds demo records to product tables.
  */
-class DemoAddCmsData extends \Aimeos\MW\Setup\Task\MShopAddDataAbstract
+class DemoAddCmsData extends MShopAddDataAbstract
 {
 	/**
 	 * Returns the list of task names which this task depends on.
 	 *
 	 * @return string[] List of task names
 	 */
-	public function getPreDependencies() : array
+	public function after() : array
 	{
 		return ['MShopAddTypeDataCms', 'DemoAddTypeData'];
 	}
@@ -30,7 +30,7 @@ class DemoAddCmsData extends \Aimeos\MW\Setup\Task\MShopAddDataAbstract
 	 *
 	 * @return string[] List of task names
 	 */
-	public function getPostDependencies() : array
+	public function before() : array
 	{
 		return ['DemoRebuildIndex'];
 	}
@@ -39,16 +39,14 @@ class DemoAddCmsData extends \Aimeos\MW\Setup\Task\MShopAddDataAbstract
 	/**
 	 * Insert product data.
 	 */
-	public function migrate()
+	public function up()
 	{
-		$this->msg( 'Processing CMS demo data', 0 );
+		$this->info( 'Processing CMS demo data', 'v' );
 
-		$context = $this->getContext();
+		$context = $this->context();
 		$value = $context->getConfig()->get( 'setup/default/demo', '' );
 
-		if( $value === '' )
-		{
-			$this->status( 'OK' );
+		if( $value === '' ) {
 			return;
 		}
 
@@ -74,14 +72,8 @@ class DemoAddCmsData extends \Aimeos\MW\Setup\Task\MShopAddDataAbstract
 		$manager->delete( $pages->toArray() );
 
 
-		if( $value === '1' )
-		{
+		if( $value === '1' ) {
 			$this->addDemoData();
-			$this->status( 'added' );
-		}
-		else
-		{
-			$this->status( 'removed' );
 		}
 	}
 

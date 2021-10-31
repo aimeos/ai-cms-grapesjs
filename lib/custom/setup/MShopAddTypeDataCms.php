@@ -6,20 +6,20 @@
  */
 
 
-namespace Aimeos\MW\Setup\Task;
+namespace Aimeos\Upscheme\Task;
 
 
 /**
  * Adds CMS records to tables.
  */
-class MShopAddTypeDataCms extends \Aimeos\MW\Setup\Task\MShopAddTypeData
+class MShopAddTypeDataCms extends MShopAddTypeData
 {
 	/**
 	 * Returns the list of task names which this task depends on.
 	 *
 	 * @return string[] List of task names
 	 */
-	public function getPreDependencies() : array
+	public function after() : array
 	{
 		return ['TablesCreateCms', 'MShopSetLocale', 'MShopAddTypeData'];
 	}
@@ -28,13 +28,11 @@ class MShopAddTypeDataCms extends \Aimeos\MW\Setup\Task\MShopAddTypeData
 	/**
 	 * Executes the task for adding CMS records to tables.
 	 */
-	public function migrate()
+	public function up()
 	{
-		\Aimeos\MW\Common\Base::checkClass( \Aimeos\MShop\Context\Item\Iface::class, $this->additional );
-
-		$this->additional->setEditor( 'ai-cms-grapesjs:lib/custom' );
-		$sitecode = $this->additional->getLocale()->getSiteItem()->getCode();
-		$this->msg( sprintf( 'Adding CMS type data for site "%1$s"', $sitecode ), 0, '' );
+		$this->context()->setEditor( 'ai-cms-grapesjs:lib/custom' );
+		$sitecode = $this->context()->getLocale()->getSiteItem()->getCode();
+		$this->info( sprintf( 'Adding CMS type data for site "%1$s"', $sitecode ), 'v' );
 
 
 		$ds = DIRECTORY_SEPARATOR;

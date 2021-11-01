@@ -93,7 +93,7 @@ class DemoAddCmsData extends MShopAddDataAbstract
 		}
 
 		$data = $this->replaceIds( $data );
-		$manager = \Aimeos\MShop::create( $this->getContext(), 'cms' );
+		$manager = \Aimeos\MShop::create( $this->context(), 'cms' );
 
 		foreach( $data as $entry )
 		{
@@ -120,7 +120,7 @@ class DemoAddCmsData extends MShopAddDataAbstract
 	 */
 	protected function addRefItems( \Aimeos\MShop\Common\Item\ListsRef\Iface $item, array $entry )
 	{
-		$context = $this->getContext();
+		$context = $this->context();
 		$domain = $item->getResourceType();
 		$listManager = \Aimeos\MShop::create( $context, $domain . '/lists' );
 
@@ -152,7 +152,7 @@ class DemoAddCmsData extends MShopAddDataAbstract
 	 */
 	protected function replaceIds( array $data ) : array
 	{
-		$manager = \Aimeos\MShop::create( $this->getContext(), 'catalog' );
+		$manager = \Aimeos\MShop::create( $this->context(), 'catalog' );
 		$filter = $manager->filter()->add( 'catalog.code', '=~', 'demo-' );
 
 		$map = [];

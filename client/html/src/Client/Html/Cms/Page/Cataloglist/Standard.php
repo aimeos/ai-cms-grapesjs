@@ -64,7 +64,7 @@ class Standard
 	 * @param string $uid Unique identifier for the output if the content is placed more than once on the same page
 	 * @return string HTML code
 	 */
-	public function getBody( string $uid = '' ) : string
+	public function body( string $uid = '' ) : string
 	{
 		return '';
 	}
@@ -165,10 +165,10 @@ class Standard
 	 * @param string|null &$expire Result variable for the expiration date of the output (null for no expiry)
 	 * @return \Aimeos\MW\View\Iface Modified view object
 	 */
-	public function addData( \Aimeos\MW\View\Iface $view, array &$tags = [], string &$expire = null ) : \Aimeos\MW\View\Iface
+	public function data( \Aimeos\MW\View\Iface $view, array &$tags = [], string &$expire = null ) : \Aimeos\MW\View\Iface
 	{
 		if( !isset( $view->pageContent ) ) {
-			return parent::addData( $view, $tags, $expire );
+			return parent::data( $view, $tags, $expire );
 		}
 
 		$texts = [];
@@ -243,7 +243,7 @@ class Standard
 
 		$view->pageContent = $texts;
 
-		return parent::addData( $view, $tags, $expire );
+		return parent::data( $view, $tags, $expire );
 	}
 
 

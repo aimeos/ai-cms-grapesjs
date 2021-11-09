@@ -52,7 +52,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 		$view->pageContent = $textItems;
 
-		$view = $this->object->addData( $view );
+		$view = $this->object->data( $view );
 
 		foreach( $view->pageContent as $text )
 		{

@@ -32,8 +32,8 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testGetBody()
 	{
-		$this->object->setView( $this->object->addData( $this->object->getView() ) );
-		$output = $this->object->getBody();
+		$this->object->setView( $this->object->data( $this->object->getView() ) );
+		$output = $this->object->body();
 		$this->assertEquals( '', $output );
 	}
 
@@ -62,7 +62,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, $param );
 		$view->addHelper( 'param', $helper );
 
-		$this->object->process();
+		$this->object->init();
 
 		$this->assertEquals( 1, count( $view->pageErrorList ) );
 	}
@@ -85,7 +85,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, $param );
 		$view->addHelper( 'param', $helper );
 
-		$this->object->process();
+		$this->object->init();
 
 		$this->assertEquals( 0, count( $view->get( 'pageErrorList', [] ) ) );
 	}
@@ -106,7 +106,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, $param );
 		$view->addHelper( 'param', $helper );
 
-		$this->object->process();
+		$this->object->init();
 
 		$this->assertEquals( 1, count( $view->pageErrorList ) );
 	}

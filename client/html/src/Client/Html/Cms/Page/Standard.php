@@ -68,7 +68,7 @@ class Standard
 	 * @param string $uid Unique identifier for the output if the content is placed more than once on the same page
 	 * @return string HTML code
 	 */
-	public function getBody( string $uid = '' ) : string
+	public function body( string $uid = '' ) : string
 	{
 		$prefixes = ['path'];
 		$context = $this->getContext();
@@ -130,10 +130,10 @@ class Standard
 			try
 			{
 				$html = '';
-				$view = $this->view = $this->view ?? $this->getObject()->addData( $view, $this->tags, $this->expire );
+				$view = $this->view = $this->view ?? $this->getObject()->data( $view, $this->tags, $this->expire );
 
 				foreach( $this->getSubClients() as $subclient ) {
-					$html .= $subclient->setView( $view )->getBody( $uid );
+					$html .= $subclient->setView( $view )->body( $uid );
 				}
 				$view->pageBody = $html;
 
@@ -181,7 +181,7 @@ class Standard
 	 * @param string $uid Unique identifier for the output if the content is placed more than once on the same page
 	 * @return string|null String including HTML tags for the header on error
 	 */
-	public function getHeader( string $uid = '' ) : ?string
+	public function header( string $uid = '' ) : ?string
 	{
 		$prefixes = ['page'];
 		$confkey = 'client/html/cms/page';
@@ -217,10 +217,10 @@ class Standard
 			try
 			{
 				$html = '';
-				$view = $this->view = $this->view ?? $this->getObject()->addData( $view, $this->tags, $this->expire );
+				$view = $this->view = $this->view ?? $this->getObject()->data( $view, $this->tags, $this->expire );
 
 				foreach( $this->getSubClients() as $subclient ) {
-					$html .= $subclient->setView( $view )->getHeader( $uid );
+					$html .= $subclient->setView( $view )->header( $uid );
 				}
 				$view->pageHeader = $html;
 
@@ -335,14 +335,14 @@ class Standard
 	 * A view must be available and this method doesn't generate any output
 	 * besides setting view variables if necessary.
 	 */
-	public function process()
+	public function init()
 	{
 		$view = $this->getView();
 		$context = $this->getContext();
 
 		try
 		{
-			parent::process();
+			parent::init();
 		}
 		catch( \Aimeos\Client\Html\Exception $e )
 		{
@@ -376,7 +376,7 @@ class Standard
 	 * @param string|null &$expire Result variable for the expiration date of the output (null for no expiry)
 	 * @return \Aimeos\MW\View\Iface Modified view object
 	 */
-	public function addData( \Aimeos\MW\View\Iface $view, array &$tags = [], string &$expire = null ) : \Aimeos\MW\View\Iface
+	public function data( \Aimeos\MW\View\Iface $view, array &$tags = [], string &$expire = null ) : \Aimeos\MW\View\Iface
 	{
 		$context = $this->getContext();
 		$controller = \Aimeos\Controller\Frontend::create( $context, 'cms' );
@@ -409,7 +409,7 @@ class Standard
 			} )->all();
 		}
 
-		return parent::addData( $view, $tags, $expire );
+		return parent::data( $view, $tags, $expire );
 	}
 
 

@@ -64,7 +64,7 @@ class Standard
 	 * @param string $uid Unique identifier for the output if the content is placed more than once on the same page
 	 * @return string HTML code
 	 */
-	public function getBody( string $uid = '' ) : string
+	public function body( string $uid = '' ) : string
 	{
 		return '';
 	}
@@ -179,7 +179,7 @@ class Standard
 	 * A view must be available and this method doesn't generate any output
 	 * besides setting view variables if necessary.
 	 */
-	public function process()
+	public function init()
 	{
 		$view = $this->getView();
 
@@ -218,7 +218,7 @@ class Standard
 			$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
 		}
 
-		parent::process();
+		parent::init();
 	}
 
 

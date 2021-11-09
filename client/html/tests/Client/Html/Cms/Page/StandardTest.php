@@ -40,8 +40,8 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, ['path' => 'contact'] );
 		$view->addHelper( 'param', $helper );
 
-		$this->object->setView( $this->object->addData( $view, $tags, $expire ) );
-		$output = $this->object->getHeader();
+		$this->object->setView( $this->object->data( $view, $tags, $expire ) );
+		$output = $this->object->header();
 
 		$this->assertStringContainsString( '<title>Contact page | Aimeos</title>', $output );
 		$this->assertEquals( null, $expire );
@@ -53,15 +53,15 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
 			->setConstructorArgs( [$this->context] )
-			->setMethods( array( 'addData' ) )
+			->setMethods( array( 'data' ) )
 			->getMock();
 
 		$mock->setView( $this->object->getView() );
 
-		$mock->expects( $this->once() )->method( 'addData' )
+		$mock->expects( $this->once() )->method( 'data' )
 			->will( $this->throwException( new \RuntimeException() ) );
 
-		$mock->getHeader();
+		$mock->header();
 	}
 
 
@@ -74,8 +74,8 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, ['path' => 'contact'] );
 		$view->addHelper( 'param', $helper );
 
-		$this->object->setView( $this->object->addData( $view, $tags, $expire ) );
-		$output = $this->object->getBody();
+		$this->object->setView( $this->object->data( $view, $tags, $expire ) );
+		$output = $this->object->body();
 
 		$this->assertStringStartsWith( '<section class="aimeos cms-page', $output );
 		$this->assertStringContainsString( '<h1>Hello!</h1>', $output );
@@ -89,15 +89,15 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
 			->setConstructorArgs( [$this->context] )
-			->setMethods( array( 'addData' ) )
+			->setMethods( array( 'data' ) )
 			->getMock();
 
 		$mock->setView( $this->object->getView() );
 
-		$mock->expects( $this->once() )->method( 'addData' )
+		$mock->expects( $this->once() )->method( 'data' )
 			->will( $this->throwException( new \Aimeos\Client\Html\Exception() ) );
 
-		$mock->getBody();
+		$mock->body();
 	}
 
 
@@ -105,15 +105,15 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
 			->setConstructorArgs( [$this->context] )
-			->setMethods( array( 'addData' ) )
+			->setMethods( array( 'data' ) )
 			->getMock();
 
 		$mock->setView( $this->object->getView() );
 
-		$mock->expects( $this->once() )->method( 'addData' )
+		$mock->expects( $this->once() )->method( 'data' )
 			->will( $this->throwException( new \Aimeos\Controller\Frontend\Exception() ) );
 
-		$mock->getBody();
+		$mock->body();
 	}
 
 
@@ -121,15 +121,15 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
 			->setConstructorArgs( [$this->context] )
-			->setMethods( array( 'addData' ) )
+			->setMethods( array( 'data' ) )
 			->getMock();
 
 		$mock->setView( $this->object->getView() );
 
-		$mock->expects( $this->once() )->method( 'addData' )
+		$mock->expects( $this->once() )->method( 'data' )
 			->will( $this->throwException( new \Aimeos\MShop\Exception() ) );
 
-		$mock->getBody();
+		$mock->body();
 	}
 
 
@@ -137,15 +137,15 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
 			->setConstructorArgs( [$this->context] )
-			->setMethods( array( 'addData' ) )
+			->setMethods( array( 'data' ) )
 			->getMock();
 
 		$mock->setView( $this->object->getView() );
 
-		$mock->expects( $this->once() )->method( 'addData' )
+		$mock->expects( $this->once() )->method( 'data' )
 			->will( $this->throwException( new \RuntimeException() ) );
 
-		$mock->getBody();
+		$mock->body();
 	}
 
 
@@ -165,7 +165,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testProcess()
 	{
-		$this->object->process();
+		$this->object->init();
 
 		$this->assertEmpty( $this->object->getView()->get( 'pageErrorList' ) );
 	}

@@ -31,7 +31,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testGetHeader()
+	public function testHeader()
 	{
 		$tags = [];
 		$expire = null;
@@ -49,7 +49,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testGetHeaderException()
+	public function testHeaderException()
 	{
 		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
 			->setConstructorArgs( [$this->context] )
@@ -65,7 +65,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testGetBody()
+	public function testBody()
 	{
 		$tags = [];
 		$expire = null;
@@ -85,7 +85,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testGetBodyClientHtmlException()
+	public function testBodyClientHtmlException()
 	{
 		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
 			->setConstructorArgs( [$this->context] )
@@ -101,7 +101,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testGetBodyControllerFrontendException()
+	public function testBodyControllerFrontendException()
 	{
 		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
 			->setConstructorArgs( [$this->context] )
@@ -117,7 +117,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testGetBodyMShopException()
+	public function testBodyMShopException()
 	{
 		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
 			->setConstructorArgs( [$this->context] )
@@ -133,7 +133,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testGetBodyException()
+	public function testBodyException()
 	{
 		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
 			->setConstructorArgs( [$this->context] )
@@ -163,7 +163,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testProcess()
+	public function testInit()
 	{
 		$this->object->init();
 

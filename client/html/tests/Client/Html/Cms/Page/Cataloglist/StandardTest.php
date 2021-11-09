@@ -30,7 +30,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testAddData()
+	public function testData()
 	{
 		$manager = \Aimeos\MShop::create( $this->context, 'catalog' );
 		$catId1 = $manager->find( 'cafe' )->getId();

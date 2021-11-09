@@ -30,7 +30,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testGetBody()
+	public function testBody()
 	{
 		$this->object->setView( $this->object->data( $this->object->getView() ) );
 		$output = $this->object->body();
@@ -45,7 +45,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testProcess()
+	public function testInit()
 	{
 		$this->context->getConfig()->set( 'resource/email/from-address', 'rcpt@localhost' );
 
@@ -68,7 +68,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testProcessHoneypot()
+	public function testInitHoneypot()
 	{
 		$this->context->getConfig()->set( 'resource/email/from-address', 'rcpt@localhost' );
 
@@ -91,7 +91,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testProcessError()
+	public function testInitError()
 	{
 		$view = $this->object->getView();
 		$param = [

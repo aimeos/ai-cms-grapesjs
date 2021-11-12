@@ -167,7 +167,7 @@ class Standard
 	public function modifyBody( string $content, string $uid ) : string
 	{
 		$content = parent::modifyBody( $content, $uid );
-		$token = !$this->getView()->access( ['editor', 'admin', 'super'] ) ? $this->getView()->csrf()->formfield() : '';
+		$token = !$this->view()->access( ['editor', 'admin', 'super'] ) ? $this->view()->csrf()->formfield() : '';
 
 		return $this->replaceSection( $content, $token, 'cms.page.contact.csrf' );
 	}
@@ -181,7 +181,7 @@ class Standard
 	 */
 	public function init()
 	{
-		$view = $this->getView();
+		$view = $this->view();
 
 		$name = $view->param( 'contact/name' );
 		$email = $view->param( 'contact/email' );

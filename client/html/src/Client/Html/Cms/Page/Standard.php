@@ -102,7 +102,7 @@ class Standard
 
 		if( ( $html = $this->getCached( 'body', $uid, $prefixes, $confkey ) ) === null )
 		{
-			$view = $this->getView();
+			$view = $this->view();
 
 			/** client/html/cms/page/template-body
 			 * Relative path to the HTML body template of the cms page client.
@@ -188,7 +188,7 @@ class Standard
 
 		if( ( $html = $this->getCached( 'header', $uid, $prefixes, $confkey ) ) === null )
 		{
-			$view = $this->getView();
+			$view = $this->view();
 
 			/** client/html/cms/page/template-header
 			 * Relative path to the HTML header template of the cms page client.
@@ -337,7 +337,7 @@ class Standard
 	 */
 	public function init()
 	{
-		$view = $this->getView();
+		$view = $this->view();
 		$context = $this->getContext();
 
 		try

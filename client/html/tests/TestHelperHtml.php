@@ -41,7 +41,7 @@ class TestHelperHtml
 	}
 
 
-	public static function getView()
+	public static function view()
 	{
 		$view = new \Aimeos\MW\View\Standard( self::getHtmlTemplatePaths() );
 

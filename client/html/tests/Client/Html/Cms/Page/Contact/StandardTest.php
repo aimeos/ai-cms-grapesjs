@@ -20,7 +20,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->context = \TestHelperHtml::getContext();
 
 		$this->object = new \Aimeos\Client\Html\Cms\Page\Contact\Standard( $this->context );
-		$this->object->setView( \TestHelperHtml::getView() );
+		$this->object->setView( \TestHelperHtml::view() );
 	}
 
 
@@ -32,7 +32,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testBody()
 	{
-		$this->object->setView( $this->object->data( $this->object->getView() ) );
+		$this->object->setView( $this->object->data( $this->object->view() ) );
 		$output = $this->object->body();
 		$this->assertEquals( '', $output );
 	}
@@ -49,7 +49,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$this->context->getConfig()->set( 'resource/email/from-address', 'rcpt@localhost' );
 
-		$view = $this->object->getView();
+		$view = $this->object->view();
 		$param = [
 			'contact' => [
 				'name' => 'test',
@@ -72,7 +72,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$this->context->getConfig()->set( 'resource/email/from-address', 'rcpt@localhost' );
 
-		$view = $this->object->getView();
+		$view = $this->object->view();
 		$param = [
 			'contact' => [
 				'name' => 'test',
@@ -93,7 +93,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testInitError()
 	{
-		$view = $this->object->getView();
+		$view = $this->object->view();
 		$param = [
 			'contact' => [
 				'name' => 'test',

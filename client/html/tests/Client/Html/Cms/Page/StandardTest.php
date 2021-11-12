@@ -21,7 +21,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->context->getLocale()->setLanguageId( 'en' );
 
 		$this->object = new \Aimeos\Client\Html\Cms\Page\Standard( $this->context );
-		$this->object->setView( \TestHelperHtml::getView() );
+		$this->object->setView( \TestHelperHtml::view() );
 	}
 
 
@@ -35,7 +35,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$tags = [];
 		$expire = null;
-		$view = $this->object->getView();
+		$view = $this->object->view();
 
 		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, ['path' => 'contact'] );
 		$view->addHelper( 'param', $helper );
@@ -56,7 +56,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 			->setMethods( array( 'data' ) )
 			->getMock();
 
-		$mock->setView( $this->object->getView() );
+		$mock->setView( $this->object->view() );
 
 		$mock->expects( $this->once() )->method( 'data' )
 			->will( $this->throwException( new \RuntimeException() ) );
@@ -69,7 +69,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$tags = [];
 		$expire = null;
-		$view = $this->object->getView();
+		$view = $this->object->view();
 
 		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, ['path' => 'contact'] );
 		$view->addHelper( 'param', $helper );
@@ -92,7 +92,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 			->setMethods( array( 'data' ) )
 			->getMock();
 
-		$mock->setView( $this->object->getView() );
+		$mock->setView( $this->object->view() );
 
 		$mock->expects( $this->once() )->method( 'data' )
 			->will( $this->throwException( new \Aimeos\Client\Html\Exception() ) );
@@ -108,7 +108,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 			->setMethods( array( 'data' ) )
 			->getMock();
 
-		$mock->setView( $this->object->getView() );
+		$mock->setView( $this->object->view() );
 
 		$mock->expects( $this->once() )->method( 'data' )
 			->will( $this->throwException( new \Aimeos\Controller\Frontend\Exception() ) );
@@ -124,7 +124,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 			->setMethods( array( 'data' ) )
 			->getMock();
 
-		$mock->setView( $this->object->getView() );
+		$mock->setView( $this->object->view() );
 
 		$mock->expects( $this->once() )->method( 'data' )
 			->will( $this->throwException( new \Aimeos\MShop\Exception() ) );
@@ -140,7 +140,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 			->setMethods( array( 'data' ) )
 			->getMock();
 
-		$mock->setView( $this->object->getView() );
+		$mock->setView( $this->object->view() );
 
 		$mock->expects( $this->once() )->method( 'data' )
 			->will( $this->throwException( new \RuntimeException() ) );
@@ -167,6 +167,6 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$this->object->init();
 
-		$this->assertEmpty( $this->object->getView()->get( 'pageErrorList' ) );
+		$this->assertEmpty( $this->object->view()->get( 'pageErrorList' ) );
 	}
 }

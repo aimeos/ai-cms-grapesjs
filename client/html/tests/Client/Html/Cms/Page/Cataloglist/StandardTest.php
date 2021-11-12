@@ -17,10 +17,10 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	protected function setUp() : void
 	{
-		$this->context = \TestHelperHtml::getContext()->setView( \TestHelperHtml::getView() );
+		$this->context = \TestHelperHtml::getContext()->setView( \TestHelperHtml::view() );
 
 		$this->object = new \Aimeos\Client\Html\Cms\Page\Cataloglist\Standard( $this->context );
-		$this->object->setView( \TestHelperHtml::getView() );
+		$this->object->setView( \TestHelperHtml::view() );
 	}
 
 
@@ -36,7 +36,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$catId1 = $manager->find( 'cafe' )->getId();
 		$catId2 = $manager->find( 'new' )->getId();
 
-		$view = $this->object->getView();
+		$view = $this->object->view();
 		$view->pageCmsItem = \Aimeos\MShop::create( $this->context, 'cms' )->find( '/catlist', ['text'] );
 
 		$textItems = $view->pageCmsItem->getRefItems( 'text', 'content' )->map( function( $item ) {

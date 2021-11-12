@@ -20,7 +20,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$this->context = \TestHelperJapi::getContext();
 		$this->context->getLocale()->setLanguageId( 'en' );
-		$this->view = $this->context->getView();
+		$this->view = $this->context->view();
 
 		$this->object = new \Aimeos\Client\JsonApi\Cms\Standard( $this->context, 'cms' );
 		$this->object->setView( $this->view );

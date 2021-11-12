@@ -227,7 +227,7 @@ class Standard
 
 				$this->addMetaItems( $products, $expire, $tags );
 
-				$view = $context->getView()->set( 'products', $products );
+				$view = $context->view()->set( 'products', $products );
 
 				$pdom = new \DOMDocument( '1.0', 'UTF-8' );
 				$pdom->loadHTML( '<?xml encoding="utf-8" ?>' . $view->render( $template ), LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );

@@ -43,7 +43,7 @@ class Standard
 	 */
 	public function copy() : ?string
 	{
-		$view = $this->getObject()->addData( $this->getView() );
+		$view = $this->getObject()->addData( $this->view() );
 
 		try
 		{
@@ -73,7 +73,7 @@ class Standard
 	 */
 	public function create() : ?string
 	{
-		$view = $this->getObject()->addData( $this->getView() );
+		$view = $this->getObject()->addData( $this->view() );
 
 		try
 		{
@@ -105,7 +105,7 @@ class Standard
 	public function delete() : ?string
 	{
 		$tags = ['cms'];
-		$view = $this->getView();
+		$view = $this->view();
 		$context = $this->getContext();
 
 		$manager = \Aimeos\MShop::create( $context, 'cms' );
@@ -152,7 +152,7 @@ class Standard
 	 */
 	public function get() : ?string
 	{
-		$view = $this->getObject()->addData( $this->getView() );
+		$view = $this->getObject()->addData( $this->view() );
 
 		try
 		{
@@ -182,7 +182,7 @@ class Standard
 	 */
 	public function save() : ?string
 	{
-		$view = $this->getView();
+		$view = $this->view();
 		$context = $this->getContext();
 
 		$manager = \Aimeos\MShop::create( $context, 'cms' );
@@ -218,7 +218,7 @@ class Standard
 	 */
 	public function search() : ?string
 	{
-		$view = $this->getView();
+		$view = $this->view();
 
 		try
 		{

@@ -13,20 +13,22 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 {
 	private $object;
 	private $context;
+	private $view;
 
 
 	protected function setUp() : void
 	{
-		$this->context = \TestHelperHtml::getContext()->setView( \TestHelperHtml::view() );
+		$this->view = \TestHelperHtml::view();
+		$this->context = \TestHelperHtml::getContext()->setView( $this->view );
 
 		$this->object = new \Aimeos\Client\Html\Cms\Page\Cataloglist\Standard( $this->context );
-		$this->object->setView( \TestHelperHtml::view() );
+		$this->object->setView( $this->view );
 	}
 
 
 	protected function tearDown() : void
 	{
-		unset( $this->object );
+		unset( $this->object, $this->context, $this->view );
 	}
 
 
@@ -36,7 +38,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$catId1 = $manager->find( 'cafe' )->getId();
 		$catId2 = $manager->find( 'new' )->getId();
 
-		$view = $this->object->view();
+		$view = $this->view;
 		$view->pageCmsItem = \Aimeos\MShop::create( $this->context, 'cms' )->find( '/catlist', ['text'] );
 
 		$textItems = $view->pageCmsItem->getRefItems( 'text', 'content' )->map( function( $item ) {

@@ -130,7 +130,7 @@ class Standard
 			try
 			{
 				$html = '';
-				$view = $this->view = $this->view ?? $this->getObject()->data( $view, $this->tags, $this->expire );
+				$view = $this->view = $this->view ?? $this->object()->data( $view, $this->tags, $this->expire );
 
 				foreach( $this->getSubClients() as $subclient ) {
 					$html .= $subclient->setView( $view )->body( $uid );
@@ -217,7 +217,7 @@ class Standard
 			try
 			{
 				$html = '';
-				$view = $this->view = $this->view ?? $this->getObject()->data( $view, $this->tags, $this->expire );
+				$view = $this->view = $this->view ?? $this->object()->data( $view, $this->tags, $this->expire );
 
 				foreach( $this->getSubClients() as $subclient ) {
 					$html .= $subclient->setView( $view )->header( $uid );

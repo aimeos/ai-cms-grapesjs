@@ -201,12 +201,12 @@ class Standard
 			{
 				$label = $context->getLocale()->getSiteItem()->getLabel();
 
-				$context->mail()->createMessage()
-				->addTo( $toAddr, $toName )
-				->addFrom( $email, $name )
-				->setSubject( $i18n->dt( 'client', 'Your request' ) . ' - ' . $label )
-				->setBody( $msg )
-				->send();
+				$context->mail()->create()
+					->to( $toAddr, $toName )
+					->from( $email, $name )
+					->subject( $i18n->dt( 'client', 'Your request' ) . ' - ' . $label )
+					->text( $msg )
+					->send();
 
 				$error = [$i18n->dt( 'client', 'Message sent successfully' )];
 			}

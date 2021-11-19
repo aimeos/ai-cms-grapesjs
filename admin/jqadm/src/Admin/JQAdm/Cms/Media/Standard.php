@@ -346,8 +346,8 @@ class Standard
 			}
 
 			$refItem->fromArray( $entry, true )->setDomain( 'cms' );
-			$file = $this->getValue( $files, 'media/' . $idx . '/file' );
-			$preview = $this->getValue( $files, 'media/' . $idx . '/preview' );
+			$file = $this->val( $files, 'media/' . $idx . '/file' );
+			$preview = $this->val( $files, 'media/' . $idx . '/preview' );
 
 			if( $file && $file->getError() !== UPLOAD_ERR_NO_FILE )
 			{
@@ -364,7 +364,7 @@ class Standard
 
 			$conf = [];
 
-			foreach( (array) $this->getValue( $entry, 'config', [] ) as $cfg )
+			foreach( (array) $this->val( $entry, 'config', [] ) as $cfg )
 			{
 				if( ( $key = trim( $cfg['key'] ?? '' ) ) !== '' ) {
 					$conf[$key] = trim( $cfg['val'] ?? '' );

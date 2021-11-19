@@ -308,7 +308,7 @@ class Standard
 
 		foreach( $data as $idx => $entry )
 		{
-			if( trim( $this->getValue( $entry, 'text.content', '' ) ) === '' ) {
+			if( trim( $this->val( $entry, 'text.content', '' ) ) === '' ) {
 				continue;
 			}
 
@@ -325,7 +325,7 @@ class Standard
 			$refItem->fromArray( $entry, true );
 			$conf = [];
 
-			foreach( (array) $this->getValue( $entry, 'config', [] ) as $cfg )
+			foreach( (array) $this->val( $entry, 'config', [] ) as $cfg )
 			{
 				if( ( $key = trim( $cfg['key'] ?? '' ) ) !== '' ) {
 					$conf[$key] = trim( $cfg['val'] ?? '' );

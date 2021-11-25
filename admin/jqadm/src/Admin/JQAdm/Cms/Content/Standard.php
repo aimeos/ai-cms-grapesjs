@@ -58,7 +58,7 @@ class Standard
 	public function create() : ?string
 	{
 		$view = $this->object()->data( $this->view() );
-		$siteid = $this->getContext()->getLocale()->getSiteId();
+		$siteid = $this->context()->getLocale()->getSiteId();
 		$data = $view->param( 'content', [] );
 
 		foreach( $data as $idx => $entry )
@@ -247,7 +247,7 @@ class Standard
 		 * @since 2020.10
 		 * @category Developer
 		 */
-		return $this->getContext()->getConfig()->get( 'admin/jqadm/cms/content/subparts', [] );
+		return $this->context()->getConfig()->get( 'admin/jqadm/cms/content/subparts', [] );
 	}
 
 
@@ -260,7 +260,7 @@ class Standard
 	public function data( \Aimeos\MW\View\Iface $view ) : \Aimeos\MW\View\Iface
 	{
 		$media = [];
-		$context = $this->getContext();
+		$context = $this->context();
 		$listTypeManager = \Aimeos\MShop::create( $context, 'cms/lists/type' );
 
 		$listSearch = $listTypeManager->filter( true )->slice( 0, 10000 );
@@ -298,7 +298,7 @@ class Standard
 	 */
 	protected function fromArray( \Aimeos\MShop\Cms\Item\Iface $item, array $data ) : \Aimeos\MShop\Cms\Item\Iface
 	{
-		$context = $this->getContext();
+		$context = $this->context();
 
 		$textManager = \Aimeos\MShop::create( $context, 'text' );
 		$listManager = \Aimeos\MShop::create( $context, 'cms/lists' );
@@ -354,7 +354,7 @@ class Standard
 	protected function toArray( \Aimeos\MShop\Cms\Item\Iface $item, bool $copy = false ) : array
 	{
 		$data = [];
-		$siteId = $this->getContext()->getLocale()->getSiteId();
+		$siteId = $this->context()->getLocale()->getSiteId();
 
 		foreach( $item->getListItems( 'text', null, 'content', false ) as $listItem )
 		{

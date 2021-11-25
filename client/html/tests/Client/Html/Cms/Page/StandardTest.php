@@ -19,7 +19,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	protected function setUp() : void
 	{
 		$this->view = \TestHelperHtml::view();
-		$this->context = \TestHelperHtml::getContext();
+		$this->context = \TestHelperHtml::context();
 		$this->context->getLocale()->setLanguageId( 'en' );
 
 		$this->object = new \Aimeos\Client\Html\Cms\Page\Standard( $this->context );

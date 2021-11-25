@@ -51,7 +51,7 @@ class Standard
 				throw new \Aimeos\Admin\JQAdm\Exception( sprintf( 'Required parameter "%1$s" is missing', 'id' ) );
 			}
 
-			$manager = \Aimeos\MShop::create( $this->getContext(), 'cms' );
+			$manager = \Aimeos\MShop::create( $this->context(), 'cms' );
 			$view->item = $manager->get( $id, $this->getDomains() );
 
 			$view->itemData = $this->toArray( $view->item, true );
@@ -80,7 +80,7 @@ class Standard
 			$data = $view->param( 'item', [] );
 
 			if( !isset( $view->item ) ) {
-				$view->item = \Aimeos\MShop::create( $this->getContext(), 'cms' )->create();
+				$view->item = \Aimeos\MShop::create( $this->context(), 'cms' )->create();
 			}
 
 			$data['cms.siteid'] = $view->item->getSiteId();
@@ -106,7 +106,7 @@ class Standard
 	{
 		$tags = ['cms'];
 		$view = $this->view();
-		$context = $this->getContext();
+		$context = $this->context();
 
 		$manager = \Aimeos\MShop::create( $context, 'cms' );
 		$manager->begin();
@@ -160,7 +160,7 @@ class Standard
 				throw new \Aimeos\Admin\JQAdm\Exception( sprintf( 'Required parameter "%1$s" is missing', 'id' ) );
 			}
 
-			$manager = \Aimeos\MShop::create( $this->getContext(), 'cms' );
+			$manager = \Aimeos\MShop::create( $this->context(), 'cms' );
 
 			$view->item = $manager->get( $id, $this->getDomains() );
 			$view->itemData = $this->toArray( $view->item );
@@ -183,7 +183,7 @@ class Standard
 	public function save() : ?string
 	{
 		$view = $this->view();
-		$context = $this->getContext();
+		$context = $this->context();
 
 		$manager = \Aimeos\MShop::create( $context, 'cms' );
 		$manager->begin();
@@ -224,7 +224,7 @@ class Standard
 		{
 			$total = 0;
 			$params = $this->storeFilter( $view->param(), 'cms' );
-			$manager = \Aimeos\MShop::create( $this->getContext(), 'cms' );
+			$manager = \Aimeos\MShop::create( $this->context(), 'cms' );
 			$search = $this->initCriteria( $manager->filter()->order( 'cms.url' ), $params );
 
 			$view->items = $manager->search( $search, $this->getDomains(), $total );
@@ -368,7 +368,7 @@ class Standard
 		 * @since 2020.10
 		 * @category Developer
 		 */
-		return $this->getContext()->getConfig()->get( 'admin/jqadm/cms/domains', [] );
+		return $this->context()->getConfig()->get( 'admin/jqadm/cms/domains', [] );
 	}
 
 
@@ -412,7 +412,7 @@ class Standard
 		 * @since 2020.10
 		 * @category Developer
 		 */
-		return $this->getContext()->getConfig()->get( 'admin/jqadm/cms/subparts', [] );
+		return $this->context()->getConfig()->get( 'admin/jqadm/cms/subparts', [] );
 	}
 
 
@@ -424,7 +424,7 @@ class Standard
 	 */
 	protected function fromArray( array $data ) : \Aimeos\MShop\Cms\Item\Iface
 	{
-		$manager = \Aimeos\MShop::create( $this->getContext(), 'cms' );
+		$manager = \Aimeos\MShop::create( $this->context(), 'cms' );
 
 		if( isset( $data['cms.id'] ) && $data['cms.id'] != '' ) {
 			$item = $manager->get( $data['cms.id'], $this->getDomains() );
@@ -450,7 +450,7 @@ class Standard
 
 		if( $copy === true )
 		{
-			$data['cms.siteid'] = $this->getContext()->getLocale()->getSiteId();
+			$data['cms.siteid'] = $this->context()->getLocale()->getSiteId();
 			$data['cms.url'] = $data['cms.url'] . '_copy';
 			$data['cms.id'] = '';
 		}

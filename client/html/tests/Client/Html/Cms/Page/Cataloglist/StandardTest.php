@@ -19,7 +19,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	protected function setUp() : void
 	{
 		$this->view = \TestHelperHtml::view();
-		$this->context = \TestHelperHtml::getContext()->setView( $this->view );
+		$this->context = \TestHelperHtml::context()->setView( $this->view );
 
 		$this->object = new \Aimeos\Client\Html\Cms\Page\Cataloglist\Standard( $this->context );
 		$this->object->setView( $this->view );

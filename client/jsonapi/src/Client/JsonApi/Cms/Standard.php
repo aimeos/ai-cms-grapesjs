@@ -117,7 +117,7 @@ class Standard
 			$ref = explode( ',', $ref );
 		}
 
-		$cntl = \Aimeos\Controller\Frontend::create( $this->getContext(), 'cms' );
+		$cntl = \Aimeos\Controller\Frontend::create( $this->context(), 'cms' );
 
 		$view->items = $cntl->uses( $ref )->get( $view->param( 'id' ) );
 		$view->total = 1;
@@ -143,7 +143,7 @@ class Standard
 			$ref = explode( ',', $ref );
 		}
 
-		$cmss = \Aimeos\Controller\Frontend::create( $this->getContext(), 'cms' )
+		$cmss = \Aimeos\Controller\Frontend::create( $this->context(), 'cms' )
 			->slice( $view->param( 'page/offset', 0 ), $view->param( 'page/limit', 25 ) )
 			->sort( $view->param( 'sort' ) )->parse( $view->param( 'filter', [] ) )
 			->uses( $ref )->search( $total );

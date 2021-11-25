@@ -17,8 +17,8 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	protected function setUp() : void
 	{
-		$this->editor = \TestHelper::getContext()->getEditor();
-		$manager = \Aimeos\MShop\Cms\Manager\Factory::create( \TestHelper::getContext() );
+		$this->editor = \TestHelper::context()->getEditor();
+		$manager = \Aimeos\MShop\Cms\Manager\Factory::create( \TestHelper::context() );
 
 		$listManager = $manager->getSubManager( 'lists' );
 		$this->object = $listManager->getSubManager( 'type' );

@@ -337,13 +337,11 @@ class Standard
 
 		foreach( $data as $idx => $entry )
 		{
-			if( ( $listItem = $item->getListItem( 'media', $entry['cms.lists.type'], $entry['media.id'], false ) ) === null ) {
-				$listItem = $listManager->create();
-			}
+			$id = $this->val( $entry, 'media.id', '' );
+			$type = $this->val( $entry, 'cms.lists.type', 'default' );
 
-			if( ( $refItem = $listItem->getRefItem() ) === null ) {
-				$refItem = $mediaManager->create();
-			}
+			$listItem = $item->getListItem( 'media', $type, $id, false ) ?: $listManager->create();
+			$refItem = $listItem->getRefItem() ?: $mediaManager->create();
 
 			$refItem->fromArray( $entry, true )->setDomain( 'cms' );
 			$file = $this->val( $files, 'media/' . $idx . '/file' );

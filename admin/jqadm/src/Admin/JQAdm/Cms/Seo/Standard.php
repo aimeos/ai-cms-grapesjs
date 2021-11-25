@@ -312,15 +312,11 @@ class Standard
 				continue;
 			}
 
-			$listType = $entry['cms.lists.type'] ?? 'default';
+			$id = $this->val( $entry, 'text.id', '' );
+			$type = $this->val( $entry, 'cms.lists.type', 'default' );
 
-			if( ( $listItem = $item->getListItem( 'text', $listType, $entry['text.id'], false ) ) === null ) {
-				$listItem = $listManager->create();
-			}
-
-			if( ( $refItem = $listItem->getRefItem() ) === null ) {
-				$refItem = $textManager->create();
-			}
+			$listItem = $item->getListItem( 'text', $type, $id, false ) ?: $listManager->create();
+			$refItem = $listItem->getRefItem() ?: $textManager->create();
 
 			$refItem->fromArray( $entry, true );
 			$conf = [];

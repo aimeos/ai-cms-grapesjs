@@ -690,6 +690,11 @@ Aimeos.CMSContent = {
 								srcset && model.addAttributes({ srcset })
 							}
 						});
+					},
+					onError() {
+						const fallback = this.model.getSrcResult({ fallback: 1 });
+						if (fallback) this.el.src = fallback;
+						if (fallback) this.el.removeAttribute('srcset');
 					}
 				}
 			});

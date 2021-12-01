@@ -41,8 +41,6 @@ class DemoAddCmsData extends MShopAddDataAbstract
 	 */
 	public function up()
 	{
-		$this->info( 'Processing CMS demo data', 'v' );
-
 		$context = $this->context();
 		$value = $context->getConfig()->get( 'setup/default/demo', '' );
 
@@ -50,6 +48,8 @@ class DemoAddCmsData extends MShopAddDataAbstract
 			return;
 		}
 
+
+		$this->info( 'Processing CMS demo data', 'v' );
 
 		$domains = ['media', 'text'];
 		$manager = \Aimeos\MShop::create( $context, 'cms' );

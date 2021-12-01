@@ -80,3 +80,9 @@ Route::group(['domain' => '{site}', 'middleware' => ['web']], function () {
 ```
 
 This will add a "catch all" route for every URL that hasn't been matched before so **don't put routes after** that line because they won't be used any more!
+
+## Potential problems
+
+### Page with contact form expired
+
+Due to potential security risks, you must not be logged into the admin backend when using the contact form. Otherwise, you will get a "419 page expired" error page. Thus, make sure you are logged out of the admin backend before sending a contact request.

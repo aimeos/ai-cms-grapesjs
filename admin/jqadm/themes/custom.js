@@ -484,7 +484,7 @@ Aimeos.CMSContent = {
 								label: 'Spacing',
 								name: 'data-gutters',
 								options: [
-									{id: 'no-gutters', name: 'No'},
+									{id: 'g-0', name: 'No'},
 									{id: '', name: 'Yes'},
 								]
 							}]
@@ -508,7 +508,7 @@ Aimeos.CMSContent = {
 							});
 						},
 						onGutterChange() {
-							this.removeClass('no-gutters');
+							this.removeClass('g-0');
 							this.addClass(this.getAttributes()['data-gutters'] || '');
 						}
 					}

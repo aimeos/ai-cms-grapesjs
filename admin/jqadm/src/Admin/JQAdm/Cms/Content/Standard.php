@@ -247,7 +247,7 @@ class Standard
 		 * @since 2020.10
 		 * @category Developer
 		 */
-		return $this->context()->getConfig()->get( 'admin/jqadm/cms/content/subparts', [] );
+		return $this->context()->config()->get( 'admin/jqadm/cms/content/subparts', [] );
 	}
 
 

@@ -49,7 +49,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testInit()
 	{
-		$this->context->getConfig()->set( 'resource/email/from-address', 'rcpt@localhost' );
+		$this->context->config()->set( 'resource/email/from-address', 'rcpt@localhost' );
 
 		$view = $this->view;
 		$param = [
@@ -72,7 +72,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testInitHoneypot()
 	{
-		$this->context->getConfig()->set( 'resource/email/from-address', 'rcpt@localhost' );
+		$this->context->config()->set( 'resource/email/from-address', 'rcpt@localhost' );
 
 		$view = $this->view;
 		$param = [

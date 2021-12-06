@@ -394,7 +394,7 @@ class Standard
 		 * @param array List of domain names
 		 * @since 2021.04
 		 */
-		$domains = $context->getConfig()->get( 'client/html/cms/page/domains', ['text'] );
+		$domains = $context->config()->get( 'client/html/cms/page/domains', ['text'] );
 
 		$path = '/' . trim( $view->param( 'path' ), '/' );
 
@@ -420,6 +420,6 @@ class Standard
 	 */
 	protected function getSubClientNames() : array
 	{
-		return $this->context()->getConfig()->get( $this->subPartPath, $this->subPartNames );
+		return $this->context()->config()->get( $this->subPartPath, $this->subPartNames );
 	}
 }

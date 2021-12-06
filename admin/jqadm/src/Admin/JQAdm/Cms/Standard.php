@@ -368,7 +368,7 @@ class Standard
 		 * @since 2020.10
 		 * @category Developer
 		 */
-		return $this->context()->getConfig()->get( 'admin/jqadm/cms/domains', [] );
+		return $this->context()->config()->get( 'admin/jqadm/cms/domains', [] );
 	}
 
 
@@ -412,7 +412,7 @@ class Standard
 		 * @since 2020.10
 		 * @category Developer
 		 */
-		return $this->context()->getConfig()->get( 'admin/jqadm/cms/subparts', [] );
+		return $this->context()->config()->get( 'admin/jqadm/cms/subparts', [] );
 	}
 
 

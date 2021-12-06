@@ -58,7 +58,7 @@ class TestHelperHtml
 		$helper = new \Aimeos\MW\View\Helper\Date\Standard( $view, 'Y-m-d' );
 		$view->addHelper( 'date', $helper );
 
-		$helper = new \Aimeos\MW\View\Helper\Config\Standard( $view, self::context()->getConfig() );
+		$helper = new \Aimeos\MW\View\Helper\Config\Standard( $view, self::context()->config() );
 		$view->addHelper( 'config', $helper );
 
 		return $view;

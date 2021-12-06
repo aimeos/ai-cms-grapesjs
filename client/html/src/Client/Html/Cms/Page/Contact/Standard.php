@@ -191,7 +191,7 @@ class Standard
 		if( !$honeypot && $name && $email && $msg )
 		{
 			$context = $this->context();
-			$config = $context->getConfig();
+			$config = $context->config();
 			$i18n = $context->getI18n();
 
 			$toAddr = $config->get( 'resource/email/from-email' );
@@ -229,6 +229,6 @@ class Standard
 	 */
 	protected function getSubClientNames() : array
 	{
-		return $this->context()->getConfig()->get( $this->subPartPath, $this->subPartNames );
+		return $this->context()->config()->get( $this->subPartPath, $this->subPartNames );
 	}
 }

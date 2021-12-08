@@ -58,18 +58,14 @@ class DemoAddCmsData extends MShopAddDataAbstract
 		$search->setConditions( $search->compare( '=~', 'cms.label', 'Demo ' ) );
 		$pages = $manager->search( $search, $domains );
 
-		foreach( $domains as $domain )
+		foreach( $pages as $item )
 		{
-			$rmIds = map();
-
-			foreach( $pages as $item ) {
-				$rmIds = $rmIds->merge( $item->getRefItems( $domain, null, null, false )->keys() );
+			foreach( $domains as $domain ) {
+				$item->deleteListItems( $item->getListItems( $domain, null, null, false ), true );
 			}
-
-			\Aimeos\MShop::create( $context, $domain )->delete( $rmIds->toArray() );
 		}
 
-		$manager->delete( $pages->toArray() );
+		$manager->delete( $pages );
 
 
 		if( $value === '1' ) {
@@ -122,18 +118,18 @@ class DemoAddCmsData extends MShopAddDataAbstract
 	{
 		$context = $this->context();
 		$domain = $item->getResourceType();
-		$listManager = \Aimeos\MShop::create( $context, $domain . '/lists' );
+		$manager = \Aimeos\MShop::create( $context, $domain );
 
 		foreach( ['media', 'text'] as $refDomain )
 		{
 			if( isset( $entry[$refDomain] ) )
 			{
-				$manager = \Aimeos\MShop::create( $context, $refDomain );
+				$refManager = \Aimeos\MShop::create( $context, $refDomain );
 
 				foreach( $entry[$refDomain] as $data )
 				{
-					$listItem = $listManager->create()->fromArray( $data );
-					$refItem = $manager->create()->fromArray( $data );
+					$listItem = $manager->createListItem()->fromArray( $data );
+					$refItem = $refManager->create()->fromArray( $data );
 
 					$item->addListItem( $refDomain, $listItem, $refItem );
 				}

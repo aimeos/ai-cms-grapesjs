@@ -30,8 +30,10 @@ class MShopAddTypeDataCms extends MShopAddTypeData
 	 */
 	public function up()
 	{
-		$this->context()->setEditor( 'ai-cms-grapesjs:lib/custom' );
+		$context = $this->context();
+		$editor = $context->getEditor();
 		$sitecode = $this->context()->getLocale()->getSiteItem()->getCode();
+
 		$this->info( sprintf( 'Adding CMS type data for site "%1$s"', $sitecode ), 'v' );
 
 
@@ -42,6 +44,10 @@ class MShopAddTypeDataCms extends MShopAddTypeData
 			throw new \Aimeos\MShop\Exception( sprintf( 'No type file found in "%1$s"', $filename ) );
 		}
 
+		$context->setEditor( 'ai-cms-grapesjs:lib/custom' );
+
 		$this->processFile( $testdata );
+
+		$context->setEditor( $editor );
 	}
 }

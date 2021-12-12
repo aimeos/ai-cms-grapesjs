@@ -20,7 +20,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$this->view = \TestHelperHtml::view();
 		$this->context = \TestHelperHtml::context();
-		$this->context->getLocale()->setLanguageId( 'en' );
+		$this->context->locale()->setLanguageId( 'en' );
 
 		$this->object = new \Aimeos\Client\Html\Cms\Page\Standard( $this->context );
 		$this->object->setView( $this->view );

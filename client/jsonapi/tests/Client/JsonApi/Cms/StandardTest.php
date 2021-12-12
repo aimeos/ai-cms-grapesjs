@@ -19,7 +19,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	protected function setUp() : void
 	{
 		$this->context = \TestHelperJapi::context();
-		$this->context->getLocale()->setLanguageId( 'en' );
+		$this->context->locale()->setLanguageId( 'en' );
 		$this->view = $this->context->view();
 
 		$this->object = new \Aimeos\Client\JsonApi\Cms\Standard( $this->context, 'cms' );

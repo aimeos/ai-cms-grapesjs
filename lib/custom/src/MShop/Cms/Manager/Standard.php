@@ -108,7 +108,7 @@ class Standard
 		parent::__construct( $context );
 
 		$this->setResourceName( 'db-cms' );
-		$this->languageId = $context->getLocale()->getLanguageId();
+		$this->languageId = $context->locale()->getLanguageId();
 
 		$level = \Aimeos\MShop\Locale\Manager\Base::SITE_ONE;
 		$level = $context->config()->get( 'mshop/cms/manager/sitemode', $level );
@@ -158,7 +158,7 @@ class Standard
 	 */
 	public function create( array $values = [] ) : \Aimeos\MShop\Common\Item\Iface
 	{
-		$values['cms.siteid'] = $this->context()->getLocale()->getSiteId();
+		$values['cms.siteid'] = $this->context()->locale()->getSiteId();
 		return $this->createItemBase( $values );
 	}
 
@@ -279,7 +279,7 @@ class Standard
 			$stmt->bind( $idx++, $item->getStatus(), \Aimeos\MW\DB\Statement\Base::PARAM_INT );
 			$stmt->bind( $idx++, $date ); // mtime
 			$stmt->bind( $idx++, $context->getEditor() );
-			$stmt->bind( $idx++, $context->getLocale()->getSiteId() );
+			$stmt->bind( $idx++, $context->locale()->getSiteId() );
 
 			if( $id !== null ) {
 				$stmt->bind( $idx++, $id, \Aimeos\MW\DB\Statement\Base::PARAM_INT );

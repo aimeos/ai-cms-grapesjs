@@ -450,7 +450,7 @@ class Standard
 
 		if( $copy === true )
 		{
-			$data['cms.siteid'] = $this->context()->getLocale()->getSiteId();
+			$data['cms.siteid'] = $this->context()->locale()->getSiteId();
 			$data['cms.url'] = $data['cms.url'] . '_copy';
 			$data['cms.id'] = '';
 		}

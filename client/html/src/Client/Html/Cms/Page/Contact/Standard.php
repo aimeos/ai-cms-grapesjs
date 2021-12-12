@@ -192,14 +192,14 @@ class Standard
 		{
 			$context = $this->context();
 			$config = $context->config();
-			$i18n = $context->getI18n();
+			$i18n = $context->i18n();
 
 			$toAddr = $config->get( 'resource/email/from-email' );
 			$toName = $config->get( 'resource/email/from-name' );
 
 			if( $toAddr )
 			{
-				$label = $context->getLocale()->getSiteItem()->getLabel();
+				$label = $context->locale()->getSiteItem()->getLabel();
 
 				$context->mail()->create()
 					->to( $toAddr, $toName )

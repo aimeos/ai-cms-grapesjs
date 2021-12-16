@@ -88,7 +88,7 @@ class TestHelperHtml
 		$ctx->setDatabaseManager( $dbm );
 
 
-		$logger = new \Aimeos\MW\Logger\File( $site . '.log', \Aimeos\MW\Logger\Base::DEBUG );
+		$logger = new \Aimeos\MW\Logger\File( $site . '.log', \Aimeos\MW\Logger\Iface::DEBUG );
 		$ctx->setLogger( $logger );
 
 

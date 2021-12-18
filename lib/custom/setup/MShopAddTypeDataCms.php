@@ -31,7 +31,7 @@ class MShopAddTypeDataCms extends MShopAddTypeData
 	public function up()
 	{
 		$context = $this->context();
-		$editor = $context->getEditor();
+		$editor = $context->editor();
 		$sitecode = $this->context()->locale()->getSiteItem()->getCode();
 
 		$this->info( sprintf( 'Adding CMS type data for site "%1$s"', $sitecode ), 'v' );

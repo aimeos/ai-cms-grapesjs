@@ -68,7 +68,6 @@ class CmsAddTestData extends BaseAddTestData
 	protected function process( array $testdata )
 	{
 		$manager = $this->getManager( 'cms' );
-		$listManager = $manager->getSubManager( 'lists' );
 
 		$manager->begin();
 
@@ -77,7 +76,7 @@ class CmsAddTestData extends BaseAddTestData
 		foreach( $testdata['cms'] as $entry )
 		{
 			$item = $manager->create()->fromArray( $entry );
-			$item = $this->addListData( $listManager, $item, $entry );
+			$item = $this->addListData( $manager, $item, $entry );
 
 			$manager->save( $item );
 		}

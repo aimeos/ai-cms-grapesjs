@@ -30,8 +30,8 @@
 
 
 ?>
-<div class="catalog-list">
-	<div class="catalog-list-items swiffy-slider slider-nav-outside">
+<div class="catalog-list swiffy-slider slider-nav-outside">
+	<div class="catalog-list-items slider-container">
 
 		<?= $this->partial(
 			$this->config( 'client/html/common/partials/products', 'common/partials/products-standard' ),
@@ -42,8 +42,8 @@
 			)
 		) ?>
 
-		<button type="button" class="slider-nav" aria-label="Go to previous"></button>
-		<button type="button" class="slider-nav slider-nav-next" aria-label="Go to next"></button>
-
 	</div>
+
+	<button type="button" class="slider-nav" aria-label="Go to previous"></button>
+	<button type="button" class="slider-nav slider-nav-next" aria-label="Go to next"></button>
 </div>

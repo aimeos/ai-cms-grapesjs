@@ -31,7 +31,7 @@
 
 ?>
 <div class="catalog-list">
-	<div class="catalog-list-items swiffy-slider">
+	<div class="catalog-list-items swiffy-slider slider-nav-outside">
 
 		<?= $this->partial(
 			$this->config( 'client/html/common/partials/products', 'common/partials/products-standard' ),
@@ -41,6 +41,9 @@
 				'products' => $this->get( 'products', map() ),
 			)
 		) ?>
+
+		<button type="button" class="slider-nav" aria-label="Go to previous"></button>
+		<button type="button" class="slider-nav slider-nav-next" aria-label="Go to next"></button>
 
 	</div>
 </div>

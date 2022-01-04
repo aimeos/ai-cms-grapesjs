@@ -31,7 +31,7 @@
 
 ?>
 <div class="catalog-list">
-	<div class="catalog-list-items">
+	<div class="catalog-list-items swiffy-slider">
 
 		<?= $this->partial(
 			$this->config( 'client/html/common/partials/products', 'common/partials/products-standard' ),

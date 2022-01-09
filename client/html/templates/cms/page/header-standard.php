@@ -71,12 +71,12 @@ $config = $this->config( 'client/html/cms/page/url/config', [] );
 
 <?php endif; ?>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1/dist/css/swiffy-slider.min.css">
+<link rel="stylesheet" href="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/slider.css', 'fs-theme' ) ) ?>">
 <link rel="stylesheet" href="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/catalog.css', 'fs-theme' ) ) ?>">
 <link rel="stylesheet" href="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/catalog-lists.css', 'fs-theme' ) ) ?>">
 <link rel="stylesheet" href="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/cms-page.css', 'fs-theme' ) ) ?>">
 
-<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1/dist/js/swiffy-slider.min.js"></script>
+<script defer src="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/slider.js', 'fs-theme' ) ) ?>"></script>
 <script defer src="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/catalog.js', 'fs-theme' ) ) ?>"></script>
 <script defer src="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/catalog-lists.js', 'fs-theme' ) ) ?>"></script>
 <script defer src="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/cms-page.js', 'fs-theme' ) ) ?>"></script>

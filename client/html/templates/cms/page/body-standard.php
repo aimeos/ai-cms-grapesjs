@@ -14,7 +14,7 @@ $enc = $this->encoder();
 
 
 ?>
-<section class="aimeos cms-page container-fluid px-0" data-jsonurl="<?= $enc->attr( $this->link( 'client/jsonapi/url' ) ); ?>">
+<section class="aimeos cms-page container-fluid" data-jsonurl="<?= $enc->attr( $this->link( 'client/jsonapi/url' ) ); ?>">
 
 	<?php if( isset( $this->pageErrorList ) ) : ?>
 		<ul class="error-list">

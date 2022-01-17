@@ -1,5 +1,9 @@
 /* CMS page content */
 
+.aimeos.cms-page {
+	padding: 0;
+}
+
 .aimeos.cms-page .container-xl {
 	padding-top: 2rem;
 	padding-bottom: 2rem;

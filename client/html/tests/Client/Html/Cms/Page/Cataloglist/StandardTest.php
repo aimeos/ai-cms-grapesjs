@@ -67,4 +67,14 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->expectException( '\\Aimeos\\Client\\Html\\Exception' );
 		$this->object->getSubClient( 'invalid', 'invalid' );
 	}
+
+
+	public function testModifyBody()
+	{
+		$output = 'BEFORE<!-- catalog.lists.items.csrf -->CSRF<!-- catalog.lists.items.csrf -->AFTER';
+
+		$output = $this->object->modifyBody( $output, 1 );
+
+		$this->assertStringContainsString( '<input class="csrf-token" type="hidden" name="_csrf_token" value="_csrf_value"', $output );
+	}
 }

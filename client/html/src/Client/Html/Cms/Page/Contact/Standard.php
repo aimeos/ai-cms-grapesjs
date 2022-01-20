@@ -164,9 +164,9 @@ class Standard
 	 * @param string $uid Unique identifier for the output if the content is placed more than once on the same page
 	 * @return string Modified body content
 	 */
-	public function modifyBody( string $content, string $uid ) : string
+	public function modify( string $content, string $uid ) : string
 	{
-		$content = parent::modifyBody( $content, $uid );
+		$content = parent::modify( $content, $uid );
 		$token = !$this->view()->access( ['editor', 'admin', 'super'] ) ? $this->view()->csrf()->formfield() : '';
 
 		return $this->replaceSection( $content, $token, 'cms.page.contact.csrf' );

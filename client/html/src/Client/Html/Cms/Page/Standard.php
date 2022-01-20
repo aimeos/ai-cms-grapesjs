@@ -78,7 +78,7 @@ class Standard
 		 *
 		 * Disable caching for components can be useful if you would have too much
 		 * entries to cache or if the component contains non-cacheable parts that
-		 * can't be replaced using the modifyBody() and modifyHeader() methods.
+		 * can't be replaced using the modify() method.
 		 *
 		 * @param boolean True to enable caching, false to disable
 		 * @category Developer
@@ -140,7 +140,7 @@ class Standard
 				$html = $view->render( $view->config( $tplconf, $default ) );
 				$this->setCached( 'body', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
 
-				return $this->modifyBody( $html, $uid );
+				return $this->modify( $html, $uid );
 			}
 			catch( \Aimeos\Client\Html\Exception $e )
 			{
@@ -168,7 +168,7 @@ class Standard
 		}
 		else
 		{
-			$html = $this->modifyBody( $html, $uid );
+			$html = $this->modify( $html, $uid );
 		}
 
 		return $html;
@@ -236,7 +236,7 @@ class Standard
 		}
 		else
 		{
-			$html = $this->modifyHeader( $html, $uid );
+			$html = $this->modify( $html, $uid );
 		}
 
 		return $html;

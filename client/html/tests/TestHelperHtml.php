@@ -61,6 +61,9 @@ class TestHelperHtml
 		$helper = new \Aimeos\MW\View\Helper\Config\Standard( $view, self::context()->config() );
 		$view->addHelper( 'config', $helper );
 
+		$helper = new \Aimeos\MW\View\Helper\Csrf\Standard( $view, '_csrf_token', '_csrf_value' );
+		$view->addHelper( 'csrf', $helper );
+
 		return $view;
 	}
 

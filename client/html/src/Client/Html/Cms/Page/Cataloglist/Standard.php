@@ -158,6 +158,21 @@ class Standard
 
 
 	/**
+	 * Modifies the cached content to replace content based on sessions or cookies.
+	 *
+	 * @param string $content Cached content
+	 * @param string $uid Unique identifier for the output if the content is placed more than once on the same page
+	 * @return string Modified content
+	 */
+	public function modify( string $content, string $uid ) : string
+	{
+		$content = parent::modify( $content, $uid );
+
+		return $this->replaceSection( $content, $this->view()->csrf()->formfield(), 'catalog.lists.items.csrf' );
+	}
+
+
+	/**
 	 * Sets the necessary parameter values in the view.
 	 *
 	 * @param \Aimeos\MW\View\Iface $view The view object which generates the HTML output

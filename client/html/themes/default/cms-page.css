@@ -11,15 +11,17 @@
 
 .aimeos.cms-page h1 {
 	font-size: 200%;
+	margin-bottom: 2rem;
 }
 
 .aimeos.cms-page h2 {
 	font-size: 150%;
+	margin-bottom: 1.5rem;
 }
 
 .aimeos.cms-page h3 {
-	margin-top: 0.5rem;
 	font-size: 125%;
+	margin-bottom: 1rem;
 }
 
 .aimeos.cms-page h1,
@@ -74,4 +76,10 @@
 
 .aimeos.cms-page .contact-pot {
 	display: none;
+}
+
+.aimeos.cms-page .catalog-list .slider-nav::after,
+.aimeos.cms-page .catalog-list .slider-nav-round .slider-nav::before,
+.aimeos.cms-page .catalog-list .slider-nav-square .slider-nav::before {
+	background-color: var(--ai-primary, #282828);
 }

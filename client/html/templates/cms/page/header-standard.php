@@ -61,14 +61,6 @@ $config = $this->config( 'client/html/cms/page/url/config', [] );
 
 	<?php endif; ?>
 
-<?php elseif( strlen( trim( $this->param( 'path' ), '/' ) ) > 0 ) : ?>
-
-	<title><?= $enc->html( $this->get( 'contextSiteLabel', 'Aimeos' ) ) ?></title>
-
-	<meta name="application-name" content="Aimeos" />
-	<meta http-equiv="refresh" content="0;URL='/'" />
-	<meta name="robots" content="noindex" />
-
 <?php endif; ?>
 
 <link rel="stylesheet" href="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/slider.css', 'fs-theme' ) ) ?>">

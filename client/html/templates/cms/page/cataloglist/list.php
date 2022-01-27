@@ -34,7 +34,7 @@
 	<div class="catalog-list-items slider-container">
 
 		<?= $this->partial(
-			$this->config( 'client/html/common/partials/products', 'common/partials/products-standard' ),
+			$this->config( 'client/html/common/partials/products', 'common/partials/products' ),
 			array(
 				'require-stock' => (int) $this->config( 'client/html/basket/require-stock', true ),
 				'basket-add' => $this->config( 'client/html/cms/page/basket-add', false ),

@@ -213,7 +213,7 @@ class Standard
 		 * @see client/html/cms/page/template-body
 		 * @see client/html/cms/page/template-header
 		 */
-		$template = $config->get( 'client/html/cms/page/template-cataloglist', 'cms/page/cataloglist/list-standard' );
+		$template = $config->get( 'client/html/cms/page/template-cataloglist', 'cms/page/cataloglist/list' );
 		$domains = $config->get( 'client/html/catalog/lists/domains', ['media', 'media/property', 'price', 'text'] );
 
 		if( $view->config( 'client/html/cms/page/basket-add', false ) ) {

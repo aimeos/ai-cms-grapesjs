@@ -411,7 +411,7 @@ class Standard
 		 * @category Developer
 		 */
 		$tplconf = 'admin/jqadm/cms/content/template-item';
-		$default = 'cms/item-content-standard';
+		$default = 'cms/item-content';
 
 		return $view->render( $view->config( $tplconf, $default ) );
 	}

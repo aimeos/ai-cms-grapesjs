@@ -416,7 +416,7 @@ class Standard
 		 * @category Developer
 		 */
 		$tplconf = 'admin/jqadm/cms/seo/template-item';
-		$default = 'cms/item-seo-standard';
+		$default = 'cms/item-seo';
 
 		return $view->render( $view->config( $tplconf, $default ) );
 	}

@@ -125,7 +125,7 @@ class Standard
 			 * @see client/html/cms/page/template-header
 			 */
 			$tplconf = 'client/html/cms/page/template-body';
-			$default = 'cms/page/body-standard';
+			$default = 'cms/page/body';
 
 			try
 			{
@@ -212,7 +212,7 @@ class Standard
 			 * @see client/html/cms/page/template-body
 			 */
 			$tplconf = 'client/html/cms/page/template-header';
-			$default = 'cms/page/header-standard';
+			$default = 'cms/page/header';
 
 			try
 			{

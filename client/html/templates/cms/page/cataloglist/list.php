@@ -28,6 +28,8 @@
  * @see client/html/basket/related/basket-add
  */
 
+$enc = $this->encoder();
+
 
 ?>
 <div class="catalog-list swiffy-slider slider-nav-outside">
@@ -48,7 +50,9 @@
 	<button type="button" class="slider-nav slider-nav-next" aria-label="Go to next"></button>
 
 	<?php if( isset( $this->itemsStockUrl ) ) : ?>
-		<script class="items-stock" defer src="<?= $enc->attr( $this->itemsStockUrl ) ?>"></script>
+		<?php foreach( $this->itemsStockUrl as $url ) : ?>
+			<script class="items-stock" defer src="<?= $enc->attr( $url ) ?>"></script>
+		<?php endforeach ?>
 	<?php endif ?>
 
 </div>

@@ -18,7 +18,7 @@ namespace Aimeos\Client\Html\Cms\Page\Cataloglist;
  * @subpackage Html
  */
 class Standard
-	extends \Aimeos\Client\Html\Common\Client\Factory\Base
+	extends \Aimeos\Client\Html\Catalog\Base
 	implements \Aimeos\Client\Html\Common\Client\Factory\Iface
 {
 	/** client/html/cms/page/cataloglist/subparts
@@ -243,6 +243,10 @@ class Standard
 				$this->addMetaItems( $products, $expire, $tags );
 
 				$view = $context->view()->set( 'products', $products );
+
+				if( !$products->isEmpty() && (bool) $config->get( 'client/html/catalog/lists/stock/enable', true ) === true ) {
+					$view->itemsStockUrl = $this->getStockUrl( $view, $products );
+				}
 
 				$pdom = new \DOMDocument( '1.0', 'UTF-8' );
 				$pdom->loadHTML( '<?xml encoding="utf-8" ?>' . $view->render( $template ), LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );

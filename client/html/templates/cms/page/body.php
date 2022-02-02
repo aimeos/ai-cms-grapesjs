@@ -16,14 +16,6 @@ $enc = $this->encoder();
 ?>
 <section class="aimeos cms-page container-fluid" data-jsonurl="<?= $enc->attr( $this->link( 'client/jsonapi/url' ) ); ?>">
 
-	<?php if( isset( $this->pageErrorList ) ) : ?>
-		<ul class="error-list">
-			<?php foreach( (array) $this->pageErrorList as $errmsg ) : ?>
-				<li class="error-item"><?= $enc->html( $errmsg ); ?></li>
-			<?php endforeach; ?>
-		</ul>
-	<?php endif; ?>
-
 	<?php foreach( $this->get( 'pageContent', [] ) as $content ) : ?>
 		<?= $content ?>
 	<?php endforeach ?>

@@ -70,9 +70,6 @@ class Standard
 	 */
 	public function body( string $uid = '' ) : string
 	{
-		$prefixes = ['path'];
-		$context = $this->context();
-
 		/** client/html/cms/page/cache
 		 * Enables or disables caching only for the cms page component
 		 *
@@ -99,79 +96,23 @@ class Standard
 		 * @see client/html/cms#page
 		 */
 		$confkey = 'client/html/cms/page';
+		$prefixes = ['path'];
 
-		if( ( $html = $this->getCached( 'body', $uid, $prefixes, $confkey ) ) === null )
-		{
-			$view = $this->view();
-
-			/** client/html/cms/page/template-body
-			 * Relative path to the HTML body template of the cms page client.
-			 *
-			 * The template file contains the HTML code and processing instructions
-			 * to generate the result shown in the body of the frontend. The
-			 * configuration string is the path to the template file relative
-			 * to the templates directory (usually in client/html/templates).
-			 *
-			 * You can overwrite the template file configuration in extensions and
-			 * provide alternative templates. These alternative templates should be
-			 * named like the default one but with the string "standard" replaced by
-			 * an unique name. You may use the name of your project for this. If
-			 * you've implemented an alternative client class as well, "standard"
-			 * should be replaced by the name of the new class.
-			 *
-			 * @param string Relative path to the template creating code for the HTML page body
-			 * @since 2021.04
-			 * @category Developer
-			 * @see client/html/cms/page/template-header
-			 */
-			$tplconf = 'client/html/cms/page/template-body';
-			$default = 'cms/page/body';
-
-			try
-			{
-				$html = '';
-				$view = $this->view = $this->view ?? $this->object()->data( $view, $this->tags, $this->expire );
-
-				foreach( $this->getSubClients() as $subclient ) {
-					$html .= $subclient->setView( $view )->body( $uid );
-				}
-				$view->pageBody = $html;
-
-				$html = $view->render( $view->config( $tplconf, $default ) );
-				$this->setCached( 'body', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
-
-				return $this->modify( $html, $uid );
-			}
-			catch( \Aimeos\Client\Html\Exception $e )
-			{
-				$error = array( $context->translate( 'client', $e->getMessage() ) );
-				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
-			}
-			catch( \Aimeos\Controller\Frontend\Exception $e )
-			{
-				$error = array( $context->translate( 'controller/frontend', $e->getMessage() ) );
-				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
-			}
-			catch( \Aimeos\MShop\Exception $e )
-			{
-				$error = array( $context->translate( 'mshop', $e->getMessage() ) );
-				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
-			}
-			catch( \Exception $e )
-			{
-				$error = array( $context->translate( 'client', 'A non-recoverable error occured' ) );
-				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
-				$this->logException( $e );
-			}
-
-			$html = $view->render( $view->config( $tplconf, $default ) );
-		}
-		else
-		{
-			$html = $this->modify( $html, $uid );
+		if( $html = $this->cached( 'body', $uid, $prefixes, $confkey ) ) {
+			return $this->modify( $html, $uid );
 		}
 
-		return $html;
+		$view = $this->view = $this->view ?? $this->object()->data( $this->view(), $this->tags, $this->expire );
+
+		$html = '';
+		foreach( $this->getSubClients() as $subclient ) {
+			$html .= $subclient->setView( $view )->body( $uid );
+		}
+
+		$template = $this->context()->config()->get( 'client/html/cms/page/template-body', 'cms/page/body' );
+		$html = $view->set( 'body', $html )->render( $template );
+
+		return $this->cache( 'body', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
 	}
 
 
@@ -183,58 +124,18 @@ class Standard
 	 */
 	public function header( string $uid = '' ) : ?string
 	{
-		$prefixes = ['page'];
 		$confkey = 'client/html/cms/page';
+		$prefixes = ['page'];
 
-		if( ( $html = $this->getCached( 'header', $uid, $prefixes, $confkey ) ) === null )
-		{
-			$view = $this->view();
-
-			/** client/html/cms/page/template-header
-			 * Relative path to the HTML header template of the cms page client.
-			 *
-			 * The template file contains the HTML code and processing instructions
-			 * to generate the HTML code that is inserted into the HTML page header
-			 * of the rendered page in the frontend. The configuration string is the
-			 * path to the template file relative to the templates directory (usually
-			 * in client/html/templates).
-			 *
-			 * You can overwrite the template file configuration in extensions and
-			 * provide alternative templates. These alternative templates should be
-			 * named like the default one but with the string "standard" replaced by
-			 * an unique name. You may use the name of your project for this. If
-			 * you've implemented an alternative client class as well, "standard"
-			 * should be replaced by the name of the new class.
-			 *
-			 * @param string Relative path to the template creating code for the HTML page head
-			 * @since 2021.04
-			 * @category Developer
-			 * @see client/html/cms/page/template-body
-			 */
-			$tplconf = 'client/html/cms/page/template-header';
-			$default = 'cms/page/header';
-
-			try
-			{
-				$html = '';
-				$view = $this->view = $this->view ?? $this->object()->data( $view, $this->tags, $this->expire );
-
-				$html = $view->render( $view->config( $tplconf, $default ) );
-				$this->setCached( 'header', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
-
-				return $html;
-			}
-			catch( \Exception $e )
-			{
-				$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), [$e->getMessage()] );
-			}
-		}
-		else
-		{
-			$html = $this->modify( $html, $uid );
+		if( $html = $this->cached( 'header', $uid, $prefixes, $confkey ) ) {
+			return $this->modify( $html, $uid );
 		}
 
-		return $html;
+		$view = $this->view = $this->view ?? $this->object()->data( $this->view(), $this->tags, $this->expire );
+		$template = $this->context()->config()->get( 'client/html/cms/page/template-header', 'cms/page/header' );
+		$html = $view->render( $template );
+
+		return $this->cache( 'header', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
 	}
 
 
@@ -325,45 +226,6 @@ class Standard
 
 
 	/**
-	 * Processes the input, e.g. store given values.
-	 *
-	 * A view must be available and this method doesn't generate any output
-	 * besides setting view variables if necessary.
-	 */
-	public function init()
-	{
-		$view = $this->view();
-		$context = $this->context();
-
-		try
-		{
-			parent::init();
-		}
-		catch( \Aimeos\Client\Html\Exception $e )
-		{
-			$error = array( $context->translate( 'client', $e->getMessage() ) );
-			$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
-		}
-		catch( \Aimeos\Controller\Frontend\Exception $e )
-		{
-			$error = array( $context->translate( 'controller/frontend', $e->getMessage() ) );
-			$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
-		}
-		catch( \Aimeos\MShop\Exception $e )
-		{
-			$error = array( $context->translate( 'mshop', $e->getMessage() ) );
-			$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
-		}
-		catch( \Exception $e )
-		{
-			$error = array( $context->translate( 'client', 'A non-recoverable error occured' ) );
-			$view->pageErrorList = array_merge( $view->get( 'pageErrorList', [] ), $error );
-			$this->logException( $e );
-		}
-	}
-
-
-	/**
 	 * Sets the necessary parameter values in the view.
 	 *
 	 * @param \Aimeos\MW\View\Iface $view The view object which generates the HTML output
@@ -417,4 +279,48 @@ class Standard
 	{
 		return $this->context()->config()->get( $this->subPartPath, $this->subPartNames );
 	}
+
+
+	/** client/html/cms/page/template-body
+	 * Relative path to the HTML body template of the cms page client.
+	 *
+	 * The template file contains the HTML code and processing instructions
+	 * to generate the result shown in the body of the frontend. The
+	 * configuration string is the path to the template file relative
+	 * to the templates directory (usually in client/html/templates).
+	 *
+	 * You can overwrite the template file configuration in extensions and
+	 * provide alternative templates. These alternative templates should be
+	 * named like the default one but with the string "standard" replaced by
+	 * an unique name. You may use the name of your project for this. If
+	 * you've implemented an alternative client class as well, "standard"
+	 * should be replaced by the name of the new class.
+	 *
+	 * @param string Relative path to the template creating code for the HTML page body
+	 * @since 2021.04
+	 * @category Developer
+	 * @see client/html/cms/page/template-header
+	 */
+
+	/** client/html/cms/page/template-header
+	 * Relative path to the HTML header template of the cms page client.
+	 *
+	 * The template file contains the HTML code and processing instructions
+	 * to generate the HTML code that is inserted into the HTML page header
+	 * of the rendered page in the frontend. The configuration string is the
+	 * path to the template file relative to the templates directory (usually
+	 * in client/html/templates).
+	 *
+	 * You can overwrite the template file configuration in extensions and
+	 * provide alternative templates. These alternative templates should be
+	 * named like the default one but with the string "standard" replaced by
+	 * an unique name. You may use the name of your project for this. If
+	 * you've implemented an alternative client class as well, "standard"
+	 * should be replaced by the name of the new class.
+	 *
+	 * @param string Relative path to the template creating code for the HTML page head
+	 * @since 2021.04
+	 * @category Developer
+	 * @see client/html/cms/page/template-body
+	 */
 }

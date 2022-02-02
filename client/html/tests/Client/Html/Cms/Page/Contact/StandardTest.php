@@ -40,13 +40,6 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testGetSubClient()
-	{
-		$this->expectException( '\\Aimeos\\Client\\Html\\Exception' );
-		$this->object->getSubClient( 'invalid', 'invalid' );
-	}
-
-
 	public function testInit()
 	{
 		$this->context->config()->set( 'resource/email/from-address', 'rcpt@localhost' );
@@ -66,7 +59,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 		$this->object->init();
 
-		$this->assertEquals( 1, count( $view->pageErrorList ) );
+		$this->assertEquals( 1, count( $view->errors ) );
 	}
 
 
@@ -89,7 +82,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 		$this->object->init();
 
-		$this->assertEquals( 0, count( $view->get( 'pageErrorList', [] ) ) );
+		$this->assertEquals( 0, count( $view->get( 'errors', [] ) ) );
 	}
 
 
@@ -110,6 +103,6 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 		$this->object->init();
 
-		$this->assertEquals( 1, count( $view->pageErrorList ) );
+		$this->assertEquals( 1, count( $view->errors ) );
 	}
 }

@@ -62,13 +62,6 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testGetSubClient()
-	{
-		$this->expectException( '\\Aimeos\\Client\\Html\\Exception' );
-		$this->object->getSubClient( 'invalid', 'invalid' );
-	}
-
-
 	public function testModify()
 	{
 		$output = 'BEFORE<!-- catalog.lists.items.csrf -->CSRF<!-- catalog.lists.items.csrf -->AFTER';

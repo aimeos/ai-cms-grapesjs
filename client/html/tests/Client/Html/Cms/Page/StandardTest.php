@@ -51,22 +51,6 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testHeaderException()
-	{
-		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
-			->setConstructorArgs( [$this->context] )
-			->setMethods( array( 'data' ) )
-			->getMock();
-
-		$mock->setView( $this->view );
-
-		$mock->expects( $this->once() )->method( 'data' )
-			->will( $this->throwException( new \RuntimeException() ) );
-
-		$mock->header();
-	}
-
-
 	public function testBody()
 	{
 		$tags = [];
@@ -84,70 +68,6 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 		$this->assertEquals( null, $expire );
 		$this->assertEquals( 2, count( $tags ) );
-	}
-
-
-	public function testBodyClientHtmlException()
-	{
-		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
-			->setConstructorArgs( [$this->context] )
-			->setMethods( array( 'data' ) )
-			->getMock();
-
-		$mock->setView( $this->view );
-
-		$mock->expects( $this->once() )->method( 'data' )
-			->will( $this->throwException( new \Aimeos\Client\Html\Exception() ) );
-
-		$mock->body();
-	}
-
-
-	public function testBodyControllerFrontendException()
-	{
-		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
-			->setConstructorArgs( [$this->context] )
-			->setMethods( array( 'data' ) )
-			->getMock();
-
-		$mock->setView( $this->view );
-
-		$mock->expects( $this->once() )->method( 'data' )
-			->will( $this->throwException( new \Aimeos\Controller\Frontend\Exception() ) );
-
-		$mock->body();
-	}
-
-
-	public function testBodyMShopException()
-	{
-		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
-			->setConstructorArgs( [$this->context] )
-			->setMethods( array( 'data' ) )
-			->getMock();
-
-		$mock->setView( $this->view );
-
-		$mock->expects( $this->once() )->method( 'data' )
-			->will( $this->throwException( new \Aimeos\MShop\Exception() ) );
-
-		$mock->body();
-	}
-
-
-	public function testBodyException()
-	{
-		$mock = $this->getMockBuilder( \Aimeos\Client\Html\Cms\Page\Standard::class )
-			->setConstructorArgs( [$this->context] )
-			->setMethods( array( 'data' ) )
-			->getMock();
-
-		$mock->setView( $this->view );
-
-		$mock->expects( $this->once() )->method( 'data' )
-			->will( $this->throwException( new \RuntimeException() ) );
-
-		$mock->body();
 	}
 
 
@@ -169,6 +89,6 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$this->object->init();
 
-		$this->assertEmpty( $this->view->get( 'pageErrorList' ) );
+		$this->assertEmpty( $this->view->get( 'errors' ) );
 	}
 }

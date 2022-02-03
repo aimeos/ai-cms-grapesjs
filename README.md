@@ -40,6 +40,12 @@ First, you have to create the new tables required for the pages by executing thi
 php artisan aimeos:setup
 ```
 
+Then, you need to uncomment the `page` section in your `config/shop.php` and add `cms/page` to the list of components if it's not already there. Add `cms/page` to all pages where you want to display CMS content, e.g.:
+
+```php
+'catalog-home' => [ 'cms/page','locale/select','basket/mini','catalog/tree','catalog/search','catalog/home' ],
+```
+
 To show the content for the CMS page URLs, you have to add this at the **end** of the `./routes/web.php` file in your Laravel application:
 
 ```php

@@ -30,23 +30,16 @@ class MShopAddTypeDataCms extends MShopAddTypeData
 	 */
 	public function up()
 	{
+		$ds = DIRECTORY_SEPARATOR;
 		$context = $this->context();
 		$editor = $context->editor();
 		$sitecode = $this->context()->locale()->getSiteItem()->getCode();
 
 		$this->info( sprintf( 'Adding CMS type data for site "%1$s"', $sitecode ), 'v' );
 
-
-		$ds = DIRECTORY_SEPARATOR;
-		$filename = __DIR__ . $ds . 'default' . $ds . 'data' . $ds . 'type.php';
-
-		if( ( $testdata = include( $filename ) ) == false ) {
-			throw new \Aimeos\MShop\Exception( sprintf( 'No type file found in "%1$s"', $filename ) );
-		}
-
 		$context->setEditor( 'ai-cms-grapesjs:lib/custom' );
 
-		$this->processFile( $testdata );
+		$this->add( __DIR__ . $ds . 'default' . $ds . 'data' . $ds . 'type.php' );
 
 		$context->setEditor( $editor );
 	}

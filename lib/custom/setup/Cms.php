@@ -12,7 +12,7 @@ namespace Aimeos\Upscheme\Task;
 /**
  * Creates all CMS tables.
  */
-class TablesCreateCms extends Base
+class Cms extends Base
 {
 	/**
 	 * Returns the list of task names which depends on this task.

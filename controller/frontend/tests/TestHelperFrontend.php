@@ -71,7 +71,7 @@ class TestHelperFrontend
 		$ctx->setI18n( array( 'de' => $i18n ) );
 
 
-		$session = new \Aimeos\MW\Session\None();
+		$session = new \Aimeos\Base\Session\None();
 		$ctx->setSession( $session );
 
 

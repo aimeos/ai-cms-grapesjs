@@ -535,6 +535,14 @@ Aimeos.CMSContent = {
 								}
 								return result;
 							},
+							styles: `
+								.cataloglist {
+									display: block; max-height: 350px; overflow: hidden; white-space: nowrap;
+								}
+								.product {
+									display: inline-block; width: 240px; height: 320px; margin: 14px; background-color: #E8ECEF;
+								}
+							`,
 							traits: [{
 								type: 'select',
 								label: 'Category',
@@ -659,15 +667,6 @@ Aimeos.CMSContent = {
 			.table .cell {
 				width: auto; height: auto;
 			}
-			.cataloglist {
-				display: block; max-height: 350px; overflow: hidden; white-space: nowrap;
-			}
-			.product {
-				display: inline-block; width: 240px; height: 320px; margin: 14px; background-color: #E8ECEF;
-			}
-			.contact-form .contact-pot {
-				display: none;
-			}
 		`,
 
 
@@ -699,7 +698,7 @@ Aimeos.CMSContent = {
 				}
 			});
 
-			editor.Canvas.getFrames().forEach(frame => frame.view.getBody().classList.add('aimeos'));
+			editor.Canvas.getFrames().forEach(frame => frame.view.getBody().classList.add('aimeos', 'gjs-dashed'));
 			editor.I18n.setLocale(document.querySelector('.aimeos').attributes.lang.nodeValue);
 			editor.AssetManager.add(media);
 

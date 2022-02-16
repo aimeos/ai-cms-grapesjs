@@ -63,12 +63,12 @@ $config = $this->config( 'client/html/cms/page/url/config', [] );
 
 <?php endif; ?>
 
-<link rel="stylesheet" href="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/slider.css', 'fs-theme' ) ) ?>">
-<link rel="stylesheet" href="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/catalog-lists.css', 'fs-theme' ) ) ?>">
-<link rel="stylesheet" href="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/cms-page.css', 'fs-theme' ) ) ?>">
+<link rel="stylesheet" href="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/slider.css', 'fs-theme', true ) ) ?>">
+<link rel="stylesheet" href="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/catalog-lists.css', 'fs-theme', true ) ) ?>">
+<link rel="stylesheet" href="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/cms-page.css', 'fs-theme', true ) ) ?>">
 
-<script defer src="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/slider.js', 'fs-theme' ) ) ?>"></script>
-<script defer src="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/catalog-lists.js', 'fs-theme' ) ) ?>"></script>
-<script defer src="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/cms-page.js', 'fs-theme' ) ) ?>"></script>
+<script defer src="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/slider.js', 'fs-theme', true ) ) ?>"></script>
+<script defer src="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/catalog-lists.js', 'fs-theme', true ) ) ?>"></script>
+<script defer src="<?= $enc->attr( $this->content( $this->get( 'contextSite', 'default' ) . '/cms-page.js', 'fs-theme', true ) ) ?>"></script>
 
 <?= $this->get( 'pageHeader' ); ?>

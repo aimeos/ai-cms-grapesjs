@@ -180,7 +180,7 @@
 	scrollbar-width: thin;
 }
 
-/* Quick fix for Open style manager's unwanted "device" drop-down */
+/* Quick fix for Open style managers unwanted device drop-down */
 .gjs-pn-devices-c {
     display: none;
 }

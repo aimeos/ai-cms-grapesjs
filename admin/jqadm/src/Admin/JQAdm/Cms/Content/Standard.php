@@ -261,6 +261,7 @@ class Standard
 	{
 		$media = [];
 		$context = $this->context();
+		$locale = $context->locale();
 		$listTypeManager = \Aimeos\MShop::create( $context, 'cms/lists/type' );
 
 		$listSearch = $listTypeManager->filter( true )->slice( 0, 10000 );
@@ -268,6 +269,19 @@ class Standard
 		$listSearch->setSortations( [$listSearch->sort( '+', 'cms.lists.type.position' )] );
 
 		$view->contentListTypes = $listTypeManager->search( $listSearch );
+
+		$theme = $locale->getSiteItem()->getTheme() ?: 'default';
+		$rtl = in_array( $view->param( 'locale' ), ['ar', 'az', 'dv', 'fa', 'he', 'ku', 'ur'] );
+		$view->config = [
+			'canvas' => [
+				'styles' => [
+					$view->content( $theme . '/app.' . ( $rtl ? 'rtl.' : '' ) . 'css', 'fs-theme', true ),
+					$view->content( $theme . '/aimeos.css', 'fs-theme', true ),
+					$view->content( $theme . '/cms-page.css', 'fs-theme', true ),
+				]
+			],
+			'langDir' => $rtl ? 'rtl' : ''
+		];
 
 		foreach( $view->item->getRefItems( 'media' ) as $mediaItem )
 		{

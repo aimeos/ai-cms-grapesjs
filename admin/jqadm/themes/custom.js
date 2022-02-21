@@ -7,9 +7,9 @@ Vue.component('grapesjs', {
 	template: `<div class="grapesjs-editor">
 		<input type="hidden" v-bind:name="name" v-bind:value="value" />
 		<div v-if="!readonly" class="gjs cms-preview"></div>
-		<iframe v-else v-bind:srcdoc="'<html><head>' + style + '</head><body>' + value + '</body></html>'" v-bind:tabindex="tabindex"></iframe>
+		<iframe v-else v-bind:srcdoc="'<html><body>' + value + '</body></html>'" v-bind:tabindex="tabindex"></iframe>
 	</div>`,
-	props: ['setup', 'name', 'value', 'readonly', 'tabindex', 'update', 'media', 'mediaurl'],
+	props: ['setup', 'name', 'value', 'readonly', 'tabindex', 'update', 'media', 'mediaurl', 'config'],
 
 	data: function() {
 		return {
@@ -21,16 +21,6 @@ Vue.component('grapesjs', {
 		if(this.instance) {
 			this.instance.destroy();
 			this.instance = null;
-		}
-	},
-
-	computed: {
-		style: function() {
-			let result = '';
-			(this.setup.config.canvas.styles || []).forEach(item => {
-				result += '<link rel="stylesheet" src="' + item + '" />';
-			});
-			return result;
 		}
 	},
 
@@ -51,9 +41,11 @@ Vue.component('grapesjs', {
 			return;
 		}
 
-		this.setup.config.container = this.$el.querySelector('.gjs');
-		this.instance = grapesjs.init(this.setup.config);
+		this.setup.config = Object.assign(this.setup.config, this.config, {
+			container: this.$el.querySelector('.gjs'),
+		});
 
+		this.instance = grapesjs.init(this.setup.config);
 		this.setup.initialize(this.instance, this.setup, this.media);
 		this.setData(this.value);
 	},
@@ -102,12 +94,6 @@ Aimeos.CMSContent = {
 						footer: false
 					}
 				}
-			},
-			canvas: {
-				styles: [
-					'https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css',
-					'/vendor/shop/themes/default/aimeos.css'
-				],
 			},
 			i18n: {
 				locale: 'en',
@@ -708,7 +694,11 @@ Aimeos.CMSContent = {
 				}
 			});
 
-			editor.Canvas.getFrames().forEach(frame => frame.view.getBody().classList.add('aimeos', 'gjs-dashed'));
+			editor.Canvas.getFrames().forEach(frame => {
+				const body = frame.view.getBody();
+				body.setAttribute('dir', editor.getConfig('langDir'));
+				body.classList.add('aimeos', 'cms-page', 'gjs-dashed');
+			});
 			editor.I18n.setLocale(document.querySelector('.aimeos').attributes.lang.nodeValue);
 			editor.AssetManager.add(media);
 
@@ -730,7 +720,6 @@ Aimeos.CMSContent = {
 
 			// add custom styles
 			editor.DomComponents.getWrapper().set('attributes', {'class': 'container-fluid'});
-			editor.getComponents().add('<style>' + setup.styles + '</style>');
 
 			// Show Blocks Manager by default
 			const blocks = editor.Panels.getButton('views', 'open-blocks');

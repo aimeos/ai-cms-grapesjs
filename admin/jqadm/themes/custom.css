@@ -91,10 +91,20 @@
 	box-shadow: none;
 }
 
+[dir="rtl"] .gjs-pn-views-container {
+	right: unset;
+	left: 0;
+}
+
 .gjs-cv-canvas {
 	width: min(85%, calc(100% - 150px));
 	height: calc(100% - 41px);
 	top: 41px;
+}
+
+[dir="rtl"] .gjs-cv-canvas {
+	left: unset;
+	right: 0;
 }
 
 .gjs-trt-trait {

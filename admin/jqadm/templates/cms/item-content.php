@@ -123,6 +123,7 @@ $enc = $this->encoder();
 
 						<div class="col-xl-12">
 							<grapesjs tabindex="<?= $this->get( 'tabindex' ) ?>"
+								v-bind:config="<?= $enc->attr( $this->get( 'config', new \stdClass ) ) ?>"
 								v-bind:setup="Aimeos.CMSContent.GrapesJS" v-bind:update="version" v-bind:media="media"
 								v-bind:name="`<?= $enc->js( $this->formparam( array( 'content', '_idx_', 'text.content' ) ) ) ?>`.replace('_idx_', idx)"
 								v-bind:readonly="item['text.siteid'] != siteid"

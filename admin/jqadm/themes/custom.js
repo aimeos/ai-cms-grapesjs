@@ -75,6 +75,7 @@ Aimeos.CMSContent = {
 			container: null,
 			components: '',
 			fromElement: false,
+			showDevices: false,
 			noticeOnUnload: false,
 			height: 'calc(100vh - 10rem)',
 			width: '100%',
@@ -95,6 +96,30 @@ Aimeos.CMSContent = {
 					}
 				}
 			},
+			canvasCSS: `
+				::-webkit-scrollbar {
+					background-color: var(--bs-bg, #f8fafc); width: 0.25rem;
+				}
+				::-webkit-scrollbar-thumb {
+					background-color: #505860; outline: none;
+				}
+				body {
+					background-image: none; background-color: #F8FAFC; scrollbar-color: #505860 transparent; scrollbar-width: thin;
+				}
+				img {
+					max-width: 100%;
+				}
+				form {
+					padding-top: 10px;
+				}
+				.row {
+					display: flex; width: auto;
+					min-height: 2.5rem !important;
+				}
+				.gjs-dashed .row, .gjs-dashed .space {
+					padding: 10px 0;
+				}
+			`,
 			i18n: {
 				locale: 'en',
 				localeFallback: 'en',
@@ -119,6 +144,9 @@ Aimeos.CMSContent = {
 			},
 			storageManager: {
 				type: null
+			},
+			styleManager: {
+				sectors: []
 			}
 		},
 
@@ -179,15 +207,15 @@ Aimeos.CMSContent = {
 */		},{
 			id: 'views',
 			buttons  : [{
-/*				id: 'open-sm',
+				id: 'open-tm',
+				command: 'open-tm',
+				className: 'fa fa-cog',
+/*			},{
+				id: 'open-sm',
 				command: 'open-sm',
 				className: 'fa fa-paint-brush',
 			},{
-*/				id: 'open-tm',
-				command: 'open-tm',
-				className: 'fa fa-cog',
-			},{
-/*				id: 'open-layers',
+				id: 'open-layers',
 				command: 'open-layers',
 				className: 'fa fa-bars',
 			},{
@@ -204,7 +232,7 @@ Aimeos.CMSContent = {
 				attributes: { class: 'fa fa-font' },
 				content: {
 					type: 'text',
-					content: '<span data-gjs-name="Text">Insert text here</span>',
+					content: 'Insert text here',
 					activeOnRender: 1
 				}
 			},
@@ -214,7 +242,7 @@ Aimeos.CMSContent = {
 				attributes: { class: 'fa fa-paragraph' },
 				content: {
 					type: 'paragraph',
-					content: '<p data-gjs-name="Paragraph">Insert paragraph here</p>',
+					content: 'Insert paragraph here',
 					activeOnRender: 1
 				}
 			},
@@ -636,34 +664,37 @@ Aimeos.CMSContent = {
 				editor.DomComponents.addType('paragraph', {
 					extend: 'text',
 					isComponent: el => el.tagName === 'P' ? {type: 'paragraph'} : false,
+					model: {
+						defaults: {
+							tagName: 'p',
+							draggable: true,
+							droppable: true,
+							styles: `
+								p { min-height: 1.5rem }
+							`
+						}
+					}
+				});
+			},
+
+
+			'text': function(editor) {
+				editor.DomComponents.addType('text', {
+					extend: 'text',
+					isComponent: el => el.tagName === 'SPAN' ? {type: 'text'} : false,
+					model: {
+						defaults: {
+							tagName: 'span',
+							draggable: true,
+							droppable: true,
+							styles: `
+								span { min-height: 1.5rem }
+							`
+						}
+					}
 				});
 			},
 		},
-
-		styles: `
-			::-webkit-scrollbar {
-				background-color: var(--bs-bg, #f8fafc); width: 0.25rem;
-			}
-			::-webkit-scrollbar-thumb {
-				background-color: #505860; outline: none;
-			}
-			body {
-				background-image: none; background-color: #F8FAFC; scrollbar-color: #505860 transparent; scrollbar-width: thin;
-			}
-			img {
-				max-width: 100%;
-			}
-			form {
-				padding-top: 10px;
-			}
-			.row {
-				display: flex; width: auto;
-				min-height: 2.5rem !important;
-			}
-			.gjs-dashed .row, .gjs-dashed .space {
-				padding: 10px 0;
-			}
-		`,
 
 
 		initialize: function(editor, setup, media) {

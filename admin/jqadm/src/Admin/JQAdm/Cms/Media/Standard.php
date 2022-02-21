@@ -410,6 +410,10 @@ class Standard
 				$list['media.id'] = null;
 			}
 
+			$list['media.previews'] = $this->view()->imageset( $refItem->getPreviews(), $refItem->getFileSystem() );
+			$list['media.preview'] = $this->view()->content( $refItem->getPreview(), $refItem->getFileSystem() );
+			$list['media.url'] = $this->view()->content( $refItem->getUrl(), $refItem->getFileSystem() );
+
 			$list['cms.lists.datestart'] = str_replace( ' ', 'T', $list['cms.lists.datestart'] ?? '' );
 			$list['cms.lists.dateend'] = str_replace( ' ', 'T', $list['cms.lists.dateend'] ?? '' );
 			$list['config'] = [];

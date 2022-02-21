@@ -90,6 +90,14 @@ Aimeos.CMSContent = {
 			pluginsOpts: {
 				'grapesjs-table': {
 					classTable: 'table',
+					style: `
+						.table .row {
+							display: table-row;
+						}
+						.table .cell {
+							width: auto; height: auto;
+						}
+					`,
 					tableProps: {
 						footer: false
 					}
@@ -441,6 +449,14 @@ Aimeos.CMSContent = {
 								class: 'container-xl',
 								'data-gjs-name': 'Container'
 							},
+							styles: `
+								.container-xl {
+									min-height: 2.5rem !important;
+								}
+								.gjs-dashed .container-xl {
+									padding: 10px 0;
+								}
+							`
 						}
 					}
 				});
@@ -468,6 +484,11 @@ Aimeos.CMSContent = {
 								}
 								return result;
 							},
+							styles: `
+								.col, [class^="col-"] {
+									min-height: 2.5rem !important;
+								}
+							`,
 							traits: [{
 								type: 'select',
 								label: 'Breakpoint',
@@ -649,23 +670,12 @@ Aimeos.CMSContent = {
 			form {
 				padding-top: 10px;
 			}
-			.container-xl, .row, .col, [class^="col-"] {
-				min-height: 2.5rem !important;
-			}
 			.row {
 				display: flex; width: auto;
+				min-height: 2.5rem !important;
 			}
-			.gjs-dashed .container-xl, .gjs-dashed .row, .gjs-dashed .space {
+			.gjs-dashed .row, .gjs-dashed .space {
 				padding: 10px 0;
-			}
-			.table {
-				border-collapse: initial;
-			}
-			.table .row {
-				display: table-row;
-			}
-			.table .cell {
-				width: auto; height: auto;
 			}
 		`,
 

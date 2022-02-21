@@ -210,8 +210,8 @@ Aimeos.CMSContent = {
 				id: 'open-tm',
 				command: 'open-tm',
 				className: 'fa fa-cog',
-/*			},{
-				id: 'open-sm',
+			},{
+/*				id: 'open-sm',
 				command: 'open-sm',
 				className: 'fa fa-paint-brush',
 			},{

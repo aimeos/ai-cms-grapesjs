@@ -72,7 +72,7 @@ class TestHelperJqadm
 		$helper = new \Aimeos\MW\View\Helper\Date\Standard( $view, 'Y-m-d' );
 		$view->addHelper( 'date', $helper );
 
-		$config = new \Aimeos\MW\Config\Decorator\Protect( $config, ['version', 'admin', 'client/html', 'controller/jsonadm', 'resource/fs/baseurl'] );
+		$config = new \Aimeos\MW\Config\Decorator\Protect( $config, ['version', 'admin', 'client/html', 'controller/jsonadm', 'resource/fs/baseurl', 'resource/fs-media/baseurl'] );
 		$helper = new \Aimeos\MW\View\Helper\Config\Standard( $view, $config );
 		$view->addHelper( 'config', $helper );
 

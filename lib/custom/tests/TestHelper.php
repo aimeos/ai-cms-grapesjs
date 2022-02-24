@@ -75,7 +75,7 @@ class TestHelper
 		$ctx->setCache( $cache );
 
 
-		$i18n = new \Aimeos\MW\Translation\None( 'de' );
+		$i18n = new \Aimeos\Base\Translation\None( 'de' );
 		$ctx->setI18n( array( 'de' => $i18n ) );
 
 
@@ -102,7 +102,7 @@ class TestHelper
 
 		$view = new \Aimeos\MW\View\Standard( self::getHtmlTemplatePaths() );
 
-		$trans = new \Aimeos\MW\Translation\None( 'de_DE' );
+		$trans = new \Aimeos\Base\Translation\None( 'de_DE' );
 		$helper = new \Aimeos\MW\View\Helper\Translate\Standard( $view, $trans );
 		$view->addHelper( 'translate', $helper );
 

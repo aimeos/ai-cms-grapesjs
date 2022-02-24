@@ -45,7 +45,7 @@ class TestHelperHtml
 	{
 		$view = new \Aimeos\MW\View\Standard( self::getHtmlTemplatePaths() );
 
-		$trans = new \Aimeos\MW\Translation\None( 'en' );
+		$trans = new \Aimeos\Base\Translation\None( 'en' );
 		$helper = new \Aimeos\MW\View\Helper\Translate\Standard( $view, $trans );
 		$view->addHelper( 'translate', $helper );
 
@@ -99,7 +99,7 @@ class TestHelperHtml
 		$ctx->setCache( $cache );
 
 
-		$i18n = new \Aimeos\MW\Translation\None( 'en' );
+		$i18n = new \Aimeos\Base\Translation\None( 'en' );
 		$ctx->setI18n( array( 'en' => $i18n ) );
 
 

@@ -261,15 +261,10 @@ Aimeos.CMSContent = {
 				label: 'Link block',
 				attributes: { class: 'fa fa-link' },
 				content: {
-					type: 'link',
+					type: 'link-block',
 					editable: false,
 					droppable: true,
-					attributes: { class: 'space' },
-					style: {
-						display: 'inline-block',
-						'min-height': '50px',
-						width: '100%'
-					}
+					attributes: { class: 'link-block space' }
 				}
 			},
 			'image': {
@@ -659,6 +654,27 @@ Aimeos.CMSContent = {
 					}
 				});
 			},
+
+
+			'link-block': function(editor) {
+				editor.DomComponents.addType('link-block', {
+					extend: 'link',
+					isComponent: el => el.tagName === 'A' && el.classList.contains('link-block') ? {type: 'link-block'} : false,
+					model: {
+						defaults: {
+							tagName: 'a',
+							draggable: true,
+							droppable: true,
+							styles: `
+								a.link-block {
+									display: inline-block; min-height: 50px; width: 100%;
+								}
+							`
+						}
+					}
+				});
+			},
+
 
 			'paragraph': function(editor) {
 				editor.DomComponents.addType('paragraph', {

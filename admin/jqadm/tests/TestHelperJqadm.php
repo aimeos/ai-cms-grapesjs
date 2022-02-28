@@ -45,7 +45,7 @@ class TestHelperJqadm
 	}
 
 
-	public static function view( $site = 'unittest', \Aimeos\MW\Config\Iface $config = null )
+	public static function view( $site = 'unittest', \Aimeos\Base\Config\Iface $config = null )
 	{
 		if( $config === null ) {
 			$config = self::context( $site )->config();
@@ -72,7 +72,7 @@ class TestHelperJqadm
 		$helper = new \Aimeos\MW\View\Helper\Date\Standard( $view, 'Y-m-d' );
 		$view->addHelper( 'date', $helper );
 
-		$config = new \Aimeos\MW\Config\Decorator\Protect( $config, ['version', 'admin', 'client/html', 'controller/jsonadm', 'resource/fs/baseurl', 'resource/fs-media/baseurl', 'resource/fs-theme/baseurl'] );
+		$config = new \Aimeos\Base\Config\Decorator\Protect( $config, ['version', 'admin', 'client/html', 'controller/jsonadm', 'resource/fs/baseurl', 'resource/fs-media/baseurl', 'resource/fs-theme/baseurl'] );
 		$helper = new \Aimeos\MW\View\Helper\Config\Standard( $view, $config );
 		$view->addHelper( 'config', $helper );
 
@@ -110,7 +110,7 @@ class TestHelperJqadm
 		$paths = $aimeos->getConfigPaths();
 		$paths[] = __DIR__ . DIRECTORY_SEPARATOR . 'config';
 
-		$conf = new \Aimeos\MW\Config\PHPArray( array(), $paths );
+		$conf = new \Aimeos\Base\Config\PHPArray( array(), $paths );
 		$ctx->setConfig( $conf );
 
 

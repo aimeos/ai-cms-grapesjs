@@ -50,8 +50,8 @@ class TestHelperFrontend
 		$paths = $aimeos->getConfigPaths();
 		$paths[] = __DIR__ . DIRECTORY_SEPARATOR . 'config';
 
-		$conf = new \Aimeos\MW\Config\PHPArray( array(), $paths );
-		$conf = new \Aimeos\MW\Config\Decorator\Memory( $conf );
+		$conf = new \Aimeos\Base\Config\PHPArray( array(), $paths );
+		$conf = new \Aimeos\Base\Config\Decorator\Memory( $conf );
 		$ctx->setConfig( $conf );
 
 

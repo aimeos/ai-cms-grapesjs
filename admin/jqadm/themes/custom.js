@@ -477,7 +477,7 @@ Aimeos.CMSContent = {
 					model: {
 						defaults: {
 							tagName: 'div',
-							draggable: '.container-xl, .container-fluid, .col',
+							draggable: '.container-xl, .container-fluid, .col, .background',
 							droppable: true,
 							attributes: {
 								class: 'row',

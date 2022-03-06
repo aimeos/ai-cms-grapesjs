@@ -11,13 +11,13 @@
 		<testsuite name="Admin JQAdm suite">
 			<directory>Admin/</directory>
 		</testsuite>
-	</testsuites>
 		<testsuite name="Client HTML suite">
 			<directory>Client/</directory>
 		</testsuite>
 		<testsuite name="Client JSON API suite">
 			<directory>Client/</directory>
 		</testsuite>
+	</testsuites>
 	<filter>
 		<whitelist>
 			<directory suffix=".php">../src</directory>

@@ -124,8 +124,10 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testSaveException()
 	{
+		$templates = \TestHelper::getAimeos()->getTemplatePaths( 'admin/jqadm/templates' );
+
 		$object = $this->getMockBuilder( \Aimeos\Admin\JQAdm\Cms\Media\Property\Standard::class )
-			->setConstructorArgs( array( $this->context, \TestHelper::getTemplatePaths() ) )
+			->setConstructorArgs( array( $this->context, $templates ) )
 			->setMethods( array( 'fromArray' ) )
 			->getMock();
 

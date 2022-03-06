@@ -10,20 +10,20 @@ namespace Aimeos\MShop\Cms\Manager;
 
 class StandardTest extends \PHPUnit\Framework\TestCase
 {
+	private $context;
 	private $object;
-	private $editor = '';
 
 
 	protected function setUp() : void
 	{
-		$this->editor = \TestHelper::context()->editor();
-		$this->object = new \Aimeos\MShop\Cms\Manager\Standard( \TestHelper::context() );
+		$this->context = \TestHelper::context();
+		$this->object = new \Aimeos\MShop\Cms\Manager\Standard( $this->context );
 	}
 
 
 	protected function tearDown() : void
 	{
-		$this->object = null;
+		unset( $this->object, $this->context );
 	}
 
 
@@ -86,7 +86,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$expr[] = $search->compare( '==', 'cms.status', 1 );
 		$expr[] = $search->compare( '>=', 'cms.mtime', '1970-01-01 00:00:00' );
 		$expr[] = $search->compare( '>=', 'cms.ctime', '1970-01-01 00:00:00' );
-		$expr[] = $search->compare( '==', 'cms.editor', $this->editor );
+		$expr[] = $search->compare( '!=', 'cms.editor', '' );
 
 		$param = ['text', 'default', $listItem->getRefId()];
 		$expr[] = $search->compare( '!=', $search->make( 'cms:has', $param ), null );
@@ -107,7 +107,6 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testSearchItemsAll()
 	{
 		$search = $this->object->filter();
-		$search->setConditions( $search->compare( '==', 'cms.editor', $this->editor ) );
 		$this->assertEquals( 3, count( $this->object->search( $search )->toArray() ) );
 	}
 
@@ -115,14 +114,9 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testSearchItemsBase()
 	{
 		$total = 0;
-		$search = $this->object->filter( true );
-		$conditions = array(
-			$search->compare( '==', 'cms.editor', $this->editor ),
-			$search->getConditions()
-		);
-		$search->setConditions( $search->and( $conditions ) );
-		$search->slice( 0, 1 );
+		$search = $this->object->filter( true )->slice( 0, 1 );
 		$results = $this->object->search( $search, [], $total )->toArray();
+
 		$this->assertEquals( 1, count( $results ) );
 		$this->assertEquals( 2, $total );
 
@@ -166,7 +160,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->assertEquals( $item->getLabel(), $itemSaved->getLabel() );
 		$this->assertEquals( $item->getStatus(), $itemSaved->getStatus() );
 
-		$this->assertEquals( $this->editor, $itemSaved->editor() );
+		$this->assertEquals( $this->context->editor(), $itemSaved->editor() );
 		$this->assertRegExp( '/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/', $itemSaved->getTimeCreated() );
 		$this->assertRegExp( '/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/', $itemSaved->getTimeModified() );
 
@@ -176,7 +170,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->assertEquals( $itemExp->getLabel(), $itemUpd->getLabel() );
 		$this->assertEquals( $itemExp->getStatus(), $itemUpd->getStatus() );
 
-		$this->assertEquals( $this->editor, $itemUpd->editor() );
+		$this->assertEquals( $this->context->editor(), $itemUpd->editor() );
 		$this->assertEquals( $itemExp->getTimeCreated(), $itemUpd->getTimeCreated() );
 		$this->assertRegExp( '/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/', $itemUpd->getTimeModified() );
 

@@ -18,7 +18,7 @@ class BaseTest extends \PHPUnit\Framework\TestCase
 
 	protected function setUp() : void
 	{
-		$this->context = \TestHelperFrontend::context();
+		$this->context = \TestHelper::context();
 
 		$this->stub = $this->getMockBuilder( \Aimeos\Controller\Frontend\Cms\Standard::class )
 			->disableOriginalConstructor()

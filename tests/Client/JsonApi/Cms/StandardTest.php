@@ -18,7 +18,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	protected function setUp() : void
 	{
-		$this->context = \TestHelperJapi::context();
+		$this->context = \TestHelper::context();
 		$this->context->locale()->setLanguageId( 'en' );
 		$this->view = $this->context->view();
 

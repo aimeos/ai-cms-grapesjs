@@ -143,12 +143,12 @@ class Standard
 			$ref = explode( ',', $ref );
 		}
 
-		$cmss = \Aimeos\Controller\Frontend::create( $this->context(), 'cms' )
+		$items = \Aimeos\Controller\Frontend::create( $this->context(), 'cms' )
 			->slice( $view->param( 'page/offset', 0 ), $view->param( 'page/limit', 25 ) )
 			->sort( $view->param( 'sort' ) )->parse( $view->param( 'filter', [] ) )
 			->uses( $ref )->search( $total );
 
-		$view->items = $cmss;
+		$view->items = $items;
 		$view->total = $total;
 
 		return $response;

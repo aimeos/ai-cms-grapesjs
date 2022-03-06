@@ -13,14 +13,13 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 {
 	private $object;
 	private $context;
-	private $editor = '';
 
 
 	protected function setUp() : void
 	{
 		$this->context = \TestHelper::context();
-		$this->editor = $this->context->editor();
 		$manager = \Aimeos\MShop\Cms\Manager\Factory::create( $this->context, 'Standard' );
+
 		$this->object = $manager->getSubManager( 'lists', 'Standard' );
 	}
 
@@ -48,12 +47,6 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testAggregate()
 	{
 		$search = $this->object->filter( true );
-		$expr = array(
-			$search->getConditions(),
-			$search->compare( '==', 'cms.lists.editor', $this->editor ),
-		);
-		$search->setConditions( $search->and( $expr ) );
-
 		$result = $this->object->aggregate( $search, 'cms.lists.domain' )->toArray();
 
 		$this->assertEquals( 2, count( $result ) );
@@ -74,7 +67,6 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testGetItem()
 	{
 		$search = $this->object->filter()->slice( 0, 1 );
-		$search->setConditions( $search->compare( '==', 'cms.lists.editor', $this->editor ) );
 		$item = $this->object->search( $search )->first( new \RuntimeException( 'No item found' ) );
 
 		$this->assertEquals( $item, $this->object->get( $item->getId() ) );
@@ -84,7 +76,6 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testSaveUpdateDeleteItem()
 	{
 		$search = $this->object->filter();
-		$search->setConditions( $search->compare( '==', 'cms.lists.editor', $this->editor ) );
 		$item = $this->object->search( $search )->first( new \RuntimeException( 'No item found' ) );
 
 		$item->setId( null );
@@ -112,7 +103,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->assertEquals( $item->getDateEnd(), $itemSaved->getDateEnd() );
 		$this->assertEquals( $item->getPosition(), $itemSaved->getPosition() );
 
-		$this->assertEquals( $this->editor, $itemSaved->editor() );
+		$this->assertEquals( $this->context->editor(), $itemSaved->editor() );
 		$this->assertRegExp( '/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/', $itemSaved->getTimeCreated() );
 		$this->assertRegExp( '/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/', $itemSaved->getTimeModified() );
 
@@ -127,7 +118,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->assertEquals( $itemExp->getDateEnd(), $itemUpd->getDateEnd() );
 		$this->assertEquals( $itemExp->getPosition(), $itemUpd->getPosition() );
 
-		$this->assertEquals( $this->editor, $itemUpd->editor() );
+		$this->assertEquals( $this->context->editor(), $itemUpd->editor() );
 		$this->assertEquals( $itemExp->getTimeCreated(), $itemUpd->getTimeCreated() );
 		$this->assertRegExp( '/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/', $itemUpd->getTimeModified() );
 
@@ -156,7 +147,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$expr[] = $search->compare( '!=', 'cms.lists.config', null );
 		$expr[] = $search->compare( '==', 'cms.lists.position', 0 );
 		$expr[] = $search->compare( '==', 'cms.lists.status', 1 );
-		$expr[] = $search->compare( '==', 'cms.lists.editor', $this->editor );
+		$expr[] = $search->compare( '!=', 'cms.lists.editor', '' );
 
 		$search->setConditions( $search->and( $expr ) );
 		$results = $this->object->search( $search, [], $total )->toArray();
@@ -167,7 +158,6 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testSearchItemsAll()
 	{
 		$search = $this->object->filter();
-		$search->setConditions( $search->compare( '==', 'cms.lists.editor', $this->editor ) );
 		$this->assertEquals( 9, count( $this->object->search( $search )->toArray() ) );
 	}
 
@@ -175,14 +165,9 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testSearchItemsBase()
 	{
 		$total = 0;
-		$search = $this->object->filter( true );
-		$conditions = array(
-			$search->compare( '==', 'cms.lists.editor', $this->editor ),
-			$search->getConditions()
-		);
-		$search->setConditions( $search->and( $conditions ) );
-		$search->slice( 0, 1 );
+		$search = $this->object->filter( true )->slice( 0, 1 );
 		$results = $this->object->search( $search, [], $total )->toArray();
+
 		$this->assertEquals( 1, count( $results ) );
 		$this->assertEquals( 9, $total );
 

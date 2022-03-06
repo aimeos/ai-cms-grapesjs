@@ -11,23 +11,24 @@ namespace Aimeos\MShop\Cms\Manager\Lists\Type;
 
 class StandardTest extends \PHPUnit\Framework\TestCase
 {
+	private $context;
 	private $object;
-	private $editor = '';
 
 
 	protected function setUp() : void
 	{
-		$this->editor = \TestHelper::context()->editor();
-		$manager = \Aimeos\MShop\Cms\Manager\Factory::create( \TestHelper::context() );
+		$this->context = \TestHelper::context();
 
+		$manager = \Aimeos\MShop\Cms\Manager\Factory::create( $this->context );
 		$listManager = $manager->getSubManager( 'lists' );
+
 		$this->object = $listManager->getSubManager( 'type' );
 	}
 
 
 	protected function tearDown() : void
 	{
-		unset( $this->object );
+		unset( $this->object, $this->context );
 	}
 
 
@@ -55,12 +56,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testGetItem()
 	{
 		$search = $this->object->filter()->slice( 0, 1 );
-		$search->setConditions( $search->compare( '==', 'cms.lists.type.editor', $this->editor ) );
-		$results = $this->object->search( $search )->toArray();
-
-		if( ( $expected = reset( $results ) ) === false ) {
-			throw new \RuntimeException( 'No cms list type item found' );
-		}
+		$expected = $this->object->search( $search )->first( new \RuntimeException( 'No cms list type item found' ) );
 
 		$this->assertEquals( $expected, $this->object->get( $expected->getId() ) );
 	}
@@ -69,12 +65,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testSaveUpdateDeleteItem()
 	{
 		$search = $this->object->filter();
-		$search->setConditions( $search->compare( '==', 'cms.lists.type.editor', $this->editor ) );
-		$results = $this->object->search( $search )->toArray();
-
-		if( ( $item = reset( $results ) ) === false ) {
-			throw new \RuntimeException( 'No type item found' );
-		}
+		$item = $this->object->search( $search )->first( new \RuntimeException( 'No type item found' ) );
 
 		$item->setId( null );
 		$item->setCode( 'unitTestSave' );
@@ -97,7 +88,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->assertEquals( $item->getLabel(), $itemSaved->getLabel() );
 		$this->assertEquals( $item->getStatus(), $itemSaved->getStatus() );
 
-		$this->assertEquals( $this->editor, $itemSaved->editor() );
+		$this->assertEquals( $this->context->editor(), $itemSaved->editor() );
 		$this->assertRegExp( '/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/', $itemSaved->getTimeCreated() );
 		$this->assertRegExp( '/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/', $itemSaved->getTimeModified() );
 
@@ -108,7 +99,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->assertEquals( $itemExp->getLabel(), $itemUpd->getLabel() );
 		$this->assertEquals( $itemExp->getStatus(), $itemUpd->getStatus() );
 
-		$this->assertEquals( $this->editor, $itemUpd->editor() );
+		$this->assertEquals( $this->context->editor(), $itemUpd->editor() );
 		$this->assertEquals( $itemExp->getTimeCreated(), $itemUpd->getTimeCreated() );
 		$this->assertRegExp( '/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/', $itemUpd->getTimeModified() );
 
@@ -133,7 +124,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$expr[] = $search->compare( '>', 'cms.lists.type.label', '' );
 		$expr[] = $search->compare( '>=', 'cms.lists.type.position', 0 );
 		$expr[] = $search->compare( '==', 'cms.lists.type.status', 1 );
-		$expr[] = $search->compare( '==', 'cms.lists.type.editor', $this->editor );
+		$expr[] = $search->compare( '!=', 'cms.lists.type.editor', '' );
 
 		$search->setConditions( $search->and( $expr ) );
 
@@ -145,15 +136,13 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testSearchItemsSlice()
 	{
 		$total = 0;
-		$search = $this->object->filter();
-		$conditions = array(
-			$search->compare( '==', 'cms.lists.type.code', 'default' ),
-			$search->compare( '==', 'cms.lists.type.editor', $this->editor ),
-		);
-		$search->setConditions( $search->and( $conditions ) );
-		$search->setSortations( [$search->sort( '-', 'cms.lists.type.position' )] );
-		$search->slice( 0, 1 );
+		$search = $this->object->filter()
+			->add( ['cms.lists.type.code' => 'default'] )
+			->order( '-cms.lists.type.position' )
+			->slice( 0, 1 );
+
 		$results = $this->object->search( $search, [], $total )->toArray();
+
 		$this->assertEquals( 1, count( $results ) );
 		$this->assertEquals( 2, $total );
 

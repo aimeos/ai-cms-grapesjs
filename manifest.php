@@ -14,7 +14,7 @@ return [
 		'src',
 	],
 	'i18n' => [
-		'admin' => 'admin/i18n',
+		'admin' => 'i18n',
 	],
 	'config' => [
 		'config',

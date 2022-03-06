@@ -16,7 +16,7 @@ class FactoryTest extends \PHPUnit\Framework\TestCase
 
 	protected function setUp() : void
 	{
-		$this->context = \TestHelperHtml::context();
+		$this->context = \TestHelper::context();
 	}
 
 

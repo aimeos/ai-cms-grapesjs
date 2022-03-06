@@ -45,8 +45,10 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testCreateException()
 	{
+		$templates = \TestHelper::getAimeos()->getTemplatePaths( 'admin/jqadm/templates' );
+
 		$object = $this->getMockBuilder( \Aimeos\Admin\JQAdm\Type\Cms\Lists\Standard::class )
-			->setConstructorArgs( array( $this->context, \TestHelper::getTemplatePaths() ) )
+			->setConstructorArgs( array( $this->context, $templates ) )
 			->setMethods( array( 'getSubClients' ) )
 			->getMock();
 
@@ -75,8 +77,10 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testCopyException()
 	{
+		$templates = \TestHelper::getAimeos()->getTemplatePaths( 'admin/jqadm/templates' );
+
 		$object = $this->getMockBuilder( \Aimeos\Admin\JQAdm\Type\Cms\Lists\Standard::class )
-			->setConstructorArgs( array( $this->context, \TestHelper::getTemplatePaths() ) )
+			->setConstructorArgs( array( $this->context, $templates ) )
 			->setMethods( array( 'getSubClients' ) )
 			->getMock();
 
@@ -97,8 +101,10 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testDeleteException()
 	{
+		$templates = \TestHelper::getAimeos()->getTemplatePaths( 'admin/jqadm/templates' );
+
 		$object = $this->getMockBuilder( \Aimeos\Admin\JQAdm\Type\Cms\Lists\Standard::class )
-			->setConstructorArgs( array( $this->context, \TestHelper::getTemplatePaths() ) )
+			->setConstructorArgs( array( $this->context, $templates ) )
 			->setMethods( array( 'getSubClients', 'search' ) )
 			->getMock();
 
@@ -127,8 +133,10 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testGetException()
 	{
+		$templates = \TestHelper::getAimeos()->getTemplatePaths( 'admin/jqadm/templates' );
+
 		$object = $this->getMockBuilder( \Aimeos\Admin\JQAdm\Type\Cms\Lists\Standard::class )
-			->setConstructorArgs( array( $this->context, \TestHelper::getTemplatePaths() ) )
+			->setConstructorArgs( array( $this->context, $templates ) )
 			->setMethods( array( 'getSubClients' ) )
 			->getMock();
 
@@ -170,8 +178,10 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testSaveException()
 	{
+		$templates = \TestHelper::getAimeos()->getTemplatePaths( 'admin/jqadm/templates' );
+
 		$object = $this->getMockBuilder( \Aimeos\Admin\JQAdm\Type\Cms\Lists\Standard::class )
-			->setConstructorArgs( array( $this->context, \TestHelper::getTemplatePaths() ) )
+			->setConstructorArgs( array( $this->context, $templates ) )
 			->setMethods( array( 'fromArray' ) )
 			->getMock();
 
@@ -206,8 +216,10 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testSearchException()
 	{
+		$templates = \TestHelper::getAimeos()->getTemplatePaths( 'admin/jqadm/templates' );
+
 		$object = $this->getMockBuilder( \Aimeos\Admin\JQAdm\Type\Cms\Lists\Standard::class )
-			->setConstructorArgs( array( $this->context, \TestHelper::getTemplatePaths() ) )
+			->setConstructorArgs( array( $this->context, $templates ) )
 			->setMethods( array( 'initCriteria' ) )
 			->getMock();
 
@@ -236,8 +248,10 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function getClientMock( $methods, $real = true )
 	{
+		$templates = \TestHelper::getAimeos()->getTemplatePaths( 'admin/jqadm/templates' );
+
 		$object = $this->getMockBuilder( \Aimeos\Admin\JQAdm\Type\Cms\Lists\Standard::class )
-			->setConstructorArgs( array( $this->context, \TestHelper::getTemplatePaths() ) )
+			->setConstructorArgs( array( $this->context, $templates ) )
 			->setMethods( (array) $methods )
 			->getMock();
 

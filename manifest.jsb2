@@ -1,0 +1,31 @@
+{
+	"projectName": "ai-cms-grapesjs",
+	"licenseText": "proprietary",
+	"pkgs": [{
+		"name": "ai-cms-grapesjs CSS",
+		"file": "ai-cms-grapesjs.css",
+		"isDebug": true,
+		"fileIncludes": [{
+			"text": "grapesjs.css",
+			"path": "themes/admin/jqadm/"
+		},{
+			"text": "custom.css",
+			"path": "themes/admin/jqadm/"
+		}]
+	}, {
+		"name": "ai-cms-grapesjs JS",
+		"file": "ai-cms-grapesjs.js",
+		"isDebug": true,
+		"fileIncludes": [{
+			"text": "grapesjs.js",
+			"path": "themes/admin/jqadm/"
+		},{
+			"text": "grapesjs-ext.js",
+			"path": "themes/admin/jqadm/"
+		},{
+			"text": "custom.js",
+			"path": "themes/admin/jqadm/"
+		}]
+	}],
+	"resources" : []
+}

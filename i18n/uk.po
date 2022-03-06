@@ -1,0 +1,277 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Федір Вільгота <fredy31415@gmail.com>, 2022
+# Aimeos, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-06 11:24+0100\n"
+"PO-Revision-Date: 2022-03-06 10:23+0000\n"
+"Last-Translator: Aimeos, 2022\n"
+"Language-Team: Ukrainian (https://www.transifex.com/aimeos/teams/39015/uk/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+msgid " "
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Advanced"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "Basic"
+msgstr "Основний"
+
+msgid "CMS Lists Type"
+msgstr ""
+
+msgid "CMS Lists Types"
+msgstr ""
+
+msgid "CMS page"
+msgstr ""
+
+msgid "CMS pages"
+msgstr ""
+
+msgid "Code"
+msgstr "Код"
+
+msgid "Columns"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Copy this entry"
+msgstr ""
+
+msgid "Created"
+msgstr "Створено"
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete selected entries"
+msgstr ""
+
+msgid "Delete this entry"
+msgstr "Видалити цей запис"
+
+msgid "Description of the text content if it's in a foreign language"
+msgstr ""
+
+msgid "Domain"
+msgstr ""
+
+msgid "Duplicate entry (Ctrl+D)"
+msgstr ""
+
+msgid "Editor"
+msgstr "Редактор"
+
+msgid "End date"
+msgstr ""
+
+msgid "ID"
+msgstr "ID"
+
+msgid ""
+"Images will only be shown for that language, useful if the media contains "
+"text or is language sepecific"
+msgstr ""
+
+msgid "Insert new entry (Ctrl+I)"
+msgstr "Вставити новий запис (Ctrl+I)"
+
+msgid "Internal name (required)"
+msgstr "Внутрішня назва (обов'язково)"
+
+msgid "Internal type name shown in the administration interface"
+msgstr ""
+
+#, php-format
+msgid "Invalid characters in class name \"%1$s\""
+msgstr ""
+
+msgid ""
+"Item specific configuration options, will be available as key/value pairs in"
+" the templates"
+msgstr ""
+
+msgid "Label"
+msgstr "Мітка"
+
+msgid "Language"
+msgstr ""
+
+msgid "Language of the entered text"
+msgstr ""
+
+msgid "List type"
+msgstr ""
+
+msgid "Media properties"
+msgstr ""
+
+msgid "Modified"
+msgstr "Змінено"
+
+msgid "Move this entry up/down"
+msgstr ""
+
+msgid "New"
+msgstr "Новий"
+
+msgid "No items found"
+msgstr ""
+
+msgid "Non-shared properties for the media item"
+msgstr ""
+
+msgid "Option"
+msgstr "Параметр"
+
+msgid "Order of the types in the frontend"
+msgstr ""
+
+msgid ""
+"Page title, will be used on the web site if no title for the language is "
+"available"
+msgstr ""
+
+msgid "Please select"
+msgstr "Виберіть будь ласка"
+
+msgid "Position"
+msgstr ""
+
+msgid "Property value (required)"
+msgstr ""
+
+#, php-format
+msgid "Required parameter \"%1$s\" is missing"
+msgstr ""
+
+msgid "Second level type for grouping items"
+msgstr ""
+
+msgid "Select file"
+msgstr ""
+
+msgid "Show search form"
+msgstr ""
+
+msgid "Show/hide advanced data"
+msgstr ""
+
+msgid "Show/hide this entry"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "The item is only shown on the web site after that date and time"
+msgstr ""
+
+msgid "The item is only shown on the web site until that date and time"
+msgstr ""
+
+msgid "The media title is used for the title tag of the media on the web site"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Translate text"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Type position (optional)"
+msgstr ""
+
+msgid "Types for additional images like icons"
+msgstr ""
+
+msgid "Types for additional texts like per one lb/kg or per month"
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "Unique page URL (required)"
+msgstr ""
+
+msgid "Unique page URL, e.g. \"/page-name\""
+msgstr ""
+
+msgid "Unique type code"
+msgstr ""
+
+msgid "Unique type code (required)"
+msgstr ""
+
+msgid "Value"
+msgstr "Значення"
+
+msgid "YYYY-MM-DD hh:mm:ss (optional)"
+msgstr ""
+
+#, php-format
+msgid "cms"
+msgstr ""
+
+#, php-format
+msgid "content"
+msgstr ""
+
+#, php-format
+msgid "media"
+msgstr ""
+
+#, php-format
+msgid "property"
+msgstr ""
+
+#, php-format
+msgid "seo"
+msgstr ""
+
+msgid "status:-1"
+msgstr ""
+
+msgid "status:-2"
+msgstr ""
+
+msgid "status:0"
+msgstr ""
+
+msgid "status:1"
+msgstr ""
+
+msgid "text"
+msgstr ""
+
+#, php-format
+msgid "type/cms/lists"
+msgstr ""

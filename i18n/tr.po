@@ -1,0 +1,284 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Aimeos, 2022
+# Metal <meteoramic@yahoo.com>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-06 11:24+0100\n"
+"PO-Revision-Date: 2022-03-06 10:23+0000\n"
+"Last-Translator: Metal <meteoramic@yahoo.com>, 2022\n"
+"Language-Team: Turkish (https://www.transifex.com/aimeos/teams/39015/tr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid " "
+msgstr " "
+
+msgid "Add"
+msgstr "Ekle"
+
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+msgid "All"
+msgstr "Hepsi"
+
+msgid "Basic"
+msgstr "Temel"
+
+msgid "CMS Lists Type"
+msgstr "CMS Liste Türü"
+
+msgid "CMS Lists Types"
+msgstr "CMS Liste Türleri"
+
+msgid "CMS page"
+msgstr "CMS sayfası"
+
+msgid "CMS pages"
+msgstr "CMS sayfaları"
+
+msgid "Code"
+msgstr "Kod"
+
+msgid "Columns"
+msgstr "Sütunlar"
+
+msgid "Copy"
+msgstr "Kopyala"
+
+msgid "Copy this entry"
+msgstr "Bu girişi kopyala"
+
+msgid "Created"
+msgstr "Oluşturdu"
+
+msgid "Delete"
+msgstr "Sil"
+
+msgid "Delete selected entries"
+msgstr "Seçilen girişler sil"
+
+msgid "Delete this entry"
+msgstr "Bu girişi sil"
+
+msgid "Description of the text content if it's in a foreign language"
+msgstr "Yabancı bir dilde ise metin içeriğinin açıklaması"
+
+msgid "Domain"
+msgstr "Alan adı"
+
+msgid "Duplicate entry (Ctrl+D)"
+msgstr "Girişi kopyala (Ctrl+D)"
+
+msgid "Editor"
+msgstr "Editör"
+
+msgid "End date"
+msgstr "Bitiş tarihi"
+
+msgid "ID"
+msgstr "Kimlik numarası"
+
+msgid ""
+"Images will only be shown for that language, useful if the media contains "
+"text or is language sepecific"
+msgstr ""
+"Resimler yalnızca o dil için gösterilecektir; medya metin içeriyorsa veya "
+"dile özgüyse bu kullanışlı bir opsiyondur"
+
+msgid "Insert new entry (Ctrl+I)"
+msgstr "Yeni giriş ekle (Ctrl+I)"
+
+msgid "Internal name (required)"
+msgstr "Dahili isim (gerekli)"
+
+msgid "Internal type name shown in the administration interface"
+msgstr "Yönetim arayüzünde gösterilen dahili tür adı"
+
+#, php-format
+msgid "Invalid characters in class name \"%1$s\""
+msgstr "\"%1$s\" sınıf adında geçersiz karakter"
+
+msgid ""
+"Item specific configuration options, will be available as key/value pairs in"
+" the templates"
+msgstr ""
+"Ürüne özgü yapılandırma seçenekleri; şablonlarda anahtar/değer çifti olarak "
+"bulunacak"
+
+msgid "Label"
+msgstr "Etiket"
+
+msgid "Language"
+msgstr "Dil"
+
+msgid "Language of the entered text"
+msgstr "Girilen metnin dili"
+
+msgid "List type"
+msgstr "Liste türü"
+
+msgid "Media properties"
+msgstr "Medya özellikleri"
+
+msgid "Modified"
+msgstr "Düzenlendi"
+
+msgid "Move this entry up/down"
+msgstr "Bu girişi yukarı/aşağı taşıyın"
+
+msgid "New"
+msgstr "Yeni"
+
+msgid "No items found"
+msgstr "Hiç bir ürün bulunamadı"
+
+msgid "Non-shared properties for the media item"
+msgstr "Medya öğesi için paylaşılmayan özellikler"
+
+msgid "Option"
+msgstr "Seçenek"
+
+msgid "Order of the types in the frontend"
+msgstr "Türlerin ön paneldeki sırası"
+
+msgid ""
+"Page title, will be used on the web site if no title for the language is "
+"available"
+msgstr ""
+"Sayfa başlığı; dil için bir başlık girilmemişse web sitesinde "
+"kullanılacaktır"
+
+msgid "Please select"
+msgstr "Lütfen seçin"
+
+msgid "Position"
+msgstr "Konum"
+
+msgid "Property value (required)"
+msgstr "Özellik değeri (gerekli)"
+
+#, php-format
+msgid "Required parameter \"%1$s\" is missing"
+msgstr "Gerekli parametre \"%1$s\" eksik"
+
+msgid "Second level type for grouping items"
+msgstr "Öğeleri gruplamak için ikinci seviye türü"
+
+msgid "Select file"
+msgstr "Dosya seçin"
+
+msgid "Show search form"
+msgstr "Arama formunu göster"
+
+msgid "Show/hide advanced data"
+msgstr "Gelişmiş verileri göster/gizle"
+
+msgid "Show/hide this entry"
+msgstr "Bu girişi göster/gizle"
+
+msgid "Start date"
+msgstr "Başlangıç tarihi"
+
+msgid "Status"
+msgstr "Durum"
+
+msgid "The item is only shown on the web site after that date and time"
+msgstr "Ürün, web sitesinde yalnızca bu tarih ve saatten sonra gösterilir"
+
+msgid "The item is only shown on the web site until that date and time"
+msgstr "Ürün, web sitesinde yalnızca bu tarih ve saate kadar gösterilir"
+
+msgid "The media title is used for the title tag of the media on the web site"
+msgstr ""
+"Medya başlığı, web sitesindeki medyanın başlık etiketi için kullanılır."
+
+msgid "Title"
+msgstr "Başlık"
+
+msgid "Translate text"
+msgstr "Metni çevir"
+
+msgid "Type"
+msgstr "Tür"
+
+msgid "Type position (optional)"
+msgstr "Tür konumu (isteğe bağlı)"
+
+msgid "Types for additional images like icons"
+msgstr "Simgeler gibi ek görüntü türleri"
+
+msgid "Types for additional texts like per one lb/kg or per month"
+msgstr "lb/kg başına veya aylık gibi ek metin türleri"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Unique page URL (required)"
+msgstr "Benzersiz sayfa URL'si (gerekli)"
+
+msgid "Unique page URL, e.g. \"/page-name\""
+msgstr "Benzersiz sayfa URL'si, örneğin \"/sayfa-adi\""
+
+msgid "Unique type code"
+msgstr "Benzersiz tür kodu"
+
+msgid "Unique type code (required)"
+msgstr "Benzersiz tür kodu (gerekli)"
+
+msgid "Value"
+msgstr "Değer"
+
+msgid "YYYY-MM-DD hh:mm:ss (optional)"
+msgstr "YYYY-AA-GG sa:dd:ss (isteğe bağlı)"
+
+#, php-format
+msgid "cms"
+msgstr "cms"
+
+#, php-format
+msgid "content"
+msgstr "içerik"
+
+#, php-format
+msgid "media"
+msgstr "medya"
+
+#, php-format
+msgid "property"
+msgstr "özellik"
+
+#, php-format
+msgid "seo"
+msgstr "seo"
+
+msgid "status:-1"
+msgstr "Durum:-1"
+
+msgid "status:-2"
+msgstr "Durum:-2"
+
+msgid "status:0"
+msgstr "Durum:0"
+
+msgid "status:1"
+msgstr "Durum:1"
+
+msgid "text"
+msgstr "metin"
+
+#, php-format
+msgid "type/cms/lists"
+msgstr "Tür/Cms/Listeler"

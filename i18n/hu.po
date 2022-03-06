@@ -1,0 +1,283 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Aimeos, 2022
+# Patrik Szakos <szakos0208@gmail.com>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-06 11:24+0100\n"
+"PO-Revision-Date: 2022-03-06 10:23+0000\n"
+"Last-Translator: Patrik Szakos <szakos0208@gmail.com>, 2022\n"
+"Language-Team: Hungarian (https://www.transifex.com/aimeos/teams/39015/hu/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid " "
+msgstr ""
+
+msgid "Add"
+msgstr "Hozzáad"
+
+msgid "Advanced"
+msgstr "Fejlett"
+
+msgid "All"
+msgstr "Mind"
+
+msgid "Basic"
+msgstr "Alapvető"
+
+msgid "CMS Lists Type"
+msgstr ""
+
+msgid "CMS Lists Types"
+msgstr ""
+
+msgid "CMS page"
+msgstr ""
+
+msgid "CMS pages"
+msgstr ""
+
+msgid "Code"
+msgstr "Kód"
+
+msgid "Columns"
+msgstr "Oszlopok"
+
+msgid "Copy"
+msgstr "Másolás"
+
+msgid "Copy this entry"
+msgstr "Bejegyzés másolása"
+
+msgid "Created"
+msgstr "Létrehozva"
+
+msgid "Delete"
+msgstr "Törlés"
+
+msgid "Delete selected entries"
+msgstr "Kiválasztott bejegyzések törlése"
+
+msgid "Delete this entry"
+msgstr "Bejegyzés törlése"
+
+msgid "Description of the text content if it's in a foreign language"
+msgstr "A szöveges tartalom leírása, ha idegen nyelven készült"
+
+msgid "Domain"
+msgstr "Domain"
+
+msgid "Duplicate entry (Ctrl+D)"
+msgstr "Bejegyzés duplikálása (Ctrl+D)"
+
+msgid "Editor"
+msgstr "Szerkesztő"
+
+msgid "End date"
+msgstr "Dátum vége"
+
+msgid "ID"
+msgstr "Azonosító"
+
+msgid ""
+"Images will only be shown for that language, useful if the media contains "
+"text or is language sepecific"
+msgstr ""
+"A képek csak az adott nyelven jelennek meg, hasznos, ha a média szöveget "
+"tartalmaz, vagy nyelvspecifikus"
+
+msgid "Insert new entry (Ctrl+I)"
+msgstr "Új bejegyzés beiktatása (Ctrl+I)"
+
+msgid "Internal name (required)"
+msgstr "Belső név (kötelező)"
+
+msgid "Internal type name shown in the administration interface"
+msgstr "Belső típusnév az adminisztrációs felületen"
+
+#, php-format
+msgid "Invalid characters in class name \"%1$s\""
+msgstr ""
+
+msgid ""
+"Item specific configuration options, will be available as key/value pairs in"
+" the templates"
+msgstr ""
+"Az egyes tételekre vonatkozó konfigurációs beállítások kulcs/érték párokként"
+" állnak rendelkezésre a sablonokban"
+
+msgid "Label"
+msgstr "Címke"
+
+msgid "Language"
+msgstr "Nyelv"
+
+msgid "Language of the entered text"
+msgstr "Begépelt szöveg nyelve"
+
+msgid "List type"
+msgstr "Lista típusa"
+
+msgid "Media properties"
+msgstr "A média tulajdonságai"
+
+msgid "Modified"
+msgstr "Módosított"
+
+msgid "Move this entry up/down"
+msgstr "Mozgassa ezt a bejegyzést fel/le"
+
+msgid "New"
+msgstr "Új"
+
+msgid "No items found"
+msgstr "Nincs találat"
+
+msgid "Non-shared properties for the media item"
+msgstr "A médiaelem nem megosztott tulajdonságai"
+
+msgid "Option"
+msgstr "Opció"
+
+msgid "Order of the types in the frontend"
+msgstr "A frontend típusainak sorrendje"
+
+msgid ""
+"Page title, will be used on the web site if no title for the language is "
+"available"
+msgstr ""
+"Az oldal címe, akkor kerül felhasználásra a webhelyen, ha a nyelvhez nem áll"
+" rendelkezésre cím"
+
+msgid "Please select"
+msgstr "Kérem válasszon"
+
+msgid "Position"
+msgstr "Pozíció"
+
+msgid "Property value (required)"
+msgstr "Érték (kötelező)"
+
+#, php-format
+msgid "Required parameter \"%1$s\" is missing"
+msgstr ""
+
+msgid "Second level type for grouping items"
+msgstr "Második szintű típus elemek csoportosítására"
+
+msgid "Select file"
+msgstr "Kérem válasszon"
+
+msgid "Show search form"
+msgstr "Keresési űrlap megjelenítése"
+
+msgid "Show/hide advanced data"
+msgstr "Speciális adatok megjelenítése/elrejtése"
+
+msgid "Show/hide this entry"
+msgstr "A bejegyzés megjelenítése/elrejtése"
+
+msgid "Start date"
+msgstr "Kezdő dátum"
+
+msgid "Status"
+msgstr "Állapot"
+
+msgid "The item is only shown on the web site after that date and time"
+msgstr "Az elem csak az adott dátum és idő után jelenik meg a webhelyen"
+
+msgid "The item is only shown on the web site until that date and time"
+msgstr "Az elem csak addig a dátumig és időpontig jelenik meg a webhelyen"
+
+msgid "The media title is used for the title tag of the media on the web site"
+msgstr "A média címe a webhelyen található média címkéje"
+
+msgid "Title"
+msgstr "Szöveg"
+
+msgid "Translate text"
+msgstr "Szöveg fordítása"
+
+msgid "Type"
+msgstr "Típus"
+
+msgid "Type position (optional)"
+msgstr "Típus pozíció (opcionális)"
+
+msgid "Types for additional images like icons"
+msgstr "További képek típusai, például ikonok"
+
+msgid "Types for additional texts like per one lb/kg or per month"
+msgstr "További szövegek típusai, például 1 lb/kg vagy havonta"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Unique page URL (required)"
+msgstr "Kötelező oldal link (kötelező)"
+
+msgid "Unique page URL, e.g. \"/page-name\""
+msgstr ""
+
+msgid "Unique type code"
+msgstr "Egyedi típusú kód"
+
+msgid "Unique type code (required)"
+msgstr "Egyedi típusú kód (kötelező)"
+
+msgid "Value"
+msgstr "Érték"
+
+msgid "YYYY-MM-DD hh:mm:ss (optional)"
+msgstr ""
+
+#, php-format
+msgid "cms"
+msgstr ""
+
+#, php-format
+msgid "content"
+msgstr "tartalom"
+
+#, php-format
+msgid "media"
+msgstr "média"
+
+#, php-format
+msgid "property"
+msgstr "tulajdon"
+
+#, php-format
+msgid "seo"
+msgstr ""
+
+msgid "status:-1"
+msgstr "állapot:-1"
+
+msgid "status:-2"
+msgstr "állapot:-2"
+
+msgid "status:0"
+msgstr "állapot:0"
+
+msgid "status:1"
+msgstr "status:1"
+
+msgid "text"
+msgstr "szöveg"
+
+#, php-format
+msgid "type/cms/lists"
+msgstr ""

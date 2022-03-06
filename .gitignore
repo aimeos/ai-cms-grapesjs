@@ -1,3 +1,5 @@
-*.junit.xml
-*.cache
+.phpunit.result.cache
+coveralls.json
+coverage.xml
 *.log
+*.ser

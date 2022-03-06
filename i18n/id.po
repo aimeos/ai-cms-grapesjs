@@ -1,0 +1,283 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Aimeos, 2022
+# Kevin Purwito, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-06 11:24+0100\n"
+"PO-Revision-Date: 2022-03-06 10:23+0000\n"
+"Last-Translator: Kevin Purwito, 2022\n"
+"Language-Team: Indonesian (https://www.transifex.com/aimeos/teams/39015/id/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid " "
+msgstr " "
+
+msgid "Add"
+msgstr "Tambah"
+
+msgid "Advanced"
+msgstr "Lanjutan"
+
+msgid "All"
+msgstr "Semua"
+
+msgid "Basic"
+msgstr "Dasar"
+
+msgid "CMS Lists Type"
+msgstr "CMS Lists Type"
+
+msgid "CMS Lists Types"
+msgstr "CMS Lists Types"
+
+msgid "CMS page"
+msgstr "laman CMS"
+
+msgid "CMS pages"
+msgstr "laman-laman CMS"
+
+msgid "Code"
+msgstr "Kode"
+
+msgid "Columns"
+msgstr "Kolom-kolom"
+
+msgid "Copy"
+msgstr "Salin"
+
+msgid "Copy this entry"
+msgstr "Salin ini"
+
+msgid "Created"
+msgstr "Telah dibuat"
+
+msgid "Delete"
+msgstr "Hapus"
+
+msgid "Delete selected entries"
+msgstr "Hapus yang dipilih"
+
+msgid "Delete this entry"
+msgstr "Hapus ini"
+
+msgid "Description of the text content if it's in a foreign language"
+msgstr "Deskripsi dari konten berbahasa asing"
+
+msgid "Domain"
+msgstr "Domain"
+
+msgid "Duplicate entry (Ctrl+D)"
+msgstr "Duplikat ini (Ctrl+D)"
+
+msgid "Editor"
+msgstr "Editor"
+
+msgid "End date"
+msgstr "Tanggal akhir"
+
+msgid "ID"
+msgstr "ID"
+
+msgid ""
+"Images will only be shown for that language, useful if the media contains "
+"text or is language sepecific"
+msgstr ""
+"Gambar akan muncul untuk bahasa tersebut, bermanfaat jika media mengandung "
+"kalimat dengan bahasa tertentu"
+
+msgid "Insert new entry (Ctrl+I)"
+msgstr "Tambah entri baru (Ctrl+I)"
+
+msgid "Internal name (required)"
+msgstr "Nama internal (wajib diisi)"
+
+msgid "Internal type name shown in the administration interface"
+msgstr "Nama tipe internal yang muncul di tampilan admin"
+
+#, php-format
+msgid "Invalid characters in class name \"%1$s\""
+msgstr "Karakter invalid dalam nama kelas \"%1$s\""
+
+msgid ""
+"Item specific configuration options, will be available as key/value pairs in"
+" the templates"
+msgstr ""
+"Pilihan konfigurasi untuk benda tertentu, akan muncul sebagai key/value "
+"dalam template"
+
+msgid "Label"
+msgstr "Label"
+
+msgid "Language"
+msgstr "Bahasa"
+
+msgid "Language of the entered text"
+msgstr "Bahasa dari kalimat yang dimasukkan"
+
+msgid "List type"
+msgstr "Tipe list"
+
+msgid "Media properties"
+msgstr "Properti media"
+
+msgid "Modified"
+msgstr "Berubah"
+
+msgid "Move this entry up/down"
+msgstr "Geser ini naik/turun"
+
+msgid "New"
+msgstr "Baru"
+
+msgid "No items found"
+msgstr "Tidak ada item yang ditemukan"
+
+msgid "Non-shared properties for the media item"
+msgstr "Properti yang tidak dapat dibagikan"
+
+msgid "Option"
+msgstr "Pilihan"
+
+msgid "Order of the types in the frontend"
+msgstr "Urutan tipe-tipe di frontend"
+
+msgid ""
+"Page title, will be used on the web site if no title for the language is "
+"available"
+msgstr ""
+"Judul laman, akan digunakan di website jika judul pada bahasa tersebut "
+"tersedia"
+
+msgid "Please select"
+msgstr "Tolon pilih"
+
+msgid "Position"
+msgstr "Posisi"
+
+msgid "Property value (required)"
+msgstr "Isian properti (wajib diisi)"
+
+#, php-format
+msgid "Required parameter \"%1$s\" is missing"
+msgstr "Parameter wajib \"%1$s\" tidak ditemukan"
+
+msgid "Second level type for grouping items"
+msgstr "Level tipe kedua untuk pengelompokan barang"
+
+msgid "Select file"
+msgstr "Pilih file"
+
+msgid "Show search form"
+msgstr "Munculkan form pencarian"
+
+msgid "Show/hide advanced data"
+msgstr "Munculkan/sembunyikan data lanjutan"
+
+msgid "Show/hide this entry"
+msgstr "Munculkan/sembunyikan ini"
+
+msgid "Start date"
+msgstr "Tanggal mulai"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "The item is only shown on the web site after that date and time"
+msgstr "Item hanya dimunculkan di website setelah tanggal dan jam tersebut"
+
+msgid "The item is only shown on the web site until that date and time"
+msgstr "Item hanya dimunculkan di website sampai tanggal dan jam tersebut"
+
+msgid "The media title is used for the title tag of the media on the web site"
+msgstr "Judul media digunakan sebagai tag judul dari media di website"
+
+msgid "Title"
+msgstr "Judul"
+
+msgid "Translate text"
+msgstr "Terjemahkan kalimat"
+
+msgid "Type"
+msgstr "Tipe"
+
+msgid "Type position (optional)"
+msgstr "Tipe posisi (opsional)"
+
+msgid "Types for additional images like icons"
+msgstr "Tipe untuk gambar tambahan seperti ikon"
+
+msgid "Types for additional texts like per one lb/kg or per month"
+msgstr "Tipe untuk kalimat tambahan seperti 1 lb/kg atau per bulan"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Unique page URL (required)"
+msgstr "Laman URL unik (wajib diisi)"
+
+msgid "Unique page URL, e.g. \"/page-name\""
+msgstr "Laman URL unik, cth \"/nama-laman\""
+
+msgid "Unique type code"
+msgstr "Kode tipe unik"
+
+msgid "Unique type code (required)"
+msgstr "Kode tipe unik (wajib diisi)"
+
+msgid "Value"
+msgstr "Isian"
+
+msgid "YYYY-MM-DD hh:mm:ss (optional)"
+msgstr "YYYY-MM-DD hh:mm:ss (opsional)"
+
+#, php-format
+msgid "cms"
+msgstr "cms"
+
+#, php-format
+msgid "content"
+msgstr "konten"
+
+#, php-format
+msgid "media"
+msgstr "media"
+
+#, php-format
+msgid "property"
+msgstr "properti"
+
+#, php-format
+msgid "seo"
+msgstr "seo"
+
+msgid "status:-1"
+msgstr "status:-1"
+
+msgid "status:-2"
+msgstr "status:-2"
+
+msgid "status:0"
+msgstr "status:0"
+
+msgid "status:1"
+msgstr "status:1"
+
+msgid "text"
+msgstr "kalimat"
+
+#, php-format
+msgid "type/cms/lists"
+msgstr "type/cms/lists"

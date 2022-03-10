@@ -16,14 +16,14 @@ class FactoryTest extends \PHPUnit\Framework\TestCase
 {
 	public function testCreateManager()
 	{
-		$manager = \Aimeos\MShop\Cms\Manager\Factory::create( \TestHelperMShop::context() );
+		$manager = \Aimeos\MShop\Cms\Manager\Factory::create( \TestHelper::context() );
 		$this->assertInstanceOf( \Aimeos\MShop\Common\Manager\Iface::class, $manager );
 	}
 
 
 	public function testCreateManagerName()
 	{
-		$manager = \Aimeos\MShop\Cms\Manager\Factory::create( \TestHelperMShop::context(), 'Standard' );
+		$manager = \Aimeos\MShop\Cms\Manager\Factory::create( \TestHelper::context(), 'Standard' );
 		$this->assertInstanceOf( \Aimeos\MShop\Common\Manager\Iface::class, $manager );
 	}
 
@@ -31,13 +31,13 @@ class FactoryTest extends \PHPUnit\Framework\TestCase
 	public function testCreateManagerInvalidName()
 	{
 		$this->expectException( \Aimeos\MShop\Cms\Exception::class );
-		\Aimeos\MShop\Cms\Manager\Factory::create( \TestHelperMShop::context(), '%^&' );
+		\Aimeos\MShop\Cms\Manager\Factory::create( \TestHelper::context(), '%^&' );
 	}
 
 
 	public function testCreateManagerNotExisting()
 	{
 		$this->expectException( \Aimeos\MShop\Exception::class );
-		\Aimeos\MShop\Cms\Manager\Factory::create( \TestHelperMShop::context(), 'unknown' );
+		\Aimeos\MShop\Cms\Manager\Factory::create( \TestHelper::context(), 'unknown' );
 	}
 }

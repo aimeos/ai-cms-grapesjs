@@ -30,7 +30,7 @@ class Standard
 			'internalcode' => 'mcms."id"',
 			'label' => 'ID',
 			'type' => 'integer',
-			'internaltype' => \Aimeos\MW\DB\Statement\Base::PARAM_INT,
+			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_INT,
 			'public' => false,
 		),
 		'cms.siteid' => array(
@@ -38,7 +38,7 @@ class Standard
 			'internalcode' => 'mcms."siteid"',
 			'label' => 'Site ID',
 			'type' => 'string',
-			'internaltype' => \Aimeos\MW\DB\Statement\Base::PARAM_STR,
+			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_STR,
 			'public' => false,
 		),
 		'cms.url' => array(
@@ -46,28 +46,28 @@ class Standard
 			'internalcode' => 'mcms."url"',
 			'label' => 'Type',
 			'type' => 'string',
-			'internaltype' => \Aimeos\MW\DB\Statement\Base::PARAM_STR,
+			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_STR,
 		),
 		'cms.label' => array(
 			'code' => 'cms.label',
 			'internalcode' => 'mcms."label"',
 			'label' => 'Label',
 			'type' => 'string',
-			'internaltype' => \Aimeos\MW\DB\Statement\Base::PARAM_STR,
+			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_STR,
 		),
 		'cms.status' => array(
 			'code' => 'cms.status',
 			'internalcode' => 'mcms."status"',
 			'label' => 'Status',
 			'type' => 'integer',
-			'internaltype' => \Aimeos\MW\DB\Statement\Base::PARAM_INT,
+			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_INT,
 		),
 		'cms.ctime' => array(
 			'code' => 'cms.ctime',
 			'internalcode' => 'mcms."ctime"',
 			'label' => 'create date/time',
 			'type' => 'datetime',
-			'internaltype' => \Aimeos\MW\DB\Statement\Base::PARAM_STR,
+			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_STR,
 			'public' => false,
 		),
 		'cms.mtime' => array(
@@ -75,7 +75,7 @@ class Standard
 			'internalcode' => 'mcms."mtime"',
 			'label' => 'modify date/time',
 			'type' => 'datetime',
-			'internaltype' => \Aimeos\MW\DB\Statement\Base::PARAM_STR,
+			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_STR,
 			'public' => false,
 		),
 		'cms.editor' => array(
@@ -83,7 +83,7 @@ class Standard
 			'internalcode' => 'mcms."editor"',
 			'label' => 'editor',
 			'type' => 'string',
-			'internaltype' => \Aimeos\MW\DB\Statement\Base::PARAM_STR,
+			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_STR,
 			'public' => false,
 		),
 		'cms:has' => array(
@@ -276,13 +276,13 @@ class Standard
 
 			$stmt->bind( $idx++, $item->getUrl() );
 			$stmt->bind( $idx++, $item->getLabel() );
-			$stmt->bind( $idx++, $item->getStatus(), \Aimeos\MW\DB\Statement\Base::PARAM_INT );
+			$stmt->bind( $idx++, $item->getStatus(), \Aimeos\Base\DB\Statement\Base::PARAM_INT );
 			$stmt->bind( $idx++, $date ); // mtime
 			$stmt->bind( $idx++, $context->editor() );
 			$stmt->bind( $idx++, $context->locale()->getSiteId() );
 
 			if( $id !== null ) {
-				$stmt->bind( $idx++, $id, \Aimeos\MW\DB\Statement\Base::PARAM_INT );
+				$stmt->bind( $idx++, $id, \Aimeos\Base\DB\Statement\Base::PARAM_INT );
 			} else {
 				$stmt->bind( $idx++, $date ); // ctime
 			}

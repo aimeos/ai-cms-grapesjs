@@ -242,10 +242,14 @@ class Standard
 
 				$this->addMetaItems( $products, $expire, $tags );
 
-				$view = $context->getView()->set( 'products', $products );
+				$tview = $context->getView()->set( 'products', $products );
+
+				if( !$products->isEmpty() && (bool) $config->get( 'client/html/catalog/lists/stock/enable', true ) === true ) {
+					$tview->itemsStockUrl = $this->getStockUrl( $tview, $products );
+				}
 
 				$pdom = new \DOMDocument( '1.0', 'UTF-8' );
-				$pdom->loadHTML( '<?xml encoding="utf-8" ?>' . $view->render( $template ), LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
+				$pdom->loadHTML( '<?xml encoding="utf-8" ?>' . $tview->render( $template ), LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
 
 				$pnode = $dom->importNode( $pdom->documentElement, true );
 				$node->parentNode->replaceChild( $pnode, $node );

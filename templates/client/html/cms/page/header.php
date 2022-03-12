@@ -7,11 +7,6 @@
 
 $enc = $this->encoder();
 
-$target = $this->config( 'client/html/cms/page/url/target' );
-$cntl = $this->config( 'client/html/cms/page/url/controller', 'cms' );
-$action = $this->config( 'client/html/cms/page/url/action', 'page' );
-$config = $this->config( 'client/html/cms/page/url/config', [] );
-
 
 /** client/html/cms/page/metatags
  * Adds the title, meta and link tags to the HTML header
@@ -38,11 +33,11 @@ $config = $this->config( 'client/html/cms/page/url/config', [] );
 
 		<title><?= $enc->html( strip_tags( $this->pageCmsItem->getName() ) ) ?> | <?= $enc->html( $this->get( 'contextSiteLabel', 'Aimeos' ) ) ?></title>
 
-		<link rel="canonical" href="<?= $enc->attr( $this->url( $target, $cntl, $action, ['path' => $this->pageCmsItem->getUrl()], $config + ['absoluteUri' => true] ) ); ?>" />
+		<link rel="canonical" href="<?= $enc->attr( $this->link( 'client/html/cms/page/url', ['path' => $this->pageCmsItem->getUrl()], ['absoluteUri' => true] ) ); ?>" />
 
 		<meta property="og:type" content="article" />
 		<meta property="og:title" content="<?= $enc->attr( $this->pageCmsItem->getName() ); ?>" />
-		<meta property="og:url" content="<?= $enc->attr( $this->url( $target, $cntl, $action, ['path' => $this->pageCmsItem->getUrl()], $config + ['absoluteUri' => true] ) ); ?>" />
+		<meta property="og:url" content="<?= $enc->attr( $this->link( 'client/html/cms/page/url', ['path' => $this->pageCmsItem->getUrl()], ['absoluteUri' => true] ) ); ?>" />
 
 		<?php foreach( $this->pageCmsItem->getRefItems( 'media', 'default', 'default' ) as $mediaItem ) : ?>
 			<meta property="og:image" content="<?= $enc->attr( $this->content( $mediaItem->getUrl() ) ) ?>" />

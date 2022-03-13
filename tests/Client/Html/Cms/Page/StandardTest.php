@@ -39,7 +39,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$expire = null;
 		$view = $this->view;
 
-		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, ['path' => 'contact'] );
+		$helper = new \Aimeos\Base\View\Helper\Param\Standard( $view, ['path' => 'contact'] );
 		$view->addHelper( 'param', $helper );
 
 		$this->object->setView( $this->object->data( $view, $tags, $expire ) );
@@ -57,7 +57,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$expire = null;
 		$view = $this->view;
 
-		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, ['path' => 'contact'] );
+		$helper = new \Aimeos\Base\View\Helper\Param\Standard( $view, ['path' => 'contact'] );
 		$view->addHelper( 'param', $helper );
 
 		$this->object->setView( $this->object->data( $view, $tags, $expire ) );

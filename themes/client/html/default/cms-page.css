@@ -78,6 +78,12 @@
 	display: none;
 }
 
+.aimeos.cms-page .contact-form .btn {
+	margin: auto;
+	margin-top: 2rem;
+	display: inherit;
+}
+
 .aimeos.cms-page .catalog-list .slider-nav::after,
 .aimeos.cms-page .catalog-list .slider-nav-round .slider-nav::before,
 .aimeos.cms-page .catalog-list .slider-nav-square .slider-nav::before {

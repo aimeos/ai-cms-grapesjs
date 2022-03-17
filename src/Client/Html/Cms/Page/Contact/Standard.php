@@ -42,9 +42,13 @@ class Standard
 	 */
 	public function modify( string $content, string $uid ) : string
 	{
-		$token = !$this->view()->access( ['editor', 'admin', 'super'] ) ? $this->view()->csrf()->formfield() : '';
+		if( !$this->view()->access( ['editor', 'admin', 'super'] ) )
+		{
+			$csrf = $this->view()->csrf();
+			$content = str_replace( ['%csrf.name%', '%csrf.value%'], [$csrf->name(), $csrf->value()], $content );
+		}
 
-		return $this->replaceSection( $content, $token, 'cms.page.contact.csrf' );
+		return $content;
 	}
 
 

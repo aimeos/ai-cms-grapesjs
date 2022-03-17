@@ -112,7 +112,9 @@ class Standard
 		$template = $this->context()->config()->get( 'client/html/cms/page/template-body', 'cms/page/body' );
 		$html = $view->set( 'body', $html )->render( $template );
 
-		return $this->cache( 'body', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
+		$this->cache( 'body', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
+
+		return $this->modify( $html, $uid );
 	}
 
 
@@ -135,7 +137,9 @@ class Standard
 		$template = $this->context()->config()->get( 'client/html/cms/page/template-header', 'cms/page/header' );
 		$html = $view->render( $template );
 
-		return $this->cache( 'header', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
+		$this->cache( 'header', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
+
+		return $this->modify( $html, $uid );
 	}
 
 

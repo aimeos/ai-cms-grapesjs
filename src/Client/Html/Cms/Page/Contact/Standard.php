@@ -71,7 +71,6 @@ class Standard
 		{
 			$context = $this->context();
 			$config = $context->config();
-			$i18n = $context->i18n();
 
 			$toAddr = $config->get( 'resource/email/from-email' );
 			$toName = $config->get( 'resource/email/from-name' );
@@ -83,15 +82,15 @@ class Standard
 				$context->mail()->create()
 					->to( $toAddr, $toName )
 					->from( $email, $name )
-					->subject( $i18n->dt( 'client', 'Your request' ) . ' - ' . $label )
+					->subject( $context->translate( 'client', 'Your request' ) . ' - ' . $label )
 					->text( $msg )
 					->send();
 
-				$error = [$i18n->dt( 'client', 'Message sent successfully' )];
+				$error = [$context->translate( 'client', 'Message sent successfully' )];
 			}
 			else
 			{
-				$error = [$i18n->dt( 'client', 'No recipient configured' )];
+				$error = [$context->translate( 'client', 'No recipient configured' )];
 			}
 
 			$view->errors = array_merge( $view->get( 'errors', [] ), $error );

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-06 11:24+0100\n"
+"POT-Creation-Date: 2022-03-17 17:19+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/aimeos/teams/39015/zh/)\n"
@@ -109,6 +109,10 @@ msgstr ""
 msgid "Invalid characters in class name \"%1$s\""
 msgstr ""
 
+#, php-format
+msgid "Invalid client \"%1$s\""
+msgstr ""
+
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
 " the templates"
@@ -129,6 +133,9 @@ msgstr ""
 msgid "Media properties"
 msgstr ""
 
+msgid "Message sent successfully"
+msgstr ""
+
 msgid "Modified"
 msgstr ""
 
@@ -139,6 +146,9 @@ msgid "New"
 msgstr ""
 
 msgid "No items found"
+msgstr ""
+
+msgid "No recipient configured"
 msgstr ""
 
 msgid "Non-shared properties for the media item"
@@ -235,6 +245,9 @@ msgid "Value"
 msgstr ""
 
 msgid "YYYY-MM-DD hh:mm:ss (optional)"
+msgstr ""
+
+msgid "Your request"
 msgstr ""
 
 #, php-format

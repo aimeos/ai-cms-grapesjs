@@ -15,6 +15,7 @@ return [
 	],
 	'i18n' => [
 		'admin' => 'i18n',
+		'client' => 'i18n',
 	],
 	'config' => [
 		'config',

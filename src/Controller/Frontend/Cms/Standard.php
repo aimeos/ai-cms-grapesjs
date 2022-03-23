@@ -30,9 +30,9 @@ class Standard
 	/**
 	 * Common initialization for controller classes
 	 *
-	 * @param \Aimeos\MShop\Context\Item\Iface $context Common MShop context object
+	 * @param \Aimeos\MShop\ContextIface $context Common MShop context object
 	 */
-	public function __construct( \Aimeos\MShop\Context\Item\Iface $context )
+	public function __construct( \Aimeos\MShop\ContextIface $context )
 	{
 		parent::__construct( $context );
 

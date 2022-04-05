@@ -2,24 +2,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Aimeos, 2022
 # Patrik Szakos <szakos0208@gmail.com>, 2022
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-17 17:19+0100\n"
+"POT-Creation-Date: 2022-04-05 09:19+0200\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Patrik Szakos <szakos0208@gmail.com>, 2022\n"
 "Language-Team: Hungarian (https://www.transifex.com/aimeos/teams/39015/hu/)\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid " "
@@ -91,12 +91,8 @@ msgstr "Dátum vége"
 msgid "ID"
 msgstr "Azonosító"
 
-msgid ""
-"Images will only be shown for that language, useful if the media contains "
-"text or is language sepecific"
-msgstr ""
-"A képek csak az adott nyelven jelennek meg, hasznos, ha a média szöveget "
-"tartalmaz, vagy nyelvspecifikus"
+msgid "Images will only be shown for that language, useful if the media contains text or is language sepecific"
+msgstr "A képek csak az adott nyelven jelennek meg, hasznos, ha a média szöveget tartalmaz, vagy nyelvspecifikus"
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Új bejegyzés beiktatása (Ctrl+I)"
@@ -115,12 +111,8 @@ msgstr ""
 msgid "Invalid client \"%1$s\""
 msgstr ""
 
-msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
-msgstr ""
-"Az egyes tételekre vonatkozó konfigurációs beállítások kulcs/érték párokként"
-" állnak rendelkezésre a sablonokban"
+msgid "Item specific configuration options, will be available as key/value pairs in the templates"
+msgstr "Az egyes tételekre vonatkozó konfigurációs beállítások kulcs/érték párokként állnak rendelkezésre a sablonokban"
 
 msgid "Label"
 msgstr "Címke"
@@ -164,12 +156,8 @@ msgstr "Opció"
 msgid "Order of the types in the frontend"
 msgstr "A frontend típusainak sorrendje"
 
-msgid ""
-"Page title, will be used on the web site if no title for the language is "
-"available"
-msgstr ""
-"Az oldal címe, akkor kerül felhasználásra a webhelyen, ha a nyelvhez nem áll"
-" rendelkezésre cím"
+msgid "Page title, will be used on the web site if no title for the language is available"
+msgstr "Az oldal címe, akkor kerül felhasználásra a webhelyen, ha a nyelvhez nem áll rendelkezésre cím"
 
 msgid "Please select"
 msgstr "Kérem válasszon"

@@ -8,12 +8,12 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": "~7.1||~8.0",
-		"aimeos/aimeos-core": "dev-master",
-		"aimeos/ai-admin-jqadm": "dev-master",
-		"aimeos/ai-admin-jsonadm": "dev-master",
-		"aimeos/ai-client-html": "dev-master",
-		"aimeos/ai-client-jsonapi": "dev-master",
-		"aimeos/ai-controller-frontend": "dev-master"
+		"aimeos/aimeos-core": "~2022.04",
+		"aimeos/ai-admin-jqadm": "~2022.04",
+		"aimeos/ai-admin-jsonadm": "~2022.04",
+		"aimeos/ai-client-html": "~2022.04",
+		"aimeos/ai-client-jsonapi": "~2022.04",
+		"aimeos/ai-controller-frontend": "~2022.04"
 	},
 	"autoload": {
 		"psr-4": {

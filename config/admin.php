@@ -15,7 +15,7 @@ return [
 		],
 		'navbar' => [
 			45 => 'cms',
-			70 => [
+			80 => [
 				45 => 'type/cms/lists'
 			]
 		],

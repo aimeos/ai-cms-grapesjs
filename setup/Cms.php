@@ -30,7 +30,7 @@ class Cms extends Base
 	 */
 	public function up()
 	{
-		$this->info( 'Creating CMS tables', 'v' );
+		$this->info( 'Creating CMS tables', 'vv' );
 		$db = $this->db( 'db-cms' );
 
 		foreach( $this->paths( 'default/schema/cms.php' ) as $filepath )

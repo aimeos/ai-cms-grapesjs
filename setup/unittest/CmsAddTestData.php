@@ -30,7 +30,7 @@ class CmsAddTestData extends BaseAddTestData
 	 */
 	public function up()
 	{
-		$this->info( 'Adding cms test data', 'v' );
+		$this->info( 'Adding cms test data', 'vv' );
 
 		$context = $this->context();
 		$editor = $context->editor();

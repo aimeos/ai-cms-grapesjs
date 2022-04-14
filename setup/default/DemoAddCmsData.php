@@ -49,7 +49,7 @@ class DemoAddCmsData extends MShopAddDataAbstract
 		}
 
 
-		$this->info( 'Processing CMS demo data', 'v' );
+		$this->info( 'Processing CMS demo data', 'vv' );
 
 		$domains = ['media', 'text'];
 		$manager = \Aimeos\MShop::create( $context, 'cms' );

@@ -35,7 +35,7 @@ class MShopAddTypeDataCms extends MShopAddTypeData
 		$editor = $context->editor();
 		$sitecode = $this->context()->locale()->getSiteItem()->getCode();
 
-		$this->info( sprintf( 'Adding CMS type data for site "%1$s"', $sitecode ), 'v' );
+		$this->info( sprintf( 'Adding CMS type data for site "%1$s"', $sitecode ), 'vv' );
 
 		$context->setEditor( 'ai-cms-grapesjs:lib/custom' );
 

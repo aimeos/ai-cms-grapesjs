@@ -33,7 +33,7 @@ $enc = $this->encoder();
 
 ?>
 <div class="catalog-list swiffy-slider slider-nav-outside">
-	<div class="catalog-list-items slider-container">
+	<div class="catalog-list-items product-list slider-container">
 
 		<?= $this->partial(
 			$this->config( 'client/html/common/partials/products', 'common/partials/products' ),

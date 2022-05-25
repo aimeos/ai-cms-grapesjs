@@ -96,7 +96,7 @@ Aimeos.CMSContent = {
 					}
 				}
 			},
-			canvasCSS: `
+			canvasCss: `
 				::-webkit-scrollbar {
 					background-color: var(--bs-bg, #f8fafc); width: 0.25rem;
 				}

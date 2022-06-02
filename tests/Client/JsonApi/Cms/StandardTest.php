@@ -27,6 +27,12 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
+	protected function tearDown() : void
+	{
+		unset( $this->object, $this->view, $this->context );
+	}
+
+
 	public function testGetItem()
 	{
 		$manager = \Aimeos\MShop::create( $this->context, 'cms' );

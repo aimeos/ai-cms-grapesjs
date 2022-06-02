@@ -19,7 +19,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$this->context = \TestHelper::context();
 
-		$manager = \Aimeos\MShop\Cms\Manager\Factory::create( $this->context );
+		$manager = \Aimeos\MShop::create( $this->context, 'cms' );
 		$listManager = $manager->getSubManager( 'lists' );
 
 		$this->object = $listManager->getSubManager( 'type' );

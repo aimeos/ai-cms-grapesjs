@@ -31,7 +31,7 @@ class CmsAddTestData extends BaseAddTestData
 	public function up()
 	{
 		$this->info( 'Adding cms test data', 'vv' );
-		$context = $this->context()->setEditor( 'ai-cms-grapesjs:lib/custom' );
+		$this->context()->setEditor( 'ai-cms-grapesjs' );
 
 		$this->process( $this->getData() );
 	}

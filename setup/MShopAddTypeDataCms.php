@@ -21,7 +21,7 @@ class MShopAddTypeDataCms extends MShopAddTypeData
 	 */
 	public function after() : array
 	{
-		return ['TablesCreateCms', 'MShopSetLocale', 'MShopAddTypeData'];
+		return ['Cms', 'MShopSetLocale', 'MShopAddTypeData'];
 	}
 
 

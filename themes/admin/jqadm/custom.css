@@ -216,3 +216,103 @@
 	display: block;
 	margin: auto;
 }
+
+.fa.fa-desktop::before {
+	content: "\F6A6";
+}
+
+.fa.fa-tablet::before {
+	content: "\F5AD";
+}
+
+.fa.fa-mobile::before {
+	content: "\F4E7";
+}
+
+.fa.fa-eye::before {
+	content: "\F341";
+}
+
+.fa.fa-arrows-alt::before {
+	content: "\F14D";
+}
+
+.fa.fa-undo::before {
+	content: "\F117";
+}
+
+.fa.fa-repeat::before {
+	content: "\F116";
+}
+
+.fa.fa-code::before {
+	content: "\F2C6";
+}
+
+.fa.fa-upload::before {
+	content: "\F603";
+}
+
+.fa.fa-trash::before {
+	content: "\F5DE";
+}
+
+.fa.fa-cog::before {
+	content: "\F3E5";
+}
+
+.fa.fa-paint-brush::before {
+	content: "\F1D8";
+}
+
+.fa.fa-bars::before {
+	content: "\F45B";
+}
+
+.fa.fa-th-large::before {
+	content: "\F3FB";
+}
+
+.fa.fa-header::before {
+	content: "\F5F1";
+}
+
+.fa.fa-font::before {
+	content: "\F3DA";
+}
+
+.fa.fa-paragraph::before {
+	content: "\F4B4";
+}
+
+.fa.fa-external-link::before {
+	content: "\F1C5";
+}
+
+.fa.fa-link::before {
+	content: "\F470";
+}
+
+.fa.fa-picture-o::before {
+	content: "\F42A";
+}
+
+.fa.fa-youtube-play::before {
+	content: "\F62B";
+}
+
+.fa.fa-film::before {
+	content: "\F155";
+}
+
+.fa.fa-table::before {
+	content: "\F5AA";
+}
+
+.fa.fa-cubes::before {
+	content: "\F685";
+}
+
+.fa.fa-envelope-o::before {
+	content: "\F32F";
+}

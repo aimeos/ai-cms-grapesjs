@@ -87,7 +87,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$return = $this->object->setUrl( '/Äpfel/Birnen' );
 
 		$this->assertInstanceOf( \Aimeos\MShop\Cms\Item\Iface::class, $return );
-		$this->assertEquals( '/Apfel/Birnen', $this->object->getUrl() );
+		$this->assertEquals( '/apfel/birnen', $this->object->getUrl() );
 		$this->assertTrue( $this->object->isModified() );
 	}
 

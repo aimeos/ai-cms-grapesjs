@@ -19,9 +19,9 @@ return [
 			$table->smallint( 'status' );
 			$table->meta();
 
-			$table->unique( ['siteid', 'url'], 'unq_mscms_sid_url' );
+			$table->unique( ['url', 'siteid'], 'unq_mscms_url_sid' );
+			$table->index( ['label', 'siteid'], 'unq_mscms_label_sid' );
 			$table->index( ['siteid', 'status'], 'unq_mscms_sid_status' );
-			$table->index( ['siteid', 'label'], 'unq_mscms_sid_label' );
 		},
 
 		'mshop_cms_list_type' => function( \Aimeos\Upscheme\Schema\Table $table ) {
@@ -37,10 +37,10 @@ return [
 			$table->smallint( 'status' );
 			$table->meta();
 
-			$table->unique( ['siteid', 'domain', 'code'], 'unq_mscmslity_sid_dom_code' );
-			$table->index( ['siteid', 'status', 'pos'], 'idx_mscmslity_sid_status_pos' );
-			$table->index( ['siteid', 'label'], 'idx_mscmslity_sid_label' );
-			$table->index( ['siteid', 'code'], 'idx_mscmslity_sid_code' );
+			$table->unique( ['domain', 'code', 'siteid'], 'unq_mscmslity_dom_code_sid' );
+			$table->index( ['status', 'siteid', 'pos'], 'idx_mscmslity_status_sid_pos' );
+			$table->index( ['label', 'siteid'], 'idx_mscmslity_label_sid' );
+			$table->index( ['code', 'siteid'], 'idx_mscmslity_code_sid' );
 		},
 
 		'mshop_cms_list' => function( \Aimeos\Upscheme\Schema\Table $table ) {
@@ -60,7 +60,7 @@ return [
 			$table->smallint( 'status' );
 			$table->meta();
 
-			$table->unique( ['parentid', 'domain', 'siteid', 'type', 'refid'], 'unq_mscmsli_pid_dm_sid_ty_rid' );
+			$table->unique( ['parentid', 'domain', 'type', 'refid', 'siteid'], 'unq_mscmsli_pid_dm_ty_rid_sid' );
 			$table->index( ['key', 'siteid'], 'idx_mscmsli_key_sid' );
 			$table->index( ['parentid'], 'fk_mscmsli_pid' );
 

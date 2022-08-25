@@ -8,7 +8,7 @@ return [
 					'delete' => array(
 						'ansi' => '
 							DELETE FROM "mshop_cms_list_type"
-							WHERE :cond AND siteid = ?
+							WHERE :cond AND siteid LIKE ?
 						'
 					),
 					'insert' => array(
@@ -123,7 +123,7 @@ return [
 				'delete' => array(
 					'ansi' => '
 						DELETE FROM "mshop_cms_list"
-						WHERE :cond AND siteid = ?
+						WHERE :cond AND siteid LIKE ?
 					'
 				),
 				'insert' => array(
@@ -214,7 +214,7 @@ return [
 			'delete' => array(
 				'ansi' => '
 					DELETE FROM "mshop_cms"
-					WHERE :cond AND siteid = ?
+					WHERE :cond AND siteid LIKE ?
 				'
 			),
 			'insert' => array(

@@ -217,6 +217,22 @@
 	margin: auto;
 }
 
+.fa.fa-arrow-up::before {
+	content: "\F148";
+}
+
+.fa.fa-arrows::before {
+	content: "\F14E";
+}
+
+.fa.fa-clone::before {
+	content: "\F3C2";
+}
+
+.fa.fa-trash::before {
+	content: "\F5DE";
+}
+
 .fa.fa-desktop::before {
 	content: "\F6A6";
 }

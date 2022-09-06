@@ -67,7 +67,7 @@ class Standard
 		$msg = $view->param( 'contact/message' );
 		$honeypot = $view->param( 'contact/url' );
 
-		if( !$honeypot && $name && $email && $msg )
+		if( !$honeypot && $email && $msg )
 		{
 			$context = $this->context();
 			$config = $context->config();

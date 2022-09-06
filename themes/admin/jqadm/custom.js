@@ -359,7 +359,7 @@ Aimeos.CMSContent = {
 					<!-- cms.page.contact.csrf -->
 					<div class="form-group row contact-name">
 						<label class="col-sm-4 form-control-label">Name</label>
-						<div class="col-sm-8"><input class="form-control" name="contact[name]" required /></div>
+						<div class="col-sm-8"><input class="form-control" name="contact[name]" /></div>
 					</div>
 					<div class="form-group row contact-email">
 						<label class="col-sm-4 form-control-label">E-Mail</label>

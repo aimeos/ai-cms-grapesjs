@@ -86,14 +86,14 @@ class Standard
 					->text( $msg )
 					->send();
 
-				$error = [$context->translate( 'client', 'Message sent successfully' )];
+				$info = [$context->translate( 'client', 'Message sent successfully' )];
+				$view->infos = array_merge( $view->get( 'infos', [] ), $info );
 			}
 			else
 			{
 				$error = [$context->translate( 'client', 'No recipient configured' )];
+				$view->errors = array_merge( $view->get( 'errors', [] ), $error );
 			}
-
-			$view->errors = array_merge( $view->get( 'errors', [] ), $error );
 		}
 	}
 }

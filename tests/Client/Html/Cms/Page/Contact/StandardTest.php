@@ -42,6 +42,8 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testInit()
 	{
+		$this->context->config()->set( 'resource/email/from-email', 'rcpt@localhost' );
+
 		$view = $this->view;
 		$param = [
 			'contact' => [
@@ -57,7 +59,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 		$this->object->init();
 
-		$this->assertEquals( 1, count( $view->infos ) );
+		$this->assertEquals( 1, count( $view->get( 'infos', [] ) ) );
 		$this->assertEquals( 0, count( $view->get( 'errors', [] ) ) );
 	}
 
@@ -103,7 +105,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 		$this->object->init();
 
-		$this->assertEquals( 1, count( $view->errors ) );
+		$this->assertEquals( 1, count( $view->get( 'errors', [] ) ) );
 		$this->assertEquals( 0, count( $view->get( 'infos', [] ) ) );
 	}
 }

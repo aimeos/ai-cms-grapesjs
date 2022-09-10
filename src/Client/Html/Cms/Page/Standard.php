@@ -138,6 +138,10 @@ class Standard
 
 		$view = $this->view = $this->view ?? $this->object()->data( $this->view(), $this->tags, $this->expire );
 
+		if( !isset( $view->pageCmsItem ) ) {
+			return '';
+		}
+
 		$html = '';
 		foreach( $this->getSubClients() as $subclient ) {
 			$html .= $subclient->setView( $view )->body( $uid );
@@ -168,6 +172,11 @@ class Standard
 		}
 
 		$view = $this->view = $this->view ?? $this->object()->data( $this->view(), $this->tags, $this->expire );
+
+		if( !isset( $view->pageCmsItem ) ) {
+			return '';
+		}
+
 		$template = $this->context()->config()->get( 'client/html/cms/page/template-header', 'cms/page/header' );
 		$html = $view->render( $template );
 

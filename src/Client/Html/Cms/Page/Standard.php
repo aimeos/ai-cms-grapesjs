@@ -132,7 +132,9 @@ class Standard
 		$confkey = 'client/html/cms/page';
 		$prefixes = ['path'];
 
-		if( $html = $this->cached( 'body', $uid, $prefixes, $confkey ) ) {
+		$path = $this->view()->request()->getUri()->getPath();
+
+		if( $html = $this->cached( 'body', $uid . '-' . $path, $prefixes, $confkey ) ) {
 			return $this->modify( $html, $uid );
 		}
 
@@ -164,10 +166,11 @@ class Standard
 	 */
 	public function header( string $uid = '' ) : ?string
 	{
+		$path = $this->view()->request()->getUri()->getPath();
 		$confkey = 'client/html/cms/page';
 		$prefixes = ['page'];
 
-		if( $html = $this->cached( 'header', $uid, $prefixes, $confkey ) ) {
+		if( $html = $this->cached( 'header', $uid . '-' . $path, $prefixes, $confkey ) ) {
 			return $this->modify( $html, $uid );
 		}
 

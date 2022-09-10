@@ -11,13 +11,16 @@
 
 
 $enc = $this->encoder();
+$entries = $this->get( 'pageContent', [] );
 
 
 ?>
-<section class="aimeos cms-page container-fluid" data-jsonurl="<?= $enc->attr( $this->link( 'client/jsonapi/url' ) ); ?>">
+<?php if( !empty( $entries ) ) : ?>
+	<section class="aimeos cms-page container-fluid" data-jsonurl="<?= $enc->attr( $this->link( 'client/jsonapi/url' ) ); ?>">
 
-	<?php foreach( $this->get( 'pageContent', [] ) as $content ) : ?>
-		<?= $content ?>
-	<?php endforeach ?>
+		<?php foreach( $entries as $content ) : ?>
+			<?= $content ?>
+		<?php endforeach ?>
 
-</section>
+	</section>
+<?php endif ?>

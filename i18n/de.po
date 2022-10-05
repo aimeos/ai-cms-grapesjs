@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-05 09:19+0200\n"
+"POT-Creation-Date: 2022-10-05 07:41+0200\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2022\n"
 "Language-Team: German (https://www.transifex.com/aimeos/teams/39015/de/)\n"
@@ -36,6 +36,9 @@ msgstr "Alle"
 msgid "Basic"
 msgstr "Basis"
 
+msgid "Bulk edit"
+msgstr ""
+
 msgid "CMS Lists Type"
 msgstr "CMS-Listentyp"
 
@@ -47,6 +50,9 @@ msgstr "CMS Seite"
 
 msgid "CMS pages"
 msgstr "CMS Seiten"
+
+msgid "Close"
+msgstr ""
 
 msgid "Code"
 msgstr "Schlüssel"
@@ -80,6 +86,10 @@ msgstr "Domäne"
 
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Eintrag duplizieren (Strg+D)"
+
+#, fuzzy
+msgid "Edit"
+msgstr "Bearbeiter"
 
 msgid "Editor"
 msgstr "Bearbeiter"
@@ -128,6 +138,9 @@ msgstr "Listentyp"
 msgid "Media properties"
 msgstr "Medieneigenschaften"
 
+msgid "Menu"
+msgstr ""
+
 msgid "Message sent successfully"
 msgstr "Nachricht erfolgreich versandt"
 
@@ -170,6 +183,9 @@ msgstr "Eigenschaftswert (benötigt)"
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
 msgstr "Notwendiger Parameter \"%1$s\" fehlt"
+
+msgid "Save"
+msgstr ""
 
 msgid "Second level type for grouping items"
 msgstr "Zweiter Typ zur Gruppierung von Einträgen"
@@ -258,6 +274,10 @@ msgstr "Medien"
 #, php-format
 msgid "property"
 msgstr "Eigenschaften"
+
+#, fuzzy
+msgid "selected"
+msgstr "Datei auswählen"
 
 #, php-format
 msgid "seo"

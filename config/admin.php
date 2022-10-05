@@ -2,6 +2,11 @@
 
 return [
 	'jqadm' => [
+		'domains' => [
+			'cms' => 'cms'
+		],
+	],
+	'jqadm' => [
 		'cms' => [
 			'domains' => [
 				'text' => 'text',

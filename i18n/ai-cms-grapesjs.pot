@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-05 09:19+0200\n"
+"POT-Creation-Date: 2022-10-05 07:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,6 +32,9 @@ msgstr ""
 msgid "Basic"
 msgstr ""
 
+msgid "Bulk edit"
+msgstr ""
+
 msgid "CMS Lists Type"
 msgstr ""
 
@@ -42,6 +45,9 @@ msgid "CMS page"
 msgstr ""
 
 msgid "CMS pages"
+msgstr ""
+
+msgid "Close"
 msgstr ""
 
 msgid "Code"
@@ -75,6 +81,9 @@ msgid "Domain"
 msgstr ""
 
 msgid "Duplicate entry (Ctrl+D)"
+msgstr ""
+
+msgid "Edit"
 msgstr ""
 
 msgid "Editor"
@@ -124,6 +133,9 @@ msgstr ""
 msgid "Media properties"
 msgstr ""
 
+msgid "Menu"
+msgstr ""
+
 msgid "Message sent successfully"
 msgstr ""
 
@@ -165,6 +177,9 @@ msgstr ""
 
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
+msgstr ""
+
+msgid "Save"
 msgstr ""
 
 msgid "Second level type for grouping items"
@@ -253,6 +268,9 @@ msgstr ""
 
 #, php-format
 msgid "property"
+msgstr ""
+
+msgid "selected"
 msgstr ""
 
 #, php-format

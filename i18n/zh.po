@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-05 09:19+0200\n"
+"POT-Creation-Date: 2022-10-05 07:41+0200\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/aimeos/teams/39015/zh/)\n"
@@ -37,6 +37,9 @@ msgstr ""
 msgid "Basic"
 msgstr ""
 
+msgid "Bulk edit"
+msgstr ""
+
 msgid "CMS Lists Type"
 msgstr ""
 
@@ -47,6 +50,9 @@ msgid "CMS page"
 msgstr ""
 
 msgid "CMS pages"
+msgstr ""
+
+msgid "Close"
 msgstr ""
 
 msgid "Code"
@@ -81,6 +87,10 @@ msgstr ""
 
 msgid "Duplicate entry (Ctrl+D)"
 msgstr ""
+
+#, fuzzy
+msgid "Edit"
+msgstr "編輯器"
 
 msgid "Editor"
 msgstr "編輯器"
@@ -129,6 +139,9 @@ msgstr ""
 msgid "Media properties"
 msgstr ""
 
+msgid "Menu"
+msgstr ""
+
 msgid "Message sent successfully"
 msgstr ""
 
@@ -170,6 +183,9 @@ msgstr ""
 
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
+msgstr ""
+
+msgid "Save"
 msgstr ""
 
 msgid "Second level type for grouping items"
@@ -258,6 +274,9 @@ msgstr ""
 
 #, php-format
 msgid "property"
+msgstr ""
+
+msgid "selected"
 msgstr ""
 
 #, php-format

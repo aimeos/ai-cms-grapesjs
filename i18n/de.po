@@ -2,10 +2,10 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Aimeos, 2022
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -15,10 +15,10 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2022\n"
 "Language-Team: German (https://www.transifex.com/aimeos/teams/39015/de/)\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid " "
@@ -37,7 +37,7 @@ msgid "Basic"
 msgstr "Basis"
 
 msgid "Bulk edit"
-msgstr ""
+msgstr "Mehrfachänderungen"
 
 msgid "CMS Lists Type"
 msgstr "CMS-Listentyp"
@@ -52,7 +52,7 @@ msgid "CMS pages"
 msgstr "CMS Seiten"
 
 msgid "Close"
-msgstr ""
+msgstr "Schließen"
 
 msgid "Code"
 msgstr "Schlüssel"
@@ -79,7 +79,8 @@ msgid "Delete this entry"
 msgstr "Eintrag löschen"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr "Beschreibung des Inhalts falls er in einer anderen Sprache geschrieben ist"
+msgstr ""
+"Beschreibung des Inhalts falls er in einer anderen Sprache geschrieben ist"
 
 msgid "Domain"
 msgstr "Domäne"
@@ -87,9 +88,8 @@ msgstr "Domäne"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Eintrag duplizieren (Strg+D)"
 
-#, fuzzy
 msgid "Edit"
-msgstr "Bearbeiter"
+msgstr "Ändern"
 
 msgid "Editor"
 msgstr "Bearbeiter"
@@ -100,8 +100,12 @@ msgstr "Enddatum"
 msgid "ID"
 msgstr "ID"
 
-msgid "Images will only be shown for that language, useful if the media contains text or is language sepecific"
-msgstr "Bilder werden nur für diese Sprache angezeigt. Ist nützlich falls das Bild Text beinhaltet oder spezifisch für eine Sprache ist"
+msgid ""
+"Images will only be shown for that language, useful if the media contains "
+"text or is language sepecific"
+msgstr ""
+"Bilder werden nur für diese Sprache angezeigt. Ist nützlich falls das Bild "
+"Text beinhaltet oder spezifisch für eine Sprache ist"
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Eintrag hinzufügen (Strg+I)"
@@ -120,8 +124,12 @@ msgstr "Klassenname \"%1$s\" enthält unerlaubte Zeichen"
 msgid "Invalid client \"%1$s\""
 msgstr "Unbekannter Client \"%1$s\""
 
-msgid "Item specific configuration options, will be available as key/value pairs in the templates"
-msgstr "Konfigurationsoptionen spezifisch für diesen Eintrag, sind in den Templates als Schlüssel/Wert Paare verfügbar"
+msgid ""
+"Item specific configuration options, will be available as key/value pairs in"
+" the templates"
+msgstr ""
+"Konfigurationsoptionen spezifisch für diesen Eintrag, sind in den Templates "
+"als Schlüssel/Wert Paare verfügbar"
 
 msgid "Label"
 msgstr "Bezeichnung"
@@ -139,7 +147,7 @@ msgid "Media properties"
 msgstr "Medieneigenschaften"
 
 msgid "Menu"
-msgstr ""
+msgstr "Menü"
 
 msgid "Message sent successfully"
 msgstr "Nachricht erfolgreich versandt"
@@ -168,8 +176,12 @@ msgstr "Option"
 msgid "Order of the types in the frontend"
 msgstr "Reihenfolge der Typen im Frontend"
 
-msgid "Page title, will be used on the web site if no title for the language is available"
-msgstr "Seitentitel, der auf der Webseite ausgegeben wird, wenn kein sprachspezifischer Titel verfügbar ist"
+msgid ""
+"Page title, will be used on the web site if no title for the language is "
+"available"
+msgstr ""
+"Seitentitel, der auf der Webseite ausgegeben wird, wenn kein "
+"sprachspezifischer Titel verfügbar ist"
 
 msgid "Please select"
 msgstr "Bitte wählen"
@@ -185,7 +197,7 @@ msgid "Required parameter \"%1$s\" is missing"
 msgstr "Notwendiger Parameter \"%1$s\" fehlt"
 
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 msgid "Second level type for grouping items"
 msgstr "Zweiter Typ zur Gruppierung von Einträgen"
@@ -209,10 +221,14 @@ msgid "Status"
 msgstr "Status"
 
 msgid "The item is only shown on the web site after that date and time"
-msgstr "Dieser Eintrag wird auf der Webseite erst nach dem Datum und der Uhrzeit angezeigt"
+msgstr ""
+"Dieser Eintrag wird auf der Webseite erst nach dem Datum und der Uhrzeit "
+"angezeigt"
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr "Dieser Eintrag wird auf der Webseite bis zu dem Datum und der Uhrzeit angezeigt"
+msgstr ""
+"Dieser Eintrag wird auf der Webseite bis zu dem Datum und der Uhrzeit "
+"angezeigt"
 
 msgid "The media title is used for the title tag of the media on the web site"
 msgstr "Wird für den Titel des Bildes auf der Webseite verwendet"
@@ -275,9 +291,8 @@ msgstr "Medien"
 msgid "property"
 msgstr "Eigenschaften"
 
-#, fuzzy
 msgid "selected"
-msgstr "Datei auswählen"
+msgstr "ausgewählt"
 
 #, php-format
 msgid "seo"

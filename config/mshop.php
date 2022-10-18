@@ -27,7 +27,7 @@ return [
 							SET :names
 								"code" = ?, "domain" = ?, "label" = ?, "pos" = ?,
 								"status" = ?, "mtime" = ?, "editor" = ?
-							WHERE "siteid" = ? AND "id" = ?
+							WHERE "siteid" LIKE ? AND "id" = ?
 						'
 					),
 					'search' => array(
@@ -142,7 +142,7 @@ return [
 						SET :names
 							"parentid"=?, "key" = ?, "type" = ?, "domain" = ?, "refid" = ?, "start" = ?,
 							"end" = ?, "config" = ?, "pos" = ?, "status" = ?, "mtime" = ?, "editor" = ?
-						WHERE "siteid" = ? AND "id" = ?
+						WHERE "siteid" LIKE ? AND "id" = ?
 					'
 				),
 				'search' => array(
@@ -231,7 +231,7 @@ return [
 					UPDATE "mshop_cms"
 					SET :names
 						"url" = ?, "label" = ?, "status" = ?, "mtime" = ?, "editor" = ?
-					WHERE "siteid" = ? AND "id" = ?
+					WHERE "siteid" LIKE ? AND "id" = ?
 				'
 			),
 			'search' => array(

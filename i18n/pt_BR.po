@@ -1,0 +1,313 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Keite Clembet, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-05 07:41+0200\n"
+"PO-Revision-Date: 2022-03-06 10:23+0000\n"
+"Last-Translator: Keite Clembet, 2022\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/aimeos/teams/39015/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+msgid " "
+msgstr " "
+
+msgid "Add"
+msgstr "Adicionar"
+
+msgid "Advanced"
+msgstr "Avançado"
+
+msgid "All"
+msgstr "Todos"
+
+msgid "Basic"
+msgstr "Básico"
+
+msgid "Bulk edit"
+msgstr "Edição em massa"
+
+msgid "CMS Lists Type"
+msgstr "Tipo de Listas CMS"
+
+msgid "CMS Lists Types"
+msgstr "Tipos de Listas CMS"
+
+msgid "CMS page"
+msgstr "Página CMS"
+
+msgid "CMS pages"
+msgstr "Páginas CMS"
+
+msgid "Close"
+msgstr "Fechar"
+
+msgid "Code"
+msgstr "Código"
+
+msgid "Columns"
+msgstr "Colunas"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Copy this entry"
+msgstr "Copiar este registro"
+
+msgid "Created"
+msgstr "Criado"
+
+msgid "Delete"
+msgstr "Excluir"
+
+msgid "Delete selected entries"
+msgstr "Excluir registros selecionados"
+
+msgid "Delete this entry"
+msgstr "Excluir este registri"
+
+msgid "Description of the text content if it's in a foreign language"
+msgstr "Descrição do conteúdo do texto se estiver em um idioma estrangeiro"
+
+msgid "Domain"
+msgstr "Domínio"
+
+msgid "Duplicate entry (Ctrl+D)"
+msgstr "Duplicar registro (Ctrl+D)"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Editor"
+msgstr "Editor"
+
+msgid "End date"
+msgstr "Data final"
+
+msgid "ID"
+msgstr "ID"
+
+msgid ""
+"Images will only be shown for that language, useful if the media contains "
+"text or is language sepecific"
+msgstr ""
+"As imagens serão mostradas apenas para esse idioma, útil se a mídia contiver"
+" texto ou for específico do idioma"
+
+msgid "Insert new entry (Ctrl+I)"
+msgstr "Inserir novo registro (Ctrl+I)"
+
+msgid "Internal name (required)"
+msgstr "Nome interno (obrigatório)"
+
+msgid "Internal type name shown in the administration interface"
+msgstr "Nome interno do tipo mostrado na interface de administração"
+
+#, php-format
+msgid "Invalid characters in class name \"%1$s\""
+msgstr "Caracteres inválidos no nome da classe \"%1$s\""
+
+#, php-format
+msgid "Invalid client \"%1$s\""
+msgstr "Cliente \"%1$s\" inválido"
+
+msgid ""
+"Item specific configuration options, will be available as key/value pairs in"
+" the templates"
+msgstr ""
+"As opções de configuração específicas do item estarão disponíveis como pares"
+" de chave/valor nos templates/modelos"
+
+msgid "Label"
+msgstr "Rótulo"
+
+msgid "Language"
+msgstr "Idioma"
+
+msgid "Language of the entered text"
+msgstr "Idioma do texto digitado"
+
+msgid "List type"
+msgstr "Tipo de Lista"
+
+msgid "Media properties"
+msgstr "Propriedades de Mídia"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Message sent successfully"
+msgstr "Mensagem enviada com sucesso"
+
+msgid "Modified"
+msgstr "Modificado"
+
+msgid "Move this entry up/down"
+msgstr "Mover este registro para cima/para baixo"
+
+msgid "New"
+msgstr "Novo"
+
+msgid "No items found"
+msgstr "Nenhum item encontrado"
+
+msgid "No recipient configured"
+msgstr "Nenhum destinatário configurado"
+
+msgid "Non-shared properties for the media item"
+msgstr "Propriedades não compartilhadas para o item de mídia"
+
+msgid "Option"
+msgstr "Opção"
+
+msgid "Order of the types in the frontend"
+msgstr "Ordem dos tipos no frontend"
+
+msgid ""
+"Page title, will be used on the web site if no title for the language is "
+"available"
+msgstr ""
+"Título da página, será usado no site se nenhum título para o idioma estiver "
+"disponível"
+
+msgid "Please select"
+msgstr "Por favor selecione"
+
+msgid "Position"
+msgstr "Posição"
+
+msgid "Property value (required)"
+msgstr "Valor da Propriedade (obrigatório)"
+
+#, php-format
+msgid "Required parameter \"%1$s\" is missing"
+msgstr "O parâmetro obrigatório \"%1$s\" está faltando"
+
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Second level type for grouping items"
+msgstr "Tipo de segundo nível para agrupar itens"
+
+msgid "Select file"
+msgstr "Selecione o arquivo"
+
+msgid "Show search form"
+msgstr "Exibe o formulário de pesquisa"
+
+msgid "Show/hide advanced data"
+msgstr "Exibe/oculta os dados avançados"
+
+msgid "Show/hide this entry"
+msgstr "Exibir/ocultar este registro"
+
+msgid "Start date"
+msgstr "Data de início"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "The item is only shown on the web site after that date and time"
+msgstr "O item só é exibido no site após essa data e hora"
+
+msgid "The item is only shown on the web site until that date and time"
+msgstr "O item só é exibido no site até essa data e hora"
+
+msgid "The media title is used for the title tag of the media on the web site"
+msgstr "O título da mídia é usado para o rótulo de título da mídia no site"
+
+msgid "Title"
+msgstr "Título"
+
+msgid "Translate text"
+msgstr "Traduzir texto"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Type position (optional)"
+msgstr "Posição do tipo (opcional)"
+
+msgid "Types for additional images like icons"
+msgstr "Tipos para imagens adicionais, como ícones"
+
+msgid "Types for additional texts like per one lb/kg or per month"
+msgstr "Tipos para textos adicionais como por kg/lb ou por mês"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Unique page URL (required)"
+msgstr "URL exclusiva da página (obrigatório)"
+
+msgid "Unique page URL, e.g. \"/page-name\""
+msgstr "URL exclusiva de página, ex \"/nome-da-pagina\""
+
+msgid "Unique type code"
+msgstr "Código único do tipo"
+
+msgid "Unique type code (required)"
+msgstr "Código único do tipo (obrigatório)"
+
+msgid "Value"
+msgstr "Valor"
+
+msgid "YYYY-MM-DD hh:mm:ss (optional)"
+msgstr "AAAA-MM-DD hh:mm:ss (opcional)"
+
+msgid "Your request"
+msgstr "Sua requisição"
+
+#, php-format
+msgid "cms"
+msgstr "cms"
+
+#, php-format
+msgid "content"
+msgstr "conteúdo"
+
+#, php-format
+msgid "media"
+msgstr "media"
+
+#, php-format
+msgid "property"
+msgstr "propriedade"
+
+msgid "selected"
+msgstr "selecionado"
+
+#, php-format
+msgid "seo"
+msgstr "seo"
+
+msgid "status:-1"
+msgstr "status:-1"
+
+msgid "status:-2"
+msgstr "status:-2"
+
+msgid "status:0"
+msgstr "status:0"
+
+msgid "status:1"
+msgstr "status:1"
+
+msgid "text"
+msgstr "texto"
+
+#, php-format
+msgid "type/cms/lists"
+msgstr "Lista CMS"

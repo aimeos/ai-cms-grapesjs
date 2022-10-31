@@ -33,26 +33,26 @@ $enc = $this->encoder();
 
 		<title><?= $enc->html( strip_tags( $this->pageCmsItem->getName() ) ) ?> | <?= $enc->html( $this->get( 'contextSiteLabel', 'Aimeos' ) ) ?></title>
 
-		<link rel="canonical" href="<?= $enc->attr( $this->link( 'client/html/cms/page/url', ['path' => $this->pageCmsItem->getUrl()], ['absoluteUri' => true] ) ); ?>" />
+		<link rel="canonical" href="<?= $enc->attr( $this->link( 'client/html/cms/page/url', ['path' => $this->pageCmsItem->getUrl()], ['absoluteUri' => true] ) ); ?>">
 
-		<meta property="og:type" content="article" />
-		<meta property="og:title" content="<?= $enc->attr( $this->pageCmsItem->getName() ); ?>" />
-		<meta property="og:url" content="<?= $enc->attr( $this->link( 'client/html/cms/page/url', ['path' => $this->pageCmsItem->getUrl()], ['absoluteUri' => true] ) ); ?>" />
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="<?= $enc->attr( $this->pageCmsItem->getName() ); ?>">
+		<meta property="og:url" content="<?= $enc->attr( $this->link( 'client/html/cms/page/url', ['path' => $this->pageCmsItem->getUrl()], ['absoluteUri' => true] ) ); ?>">
 
 		<?php foreach( $this->pageCmsItem->getRefItems( 'media', 'default', 'default' ) as $mediaItem ) : ?>
-			<meta property="og:image" content="<?= $enc->attr( $this->content( $mediaItem->getUrl() ) ) ?>" />
+			<meta property="og:image" content="<?= $enc->attr( $this->content( $mediaItem->getUrl() ) ) ?>">
 		<?php endforeach ?>
 
 		<?php foreach( $this->pageCmsItem->getRefItems( 'text', 'meta-description', 'default' ) as $textItem ) : ?>
-			<meta property="og:description" content="<?= $enc->attr( $textItem->getContent() ) ?>" />
-			<meta name="description" content="<?= $enc->attr( strip_tags( $textItem->getContent() ) ); ?>" />
+			<meta property="og:description" content="<?= $enc->attr( $textItem->getContent() ) ?>">
+			<meta name="description" content="<?= $enc->attr( strip_tags( $textItem->getContent() ) ); ?>">
 		<?php endforeach ?>
 
 		<?php foreach( $this->pageCmsItem->getRefItems( 'text', 'meta-keyword', 'default' ) as $textItem ) : ?>
-			<meta name="keywords" content="<?= $enc->attr( strip_tags( $textItem->getContent() ) ); ?>" />
+			<meta name="keywords" content="<?= $enc->attr( strip_tags( $textItem->getContent() ) ); ?>">
 		<?php endforeach; ?>
 
-		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:card" content="summary_large_image">
 
 	<?php endif; ?>
 

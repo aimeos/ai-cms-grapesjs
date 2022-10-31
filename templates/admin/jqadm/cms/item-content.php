@@ -65,7 +65,7 @@ $enc = $this->encoder();
 						v-bind:aria-labelledby="'item-text-group-item-' + idx" role="tabpanel" class="card-block collapse row">
 
 						<input type="hidden" v-model="item['text.id']"
-							v-bind:name="`<?= $enc->js( $this->formparam( array( 'content', '_idx_', 'text.id' ) ) ) ?>`.replace('_idx_', idx)" />
+							v-bind:name="`<?= $enc->js( $this->formparam( array( 'content', '_idx_', 'text.id' ) ) ) ?>`.replace('_idx_', idx)">
 
 						<div class="col-xl-6">
 
@@ -116,7 +116,7 @@ $enc = $this->encoder();
 							<?php else : ?>
 								<input class="text-langid" type="hidden"
 									v-bind:name="`<?= $enc->js( $this->formparam( array( 'content', '_idx_', 'text.languageid' ) ) ) ?>`.replace('_idx_', idx)"
-									value="<?= $enc->attr( $languages->getCode()->first() ) ?>" />
+									value="<?= $enc->attr( $languages->getCode()->first() ) ?>">
 							<?php endif ?>
 
 						</div>
@@ -162,7 +162,7 @@ $enc = $this->encoder();
 							<?php else : ?>
 								<input class="listitem-type" type="hidden"
 									v-bind:name="`<?= $enc->js( $this->formparam( array( 'content', '_idx_', 'cms.lists.type' ) ) ) ?>`.replace('_idx_', idx)"
-									value="<?= $enc->attr( $listTypes->getCode()->first() ) ?>" />
+									value="<?= $enc->attr( $listTypes->getCode()->first() ) ?>">
 							<?php endif ?>
 
 							<div class="form-group row optional">
@@ -173,7 +173,7 @@ $enc = $this->encoder();
 										placeholder="<?= $enc->attr( $this->translate( 'admin', 'YYYY-MM-DD hh:mm:ss (optional)' ) ) ?>"
 										v-bind:disabled="item['cms.lists.siteid'] != siteid"
 										v-bind:config="Aimeos.flatpickr.datetime"
-										v-model="item['cms.lists.datestart']" />
+										v-model="item['cms.lists.datestart']">
 								</div>
 								<div class="col-sm-12 form-text text-muted help-text">
 									<?= $enc->html( $this->translate( 'admin', 'The item is only shown on the web site after that date and time' ) ) ?>
@@ -187,7 +187,7 @@ $enc = $this->encoder();
 										placeholder="<?= $enc->attr( $this->translate( 'admin', 'YYYY-MM-DD hh:mm:ss (optional)' ) ) ?>"
 										v-bind:disabled="item['cms.lists.siteid'] != siteid"
 										v-bind:config="Aimeos.flatpickr.datetime"
-										v-model="item['cms.lists.dateend']" />
+										v-model="item['cms.lists.dateend']">
 								</div>
 								<div class="col-sm-12 form-text text-muted help-text">
 									<?= $enc->html( $this->translate( 'admin', 'The item is only shown on the web site until that date and time' ) ) ?>

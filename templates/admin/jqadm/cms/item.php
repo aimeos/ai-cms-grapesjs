@@ -52,10 +52,10 @@ $params = $this->get( 'pageParams', [] );
 	data-idname="<?= $this->formparam( 'id' ) ?>" >
 
 	<input id="item-id" type="hidden" name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.id' ) ) ) ?>"
-		value="<?= $enc->attr( $this->get( 'itemData/cms.id' ) ) ?>" />
+		value="<?= $enc->attr( $this->get( 'itemData/cms.id' ) ) ?>">
 	<input id="item-parentid" type="hidden" name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.parentid' ) ) ) ?>"
-		value="<?= $enc->attr( $this->get( 'itemData/cms.parentid', $this->param( 'parentid', $this->param( 'id', $this->get( 'itemRootId' ) ) ) ) ) ?>" />
-	<input id="item-next" type="hidden" name="<?= $enc->attr( $this->formparam( array( 'next' ) ) ) ?>" value="get" />
+		value="<?= $enc->attr( $this->get( 'itemData/cms.parentid', $this->param( 'parentid', $this->param( 'id', $this->get( 'itemRootId' ) ) ) ) ) ?>">
+	<input id="item-next" type="hidden" name="<?= $enc->attr( $this->formparam( array( 'next' ) ) ) ?>" value="get">
 	<?= $this->csrf()->formfield() ?>
 
 	<nav class="main-navbar">
@@ -155,7 +155,7 @@ $params = $this->get( 'pageParams', [] );
 													name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.url' ) ) ) ?>"
 													placeholder="<?= $enc->attr( $this->translate( 'admin', 'Unique page URL (required)' ) ) ?>"
 													value="<?= $enc->attr( $this->get( 'itemData/cms.url' ) ) ?>"
-													<?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ) ?> />
+													<?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ) ?>>
 											</div>
 											<div class="col-sm-12 form-text text-muted help-text">
 												<?= $enc->html( $this->translate( 'admin', 'Unique page URL, e.g. "/page-name"' ) ) ?>
@@ -168,7 +168,7 @@ $params = $this->get( 'pageParams', [] );
 													name="<?= $this->formparam( array( 'item', 'cms.label' ) ) ?>"
 													placeholder="<?= $enc->attr( $this->translate( 'admin', 'Internal name (required)' ) ) ?>"
 													value="<?= $enc->attr( $this->get( 'itemData/cms.label' ) ) ?>"
-													<?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ) ?> />
+													<?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ) ?>>
 											</div>
 											<div class="col-sm-12 form-text text-muted help-text">
 												<?= $enc->html( $this->translate( 'admin', 'Page title, will be used on the web site if no title for the language is available' ) ) ?>

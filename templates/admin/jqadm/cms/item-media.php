@@ -178,7 +178,7 @@ $enc = $this->encoder();
 									<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'List type' ) ) ?></label>
 									<div class="col-sm-8">
 										<select is="select-component" required class="form-select listitem-type" tabindex="<?= $this->get( 'tabindex' ) ?>"
-											v-bind:items="<?= $enc->attr( $listTypes->col( 'cms.lists.type.label', 'cms.lists.type.code' )->toArray() ) ?>)"
+											v-bind:items="<?= $enc->attr( $listTypes->col( 'cms.lists.type.label', 'cms.lists.type.code' )->toArray() ) ?>"
 											v-bind:name="`<?= $enc->js( $this->formparam( ['media', '_idx_', 'cms.lists.type'] ) ) ?>`.replace('_idx_', idx)"
 											v-bind:text="`<?= $enc->js( $this->translate( 'admin', 'Please select' ) ) ?>`"
 											v-bind:readonly="item['cms.lists.siteid'] != siteid"

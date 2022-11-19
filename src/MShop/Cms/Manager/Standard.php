@@ -282,7 +282,7 @@ class Standard
 	 * @param bool $fetch True if the new ID should be returned in the item
 	 * @return \Aimeos\MShop\Cms\Item\Iface Updated item including the generated ID
 	 */
-	public function saveItem( \Aimeos\MShop\Cms\Item\Iface $item, bool $fetch = true ) : \Aimeos\MShop\Cms\Item\Iface
+	protected function saveItem( \Aimeos\MShop\Cms\Item\Iface $item, bool $fetch = true ) : \Aimeos\MShop\Cms\Item\Iface
 	{
 		if( !$item->isModified() ) {
 			return $item;

@@ -285,7 +285,7 @@ class Standard
 	protected function saveItem( \Aimeos\MShop\Cms\Item\Iface $item, bool $fetch = true ) : \Aimeos\MShop\Cms\Item\Iface
 	{
 		if( !$item->isModified() ) {
-			return $item;
+			return $this->saveListItems( $item, 'cms', $fetch );
 		}
 
 		$context = $this->context();

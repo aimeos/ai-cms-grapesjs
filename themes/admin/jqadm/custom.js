@@ -793,7 +793,7 @@ Aimeos.CMSContent = {
 		if (!document.querySelector(el)) return false;
 
 		Aimeos.components['cms-content'] = new Vue({
-			el: '#item-content-group',
+			el: el,
 			data: {
 				items: [],
 				media: [],

@@ -3,3 +3,4 @@ coveralls.json
 coverage.xml
 *.log
 *.ser
+.idea/

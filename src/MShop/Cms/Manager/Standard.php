@@ -217,9 +217,7 @@ class Standard
 	public function __construct( \Aimeos\MShop\ContextIface $context )
 	{
 		parent::__construct( $context );
-
 		$this->setResourceName( 'db-cms' );
-		$this->languageId = $context->locale()->getLanguageId();
 
 		$level = \Aimeos\MShop\Locale\Manager\Base::SITE_ONE;
 		$level = $context->config()->get( 'mshop/cms/manager/sitemode', $level );

@@ -130,7 +130,7 @@ class Standard
 		 * @see client/html/cms#page
 		 */
 		$confkey = 'client/html/cms/page';
-		$prefixes = ['path'];
+		$prefixes = [];
 
 		$path = $this->view()->request()->getUri()->getPath();
 
@@ -152,7 +152,7 @@ class Standard
 		$template = $this->context()->config()->get( 'client/html/cms/page/template-body', 'cms/page/body' );
 		$html = $view->set( 'body', $html )->render( $template );
 
-		$this->cache( 'body', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
+		$this->cache( 'body', $uid . '-' . $path, $prefixes, $confkey, $html, $this->tags, $this->expire );
 
 		return $this->modify( $html, $uid );
 	}
@@ -168,7 +168,7 @@ class Standard
 	{
 		$path = $this->view()->request()->getUri()->getPath();
 		$confkey = 'client/html/cms/page';
-		$prefixes = ['page'];
+		$prefixes = [];
 
 		if( $html = $this->cached( 'header', $uid . '-' . $path, $prefixes, $confkey ) ) {
 			return $this->modify( $html, $uid );
@@ -183,7 +183,7 @@ class Standard
 		$template = $this->context()->config()->get( 'client/html/cms/page/template-header', 'cms/page/header' );
 		$html = $view->render( $template );
 
-		$this->cache( 'header', $uid, $prefixes, $confkey, $html, $this->tags, $this->expire );
+		$this->cache( 'header', $uid . '-' . $path, $prefixes, $confkey, $html, $this->tags, $this->expire );
 
 		return $this->modify( $html, $uid );
 	}

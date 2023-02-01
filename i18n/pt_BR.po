@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Aimeos, 2022
+# Keite Clembet, 2022
 # 
 #, fuzzy
 msgid ""
@@ -13,295 +13,301 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-07 11:38+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Aimeos, 2022\n"
-"Language-Team: Bulgarian (https://www.transifex.com/aimeos/teams/39015/bg/)\n"
+"Last-Translator: Keite Clembet, 2022\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/aimeos/teams/39015/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: bg\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid " "
-msgstr ""
+msgstr " "
 
 msgid "Add"
-msgstr ""
+msgstr "Adicionar"
 
 msgid "Advanced"
-msgstr ""
+msgstr "Avançado"
 
 msgid "All"
-msgstr ""
+msgstr "Todos"
 
 msgid "Basic"
-msgstr ""
+msgstr "Básico"
 
 msgid "Bulk edit"
-msgstr ""
+msgstr "Edição em massa"
 
 msgid "CMS Lists Type"
-msgstr ""
+msgstr "Tipo de Listas CMS"
 
 msgid "CMS Lists Types"
-msgstr ""
+msgstr "Tipos de Listas CMS"
 
 msgid "CMS page"
-msgstr ""
+msgstr "Página CMS"
 
 msgid "CMS pages"
-msgstr ""
+msgstr "Páginas CMS"
 
 msgid "Close"
-msgstr ""
+msgstr "Fechar"
 
 msgid "Code"
-msgstr ""
+msgstr "Código"
 
 msgid "Columns"
-msgstr ""
+msgstr "Colunas"
 
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 msgid "Copy this entry"
-msgstr ""
+msgstr "Copiar este registro"
 
 msgid "Created"
-msgstr ""
+msgstr "Criado"
 
 msgid "Delete"
-msgstr ""
+msgstr "Excluir"
 
 msgid "Delete selected entries"
-msgstr ""
+msgstr "Excluir registros selecionados"
 
 msgid "Delete this entry"
-msgstr "Изтрийте записа"
+msgstr "Excluir este registri"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr ""
+msgstr "Descrição do conteúdo do texto se estiver em um idioma estrangeiro"
 
 msgid "Domain"
-msgstr ""
+msgstr "Domínio"
 
 msgid "Duplicate entry (Ctrl+D)"
-msgstr ""
+msgstr "Duplicar registro (Ctrl+D)"
 
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 msgid "Editor"
-msgstr ""
+msgstr "Editor"
 
 msgid "End date"
-msgstr ""
+msgstr "Data final"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
 msgstr ""
+"As imagens serão mostradas apenas para esse idioma, útil se a mídia contiver"
+" texto ou for específico do idioma"
 
 msgid "Insert new entry (Ctrl+I)"
-msgstr "Въведете нов запис (Ctrl+I)"
+msgstr "Inserir novo registro (Ctrl+I)"
 
 msgid "Internal name (required)"
-msgstr ""
+msgstr "Nome interno (obrigatório)"
 
 msgid "Internal type name shown in the administration interface"
-msgstr ""
+msgstr "Nome interno do tipo mostrado na interface de administração"
 
 #, php-format
 msgid "Invalid characters in class name \"%1$s\""
-msgstr ""
+msgstr "Caracteres inválidos no nome da classe \"%1$s\""
 
 #, php-format
 msgid "Invalid client \"%1$s\""
-msgstr ""
+msgstr "Cliente \"%1$s\" inválido"
 
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
 " the templates"
 msgstr ""
+"As opções de configuração específicas do item estarão disponíveis como pares"
+" de chave/valor nos templates/modelos"
 
 msgid "Label"
-msgstr ""
+msgstr "Rótulo"
 
 msgid "Language"
-msgstr ""
+msgstr "Idioma"
 
 msgid "Language of the entered text"
-msgstr ""
+msgstr "Idioma do texto digitado"
 
 msgid "List type"
-msgstr ""
+msgstr "Tipo de Lista"
 
 msgid "Media properties"
-msgstr ""
+msgstr "Propriedades de Mídia"
 
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 msgid "Message sent successfully"
-msgstr ""
+msgstr "Mensagem enviada com sucesso"
 
 msgid "Modified"
-msgstr ""
+msgstr "Modificado"
 
 msgid "Move this entry up/down"
-msgstr ""
+msgstr "Mover este registro para cima/para baixo"
 
 msgid "New"
-msgstr ""
+msgstr "Novo"
 
 msgid "No items found"
-msgstr ""
+msgstr "Nenhum item encontrado"
 
 msgid "No recipient configured"
-msgstr ""
+msgstr "Nenhum destinatário configurado"
 
 msgid "Non-shared properties for the media item"
-msgstr ""
+msgstr "Propriedades não compartilhadas para o item de mídia"
 
 msgid "Option"
-msgstr ""
+msgstr "Opção"
 
 msgid "Order of the types in the frontend"
-msgstr ""
+msgstr "Ordem dos tipos no frontend"
 
 msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
+"Título da página, será usado no site se nenhum título para o idioma estiver "
+"disponível"
 
 msgid "Please select"
-msgstr ""
+msgstr "Por favor selecione"
 
 msgid "Position"
-msgstr ""
+msgstr "Posição"
 
 msgid "Property value (required)"
-msgstr ""
+msgstr "Valor da Propriedade (obrigatório)"
 
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
-msgstr ""
+msgstr "O parâmetro obrigatório \"%1$s\" está faltando"
 
 msgid "Save"
-msgstr ""
+msgstr "Salvar"
 
 msgid "Second level type for grouping items"
-msgstr ""
+msgstr "Tipo de segundo nível para agrupar itens"
 
 msgid "Select file"
-msgstr ""
+msgstr "Selecione o arquivo"
 
 msgid "Show search form"
-msgstr ""
+msgstr "Exibe o formulário de pesquisa"
 
 msgid "Show/hide advanced data"
-msgstr ""
+msgstr "Exibe/oculta os dados avançados"
 
 msgid "Show/hide this entry"
-msgstr ""
+msgstr "Exibir/ocultar este registro"
 
 msgid "Start date"
-msgstr ""
+msgstr "Data de início"
 
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 msgid "The item is only shown on the web site after that date and time"
-msgstr ""
+msgstr "O item só é exibido no site após essa data e hora"
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr ""
+msgstr "O item só é exibido no site até essa data e hora"
 
 msgid "The media title is used for the title tag of the media on the web site"
-msgstr ""
+msgstr "O título da mídia é usado para o rótulo de título da mídia no site"
 
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 msgid "Translate text"
-msgstr ""
+msgstr "Traduzir texto"
 
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 msgid "Type position (optional)"
-msgstr ""
+msgstr "Posição do tipo (opcional)"
 
 msgid "Types for additional images like icons"
-msgstr ""
+msgstr "Tipos para imagens adicionais, como ícones"
 
 msgid "Types for additional texts like per one lb/kg or per month"
-msgstr ""
+msgstr "Tipos para textos adicionais como por kg/lb ou por mês"
 
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 msgid "Unique page URL (required)"
-msgstr ""
+msgstr "URL exclusiva da página (obrigatório)"
 
 msgid "Unique page URL, e.g. \"/page-name\""
-msgstr ""
+msgstr "URL exclusiva de página, ex \"/nome-da-pagina\""
 
 msgid "Unique type code"
-msgstr ""
+msgstr "Código único do tipo"
 
 msgid "Unique type code (required)"
-msgstr ""
+msgstr "Código único do tipo (obrigatório)"
 
 msgid "Value"
-msgstr ""
+msgstr "Valor"
 
 msgid "YYYY-MM-DD hh:mm:ss (optional)"
-msgstr ""
+msgstr "AAAA-MM-DD hh:mm:ss (opcional)"
 
 msgid "Your request"
-msgstr ""
+msgstr "Sua requisição"
 
 #, php-format
 msgid "cms"
-msgstr ""
+msgstr "cms"
 
 #, php-format
 msgid "content"
-msgstr ""
+msgstr "conteúdo"
 
 #, php-format
 msgid "media"
-msgstr ""
+msgstr "media"
 
 #, php-format
 msgid "property"
-msgstr ""
+msgstr "propriedade"
 
 msgid "selected"
-msgstr ""
+msgstr "selecionado"
 
 #, php-format
 msgid "seo"
-msgstr ""
+msgstr "seo"
 
 msgid "status:-1"
-msgstr ""
+msgstr "status:-1"
 
 msgid "status:-2"
-msgstr ""
+msgstr "status:-2"
 
 msgid "status:0"
-msgstr ""
+msgstr "status:0"
 
 msgid "status:1"
-msgstr ""
+msgstr "status:1"
 
 msgid "text"
-msgstr ""
+msgstr "texto"
 
 #, php-format
 msgid "type/cms/lists"
-msgstr ""
+msgstr "Lista CMS"

@@ -1,10 +1,34 @@
 <?php
 
 return [
-	'jqadm' => [
-		'domains' => [
-			'cms' => 'cms'
-		],
+	'graphql' => [
+		'resource' => [
+			'cms' => [
+				/** admin/graphql/resource/attribute/delete
+				 * List of user groups that are allowed to delete attribute items
+				 *
+				 * @param array List of user group names
+				 * @since 2022.10
+				 */
+				'delete' => ['admin', 'editor', 'super'],
+
+				/** admin/graphql/resource/attribute/save
+				 * List of user groups that are allowed to create and update attribute items
+				 *
+				 * @param array List of user group names
+				 * @since 2022.10
+				 */
+				'save' => ['admin', 'editor', 'super'],
+
+				/** admin/graphql/resource/attribute/get
+				 * List of user groups that are allowed to retrieve attribute items
+				 *
+				 * @param array List of user group names
+				 * @since 2022.10
+				 */
+				'get' => ['admin', 'editor', 'super'],
+			]
+		]
 	],
 	'jqadm' => [
 		'cms' => [

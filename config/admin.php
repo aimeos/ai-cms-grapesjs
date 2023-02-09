@@ -45,5 +45,16 @@ return [
 		]
 	],
 	'jsonadm' => [
+		'resource' => [
+			'cms' => [
+				/** admin/jqadm/resource/cms/groups
+				 * List of user groups that are allowed to access the CMS panel
+				 *
+				 * @param array List of user group names
+				 * @since 2021.04
+				 */
+				'groups' => ['admin', 'editor', 'super'],
+			],
+		]
 	],
 ];

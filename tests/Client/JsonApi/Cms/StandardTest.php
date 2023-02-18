@@ -123,7 +123,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$object = $this->getMockBuilder( \Aimeos\Client\JsonApi\Cms\Standard::class )
 			->setConstructorArgs( [$this->context, 'cms'] )
-			->setMethods( ['getItems'] )
+			->onlyMethods( ['getItems'] )
 			->getMock();
 
 		$object->expects( $this->once() )->method( 'getItems' )
@@ -144,7 +144,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	{
 		$object = $this->getMockBuilder( \Aimeos\Client\JsonApi\Cms\Standard::class )
 			->setConstructorArgs( [$this->context, 'cms'] )
-			->setMethods( ['getItems'] )
+			->onlyMethods( ['getItems'] )
 			->getMock();
 
 		$object->expects( $this->once() )->method( 'getItems' )

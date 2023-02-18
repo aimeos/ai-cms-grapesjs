@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<phpunit bootstrap="bootstrap.php">
-	<testsuites>
-		<testsuite name="MShop suite">
-			<directory>MShop/</directory>
-		</testsuite>
-		<testsuite name="Controller suite">
-			<directory>Controller/</directory>
-		</testsuite>
-		<testsuite name="Admin JQAdm suite">
-			<directory>Admin/</directory>
-		</testsuite>
-		<testsuite name="Client HTML suite">
-			<directory>Client/</directory>
-		</testsuite>
-		<testsuite name="Client JSON API suite">
-			<directory>Client/</directory>
-		</testsuite>
-	</testsuites>
-	<filter>
-		<whitelist>
-			<directory suffix=".php">../src</directory>
-		</whitelist>
-	</filter>
-	<logging>
-		<log type="coverage-clover" target="coverage.xml"/>
-	</logging>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="bootstrap.php" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.0/phpunit.xsd" cacheDirectory=".phpunit.cache">
+  <coverage>
+    <include>
+      <directory suffix=".php">../src</directory>
+    </include>
+    <report>
+      <clover outputFile="coverage.xml"/>
+    </report>
+  </coverage>
+  <testsuites>
+    <testsuite name="MShop suite">
+      <directory>MShop/</directory>
+    </testsuite>
+    <testsuite name="Controller suite">
+      <directory>Controller/</directory>
+    </testsuite>
+    <testsuite name="Admin JQAdm suite">
+      <directory>Admin/</directory>
+    </testsuite>
+    <testsuite name="Client HTML suite">
+      <directory>Client/</directory>
+    </testsuite>
+    <testsuite name="Client JSON API suite">
+      <directory>Client/</directory>
+    </testsuite>
+  </testsuites>
+  <logging/>
 </phpunit>

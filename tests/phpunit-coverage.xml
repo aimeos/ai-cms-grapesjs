@@ -25,5 +25,4 @@
       <directory>Client/</directory>
     </testsuite>
   </testsuites>
-  <logging/>
 </phpunit>

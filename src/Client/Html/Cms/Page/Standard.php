@@ -88,12 +88,12 @@ class Standard
 	 * @since 2021.04
 	 * @category Developer
 	 */
-	private $subPartPath = 'client/html/cms/page/subparts';
-	private $subPartNames = ['contact', 'cataloglist'];
+	private string $subPartPath = 'client/html/cms/page/subparts';
+	private array $subPartNames = ['contact', 'cataloglist'];
 
-	private $tags = [];
-	private $expire;
-	private $view;
+	private array $tags = [];
+	private ?string $expire = null;
+	private ?\Aimeos\Base\View\Iface $view = null;
 
 
 	/**

@@ -21,7 +21,7 @@ abstract class Base
 	extends \Aimeos\Controller\Frontend\Base
 	implements \Aimeos\Controller\Frontend\Common\Decorator\Iface, \Aimeos\Controller\Frontend\Cms\Iface
 {
-	private $controller;
+	private \Aimeos\Controller\Frontend\Cms\Iface $controller;
 
 
 	/**
@@ -34,8 +34,7 @@ abstract class Base
 	{
 		parent::__construct( $context );
 
-		$iface = \Aimeos\Controller\Frontend\Cms\Iface::class;
-		$this->controller = \Aimeos\Utils::implements( $controller, $iface );
+		$this->controller = $controller;
 	}
 
 

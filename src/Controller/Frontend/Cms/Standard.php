@@ -131,10 +131,10 @@ class Standard
 	 */
 
 
-	private $conditions = [];
-	private $domains = [];
-	private $filter;
-	private $manager;
+	private array $domains = [];
+	private array $conditions = [];
+	private \Aimeos\Base\Criteria\Iface $filter;
+	private \Aimeos\MShop\Common\Manager\Iface $manager;
 
 
 	/**

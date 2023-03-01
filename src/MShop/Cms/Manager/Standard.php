@@ -135,7 +135,7 @@ class Standard
 	use \Aimeos\MShop\Common\Manager\ListsRef\Traits;
 
 
-	private $searchConfig = array(
+	private array $searchConfig = array(
 		'cms.id' => array(
 			'code' => 'cms.id',
 			'internalcode' => 'mcms."id"',

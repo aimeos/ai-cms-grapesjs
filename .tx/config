@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[aimeos-extensions.ai-cms-grapesjs]
+[o:aimeos:p:aimeos-extensions:r:ai-cms-grapesjs]
 file_filter = i18n/<lang>.po
 source_file = i18n/ai-cms-grapesjs.pot
 source_lang = en

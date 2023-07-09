@@ -47,7 +47,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 		$this->assertStringContainsString( '<title>Contact page | Aimeos</title>', $output );
 		$this->assertEquals( null, $expire );
-		$this->assertEquals( 0, count( $tags ) );
+		$this->assertEquals( 1, count( $tags ) );
 	}
 
 
@@ -67,7 +67,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->assertStringContainsString( '<h1>Hello!</h1>', $output );
 
 		$this->assertEquals( null, $expire );
-		$this->assertEquals( 0, count( $tags ) );
+		$this->assertEquals( 1, count( $tags ) );
 	}
 
 

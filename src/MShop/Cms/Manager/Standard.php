@@ -285,6 +285,23 @@ class Standard
 
 
 	/**
+	 * Adds or updates an item object or a list of them.
+	 *
+	 * @param \Aimeos\Map|\Aimeos\MShop\Common\Item\Iface[]|\Aimeos\MShop\Common\Item\Iface $items Item or list of items whose data should be saved
+	 * @param bool $fetch True if the new ID should be returned in the item
+	 * @return \Aimeos\Map|\Aimeos\MShop\Common\Item\Iface Saved item or items
+	 */
+	public function save( $items, bool $fetch = true )
+	{
+		$items = parent::save( $items, $fetch );
+
+		$this->context()->cache()->deleteByTags( map( $items )->getId()->prefix( 'cms-' ) );
+
+		return $items;
+	}
+
+
+	/**
 	 * Updates or adds a cms item object.
 	 * This method doesn't update the type string that belongs to the type ID
 	 *

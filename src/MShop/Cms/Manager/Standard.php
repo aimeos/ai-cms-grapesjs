@@ -140,8 +140,7 @@ class Standard
 			'code' => 'cms.id',
 			'internalcode' => 'mcms."id"',
 			'label' => 'ID',
-			'type' => 'integer',
-			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_INT,
+			'type' => 'int',
 			'public' => false,
 		),
 		'cms.siteid' => array(
@@ -149,7 +148,6 @@ class Standard
 			'internalcode' => 'mcms."siteid"',
 			'label' => 'Site ID',
 			'type' => 'string',
-			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_STR,
 			'public' => false,
 		),
 		'cms.url' => array(
@@ -157,28 +155,24 @@ class Standard
 			'internalcode' => 'mcms."url"',
 			'label' => 'Type',
 			'type' => 'string',
-			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_STR,
 		),
 		'cms.label' => array(
 			'code' => 'cms.label',
 			'internalcode' => 'mcms."label"',
 			'label' => 'Label',
 			'type' => 'string',
-			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_STR,
 		),
 		'cms.status' => array(
 			'code' => 'cms.status',
 			'internalcode' => 'mcms."status"',
 			'label' => 'Status',
-			'type' => 'integer',
-			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_INT,
+			'type' => 'int',
 		),
 		'cms.ctime' => array(
 			'code' => 'cms.ctime',
 			'internalcode' => 'mcms."ctime"',
 			'label' => 'create date/time',
 			'type' => 'datetime',
-			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_STR,
 			'public' => false,
 		),
 		'cms.mtime' => array(
@@ -186,7 +180,6 @@ class Standard
 			'internalcode' => 'mcms."mtime"',
 			'label' => 'modify date/time',
 			'type' => 'datetime',
-			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_STR,
 			'public' => false,
 		),
 		'cms.editor' => array(
@@ -194,7 +187,6 @@ class Standard
 			'internalcode' => 'mcms."editor"',
 			'label' => 'editor',
 			'type' => 'string',
-			'internaltype' => \Aimeos\Base\DB\Statement\Base::PARAM_STR,
 			'public' => false,
 		),
 		'cms:has' => array(
@@ -203,7 +195,6 @@ class Standard
 			'internaldeps' => ['LEFT JOIN "mshop_cms_list" AS mcmsli ON ( mcmsli."parentid" = mcms."id" )'],
 			'label' => 'Cms has list item, parameter(<domain>[,<list type>[,<reference ID>)]]',
 			'type' => 'null',
-			'internaltype' => 'null',
 			'public' => false,
 		),
 	);
@@ -404,7 +395,7 @@ class Standard
 		$stmt = $this->getCachedStatement( $conn, $path, $sql );
 
 		foreach( $columns as $name => $entry ) {
-			$stmt->bind( $idx++, $item->get( $name ), $entry->getInternalType() );
+			$stmt->bind( $idx++, $item->get( $name ), \Aimeos\Base\Criteria\SQL::type( $entry->getType() ) );
 		}
 
 		$stmt->bind( $idx++, $item->getUrl() );

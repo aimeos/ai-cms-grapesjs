@@ -774,11 +774,7 @@ class Standard
 	 */
 	public function filter( ?bool $default = false, bool $site = false ) : \Aimeos\Base\Criteria\Iface
 	{
-		if( $default === true ) {
-			return $this->filterBase( 'cms' );
-		}
-
-		return parent::filter();
+		return $this->filterBase( 'cms', $default );
 	}
 
 

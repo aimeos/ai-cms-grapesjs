@@ -14,10 +14,10 @@ return [
 					'insert' => array(
 						'ansi' => '
 							INSERT INTO "mshop_cms_list_type" ( :names
-								"code", "domain", "label", "pos", "status",
-								"mtime", "editor", "siteid", "ctime"
+								"code", "domain", "label", "i18n", "pos", "status",
+								"mtime","editor", "siteid", "ctime"
 							) VALUES ( :values
-								?, ?, ?, ?, ?, ?, ?, ?, ?
+								?, ?, ?, ?, ?, ?, ?, ?, ?, ?
 							)
 						'
 					),
@@ -25,8 +25,8 @@ return [
 						'ansi' => '
 							UPDATE "mshop_cms_list_type"
 							SET :names
-								"code" = ?, "domain" = ?, "label" = ?, "pos" = ?,
-								"status" = ?, "mtime" = ?, "editor" = ?
+								"code" = ?, "domain" = ?, "label" = ?, "i18n" = ?,
+								"pos" = ?, "status" = ?, "mtime" = ?, "editor" = ?
 							WHERE "siteid" LIKE ? AND "id" = ?
 						'
 					),
@@ -37,7 +37,8 @@ return [
 								mcmslity."code" AS "cms.lists.type.code", mcmslity."domain" AS "cms.lists.type.domain",
 								mcmslity."label" AS "cms.lists.type.label", mcmslity."status" AS "cms.lists.type.status",
 								mcmslity."mtime" AS "cms.lists.type.mtime", mcmslity."editor" AS "cms.lists.type.editor",
-								mcmslity."ctime" AS "cms.lists.type.ctime", mcmslity."pos" AS "cms.lists.type.position"
+								mcmslity."ctime" AS "cms.lists.type.ctime", mcmslity."pos" AS "cms.lists.type.position",
+								mcmslity."i18n" AS "cms.lists.type.i18n"
 							FROM "mshop_cms_list_type" AS mcmslity
 							:joins
 							WHERE :cond
@@ -50,7 +51,8 @@ return [
 								mcmslity."code" AS "cms.lists.type.code", mcmslity."domain" AS "cms.lists.type.domain",
 								mcmslity."label" AS "cms.lists.type.label", mcmslity."status" AS "cms.lists.type.status",
 								mcmslity."mtime" AS "cms.lists.type.mtime", mcmslity."editor" AS "cms.lists.type.editor",
-								mcmslity."ctime" AS "cms.lists.type.ctime", mcmslity."pos" AS "cms.lists.type.position"
+								mcmslity."ctime" AS "cms.lists.type.ctime", mcmslity."pos" AS "cms.lists.type.position",
+								mcmslity."i18n" AS "cms.lists.type.i18n"
 							FROM "mshop_cms_list_type" AS mcmslity
 							:joins
 							WHERE :cond

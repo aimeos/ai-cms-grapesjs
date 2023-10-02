@@ -114,9 +114,13 @@ class Standard
 					->slice( 0, $limit )
 					->search();
 
+				$articles = $products->getRefItems( 'product', 'default', 'default' )->flat( 1 )->union( $products );
+				$attrMap = $articles->getRefItems( 'attribute' )->flat( 1 )->groupBy( 'attribute.type' );
+				$attrTypes = $this->attributeTypes( $attrMap->keys() );
+
 				$this->addMetaItems( $products, $expire, $tags );
 
-				$tview = $context->view()->set( 'products', $products );
+				$tview = $context->view()->set( 'products', $products )->set( 'attributeTypes', $attrTypes );
 
 				if( !$products->isEmpty() && (bool) $config->get( 'client/html/catalog/lists/stock/enable', true ) === true ) {
 					$tview->itemsStockUrl = $this->getStockUrl( $tview, $products );
@@ -137,5 +141,24 @@ class Standard
 		$view->pageContent = $texts;
 
 		return parent::data( $view, $tags, $expire );
+	}
+
+
+	/**
+	 * Returns the attribute type items for the given codes
+	 *
+	 * @param \Aimeos\Map $codes List of attribute type codes
+	 * @return \Aimeos\Map List of attribute type items
+	 */
+	protected function attributeTypes( \Aimeos\Map $codes ) : \Aimeos\Map
+	{
+		$manager = \Aimeos\MShop::create( $this->context(), 'attribute/type' );
+
+		$filter = $manager->filter( true )
+			->add( 'attribute.type.domain', '==', 'product' )
+			->add( 'attribute.type.code', '==', $codes )
+			->order( 'attribute.type.position' );
+
+		return $manager->search( $filter->slice( 0, count( $codes ) ) );
 	}
 }

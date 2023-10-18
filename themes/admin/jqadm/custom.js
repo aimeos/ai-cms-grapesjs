@@ -485,11 +485,13 @@ Aimeos.CMSContent = {
 								'data-gjs-name': 'Row'
 							},
 							components: model => {
+								const widths = [...model.props().widths || []];
 								const cols = model.props().cols || 1;
 								let result = '';
 
 								for(let i=0; i<cols; i++) {
-									result += '<div class="col" data-gjs-draggable=".row" data-gjs-name="Column"></div>';
+									const size = widths.shift();
+									result += '<div class="col' + (size ? '-' + size : '') + '" data-gjs-draggable=".row" data-gjs-name="Column"></div>';
 								}
 								return result;
 							},
@@ -525,15 +527,12 @@ Aimeos.CMSContent = {
 						},
 						onBreakpointChange() {
 							const bsclass = this.getAttributes()['data-break'] || 'col';
+							const widths = [...this.props().widths || []];
 
-							this.attributes.components.models.forEach(function(item, idx) {
-								if(item.attributes.tagName === 'div') {
-									item.removeClass('col');
-									item.removeClass('col-sm');
-									item.removeClass('col-md');
-									item.removeClass('col-lg');
-									item.removeClass('col-xl');
-									item.addClass(bsclass);
+							this.attributes.components.models.forEach(function(model, idx) {
+								if(model.attributes.tagName === 'div') {
+									const size = widths.shift();
+									model.setClass(bsclass + (size ? '-' + size : ''));
 								}
 							});
 						},

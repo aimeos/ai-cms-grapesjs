@@ -121,7 +121,11 @@ $params = $this->get( 'pageParams', [] );
 
 						<div id="basic" class="item-basic tab-pane fade show active" role="tabpanel" aria-labelledby="basic">
 
-							<div class="box <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ) ?>">
+							<div class="vue box <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ) ?>"
+								data-data="<?= $enc->attr( $this->get( 'itemData' ) ) ?>"
+								data-siteid="<?= $enc->attr( $this->site()->siteid() ) ?>"
+								data-domain="cms">
+
 								<div class="row">
 									<div class="col-xl-6">
 										<div class="form-group row mandatory">
@@ -129,7 +133,7 @@ $params = $this->get( 'pageParams', [] );
 											<div class="col-sm-8">
 												<select class="form-select item-status" required="required" tabindex="1"
 													name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.status' ) ) ) ?>"
-													<?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ) ?> >
+													v-bind:readonly="!can('change', idx)" >
 													<option value="">
 														<?= $enc->html( $this->translate( 'admin', 'Please select' ) ) ?>
 													</option>
@@ -155,7 +159,7 @@ $params = $this->get( 'pageParams', [] );
 													name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.url' ) ) ) ?>"
 													placeholder="<?= $enc->attr( $this->translate( 'admin', 'Unique page URL (required)' ) ) ?>"
 													value="<?= $enc->attr( $this->get( 'itemData/cms.url' ) ) ?>"
-													<?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ) ?>>
+													v-bind:readonly="!can('change', idx)">
 											</div>
 											<div class="col-sm-12 form-text text-muted help-text">
 												<?= $enc->html( $this->translate( 'admin', 'Unique page URL, e.g. "/page-name"' ) ) ?>
@@ -168,7 +172,7 @@ $params = $this->get( 'pageParams', [] );
 													name="<?= $this->formparam( array( 'item', 'cms.label' ) ) ?>"
 													placeholder="<?= $enc->attr( $this->translate( 'admin', 'Internal name (required)' ) ) ?>"
 													value="<?= $enc->attr( $this->get( 'itemData/cms.label' ) ) ?>"
-													<?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ) ?>>
+													v-bind:readonly="!can('change', idx)">
 											</div>
 											<div class="col-sm-12 form-text text-muted help-text">
 												<?= $enc->html( $this->translate( 'admin', 'Page title, will be used on the web site if no title for the language is available' ) ) ?>

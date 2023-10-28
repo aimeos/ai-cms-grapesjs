@@ -853,6 +853,12 @@ Aimeos.CMSContent = {
 			},
 
 
+			can(action, idx) {
+				if(action === 'move' && this.items[idx]['_nosort']) return false
+				return Aimeos.can(action, this.items[idx][this.domain + '.lists.siteid'] || null, this.siteid)
+			},
+
+
 			change: function() {
 				this.version++;
 			},

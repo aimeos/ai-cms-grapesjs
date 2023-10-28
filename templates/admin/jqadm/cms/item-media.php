@@ -31,7 +31,7 @@ $enc = $this->encoder();
 
 		<div class="group-list" role="tablist" aria-multiselectable="true">
 			<div is="draggable" group="media" v-model="items" handle=".act-move">
-				<div v-for="(item, idx) in items" v-bind:key="idx" class="group-item card box" v-bind:class="{readonly: !can('change', idx)}">
+				<div v-for="(item, idx) in items" v-bind:key="idx" class="group-item card box" v-bind:class="{mismatch: !can('match', idx)}">
 
 					<div v-bind:id="'item-media-group-item-' + idx" class="card-header header">
 						<div class="card-tools-start">
@@ -181,7 +181,7 @@ $enc = $this->encoder();
 											v-bind:items="<?= $enc->attr( $listTypes->col( 'cms.lists.type.label', 'cms.lists.type.code' )->toArray() ) ?>"
 											v-bind:name="`<?= $enc->js( $this->formparam( ['media', '_idx_', 'cms.lists.type'] ) ) ?>`.replace('_idx_', idx)"
 											v-bind:text="`<?= $enc->js( $this->translate( 'admin', 'Please select' ) ) ?>`"
-											v-bind:readonly="item['cms.lists.siteid'] != siteid"
+											v-bind:readonly="!can('change', idx)"
 											v-model="item['cms.lists.type']" >
 										</select>
 									</div>
@@ -200,7 +200,7 @@ $enc = $this->encoder();
 									<input is="flat-pickr" class="form-control listitem-datestart" type="datetime-local" tabindex="<?= $this->get( 'tabindex' ) ?>"
 										v-bind:name="`<?= $enc->js( $this->formparam( ['media', '_idx_', 'cms.lists.datestart'] ) ) ?>`.replace('_idx_', idx)"
 										placeholder="<?= $enc->attr( $this->translate( 'admin', 'YYYY-MM-DD hh:mm:ss (optional)' ) ) ?>"
-										v-bind:disabled="item['cms.lists.siteid'] != siteid"
+										v-bind:disabled="!can('change', idx)"
 										v-bind:config="Aimeos.flatpickr.datetime"
 										v-model="item['cms.lists.datestart']">
 								</div>
@@ -214,7 +214,7 @@ $enc = $this->encoder();
 									<input is="flat-pickr" class="form-control listitem-dateend" type="datetime-local" tabindex="<?= $this->get( 'tabindex' ) ?>"
 										v-bind:name="`<?= $enc->js( $this->formparam( ['media', '_idx_', 'cms.lists.dateend'] ) ) ?>`.replace('_idx_', idx)"
 										placeholder="<?= $enc->attr( $this->translate( 'admin', 'YYYY-MM-DD hh:mm:ss (optional)' ) ) ?>"
-										v-bind:disabled="item['cms.lists.siteid'] != siteid"
+										v-bind:disabled="!can('change', idx)"
 										v-bind:config="Aimeos.flatpickr.datetime"
 										v-model="item['cms.lists.dateend']">
 								</div>
@@ -224,12 +224,14 @@ $enc = $this->encoder();
 							</div>
 						</div>
 
-						<div v-show="item['_ext']" class="col-xl-6 secondary" v-bind:class="{readonly: item['cms.lists.siteid'] != siteid}">
+						<div v-show="item['_ext']" class="col-xl-6 secondary">
 							<config-table v-bind:tabindex="`<?= $enc->js( $this->get( 'tabindex' ) ) ?>`"
 								v-bind:keys="<?= $enc->attr( $this->config( 'admin/jqadm/cms/item/media/config/suggest', [] ) ) ?>"
 								v-bind:name="`<?= $enc->js( $this->formparam( ['media', '_idx_', 'config', '_pos_', '_key_'] ) ) ?>`"
-								v-bind:index="idx" v-bind:readonly="item['cms.lists.siteid'] != siteid"
-								v-bind:items="item['config']" v-on:update:config="item['config'] = $event"
+								v-bind:index="idx"
+								v-bind:readonly="!can('change', idx)"
+								v-bind:items="item['config']"
+								v-on:update:config="item['config'] = $event"
 								v-bind:i18n="{
 									value: `<?= $enc->js( $this->translate( 'admin', 'Value' ) ) ?>`,
 									option: `<?= $enc->js( $this->translate( 'admin', 'Option' ) ) ?>`,

@@ -74,7 +74,7 @@ $enc = $this->encoder();
 								<div class="col-sm-8">
 									<select class="form-select item-status" required="required" tabindex="<?= $this->get( 'tabindex' ) ?>"
 										v-bind:name="`<?= $enc->js( $this->formparam( array( 'content', '_idx_', 'text.status' ) ) ) ?>`.replace('_idx_', idx)"
-										v-bind:readonly="item['text.siteid'] != siteid"
+										v-bind:readonly="!can('change', idx)"
 										v-model="item['text.status']" >
 										<option value=""><?= $enc->html( $this->translate( 'admin', 'Please select' ) ) ?></option>
 										<option value="1" v-bind:selected="item['text.status'] == 1" >
@@ -105,7 +105,7 @@ $enc = $this->encoder();
 											v-bind:name="`<?= $enc->js( $this->formparam( ['content', '_idx_', 'text.languageid'] ) ) ?>`.replace('_idx_', idx)"
 											v-bind:text="`<?= $enc->js( $this->translate( 'admin', 'Please select' ) ) ?>`"
 											v-bind:all="`<?= $enc->js( $this->translate( 'admin', 'All' ) ) ?>`"
-											v-bind:readonly="item['text.siteid'] != siteid"
+											v-bind:readonly="!can('change', idx)"
 											v-model="item['text.languageid']" >
 										</select>
 									</div>
@@ -126,7 +126,7 @@ $enc = $this->encoder();
 								v-bind:config="<?= $enc->attr( $this->get( 'config', new \stdClass ) ) ?>"
 								v-bind:setup="Aimeos.CMSContent.GrapesJS" v-bind:update="version" v-bind:media="media"
 								v-bind:name="`<?= $enc->js( $this->formparam( array( 'content', '_idx_', 'text.content' ) ) ) ?>`.replace('_idx_', idx)"
-								v-bind:readonly="item['text.siteid'] != siteid"
+								v-bind:readonly="!can('change', idx)"
 								v-bind:value="item['text.content']"
 								v-model="item['text.content']"
 							></grapesjs>

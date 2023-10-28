@@ -32,7 +32,7 @@ $enc = $this->encoder();
 
 		<div class="group-list" role="tablist" aria-multiselectable="true">
 			<div is="draggable" v-model="items" group="text" handle=".act-move">
-				<div v-for="(item, idx) in items" v-bind:key="idx" class="group-item card">
+				<div v-for="(item, idx) in items" v-bind:key="idx" class="group-item card box" v-bind:class="{loading: item['loading'], readonly: !can('change', idx)}">
 
 					<div v-bind:id="'item-text-group-item-' + idx" v-bind:class="item['_show'] ? 'show' : 'collapsed'"
 						v-bind:data-target="'#item-text-group-data-' + idx" data-bs-toggle="collapse" role="tab" class="card-header header"
@@ -84,7 +84,7 @@ $enc = $this->encoder();
 										v-bind:editor="CKEditor"
 										v-bind:config="Aimeos.ckeditor"
 										v-bind:name="`<?= $enc->js( $this->formparam( array( 'seo', '_idx_', 'text.content' ) ) ) ?>`.replace('_idx_', idx)"
-										v-bind:readonly="item['text.siteid'] != siteid"
+										v-bind:readonly="!can('change', idx)"
 										v-model="item['text.content']"
 									></textarea>
 								</div>
@@ -99,7 +99,7 @@ $enc = $this->encoder();
 								<div class="col-sm-8">
 									<select class="form-select item-status" required="required" tabindex="<?= $this->get( 'tabindex' ) ?>"
 										v-bind:name="`<?= $enc->js( $this->formparam( array( 'seo', '_idx_', 'text.status' ) ) ) ?>`.replace('_idx_', idx)"
-										v-bind:readonly="item['text.siteid'] != siteid"
+										v-bind:readonly="!can('change', idx)"
 										v-model="item['text.status']" >
 										<option value=""><?= $enc->html( $this->translate( 'admin', 'Please select' ) ) ?></option>
 										<option value="1" v-bind:selected="item['text.status'] == 1" >
@@ -127,7 +127,7 @@ $enc = $this->encoder();
 											v-bind:name="`<?= $enc->js( $this->formparam( ['seo', '_idx_', 'text.languageid'] ) ) ?>`.replace('_idx_', idx)"
 											v-bind:text="`<?= $enc->js( $this->translate( 'admin', 'Please select' ) ) ?>`"
 											v-bind:all="`<?= $enc->js( $this->translate( 'admin', 'All' ) ) ?>`"
-											v-bind:readonly="item['text.siteid'] != siteid"
+											v-bind:readonly="!can('change', idx)"
 											v-model="item['text.languageid']" >
 										</select>
 									</div>
@@ -149,7 +149,7 @@ $enc = $this->encoder();
 											v-bind:items="<?= $enc->attr( $seoTypes->col( 'text.type.label', 'text.type.code' )->toArray() ) ?>"
 											v-bind:name="`<?= $enc->js( $this->formparam( ['seo', '_idx_', 'text.type'] ) ) ?>`.replace('_idx_', idx)"
 											v-bind:text="`<?= $enc->js( $this->translate( 'admin', 'Please select' ) ) ?>`"
-											v-bind:readonly="item['text.siteid'] != siteid"
+											v-bind:readonly="!can('change', idx)"
 											v-model="item['text.type']" >
 										</select>
 									</div>
@@ -169,7 +169,7 @@ $enc = $this->encoder();
 									<input class="form-control item-label" type="text" tabindex="<?= $this->get( 'tabindex' ) ?>"
 										v-bind:name="`<?= $enc->js( $this->formparam( array( 'seo', '_idx_', 'text.label' ) ) ) ?>`.replace('_idx_', idx)"
 										placeholder="<?= $enc->attr( $this->translate( 'admin', 'Label' ) ) ?>"
-										v-bind:readonly="item['text.siteid'] != siteid"
+										v-bind:readonly="!can('change', idx)"
 										v-model="item['text.label']">
 								</div>
 								<div class="col-sm-12 form-text text-muted help-text">

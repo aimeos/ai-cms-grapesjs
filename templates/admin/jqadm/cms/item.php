@@ -121,9 +121,9 @@ $params = $this->get( 'pageParams', [] );
 
 						<div id="basic" class="item-basic tab-pane fade show active" role="tabpanel" aria-labelledby="basic">
 
-							<div class="box">
+							<div class="box <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ) ?>">
 								<div class="row">
-									<div class="col-xl-6 <?= $this->site()->readonly( $this->get( 'itemData/cms.siteid' ) ) ?>">
+									<div class="col-xl-6">
 										<div class="form-group row mandatory">
 											<label class="col-sm-4 form-control-label"><?= $enc->html( $this->translate( 'admin', 'Status' ) ) ?></label>
 											<div class="col-sm-8">

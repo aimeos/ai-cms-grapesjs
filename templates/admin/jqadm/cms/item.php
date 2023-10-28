@@ -133,7 +133,7 @@ $params = $this->get( 'pageParams', [] );
 											<div class="col-sm-8">
 												<select class="form-select item-status" required="required" tabindex="1"
 													name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.status' ) ) ) ?>"
-													v-bind:readonly="!can('change', idx)" >
+													v-bind:readonly="!can('change')" >
 													<option value="">
 														<?= $enc->html( $this->translate( 'admin', 'Please select' ) ) ?>
 													</option>
@@ -159,7 +159,7 @@ $params = $this->get( 'pageParams', [] );
 													name="<?= $enc->attr( $this->formparam( array( 'item', 'cms.url' ) ) ) ?>"
 													placeholder="<?= $enc->attr( $this->translate( 'admin', 'Unique page URL (required)' ) ) ?>"
 													value="<?= $enc->attr( $this->get( 'itemData/cms.url' ) ) ?>"
-													v-bind:readonly="!can('change', idx)">
+													v-bind:readonly="!can('change')">
 											</div>
 											<div class="col-sm-12 form-text text-muted help-text">
 												<?= $enc->html( $this->translate( 'admin', 'Unique page URL, e.g. "/page-name"' ) ) ?>
@@ -172,7 +172,7 @@ $params = $this->get( 'pageParams', [] );
 													name="<?= $this->formparam( array( 'item', 'cms.label' ) ) ?>"
 													placeholder="<?= $enc->attr( $this->translate( 'admin', 'Internal name (required)' ) ) ?>"
 													value="<?= $enc->attr( $this->get( 'itemData/cms.label' ) ) ?>"
-													v-bind:readonly="!can('change', idx)">
+													v-bind:readonly="!can('change')">
 											</div>
 											<div class="col-sm-12 form-text text-muted help-text">
 												<?= $enc->html( $this->translate( 'admin', 'Page title, will be used on the web site if no title for the language is available' ) ) ?>

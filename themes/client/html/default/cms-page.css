@@ -90,10 +90,6 @@
 	background-color: var(--ai-primary, #282828);
 }
 
-.aimeos.cms-page .table {
-	display: block;
-}
-
 .aimeos.cms-page .table tr.row {
 	display: table-row;
 }

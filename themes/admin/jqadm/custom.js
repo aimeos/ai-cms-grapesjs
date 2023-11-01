@@ -420,6 +420,12 @@ Aimeos.CMSContent = {
 							attributes: {
 								class: 'background',
 							},
+							styles: `
+								.background {
+									min-height: 2.5rem !important;
+									padding: 10px 0 !important;
+								}
+							`,
 							traits: [{
 								type: 'select',
 								label: 'Background',

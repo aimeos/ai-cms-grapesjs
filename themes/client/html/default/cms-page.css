@@ -89,3 +89,12 @@
 .aimeos.cms-page .catalog-list .slider-nav-square .slider-nav::before {
 	background-color: var(--ai-primary, #282828);
 }
+
+.aimeos.cms-page .table tr.row {
+	display: table-row;
+}
+
+.aimeos.cms-page .table td.cell {
+	padding: 0.5rem;
+	width: auto;
+}

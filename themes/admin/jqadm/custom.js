@@ -109,14 +109,19 @@ Aimeos.CMSContent = {
 				img {
 					max-width: 100%;
 				}
-				form {
-					padding-top: 10px;
+				table {
+					border-collapse: separate;
+					border-spacing: 0;
+					width: 100%;
+				}
+				table .cell {
+					width: auto;
 				}
 				.row {
 					display: flex; width: auto;
 					min-height: 2.5rem !important;
 				}
-				.gjs-dashed .row, .gjs-dashed .space {
+				.gjs-dashed .row, .gjs-dashed .space, form, table, table .cell {
 					padding: 10px 0;
 				}
 			`,

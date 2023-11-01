@@ -109,7 +109,7 @@ Aimeos.CMSContent = {
 				img {
 					max-width: 100%;
 				}
-				form {
+				form, table {
 					padding-top: 10px;
 				}
 				.row {

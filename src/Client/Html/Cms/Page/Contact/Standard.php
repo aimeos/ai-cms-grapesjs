@@ -76,7 +76,8 @@ class Standard
 
 				$context->mail()->create()
 					->to( $toAddr, $toName )
-					->from( $email, $name )
+					->replyTo( $email, $name )
+					->from( $toAddr, $toName )
 					->subject( $context->translate( 'client', 'Your request' ) . ' - ' . $label )
 					->text( $msg )
 					->send();

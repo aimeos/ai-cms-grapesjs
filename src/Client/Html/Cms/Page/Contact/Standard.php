@@ -42,13 +42,8 @@ class Standard
 	 */
 	public function modify( string $content, string $uid ) : string
 	{
-		if( !$this->view()->access( ['editor', 'admin', 'super'] ) )
-		{
-			$csrf = $this->view()->csrf();
-			$content = str_replace( ['%csrf.name%', '%csrf.value%'], [$csrf->name(), $csrf->value()], $content );
-		}
-
-		return $content;
+		$csrf = $this->view()->csrf();
+		return str_replace( ['%csrf.name%', '%csrf.value%'], [$csrf->name(), $csrf->value()], $content );
 	}
 
 

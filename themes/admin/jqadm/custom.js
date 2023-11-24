@@ -382,6 +382,18 @@ Aimeos.CMSContent = {
 					</div>
 				</form>`
 			},
+			'slider': {
+				category: 'Extra',
+				label: `
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>
+					</svg>
+					<div class="gjs-block-label">Slider</div>`,
+				attributes: { class: 'fa' },
+				content: {
+					type: 'slider'
+				},
+			}
 		},
 
 		components: {
@@ -698,6 +710,119 @@ Aimeos.CMSContent = {
 							styles: `
 								p { min-height: 1.5rem }
 							`
+						}
+					}
+				});
+			},
+
+
+			'slider': function(editor) {
+				editor.DomComponents.addType('slider', {
+					isComponent: el => el.tagName === 'DIV' && el.classList.contains('swiffy-slider') ? {type: 'slider'} : false,
+					model: {
+						defaults: {
+							tagName: 'div',
+							attributes: {
+								'class': 'swiffy-slider slider-item-nogap slider-nav-animation slider-nav-autoplay slider-nav-autopause',
+								'data-slider-nav-autoplay-interval': 4000,
+								'data-gjs-name': 'Slider'
+							},
+							components: model => {
+								const slides = model.props().slides || 1;
+								let result = '<div class="slider-container">';
+
+								for(let i=0; i<slides; i++) {
+									result += '<div class="swiffy-slide" data-gjs-name="Slide"></div>';
+								}
+								return result + `
+									</div>
+									<button type="button" class="slider-nav" aria-label="Go to previous"></button>
+									<button type="button" class="slider-nav slider-nav-next" aria-label="Go to next"></button>
+								`;
+							},
+							styles: `
+								.swiffy-slider {min-height:2.5rem !important; padding:10px 0}
+								.slider-container {display:block; height: auto}
+							`,
+							traits: [{
+								type: 'number',
+								label: 'Slides',
+								name: 'slides',
+								min: 1,
+								max: 10,
+								step: 1
+							},{
+								type: 'number',
+								label: 'Interval',
+								name: 'data-slider-nav-autoplay-interval',
+								min: 500,
+								step: 500
+							}]
+						},
+						init() {
+							this.on('change:attributes:slides', this.onSlidesChange);
+						},
+						onSlidesChange() {
+							const size = this.getAttributes().slides || 1;
+							const container = this.components().first();
+							const slides = container.components();
+
+							if(slides.length < size) {
+								for(let i=0; i<size - slides.length; i++) {
+									slides.add('<div class="swiffy-slide" data-gjs-name="Slide"></div>');
+								}
+							} else {
+								for(let i=0; i<slides.length - size; i++) {
+									slides.pop();
+								}
+							}
+
+							this.getView()?.render();
+						}
+					}
+				});
+			},
+
+
+			'slide': function(editor) {
+				editor.DomComponents.addType('slide', {
+					isComponent: el => el.tagName === 'DIV' && el.classList.contains('swiffy-slide') ? {type: 'slide'} : false,
+					model: {
+						defaults: {
+							tagName: 'div',
+							droppable: true,
+							attributes: {
+								class: 'swiffy-slide',
+							},
+							styles: `
+								.swiffy-slide {
+									min-height: 2.5rem !important;
+									padding: 10px 0 !important;
+								}
+							`,
+							traits: [{
+								type: 'select',
+								label: 'Background',
+								name: 'data-background'
+							}]
+						},
+						init() {
+							const options = [{id: '', name: ''}];
+							const bg = this.getTrait('data-background');
+
+							editor.AssetManager.getAll().each(function(item) {
+								options.push({id: item.attributes.srcset || item.attributes.src, name: item.attributes.name});
+							});
+
+							bg && bg.set('options', options);
+							this.on('change:attributes:data-background', this.onBackgroundChange);
+						},
+						onBackgroundChange() {
+							const bg = this.getAttributes()['data-background'];
+							const url = (bg.split(',').pop() || '').trim().split(' ').shift();
+
+							this.setStyle({'background-image': 'none'})
+							url && this.setStyle({'background-image': `url('${url.replace(/&|<|>|"|`|'/g, '')}')`});
 						}
 					}
 				});

@@ -98,3 +98,14 @@
 	padding: 0.5rem;
 	width: auto;
 }
+
+.aimeos.cms-page .swiffy-slider {
+	height: max-content;
+}
+
+.aimeos.cms-page .swiffy-slide {
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: var(--ai-bg);
+	height: 100%;
+}

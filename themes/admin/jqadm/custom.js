@@ -792,7 +792,7 @@ Aimeos.CMSContent = {
 							tagName: 'div',
 							droppable: true,
 							attributes: {
-								class: 'swiffy-slide',
+								class: 'swiffy-slide lazy-image',
 							},
 							styles: `
 								.swiffy-slide {

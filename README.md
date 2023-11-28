@@ -49,15 +49,15 @@ Then, you need to uncomment the `page` section in your `config/shop.php` and add
 To show the content for the CMS page URLs, you have to add this at the **end** of the `./routes/web.php` file in your Laravel application:
 
 ```php
-Route::match(['GET', 'POST'], '{path?}', '\Aimeos\Shop\Controller\PageController@indexAction')
-    ->name('aimeos_page')->where( 'path', '.*' );
+Route::match(['GET', 'POST'], '{cmspath?}', '\Aimeos\Shop\Controller\PageController@indexAction')
+    ->name('aimeos_page')->where( 'cmspath', '.*' );
 ```
 
 In multi-language setups, you should add the `locale` as parameter to the route:
 
 ```php
-Route::match(['GET', 'POST'], '{locale}/{path?}', '\Aimeos\Shop\Controller\PageController@indexAction')
-    ->name('aimeos_page')->where( 'path', '.*' );
+Route::match(['GET', 'POST'], '{locale}/{cmspath?}', '\Aimeos\Shop\Controller\PageController@indexAction')
+    ->name('aimeos_page')->where( 'cmspath', '.*' );
 ```
 
 When using a multi-vendor setup, then use one of these alternatives:
@@ -65,20 +65,20 @@ When using a multi-vendor setup, then use one of these alternatives:
 ```php
 // prefix: yourdomain.com/vendor1
 Route::group(['prefix' => '{site}', 'middleware' => ['web']], function () {
-    Route::match(['GET', 'POST'], '{path?}', '\Aimeos\Shop\Controller\PageController@indexAction')
-        ->name('aimeos_page')->where( 'path', '.*' )->where( ['site' => '[a-z0-9\-]+'] );
+    Route::match(['GET', 'POST'], '{cmspath?}', '\Aimeos\Shop\Controller\PageController@indexAction')
+        ->name('aimeos_page')->where( 'cmspath', '.*' )->where( ['site' => '[a-z0-9\-]+'] );
 });
 
 // subdomain: vendor1.yourdomain.com
 Route::group(['domain' => '{site}.yourdomain.com', 'middleware' => ['web']], function () {
-    Route::match(['GET', 'POST'], '{path?}', '\Aimeos\Shop\Controller\PageController@indexAction')
-        ->name('aimeos_page')->where( 'path', '.*' )->where( ['site' => '[a-z0-9\-]+'] );
+    Route::match(['GET', 'POST'], '{cmspath?}', '\Aimeos\Shop\Controller\PageController@indexAction')
+        ->name('aimeos_page')->where( 'cmspath', '.*' )->where( ['site' => '[a-z0-9\-]+'] );
 });
 
 // custom domain: vendor1.com
 Route::group(['domain' => '{site}', 'middleware' => ['web']], function () {
-    Route::match(['GET', 'POST'], '{path?}', '\Aimeos\Shop\Controller\PageController@indexAction')
-        ->name('aimeos_page')->where( 'path', '.*' )->where( ['site' => '[a-z0-9\.\-]+'] );
+    Route::match(['GET', 'POST'], '{cmspath?}', '\Aimeos\Shop\Controller\PageController@indexAction')
+        ->name('aimeos_page')->where( 'cmspath', '.*' )->where( ['site' => '[a-z0-9\.\-]+'] );
 });
 ```
 

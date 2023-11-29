@@ -56,13 +56,9 @@ class Standard
 	public function init()
 	{
 		$view = $this->view();
+		$params = $view->param( 'contact' );
 
-		$name = $view->param( 'contact/name' );
-		$email = $view->param( 'contact/email' );
-		$msg = $view->param( 'contact/message' );
-		$honeypot = $view->param( 'contact/url' );
-
-		if( !$honeypot && $email && $msg )
+		if( !( $params['url'] ?? null ) && ( $params['email'] ?? null ) && ( $params['message'] ?? null ) )
 		{
 			$context = $this->context();
 			$config = $context->config();
@@ -76,10 +72,10 @@ class Standard
 
 				$context->mail()->create()
 					->to( $toAddr, $toName )
-					->replyTo( $email, $name )
 					->from( $toAddr, $toName )
+					->replyTo( $params['email'], $params['name'] ?? null )
 					->subject( $context->translate( 'client', 'Your request' ) . ' - ' . $label )
-					->text( $msg )
+					->text( $this->text( $params ) )
 					->send();
 
 				$info = [$context->translate( 'client', 'Message sent successfully' )];
@@ -91,5 +87,23 @@ class Standard
 				$view->errors = array_merge( $view->get( 'errors', [] ), $error );
 			}
 		}
+	}
+
+
+	/**
+	 * Returns the message text
+	 *
+	 * @param array $params Associative list of key/value pairs
+	 * @return string Message text
+	 */
+	protected function text( array $params ) : string
+	{
+		$msg = '';
+
+		foreach( $params as $key => $val ) {
+			$msg .= $key . ': ' . $val . "\n";
+		}
+
+		return $msg;
 	}
 }

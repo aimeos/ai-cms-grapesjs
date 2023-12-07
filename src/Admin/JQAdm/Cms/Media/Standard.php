@@ -251,7 +251,7 @@ class Standard
 	protected function deleteMediaItems( \Aimeos\MShop\Cms\Item\Iface $item, array $listItems ) : \Aimeos\MShop\Cms\Item\Iface
 	{
 		$context = $this->context();
-		$cntl = \Aimeos\Controller\Common\Media\Factory::create( $context );
+		$mediaManager = \Aimeos\MShop::create( $context, 'media' );
 		$manager = \Aimeos\MShop::create( $context, 'cms' );
 		$search = $manager->filter();
 
@@ -263,7 +263,7 @@ class Standard
 			$refItem = null;
 
 			if( count( $items ) === 1 && ( $refItem = $listItem->getRefItem() ) !== null ) {
-				$cntl->delete( $refItem );
+				$mediaManager->delete( $refItem );
 			}
 
 			$item->deleteListItem( 'media', $listItem, $refItem );
@@ -328,9 +328,8 @@ class Standard
 	{
 		$context = $this->context();
 
+		$manager = \Aimeos\MShop::create( $context, 'cms' );
 		$mediaManager = \Aimeos\MShop::create( $context, 'media' );
-		$listManager = \Aimeos\MShop::create( $context, 'cms/lists' );
-		$cntl = \Aimeos\Controller\Common\Media\Factory::create( $context );
 
 		$listItems = $item->getListItems( 'media', null, null, false );
 		$files = (array) $this->view()->request()->getUploadedFiles();
@@ -340,23 +339,16 @@ class Standard
 			$id = $this->val( $entry, 'media.id', '' );
 			$type = $this->val( $entry, 'cms.lists.type', 'default' );
 
-			$listItem = $item->getListItem( 'media', $type, $id, false ) ?: $listManager->create();
+			$listItem = $item->getListItem( 'media', $type, $id, false ) ?: $manager->createListItem();
 			$refItem = $listItem->getRefItem() ?: $mediaManager->create();
 
 			$refItem->fromArray( $entry, true )->setDomain( 'cms' );
 			$file = $this->val( $files, 'media/' . $idx . '/file' );
 			$preview = $this->val( $files, 'media/' . $idx . '/preview' );
 
-			if( $file && $file->getError() !== UPLOAD_ERR_NO_FILE )
-			{
-				$refItem = $cntl->add( $refItem, $file );
-
-				if( $preview && $preview->getError() !== UPLOAD_ERR_NO_FILE ) {
-					$refItem = $cntl->addPreview( $refItem, $preview );
-				}
-			}
-			elseif( $refItem->getId() === null && $refItem->getUrl() !== '' )
-			{
+			if( $file && $file->getError() !== UPLOAD_ERR_NO_FILE ) {
+				$refItem = $mediaManager->upload( $refItem, $file );
+			} elseif( $refItem->getId() === null && $refItem->getUrl() !== '' ) {
 				$refItem = $cntl->copy( $refItem );
 			}
 

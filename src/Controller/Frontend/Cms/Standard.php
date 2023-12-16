@@ -264,7 +264,7 @@ class Standard
 	 */
 	public function resolve( string $name ) : \Aimeos\MShop\Cms\Item\Iface
 	{
-		$search = $this->manager->filter( null )->add( 'cms.url', '==', $name )->slice( 0, 1 );
+		$search = $this->manager->filter( null )->add( 'cms.url', '==', '/' . trim( $name, '/' ) )->slice( 0, 1 );
 
 		if( ( $item = $this->manager->search( $search, $this->domains )->first() ) === null )
 		{

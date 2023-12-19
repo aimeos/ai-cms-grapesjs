@@ -33,12 +33,6 @@ return [
 					'search' => array(
 						'ansi' => '
 							SELECT :columns
-								mcmslity."id" AS "cms.lists.type.id", mcmslity."siteid" AS "cms.lists.type.siteid",
-								mcmslity."code" AS "cms.lists.type.code", mcmslity."domain" AS "cms.lists.type.domain",
-								mcmslity."label" AS "cms.lists.type.label", mcmslity."status" AS "cms.lists.type.status",
-								mcmslity."mtime" AS "cms.lists.type.mtime", mcmslity."editor" AS "cms.lists.type.editor",
-								mcmslity."ctime" AS "cms.lists.type.ctime", mcmslity."pos" AS "cms.lists.type.position",
-								mcmslity."i18n" AS "cms.lists.type.i18n"
 							FROM "mshop_cms_list_type" AS mcmslity
 							:joins
 							WHERE :cond
@@ -47,12 +41,6 @@ return [
 						',
 						'mysql' => '
 							SELECT :columns
-								mcmslity."id" AS "cms.lists.type.id", mcmslity."siteid" AS "cms.lists.type.siteid",
-								mcmslity."code" AS "cms.lists.type.code", mcmslity."domain" AS "cms.lists.type.domain",
-								mcmslity."label" AS "cms.lists.type.label", mcmslity."status" AS "cms.lists.type.status",
-								mcmslity."mtime" AS "cms.lists.type.mtime", mcmslity."editor" AS "cms.lists.type.editor",
-								mcmslity."ctime" AS "cms.lists.type.ctime", mcmslity."pos" AS "cms.lists.type.position",
-								mcmslity."i18n" AS "cms.lists.type.i18n"
 							FROM "mshop_cms_list_type" AS mcmslity
 							:joins
 							WHERE :cond
@@ -150,13 +138,6 @@ return [
 				'search' => array(
 					'ansi' => '
 						SELECT :columns
-							mcmsli."id" AS "cms.lists.id", mcmsli."parentid" AS "cms.lists.parentid",
-							mcmsli."siteid" AS "cms.lists.siteid", mcmsli."type" AS "cms.lists.type",
-							mcmsli."domain" AS "cms.lists.domain", mcmsli."refid" AS "cms.lists.refid",
-							mcmsli."start" AS "cms.lists.datestart", mcmsli."end" AS "cms.lists.dateend",
-							mcmsli."config" AS "cms.lists.config", mcmsli."pos" AS "cms.lists.position",
-							mcmsli."status" AS "cms.lists.status", mcmsli."mtime" AS "cms.lists.mtime",
-							mcmsli."editor" AS "cms.lists.editor", mcmsli."ctime" AS "cms.lists.ctime"
 						FROM "mshop_cms_list" AS mcmsli
 						:joins
 						WHERE :cond
@@ -165,13 +146,6 @@ return [
 					',
 					'mysql' => '
 						SELECT :columns
-							mcmsli."id" AS "cms.lists.id", mcmsli."parentid" AS "cms.lists.parentid",
-							mcmsli."siteid" AS "cms.lists.siteid", mcmsli."type" AS "cms.lists.type",
-							mcmsli."domain" AS "cms.lists.domain", mcmsli."refid" AS "cms.lists.refid",
-							mcmsli."start" AS "cms.lists.datestart", mcmsli."end" AS "cms.lists.dateend",
-							mcmsli."config" AS "cms.lists.config", mcmsli."pos" AS "cms.lists.position",
-							mcmsli."status" AS "cms.lists.status", mcmsli."mtime" AS "cms.lists.mtime",
-							mcmsli."editor" AS "cms.lists.editor", mcmsli."ctime" AS "cms.lists.ctime"
 						FROM "mshop_cms_list" AS mcmsli
 						:joins
 						WHERE :cond
@@ -239,29 +213,19 @@ return [
 			'search' => array(
 				'ansi' => '
 					SELECT :columns
-						mcms."id" AS "cms.id", mcms."siteid" AS "cms.siteid",
-						mcms."url" AS "cms.url", mcms."label" AS "cms.label",
-						mcms."status" AS "cms.status", mcms."mtime" AS "cms.mtime",
-						mcms."editor" AS "cms.editor", mcms."ctime" AS "cms.ctime"
 					FROM "mshop_cms" AS mcms
 					:joins
 					WHERE :cond
-					GROUP BY :columns :group
-						mcms."id", mcms."siteid", mcms."url", mcms."label",
-						mcms."status", mcms."mtime", mcms."editor", mcms."ctime"
+					GROUP BY :group
 					ORDER BY :order
 					OFFSET :start ROWS FETCH NEXT :size ROWS ONLY
 				',
 				'mysql' => '
 					SELECT :columns
-						mcms."id" AS "cms.id", mcms."siteid" AS "cms.siteid",
-						mcms."url" AS "cms.url", mcms."label" AS "cms.label",
-						mcms."status" AS "cms.status", mcms."mtime" AS "cms.mtime",
-						mcms."editor" AS "cms.editor", mcms."ctime" AS "cms.ctime"
 					FROM "mshop_cms" AS mcms
 					:joins
 					WHERE :cond
-					GROUP BY :group mcms."id"
+					GROUP BY mcms."id"
 					ORDER BY :order
 					LIMIT :size OFFSET :start
 				'

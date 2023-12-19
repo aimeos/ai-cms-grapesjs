@@ -86,6 +86,11 @@ class Standard
 			'type' => 'string',
 			'public' => false,
 		),
+		'cms.lists.type.i18n' => array(
+			'internalcode' => 'mcmslity."i18n"',
+			'label' => 'Type translation',
+			'public' => false,
+		),
 	);
 
 

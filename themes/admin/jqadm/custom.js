@@ -3,7 +3,7 @@
  */
 
 
-Vue.component('grapesjs', {
+Aimeos.components['grapesjs'] = {
 	template: `<div class="grapesjs-editor">
 		<input type="hidden" v-bind:name="name" v-bind:value="value" />
 		<div v-if="!readonly" class="gjs cms-preview"></div>
@@ -65,7 +65,7 @@ Vue.component('grapesjs', {
 			}
 		}
 	}
-});
+};
 
 
 Aimeos.CMSContent = {

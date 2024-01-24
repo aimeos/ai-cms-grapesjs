@@ -924,7 +924,9 @@ Aimeos.CMSContent = {
 	},
 
 	init: function() {
-		Aimeos.components['cms-content'] = new Vue({
+		const { createApp } = Vue
+
+		Aimeos.apps['cms-content'] = createApp({
 			el: document.querySelector('#item-content-group'),
 			data: {
 				items: [],

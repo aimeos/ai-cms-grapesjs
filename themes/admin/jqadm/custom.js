@@ -621,40 +621,25 @@ Aimeos.CMSContent = {
 							this.fetch();
 						},
 						fetch() {
-							Aimeos.options.done(options => {
-								if(options.meta && options.meta.resources && options.meta.resources['catalog'] ) {
-									const args = {
-										fields: {catalog: 'catalog.id,catalog.label,catalog.level'},
-										page: {limit: 100}
-									};
+							const filter = {'>': {'catalog.status': 0}}
 
-									const config = {
-										'paramsSerializer': function(params) {
-											return jQuery.param(params); // workaround, Axios and QS fail on [==]
-										},
-										'params': {}
-									};
-
-									if(options.meta.prefix && options.meta.prefix) {
-										config['params'][options.meta.prefix] = args;
-									} else {
-										config['params'] = args;
+							return Aimeos.query(`query {
+								searchCatalogs(filter: ` + JSON.stringify(JSON.stringify(filter)) + `, sort: ["catalog.label"], limit: 1000) {
+									items {
+										id
+										code
+										level
+										label
 									}
-
-									axios.get(options.meta.resources['catalog'], config).then(response => {
-										const items = [{id: '', name: ''}];
-
-										(response.data.data || []).forEach(entry => {
-											if(entry['id'] && entry['attributes']) {
-												items.push({id: entry['id'], name: '-'.repeat(entry['attributes']['catalog.level'] || 0) + ' ' + (entry['attributes']['catalog.label'] || '')});
-											}
-										});
-
-										const catid = this.get('traits').where({name: 'catid'})[0];
-										catid.set('options', items);
-									});
 								}
-							});
+							  }
+							`).then(result => {
+								const list = (result?.searchCatalogs?.items || []).map(item => {
+									return {id: item.id, name: '-'.repeat(item.level) + ' ' + item.label + ' (' + item.code + ')'}
+								})
+								list.unshift({id: '', name: ''})
+								return list;
+							})
 						},
 						onLimitChange() {
 							let items = '';
@@ -924,38 +909,41 @@ Aimeos.CMSContent = {
 	},
 
 	init: function() {
-		const { createApp } = Vue
+		const node = document.querySelector('#item-content-group');
 
-		Aimeos.apps['cms-content'] = createApp({
-			el: document.querySelector('#item-content-group'),
-			data: {
-				items: [],
-				media: [],
-				siteid: null,
-				domain: null,
-				version: 0
-			},
-			beforeMount() {
-				this.Aimeos = Aimeos;
-			},
-			mounted: function() {
-				this.items = JSON.parse(this.$el.dataset.items || '{}');
-				this.media = JSON.parse(this.$el.dataset.media || '{}');
-				this.siteid = this.$el.dataset.siteid;
-				this.domain = this.$el.dataset.domain;
+		if(node) {
+			Aimeos.apps['cms-content'] = Aimeos.app({
+				props: {
+					data: {type: String, default: '{}'},
+					images: {type: String, default: '{}'},
+					siteid: {type: String, default: ''},
+					domain: {type: String, default: ''},
+				},
+				data() {
+					return {
+						items: {},
+						media: [],
+						version: 0
+					}
+				},
+				beforeMount() {
+					this.Aimeos = Aimeos;
+					this.items = JSON.parse(this.data);
+					this.media = JSON.parse(this.images);
 
-				if(this.items[0]) {
-					this.$set(this.items[0], '_show', true);
-				}
-			},
-			mixins: [this.mixins]
-		});
+					if(this.items[0]) {
+						this.items[0]['_show'] = true;
+					}
+				},
+				mixins: [this.mixins]
+			}, {...node.dataset || {}}).mount(node);
 
-		document.querySelectorAll('.btn').forEach(function(el) {
-			el.addEventListener('mousedown', function() {
-				Aimeos.components['cms-content'].change();
-			})
-		});
+			document.querySelectorAll('.btn').forEach(function(el) {
+				el.addEventListener('mousedown', function() {
+					Aimeos.apps['cms-content'].change();
+				})
+			});
+		}
 	},
 
 	mixins: {
@@ -1006,7 +994,7 @@ Aimeos.CMSContent = {
 				if(idx < this.items.length) {
 					let entry = JSON.parse(JSON.stringify(this.items[idx]));
 					entry['text.id'] = null;
-					this.$set(this.items, this.items.length, entry);
+					this.items[this.items.length] = entry;
 				}
 			},
 
@@ -1022,7 +1010,7 @@ Aimeos.CMSContent = {
 
 
 			toggle: function(what, idx) {
-				this.$set(this.items[idx], what, (!this.items[idx][what] ? true : false));
+				this.items[idx][what] = (!this.items[idx][what] ? true : false);
 			},
 		}
 	}

@@ -159,7 +159,7 @@ class Standard
 	 */
 	public function toArray( bool $private = false ) : array
 	{
-		$list = parent::toArray( $private );
+		$list = parent::toArray( true ); // include siteid, mtime, ctime, editor (private properties)
 
 		$list['cms.url'] = $this->getUrl();
 		$list['cms.label'] = $this->getLabel();

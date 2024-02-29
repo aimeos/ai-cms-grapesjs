@@ -3,7 +3,7 @@
 	"licenseText": "LGPLv3, http://www.gnu.org/licenses/lgpl.html",
 	"pkgs": [{
 		"name": "Aimeos GrapesJS CSS",
-		"file": "index.css",
+		"file": "index-css",
 		"isDebug": true,
 		"fileIncludes": [{
 			"text": "grapesjs.css",
@@ -14,7 +14,7 @@
 		}]
 	}, {
 		"name": "Aimeos GrapesJS JS",
-		"file": "index.js",
+		"file": "index-js",
 		"isDebug": true,
 		"fileIncludes": [{
 			"text": "grapesjs.js",

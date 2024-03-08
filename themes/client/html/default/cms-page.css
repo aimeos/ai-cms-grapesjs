@@ -62,15 +62,17 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background-color: #F5F5F5;
+	color: var(--ai-primary, #282828);
+	background-color: var(--ai-bg-alt, #F5F5F5);
 	background-repeat: no-repeat;
 	background-size: cover;
 	text-align: center;
-	color: #FFFFFF;
 	padding: 2rem 0;
 }
 
 .aimeos.cms-page .background[data-background] {
+	background-color: var(--ai-primary, #282828);
+	color: var(--ai-bg, #FFFFFF);
 	font-size: 4vw;
 }
 

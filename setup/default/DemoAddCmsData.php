@@ -108,39 +108,6 @@ class DemoAddCmsData extends MShopAddDataAbstract
 
 
 	/**
-	 * Adds the referenced items from the given entry data.
-	 *
-	 * @param \Aimeos\MShop\Common\Item\ListsRef\Iface $item Item with list items
-	 * @param array $entry Associative list of data with stock, attribute, media, price, text and product sections
-	 * @return \Aimeos\MShop\Common\Item\ListsRef\Iface $item Updated item
-	 */
-	protected function addRefItems( \Aimeos\MShop\Common\Item\ListsRef\Iface $item, array $entry )
-	{
-		$context = $this->context();
-		$domain = $item->getResourceType();
-		$manager = \Aimeos\MShop::create( $context, $domain );
-
-		foreach( ['media', 'text'] as $refDomain )
-		{
-			if( isset( $entry[$refDomain] ) )
-			{
-				$refManager = \Aimeos\MShop::create( $context, $refDomain );
-
-				foreach( $entry[$refDomain] as $data )
-				{
-					$listItem = $manager->createListItem()->fromArray( $data );
-					$refItem = $refManager->create()->fromArray( $data );
-
-					$item->addListItem( $refDomain, $listItem, $refItem );
-				}
-			}
-		}
-
-		return $item;
-	}
-
-
-	/**
 	 * Replaces the IDs in the demo data with the actual ones
 	 *
 	 * @param array $data Associative list of CMS demo data

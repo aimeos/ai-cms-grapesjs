@@ -147,6 +147,19 @@ abstract class Base
 
 
 	/**
+	 * Returns the category for the given category URL name
+	 *
+	 * @param string $name category URL name
+	 * @return \Aimeos\MShop\Cms\Item\Iface Cms item including the referenced domains items
+	 * @since 2023.10
+	 */
+	public function resolve( string $name ) : \Aimeos\MShop\Cms\Item\Iface
+	{
+		return $this->controller->resolve( $name );
+	}
+
+
+	/**
 	 * Returns the cmss filtered by the previously assigned conditions
 	 *
 	 * @param int &$total Parameter where the total number of found cmss will be stored in

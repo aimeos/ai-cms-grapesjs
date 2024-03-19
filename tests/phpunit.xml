@@ -11,10 +11,10 @@
       <directory>Admin/</directory>
     </testsuite>
     <testsuite name="Client HTML suite">
-      <directory>Client/</directory>
+      <directory>Client/Html/</directory>
     </testsuite>
     <testsuite name="Client JSON API suite">
-      <directory>Client/</directory>
+      <directory>Client/JsonApi/</directory>
     </testsuite>
   </testsuites>
 </phpunit>

@@ -9,6 +9,11 @@
 namespace Aimeos\Controller\Frontend\Cms\Decorator;
 
 
+class Example extends Base
+{
+}
+
+
 class BaseTest extends \PHPUnit\Framework\TestCase
 {
 	private $context;
@@ -24,9 +29,7 @@ class BaseTest extends \PHPUnit\Framework\TestCase
 			->disableOriginalConstructor()
 			->getMock();
 
-		$this->object = $this->getMockBuilder( \Aimeos\Controller\Frontend\Cms\Decorator\Base::class )
-			->setConstructorArgs( [$this->stub, $this->context] )
-			->getMockForAbstractClass();
+		$this->object = new \Aimeos\Controller\Frontend\Cms\Decorator\Example( $this->stub, $this->context );
 	}
 
 
@@ -43,11 +46,9 @@ class BaseTest extends \PHPUnit\Framework\TestCase
 			->onlyMethods( ['__call'] )
 			->getMock();
 
-		$object = $this->getMockBuilder( \Aimeos\Controller\Frontend\Cms\Decorator\Base::class )
-			->setConstructorArgs( [$stub, $this->context] )
-			->getMockForAbstractClass();
+		$object = new \Aimeos\Controller\Frontend\Cms\Decorator\Example( $stub, $this->context );
 
-		$stub->expects( $this->once() )->method( '__call' )->will( $this->returnValue( true ) );
+		$stub->expects( $this->once() )->method( '__call' )->willReturn( true );
 
 		$this->assertTrue( $object->invalid() );
 	}
@@ -64,8 +65,7 @@ class BaseTest extends \PHPUnit\Framework\TestCase
 		$item = \Aimeos\MShop::create( $this->context, 'cms' )->create();
 		$expected = \Aimeos\MShop\Cms\Item\Iface::class;
 
-		$this->stub->expects( $this->once() )->method( 'find' )
-			->will( $this->returnValue( $item ) );
+		$this->stub->expects( $this->once() )->method( 'find' )->willReturn( $item );
 
 		$this->assertInstanceOf( $expected, $this->object->find( 'test' ) );
 	}
@@ -74,7 +74,7 @@ class BaseTest extends \PHPUnit\Framework\TestCase
 	public function testFunction()
 	{
 		$this->stub->expects( $this->once() )->method( 'function' )
-			->will( $this->returnValue( 'cms:has("domain","type","refid")' ) );
+			->willReturn( 'cms:has("domain","type","refid")' );
 
 		$str = $this->object->function( 'cms:has', ['domain', 'type', 'refid'] );
 		$this->assertEquals( 'cms:has("domain","type","refid")', $str );
@@ -86,8 +86,7 @@ class BaseTest extends \PHPUnit\Framework\TestCase
 		$item = \Aimeos\MShop::create( $this->context, 'cms' )->create();
 		$expected = \Aimeos\MShop\Cms\Item\Iface::class;
 
-		$this->stub->expects( $this->once() )->method( 'get' )
-			->will( $this->returnValue( $item ) );
+		$this->stub->expects( $this->once() )->method( 'get' )->willReturn( $item );
 
 		$this->assertInstanceOf( $expected, $this->object->get( 1 ) );
 	}
@@ -109,8 +108,7 @@ class BaseTest extends \PHPUnit\Framework\TestCase
 	{
 		$item = \Aimeos\MShop::create( $this->context, 'cms' )->create();
 
-		$this->stub->expects( $this->once() )->method( 'search' )
-			->will( $this->returnValue( map( [$item] ) ) );
+		$this->stub->expects( $this->once() )->method( 'search' )->willReturn( map( [$item] ) );
 
 		$this->assertEquals( [$item], $this->object->search()->toArray() );
 	}

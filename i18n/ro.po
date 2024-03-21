@@ -1,0 +1,309 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# George Cojocaru, 2024
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-26 15:48+0200\n"
+"PO-Revision-Date: 2022-03-06 10:23+0000\n"
+"Last-Translator: George Cojocaru, 2024\n"
+"Language-Team: Romanian (https://app.transifex.com/aimeos/teams/39015/ro/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+
+msgid " "
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Advanced"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "Basic"
+msgstr "Bază"
+
+msgid "Bulk edit"
+msgstr ""
+
+msgid "CMS Lists Type"
+msgstr ""
+
+msgid "CMS Lists Types"
+msgstr ""
+
+msgid "CMS page"
+msgstr ""
+
+msgid "CMS pages"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Code"
+msgstr "Cod"
+
+msgid "Columns"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Copy this entry"
+msgstr ""
+
+msgid "Created"
+msgstr "Creat"
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete selected entries"
+msgstr ""
+
+msgid "Delete this entry"
+msgstr "Șterge această intrare"
+
+msgid "Description of the text content if it's in a foreign language"
+msgstr ""
+
+msgid "Domain"
+msgstr ""
+
+msgid "Duplicate entry (Ctrl+D)"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Editor"
+msgstr "Editor"
+
+msgid "End date"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid ""
+"Images will only be shown for that language, useful if the media contains "
+"text or is language sepecific"
+msgstr ""
+
+msgid "Insert new entry (Ctrl+I)"
+msgstr "Introduceți o nouă înregistrare (Ctrl+I)"
+
+msgid "Internal name (required)"
+msgstr "Nume intern (necesar)"
+
+msgid "Internal type name shown in the administration interface"
+msgstr ""
+
+#, php-format
+msgid "Invalid characters in class name \"%1$s\""
+msgstr ""
+
+#, php-format
+msgid "Invalid client \"%1$s\""
+msgstr ""
+
+msgid ""
+"Item specific configuration options, will be available as key/value pairs in"
+" the templates"
+msgstr ""
+"Opțiuni de configurare specifice elementului, care vor fi disponibile ca "
+"perechi cheie/valoare în șabloane."
+
+msgid "Label"
+msgstr "Etichetă"
+
+msgid "Language"
+msgstr ""
+
+msgid "Language of the entered text"
+msgstr ""
+
+msgid "List type"
+msgstr ""
+
+msgid "Media properties"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "Message sent successfully"
+msgstr ""
+
+msgid "Modified"
+msgstr "Modificat"
+
+msgid "Move this entry up/down"
+msgstr ""
+
+msgid "New"
+msgstr "Nou"
+
+msgid "No items found"
+msgstr ""
+
+msgid "No recipient configured"
+msgstr ""
+
+msgid "Non-shared properties for the media item"
+msgstr ""
+
+msgid "Option"
+msgstr "Opțiune"
+
+msgid "Order of the types in the frontend"
+msgstr ""
+
+msgid ""
+"Page title, will be used on the web site if no title for the language is "
+"available"
+msgstr ""
+
+msgid "Please select"
+msgstr "Vă rugăm să selectați"
+
+msgid "Position"
+msgstr ""
+
+msgid "Property value (required)"
+msgstr ""
+
+#, php-format
+msgid "Required parameter \"%1$s\" is missing"
+msgstr "Parametrul obligatoriu \"%1$s\" lipsește"
+
+msgid "Save"
+msgstr ""
+
+msgid "Second level type for grouping items"
+msgstr ""
+
+msgid "Select file"
+msgstr ""
+
+msgid "Show search form"
+msgstr ""
+
+msgid "Show/hide advanced data"
+msgstr ""
+
+msgid "Show/hide this entry"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "The item is only shown on the web site after that date and time"
+msgstr ""
+
+msgid "The item is only shown on the web site until that date and time"
+msgstr ""
+
+msgid "The media title is used for the title tag of the media on the web site"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Translate text"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Type position (optional)"
+msgstr ""
+
+msgid "Types for additional images like icons"
+msgstr ""
+
+msgid "Types for additional texts like per one lb/kg or per month"
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "Unique page URL (required)"
+msgstr ""
+
+msgid "Unique page URL, e.g. \"/page-name\""
+msgstr ""
+
+msgid "Unique type code"
+msgstr ""
+
+msgid "Unique type code (required)"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "YYYY-MM-DD hh:mm:ss (optional)"
+msgstr ""
+
+msgid "Your request"
+msgstr ""
+
+#, php-format
+msgid "cms"
+msgstr ""
+
+#, php-format
+msgid "content"
+msgstr ""
+
+#, php-format
+msgid "media"
+msgstr ""
+
+#, php-format
+msgid "property"
+msgstr ""
+
+msgid "selected"
+msgstr ""
+
+#, php-format
+msgid "seo"
+msgstr ""
+
+msgid "status:-1"
+msgstr ""
+
+msgid "status:-2"
+msgstr ""
+
+msgid "status:0"
+msgstr ""
+
+msgid "status:1"
+msgstr ""
+
+msgid "text"
+msgstr ""
+
+#, php-format
+msgid "type/cms/lists"
+msgstr ""

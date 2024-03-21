@@ -4,8 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Aimeos, 2022
-# Chiarra, 2024
+# George Cojocaru, 2024
 # 
 #, fuzzy
 msgid ""
@@ -14,13 +13,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-26 15:48+0200\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Chiarra, 2024\n"
-"Language-Team: Bulgarian (https://app.transifex.com/aimeos/teams/39015/bg/)\n"
+"Last-Translator: George Cojocaru, 2024\n"
+"Language-Team: Romanian (https://app.transifex.com/aimeos/teams/39015/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: bg\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 msgid " "
 msgstr ""
@@ -35,7 +34,7 @@ msgid "All"
 msgstr ""
 
 msgid "Basic"
-msgstr "Основен"
+msgstr "Bază"
 
 msgid "Bulk edit"
 msgstr ""
@@ -56,7 +55,7 @@ msgid "Close"
 msgstr ""
 
 msgid "Code"
-msgstr ""
+msgstr "Cod"
 
 msgid "Columns"
 msgstr ""
@@ -68,7 +67,7 @@ msgid "Copy this entry"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Creat"
 
 msgid "Delete"
 msgstr ""
@@ -77,7 +76,7 @@ msgid "Delete selected entries"
 msgstr ""
 
 msgid "Delete this entry"
-msgstr "Изтрийте записа"
+msgstr "Șterge această intrare"
 
 msgid "Description of the text content if it's in a foreign language"
 msgstr ""
@@ -92,7 +91,7 @@ msgid "Edit"
 msgstr ""
 
 msgid "Editor"
-msgstr ""
+msgstr "Editor"
 
 msgid "End date"
 msgstr ""
@@ -106,10 +105,10 @@ msgid ""
 msgstr ""
 
 msgid "Insert new entry (Ctrl+I)"
-msgstr "Въведете нов запис (Ctrl+I)"
+msgstr "Introduceți o nouă înregistrare (Ctrl+I)"
 
 msgid "Internal name (required)"
-msgstr ""
+msgstr "Nume intern (necesar)"
 
 msgid "Internal type name shown in the administration interface"
 msgstr ""
@@ -126,9 +125,11 @@ msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
 " the templates"
 msgstr ""
+"Opțiuni de configurare specifice elementului, care vor fi disponibile ca "
+"perechi cheie/valoare în șabloane."
 
 msgid "Label"
-msgstr ""
+msgstr "Etichetă"
 
 msgid "Language"
 msgstr ""
@@ -149,13 +150,13 @@ msgid "Message sent successfully"
 msgstr ""
 
 msgid "Modified"
-msgstr ""
+msgstr "Modificat"
 
 msgid "Move this entry up/down"
 msgstr ""
 
 msgid "New"
-msgstr ""
+msgstr "Nou"
 
 msgid "No items found"
 msgstr ""
@@ -167,7 +168,7 @@ msgid "Non-shared properties for the media item"
 msgstr ""
 
 msgid "Option"
-msgstr ""
+msgstr "Opțiune"
 
 msgid "Order of the types in the frontend"
 msgstr ""
@@ -178,7 +179,7 @@ msgid ""
 msgstr ""
 
 msgid "Please select"
-msgstr ""
+msgstr "Vă rugăm să selectați"
 
 msgid "Position"
 msgstr ""
@@ -188,7 +189,7 @@ msgstr ""
 
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
-msgstr ""
+msgstr "Parametrul obligatoriu \"%1$s\" lipsește"
 
 msgid "Save"
 msgstr ""

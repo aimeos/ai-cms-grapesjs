@@ -227,7 +227,7 @@ class Standard
 		$ref = $view->param( 'include', [] );
 
 		if( is_string( $ref ) ) {
-			$ref = explode( ',', $ref );
+			$ref = explode( ',', str_replace( '.', '/', $ref ) );
 		}
 
 		$cntl = \Aimeos\Controller\Frontend::create( $this->context(), 'cms' );
@@ -253,7 +253,7 @@ class Standard
 		$ref = $view->param( 'include', [] );
 
 		if( is_string( $ref ) ) {
-			$ref = explode( ',', $ref );
+			$ref = explode( ',', str_replace( '.', '/', $ref ) );
 		}
 
 		$items = \Aimeos\Controller\Frontend::create( $this->context(), 'cms' )

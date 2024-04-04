@@ -6,6 +6,7 @@
 # Translators:
 # Aimeos, 2022
 # S 0l, 2022
+# Edu PM, 2024
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-26 15:48+0200\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: S 0l, 2022\n"
+"Last-Translator: Edu PM, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/aimeos/teams/39015/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,16 +42,16 @@ msgid "Bulk edit"
 msgstr ""
 
 msgid "CMS Lists Type"
-msgstr ""
+msgstr "Tipo de listas de CMS"
 
 msgid "CMS Lists Types"
-msgstr ""
+msgstr "Tipos de listas de CMS"
 
 msgid "CMS page"
-msgstr ""
+msgstr "Página CMS"
 
 msgid "CMS pages"
-msgstr ""
+msgstr "Páginas CMS"
 
 msgid "Close"
 msgstr ""
@@ -80,7 +81,7 @@ msgid "Delete this entry"
 msgstr "Eliminar esta entrada"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr ""
+msgstr "Descripción del contenido del texto si está en un idioma extranjero"
 
 msgid "Domain"
 msgstr ""
@@ -267,11 +268,11 @@ msgstr ""
 
 #, php-format
 msgid "cms"
-msgstr ""
+msgstr "CMS"
 
 #, php-format
 msgid "content"
-msgstr ""
+msgstr "Contenido"
 
 #, php-format
 msgid "media"
@@ -286,7 +287,7 @@ msgstr ""
 
 #, php-format
 msgid "seo"
-msgstr ""
+msgstr "SEO"
 
 msgid "status:-1"
 msgstr ""

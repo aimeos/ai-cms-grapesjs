@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ai-cms-grapesjs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-05 07:41+0200\n"
+"POT-Creation-Date: 2024-04-04 16:08+0200\n"
 "PO-Revision-Date: 2021-01-24 16:58+0100\n"
 "Last-Translator: Aimeos <aimeos@aimeos.org>\n"
 "Language-Team: LANGUAGE <aimeos@aimeos.org>\n"
@@ -225,6 +225,10 @@ msgid "Types for additional texts like per one lb/kg or per month"
 msgstr ""
 
 msgid "URL"
+msgstr ""
+
+#, php-format
+msgid "Unable to find CMS page \"%1$s\""
 msgstr ""
 
 msgid "Unique page URL (required)"

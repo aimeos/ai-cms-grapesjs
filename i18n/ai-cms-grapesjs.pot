@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-26 15:48+0200\n"
+"POT-Creation-Date: 2024-04-04 16:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -231,6 +231,10 @@ msgid "Types for additional texts like per one lb/kg or per month"
 msgstr ""
 
 msgid "URL"
+msgstr ""
+
+#, php-format
+msgid "Unable to find CMS page \"%1$s\""
 msgstr ""
 
 msgid "Unique page URL (required)"

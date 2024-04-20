@@ -58,7 +58,7 @@ Aimeos.components['grapesjs'] = {
 		},
 		update: function() {
 			if(this.instance) {
-				this.$emit('input', JSON.stringify({
+				this.$emit('update:modelValue', JSON.stringify({
 					css: this.instance.getCss({avoidProtected: true}),
 					html: this.instance.getHtml()
 				}));

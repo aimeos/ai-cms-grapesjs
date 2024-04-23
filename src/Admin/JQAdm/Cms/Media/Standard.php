@@ -343,27 +343,23 @@ class Standard
 			$refItem = $listItem->getRefItem() ?: $mediaManager->create();
 
 			$refItem->fromArray( $entry, true )->setDomain( 'cms' );
-			$file = $this->val( $files, 'media/' . $idx . '/file' );
-			$preview = $this->val( $files, 'media/' . $idx . '/preview' );
 
-			if( $file && $file->getError() !== UPLOAD_ERR_NO_FILE ) {
-				$refItem = $mediaManager->upload( $refItem, $file );
-			} elseif( $refItem->getId() === null && $refItem->getUrl() !== '' ) {
-				$refItem = $cntl->copy( $refItem );
+			$preview = $this->val( $files, 'media/' . $idx . '/preview' );
+			$file = $this->val( $files, 'media/' . $idx . '/file' );
+
+			if( $refItem->getId() === null && $refItem->getUrl() !== '' ) {
+				$refItem = $mediaManager->copy( $refItem );
 			}
 
-			$conf = [];
+			$refItem = $mediaManager->upload( $refItem, $file, $preview );
+			$listItem->fromArray( $entry, true )->setPosition( $idx )->setConfig( [] );
 
 			foreach( (array) $this->val( $entry, 'config', [] ) as $cfg )
 			{
-				if( ( $key = trim( $cfg['key'] ?? '' ) ) !== '' ) {
-					$conf[$key] = trim( $cfg['val'] ?? '' );
+				if( ( $key = trim( $cfg['key'] ?? '' ) ) !== '' && ( $val = trim( $cfg['val'] ?? '' ) ) !== '' ) {
+					$listItem->setConfigValue( $key, json_decode( $val, true ) ?? $val );
 				}
 			}
-
-			$listItem->fromArray( $entry, true );
-			$listItem->setPosition( $idx );
-			$listItem->setConfig( $conf );
 
 			$item->addListItem( 'media', $listItem, $refItem );
 
@@ -404,7 +400,6 @@ class Standard
 
 			$list['media.previews'] = $this->view()->imageset( $refItem->getPreviews(), $refItem->getFileSystem() );
 			$list['media.preview'] = $this->view()->content( $refItem->getPreview(), $refItem->getFileSystem() );
-			$list['media.url'] = $this->view()->content( $refItem->getUrl(), $refItem->getFileSystem() );
 
 			$list['cms.lists.datestart'] = str_replace( ' ', 'T', $list['cms.lists.datestart'] ?? '' );
 			$list['cms.lists.dateend'] = str_replace( ' ', 'T', $list['cms.lists.dateend'] ?? '' );

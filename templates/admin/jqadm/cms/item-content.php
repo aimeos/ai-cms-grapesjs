@@ -203,7 +203,7 @@ $enc = $this->encoder();
 									v-bind:index="index"
 									v-bind:readonly="!can('change', index)"
 									v-bind:items="element['config']"
-									v-on:update:config="element['config'] = $event"
+									v-on:update:items="element['config'] = $event"
 									v-bind:i18n="{
 										value: `<?= $enc->js( $this->translate( 'admin', 'Value' ) ) ?>`,
 										option: `<?= $enc->js( $this->translate( 'admin', 'Option' ) ) ?>`,

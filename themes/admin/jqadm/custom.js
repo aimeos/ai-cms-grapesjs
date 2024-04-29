@@ -623,8 +623,8 @@ Aimeos.CMSContent = {
 						fetch() {
 							const filter = {'>': {'catalog.status': 0}}
 
-							return Aimeos.query(`query {
-								searchCatalogs(filter: ` + JSON.stringify(JSON.stringify(filter)) + `, sort: ["catalog.label"], limit: 1000) {
+							Aimeos.query(`query {
+								searchCatalogs(filter: ` + JSON.stringify(JSON.stringify(filter)) + `, limit: 250) {
 									items {
 										id
 										code
@@ -637,8 +637,10 @@ Aimeos.CMSContent = {
 								const list = (result?.searchCatalogs?.items || []).map(item => {
 									return {id: item.id, name: '-'.repeat(item.level) + ' ' + item.label + ' (' + item.code + ')'}
 								})
-								list.unshift({id: '', name: ''})
-								return list;
+								list.unshift({id: '', name: ' '})
+
+								const catid = this.get('traits').where({name: 'catid'})[0];
+								catid.set('options', list);
 							})
 						},
 						onLimitChange() {

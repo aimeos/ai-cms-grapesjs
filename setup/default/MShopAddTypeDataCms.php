@@ -39,7 +39,7 @@ class MShopAddTypeDataCms extends MShopAddTypeData
 
 		$context->setEditor( 'ai-cms-grapesjs' );
 
-		$this->add( __DIR__ . $ds . 'data' . $ds .  'type.php' );
+		$this->add( __DIR__ . $ds . 'data' . $ds . 'type.php' );
 
 		$context->setEditor( $editor );
 	}

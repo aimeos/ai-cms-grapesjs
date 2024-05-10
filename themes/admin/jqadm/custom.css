@@ -3,8 +3,8 @@
  */
 
 
- .aimeos .main-sidebar .menuitem-cms .icon:before {
-	content: "\F2CD";
+ .aimeos .main-sidebar .menuitem-cms .icon:after {
+	mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-columns-gap' viewBox='0 0 16 16'><path d='M6 1v3H1V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1zm14 12v3h-5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1zM6 8v7H1V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zm14-6v7h-5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z'/></svg>");
 }
 
 .aimeos .grapesjs-editor {
@@ -217,118 +217,6 @@
 	margin: auto;
 }
 
-.fa.fa-arrow-up::before {
-	content: "\F148";
-}
-
-.fa.fa-arrows::before {
-	content: "\F14E";
-}
-
-.fa.fa-clone::before {
-	content: "\F3C2";
-}
-
-.fa.fa-trash-o::before {
-	content: "\F5DE";
-}
-
-.fa.fa-desktop::before {
-	content: "\F6A6";
-}
-
-.fa.fa-tablet::before {
-	content: "\F5AD";
-}
-
-.fa.fa-mobile::before {
-	content: "\F4E7";
-}
-
-.fa.fa-eye::before {
-	content: "\F341";
-}
-
-.fa.fa-arrows-alt::before {
-	content: "\F14D";
-}
-
-.fa.fa-undo::before {
-	content: "\F117";
-}
-
-.fa.fa-repeat::before {
-	content: "\F116";
-}
-
-.fa.fa-code::before {
-	content: "\F2C6";
-}
-
-.fa.fa-upload::before {
-	content: "\F603";
-}
-
-.fa.fa-trash::before {
-	content: "\F5DE";
-}
-
-.fa.fa-cog::before {
-	content: "\F3E5";
-}
-
-.fa.fa-paint-brush::before {
-	content: "\F1D8";
-}
-
-.fa.fa-bars::before {
-	content: "\F45B";
-}
-
-.fa.fa-th-large::before {
-	content: "\F3FB";
-}
-
-.fa.fa-header::before {
-	content: "\F5F1";
-}
-
-.fa.fa-font::before {
-	content: "\F3DA";
-}
-
-.fa.fa-paragraph::before {
-	content: "\F4B4";
-}
-
-.fa.fa-external-link::before {
-	content: "\F1C5";
-}
-
-.fa.fa-link::before {
-	content: "\F470";
-}
-
-.fa.fa-picture-o::before {
-	content: "\F42A";
-}
-
-.fa.fa-youtube-play::before {
-	content: "\F62B";
-}
-
-.fa.fa-film::before {
-	content: "\F155";
-}
-
-.fa.fa-table::before {
-	content: "\F5AA";
-}
-
-.fa.fa-cubes::before {
-	content: "\F685";
-}
-
-.fa.fa-envelope-o::before {
-	content: "\F32F";
+.gjs-pn-views-container .gjs-block-category .gjs-block-label svg {
+	height: 2.25rem;
 }

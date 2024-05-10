@@ -39,14 +39,14 @@ $enc = $this->encoder();
 							v-bind:data-target="'#item-text-group-data-' + index" data-bs-toggle="collapse" role="tab" class="card-header header"
 							v-bind:aria-controls="'item-text-group-data-' + index" aria-expanded="false" v-on:click="toggle('_show', index)">
 							<div class="card-tools-start">
-								<div class="btn btn-card-header act-show fa" tabindex="<?= $this->get( 'tabindex' ) ?>"
+								<div class="btn btn-card-header act-show icon" tabindex="<?= $this->get( 'tabindex' ) ?>"
 									title="<?= $enc->attr( $this->translate( 'admin', 'Show/hide this entry' ) ) ?>">
 								</div>
 							</div>
 							<span class="item-label header-label" v-bind:class="{disabled: !active(index)}">{{ label(index) }}</span>
 							<div class="card-tools-end">
 								<div class="dropdown">
-									<a v-bind:id="'translate-menu-' + index" class="btn btn-card-header act-translate fa dropdown-toggle" href="#"
+									<a v-bind:id="'translate-menu-' + index" class="btn btn-card-header act-translate icon dropdown-toggle" href="#"
 										tabindex="<?= $this->get( 'tabindex' ) ?>" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
 										title="<?= $enc->attr( $this->translate( 'admin', 'Translate text' ) ) ?>">
 									</a>
@@ -57,11 +57,11 @@ $enc = $this->encoder();
 									</div>
 								</div>
 								<div v-if="element['cms.lists.siteid'] == siteid && !element['_nosort']"
-									class="btn btn-card-header act-move fa" tabindex="<?= $this->get( 'tabindex' ) ?>"
+									class="btn btn-card-header act-move icon" tabindex="<?= $this->get( 'tabindex' ) ?>"
 									title="<?= $enc->attr( $this->translate( 'admin', 'Move this entry up/down' ) ) ?>">
 								</div>
 								<div v-if="element['cms.lists.siteid'] == siteid"
-									class="btn btn-card-header act-delete fa" tabindex="<?= $this->get( 'tabindex' ) ?>"
+									class="btn btn-card-header act-delete icon" tabindex="<?= $this->get( 'tabindex' ) ?>"
 									title="<?= $enc->attr( $this->translate( 'admin', 'Delete this entry' ) ) ?>"
 									v-on:click.stop="remove(index)">
 								</div>
@@ -184,7 +184,7 @@ $enc = $this->encoder();
 
 							<div v-on:click="toggle('_ext', index)" class="col-xl-12 advanced" v-bind:class="{'collapsed': !element['_ext']}">
 								<div class="card-tools-start">
-									<div class="btn act-show fa" tabindex="<?= $this->get( 'tabindex' ) ?>"
+									<div class="btn act-show icon" tabindex="<?= $this->get( 'tabindex' ) ?>"
 										title="<?= $enc->attr( $this->translate( 'admin', 'Show/hide advanced data' ) ) ?>">
 									</div>
 								</div>
@@ -271,7 +271,7 @@ $enc = $this->encoder();
 			</div>
 
 			<div slot="footer" class="card-tools-more">
-				<div class="btn btn-primary btn-card-more act-add fa" tabindex="<?= $this->get( 'tabindex' ) ?>"
+				<div class="btn btn-primary btn-card-more act-add icon" tabindex="<?= $this->get( 'tabindex' ) ?>"
 					title="<?= $enc->attr( $this->translate( 'admin', 'Insert new entry (Ctrl+I)' ) ) ?>"
 					v-on:click="add()" >
 				</div>

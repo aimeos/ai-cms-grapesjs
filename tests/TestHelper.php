@@ -70,7 +70,7 @@ class TestHelper
 		$ctx->setCache( $cache );
 
 
-		$mail = new \Aimeos\Base\Mail\None();
+		$mail = new \Aimeos\Base\Mail\Manager\None();
 		$ctx->setMail( $mail );
 
 

@@ -123,7 +123,7 @@ class Standard
 				$tview = $context->view()->set( 'products', $products )->set( 'attributeTypes', $attrTypes );
 
 				if( !$products->isEmpty() && (bool) $config->get( 'client/html/catalog/lists/stock/enable', true ) === true ) {
-					$tview->itemsStockUrl = $this->getStockUrl( $tview, $products );
+					$tview->itemsStockUrl = $this->getStockUrl( $tview, $articles );
 				}
 
 				$pdom = new \DOMDocument( '1.0', 'UTF-8' );

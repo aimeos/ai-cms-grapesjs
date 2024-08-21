@@ -7,13 +7,14 @@ Vue.component('grapesjs', {
 	template: `<div class="grapesjs-editor">
 		<input type="hidden" v-bind:name="name" v-bind:value="value" />
 		<div v-if="!readonly" class="gjs cms-preview"></div>
-		<iframe v-else v-bind:srcdoc="'<html><body>' + value + '</body></html>'" v-bind:tabindex="tabindex"></iframe>
+		<iframe v-else v-bind:srcdoc="'<html><body><style>' + (parsed['css'] || '') + '</style>' + (parsed['html'] || '') + '</body></html>'" v-bind:tabindex="tabindex"></iframe>
 	</div>`,
 	props: ['setup', 'name', 'value', 'readonly', 'tabindex', 'update', 'media', 'mediaurl', 'config'],
 
 	data: function() {
 		return {
-			instance: null
+			instance: null,
+			parsed: {}
 		}
 	},
 
@@ -38,6 +39,7 @@ Vue.component('grapesjs', {
 
 	mounted: function() {
 		if(this.readonly) {
+			this.parsed = JSON.parse(this.value);
 			return;
 		}
 

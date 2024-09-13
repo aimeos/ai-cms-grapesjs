@@ -70,6 +70,10 @@ class TestHelper
 		$ctx->setCache( $cache );
 
 
+		$passwd = new \Aimeos\Base\Password\Standard();
+		$ctx->setPassword( $passwd );
+
+
 		$mail = new \Aimeos\Base\Mail\Manager\None();
 		$ctx->setMail( $mail );
 

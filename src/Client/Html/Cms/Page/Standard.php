@@ -132,10 +132,10 @@ class Standard
 		$confkey = 'client/html/cms/page';
 		$prefixes = [];
 
-		$path = $this->view()->request()->getUri()->getPath();
+		$path = '/' . trim( $this->view()->param( 'path', $this->view()->request()->getUri()->getPath() ), '/' );
 
 		if( $html = $this->cached( 'body', $uid . '-' . $path, $prefixes, $confkey ) ) {
-			return $this->modify( $html, $uid );
+			return $this->object()->modify( $html, $uid );
 		}
 
 		$view = $this->view = $this->view ?? $this->object()->data( $this->view(), $this->tags, $this->expire );
@@ -154,7 +154,7 @@ class Standard
 
 		$this->cache( 'body', $uid . '-' . $path, $prefixes, $confkey, $html, $this->tags, $this->expire );
 
-		return $this->modify( $html, $uid );
+		return $this->object()->modify( $html, $uid );
 	}
 
 
@@ -166,12 +166,12 @@ class Standard
 	 */
 	public function header( string $uid = '' ) : ?string
 	{
-		$path = $this->view()->request()->getUri()->getPath();
+		$path = '/' . trim( $this->view()->param( 'path', $this->view()->request()->getUri()->getPath() ), '/' );
 		$confkey = 'client/html/cms/page';
 		$prefixes = [];
 
 		if( $html = $this->cached( 'header', $uid . '-' . $path, $prefixes, $confkey ) ) {
-			return $this->modify( $html, $uid );
+			return $this->object()->modify( $html, $uid );
 		}
 
 		$view = $this->view = $this->view ?? $this->object()->data( $this->view(), $this->tags, $this->expire );
@@ -185,7 +185,7 @@ class Standard
 
 		$this->cache( 'header', $uid . '-' . $path, $prefixes, $confkey, $html, $this->tags, $this->expire );
 
-		return $this->modify( $html, $uid );
+		return $this->object()->modify( $html, $uid );
 	}
 
 

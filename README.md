@@ -87,6 +87,36 @@ Route::group(['domain' => '{site}', 'middleware' => ['web']], function () {
 
 This will add a "catch all" route for every URL that hasn't been matched before so **don't put routes after** that line because they won't be used any more!
 
+## ReCAPTCHA integration
+
+Use use Google reCAPTCHA v3 (invisible CAPTCHA) for all forms in CMS pages, you need to merge this configuration into your `./config/shop.php` (Laravel):
+
+```php
+[
+    'resource' => [
+        'recaptcha' => [
+            'secretkey' => '...',
+            'sitekey' => '...'
+        ]
+    ],
+    'client' => [
+        'html' => [
+            'cms' => [
+                'page' => [
+                    'decorators' => [
+                        'local' => [
+                            'Recaptcha' => 'Recaptcha'
+                        ]
+                    ],
+                ]
+            ]
+        ]
+    ]
+]
+```
+
+The `secretkey` and `sitekey` are generated in your [Google account](https://www.google.com/recaptcha). Make sure, you also add all your domains to the list of allowed domains!
+
 ## Potential problems
 
 ### Page with contact form expired

@@ -21,7 +21,7 @@ class Cms extends Base
 	 */
 	public function before() : array
 	{
-		return ['MShopAddLocaleLangCurData'];
+		return ['Locale'];
 	}
 
 

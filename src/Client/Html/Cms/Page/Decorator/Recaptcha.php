@@ -27,7 +27,7 @@ class Recaptcha
 	public function init()
 	{
 		$view = $this->view();
-        $context = $this->context();
+		$context = $this->context();
 		$key = $context->config()->get( 'resource/recaptcha/secretkey' );
 
 		if( $key && $view->request()->getMethod() === 'POST' )

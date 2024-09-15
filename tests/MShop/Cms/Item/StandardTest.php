@@ -28,7 +28,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 			'cms.editor' => 'unitTestUser',
 		);
 
-		$this->object = new \Aimeos\MShop\Cms\Item\Standard( $this->values );
+		$this->object = new \Aimeos\MShop\Cms\Item\Standard( 'cms.', $this->values );
 	}
 
 
@@ -150,7 +150,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testFromArray()
 	{
-		$item = new \Aimeos\MShop\Cms\Item\Standard();
+		$item = new \Aimeos\MShop\Cms\Item\Standard( 'cms.' );
 
 		$list = $entries = array(
 			'cms.id' => 1,

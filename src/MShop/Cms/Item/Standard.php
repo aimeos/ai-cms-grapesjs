@@ -28,14 +28,12 @@ class Standard
 	 * Initializes the cms item object with the given values.
 	 *
 	 * @param array $values Associative list of key/value pairs
-	 * @param \Aimeos\MShop\Common\Item\Lists\Iface[] $listItems List of list items
-	 * @param \Aimeos\MShop\Common\Item\Iface[] $refItems List of referenced items
 	 */
-	public function __construct( array $values = [], array $listItems = [], array $refItems = [] )
+	public function __construct( string $prefix, array $values = [] )
 	{
-		parent::__construct( 'cms.', $values );
+		parent::__construct( $prefix, $values );
 
-		$this->initListItems( $listItems, $refItems );
+		$this->initListItems( $values['.listitems'] ?? [] );
 	}
 
 

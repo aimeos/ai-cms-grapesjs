@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-26 15:48+0200\n"
+"POT-Creation-Date: 2024-10-01 14:57+0200\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Taghreed Mohammed Kamel <taghreedMKamel@gmail.com>, 2022\n"
 "Language-Team: Arabic (https://app.transifex.com/aimeos/teams/39015/ar/)\n"
@@ -120,6 +120,9 @@ msgstr ""
 
 #, php-format
 msgid "Invalid client \"%1$s\""
+msgstr ""
+
+msgid "Invalid reCAPTCHA response"
 msgstr ""
 
 msgid ""
@@ -244,6 +247,10 @@ msgstr ""
 msgid "URL"
 msgstr ""
 
+#, php-format
+msgid "Unable to find CMS page \"%1$s\""
+msgstr ""
+
 msgid "Unique page URL (required)"
 msgstr ""
 
@@ -265,6 +272,9 @@ msgstr ""
 msgid "Your request"
 msgstr ""
 
+msgid "Your request is likely spam and was not executed"
+msgstr ""
+
 #, php-format
 msgid "cms"
 msgstr ""
@@ -279,6 +289,9 @@ msgstr ""
 
 #, php-format
 msgid "property"
+msgstr ""
+
+msgid "reCAPTCHA token missing"
 msgstr ""
 
 msgid "selected"

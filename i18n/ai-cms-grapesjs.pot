@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-04 16:08+0200\n"
+"POT-Creation-Date: 2024-10-01 14:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,6 +113,9 @@ msgstr ""
 
 #, php-format
 msgid "Invalid client \"%1$s\""
+msgstr ""
+
+msgid "Invalid reCAPTCHA response"
 msgstr ""
 
 msgid "Item specific configuration options, will be available as key/value pairs in the templates"
@@ -258,6 +261,9 @@ msgstr ""
 msgid "Your request"
 msgstr ""
 
+msgid "Your request is likely spam and was not executed"
+msgstr ""
+
 #, php-format
 msgid "cms"
 msgstr ""
@@ -272,6 +278,9 @@ msgstr ""
 
 #, php-format
 msgid "property"
+msgstr ""
+
+msgid "reCAPTCHA token missing"
 msgstr ""
 
 msgid "selected"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ai-cms-grapesjs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-04 16:08+0200\n"
+"POT-Creation-Date: 2024-10-01 14:57+0200\n"
 "PO-Revision-Date: 2021-01-24 16:58+0100\n"
 "Last-Translator: Aimeos <aimeos@aimeos.org>\n"
 "Language-Team: LANGUAGE <aimeos@aimeos.org>\n"
@@ -107,6 +107,9 @@ msgstr ""
 
 #, php-format
 msgid "Invalid client \"%1$s\""
+msgstr ""
+
+msgid "Invalid reCAPTCHA response"
 msgstr ""
 
 msgid "Item specific configuration options, will be available as key/value pairs in the templates"
@@ -252,6 +255,9 @@ msgstr ""
 msgid "Your request"
 msgstr ""
 
+msgid "Your request is likely spam and was not executed"
+msgstr ""
+
 #, php-format
 msgid "cms"
 msgstr "CMS"
@@ -266,6 +272,9 @@ msgstr ""
 
 #, php-format
 msgid "property"
+msgstr ""
+
+msgid "reCAPTCHA token missing"
 msgstr ""
 
 msgid "selected"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-26 15:48+0200\n"
+"POT-Creation-Date: 2024-10-01 14:57+0200\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Metal <meteoramic@yahoo.com>, 2022\n"
 "Language-Team: Turkish (https://app.transifex.com/aimeos/teams/39015/tr/)\n"
@@ -123,6 +123,9 @@ msgstr "\"%1$s\" sınıf adında geçersiz karakter"
 #, php-format
 msgid "Invalid client \"%1$s\""
 msgstr "Geçersiz istemci \"%1$s\""
+
+msgid "Invalid reCAPTCHA response"
+msgstr ""
 
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
@@ -251,6 +254,10 @@ msgstr "lb/kg başına veya aylık gibi ek metin türleri"
 msgid "URL"
 msgstr "URL"
 
+#, php-format
+msgid "Unable to find CMS page \"%1$s\""
+msgstr ""
+
 msgid "Unique page URL (required)"
 msgstr "Benzersiz sayfa URL'si (gerekli)"
 
@@ -272,6 +279,9 @@ msgstr "YYYY-AA-GG sa:dd:ss (isteğe bağlı)"
 msgid "Your request"
 msgstr "Talebiniz"
 
+msgid "Your request is likely spam and was not executed"
+msgstr ""
+
 #, php-format
 msgid "cms"
 msgstr "cms"
@@ -287,6 +297,9 @@ msgstr "medya"
 #, php-format
 msgid "property"
 msgstr "özellik"
+
+msgid "reCAPTCHA token missing"
+msgstr ""
 
 msgid "selected"
 msgstr "Seçili"

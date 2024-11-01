@@ -466,8 +466,8 @@ Aimeos.CMSContent = {
 							const bg = this.getAttributes()['data-background'];
 							const url = (bg.split(',').pop() || '').trim().split(' ').shift();
 
-							this.setStyle({'background-image': 'none'}) && this.removeClass( 'lazy-image' )
-							url && this.setStyle({'background-image': `url('${url.replace(/&|<|>|"|`|'/g, '')}')`}) && this.addClass( 'lazy-image' );
+							this.setStyle({'background-image': 'none'})
+							url && this.setStyle({'background-image': `url('${url.replace(/&|<|>|"|`|'/g, '')}')`});
 						}
 					}
 				});
@@ -781,7 +781,7 @@ Aimeos.CMSContent = {
 							tagName: 'div',
 							droppable: true,
 							attributes: {
-								class: 'swiffy-slide lazy-image',
+								class: 'swiffy-slide',
 							},
 							styles: `
 								.swiffy-slide {

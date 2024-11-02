@@ -35,13 +35,13 @@ class RecaptchaTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testHeader()
+	public function testBody()
 	{
-		$output = $this->object->header();
+		$output = $this->object->body();
 		$this->assertEquals( '', $output );
 
 		$this->context->config()->set( 'resource/recaptcha/sitekey', 'abcd' );
-		$output = $this->object->header();
+		$output = $this->object->body();
 		$this->assertStringContainsString( 'abcd', $output );
 	}
 

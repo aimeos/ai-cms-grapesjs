@@ -53,23 +53,35 @@ class Recaptcha
 
 
 	/**
-	 * Returns the HTML string for insertion into the header.
+	 * Returns the HTML string for insertion into the body.
 	 *
 	 * @param string $uid Unique identifier for the output if the content is placed more than once on the same page
-	 * @return string|null String including HTML tags for the header on error
+	 * @return string HTML body content
 	 */
-	public function header( string $uid = '' ) : ?string
+	public function body( string $uid = '' ) : string
 	{
 		$context = $this->context();
-		$content = $this->client()->header( $uid );
+		$content = $this->client()->body( $uid );
 
 		if( $key = $context->config()->get( 'resource/recaptcha/sitekey' ) )
 		{
 			$content .= '
-				<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=' . $key . '"></script>
 				<script type="text/javascript" nonce="' . $context->nonce() . '">
 					document.addEventListener("DOMContentLoaded", () => {
-						document.querySelectorAll(".aimeos.cms-page form").forEach(el => {
+						const forms = document.querySelectorAll(".aimeos.cms-page form")
+
+						if(forms.length) {
+							const script = document.createElement("script");
+
+							script.src = "https://www.google.com/recaptcha/api.js?render=' . $key . '";
+							script.nonce = "' . $context->nonce() . '";
+							script.type = "text/javascript";
+							script.defer = true;
+
+							document.body.appendChild(script);
+						}
+
+						forms.forEach(el => {
 							el.addEventListener("submit", ev => {
 								ev.preventDefault();
 								grecaptcha.ready(() => {

@@ -225,7 +225,7 @@ class Standard
 	 * @return \Aimeos\Controller\Frontend\Cms\Iface Cms controller for fluent interface
 	 * @since 2019.10
 	 */
-	public function has( string $domain, string $type = null, string $refId = null ) : Iface
+	public function has( string $domain, ?string $type = null, ?string $refId = null ) : Iface
 	{
 		$params = [$domain];
 		!$type ?: $params[] = $type;
@@ -282,7 +282,7 @@ class Standard
 	 * @return \Aimeos\Map Ordered list of cms items implementing \Aimeos\MShop\Cms\Item\Iface
 	 * @since 2021.04
 	 */
-	public function search( int &$total = null ) : \Aimeos\Map
+	public function search( ?int &$total = null ) : \Aimeos\Map
 	{
 		$this->filter->setConditions( $this->filter->and( $this->conditions ) );
 		return $this->manager->search( $this->filter, $this->domains, $total );
@@ -311,7 +311,7 @@ class Standard
 	 * @return \Aimeos\Controller\Frontend\Cms\Iface Cms controller for fluent interface
 	 * @since 2021.04
 	 */
-	public function sort( string $key = null ) : Iface
+	public function sort( ?string $key = null ) : Iface
 	{
 		$sort = [];
 		$list = ( $key ? explode( ',', $key ) : [] );

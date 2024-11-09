@@ -98,7 +98,7 @@ class TestHelper
 	}
 
 
-	public static function view( $site = 'unittest', \Aimeos\Base\Config\Iface $config = null )
+	public static function view( $site = 'unittest', ?\Aimeos\Base\Config\Iface $config = null )
 	{
 		$aimeos = self::getAimeos();
 

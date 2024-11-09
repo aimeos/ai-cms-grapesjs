@@ -516,7 +516,7 @@ class Standard
 	 * @param bool|null $default Add default criteria or NULL for relaxed default criteria
 	 * @return \Aimeos\MShop\Common\Item\Iface Item object
 	 */
-	public function find( string $code, array $ref = [], string $domain = null, string $type = null,
+	public function find( string $code, array $ref = [], ?string $domain = null, ?string $type = null,
 		?bool $default = false ) : \Aimeos\MShop\Common\Item\Iface
 	{
 		return $this->findBase( array( 'cms.url' => $code ), $ref, $default );
@@ -590,7 +590,7 @@ class Standard
 	 * @param int|null &$total Number of items that are available in total
 	 * @return \Aimeos\Map List of items implementing \Aimeos\MShop\Cms\Item\Iface with ids as keys
 	 */
-	public function search( \Aimeos\Base\Criteria\Iface $search, array $ref = [], int &$total = null ) : \Aimeos\Map
+	public function search( \Aimeos\Base\Criteria\Iface $search, array $ref = [], ?int &$total = null ) : \Aimeos\Map
 	{
 		$map = [];
 		$context = $this->context();
@@ -759,7 +759,7 @@ class Standard
 	 * @param string|null $name Name of the implementation, will be from configuration (or Default) if null
 	 * @return \Aimeos\MShop\Common\Manager\Iface Manager for different extensions, e.g types, lists etc.
 	 */
-	public function getSubManager( string $manager, string $name = null ) : \Aimeos\MShop\Common\Manager\Iface
+	public function getSubManager( string $manager, ?string $name = null ) : \Aimeos\MShop\Common\Manager\Iface
 	{
 		return $this->getSubManagerBase( 'cms', $manager, $name );
 	}

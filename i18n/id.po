@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-26 15:48+0200\n"
+"POT-Creation-Date: 2024-10-01 14:57+0200\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Kevin Purwito, 2022\n"
 "Language-Team: Indonesian (https://app.transifex.com/aimeos/teams/39015/id/)\n"
@@ -122,6 +122,9 @@ msgstr "Karakter invalid dalam nama kelas \"%1$s\""
 
 #, php-format
 msgid "Invalid client \"%1$s\""
+msgstr ""
+
+msgid "Invalid reCAPTCHA response"
 msgstr ""
 
 msgid ""
@@ -250,6 +253,10 @@ msgstr "Tipe untuk kalimat tambahan seperti 1 lb/kg atau per bulan"
 msgid "URL"
 msgstr "URL"
 
+#, php-format
+msgid "Unable to find CMS page \"%1$s\""
+msgstr ""
+
 msgid "Unique page URL (required)"
 msgstr "Laman URL unik (wajib diisi)"
 
@@ -271,6 +278,9 @@ msgstr "YYYY-MM-DD hh:mm:ss (opsional)"
 msgid "Your request"
 msgstr ""
 
+msgid "Your request is likely spam and was not executed"
+msgstr ""
+
 #, php-format
 msgid "cms"
 msgstr "cms"
@@ -286,6 +296,9 @@ msgstr "media"
 #, php-format
 msgid "property"
 msgstr "properti"
+
+msgid "reCAPTCHA token missing"
+msgstr ""
 
 msgid "selected"
 msgstr ""

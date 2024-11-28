@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-26 15:48+0200\n"
+"POT-Creation-Date: 2024-10-01 14:57+0200\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Patrik Szakos <szakos0208@gmail.com>, 2022\n"
 "Language-Team: Hungarian (https://app.transifex.com/aimeos/teams/39015/hu/)\n"
@@ -122,6 +122,9 @@ msgstr ""
 
 #, php-format
 msgid "Invalid client \"%1$s\""
+msgstr ""
+
+msgid "Invalid reCAPTCHA response"
 msgstr ""
 
 msgid ""
@@ -250,6 +253,10 @@ msgstr "További szövegek típusai, például 1 lb/kg vagy havonta"
 msgid "URL"
 msgstr "URL"
 
+#, php-format
+msgid "Unable to find CMS page \"%1$s\""
+msgstr ""
+
 msgid "Unique page URL (required)"
 msgstr "Kötelező oldal link (kötelező)"
 
@@ -271,6 +278,9 @@ msgstr ""
 msgid "Your request"
 msgstr ""
 
+msgid "Your request is likely spam and was not executed"
+msgstr ""
+
 #, php-format
 msgid "cms"
 msgstr ""
@@ -286,6 +296,9 @@ msgstr "média"
 #, php-format
 msgid "property"
 msgstr "tulajdon"
+
+msgid "reCAPTCHA token missing"
+msgstr ""
 
 msgid "selected"
 msgstr ""

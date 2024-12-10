@@ -132,7 +132,7 @@ class Standard
 		$confkey = 'client/html/cms/page';
 		$prefixes = [];
 
-		$path = '/' . trim( $this->view()->param( 'path', $this->view()->request()->getUri()->getPath() ), '/' );
+		$path = '/' . trim( $this->view()->param( 'path' ), '/' );
 
 		if( $html = $this->cached( 'body', $uid . '-' . $path, $prefixes, $confkey ) ) {
 			return $this->object()->modify( $html, $uid );
@@ -166,7 +166,7 @@ class Standard
 	 */
 	public function header( string $uid = '' ) : ?string
 	{
-		$path = '/' . trim( $this->view()->param( 'path', $this->view()->request()->getUri()->getPath() ), '/' );
+		$path = '/' . trim( $this->view()->param( 'path' ), '/' );
 		$confkey = 'client/html/cms/page';
 		$prefixes = [];
 
@@ -303,7 +303,10 @@ class Standard
 		 */
 		$domains = $context->config()->get( 'client/html/cms/page/domains', ['text'] );
 
-		$path = '/' . trim( $view->param( 'path', $view->request()->getUri()->getPath() ), '/' );
+		$path = array_unique( [
+			'/' . trim( $view->param( 'path' ), '/' ),
+			'/' . trim( $view->request()->getUri()->getPath(), '/' )
+		] );
 
 		if( $page = $controller->uses( $domains )->compare( '==', 'cms.url', $path )->search()->first() )
 		{

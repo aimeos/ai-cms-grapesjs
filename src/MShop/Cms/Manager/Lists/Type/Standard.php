@@ -18,7 +18,7 @@ namespace Aimeos\MShop\Cms\Manager\Lists\Type;
  * @subpackage Cms
  */
 class Standard
-	extends \Aimeos\MShop\Common\Manager\Type\Base
+	extends \Aimeos\MShop\Type\Manager\Standard
 	implements \Aimeos\MShop\Cms\Manager\Lists\Type\Iface
 {
 	/** mshop/cms/manager/lists/type/submanagers

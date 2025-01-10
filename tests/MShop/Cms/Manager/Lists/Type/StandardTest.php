@@ -18,11 +18,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	protected function setUp() : void
 	{
 		$this->context = \TestHelper::context();
-
-		$manager = \Aimeos\MShop::create( $this->context, 'cms' );
-		$listManager = $manager->getSubManager( 'lists' );
-
-		$this->object = $listManager->getSubManager( 'type' );
+		$this->object = new \Aimeos\MShop\Cms\Manager\Lists\Type\Standard( $this->context );
 	}
 
 
@@ -41,7 +37,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testCreateItem()
 	{
 		$item = $this->object->create();
-		$this->assertInstanceOf( \Aimeos\MShop\Common\Item\Type\Iface::class, $item );
+		$this->assertInstanceOf( \Aimeos\MShop\Type\Item\Iface::class, $item );
 	}
 
 
@@ -118,7 +114,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$expr[] = $search->compare( '==', 'cms.lists.type.status', 1 );
 		$expr[] = $search->compare( '!=', 'cms.lists.type.editor', '' );
 
-		$search->setConditions( $search->and( $expr ) );
+		$search->add( $search->and( $expr ) );
 
 		$results = $this->object->search( $search, [], $total )->toArray();
 		$this->assertEquals( 1, count( $results ) );

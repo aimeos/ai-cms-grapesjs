@@ -2,24 +2,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Aimeos, 2022
 # Kevin Purwito, 2022
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 14:57+0200\n"
+"POT-Creation-Date: 2025-01-10 17:47+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Kevin Purwito, 2022\n"
 "Language-Team: Indonesian (https://app.transifex.com/aimeos/teams/39015/id/)\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid " "
@@ -97,15 +97,14 @@ msgstr "Editor"
 msgid "End date"
 msgstr "Tanggal akhir"
 
+msgid "Generate image"
+msgstr ""
+
 msgid "ID"
 msgstr "ID"
 
-msgid ""
-"Images will only be shown for that language, useful if the media contains "
-"text or is language sepecific"
-msgstr ""
-"Gambar akan muncul untuk bahasa tersebut, bermanfaat jika media mengandung "
-"kalimat dengan bahasa tertentu"
+msgid "Images will only be shown for that language, useful if the media contains text or is language sepecific"
+msgstr "Gambar akan muncul untuk bahasa tersebut, bermanfaat jika media mengandung kalimat dengan bahasa tertentu"
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Tambah entri baru (Ctrl+I)"
@@ -127,12 +126,8 @@ msgstr ""
 msgid "Invalid reCAPTCHA response"
 msgstr ""
 
-msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
-msgstr ""
-"Pilihan konfigurasi untuk benda tertentu, akan muncul sebagai key/value "
-"dalam template"
+msgid "Item specific configuration options, will be available as key/value pairs in the templates"
+msgstr "Pilihan konfigurasi untuk benda tertentu, akan muncul sebagai key/value dalam template"
 
 msgid "Label"
 msgstr "Label"
@@ -179,12 +174,8 @@ msgstr "Pilihan"
 msgid "Order of the types in the frontend"
 msgstr "Urutan tipe-tipe di frontend"
 
-msgid ""
-"Page title, will be used on the web site if no title for the language is "
-"available"
-msgstr ""
-"Judul laman, akan digunakan di website jika judul pada bahasa tersebut "
-"tersedia"
+msgid "Page title, will be used on the web site if no title for the language is available"
+msgstr "Judul laman, akan digunakan di website jika judul pada bahasa tersebut tersedia"
 
 msgid "Please select"
 msgstr "Tolon pilih"

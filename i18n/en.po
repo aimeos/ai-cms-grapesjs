@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ai-cms-grapesjs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 14:57+0200\n"
+"POT-Creation-Date: 2025-01-10 17:47+0100\n"
 "PO-Revision-Date: 2021-01-24 16:58+0100\n"
 "Last-Translator: Aimeos <aimeos@aimeos.org>\n"
 "Language-Team: LANGUAGE <aimeos@aimeos.org>\n"
@@ -84,6 +84,9 @@ msgid "Editor"
 msgstr ""
 
 msgid "End date"
+msgstr ""
+
+msgid "Generate image"
 msgstr ""
 
 msgid "ID"

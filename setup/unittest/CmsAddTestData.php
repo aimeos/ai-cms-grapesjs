@@ -33,39 +33,14 @@ class CmsAddTestData extends BaseAddTestData
 		$this->info( 'Adding cms test data', 'vv' );
 		$this->context()->setEditor( 'ai-cms-grapesjs' );
 
-		$this->process( $this->getData() );
-	}
-
-
-	/**
-	 * Returns the test data array
-	 *
-	 * @return array Multi-dimensional array of test data
-	 */
-	protected function getData()
-	{
 		$path = __DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'cms.php';
 
 		if( ( $testdata = include( $path ) ) == false ) {
 			throw new \Aimeos\MShop\Exception( sprintf( 'No file "%1$s" found for cms domain', $path ) );
 		}
 
-		return $testdata;
-	}
-
-
-	/**
-	 * Adds the product data from the given array
-	 *
-	 * @param array $testdata Multi-dimensional array of test data
-	 */
-	protected function process( array $testdata )
-	{
 		$manager = $this->getManager( 'cms' );
-
 		$manager->begin();
-
-		$this->storeTypes( $testdata, ['cms/lists/type'] );
 
 		foreach( $testdata['cms'] as $entry )
 		{

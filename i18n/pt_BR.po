@@ -2,23 +2,23 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Keite Clembet, 2022
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-10 17:47+0100\n"
+"POT-Creation-Date: 2025-01-19 18:13+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Keite Clembet, 2022\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/aimeos/teams/39015/pt_BR/)\n"
-"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid " "
@@ -102,8 +102,12 @@ msgstr ""
 msgid "ID"
 msgstr "ID"
 
-msgid "Images will only be shown for that language, useful if the media contains text or is language sepecific"
-msgstr "As imagens serão mostradas apenas para esse idioma, útil se a mídia contiver texto ou for específico do idioma"
+msgid ""
+"Images will only be shown for that language, useful if the media contains "
+"text or is language sepecific"
+msgstr ""
+"As imagens serão mostradas apenas para esse idioma, útil se a mídia contiver"
+" texto ou for específico do idioma"
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Inserir novo registro (Ctrl+I)"
@@ -125,8 +129,12 @@ msgstr "Cliente \"%1$s\" inválido"
 msgid "Invalid reCAPTCHA response"
 msgstr ""
 
-msgid "Item specific configuration options, will be available as key/value pairs in the templates"
-msgstr "As opções de configuração específicas do item estarão disponíveis como pares de chave/valor nos templates/modelos"
+msgid ""
+"Item specific configuration options, will be available as key/value pairs in"
+" the templates"
+msgstr ""
+"As opções de configuração específicas do item estarão disponíveis como pares"
+" de chave/valor nos templates/modelos"
 
 msgid "Label"
 msgstr "Rótulo"
@@ -173,8 +181,12 @@ msgstr "Opção"
 msgid "Order of the types in the frontend"
 msgstr "Ordem dos tipos no frontend"
 
-msgid "Page title, will be used on the web site if no title for the language is available"
-msgstr "Título da página, será usado no site se nenhum título para o idioma estiver disponível"
+msgid ""
+"Page title, will be used on the web site if no title for the language is "
+"available"
+msgstr ""
+"Título da página, será usado no site se nenhum título para o idioma estiver "
+"disponível"
 
 msgid "Please select"
 msgstr "Por favor selecione"

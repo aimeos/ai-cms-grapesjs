@@ -2,24 +2,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Aimeos, 2022
-# Metal <meteoramic@yahoo.com>, 2024
-#
+# Metal <meteoramic@yahoo.com>, 2025
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-10 17:47+0100\n"
+"POT-Creation-Date: 2025-01-28 15:43+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Metal <meteoramic@yahoo.com>, 2024\n"
+"Last-Translator: Metal <meteoramic@yahoo.com>, 2025\n"
 "Language-Team: Turkish (https://app.transifex.com/aimeos/teams/39015/tr/)\n"
-"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid " "
@@ -98,13 +98,17 @@ msgid "End date"
 msgstr "Bitiş tarihi"
 
 msgid "Generate image"
-msgstr ""
+msgstr "Resim oluştur"
 
 msgid "ID"
 msgstr "Kimlik numarası"
 
-msgid "Images will only be shown for that language, useful if the media contains text or is language sepecific"
-msgstr "Resimler yalnızca o dil için gösterilecektir; medya metin içeriyorsa veya dile özgüyse bu kullanışlı bir opsiyondur"
+msgid ""
+"Images will only be shown for that language, useful if the media contains "
+"text or is language sepecific"
+msgstr ""
+"Resimler yalnızca o dil için gösterilecektir; medya metin içeriyorsa veya "
+"dile özgüyse bu kullanışlı bir opsiyondur"
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Yeni giriş ekle (Ctrl+I)"
@@ -126,8 +130,12 @@ msgstr "Geçersiz istemci \"%1$s\""
 msgid "Invalid reCAPTCHA response"
 msgstr "Geçersiz reCAPTCHA yanıtı"
 
-msgid "Item specific configuration options, will be available as key/value pairs in the templates"
-msgstr "Ürüne özgü yapılandırma seçenekleri; şablonlarda anahtar/değer çifti olarak bulunacak"
+msgid ""
+"Item specific configuration options, will be available as key/value pairs in"
+" the templates"
+msgstr ""
+"Ürüne özgü yapılandırma seçenekleri; şablonlarda anahtar/değer çifti olarak "
+"bulunacak"
 
 msgid "Label"
 msgstr "Etiket"
@@ -174,8 +182,12 @@ msgstr "Seçenek"
 msgid "Order of the types in the frontend"
 msgstr "Türlerin ön paneldeki sırası"
 
-msgid "Page title, will be used on the web site if no title for the language is available"
-msgstr "Sayfa başlığı; dil için bir başlık girilmemişse web sitesinde kullanılacaktır"
+msgid ""
+"Page title, will be used on the web site if no title for the language is "
+"available"
+msgstr ""
+"Sayfa başlığı; dil için bir başlık girilmemişse web sitesinde "
+"kullanılacaktır"
 
 msgid "Please select"
 msgstr "Lütfen seçin"
@@ -221,7 +233,8 @@ msgid "The item is only shown on the web site until that date and time"
 msgstr "Ürün, web sitesinde yalnızca bu tarih ve saate kadar gösterilir"
 
 msgid "The media title is used for the title tag of the media on the web site"
-msgstr "Medya başlığı, web sitesindeki medyanın başlık etiketi için kullanılır."
+msgstr ""
+"Medya başlığı, web sitesindeki medyanın başlık etiketi için kullanılır."
 
 msgid "Title"
 msgstr "Başlık"

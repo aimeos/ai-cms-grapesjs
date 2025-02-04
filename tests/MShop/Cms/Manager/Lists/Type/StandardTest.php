@@ -108,7 +108,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$expr[] = $search->compare( '!=', 'cms.lists.type.id', null );
 		$expr[] = $search->compare( '!=', 'cms.lists.type.siteid', null );
 		$expr[] = $search->compare( '==', 'cms.lists.type.code', 'default' );
-		$expr[] = $search->compare( '==', 'cms.lists.type.domain', 'text' );
+		$expr[] = $search->compare( '==', 'cms.lists.type.domain', 'cms/lists' );
 		$expr[] = $search->compare( '>', 'cms.lists.type.label', '' );
 		$expr[] = $search->compare( '>=', 'cms.lists.type.position', 0 );
 		$expr[] = $search->compare( '==', 'cms.lists.type.status', 1 );
@@ -132,7 +132,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$results = $this->object->search( $search, [], $total )->toArray();
 
 		$this->assertEquals( 1, count( $results ) );
-		$this->assertEquals( 2, $total );
+		$this->assertEquals( 1, $total );
 
 		foreach( $results as $itemId => $item ) {
 			$this->assertEquals( $itemId, $item->getId() );

@@ -299,7 +299,7 @@ class Standard
 		$context = $this->context();
 
 		$textManager = \Aimeos\MShop::create( $context, 'text' );
-		$listManager = \Aimeos\MShop::create( $context, 'cms/lists' );
+		$manager = \Aimeos\MShop::create( $context, 'cms' );
 
 		$listItems = $item->getListItems( 'text', null, null, false )->filter( function( $item ) {
 			return $item->getRefItem() === null || $item->getRefItem()->getType() !== 'content';
@@ -315,7 +315,7 @@ class Standard
 			$id = $this->val( $entry, 'text.id', '' );
 			$type = $this->val( $entry, 'cms.lists.type', 'default' );
 
-			$listItem = $item->getListItem( 'text', $type, $id, false ) ?: $listManager->create();
+			$listItem = $item->getListItem( 'text', $type, $id, false ) ?: $manager->createListItem();
 			$refItem = $listItem->getRefItem() ?: $textManager->create();
 
 			$refItem->fromArray( $entry, true );

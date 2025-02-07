@@ -5,16 +5,16 @@
 # 
 # Translators:
 # Роман Андрейчук, 2022
-# Aimeos, 2022
+# Aimeos, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-19 18:13+0100\n"
+"POT-Creation-Date: 2025-02-06 13:05+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Aimeos, 2022\n"
+"Last-Translator: Aimeos, 2025\n"
 "Language-Team: Russian (https://app.transifex.com/aimeos/teams/39015/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,82 +23,82 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 msgid " "
-msgstr ""
+msgstr " "
 
 msgid "Add"
-msgstr ""
+msgstr "Добавить"
 
 msgid "Advanced"
-msgstr ""
+msgstr "Расширенный"
 
 msgid "All"
-msgstr ""
+msgstr "Все"
 
 msgid "Basic"
 msgstr "Основное"
 
 msgid "Bulk edit"
-msgstr ""
+msgstr "Массовое редактирование"
 
 msgid "CMS Lists Type"
-msgstr ""
+msgstr "Тип списков CMS"
 
 msgid "CMS Lists Types"
-msgstr ""
+msgstr "Типы списков CMS"
 
 msgid "CMS page"
-msgstr ""
+msgstr "Страница CMS"
 
 msgid "CMS pages"
-msgstr ""
+msgstr "Страницы CMS"
 
 msgid "Close"
-msgstr ""
+msgstr "Закрыть"
 
 msgid "Code"
 msgstr "Код"
 
 msgid "Columns"
-msgstr ""
+msgstr "Колонны"
 
 msgid "Copy"
-msgstr ""
+msgstr "Копировать"
 
 msgid "Copy this entry"
-msgstr ""
+msgstr "Скопируйте эту запись"
 
 msgid "Created"
 msgstr "Создано"
 
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 msgid "Delete selected entries"
-msgstr ""
+msgstr "Удаление выбранных записей"
 
 msgid "Delete this entry"
 msgstr "Удалить эту запись"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr ""
+msgstr "Описание содержания текста, если он на иностранном языке"
 
 msgid "Domain"
-msgstr ""
+msgstr "Домен"
 
 msgid "Duplicate entry (Ctrl+D)"
-msgstr ""
+msgstr "Дублировать запись (Ctrl+D)"
 
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 msgid "Editor"
 msgstr "Редактор"
 
 msgid "End date"
-msgstr ""
+msgstr "Дата окончания"
 
 msgid "Generate image"
-msgstr ""
+msgstr "Создать изображение"
 
 msgid "ID"
 msgstr "ID"
@@ -107,218 +107,225 @@ msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
 msgstr ""
+"Изображения будут показаны только для этого языка. Это полезно, если медиа "
+"содержит текст или имеет разный язык."
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Вставить новую запись (Ctrl+I)"
 
 msgid "Internal name (required)"
-msgstr ""
+msgstr "Внутреннее имя (обязательно)"
 
 msgid "Internal type name shown in the administration interface"
-msgstr ""
+msgstr "Имя внутреннего типа, отображаемое в административном интерфейсе"
 
 #, php-format
 msgid "Invalid characters in class name \"%1$s\""
-msgstr ""
+msgstr "Недопустимые символы в имени класса \"%1$s\""
 
 #, php-format
 msgid "Invalid client \"%1$s\""
-msgstr ""
+msgstr "Недопустимый клиент \"%1$s\""
 
 msgid "Invalid reCAPTCHA response"
-msgstr ""
+msgstr "Неверный ответ reCAPTCHA"
 
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
 " the templates"
 msgstr ""
+"Параметры конфигурации, специфичные для конкретного элемента, будут доступны"
+" в виде пар ключ/значение в шаблонах"
 
 msgid "Label"
-msgstr ""
+msgstr "Этикетка"
 
 msgid "Language"
-msgstr ""
+msgstr "Язык"
 
 msgid "Language of the entered text"
-msgstr ""
+msgstr "Язык введенного текста"
 
 msgid "List type"
-msgstr ""
+msgstr "Тип списка"
 
 msgid "Media properties"
-msgstr ""
+msgstr "Свойства СМИ"
 
 msgid "Menu"
-msgstr ""
+msgstr "Меню"
 
 msgid "Message sent successfully"
-msgstr ""
+msgstr "Сообщение отправлено успешно"
 
 msgid "Modified"
-msgstr ""
+msgstr "Модифицированный"
 
 msgid "Move this entry up/down"
-msgstr ""
+msgstr "Переместить эту запись вверх/вниз"
 
 msgid "New"
-msgstr ""
+msgstr "Новый"
 
 msgid "No items found"
-msgstr ""
+msgstr "Не найдено ни одного товара"
 
 msgid "No recipient configured"
-msgstr ""
+msgstr "Получатель не настроен"
 
 msgid "Non-shared properties for the media item"
-msgstr ""
+msgstr "Не разделяемые свойства медиаэлемента"
 
 msgid "Option"
-msgstr ""
+msgstr "Вариант"
 
 msgid "Order of the types in the frontend"
-msgstr ""
+msgstr "Порядок отображения типов во фронтенде"
 
 msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
+"Название страницы, будет использоваться на сайте, если название для языка "
+"отсутствует"
 
 msgid "Please select"
-msgstr ""
+msgstr "Пожалуйста, выберите"
 
 msgid "Position"
-msgstr ""
+msgstr "Позиция"
 
 msgid "Property value (required)"
-msgstr ""
+msgstr "Стоимость имущества (обязательно)"
 
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
-msgstr ""
+msgstr "Необходимый параметр \"%1$s\" отсутствует"
 
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
 
 msgid "Second level type for grouping items"
-msgstr ""
+msgstr "Тип второго уровня для группировки элементов"
 
 msgid "Select file"
-msgstr ""
+msgstr "Выберите файл"
 
 msgid "Show search form"
-msgstr ""
+msgstr "Показать форму поиска"
 
 msgid "Show/hide advanced data"
-msgstr ""
+msgstr "Показать/скрыть расширенные данные"
 
 msgid "Show/hide this entry"
-msgstr ""
+msgstr "Показать/скрыть эту запись"
 
 msgid "Start date"
-msgstr ""
+msgstr "Дата начала"
 
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 msgid "The item is only shown on the web site after that date and time"
-msgstr ""
+msgstr "Товар будет показан на сайте только после указанной даты и времени"
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr ""
+msgstr "Товар отображается на сайте только до указанной даты и времени"
 
 msgid "The media title is used for the title tag of the media on the web site"
 msgstr ""
+"Заголовок медиафайла используется для тега заголовка медиафайла на веб-сайте"
 
 msgid "Title"
-msgstr ""
+msgstr "Название"
 
 msgid "Translate text"
-msgstr ""
+msgstr "Перевести текст"
 
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 msgid "Type position (optional)"
-msgstr ""
+msgstr "Положение типа (опционально)"
 
 msgid "Types for additional images like icons"
-msgstr ""
+msgstr "Типы для дополнительных изображений, например, иконок"
 
 msgid "Types for additional texts like per one lb/kg or per month"
-msgstr ""
+msgstr "Типы для дополнительных текстов, например, за фунт/кг или за месяц"
 
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #, php-format
 msgid "Unable to find CMS page \"%1$s\""
-msgstr ""
+msgstr "Невозможно найти страницу CMS \"%1$s\""
 
 msgid "Unique page URL (required)"
-msgstr ""
+msgstr "Уникальный URL-адрес страницы (обязательно)"
 
 msgid "Unique page URL, e.g. \"/page-name\""
-msgstr ""
+msgstr "Уникальный URL страницы, например, \"/page-name\"."
 
 msgid "Unique type code"
-msgstr ""
+msgstr "Уникальный код типа"
 
 msgid "Unique type code (required)"
-msgstr ""
+msgstr "Уникальный код типа (обязательно)"
 
 msgid "Value"
-msgstr ""
+msgstr "Значение"
 
 msgid "YYYY-MM-DD hh:mm:ss (optional)"
-msgstr ""
+msgstr "ГГГГ-ММ-ДД чч:мм:сс (необязательно)"
 
 msgid "Your request"
-msgstr ""
+msgstr "Ваш запрос"
 
 msgid "Your request is likely spam and was not executed"
-msgstr ""
+msgstr "Ваш запрос, скорее всего, является спамом и не был выполнен"
 
 #, php-format
 msgid "cms"
-msgstr ""
+msgstr "cms"
 
 #, php-format
 msgid "content"
-msgstr ""
+msgstr "содержание"
 
 #, php-format
 msgid "media"
-msgstr ""
+msgstr "СМИ"
 
 #, php-format
 msgid "property"
-msgstr ""
+msgstr "собственность"
 
 msgid "reCAPTCHA token missing"
-msgstr ""
+msgstr "Отсутствует токен reCAPTCHA"
 
 msgid "selected"
-msgstr ""
+msgstr "выбранные"
 
 #, php-format
 msgid "seo"
-msgstr ""
+msgstr "seo"
 
 msgid "status:-1"
-msgstr ""
+msgstr "статус:-1"
 
 msgid "status:-2"
-msgstr ""
+msgstr "статус:-2"
 
 msgid "status:0"
-msgstr ""
+msgstr "статус:0"
 
 msgid "status:1"
-msgstr ""
+msgstr "статус:1"
 
 msgid "text"
-msgstr ""
+msgstr "текст"
 
 #, php-format
 msgid "type/cms/lists"
-msgstr ""
+msgstr "type/cms/lists"

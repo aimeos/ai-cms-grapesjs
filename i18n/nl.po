@@ -5,17 +5,17 @@
 # 
 # Translators:
 # Victor Oomens, 2022
-# Aimeos, 2022
 # Maurice Lourens <mlourens@gmail.com>, 2022
+# Aimeos, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-19 18:13+0100\n"
+"POT-Creation-Date: 2025-02-06 13:05+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Maurice Lourens <mlourens@gmail.com>, 2022\n"
+"Last-Translator: Aimeos, 2025\n"
 "Language-Team: Dutch (https://app.transifex.com/aimeos/teams/39015/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,22 +24,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid " "
-msgstr ""
+msgstr " "
 
 msgid "Add"
-msgstr ""
+msgstr "Voeg  toe"
 
 msgid "Advanced"
-msgstr ""
+msgstr "Geavanceerd"
 
 msgid "All"
-msgstr ""
+msgstr "Alle"
 
 msgid "Basic"
 msgstr "Basis"
 
 msgid "Bulk edit"
-msgstr ""
+msgstr "Bulkbewerking"
 
 msgid "CMS Lists Type"
 msgstr "CMS lijst type"
@@ -54,52 +54,52 @@ msgid "CMS pages"
 msgstr "CMS pagina's"
 
 msgid "Close"
-msgstr ""
+msgstr "Sluit"
 
 msgid "Code"
 msgstr "Code"
 
 msgid "Columns"
-msgstr ""
+msgstr "Kolommen"
 
 msgid "Copy"
-msgstr ""
+msgstr "Kopie"
 
 msgid "Copy this entry"
-msgstr ""
+msgstr "Kopieer dit item"
 
 msgid "Created"
 msgstr "Aangemaakt"
 
 msgid "Delete"
-msgstr ""
+msgstr "Verwijder"
 
 msgid "Delete selected entries"
-msgstr ""
+msgstr "Geselecteerde items verwijderen"
 
 msgid "Delete this entry"
 msgstr "Verwijder ingave"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr ""
+msgstr "Beschrijving van de tekstinhoud als deze in een vreemde taal is"
 
 msgid "Domain"
-msgstr ""
+msgstr "Domein"
 
 msgid "Duplicate entry (Ctrl+D)"
-msgstr ""
+msgstr "Vermelding dupliceren (Ctrl+D)"
 
 msgid "Edit"
-msgstr ""
+msgstr "Bewerk"
 
 msgid "Editor"
 msgstr "Editor"
 
 msgid "End date"
-msgstr ""
+msgstr "Einddatum"
 
 msgid "Generate image"
-msgstr ""
+msgstr "Afbeelding genereren"
 
 msgid "ID"
 msgstr "ID"
@@ -108,6 +108,8 @@ msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
 msgstr ""
+"Afbeeldingen worden alleen getoond voor die taal, handig als de media tekst "
+"bevat of taalspecifiek is."
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Nieuwe aanmaken (Ctrl+I)"
@@ -116,168 +118,173 @@ msgid "Internal name (required)"
 msgstr "Interne naam (vereist) "
 
 msgid "Internal type name shown in the administration interface"
-msgstr ""
+msgstr "Interne typenaam die wordt weergegeven in de beheerinterface"
 
 #, php-format
 msgid "Invalid characters in class name \"%1$s\""
-msgstr ""
+msgstr "Ongeldige tekens in de klassenaam \"%1$s\"."
 
 #, php-format
 msgid "Invalid client \"%1$s\""
-msgstr ""
+msgstr "Ongeldige klant \"%1$s\""
 
 msgid "Invalid reCAPTCHA response"
-msgstr ""
+msgstr "Ongeldige reCAPTCHA reactie"
 
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
 " the templates"
 msgstr ""
+"Item-specifieke configuratieopties zijn beschikbaar als key/value-paren in "
+"de sjablonen"
 
 msgid "Label"
 msgstr "Label"
 
 msgid "Language"
-msgstr ""
+msgstr "Taal"
 
 msgid "Language of the entered text"
-msgstr ""
+msgstr "Taal van de ingevoerde tekst"
 
 msgid "List type"
-msgstr ""
+msgstr "Type lijst"
 
 msgid "Media properties"
-msgstr ""
+msgstr "Eigenschappen van media"
 
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 msgid "Message sent successfully"
-msgstr ""
+msgstr "Bericht succesvol verzonden"
 
 msgid "Modified"
 msgstr "Aangepast"
 
 msgid "Move this entry up/down"
-msgstr ""
+msgstr "Verplaats dit item omhoog/omlaag"
 
 msgid "New"
 msgstr "Nieuw"
 
 msgid "No items found"
-msgstr ""
+msgstr "Geen items gevonden"
 
 msgid "No recipient configured"
-msgstr ""
+msgstr "Geen ontvanger geconfigureerd"
 
 msgid "Non-shared properties for the media item"
-msgstr ""
+msgstr "Niet-gedeelde eigenschappen voor het media-item"
 
 msgid "Option"
 msgstr "Optie"
 
 msgid "Order of the types in the frontend"
-msgstr ""
+msgstr "Volgorde van de types in de voorkant"
 
 msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
+"Paginatitel, wordt gebruikt op de website als er geen titel voor de taal "
+"beschikbaar is"
 
 msgid "Please select"
-msgstr ""
+msgstr "Selecteer"
 
 msgid "Position"
-msgstr ""
+msgstr "Positie"
 
 msgid "Property value (required)"
-msgstr ""
+msgstr "Eigendomswaarde (verplicht)"
 
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
-msgstr ""
+msgstr "Verplichte parameter \"%1$s\" ontbreekt"
 
 msgid "Save"
 msgstr "Opslaan"
 
 msgid "Second level type for grouping items"
-msgstr ""
+msgstr "Type van tweede niveau voor het groeperen van items"
 
 msgid "Select file"
-msgstr ""
+msgstr "Selecteer bestand"
 
 msgid "Show search form"
-msgstr ""
+msgstr "Zoekformulier tonen"
 
 msgid "Show/hide advanced data"
-msgstr ""
+msgstr "Geavanceerde gegevens weergeven/verbergen"
 
 msgid "Show/hide this entry"
-msgstr ""
+msgstr "Dit item tonen/verbergen"
 
 msgid "Start date"
-msgstr ""
+msgstr "Startdatum"
 
 msgid "Status"
 msgstr "Status"
 
 msgid "The item is only shown on the web site after that date and time"
-msgstr ""
+msgstr "Het item wordt alleen op de website weergegeven na die datum en tijd"
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr ""
+msgstr "Het item wordt alleen op de website getoond tot die datum en tijd"
 
 msgid "The media title is used for the title tag of the media on the web site"
 msgstr ""
+"De mediatitel wordt gebruikt voor de title-tag van de media op de website."
 
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 msgid "Translate text"
-msgstr ""
+msgstr "Tekst vertalen"
 
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 msgid "Type position (optional)"
-msgstr ""
+msgstr "Typepositie (optioneel)"
 
 msgid "Types for additional images like icons"
-msgstr ""
+msgstr "Types voor extra afbeeldingen zoals pictogrammen"
 
 msgid "Types for additional texts like per one lb/kg or per month"
-msgstr ""
+msgstr "Types voor extra teksten zoals per lb/kg of per maand"
 
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #, php-format
 msgid "Unable to find CMS page \"%1$s\""
-msgstr ""
+msgstr "CMS-pagina \"%1$s\" niet gevonden"
 
 msgid "Unique page URL (required)"
-msgstr ""
+msgstr "Unieke pagina-URL (verplicht)"
 
 msgid "Unique page URL, e.g. \"/page-name\""
-msgstr ""
+msgstr "Unieke pagina-URL, bijvoorbeeld \"/page-name\"."
 
 msgid "Unique type code"
-msgstr ""
+msgstr "Unieke typecode"
 
 msgid "Unique type code (required)"
-msgstr ""
+msgstr "Unieke typecode (verplicht)"
 
 msgid "Value"
 msgstr "Waarde"
 
 msgid "YYYY-MM-DD hh:mm:ss (optional)"
-msgstr ""
+msgstr "JJJJ-MM-DD uu:mm:ss (optioneel)"
 
 msgid "Your request"
-msgstr ""
+msgstr "Uw verzoek"
 
 msgid "Your request is likely spam and was not executed"
-msgstr ""
+msgstr "Uw verzoek is waarschijnlijk spam en is niet uitgevoerd"
 
 #, php-format
 msgid "cms"
@@ -285,41 +292,41 @@ msgstr "CMS"
 
 #, php-format
 msgid "content"
-msgstr ""
+msgstr "inhoud"
 
 #, php-format
 msgid "media"
-msgstr ""
+msgstr "media"
 
 #, php-format
 msgid "property"
-msgstr ""
+msgstr "eigendom"
 
 msgid "reCAPTCHA token missing"
-msgstr ""
+msgstr "reCAPTCHA token ontbreekt"
 
 msgid "selected"
-msgstr ""
+msgstr "geselecteerd"
 
 #, php-format
 msgid "seo"
-msgstr ""
+msgstr "seo"
 
 msgid "status:-1"
-msgstr ""
+msgstr "status:-1"
 
 msgid "status:-2"
-msgstr ""
+msgstr "status:-2"
 
 msgid "status:0"
-msgstr ""
+msgstr "status:0"
 
 msgid "status:1"
-msgstr ""
+msgstr "status:1"
 
 msgid "text"
-msgstr ""
+msgstr "tekst"
 
 #, php-format
 msgid "type/cms/lists"
-msgstr ""
+msgstr "type/cms/lijsten"

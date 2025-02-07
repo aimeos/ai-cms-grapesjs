@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Aimeos, 2022
 # Chiarra, 2024
+# Aimeos, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-19 18:13+0100\n"
+"POT-Creation-Date: 2025-02-06 13:05+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Chiarra, 2024\n"
+"Last-Translator: Aimeos, 2025\n"
 "Language-Team: Bulgarian (https://app.transifex.com/aimeos/teams/39015/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,302 +23,311 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid " "
-msgstr ""
+msgstr " "
 
 msgid "Add"
-msgstr ""
+msgstr "Добавяне на"
 
 msgid "Advanced"
-msgstr ""
+msgstr "Разширен"
 
 msgid "All"
-msgstr ""
+msgstr "Всички"
 
 msgid "Basic"
 msgstr "Основен"
 
 msgid "Bulk edit"
-msgstr ""
+msgstr "Редактиране в насипно състояние"
 
 msgid "CMS Lists Type"
-msgstr ""
+msgstr "CMS Списъци Тип"
 
 msgid "CMS Lists Types"
-msgstr ""
+msgstr "Типове списъци на CMS"
 
 msgid "CMS page"
-msgstr ""
+msgstr "Страница на CMS"
 
 msgid "CMS pages"
-msgstr ""
+msgstr "CMS страници"
 
 msgid "Close"
-msgstr ""
+msgstr "Затвори"
 
 msgid "Code"
-msgstr ""
+msgstr "Код"
 
 msgid "Columns"
-msgstr ""
+msgstr "Колони"
 
 msgid "Copy"
-msgstr ""
+msgstr "Копие"
 
 msgid "Copy this entry"
-msgstr ""
+msgstr "Копирайте този запис"
 
 msgid "Created"
-msgstr ""
+msgstr "Създаден"
 
 msgid "Delete"
-msgstr ""
+msgstr "Изтриване на"
 
 msgid "Delete selected entries"
-msgstr ""
+msgstr "Изтриване на избрани записи"
 
 msgid "Delete this entry"
 msgstr "Изтрийте записа"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr ""
+msgstr "Описание на съдържанието на текста, ако той е на чужд език"
 
 msgid "Domain"
-msgstr ""
+msgstr "Домейн"
 
 msgid "Duplicate entry (Ctrl+D)"
-msgstr ""
+msgstr "Дублиране на записа (Ctrl+D)"
 
 msgid "Edit"
-msgstr ""
+msgstr "Редактиране на"
 
 msgid "Editor"
-msgstr ""
+msgstr "Редактор"
 
 msgid "End date"
-msgstr ""
+msgstr "Крайна дата"
 
 msgid "Generate image"
-msgstr ""
+msgstr "Генериране на изображение"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
 msgstr ""
+"Изображенията ще се показват само за този език, което е полезно, ако медията"
+" съдържа текст или е специфична за даден език."
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Въведете нов запис (Ctrl+I)"
 
 msgid "Internal name (required)"
-msgstr ""
+msgstr "Вътрешно име (задължително)"
 
 msgid "Internal type name shown in the administration interface"
 msgstr ""
+"Наименование на вътрешния тип, показвано в интерфейса за администриране"
 
 #, php-format
 msgid "Invalid characters in class name \"%1$s\""
-msgstr ""
+msgstr "Невалидни символи в името на класа \"%1$s\""
 
 #, php-format
 msgid "Invalid client \"%1$s\""
-msgstr ""
+msgstr "Невалиден клиент \"%1$s\""
 
 msgid "Invalid reCAPTCHA response"
-msgstr ""
+msgstr "Невалиден отговор на reCAPTCHA"
 
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
 " the templates"
 msgstr ""
+"Специфичните за елемента опции за конфигуриране ще бъдат достъпни като "
+"двойки ключ/стойност в шаблоните"
 
 msgid "Label"
-msgstr ""
+msgstr "Етикет"
 
 msgid "Language"
-msgstr ""
+msgstr "Език"
 
 msgid "Language of the entered text"
-msgstr ""
+msgstr "Език на въведения текст"
 
 msgid "List type"
-msgstr ""
+msgstr "Тип на списъка"
 
 msgid "Media properties"
-msgstr ""
+msgstr "Свойства на медиите"
 
 msgid "Menu"
-msgstr ""
+msgstr "Меню"
 
 msgid "Message sent successfully"
-msgstr ""
+msgstr "Съобщението е изпратено успешно"
 
 msgid "Modified"
-msgstr ""
+msgstr "Модифициран"
 
 msgid "Move this entry up/down"
-msgstr ""
+msgstr "Преместване на този запис нагоре/надолу"
 
 msgid "New"
-msgstr ""
+msgstr "Нов"
 
 msgid "No items found"
-msgstr ""
+msgstr "Не са намерени никакви елементи"
 
 msgid "No recipient configured"
-msgstr ""
+msgstr "Няма конфигуриран получател"
 
 msgid "Non-shared properties for the media item"
-msgstr ""
+msgstr "Несподелени свойства за медийния елемент"
 
 msgid "Option"
-msgstr ""
+msgstr "Опция"
 
 msgid "Order of the types in the frontend"
-msgstr ""
+msgstr "Подредба на типовете във frontend"
 
 msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
+"Заглавие на страницата, което ще се използва на уебсайта, ако няма заглавие "
+"за езика."
 
 msgid "Please select"
-msgstr ""
+msgstr "Моля, изберете"
 
 msgid "Position"
-msgstr ""
+msgstr "Позиция"
 
 msgid "Property value (required)"
-msgstr ""
+msgstr "Стойност на имота (задължително)"
 
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
-msgstr ""
+msgstr "Липсва задължителен параметър \"%1$s\""
 
 msgid "Save"
-msgstr ""
+msgstr "Запазете"
 
 msgid "Second level type for grouping items"
-msgstr ""
+msgstr "Тип от второ ниво за групиране на елементи"
 
 msgid "Select file"
-msgstr ""
+msgstr "Изберете файл"
 
 msgid "Show search form"
-msgstr ""
+msgstr "Показване на формата за търсене"
 
 msgid "Show/hide advanced data"
-msgstr ""
+msgstr "Показване/скриване на разширени данни"
 
 msgid "Show/hide this entry"
-msgstr ""
+msgstr "Показване/скриване на този запис"
 
 msgid "Start date"
-msgstr ""
+msgstr "Начална дата"
 
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 msgid "The item is only shown on the web site after that date and time"
-msgstr ""
+msgstr "Елементът се показва на уебсайта само след тази дата и час."
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr ""
+msgstr "Артикулът се показва на уебсайта само до тази дата и час."
 
 msgid "The media title is used for the title tag of the media on the web site"
 msgstr ""
+"Заглавието на медията се използва за заглавния таг на медията на уебсайта"
 
 msgid "Title"
-msgstr ""
+msgstr "Заглавие"
 
 msgid "Translate text"
-msgstr ""
+msgstr "Превод на текст"
 
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 msgid "Type position (optional)"
-msgstr ""
+msgstr "Позиция на типа (по избор)"
 
 msgid "Types for additional images like icons"
-msgstr ""
+msgstr "Типове за допълнителни изображения, например икони"
 
 msgid "Types for additional texts like per one lb/kg or per month"
 msgstr ""
+"Видове за допълнителни текстове, като например за един фунт/кг или за месец"
 
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #, php-format
 msgid "Unable to find CMS page \"%1$s\""
-msgstr ""
+msgstr "Невъзможност за намиране на страницата на CMS \"%1$s\""
 
 msgid "Unique page URL (required)"
-msgstr ""
+msgstr "Уникален URL адрес на страницата (задължително)"
 
 msgid "Unique page URL, e.g. \"/page-name\""
-msgstr ""
+msgstr "Уникален URL адрес на страницата, например \"/page-name\""
 
 msgid "Unique type code"
-msgstr ""
+msgstr "Уникален код на типа"
 
 msgid "Unique type code (required)"
-msgstr ""
+msgstr "Уникален код на типа (задължително)"
 
 msgid "Value"
-msgstr ""
+msgstr "Стойност"
 
 msgid "YYYY-MM-DD hh:mm:ss (optional)"
-msgstr ""
+msgstr "ГГГГ-ММ-ДД hh:mm:ss (по избор)"
 
 msgid "Your request"
-msgstr ""
+msgstr "Вашето искане"
 
 msgid "Your request is likely spam and was not executed"
-msgstr ""
+msgstr "Вашата заявка вероятно е спам и не е била изпълнена"
 
 #, php-format
 msgid "cms"
-msgstr ""
+msgstr "cms"
 
 #, php-format
 msgid "content"
-msgstr ""
+msgstr "съдържание"
 
 #, php-format
 msgid "media"
-msgstr ""
+msgstr "медии"
 
 #, php-format
 msgid "property"
-msgstr ""
+msgstr "собственост"
 
 msgid "reCAPTCHA token missing"
-msgstr ""
+msgstr "Липсва токън reCAPTCHA"
 
 msgid "selected"
-msgstr ""
+msgstr "избран"
 
 #, php-format
 msgid "seo"
-msgstr ""
+msgstr "seo"
 
 msgid "status:-1"
-msgstr ""
+msgstr "състояние:-1"
 
 msgid "status:-2"
-msgstr ""
+msgstr "състояние:-2"
 
 msgid "status:0"
-msgstr ""
+msgstr "състояние:0"
 
 msgid "status:1"
-msgstr ""
+msgstr "състояние:1"
 
 msgid "text"
-msgstr ""
+msgstr "текст"
 
 #, php-format
 msgid "type/cms/lists"
-msgstr ""
+msgstr "type/cms/lists"

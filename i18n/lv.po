@@ -11,93 +11,93 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-08 13:36+0100\n"
+"POT-Creation-Date: 2025-02-08 14:18+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
-"Language-Team: Portuguese (https://app.transifex.com/aimeos/teams/39015/pt/)\n"
+"Language-Team: Latvian (https://app.transifex.com/aimeos/teams/39015/lv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: lv\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
 msgid " "
 msgstr " "
 
 msgid "Add"
-msgstr "Adicionar"
+msgstr "Pievienot"
 
 msgid "Advanced"
-msgstr "Avançado"
+msgstr "Advanced"
 
 msgid "All"
-msgstr "Todos"
+msgstr "Visi"
 
 msgid "Basic"
-msgstr "Básico"
+msgstr "Pamati"
 
 msgid "Bulk edit"
-msgstr "Edição em massa"
+msgstr "Lielgabarīta rediģēšana"
 
 msgid "CMS Lists Type"
-msgstr "Listas CMS Tipo"
+msgstr "CMS saraksti Tips"
 
 msgid "CMS Lists Types"
-msgstr "Tipos de listas CMS"
+msgstr "CMS sarakstu veidi"
 
 msgid "CMS page"
-msgstr "Página CMS"
+msgstr "CMS lapa"
 
 msgid "CMS pages"
-msgstr "Páginas CMS"
+msgstr "CMS lapas"
 
 msgid "Close"
-msgstr "Fechar"
+msgstr "Aizvērt"
 
 msgid "Code"
-msgstr "Código"
+msgstr "Kods"
 
 msgid "Columns"
-msgstr "Colunas"
+msgstr "Kolonnas"
 
 msgid "Copy"
-msgstr "Cópia"
+msgstr "Kopēt"
 
 msgid "Copy this entry"
-msgstr "Copiar esta entrada"
+msgstr "Kopēt šo ierakstu"
 
 msgid "Created"
-msgstr "Criado"
+msgstr "Izveidots"
 
 msgid "Delete"
-msgstr "Eliminar"
+msgstr "Dzēst"
 
 msgid "Delete selected entries"
-msgstr "Eliminar entradas selecionadas"
+msgstr "Izdzēst atlasītos ierakstus"
 
 msgid "Delete this entry"
-msgstr "Eliminar este registo"
+msgstr "Dzēst šo ierakstu"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr "Descrição do conteúdo do texto, se estiver numa língua estrangeira"
+msgstr "Teksta satura apraksts, ja tas ir svešvalodā."
 
 msgid "Domain"
-msgstr "Domínio"
+msgstr "Domēns"
 
 msgid "Duplicate entry (Ctrl+D)"
-msgstr "Duplicar entrada (Ctrl+D)"
+msgstr "Ieraksta dublēšana (Ctrl+D)"
 
 msgid "Edit"
-msgstr "Editar"
+msgstr "Rediģēt"
 
 msgid "Editor"
-msgstr "Editor"
+msgstr "Redaktors"
 
 msgid "End date"
-msgstr "Data final"
+msgstr "Beigu datums"
 
 msgid "Generate image"
-msgstr "Gerar imagem"
+msgstr "Izveidot attēlu"
 
 msgid "ID"
 msgstr "ID"
@@ -106,184 +106,185 @@ msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
 msgstr ""
-"As imagens só serão mostradas para essa língua, o que é útil se o suporte "
-"contiver texto ou for específico de uma língua"
+"Attēli tiks rādīti tikai attiecīgajā valodā, kas ir noderīgi, ja multivides "
+"nesējs satur tekstu vai ir specifisks valodai."
 
 msgid "Insert new entry (Ctrl+I)"
-msgstr "Inserir nova entrada (Ctrl+I)"
+msgstr "Ievietot jaunu ierakstu (Ctrl+I)"
 
 msgid "Internal name (required)"
-msgstr "Nome interno (obrigatório)"
+msgstr "Iekšējais nosaukums (obligāts)"
 
 msgid "Internal type name shown in the administration interface"
-msgstr "Nome do tipo interno apresentado na interface de administração"
+msgstr "Iekšējā tipa nosaukums, kas parādīts administrēšanas saskarnē"
 
 #, php-format
 msgid "Invalid characters in class name \"%1$s\""
-msgstr "Caracteres inválidos no nome da classe \"%1$s\""
+msgstr "Nepareizas rakstzīmes klases nosaukumā \"%1$s\""
 
 #, php-format
 msgid "Invalid client \"%1$s\""
-msgstr "Cliente inválido \"%1$s\""
+msgstr "Nederīgs klients \"%1$s\""
 
 msgid "Invalid reCAPTCHA response"
-msgstr "Resposta reCAPTCHA inválida"
+msgstr "Nederīga reCAPTCHA atbilde"
 
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
 " the templates"
 msgstr ""
-"As opções de configuração específicas do item estarão disponíveis como pares"
-" de chave/valor nos modelos"
+"Vienumam specifiskas konfigurācijas opcijas, kas veidnēs būs pieejamas kā "
+"atslēgu/vērtību pāri."
 
 msgid "Label"
-msgstr "Etiqueta"
+msgstr "Etiķete"
 
 msgid "Language"
-msgstr "Língua"
+msgstr "Valoda"
 
 msgid "Language of the entered text"
-msgstr "Língua do texto introduzido"
+msgstr "Ievadītā teksta valoda"
 
 msgid "List type"
-msgstr "Tipo de lista"
+msgstr "Saraksta tips"
 
 msgid "Media properties"
-msgstr "Propriedades dos media"
+msgstr "Mediju īpašības"
 
 msgid "Menu"
-msgstr "Menu"
+msgstr "Izvēlne"
 
 msgid "Message sent successfully"
-msgstr "Mensagem enviada com sucesso"
+msgstr "Ziņojums ir veiksmīgi nosūtīts"
 
 msgid "Modified"
-msgstr "Modificado"
+msgstr "Modificēts"
 
 msgid "Move this entry up/down"
-msgstr "Mover esta entrada para cima/para baixo"
+msgstr "Pārvietot šo ierakstu uz augšu/uz leju"
 
 msgid "New"
-msgstr "Novo"
+msgstr "Jauns"
 
 msgid "No items found"
-msgstr "Nenhum item encontrado"
+msgstr "Nav atrasts nevienas preces"
 
 msgid "No recipient configured"
-msgstr "Nenhum destinatário configurado"
+msgstr "Nav konfigurēts saņēmējs"
 
 msgid "Non-shared properties for the media item"
-msgstr "Propriedades não partilhadas para o item multimédia"
+msgstr "Nesadalītās multivides elementa īpašības"
 
 msgid "Option"
-msgstr "Opção"
+msgstr "Iespēja"
 
 msgid "Order of the types in the frontend"
-msgstr "Ordem dos tipos no frontend"
+msgstr "Veidu secība frontendā"
 
 msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
-"Título da página, que será utilizado no sítio Web se não estiver disponível "
-"nenhum título para a língua"
+"Lapas virsraksts, kas tiks izmantots tīmekļa vietnē, ja valodas virsraksts "
+"nav pieejams."
 
 msgid "Please select"
-msgstr "Por favor, selecione"
+msgstr "Lūdzu, izvēlieties"
 
 msgid "Position"
-msgstr "Posição"
+msgstr "Pozīcija"
 
 msgid "Property value (required)"
-msgstr "Valor do imóvel (obrigatório)"
+msgstr "Īpašuma vērtība (obligāti)"
 
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
-msgstr "O parâmetro obrigatório \"%1$s\" está em falta"
+msgstr "Trūkst obligātā parametra \"%1$s\"."
 
 msgid "Save"
-msgstr "Guardar"
+msgstr "Saglabāt"
 
 msgid "Second level type for grouping items"
-msgstr "Tipo de segundo nível para agrupar itens"
+msgstr "Otrā līmeņa veids vienību grupēšanai"
 
 msgid "Select file"
-msgstr "Selecionar ficheiro"
+msgstr "Izvēlieties failu"
 
 msgid "Show search form"
-msgstr "Mostrar formulário de pesquisa"
+msgstr "Rādīt meklēšanas veidlapu"
 
 msgid "Show/hide advanced data"
-msgstr "Mostrar/ocultar dados avançados"
+msgstr "Rādīt/noslēpt papildu datus"
 
 msgid "Show/hide this entry"
-msgstr "Mostrar/ocultar esta entrada"
+msgstr "Rādīt/noslēpt šo ierakstu"
 
 msgid "Start date"
-msgstr "Data de início"
+msgstr "Sākuma datums"
 
 msgid "Status"
-msgstr "Estado"
+msgstr "Statuss"
 
 msgid "The item is only shown on the web site after that date and time"
-msgstr "O artigo só é apresentado no sítio Web após essa data e hora"
+msgstr "Prece tīmekļa vietnē tiek parādīta tikai pēc šī datuma un laika."
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr "O artigo só é apresentado no sítio Web até essa data e hora"
+msgstr ""
+"Vienība ir redzama tīmekļa vietnē tikai līdz minētajam datumam un laikam."
 
 msgid "The media title is used for the title tag of the media on the web site"
 msgstr ""
-"O título dos média é utilizado para a etiqueta de título dos média no sítio "
-"Web"
+"Multivides nosaukums tiek izmantots tīmekļa vietnes multivides nosaukuma "
+"birkā."
 
 msgid "Title"
-msgstr "Título"
+msgstr "Nosaukums"
 
 msgid "Translate text"
-msgstr "Traduzir texto"
+msgstr "Tulkot tekstu"
 
 msgid "Type"
-msgstr "Tipo"
+msgstr "Tips"
 
 msgid "Type position (optional)"
-msgstr "Posição do tipo (opcional)"
+msgstr "Ierakstiet pozīciju (pēc izvēles)"
 
 msgid "Types for additional images like icons"
-msgstr "Tipos de imagens adicionais, como ícones"
+msgstr "Papildu attēlu, piemēram, ikonu, veidi"
 
 msgid "Types for additional texts like per one lb/kg or per month"
-msgstr "Tipos de textos adicionais como por lb/kg ou por mês"
+msgstr "Papildu tekstu veidi, piemēram, par vienu lb/kg vai mēnesī"
 
 msgid "URL"
 msgstr "URL"
 
 #, php-format
 msgid "Unable to find CMS page \"%1$s\""
-msgstr "Não foi possível encontrar a página CMS \"%1$s\""
+msgstr "Nav iespējams atrast CMS lapu \"%1$s\""
 
 msgid "Unique page URL (required)"
-msgstr "URL único da página (obrigatório)"
+msgstr "Unikāls lapas URL (obligāts)"
 
 msgid "Unique page URL, e.g. \"/page-name\""
-msgstr "URL único da página, por exemplo, \"/page-name\""
+msgstr "Unikāls lapas URL, piemēram, \"/page-name\"."
 
 msgid "Unique type code"
-msgstr "Código de tipo único"
+msgstr "Unikāls tipa kods"
 
 msgid "Unique type code (required)"
-msgstr "Código de tipo único (obrigatório)"
+msgstr "Unikālais tipa kods (obligāts)"
 
 msgid "Value"
-msgstr "Valor"
+msgstr "Vērtība"
 
 msgid "YYYY-MM-DD hh:mm:ss (optional)"
-msgstr "AAAA-MM-DD hh:mm:ss (opcional)"
+msgstr "GGGGG-MM-DD hh:mm:ss (pēc izvēles)"
 
 msgid "Your request"
-msgstr "O seu pedido"
+msgstr "Jūsu pieprasījums"
 
 msgid "Your request is likely spam and was not executed"
-msgstr "O seu pedido é provavelmente spam e não foi executado"
+msgstr "Jūsu pieprasījums, visticamāk, ir surogātpasts un netika izpildīts."
 
 #, php-format
 msgid "cms"
@@ -291,41 +292,41 @@ msgstr "cms"
 
 #, php-format
 msgid "content"
-msgstr "conteúdo"
+msgstr "saturs"
 
 #, php-format
 msgid "media"
-msgstr "meios de comunicação"
+msgstr "plašsaziņas līdzekļi"
 
 #, php-format
 msgid "property"
-msgstr "propriedade"
+msgstr "īpašums"
 
 msgid "reCAPTCHA token missing"
-msgstr "Falta o token reCAPTCHA"
+msgstr "trūkst reCAPTCHA marķiera"
 
 msgid "selected"
-msgstr "selecionado"
+msgstr "atlasīts"
 
 #, php-format
 msgid "seo"
 msgstr "seo"
 
 msgid "status:-1"
-msgstr "estado:-1"
+msgstr "statuss:-1"
 
 msgid "status:-2"
-msgstr "estado:-2"
+msgstr "statuss:-2"
 
 msgid "status:0"
-msgstr "estado:0"
+msgstr "statuss:0"
 
 msgid "status:1"
-msgstr "estado:1"
+msgstr "statuss:1"
 
 msgid "text"
-msgstr "texto"
+msgstr "teksts"
 
 #, php-format
 msgid "type/cms/lists"
-msgstr "tipo/cms/listas"
+msgstr "type/cms/lists"

@@ -11,93 +11,93 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-08 13:36+0100\n"
+"POT-Creation-Date: 2025-02-08 14:18+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
-"Language-Team: Portuguese (https://app.transifex.com/aimeos/teams/39015/pt/)\n"
+"Language-Team: Korean (https://app.transifex.com/aimeos/teams/39015/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid " "
 msgstr " "
 
 msgid "Add"
-msgstr "Adicionar"
+msgstr "추가"
 
 msgid "Advanced"
-msgstr "Avançado"
+msgstr "고급"
 
 msgid "All"
-msgstr "Todos"
+msgstr "모두"
 
 msgid "Basic"
-msgstr "Básico"
+msgstr "기본"
 
 msgid "Bulk edit"
-msgstr "Edição em massa"
+msgstr "대량 편집"
 
 msgid "CMS Lists Type"
-msgstr "Listas CMS Tipo"
+msgstr "CMS 목록 유형"
 
 msgid "CMS Lists Types"
-msgstr "Tipos de listas CMS"
+msgstr "CMS 목록 유형"
 
 msgid "CMS page"
-msgstr "Página CMS"
+msgstr "CMS 페이지"
 
 msgid "CMS pages"
-msgstr "Páginas CMS"
+msgstr "CMS 페이지"
 
 msgid "Close"
-msgstr "Fechar"
+msgstr "닫기"
 
 msgid "Code"
-msgstr "Código"
+msgstr "코드"
 
 msgid "Columns"
-msgstr "Colunas"
+msgstr "열"
 
 msgid "Copy"
-msgstr "Cópia"
+msgstr "복사"
 
 msgid "Copy this entry"
-msgstr "Copiar esta entrada"
+msgstr "이 항목 복사"
 
 msgid "Created"
-msgstr "Criado"
+msgstr "생성됨"
 
 msgid "Delete"
-msgstr "Eliminar"
+msgstr "삭제"
 
 msgid "Delete selected entries"
-msgstr "Eliminar entradas selecionadas"
+msgstr "선택한 항목 삭제"
 
 msgid "Delete this entry"
-msgstr "Eliminar este registo"
+msgstr "이 항목 삭제"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr "Descrição do conteúdo do texto, se estiver numa língua estrangeira"
+msgstr "텍스트 콘텐츠가 외국어인 경우 텍스트 콘텐츠 설명"
 
 msgid "Domain"
-msgstr "Domínio"
+msgstr "도메인"
 
 msgid "Duplicate entry (Ctrl+D)"
-msgstr "Duplicar entrada (Ctrl+D)"
+msgstr "중복 항목(Ctrl+D)"
 
 msgid "Edit"
-msgstr "Editar"
+msgstr "편집"
 
 msgid "Editor"
-msgstr "Editor"
+msgstr "편집기"
 
 msgid "End date"
-msgstr "Data final"
+msgstr "종료 날짜"
 
 msgid "Generate image"
-msgstr "Gerar imagem"
+msgstr "이미지 생성"
 
 msgid "ID"
 msgstr "ID"
@@ -105,185 +105,177 @@ msgstr "ID"
 msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
-msgstr ""
-"As imagens só serão mostradas para essa língua, o que é útil se o suporte "
-"contiver texto ou for específico de uma língua"
+msgstr "이미지는 해당 언어에 대해서만 표시되며, 미디어에 텍스트가 포함되어 있거나 특정 언어인 경우에 유용합니다."
 
 msgid "Insert new entry (Ctrl+I)"
-msgstr "Inserir nova entrada (Ctrl+I)"
+msgstr "새 항목 삽입(Ctrl+I)"
 
 msgid "Internal name (required)"
-msgstr "Nome interno (obrigatório)"
+msgstr "내부 이름(필수)"
 
 msgid "Internal type name shown in the administration interface"
-msgstr "Nome do tipo interno apresentado na interface de administração"
+msgstr "관리 인터페이스에 표시되는 내부 유형 이름"
 
 #, php-format
 msgid "Invalid characters in class name \"%1$s\""
-msgstr "Caracteres inválidos no nome da classe \"%1$s\""
+msgstr "클래스 이름 \"%1$s\"에 잘못된 문자가 있습니다."
 
 #, php-format
 msgid "Invalid client \"%1$s\""
-msgstr "Cliente inválido \"%1$s\""
+msgstr "잘못된 클라이언트 \"%1$s\""
 
 msgid "Invalid reCAPTCHA response"
-msgstr "Resposta reCAPTCHA inválida"
+msgstr "잘못된 reCAPTCHA 응답"
 
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
 " the templates"
-msgstr ""
-"As opções de configuração específicas do item estarão disponíveis como pares"
-" de chave/valor nos modelos"
+msgstr "항목별 구성 옵션은 템플릿에서 키/값 쌍으로 사용할 수 있습니다."
 
 msgid "Label"
-msgstr "Etiqueta"
+msgstr "라벨"
 
 msgid "Language"
-msgstr "Língua"
+msgstr "언어"
 
 msgid "Language of the entered text"
-msgstr "Língua do texto introduzido"
+msgstr "입력한 텍스트의 언어"
 
 msgid "List type"
-msgstr "Tipo de lista"
+msgstr "목록 유형"
 
 msgid "Media properties"
-msgstr "Propriedades dos media"
+msgstr "미디어 속성"
 
 msgid "Menu"
-msgstr "Menu"
+msgstr "메뉴"
 
 msgid "Message sent successfully"
-msgstr "Mensagem enviada com sucesso"
+msgstr "메시지 전송 성공"
 
 msgid "Modified"
-msgstr "Modificado"
+msgstr "수정됨"
 
 msgid "Move this entry up/down"
-msgstr "Mover esta entrada para cima/para baixo"
+msgstr "이 항목 위/아래로 이동"
 
 msgid "New"
-msgstr "Novo"
+msgstr "신규"
 
 msgid "No items found"
-msgstr "Nenhum item encontrado"
+msgstr "항목을 찾을 수 없습니다."
 
 msgid "No recipient configured"
-msgstr "Nenhum destinatário configurado"
+msgstr "구성된 수신자 없음"
 
 msgid "Non-shared properties for the media item"
-msgstr "Propriedades não partilhadas para o item multimédia"
+msgstr "미디어 항목의 비공유 속성"
 
 msgid "Option"
-msgstr "Opção"
+msgstr "옵션"
 
 msgid "Order of the types in the frontend"
-msgstr "Ordem dos tipos no frontend"
+msgstr "프론트엔드에서 유형 순서"
 
 msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
-msgstr ""
-"Título da página, que será utilizado no sítio Web se não estiver disponível "
-"nenhum título para a língua"
+msgstr "페이지 제목, 해당 언어의 제목이 없는 경우 웹 사이트에서 사용됩니다."
 
 msgid "Please select"
-msgstr "Por favor, selecione"
+msgstr "선택하세요"
 
 msgid "Position"
-msgstr "Posição"
+msgstr "위치"
 
 msgid "Property value (required)"
-msgstr "Valor do imóvel (obrigatório)"
+msgstr "속성 값(필수)"
 
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
-msgstr "O parâmetro obrigatório \"%1$s\" está em falta"
+msgstr "필수 매개 변수 \"%1$s\"가 없습니다."
 
 msgid "Save"
-msgstr "Guardar"
+msgstr "저장"
 
 msgid "Second level type for grouping items"
-msgstr "Tipo de segundo nível para agrupar itens"
+msgstr "항목 그룹화를 위한 두 번째 레벨 유형"
 
 msgid "Select file"
-msgstr "Selecionar ficheiro"
+msgstr "파일 선택"
 
 msgid "Show search form"
-msgstr "Mostrar formulário de pesquisa"
+msgstr "검색 양식 표시"
 
 msgid "Show/hide advanced data"
-msgstr "Mostrar/ocultar dados avançados"
+msgstr "고급 데이터 표시/숨기기"
 
 msgid "Show/hide this entry"
-msgstr "Mostrar/ocultar esta entrada"
+msgstr "이 항목 표시/숨기기"
 
 msgid "Start date"
-msgstr "Data de início"
+msgstr "시작 날짜"
 
 msgid "Status"
-msgstr "Estado"
+msgstr "상태"
 
 msgid "The item is only shown on the web site after that date and time"
-msgstr "O artigo só é apresentado no sítio Web após essa data e hora"
+msgstr "해당 날짜 및 시간 이후에만 웹 사이트에 항목이 표시됩니다."
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr "O artigo só é apresentado no sítio Web até essa data e hora"
+msgstr "항목은 해당 날짜 및 시간까지만 웹 사이트에 표시됩니다."
 
 msgid "The media title is used for the title tag of the media on the web site"
-msgstr ""
-"O título dos média é utilizado para a etiqueta de título dos média no sítio "
-"Web"
+msgstr "미디어 제목은 웹사이트에 있는 미디어의 제목 태그에 사용됩니다."
 
 msgid "Title"
-msgstr "Título"
+msgstr "제목"
 
 msgid "Translate text"
-msgstr "Traduzir texto"
+msgstr "텍스트 번역"
 
 msgid "Type"
-msgstr "Tipo"
+msgstr "유형"
 
 msgid "Type position (optional)"
-msgstr "Posição do tipo (opcional)"
+msgstr "입력 위치(선택 사항)"
 
 msgid "Types for additional images like icons"
-msgstr "Tipos de imagens adicionais, como ícones"
+msgstr "아이콘과 같은 추가 이미지 유형"
 
 msgid "Types for additional texts like per one lb/kg or per month"
-msgstr "Tipos de textos adicionais como por lb/kg ou por mês"
+msgstr "1파운드/kg당 또는 월별과 같은 추가 텍스트의 유형"
 
 msgid "URL"
 msgstr "URL"
 
 #, php-format
 msgid "Unable to find CMS page \"%1$s\""
-msgstr "Não foi possível encontrar a página CMS \"%1$s\""
+msgstr "CMS 페이지 \"%1$s\"를 찾을 수 없습니다."
 
 msgid "Unique page URL (required)"
-msgstr "URL único da página (obrigatório)"
+msgstr "고유 페이지 URL(필수)"
 
 msgid "Unique page URL, e.g. \"/page-name\""
-msgstr "URL único da página, por exemplo, \"/page-name\""
+msgstr "고유 페이지 URL(예: \"/페이지명\")"
 
 msgid "Unique type code"
-msgstr "Código de tipo único"
+msgstr "고유 유형 코드"
 
 msgid "Unique type code (required)"
-msgstr "Código de tipo único (obrigatório)"
+msgstr "고유 유형 코드(필수)"
 
 msgid "Value"
-msgstr "Valor"
+msgstr "가치"
 
 msgid "YYYY-MM-DD hh:mm:ss (optional)"
-msgstr "AAAA-MM-DD hh:mm:ss (opcional)"
+msgstr "YYYY-MM-DD hh:mm:ss(선택 사항)"
 
 msgid "Your request"
-msgstr "O seu pedido"
+msgstr "귀하의 요청"
 
 msgid "Your request is likely spam and was not executed"
-msgstr "O seu pedido é provavelmente spam e não foi executado"
+msgstr "귀하의 요청은 스팸일 가능성이 높으며 실행되지 않았습니다."
 
 #, php-format
 msgid "cms"
@@ -291,41 +283,41 @@ msgstr "cms"
 
 #, php-format
 msgid "content"
-msgstr "conteúdo"
+msgstr "콘텐츠"
 
 #, php-format
 msgid "media"
-msgstr "meios de comunicação"
+msgstr "미디어"
 
 #, php-format
 msgid "property"
-msgstr "propriedade"
+msgstr "속성"
 
 msgid "reCAPTCHA token missing"
-msgstr "Falta o token reCAPTCHA"
+msgstr "재캡차 토큰 누락"
 
 msgid "selected"
-msgstr "selecionado"
+msgstr "선택"
 
 #, php-format
 msgid "seo"
 msgstr "seo"
 
 msgid "status:-1"
-msgstr "estado:-1"
+msgstr "상태:-1"
 
 msgid "status:-2"
-msgstr "estado:-2"
+msgstr "상태:-2"
 
 msgid "status:0"
-msgstr "estado:0"
+msgstr "상태:0"
 
 msgid "status:1"
-msgstr "estado:1"
+msgstr "상태:1"
 
 msgid "text"
-msgstr "texto"
+msgstr "텍스트"
 
 #, php-format
 msgid "type/cms/lists"
-msgstr "tipo/cms/listas"
+msgstr "유형/CMS/목록"

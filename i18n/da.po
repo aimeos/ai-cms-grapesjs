@@ -11,93 +11,93 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-08 13:36+0100\n"
+"POT-Creation-Date: 2025-02-08 14:18+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
-"Language-Team: Portuguese (https://app.transifex.com/aimeos/teams/39015/pt/)\n"
+"Language-Team: Danish (https://app.transifex.com/aimeos/teams/39015/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid " "
 msgstr " "
 
 msgid "Add"
-msgstr "Adicionar"
+msgstr "Tilføj"
 
 msgid "Advanced"
-msgstr "Avançado"
+msgstr "Avanceret"
 
 msgid "All"
-msgstr "Todos"
+msgstr "Alle"
 
 msgid "Basic"
-msgstr "Básico"
+msgstr "Grundlæggende"
 
 msgid "Bulk edit"
-msgstr "Edição em massa"
+msgstr "Masse-redigering"
 
 msgid "CMS Lists Type"
-msgstr "Listas CMS Tipo"
+msgstr "CMS-lister Type"
 
 msgid "CMS Lists Types"
-msgstr "Tipos de listas CMS"
+msgstr "Typer af CMS-lister"
 
 msgid "CMS page"
-msgstr "Página CMS"
+msgstr "CMS-side"
 
 msgid "CMS pages"
-msgstr "Páginas CMS"
+msgstr "CMS-sider"
 
 msgid "Close"
-msgstr "Fechar"
+msgstr "Luk"
 
 msgid "Code"
-msgstr "Código"
+msgstr "Kode"
 
 msgid "Columns"
-msgstr "Colunas"
+msgstr "Søjler"
 
 msgid "Copy"
-msgstr "Cópia"
+msgstr "Kopi"
 
 msgid "Copy this entry"
-msgstr "Copiar esta entrada"
+msgstr "Kopier dette indlæg"
 
 msgid "Created"
-msgstr "Criado"
+msgstr "Oprettet"
 
 msgid "Delete"
-msgstr "Eliminar"
+msgstr "Sletning"
 
 msgid "Delete selected entries"
-msgstr "Eliminar entradas selecionadas"
+msgstr "Slet valgte poster"
 
 msgid "Delete this entry"
-msgstr "Eliminar este registo"
+msgstr "Slet denne post"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr "Descrição do conteúdo do texto, se estiver numa língua estrangeira"
+msgstr "Beskrivelse af tekstindholdet, hvis det er på et fremmedsprog"
 
 msgid "Domain"
-msgstr "Domínio"
+msgstr "Domæne"
 
 msgid "Duplicate entry (Ctrl+D)"
-msgstr "Duplicar entrada (Ctrl+D)"
+msgstr "Dupliker post (Ctrl+D)"
 
 msgid "Edit"
-msgstr "Editar"
+msgstr "Rediger"
 
 msgid "Editor"
-msgstr "Editor"
+msgstr "Redaktør"
 
 msgid "End date"
-msgstr "Data final"
+msgstr "Slutdato"
 
 msgid "Generate image"
-msgstr "Gerar imagem"
+msgstr "Generer billede"
 
 msgid "ID"
 msgstr "ID"
@@ -106,184 +106,182 @@ msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
 msgstr ""
-"As imagens só serão mostradas para essa língua, o que é útil se o suporte "
-"contiver texto ou for específico de uma língua"
+"Billeder vises kun på det pågældende sprog, hvilket er nyttigt, hvis mediet "
+"indeholder tekst eller er sprogspecifikt."
 
 msgid "Insert new entry (Ctrl+I)"
-msgstr "Inserir nova entrada (Ctrl+I)"
+msgstr "Indsæt ny post (Ctrl+I)"
 
 msgid "Internal name (required)"
-msgstr "Nome interno (obrigatório)"
+msgstr "Internt navn (påkrævet)"
 
 msgid "Internal type name shown in the administration interface"
-msgstr "Nome do tipo interno apresentado na interface de administração"
+msgstr "Internt typenavn vist i administrationsgrænsefladen"
 
 #, php-format
 msgid "Invalid characters in class name \"%1$s\""
-msgstr "Caracteres inválidos no nome da classe \"%1$s\""
+msgstr "Ugyldige tegn i klassenavnet \"%1$s\""
 
 #, php-format
 msgid "Invalid client \"%1$s\""
-msgstr "Cliente inválido \"%1$s\""
+msgstr "Ugyldig klient \"%1$s\""
 
 msgid "Invalid reCAPTCHA response"
-msgstr "Resposta reCAPTCHA inválida"
+msgstr "Ugyldigt reCAPTCHA-svar"
 
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
 " the templates"
 msgstr ""
-"As opções de configuração específicas do item estarão disponíveis como pares"
-" de chave/valor nos modelos"
+"Varespecifikke konfigurationsmuligheder vil være tilgængelige som "
+"nøgle/værdi-par i skabelonerne"
 
 msgid "Label"
-msgstr "Etiqueta"
+msgstr "Etiket"
 
 msgid "Language"
-msgstr "Língua"
+msgstr "Sprog"
 
 msgid "Language of the entered text"
-msgstr "Língua do texto introduzido"
+msgstr "Sprog for den indtastede tekst"
 
 msgid "List type"
-msgstr "Tipo de lista"
+msgstr "Type liste"
 
 msgid "Media properties"
-msgstr "Propriedades dos media"
+msgstr "Mediernes egenskaber"
 
 msgid "Menu"
 msgstr "Menu"
 
 msgid "Message sent successfully"
-msgstr "Mensagem enviada com sucesso"
+msgstr "Besked sendt med succes"
 
 msgid "Modified"
-msgstr "Modificado"
+msgstr "Modificeret"
 
 msgid "Move this entry up/down"
-msgstr "Mover esta entrada para cima/para baixo"
+msgstr "Flyt denne post op/ned"
 
 msgid "New"
-msgstr "Novo"
+msgstr "Ny"
 
 msgid "No items found"
-msgstr "Nenhum item encontrado"
+msgstr "Ingen varer fundet"
 
 msgid "No recipient configured"
-msgstr "Nenhum destinatário configurado"
+msgstr "Ingen modtager konfigureret"
 
 msgid "Non-shared properties for the media item"
-msgstr "Propriedades não partilhadas para o item multimédia"
+msgstr "Ikke-delte egenskaber for medieelementet"
 
 msgid "Option"
-msgstr "Opção"
+msgstr "Mulighed"
 
 msgid "Order of the types in the frontend"
-msgstr "Ordem dos tipos no frontend"
+msgstr "Rækkefølgen af typerne i frontend"
 
 msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
-"Título da página, que será utilizado no sítio Web se não estiver disponível "
-"nenhum título para a língua"
+"Sidetitel, vil blive brugt på webstedet, hvis der ikke findes en titel for "
+"sproget"
 
 msgid "Please select"
-msgstr "Por favor, selecione"
+msgstr "Vælg venligst"
 
 msgid "Position"
-msgstr "Posição"
+msgstr "Position"
 
 msgid "Property value (required)"
-msgstr "Valor do imóvel (obrigatório)"
+msgstr "Ejendomsværdi (påkrævet)"
 
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
-msgstr "O parâmetro obrigatório \"%1$s\" está em falta"
+msgstr "Den påkrævede parameter \"%1$s\" mangler"
 
 msgid "Save"
-msgstr "Guardar"
+msgstr "Gemme"
 
 msgid "Second level type for grouping items"
-msgstr "Tipo de segundo nível para agrupar itens"
+msgstr "Type på andet niveau til gruppering af emner"
 
 msgid "Select file"
-msgstr "Selecionar ficheiro"
+msgstr "Vælg fil"
 
 msgid "Show search form"
-msgstr "Mostrar formulário de pesquisa"
+msgstr "Vis søgeformular"
 
 msgid "Show/hide advanced data"
-msgstr "Mostrar/ocultar dados avançados"
+msgstr "Vis/skjul avancerede data"
 
 msgid "Show/hide this entry"
-msgstr "Mostrar/ocultar esta entrada"
+msgstr "Vis/skjul denne post"
 
 msgid "Start date"
-msgstr "Data de início"
+msgstr "Startdato"
 
 msgid "Status"
-msgstr "Estado"
+msgstr "Status"
 
 msgid "The item is only shown on the web site after that date and time"
-msgstr "O artigo só é apresentado no sítio Web após essa data e hora"
+msgstr "Varen vises kun på webstedet efter denne dato og dette tidspunkt."
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr "O artigo só é apresentado no sítio Web até essa data e hora"
+msgstr "Varen vises kun på webstedet indtil denne dato og dette tidspunkt."
 
 msgid "The media title is used for the title tag of the media on the web site"
-msgstr ""
-"O título dos média é utilizado para a etiqueta de título dos média no sítio "
-"Web"
+msgstr "Medietitlen bruges til titeltagget på medierne på webstedet."
 
 msgid "Title"
-msgstr "Título"
+msgstr "Titel"
 
 msgid "Translate text"
-msgstr "Traduzir texto"
+msgstr "Oversæt tekst"
 
 msgid "Type"
-msgstr "Tipo"
+msgstr "Type"
 
 msgid "Type position (optional)"
-msgstr "Posição do tipo (opcional)"
+msgstr "Skriv position (valgfrit)"
 
 msgid "Types for additional images like icons"
-msgstr "Tipos de imagens adicionais, como ícones"
+msgstr "Typer til ekstra billeder som ikoner"
 
 msgid "Types for additional texts like per one lb/kg or per month"
-msgstr "Tipos de textos adicionais como por lb/kg ou por mês"
+msgstr "Typer til yderligere tekster som pr. lb/kg eller pr. måned"
 
 msgid "URL"
 msgstr "URL"
 
 #, php-format
 msgid "Unable to find CMS page \"%1$s\""
-msgstr "Não foi possível encontrar a página CMS \"%1$s\""
+msgstr "Kunne ikke finde CMS-siden \"%1$s\""
 
 msgid "Unique page URL (required)"
-msgstr "URL único da página (obrigatório)"
+msgstr "Unik side-URL (påkrævet)"
 
 msgid "Unique page URL, e.g. \"/page-name\""
-msgstr "URL único da página, por exemplo, \"/page-name\""
+msgstr "Unik side-URL, f.eks. \"/sidenavn\""
 
 msgid "Unique type code"
-msgstr "Código de tipo único"
+msgstr "Unik typekode"
 
 msgid "Unique type code (required)"
-msgstr "Código de tipo único (obrigatório)"
+msgstr "Unik typekode (påkrævet)"
 
 msgid "Value"
-msgstr "Valor"
+msgstr "Værdi"
 
 msgid "YYYY-MM-DD hh:mm:ss (optional)"
-msgstr "AAAA-MM-DD hh:mm:ss (opcional)"
+msgstr "ÅÅÅÅ-MM-DD hh:mm:ss (valgfrit)"
 
 msgid "Your request"
-msgstr "O seu pedido"
+msgstr "Din anmodning"
 
 msgid "Your request is likely spam and was not executed"
-msgstr "O seu pedido é provavelmente spam e não foi executado"
+msgstr "Din anmodning er sandsynligvis spam og blev ikke udført"
 
 #, php-format
 msgid "cms"
@@ -291,41 +289,41 @@ msgstr "cms"
 
 #, php-format
 msgid "content"
-msgstr "conteúdo"
+msgstr "indhold"
 
 #, php-format
 msgid "media"
-msgstr "meios de comunicação"
+msgstr "medier"
 
 #, php-format
 msgid "property"
-msgstr "propriedade"
+msgstr "ejendom"
 
 msgid "reCAPTCHA token missing"
-msgstr "Falta o token reCAPTCHA"
+msgstr "reCAPTCHA-token mangler"
 
 msgid "selected"
-msgstr "selecionado"
+msgstr "udvalgt"
 
 #, php-format
 msgid "seo"
 msgstr "seo"
 
 msgid "status:-1"
-msgstr "estado:-1"
+msgstr "status:-1"
 
 msgid "status:-2"
-msgstr "estado:-2"
+msgstr "status:-2"
 
 msgid "status:0"
-msgstr "estado:0"
+msgstr "status:0"
 
 msgid "status:1"
-msgstr "estado:1"
+msgstr "status:1"
 
 msgid "text"
-msgstr "texto"
+msgstr "tekst"
 
 #, php-format
 msgid "type/cms/lists"
-msgstr "tipo/cms/listas"
+msgstr "type/cms/lists"

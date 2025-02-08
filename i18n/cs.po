@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 13:05+0100\n"
+"POT-Creation-Date: 2025-02-08 13:36+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
 "Language-Team: Czech (https://app.transifex.com/aimeos/teams/39015/cs/)\n"
@@ -22,90 +22,92 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid " "
-msgstr ""
+msgstr " "
 
 msgid "Add"
-msgstr ""
+msgstr "Přidat"
 
 msgid "Advanced"
-msgstr ""
+msgstr "Pokročilé"
 
 msgid "All"
-msgstr ""
+msgstr "Všechny"
 
 msgid "Basic"
 msgstr "Základní"
 
 msgid "Bulk edit"
-msgstr ""
+msgstr "Hromadná úprava"
 
 msgid "CMS Lists Type"
-msgstr ""
+msgstr "Seznamy CMS Typ"
 
 msgid "CMS Lists Types"
-msgstr ""
+msgstr "Typy seznamů CMS"
 
 msgid "CMS page"
-msgstr ""
+msgstr "Stránka CMS"
 
 msgid "CMS pages"
-msgstr ""
+msgstr "Stránky CMS"
 
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 msgid "Code"
 msgstr "Kód"
 
 msgid "Columns"
-msgstr ""
+msgstr "Sloupce"
 
 msgid "Copy"
-msgstr ""
+msgstr "Kopírovat"
 
 msgid "Copy this entry"
-msgstr ""
+msgstr "Kopírovat tento záznam"
 
 msgid "Created"
 msgstr "Vytvořeno"
 
 msgid "Delete"
-msgstr ""
+msgstr "Odstranit"
 
 msgid "Delete selected entries"
-msgstr ""
+msgstr "Odstranění vybraných položek"
 
 msgid "Delete this entry"
 msgstr "Odstranění této položky"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr ""
+msgstr "Popis obsahu textu, pokud je v cizím jazyce."
 
 msgid "Domain"
-msgstr ""
+msgstr "Doména"
 
 msgid "Duplicate entry (Ctrl+D)"
-msgstr ""
+msgstr "Duplikovat položku (Ctrl+D)"
 
 msgid "Edit"
-msgstr ""
+msgstr "Upravit"
 
 msgid "Editor"
 msgstr "Editor"
 
 msgid "End date"
-msgstr ""
+msgstr "Datum ukončení"
 
 msgid "Generate image"
-msgstr ""
+msgstr "Generování obrázku"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
 msgstr ""
+"Obrázky se zobrazí pouze pro daný jazyk, což je užitečné, pokud médium "
+"obsahuje text nebo je specifické pro daný jazyk."
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Vložení nové položky (Ctrl+I)"
@@ -114,18 +116,18 @@ msgid "Internal name (required)"
 msgstr "Interní název (povinné)"
 
 msgid "Internal type name shown in the administration interface"
-msgstr ""
+msgstr "Interní název typu zobrazený v rozhraní pro správu"
 
 #, php-format
 msgid "Invalid characters in class name \"%1$s\""
-msgstr ""
+msgstr "Neplatné znaky v názvu třídy \"%1$s\""
 
 #, php-format
 msgid "Invalid client \"%1$s\""
-msgstr ""
+msgstr "Neplatný klient \"%1$s\""
 
 msgid "Invalid reCAPTCHA response"
-msgstr ""
+msgstr "Neplatná odpověď reCAPTCHA"
 
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
@@ -138,172 +140,174 @@ msgid "Label"
 msgstr "Štítek"
 
 msgid "Language"
-msgstr ""
+msgstr "Jazyk"
 
 msgid "Language of the entered text"
-msgstr ""
+msgstr "Jazyk zadaného textu"
 
 msgid "List type"
-msgstr ""
+msgstr "Typ seznamu"
 
 msgid "Media properties"
-msgstr ""
+msgstr "Vlastnosti médií"
 
 msgid "Menu"
-msgstr ""
+msgstr "Nabídka"
 
 msgid "Message sent successfully"
-msgstr ""
+msgstr "Zpráva byla úspěšně odeslána"
 
 msgid "Modified"
 msgstr "Upraveno"
 
 msgid "Move this entry up/down"
-msgstr ""
+msgstr "Přesunutí této položky nahoru/dolů"
 
 msgid "New"
 msgstr "Nový"
 
 msgid "No items found"
-msgstr ""
+msgstr "Nebyly nalezeny žádné položky"
 
 msgid "No recipient configured"
-msgstr ""
+msgstr "Není nakonfigurován žádný příjemce"
 
 msgid "Non-shared properties for the media item"
-msgstr ""
+msgstr "Nesdílené vlastnosti položky média"
 
 msgid "Option"
 msgstr "Možnost"
 
 msgid "Order of the types in the frontend"
-msgstr ""
+msgstr "Pořadí typů ve frontendu"
 
 msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
+"Název stránky, který se použije na webových stránkách, pokud není k "
+"dispozici žádný název pro daný jazyk."
 
 msgid "Please select"
 msgstr "Vyberte prosím"
 
 msgid "Position"
-msgstr ""
+msgstr "Pozice"
 
 msgid "Property value (required)"
-msgstr ""
+msgstr "Hodnota nemovitosti (povinné)"
 
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
 msgstr "Chybí povinný parametr \"%1$s\"."
 
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 msgid "Second level type for grouping items"
-msgstr ""
+msgstr "Typ druhé úrovně pro seskupování položek"
 
 msgid "Select file"
-msgstr ""
+msgstr "Vyberte soubor"
 
 msgid "Show search form"
-msgstr ""
+msgstr "Zobrazit vyhledávací formulář"
 
 msgid "Show/hide advanced data"
-msgstr ""
+msgstr "Zobrazení/skrytí pokročilých dat"
 
 msgid "Show/hide this entry"
-msgstr ""
+msgstr "Zobrazit/skrýt tento záznam"
 
 msgid "Start date"
-msgstr ""
+msgstr "Datum zahájení"
 
 msgid "Status"
 msgstr "Stav"
 
 msgid "The item is only shown on the web site after that date and time"
-msgstr ""
+msgstr "Položka se na webu zobrazí až po tomto datu a čase."
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr ""
+msgstr "Položka je na webu zobrazena pouze do tohoto data a času."
 
 msgid "The media title is used for the title tag of the media on the web site"
-msgstr ""
+msgstr "Název média se používá pro označení názvu média na webu."
 
 msgid "Title"
-msgstr ""
+msgstr "Název"
 
 msgid "Translate text"
-msgstr ""
+msgstr "Přeložit text"
 
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 msgid "Type position (optional)"
-msgstr ""
+msgstr "Typ pozice (volitelné)"
 
 msgid "Types for additional images like icons"
-msgstr ""
+msgstr "Typy pro další obrázky, například ikony"
 
 msgid "Types for additional texts like per one lb/kg or per month"
-msgstr ""
+msgstr "Typy pro dodatečné texty, například za 1 lb/kg nebo za měsíc"
 
 msgid "URL"
-msgstr ""
+msgstr "ADRESA URL"
 
 #, php-format
 msgid "Unable to find CMS page \"%1$s\""
-msgstr ""
+msgstr "Nelze najít stránku CMS \"%1$s\""
 
 msgid "Unique page URL (required)"
-msgstr ""
+msgstr "Jedinečná adresa URL stránky (povinné)"
 
 msgid "Unique page URL, e.g. \"/page-name\""
-msgstr ""
+msgstr "Jedinečná adresa URL stránky, např. \"/page-name\"."
 
 msgid "Unique type code"
-msgstr ""
+msgstr "Jedinečný kód typu"
 
 msgid "Unique type code (required)"
-msgstr ""
+msgstr "Jedinečný kód typu (povinné)"
 
 msgid "Value"
 msgstr "Hodnota"
 
 msgid "YYYY-MM-DD hh:mm:ss (optional)"
-msgstr ""
+msgstr "RRRR-MM-DD hh:mm:ss (nepovinné)"
 
 msgid "Your request"
-msgstr ""
+msgstr "Vaše žádost"
 
 msgid "Your request is likely spam and was not executed"
-msgstr ""
+msgstr "Váš požadavek je pravděpodobně spam a nebyl proveden."
 
 #, php-format
 msgid "cms"
-msgstr ""
+msgstr "cms"
 
 #, php-format
 msgid "content"
-msgstr ""
+msgstr "obsah"
 
 #, php-format
 msgid "media"
-msgstr ""
+msgstr "média"
 
 #, php-format
 msgid "property"
-msgstr ""
+msgstr "majetek"
 
 msgid "reCAPTCHA token missing"
-msgstr ""
+msgstr "Chybí token reCAPTCHA"
 
 msgid "selected"
-msgstr ""
+msgstr "vybrané"
 
 #, php-format
 msgid "seo"
-msgstr ""
+msgstr "seo"
 
 msgid "status:-1"
 msgstr "stav:-1"
@@ -318,8 +322,8 @@ msgid "status:1"
 msgstr "stav:1"
 
 msgid "text"
-msgstr ""
+msgstr "text"
 
 #, php-format
 msgid "type/cms/lists"
-msgstr ""
+msgstr "type/cms/lists"

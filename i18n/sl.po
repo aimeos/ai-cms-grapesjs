@@ -11,93 +11,93 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-08 13:36+0100\n"
+"POT-Creation-Date: 2025-02-08 14:18+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
-"Language-Team: Portuguese (https://app.transifex.com/aimeos/teams/39015/pt/)\n"
+"Language-Team: Slovenian (https://app.transifex.com/aimeos/teams/39015/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 msgid " "
 msgstr " "
 
 msgid "Add"
-msgstr "Adicionar"
+msgstr "Dodaj"
 
 msgid "Advanced"
-msgstr "Avançado"
+msgstr "Napredno"
 
 msgid "All"
-msgstr "Todos"
+msgstr "Vse"
 
 msgid "Basic"
-msgstr "Básico"
+msgstr "Osnovni"
 
 msgid "Bulk edit"
-msgstr "Edição em massa"
+msgstr "Množično urejanje"
 
 msgid "CMS Lists Type"
-msgstr "Listas CMS Tipo"
+msgstr "Vrsta seznamov CMS"
 
 msgid "CMS Lists Types"
-msgstr "Tipos de listas CMS"
+msgstr "Tipi seznamov CMS"
 
 msgid "CMS page"
-msgstr "Página CMS"
+msgstr "Stran CMS"
 
 msgid "CMS pages"
-msgstr "Páginas CMS"
+msgstr "Strani CMS"
 
 msgid "Close"
-msgstr "Fechar"
+msgstr "Zapri"
 
 msgid "Code"
-msgstr "Código"
+msgstr "Koda"
 
 msgid "Columns"
-msgstr "Colunas"
+msgstr "Stolpci"
 
 msgid "Copy"
-msgstr "Cópia"
+msgstr "Kopiraj"
 
 msgid "Copy this entry"
-msgstr "Copiar esta entrada"
+msgstr "Kopiraj ta vnos"
 
 msgid "Created"
-msgstr "Criado"
+msgstr "Ustvarjeno"
 
 msgid "Delete"
-msgstr "Eliminar"
+msgstr "Izbriši"
 
 msgid "Delete selected entries"
-msgstr "Eliminar entradas selecionadas"
+msgstr "Brisanje izbranih vnosov"
 
 msgid "Delete this entry"
-msgstr "Eliminar este registo"
+msgstr "Brisanje tega vnosa"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr "Descrição do conteúdo do texto, se estiver numa língua estrangeira"
+msgstr "Opis vsebine besedila, če je v tujem jeziku"
 
 msgid "Domain"
-msgstr "Domínio"
+msgstr "Domena"
 
 msgid "Duplicate entry (Ctrl+D)"
-msgstr "Duplicar entrada (Ctrl+D)"
+msgstr "Podvojitev vnosa (Ctrl+D)"
 
 msgid "Edit"
-msgstr "Editar"
+msgstr "Uredi"
 
 msgid "Editor"
-msgstr "Editor"
+msgstr "Urednik"
 
 msgid "End date"
-msgstr "Data final"
+msgstr "Končni datum"
 
 msgid "Generate image"
-msgstr "Gerar imagem"
+msgstr "Ustvarjanje slike"
 
 msgid "ID"
 msgstr "ID"
@@ -106,184 +106,183 @@ msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
 msgstr ""
-"As imagens só serão mostradas para essa língua, o que é útil se o suporte "
-"contiver texto ou for específico de uma língua"
+"Slike se prikažejo samo za ta jezik, kar je koristno, če medij vsebuje "
+"besedilo ali je jezikovno ločen."
 
 msgid "Insert new entry (Ctrl+I)"
-msgstr "Inserir nova entrada (Ctrl+I)"
+msgstr "Vstavi nov vnos (Ctrl+I)"
 
 msgid "Internal name (required)"
-msgstr "Nome interno (obrigatório)"
+msgstr "Notranje ime (obvezno)"
 
 msgid "Internal type name shown in the administration interface"
-msgstr "Nome do tipo interno apresentado na interface de administração"
+msgstr "Ime notranje vrste, prikazano v upravljalnem vmesniku"
 
 #, php-format
 msgid "Invalid characters in class name \"%1$s\""
-msgstr "Caracteres inválidos no nome da classe \"%1$s\""
+msgstr "Neveljavni znaki v imenu razreda \"%1$s\""
 
 #, php-format
 msgid "Invalid client \"%1$s\""
-msgstr "Cliente inválido \"%1$s\""
+msgstr "Nepravilen odjemalec \"%1$s\""
 
 msgid "Invalid reCAPTCHA response"
-msgstr "Resposta reCAPTCHA inválida"
+msgstr "Nepravilen odziv reCAPTCHA"
 
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
 " the templates"
 msgstr ""
-"As opções de configuração específicas do item estarão disponíveis como pares"
-" de chave/valor nos modelos"
+"Konfiguracijske možnosti za posamezne elemente bodo na voljo kot pari "
+"ključ/vrednost v predlogah."
 
 msgid "Label"
-msgstr "Etiqueta"
+msgstr "Oznaka"
 
 msgid "Language"
-msgstr "Língua"
+msgstr "Jezik"
 
 msgid "Language of the entered text"
-msgstr "Língua do texto introduzido"
+msgstr "Jezik vnesenega besedila"
 
 msgid "List type"
-msgstr "Tipo de lista"
+msgstr "Vrsta seznama"
 
 msgid "Media properties"
-msgstr "Propriedades dos media"
+msgstr "Lastnosti medijev"
 
 msgid "Menu"
-msgstr "Menu"
+msgstr "Meni"
 
 msgid "Message sent successfully"
-msgstr "Mensagem enviada com sucesso"
+msgstr "Sporočilo je bilo uspešno poslano"
 
 msgid "Modified"
-msgstr "Modificado"
+msgstr "Spremenjeno"
 
 msgid "Move this entry up/down"
-msgstr "Mover esta entrada para cima/para baixo"
+msgstr "Premikanje tega vnosa navzgor/navzdol"
 
 msgid "New"
 msgstr "Novo"
 
 msgid "No items found"
-msgstr "Nenhum item encontrado"
+msgstr "Ni najdenih elementov"
 
 msgid "No recipient configured"
-msgstr "Nenhum destinatário configurado"
+msgstr "Ni konfiguriranega prejemnika"
 
 msgid "Non-shared properties for the media item"
-msgstr "Propriedades não partilhadas para o item multimédia"
+msgstr "Lastnosti, ki niso v skupni rabi, za element medija"
 
 msgid "Option"
-msgstr "Opção"
+msgstr "Možnost"
 
 msgid "Order of the types in the frontend"
-msgstr "Ordem dos tipos no frontend"
+msgstr "Vrstni red tipov v sprednjem delu"
 
 msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
-"Título da página, que será utilizado no sítio Web se não estiver disponível "
-"nenhum título para a língua"
+"Naslov strani, ki bo uporabljen na spletnem mestu, če naslov za jezik ni na "
+"voljo."
 
 msgid "Please select"
-msgstr "Por favor, selecione"
+msgstr "Izberite"
 
 msgid "Position"
-msgstr "Posição"
+msgstr "Položaj"
 
 msgid "Property value (required)"
-msgstr "Valor do imóvel (obrigatório)"
+msgstr "Vrednost nepremičnine (obvezno)"
 
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
-msgstr "O parâmetro obrigatório \"%1$s\" está em falta"
+msgstr "Manjka zahtevani parameter \"%1$s\""
 
 msgid "Save"
-msgstr "Guardar"
+msgstr "Shrani"
 
 msgid "Second level type for grouping items"
-msgstr "Tipo de segundo nível para agrupar itens"
+msgstr "Vrsta druge ravni za združevanje elementov v skupine"
 
 msgid "Select file"
-msgstr "Selecionar ficheiro"
+msgstr "Izberite datoteko"
 
 msgid "Show search form"
-msgstr "Mostrar formulário de pesquisa"
+msgstr "Prikaži obrazec za iskanje"
 
 msgid "Show/hide advanced data"
-msgstr "Mostrar/ocultar dados avançados"
+msgstr "Prikaži/skrij napredne podatke"
 
 msgid "Show/hide this entry"
-msgstr "Mostrar/ocultar esta entrada"
+msgstr "Prikaži/skrij ta vnos"
 
 msgid "Start date"
-msgstr "Data de início"
+msgstr "Datum začetka"
 
 msgid "Status"
-msgstr "Estado"
+msgstr "Status"
 
 msgid "The item is only shown on the web site after that date and time"
-msgstr "O artigo só é apresentado no sítio Web após essa data e hora"
+msgstr "Element je na spletnem mestu prikazan šele po tem datumu in uri."
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr "O artigo só é apresentado no sítio Web até essa data e hora"
+msgstr "Element je na spletnem mestu prikazan le do tega datuma in ure."
 
 msgid "The media title is used for the title tag of the media on the web site"
 msgstr ""
-"O título dos média é utilizado para a etiqueta de título dos média no sítio "
-"Web"
+"Naslov medija se uporablja za naslovno oznako medija na spletnem mestu."
 
 msgid "Title"
-msgstr "Título"
+msgstr "Naslov"
 
 msgid "Translate text"
-msgstr "Traduzir texto"
+msgstr "Prevedi besedilo"
 
 msgid "Type"
-msgstr "Tipo"
+msgstr "Tip"
 
 msgid "Type position (optional)"
-msgstr "Posição do tipo (opcional)"
+msgstr "Položaj tipa (neobvezno)"
 
 msgid "Types for additional images like icons"
-msgstr "Tipos de imagens adicionais, como ícones"
+msgstr "Vrste za dodatne slike, kot so ikone"
 
 msgid "Types for additional texts like per one lb/kg or per month"
-msgstr "Tipos de textos adicionais como por lb/kg ou por mês"
+msgstr "Vrste za dodatna besedila, na primer na en lb/kg ali na mesec"
 
 msgid "URL"
 msgstr "URL"
 
 #, php-format
 msgid "Unable to find CMS page \"%1$s\""
-msgstr "Não foi possível encontrar a página CMS \"%1$s\""
+msgstr "Ni mogoče najti strani CMS \"%1$s\""
 
 msgid "Unique page URL (required)"
-msgstr "URL único da página (obrigatório)"
+msgstr "Edinstven URL strani (obvezno)"
 
 msgid "Unique page URL, e.g. \"/page-name\""
-msgstr "URL único da página, por exemplo, \"/page-name\""
+msgstr "Edinstven URL strani, npr. \"/page-name\"."
 
 msgid "Unique type code"
-msgstr "Código de tipo único"
+msgstr "Edinstvena oznaka tipa"
 
 msgid "Unique type code (required)"
-msgstr "Código de tipo único (obrigatório)"
+msgstr "Edinstvena koda tipa (obvezna)"
 
 msgid "Value"
-msgstr "Valor"
+msgstr "Vrednost"
 
 msgid "YYYY-MM-DD hh:mm:ss (optional)"
-msgstr "AAAA-MM-DD hh:mm:ss (opcional)"
+msgstr "LLLL-MM-DD hh:mm:ss (neobvezno)"
 
 msgid "Your request"
-msgstr "O seu pedido"
+msgstr "Vaša zahteva"
 
 msgid "Your request is likely spam and was not executed"
-msgstr "O seu pedido é provavelmente spam e não foi executado"
+msgstr "Vaša zahteva je verjetno neželena pošta in ni bila izvedena"
 
 #, php-format
 msgid "cms"
@@ -291,41 +290,41 @@ msgstr "cms"
 
 #, php-format
 msgid "content"
-msgstr "conteúdo"
+msgstr "vsebina"
 
 #, php-format
 msgid "media"
-msgstr "meios de comunicação"
+msgstr "mediji"
 
 #, php-format
 msgid "property"
-msgstr "propriedade"
+msgstr "lastnost"
 
 msgid "reCAPTCHA token missing"
-msgstr "Falta o token reCAPTCHA"
+msgstr "Manjka žeton reCAPTCHA"
 
 msgid "selected"
-msgstr "selecionado"
+msgstr "izbrani"
 
 #, php-format
 msgid "seo"
 msgstr "seo"
 
 msgid "status:-1"
-msgstr "estado:-1"
+msgstr "stanje:-1"
 
 msgid "status:-2"
-msgstr "estado:-2"
+msgstr "stanje:-2"
 
 msgid "status:0"
-msgstr "estado:0"
+msgstr "stanje: 0"
 
 msgid "status:1"
-msgstr "estado:1"
+msgstr "stanje:1"
 
 msgid "text"
-msgstr "texto"
+msgstr "besedilo"
 
 #, php-format
 msgid "type/cms/lists"
-msgstr "tipo/cms/listas"
+msgstr "type/cms/lists"

@@ -1,0 +1,323 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Aimeos, 2025
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-08 14:18+0100\n"
+"PO-Revision-Date: 2022-03-06 10:23+0000\n"
+"Last-Translator: Aimeos, 2025\n"
+"Language-Team: Japanese (https://app.transifex.com/aimeos/teams/39015/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid " "
+msgstr ""
+
+msgid "Add"
+msgstr "追加"
+
+msgid "Advanced"
+msgstr "上級"
+
+msgid "All"
+msgstr "すべて"
+
+msgid "Basic"
+msgstr "ベーシック"
+
+msgid "Bulk edit"
+msgstr "一括編集"
+
+msgid "CMS Lists Type"
+msgstr "CMSリスト タイプ"
+
+msgid "CMS Lists Types"
+msgstr "CMSリストの種類"
+
+msgid "CMS page"
+msgstr "CMSページ"
+
+msgid "CMS pages"
+msgstr "CMSページ"
+
+msgid "Close"
+msgstr "閉じる"
+
+msgid "Code"
+msgstr "コード"
+
+msgid "Columns"
+msgstr "コラム"
+
+msgid "Copy"
+msgstr "コピー"
+
+msgid "Copy this entry"
+msgstr "このエントリーをコピーする"
+
+msgid "Created"
+msgstr "作成"
+
+msgid "Delete"
+msgstr "削除"
+
+msgid "Delete selected entries"
+msgstr "選択したエントリーを削除する"
+
+msgid "Delete this entry"
+msgstr "このエントリーを削除する"
+
+msgid "Description of the text content if it's in a foreign language"
+msgstr "外国語の場合、テキスト内容の説明"
+
+msgid "Domain"
+msgstr "ドメイン"
+
+msgid "Duplicate entry (Ctrl+D)"
+msgstr "エントリーの複製 (Ctrl+D)"
+
+msgid "Edit"
+msgstr "編集"
+
+msgid "Editor"
+msgstr "エディター"
+
+msgid "End date"
+msgstr "終了日"
+
+msgid "Generate image"
+msgstr "画像を生成する"
+
+msgid "ID"
+msgstr "身分証明書"
+
+msgid ""
+"Images will only be shown for that language, useful if the media contains "
+"text or is language sepecific"
+msgstr "画像はその言語のものだけが表示されます。メディアにテキストが含まれていたり、言語が特定されている場合に便利です。"
+
+msgid "Insert new entry (Ctrl+I)"
+msgstr "新規エントリーの挿入 (Ctrl+I)"
+
+msgid "Internal name (required)"
+msgstr "社名（必須）"
+
+msgid "Internal type name shown in the administration interface"
+msgstr "管理インターフェイスに表示される内部タイプ名"
+
+#, php-format
+msgid "Invalid characters in class name \"%1$s\""
+msgstr "クラス名 \"%1$s\" に無効な文字があります。"
+
+#, php-format
+msgid "Invalid client \"%1$s\""
+msgstr "無効なクライアント \"%1$s\""
+
+msgid "Invalid reCAPTCHA response"
+msgstr "無効なreCAPTCHAレスポンス"
+
+msgid ""
+"Item specific configuration options, will be available as key/value pairs in"
+" the templates"
+msgstr "項目固有の設定オプションは、テンプレート内でキーと値のペアとして利用可能になります。"
+
+msgid "Label"
+msgstr "ラベル"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "Language of the entered text"
+msgstr "入力されたテキストの言語"
+
+msgid "List type"
+msgstr "リストタイプ"
+
+msgid "Media properties"
+msgstr "メディア・プロパティ"
+
+msgid "Menu"
+msgstr "メニュー"
+
+msgid "Message sent successfully"
+msgstr "メッセージは正常に送信された"
+
+msgid "Modified"
+msgstr "変形"
+
+msgid "Move this entry up/down"
+msgstr "このエントリーを上下に移動する"
+
+msgid "New"
+msgstr "新しい"
+
+msgid "No items found"
+msgstr "見つかりませんでした"
+
+msgid "No recipient configured"
+msgstr "受信者が設定されていない"
+
+msgid "Non-shared properties for the media item"
+msgstr "メディアアイテムの非共有プロパティ"
+
+msgid "Option"
+msgstr "オプション"
+
+msgid "Order of the types in the frontend"
+msgstr "フロントエンドでのタイプの並び順"
+
+msgid ""
+"Page title, will be used on the web site if no title for the language is "
+"available"
+msgstr "ページタイトル、その言語のタイトルがない場合、ウェブサイト上で使用されます。"
+
+msgid "Please select"
+msgstr "選択してください"
+
+msgid "Position"
+msgstr "ポジション"
+
+msgid "Property value (required)"
+msgstr "物件価格（必須）"
+
+#, php-format
+msgid "Required parameter \"%1$s\" is missing"
+msgstr "必須パラメータ \"%1$s\" が見つかりません。"
+
+msgid "Save"
+msgstr "セーブ"
+
+msgid "Second level type for grouping items"
+msgstr "アイテムをグループ化する第2レベルタイプ"
+
+msgid "Select file"
+msgstr "ファイルを選択"
+
+msgid "Show search form"
+msgstr "検索フォームを表示"
+
+msgid "Show/hide advanced data"
+msgstr "高度なデータの表示／非表示"
+
+msgid "Show/hide this entry"
+msgstr "このエントリーの表示/非表示"
+
+msgid "Start date"
+msgstr "開始日"
+
+msgid "Status"
+msgstr "ステータス"
+
+msgid "The item is only shown on the web site after that date and time"
+msgstr "商品はその日時以降にのみウェブサイトに表示される"
+
+msgid "The item is only shown on the web site until that date and time"
+msgstr "商品はその日時までしかウェブサイトに表示されません。"
+
+msgid "The media title is used for the title tag of the media on the web site"
+msgstr "メディアのタイトルは、ウェブサイトのメディアのタイトルタグに使用されます。"
+
+msgid "Title"
+msgstr "タイトル"
+
+msgid "Translate text"
+msgstr "テキストを翻訳する"
+
+msgid "Type"
+msgstr "タイプ"
+
+msgid "Type position (optional)"
+msgstr "タイプポジション（オプション）"
+
+msgid "Types for additional images like icons"
+msgstr "アイコンのような追加画像の種類"
+
+msgid "Types for additional texts like per one lb/kg or per month"
+msgstr "1ポンド/kgごとや月ごとなど、追加テキストの種類"
+
+msgid "URL"
+msgstr "URL"
+
+#, php-format
+msgid "Unable to find CMS page \"%1$s\""
+msgstr "CMS ページ \"%1$s\" が見つかりません。"
+
+msgid "Unique page URL (required)"
+msgstr "ユニークページのURL（必須）"
+
+msgid "Unique page URL, e.g. \"/page-name\""
+msgstr "ユニークなページURL、例：\"/page-name\""
+
+msgid "Unique type code"
+msgstr "ユニークなタイプコード"
+
+msgid "Unique type code (required)"
+msgstr "独自のタイプコード（必須）"
+
+msgid "Value"
+msgstr "価値"
+
+msgid "YYYY-MM-DD hh:mm:ss (optional)"
+msgstr "YYYY-MM-DD hh:mm:ss（オプション）"
+
+msgid "Your request"
+msgstr "ご要望"
+
+msgid "Your request is likely spam and was not executed"
+msgstr "あなたのリクエストはスパムの可能性が高く、実行されませんでした。"
+
+#, php-format
+msgid "cms"
+msgstr "cms"
+
+#, php-format
+msgid "content"
+msgstr "内容"
+
+#, php-format
+msgid "media"
+msgstr "メディア"
+
+#, php-format
+msgid "property"
+msgstr "プロパティ"
+
+msgid "reCAPTCHA token missing"
+msgstr "reCAPTCHAトークンが見つからない"
+
+msgid "selected"
+msgstr "選ばれた"
+
+#, php-format
+msgid "seo"
+msgstr "ソ"
+
+msgid "status:-1"
+msgstr "ステータス:-1"
+
+msgid "status:-2"
+msgstr "ステータス：-2"
+
+msgid "status:0"
+msgstr "ステータス:0"
+
+msgid "status:1"
+msgstr "ステータス:1"
+
+msgid "text"
+msgstr "テキスト"
+
+#, php-format
+msgid "type/cms/lists"
+msgstr "タイプ/cms/リスト"

@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Aimeos, 2022
 # stevechen <steve.stevechen@gmail.com>, 2022
+# Aimeos, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 14:57+0200\n"
+"POT-Creation-Date: 2025-02-06 13:05+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: stevechen <steve.stevechen@gmail.com>, 2022\n"
+"Last-Translator: Aimeos, 2025\n"
 "Language-Team: Chinese (https://app.transifex.com/aimeos/teams/39015/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,76 +26,79 @@ msgid " "
 msgstr ""
 
 msgid "Add"
-msgstr ""
+msgstr "添加"
 
 msgid "Advanced"
-msgstr ""
+msgstr "高级"
 
 msgid "All"
-msgstr ""
+msgstr "全部"
 
 msgid "Basic"
-msgstr ""
+msgstr "基础"
 
 msgid "Bulk edit"
-msgstr ""
+msgstr "批量编辑"
 
 msgid "CMS Lists Type"
-msgstr ""
+msgstr "CMS 列表类型"
 
 msgid "CMS Lists Types"
-msgstr ""
+msgstr "内容管理系统列表类型"
 
 msgid "CMS page"
-msgstr ""
+msgstr "内容管理系统页面"
 
 msgid "CMS pages"
-msgstr ""
+msgstr "内容管理系统页面"
 
 msgid "Close"
-msgstr ""
+msgstr "关闭"
 
 msgid "Code"
-msgstr ""
+msgstr "代码"
 
 msgid "Columns"
-msgstr ""
+msgstr "专栏"
 
 msgid "Copy"
-msgstr ""
+msgstr "复制"
 
 msgid "Copy this entry"
-msgstr ""
+msgstr "复制此条目"
 
 msgid "Created"
 msgstr "創建日期"
 
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 msgid "Delete selected entries"
-msgstr ""
+msgstr "删除所选条目"
 
 msgid "Delete this entry"
 msgstr "刪除此紀錄"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr ""
+msgstr "如果是外语，说明文本内容"
 
 msgid "Domain"
-msgstr ""
+msgstr "域名"
 
 msgid "Duplicate entry (Ctrl+D)"
-msgstr ""
+msgstr "复制条目 (Ctrl+D)"
 
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 msgid "Editor"
 msgstr "編輯器"
 
 msgid "End date"
-msgstr ""
+msgstr "结束日期"
+
+msgid "Generate image"
+msgstr "生成图像"
 
 msgid "ID"
 msgstr "ID"
@@ -103,219 +106,219 @@ msgstr "ID"
 msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
-msgstr ""
+msgstr "只显示该语言的图片，这在媒体包含文本或特定语言的情况下非常有用"
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "插入新紀錄（Ctrl+I）"
 
 msgid "Internal name (required)"
-msgstr ""
+msgstr "内部名称（必填）"
 
 msgid "Internal type name shown in the administration interface"
-msgstr ""
+msgstr "管理界面显示的内部类型名称"
 
 #, php-format
 msgid "Invalid characters in class name \"%1$s\""
-msgstr ""
+msgstr "类名\"%1$s \"中的字符无效"
 
 #, php-format
 msgid "Invalid client \"%1$s\""
-msgstr ""
+msgstr "无效客户端\"%1$s\""
 
 msgid "Invalid reCAPTCHA response"
-msgstr ""
+msgstr "无效的 reCAPTCHA 响应"
 
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
 " the templates"
-msgstr ""
+msgstr "项目特定的配置选项，将以键/值对的形式出现在模板中"
 
 msgid "Label"
 msgstr "標籤"
 
 msgid "Language"
-msgstr ""
+msgstr "语言"
 
 msgid "Language of the entered text"
-msgstr ""
+msgstr "输入文本的语言"
 
 msgid "List type"
-msgstr ""
+msgstr "列表类型"
 
 msgid "Media properties"
-msgstr ""
+msgstr "媒体属性"
 
 msgid "Menu"
-msgstr ""
+msgstr "菜单"
 
 msgid "Message sent successfully"
-msgstr ""
+msgstr "成功发送信息"
 
 msgid "Modified"
-msgstr ""
+msgstr "改装"
 
 msgid "Move this entry up/down"
-msgstr ""
+msgstr "将此条目上移/下移"
 
 msgid "New"
-msgstr ""
+msgstr "新"
 
 msgid "No items found"
-msgstr ""
+msgstr "未找到项目"
 
 msgid "No recipient configured"
-msgstr ""
+msgstr "未配置收件人"
 
 msgid "Non-shared properties for the media item"
-msgstr ""
+msgstr "媒体项的非共享属性"
 
 msgid "Option"
 msgstr "選項"
 
 msgid "Order of the types in the frontend"
-msgstr ""
+msgstr "前台类型的顺序"
 
 msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
-msgstr ""
+msgstr "页面标题，如果没有该语言的标题，网站将使用该标题"
 
 msgid "Please select"
 msgstr "請選擇"
 
 msgid "Position"
-msgstr ""
+msgstr "职位"
 
 msgid "Property value (required)"
-msgstr ""
+msgstr "属性值（必填）"
 
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
-msgstr ""
+msgstr "缺少必填参数\"%1$s"
 
 msgid "Save"
 msgstr "儲存"
 
 msgid "Second level type for grouping items"
-msgstr ""
+msgstr "用于分组项目的二级类型"
 
 msgid "Select file"
-msgstr ""
+msgstr "选择文件"
 
 msgid "Show search form"
-msgstr ""
+msgstr "显示搜索表单"
 
 msgid "Show/hide advanced data"
-msgstr ""
+msgstr "显示/隐藏高级数据"
 
 msgid "Show/hide this entry"
-msgstr ""
+msgstr "显示/隐藏此条目"
 
 msgid "Start date"
-msgstr ""
+msgstr "开始日期"
 
 msgid "Status"
 msgstr "狀態"
 
 msgid "The item is only shown on the web site after that date and time"
-msgstr ""
+msgstr "该项目仅在该日期和时间之后在网站上显示"
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr ""
+msgstr "该项目仅在网站上显示，直至该日期和时间"
 
 msgid "The media title is used for the title tag of the media on the web site"
-msgstr ""
+msgstr "媒体标题用于网站媒体的标题标签"
 
 msgid "Title"
-msgstr ""
+msgstr "标题"
 
 msgid "Translate text"
-msgstr ""
+msgstr "翻译文本"
 
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 msgid "Type position (optional)"
-msgstr ""
+msgstr "类型位置（可选）"
 
 msgid "Types for additional images like icons"
-msgstr ""
+msgstr "图标等附加图像的类型"
 
 msgid "Types for additional texts like per one lb/kg or per month"
-msgstr ""
+msgstr "附加文本类型，如每磅/公斤或每月"
 
 msgid "URL"
-msgstr ""
+msgstr "网址"
 
 #, php-format
 msgid "Unable to find CMS page \"%1$s\""
-msgstr ""
+msgstr "无法找到内容管理系统页面\"%1$s\""
 
 msgid "Unique page URL (required)"
-msgstr ""
+msgstr "唯一页面 URL（必填）"
 
 msgid "Unique page URL, e.g. \"/page-name\""
-msgstr ""
+msgstr "唯一页面 URL，如\"/page-name\""
 
 msgid "Unique type code"
-msgstr ""
+msgstr "独特的类型代码"
 
 msgid "Unique type code (required)"
-msgstr ""
+msgstr "唯一类型代码（必填）"
 
 msgid "Value"
-msgstr ""
+msgstr "价值"
 
 msgid "YYYY-MM-DD hh:mm:ss (optional)"
-msgstr ""
+msgstr "YYYY-MM-DD hh:mm:ss（可选）"
 
 msgid "Your request"
-msgstr ""
+msgstr "您的要求"
 
 msgid "Your request is likely spam and was not executed"
-msgstr ""
+msgstr "您的请求可能是垃圾邮件，未被执行"
 
 #, php-format
 msgid "cms"
-msgstr ""
+msgstr "cms"
 
 #, php-format
 msgid "content"
-msgstr ""
+msgstr "内容"
 
 #, php-format
 msgid "media"
-msgstr ""
+msgstr "媒体"
 
 #, php-format
 msgid "property"
-msgstr ""
+msgstr "财产"
 
 msgid "reCAPTCHA token missing"
-msgstr ""
+msgstr "reCAPTCHA 标记丢失"
 
 msgid "selected"
-msgstr ""
+msgstr "选定的"
 
 #, php-format
 msgid "seo"
-msgstr ""
+msgstr "搜索引擎优化"
 
 msgid "status:-1"
-msgstr ""
+msgstr "状态：-1"
 
 msgid "status:-2"
-msgstr ""
+msgstr "状态：-2"
 
 msgid "status:0"
-msgstr ""
+msgstr "状态：0"
 
 msgid "status:1"
-msgstr ""
+msgstr "状态：1"
 
 msgid "text"
-msgstr ""
+msgstr "文本"
 
 #, php-format
 msgid "type/cms/lists"
-msgstr ""
+msgstr "类型/cms/列表"

@@ -5,16 +5,16 @@
 # 
 # Translators:
 # Aimeos, 2022
-# Metal <meteoramic@yahoo.com>, 2024
+# Metal <meteoramic@yahoo.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 14:57+0200\n"
+"POT-Creation-Date: 2025-01-28 15:43+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Metal <meteoramic@yahoo.com>, 2024\n"
+"Last-Translator: Metal <meteoramic@yahoo.com>, 2025\n"
 "Language-Team: Turkish (https://app.transifex.com/aimeos/teams/39015/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,6 +96,9 @@ msgstr "Editör"
 
 msgid "End date"
 msgstr "Bitiş tarihi"
+
+msgid "Generate image"
+msgstr "Resim oluştur"
 
 msgid "ID"
 msgstr "Kimlik numarası"

@@ -5,16 +5,16 @@
 # 
 # Translators:
 # Aimeos, 2022
-# Metal <meteoramic@yahoo.com>, 2022
+# Metal <meteoramic@yahoo.com>, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 14:57+0200\n"
+"POT-Creation-Date: 2025-01-28 15:43+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Metal <meteoramic@yahoo.com>, 2022\n"
+"Last-Translator: Metal <meteoramic@yahoo.com>, 2025\n"
 "Language-Team: Turkish (https://app.transifex.com/aimeos/teams/39015/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -97,6 +97,9 @@ msgstr "Editör"
 msgid "End date"
 msgstr "Bitiş tarihi"
 
+msgid "Generate image"
+msgstr "Resim oluştur"
+
 msgid "ID"
 msgstr "Kimlik numarası"
 
@@ -125,7 +128,7 @@ msgid "Invalid client \"%1$s\""
 msgstr "Geçersiz istemci \"%1$s\""
 
 msgid "Invalid reCAPTCHA response"
-msgstr ""
+msgstr "Geçersiz reCAPTCHA yanıtı"
 
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
@@ -256,7 +259,7 @@ msgstr "URL"
 
 #, php-format
 msgid "Unable to find CMS page \"%1$s\""
-msgstr ""
+msgstr "CMS sayfası \"%1$s\" bulunamadı"
 
 msgid "Unique page URL (required)"
 msgstr "Benzersiz sayfa URL'si (gerekli)"
@@ -280,7 +283,7 @@ msgid "Your request"
 msgstr "Talebiniz"
 
 msgid "Your request is likely spam and was not executed"
-msgstr ""
+msgstr "İsteğiniz muhtemelen spam ve yerine getirilmedi"
 
 #, php-format
 msgid "cms"
@@ -299,7 +302,7 @@ msgid "property"
 msgstr "özellik"
 
 msgid "reCAPTCHA token missing"
-msgstr ""
+msgstr "reCAPTCHA belirteci eksik"
 
 msgid "selected"
 msgstr "Seçili"

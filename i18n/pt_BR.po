@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Keite Clembet, 2022
+# Aimeos, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 14:57+0200\n"
+"POT-Creation-Date: 2025-02-06 13:05+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Keite Clembet, 2022\n"
+"Last-Translator: Aimeos, 2025\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/aimeos/teams/39015/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,6 +97,9 @@ msgstr "Editor"
 msgid "End date"
 msgstr "Data final"
 
+msgid "Generate image"
+msgstr "Gerar imagem"
+
 msgid "ID"
 msgstr "ID"
 
@@ -124,7 +128,7 @@ msgid "Invalid client \"%1$s\""
 msgstr "Cliente \"%1$s\" inválido"
 
 msgid "Invalid reCAPTCHA response"
-msgstr ""
+msgstr "Resposta reCAPTCHA inválida"
 
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
@@ -254,7 +258,7 @@ msgstr "URL"
 
 #, php-format
 msgid "Unable to find CMS page \"%1$s\""
-msgstr ""
+msgstr "Não foi possível localizar a página do CMS \"%1$s\""
 
 msgid "Unique page URL (required)"
 msgstr "URL exclusiva da página (obrigatório)"
@@ -278,7 +282,7 @@ msgid "Your request"
 msgstr "Sua requisição"
 
 msgid "Your request is likely spam and was not executed"
-msgstr ""
+msgstr "Sua solicitação provavelmente é spam e não foi executada"
 
 #, php-format
 msgid "cms"
@@ -297,7 +301,7 @@ msgid "property"
 msgstr "propriedade"
 
 msgid "reCAPTCHA token missing"
-msgstr ""
+msgstr "Falta o token reCAPTCHA"
 
 msgid "selected"
 msgstr "selecionado"

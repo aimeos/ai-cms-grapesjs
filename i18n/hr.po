@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 14:57+0200\n"
+"POT-Creation-Date: 2025-01-19 18:13+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Miro Sertić <miro.sertic0606@gmail.com>, 2022\n"
 "Language-Team: Croatian (https://app.transifex.com/aimeos/teams/39015/hr/)\n"
@@ -95,6 +95,9 @@ msgid "Editor"
 msgstr "Urednik"
 
 msgid "End date"
+msgstr ""
+
+msgid "Generate image"
 msgstr ""
 
 msgid "ID"

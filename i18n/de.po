@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Aimeos, 2024
+# Aimeos, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 14:57+0200\n"
+"POT-Creation-Date: 2025-02-06 13:05+0100\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Aimeos, 2024\n"
+"Last-Translator: Aimeos, 2025\n"
 "Language-Team: German (https://app.transifex.com/aimeos/teams/39015/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,6 +96,9 @@ msgstr "Bearbeiter"
 
 msgid "End date"
 msgstr "Enddatum"
+
+msgid "Generate image"
+msgstr "Bild generieren"
 
 msgid "ID"
 msgstr "ID"

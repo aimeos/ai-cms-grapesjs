@@ -3,6 +3,6 @@ host = https://www.transifex.com
 
 [o:aimeos:p:aimeos-extensions:r:ai-cms-grapesjs]
 file_filter = i18n/<lang>.po
-source_file = i18n/ai-cms-grapesjs.pot
+source_file = i18n/source.pot
 source_lang = en
 type = PO

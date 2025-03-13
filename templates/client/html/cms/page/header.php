@@ -26,7 +26,7 @@ $enc = $this->encoder();
  */
 
 if( ( $path = $this->pageCmsItem->getUrl() ) !== '/' ) {
-	$url = $this->link( 'client/html/cms/page/url', ['path' => $this->pageCmsItem->getUrl()], ['absoluteUri' => true] );
+	$url = $this->link( 'client/html/cms/page/url', ['path' => trim( $this->pageCmsItem->getUrl(), '/' )], ['absoluteUri' => true] );
 } else {
 	$url = (string) $this->request()->getUri();
 }

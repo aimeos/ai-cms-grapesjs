@@ -25,6 +25,12 @@ $enc = $this->encoder();
  * @see client/html/cms/lists/metatags
  */
 
+if( ( $path = $this->pageCmsItem->getUrl() ) !== '/' ) {
+	$url = $this->link( 'client/html/cms/page/url', ['path' => $this->pageCmsItem->getUrl()], ['absoluteUri' => true] );
+} else {
+	$url = (string) $this->request()->getUri();
+}
+
 
 ?>
 <?php if( isset( $this->pageCmsItem ) ) : ?>
@@ -33,11 +39,11 @@ $enc = $this->encoder();
 
 		<title><?= $enc->html( strip_tags( $this->pageCmsItem->getName() ) ) ?> | <?= $enc->html( $this->get( 'contextSiteLabel', 'Aimeos' ) ) ?></title>
 
-		<link rel="canonical" href="<?= $enc->attr( $this->link( 'client/html/cms/page/url', ['path' => $this->pageCmsItem->getUrl()], ['absoluteUri' => true] ) ); ?>">
+		<link rel="canonical" href="<?= $enc->attr( $url ) ?>">
 
 		<meta property="og:type" content="article">
 		<meta property="og:title" content="<?= $enc->attr( $this->pageCmsItem->getName() ); ?>">
-		<meta property="og:url" content="<?= $enc->attr( $this->link( 'client/html/cms/page/url', ['path' => $this->pageCmsItem->getUrl()], ['absoluteUri' => true] ) ); ?>">
+		<meta property="og:url" content="<?= $enc->attr( $url ) ?>">
 
 		<?php foreach( $this->pageCmsItem->getRefItems( 'media', 'default', 'default' ) as $mediaItem ) : ?>
 			<meta property="og:image" content="<?= $enc->attr( $this->content( $mediaItem->getUrl() ) ) ?>">

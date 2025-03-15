@@ -625,7 +625,7 @@ Aimeos.CMSContent = {
 						fetch() {
 							const filter = {'>': {'catalog.status': 0}}
 
-							Aimeos.query(`query {
+							Aimeos.graphql(`query {
 								searchCatalogs(filter: ` + JSON.stringify(JSON.stringify(filter)) + `, limit: 250) {
 									items {
 										id

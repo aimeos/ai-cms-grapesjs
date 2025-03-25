@@ -1021,6 +1021,6 @@ Aimeos.CMSContent = {
 };
 
 
-$(function() {
+document.addEventListener("DOMContentLoaded", function() {
 	Aimeos.CMSContent.init();
 });

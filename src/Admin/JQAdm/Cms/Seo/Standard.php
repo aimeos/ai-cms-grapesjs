@@ -266,21 +266,13 @@ class Standard
 	{
 		$context = $this->context();
 
-		$textTypeManager = \Aimeos\MShop::create( $context, 'text/type' );
+		$typeManager = \Aimeos\MShop::create( $context, 'text/type' );
 		$listTypeManager = \Aimeos\MShop::create( $context, 'cms/lists/type' );
 
-		$search = $textTypeManager->filter( true )->slice( 0, 10000 );
-		$search->add( $search->and( [
-			$search->is( 'text.type.domain', '==', 'cms' ),
-			$search->is( 'text.type.code', '!=', 'content' )
-		] ) );
-		$search->setSortations( [$search->sort( '+', 'text.type.position' )] );
+		$search = $typeManager->filter( true )->add( 'text.type.code', '=~', 'meta-' )->order( 'text.type.code' )->slice( 0, 10000 );
+		$listSearch = $listTypeManager->filter( true )->order( 'cms.lists.type.code' )->slice( 0, 10000 );
 
-		$listSearch = $listTypeManager->filter( true )->slice( 0, 10000 );
-		$listSearch->setConditions( $listSearch->compare( '==', 'cms.lists.type.domain', 'text' ) );
-		$listSearch->setSortations( [$listSearch->sort( '+', 'cms.lists.type.position' )] );
-
-		$view->seoTypes = $textTypeManager->search( $search );
+		$view->seoTypes = $typeManager->search( $search );
 		$view->seoListTypes = $listTypeManager->search( $listSearch );
 
 		return $view;

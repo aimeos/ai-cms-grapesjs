@@ -263,10 +263,7 @@ class Standard
 		$context = $this->context();
 		$locale = $context->locale();
 		$listTypeManager = \Aimeos\MShop::create( $context, 'cms/lists/type' );
-
-		$listSearch = $listTypeManager->filter( true )->slice( 0, 10000 );
-		$listSearch->setConditions( $listSearch->compare( '==', 'cms.lists.type.domain', 'text' ) );
-		$listSearch->setSortations( [$listSearch->sort( '+', 'cms.lists.type.position' )] );
+		$listSearch = $listTypeManager->filter( true )->order( 'cms.lists.type.code' )->slice( 0, 10000 );
 
 		$view->contentListTypes = $listTypeManager->search( $listSearch );
 

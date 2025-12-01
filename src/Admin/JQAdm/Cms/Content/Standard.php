@@ -318,9 +318,15 @@ class Standard
 
 		foreach( $data as $idx => $entry )
 		{
-			if( trim( $this->val( $entry, 'text.content', '' ) ) === '' ) {
+			if( !( $content = trim( $this->val( $entry, 'text.content', '' ) ) ) ) {
 				continue;
 			}
+
+			$config = \HTMLPurifier_Config::createDefault();
+			$config->set( 'Attr.AllowedFrameTargets', ['_blank', '_self'] );
+
+			$purifier = new \HTMLPurifier( $config );
+			$entry['text.content'] = $purifier->purify( $content );
 
 			$id = $this->val( $entry, 'text.id', '' );
 			$type = $this->val( $entry, 'cms.lists.type', 'default' );

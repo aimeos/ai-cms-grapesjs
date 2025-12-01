@@ -26,6 +26,7 @@ jobs:
       - restore_cache:
           keys:
             - php81-{{ checksum "composer.json" }}
+      - run: composer req --no-update ezyang/htmlpurifier
       - run: composer update -n --prefer-dist
       - save_cache:
           key: php81-{{ checksum "composer.json" }}
@@ -55,6 +56,7 @@ jobs:
       - restore_cache:
           keys:
             - php82-{{ checksum "composer.json" }}
+      - run: composer req --no-update ezyang/htmlpurifier
       - run: composer update -n --prefer-dist
       - save_cache:
           key: php82-{{ checksum "composer.json" }}
@@ -85,6 +87,7 @@ jobs:
       - restore_cache:
           keys:
             - php83-{{ checksum "composer.json" }}
+      - run: composer req --no-update ezyang/htmlpurifier
       - run: composer update -n --prefer-dist
       - save_cache:
           key: php83-{{ checksum "composer.json" }}
@@ -114,6 +117,7 @@ jobs:
       - restore_cache:
           keys:
             - php84-{{ checksum "composer.json" }}
+      - run: composer req --no-update ezyang/htmlpurifier
       - run: composer update -n --prefer-dist
       - save_cache:
           key: php84-{{ checksum "composer.json" }}
@@ -143,6 +147,7 @@ jobs:
       - restore_cache:
           keys:
             - php85-{{ checksum "composer.json" }}
+      - run: composer req --no-update ezyang/htmlpurifier
       - run: composer update -n --prefer-dist
       - save_cache:
           key: php85-{{ checksum "composer.json" }}

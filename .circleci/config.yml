@@ -26,6 +26,7 @@ jobs:
       - restore_cache:
           keys:
             - php80-{{ checksum "composer.json" }}
+      - run: composer req --no-update ezyang/htmlpurifier
       - run: composer update -n --prefer-dist
       - save_cache:
           key: php80-{{ checksum "composer.json" }}

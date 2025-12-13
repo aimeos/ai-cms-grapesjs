@@ -8,7 +8,7 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": "^8.0.11",
-		"ezyang/htmlpurifier": "^4.19",
+		"aimeos/sanitizer": "~0.1",
 		"aimeos/aimeos-core": "dev-master",
 		"aimeos/ai-admin-jqadm": "dev-master",
 		"aimeos/ai-admin-jsonadm": "dev-master",

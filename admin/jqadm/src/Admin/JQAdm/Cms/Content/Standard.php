@@ -311,11 +311,11 @@ class Standard
 				continue;
 			}
 
-			$config = \HTMLPurifier_Config::createDefault();
-			$config->set( 'Attr.AllowedFrameTargets', ['_blank', '_self'] );
-
-			$purifier = new \HTMLPurifier( $config );
-			$entry['text.content'] = $purifier->purify( $content );
+			if( $el = json_decode( $content, true ) )
+			{
+				$el['html'] = \Aimeos\Sanitizer\Sane::html( $temp = $el['html'] ?? '' );
+				$entry['text.content'] = json_encode( $el );
+			}
 
 			$listType = $entry['cms.lists.type'] ?? 'default';
 

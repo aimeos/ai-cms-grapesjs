@@ -31,9 +31,9 @@ interface Iface
 	 * Sets the URL of the cms page.
 	 *
 	 * @param string $value URL of the cms page
-	 * @return \Aimeos\MShop\Cms\Item\Iface Cms page for chaining method calls
+	 * @return static Cms page for chaining method calls
 	 */
-	public function setUrl( string $value ) : \Aimeos\MShop\Cms\Item\Iface;
+	public function setUrl( string $value ) : static;
 
 	/**
 	 * Returns the name of the attribute page.
@@ -46,7 +46,7 @@ interface Iface
 	 * Sets the new label of the attribute page.
 	 *
 	 * @param string $label Type label of the attribute page
-	 * @return \Aimeos\MShop\Cms\Item\Iface Cms page for chaining method calls
+	 * @return static Cms page for chaining method calls
 	 */
-	public function setLabel( ?string $label ) : \Aimeos\MShop\Cms\Item\Iface;
+	public function setLabel( ?string $label ) : static;
 }

@@ -132,7 +132,7 @@ class Standard
 		$confkey = 'client/html/cms/page';
 		$prefixes = [];
 
-		$path = '/' . trim( $this->view()->param( 'path' ), '/' );
+		$path = '/' . trim( $this->view()->param( 'path', '' ), '/' );
 
 		if( $html = $this->cached( 'body', $uid . '-' . $path, $prefixes, $confkey ) ) {
 			return $this->object()->modify( $html, $uid );
@@ -166,7 +166,7 @@ class Standard
 	 */
 	public function header( string $uid = '' ) : ?string
 	{
-		$path = '/' . trim( $this->view()->param( 'path' ), '/' );
+		$path = '/' . trim( $this->view()->param( 'path', '' ), '/' );
 		$confkey = 'client/html/cms/page';
 		$prefixes = [];
 
@@ -304,7 +304,7 @@ class Standard
 		$domains = $context->config()->get( 'client/html/cms/page/domains', ['text'] );
 
 		$path = array_unique( [
-			'/' . trim( $view->param( 'path' ), '/' ),
+			'/' . trim( $view->param( 'path', '' ), '/' ),
 			'/' . trim( $view->request()->getUri()->getPath(), '/' )
 		] );
 

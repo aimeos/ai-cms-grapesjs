@@ -52,9 +52,9 @@ class Standard
 	 * Sets the URL of the cms item.
 	 *
 	 * @param string $value URL of the cms item
-	 * @return \Aimeos\MShop\Cms\Item\Iface Cms item for chaining method calls
+	 * @return static Cms item for chaining method calls
 	 */
-	public function setUrl( string $value ) : \Aimeos\MShop\Cms\Item\Iface
+	public function setUrl( string $value ) : static
 	{
 		$url = \Aimeos\Map::explode( '/', trim( $value, '/' ) )->map( function( $segment ) {
 			return \Aimeos\Base\Str::slug( $segment );
@@ -79,9 +79,9 @@ class Standard
 	 * Sets the new label of the attribute item.
 	 *
 	 * @param string $label Type label of the attribute item
-	 * @return \Aimeos\MShop\Cms\Item\Iface Cms item for chaining method calls
+	 * @return static Cms item for chaining method calls
 	 */
-	public function setLabel( ?string $label ) : \Aimeos\MShop\Cms\Item\Iface
+	public function setLabel( ?string $label ) : static
 	{
 		return $this->set( 'cms.label', (string) $label );
 	}
@@ -102,9 +102,9 @@ class Standard
 	 * Sets the status of the cms item.
 	 *
 	 * @param int $status true/false for enabled/disabled
-	 * @return \Aimeos\MShop\Cms\Item\Iface Cms item for chaining method calls
+	 * @return static Cms item for chaining method calls
 	 */
-	public function setStatus( int $status ) : \Aimeos\MShop\Common\Item\Iface
+	public function setStatus( int $status ) : static
 	{
 		return $this->set( 'cms.status', $status );
 	}
@@ -126,9 +126,9 @@ class Standard
 	 *
 	 * @param array &$list Associative list of item keys and their values
 	 * @param bool True to set private properties too, false for public only
-	 * @return \Aimeos\MShop\Cms\Item\Iface Cms item for chaining method calls
+	 * @return static Cms item for chaining method calls
 	 */
-	public function fromArray( array &$list, bool $private = false ) : \Aimeos\MShop\Common\Item\Iface
+	public function fromArray( array &$list, bool $private = false ) : static
 	{
 		$item = parent::fromArray( $list, $private );
 

@@ -1,6 +1,17 @@
 <?php
 
 return [
+	'cms' => [
+		'allow' => [
+			'form' => ['/', '#'],
+			'iframe' => [
+				'https://www.youtube.com/embed/',
+				'https://www.youtube-nocookie.com/embed/',
+				'https://player.vimeo.com/',
+				'https://www.google.com/maps/',
+			],
+		],
+	],
 	'graphql' => [
 		'resource' => [
 			'cms' => [

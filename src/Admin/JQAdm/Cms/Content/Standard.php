@@ -324,7 +324,8 @@ class Standard
 
 			if( $el = json_decode( $content, true ) )
 			{
-				$el['html'] = \Aimeos\Sanitizer\Sane::html( $temp = $el['html'] ?? '' );
+				$allow = $context->config()->get( 'admin/cms/allow', [] );
+				$el['html'] = \Aimeos\Sanitizer\Sane::html( $el['html'] ?? '', $allow );
 				$entry['text.content'] = json_encode( $el );
 			}
 

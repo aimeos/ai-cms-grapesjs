@@ -48,6 +48,7 @@ class RecaptchaTest extends \PHPUnit\Framework\TestCase
 
 	public function testInit()
 	{
+		$this->expectNotToPerformAssertions();
 		$this->object->init();
 	}
 

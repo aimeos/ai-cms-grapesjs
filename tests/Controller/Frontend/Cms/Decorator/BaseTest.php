@@ -25,9 +25,7 @@ class BaseTest extends \PHPUnit\Framework\TestCase
 	{
 		$this->context = \TestHelper::context();
 
-		$this->stub = $this->getMockBuilder( \Aimeos\Controller\Frontend\Cms\Standard::class )
-			->disableOriginalConstructor()
-			->getMock();
+		$this->stub = $this->createStub( \Aimeos\Controller\Frontend\Cms\Standard::class );
 
 		$this->object = new \Aimeos\Controller\Frontend\Cms\Decorator\Example( $this->stub, $this->context );
 	}
@@ -63,20 +61,25 @@ class BaseTest extends \PHPUnit\Framework\TestCase
 	public function testFind()
 	{
 		$item = \Aimeos\MShop::create( $this->context, 'cms' )->create();
-		$expected = \Aimeos\MShop\Cms\Item\Iface::class;
 
-		$this->stub->expects( $this->once() )->method( 'find' )->willReturn( $item );
+		$stub = $this->getMockBuilder( \Aimeos\Controller\Frontend\Cms\Standard::class )
+			->disableOriginalConstructor()->getMock();
+		$stub->expects( $this->once() )->method( 'find' )->willReturn( $item );
 
-		$this->assertInstanceOf( $expected, $this->object->find( 'test' ) );
+		$object = new \Aimeos\Controller\Frontend\Cms\Decorator\Example( $stub, $this->context );
+		$this->assertInstanceOf( \Aimeos\MShop\Cms\Item\Iface::class, $object->find( 'test' ) );
 	}
 
 
 	public function testFunction()
 	{
-		$this->stub->expects( $this->once() )->method( 'function' )
+		$stub = $this->getMockBuilder( \Aimeos\Controller\Frontend\Cms\Standard::class )
+			->disableOriginalConstructor()->getMock();
+		$stub->expects( $this->once() )->method( 'function' )
 			->willReturn( 'cms:has("domain","type","refid")' );
 
-		$str = $this->object->function( 'cms:has', ['domain', 'type', 'refid'] );
+		$object = new \Aimeos\Controller\Frontend\Cms\Decorator\Example( $stub, $this->context );
+		$str = $object->function( 'cms:has', ['domain', 'type', 'refid'] );
 		$this->assertEquals( 'cms:has("domain","type","refid")', $str );
 	}
 
@@ -84,11 +87,13 @@ class BaseTest extends \PHPUnit\Framework\TestCase
 	public function testGet()
 	{
 		$item = \Aimeos\MShop::create( $this->context, 'cms' )->create();
-		$expected = \Aimeos\MShop\Cms\Item\Iface::class;
 
-		$this->stub->expects( $this->once() )->method( 'get' )->willReturn( $item );
+		$stub = $this->getMockBuilder( \Aimeos\Controller\Frontend\Cms\Standard::class )
+			->disableOriginalConstructor()->getMock();
+		$stub->expects( $this->once() )->method( 'get' )->willReturn( $item );
 
-		$this->assertInstanceOf( $expected, $this->object->get( 1 ) );
+		$object = new \Aimeos\Controller\Frontend\Cms\Decorator\Example( $stub, $this->context );
+		$this->assertInstanceOf( \Aimeos\MShop\Cms\Item\Iface::class, $object->get( 1 ) );
 	}
 
 
@@ -108,9 +113,12 @@ class BaseTest extends \PHPUnit\Framework\TestCase
 	{
 		$item = \Aimeos\MShop::create( $this->context, 'cms' )->create();
 
-		$this->stub->expects( $this->once() )->method( 'search' )->willReturn( map( [$item] ) );
+		$stub = $this->getMockBuilder( \Aimeos\Controller\Frontend\Cms\Standard::class )
+			->disableOriginalConstructor()->getMock();
+		$stub->expects( $this->once() )->method( 'search' )->willReturn( map( [$item] ) );
 
-		$this->assertEquals( [$item], $this->object->search()->toArray() );
+		$object = new \Aimeos\Controller\Frontend\Cms\Decorator\Example( $stub, $this->context );
+		$this->assertEquals( [$item], $object->search()->toArray() );
 	}
 
 

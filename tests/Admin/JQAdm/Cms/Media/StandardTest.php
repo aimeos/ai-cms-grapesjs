@@ -102,9 +102,9 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$helper = new \Aimeos\Base\View\Helper\Param\Standard( $this->view, $param );
 		$this->view->addHelper( 'param', $helper );
 
-		$file = $this->getMockBuilder( \Psr\Http\Message\UploadedFileInterface::class )->getMock();
-		$request = $this->getMockBuilder( \Psr\Http\Message\ServerRequestInterface::class )->getMock();
-		$request->expects( $this->any() )->method( 'getUploadedFiles' )
+		$file = $this->createStub( \Psr\Http\Message\UploadedFileInterface::class );
+		$request = $this->createStub( \Psr\Http\Message\ServerRequestInterface::class );
+		$request->method( 'getUploadedFiles' )
 			->willReturn( ['media' => [0 => ['file' => $file]]] );
 
 		$helper = new \Aimeos\Base\View\Helper\Request\Standard( $this->view, $request, '127.0.0.1', 'test' );

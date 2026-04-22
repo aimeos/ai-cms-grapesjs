@@ -9,6 +9,15 @@
 namespace Aimeos\Admin\JQAdm\Cms;
 
 
+class ViewNoRender extends \Aimeos\Base\View\Standard
+{
+	public function render( $filenames ) : string
+	{
+		return '';
+	}
+}
+
+
 class StandardTest extends \PHPUnit\Framework\TestCase
 {
 	private $context;
@@ -19,8 +28,8 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	protected function setUp() : void
 	{
 		$this->view = \TestHelper::view();
-		$request = $this->getMockBuilder( \Psr\Http\Message\ServerRequestInterface::class )->getMock();
-		$request->expects( $this->any() )->method( 'getUploadedFiles' )->willReturn( [] );
+		$request = $this->createStub( \Psr\Http\Message\ServerRequestInterface::class );
+		$request->method( 'getUploadedFiles' )->willReturn( [] );
 
 		$helper = new \Aimeos\Base\View\Helper\Request\Standard( $this->view, $request, '127.0.0.1', 'test' );
 		$this->view ->addHelper( 'request', $helper );
@@ -87,7 +96,9 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testDelete()
 	{
-		$this->assertNull( $this->getClientMock( ['redirect'], false )->delete() );
+		$mock = $this->getClientMock( ['redirect'], false );
+		$mock->expects( $this->once() )->method( 'redirect' );
+		$this->assertNull( $mock->delete() );
 	}
 
 
@@ -235,10 +246,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	protected function getViewNoRender( $real = true )
 	{
-		$view = $this->getMockBuilder( \Aimeos\Base\View\Standard::class )
-			->setConstructorArgs( array( [] ) )
-			->onlyMethods( array( 'render' ) )
-			->getMock();
+		$view = new ViewNoRender( [] );
 
 		$manager = \Aimeos\MShop::create( $this->context, 'cms' );
 

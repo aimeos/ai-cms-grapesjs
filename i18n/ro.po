@@ -1,26 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
-# George Cojocaru, 2024
-# Aimeos, 2025
-# 
 #, fuzzy
 msgid ""
 msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ro\n"
+"Language-Team: Romanian (https://app.transifex.com/aimeos/teams/39015/ro/)\n"
+"Last-Translator: Aimeos, 2025\n"
+"MIME-Version: 1.0\n"
+"PO-Revision-Date: 2022-03-06 10:23+0000\n"
+"POT-Creation-Date: 2026-04-25 11:22+0200\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 13:05+0100\n"
-"PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Aimeos, 2025\n"
-"Language-Team: Romanian (https://app.transifex.com/aimeos/teams/39015/ro/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 msgid " "
 msgstr " "
@@ -80,8 +71,7 @@ msgid "Delete this entry"
 msgstr "Șterge această intrare"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr ""
-"Descrierea conținutului textului în cazul în care este într-o limbă străină"
+msgstr "Descrierea conținutului textului în cazul în care este într-o limbă străină"
 
 msgid "Domain"
 msgstr "Domeniu"
@@ -104,12 +94,8 @@ msgstr "Generarea imaginii"
 msgid "ID"
 msgstr "ID"
 
-msgid ""
-"Images will only be shown for that language, useful if the media contains "
-"text or is language sepecific"
-msgstr ""
-"Imaginile vor fi afișate numai pentru limba respectivă, util dacă media "
-"conține text sau este specifică limbii"
+msgid "Images will only be shown for that language, useful if the media contains text or is language sepecific"
+msgstr "Imaginile vor fi afișate numai pentru limba respectivă, util dacă media conține text sau este specifică limbii"
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Introduceți o nouă înregistrare (Ctrl+I)"
@@ -131,12 +117,8 @@ msgstr "Client invalid \"%1$s\""
 msgid "Invalid reCAPTCHA response"
 msgstr "Răspuns reCAPTCHA invalid"
 
-msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
-msgstr ""
-"Opțiuni de configurare specifice elementului, care vor fi disponibile ca "
-"perechi cheie/valoare în șabloane."
+msgid "Item specific configuration options, will be available as key/value pairs in the templates"
+msgstr "Opțiuni de configurare specifice elementului, care vor fi disponibile ca perechi cheie/valoare în șabloane."
 
 msgid "Label"
 msgstr "Etichetă"
@@ -183,12 +165,8 @@ msgstr "Opțiune"
 msgid "Order of the types in the frontend"
 msgstr "Ordinea tipurilor în frontend"
 
-msgid ""
-"Page title, will be used on the web site if no title for the language is "
-"available"
-msgstr ""
-"Titlul paginii, va fi utilizat pe site-ul web dacă nu este disponibil niciun"
-" titlu pentru limba respectivă"
+msgid "Page title, will be used on the web site if no title for the language is available"
+msgstr "Titlul paginii, va fi utilizat pe site-ul web dacă nu este disponibil niciun titlu pentru limba respectivă"
 
 msgid "Please select"
 msgstr "Vă rugăm să selectați"
@@ -231,13 +209,10 @@ msgid "The item is only shown on the web site after that date and time"
 msgstr "Articolul este afișat pe site-ul web numai după această dată și oră"
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr ""
-"Articolul este afișat pe site-ul web numai până la data și ora respectivă"
+msgstr "Articolul este afișat pe site-ul web numai până la data și ora respectivă"
 
 msgid "The media title is used for the title tag of the media on the web site"
-msgstr ""
-"Titlul media este utilizat pentru eticheta de titlu a media de pe site-ul "
-"web"
+msgstr "Titlul media este utilizat pentru eticheta de titlu a media de pe site-ul web"
 
 msgid "Title"
 msgstr "Titlu"

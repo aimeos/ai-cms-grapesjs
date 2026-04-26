@@ -1,25 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
-# Aimeos, 2025
-# 
 #, fuzzy
 msgid ""
 msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: cs\n"
+"Language-Team: Czech (https://app.transifex.com/aimeos/teams/39015/cs/)\n"
+"Last-Translator: Aimeos, 2025\n"
+"MIME-Version: 1.0\n"
+"PO-Revision-Date: 2022-03-06 10:23+0000\n"
+"POT-Creation-Date: 2026-04-25 11:22+0200\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-08 13:36+0100\n"
-"PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Aimeos, 2025\n"
-"Language-Team: Czech (https://app.transifex.com/aimeos/teams/39015/cs/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid " "
 msgstr " "
@@ -102,12 +94,8 @@ msgstr "Generování obrázku"
 msgid "ID"
 msgstr "ID"
 
-msgid ""
-"Images will only be shown for that language, useful if the media contains "
-"text or is language sepecific"
-msgstr ""
-"Obrázky se zobrazí pouze pro daný jazyk, což je užitečné, pokud médium "
-"obsahuje text nebo je specifické pro daný jazyk."
+msgid "Images will only be shown for that language, useful if the media contains text or is language sepecific"
+msgstr "Obrázky se zobrazí pouze pro daný jazyk, což je užitečné, pokud médium obsahuje text nebo je specifické pro daný jazyk."
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Vložení nové položky (Ctrl+I)"
@@ -129,12 +117,8 @@ msgstr "Neplatný klient \"%1$s\""
 msgid "Invalid reCAPTCHA response"
 msgstr "Neplatná odpověď reCAPTCHA"
 
-msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
-msgstr ""
-"Možnosti konfigurace specifické pro danou položku budou v šablonách k "
-"dispozici jako dvojice klíč/hodnota."
+msgid "Item specific configuration options, will be available as key/value pairs in the templates"
+msgstr "Možnosti konfigurace specifické pro danou položku budou v šablonách k dispozici jako dvojice klíč/hodnota."
 
 msgid "Label"
 msgstr "Štítek"
@@ -181,12 +165,8 @@ msgstr "Možnost"
 msgid "Order of the types in the frontend"
 msgstr "Pořadí typů ve frontendu"
 
-msgid ""
-"Page title, will be used on the web site if no title for the language is "
-"available"
-msgstr ""
-"Název stránky, který se použije na webových stránkách, pokud není k "
-"dispozici žádný název pro daný jazyk."
+msgid "Page title, will be used on the web site if no title for the language is available"
+msgstr "Název stránky, který se použije na webových stránkách, pokud není k dispozici žádný název pro daný jazyk."
 
 msgid "Please select"
 msgstr "Vyberte prosím"

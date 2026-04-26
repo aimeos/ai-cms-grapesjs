@@ -92,7 +92,9 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-msgid "Images will only be shown for that language, useful if the media contains text or is language sepecific"
+msgid ""
+"Images will only be shown for that language, useful if the media contains "
+"text or is language sepecific"
 msgstr ""
 
 msgid "Insert new entry (Ctrl+I)"
@@ -115,7 +117,9 @@ msgstr ""
 msgid "Invalid reCAPTCHA response"
 msgstr ""
 
-msgid "Item specific configuration options, will be available as key/value pairs in the templates"
+msgid ""
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
 msgstr ""
 
 msgid "Label"
@@ -163,7 +167,9 @@ msgstr ""
 msgid "Order of the types in the frontend"
 msgstr ""
 
-msgid "Page title, will be used on the web site if no title for the language is available"
+msgid ""
+"Page title, will be used on the web site if no title for the language is "
+"available"
 msgstr ""
 
 msgid "Please select"

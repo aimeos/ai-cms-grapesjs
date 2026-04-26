@@ -1,27 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
-# Nicolas Lapointe (ComradeNixco) <nixcocpp@gmail.com>, 2022
-# Amiskatonic, 2023
-# Aimeos, 2025
-# 
 #, fuzzy
 msgid ""
 msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: fr\n"
+"Language-Team: French (https://app.transifex.com/aimeos/teams/39015/fr/)\n"
+"Last-Translator: Aimeos, 2025\n"
+"MIME-Version: 1.0\n"
+"PO-Revision-Date: 2022-03-06 10:23+0000\n"
+"POT-Creation-Date: 2026-04-25 11:22+0200\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 13:05+0100\n"
-"PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Aimeos, 2025\n"
-"Language-Team: French (https://app.transifex.com/aimeos/teams/39015/fr/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid " "
 msgstr " "
@@ -81,8 +71,7 @@ msgid "Delete this entry"
 msgstr "Supprimer cette entrée"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr ""
-"Description du contenu du texte s'il est rédigé dans une langue étrangère"
+msgstr "Description du contenu du texte s'il est rédigé dans une langue étrangère"
 
 msgid "Domain"
 msgstr "Domaine"
@@ -105,12 +94,8 @@ msgstr "Générer une image"
 msgid "ID"
 msgstr "Identifiant"
 
-msgid ""
-"Images will only be shown for that language, useful if the media contains "
-"text or is language sepecific"
-msgstr ""
-"Les images ne seront affichées que dans cette langue, ce qui est utile si le"
-" média contient du texte ou est spécifique à une langue."
+msgid "Images will only be shown for that language, useful if the media contains text or is language sepecific"
+msgstr "Les images ne seront affichées que dans cette langue, ce qui est utile si le média contient du texte ou est spécifique à une langue."
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Insérer une nouvelle entrée (Ctrl+I)"
@@ -132,12 +117,8 @@ msgstr "Client non valide \"%1$s\"."
 msgid "Invalid reCAPTCHA response"
 msgstr "Réponse reCAPTCHA invalide"
 
-msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
-msgstr ""
-"Les options de configuration spécifiques à l'élément seront disponibles sous"
-" forme de paires clé/valeur dans les modèles."
+msgid "Item specific configuration options, will be available as key/value pairs in the templates"
+msgstr "Les options de configuration spécifiques à l'élément seront disponibles sous forme de paires clé/valeur dans les modèles."
 
 msgid "Label"
 msgstr "Étiquette"
@@ -184,12 +165,8 @@ msgstr "Option"
 msgid "Order of the types in the frontend"
 msgstr "Ordre des types dans le frontend"
 
-msgid ""
-"Page title, will be used on the web site if no title for the language is "
-"available"
-msgstr ""
-"Titre de la page, qui sera utilisé sur le site web si aucun titre n'est "
-"disponible pour la langue."
+msgid "Page title, will be used on the web site if no title for the language is available"
+msgstr "Titre de la page, qui sera utilisé sur le site web si aucun titre n'est disponible pour la langue."
 
 msgid "Please select"
 msgstr "Veuillez choisir"
@@ -229,18 +206,13 @@ msgid "Status"
 msgstr "État"
 
 msgid "The item is only shown on the web site after that date and time"
-msgstr ""
-"L'article n'est affiché sur le site web qu'à partir de cette date et de "
-"cette heure."
+msgstr "L'article n'est affiché sur le site web qu'à partir de cette date et de cette heure."
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr ""
-"L'article n'est affiché sur le site web que jusqu'à cette date et heure."
+msgstr "L'article n'est affiché sur le site web que jusqu'à cette date et heure."
 
 msgid "The media title is used for the title tag of the media on the web site"
-msgstr ""
-"Le titre du média est utilisé pour la balise de titre du média sur le site "
-"web."
+msgstr "Le titre du média est utilisé pour la balise de titre du média sur le site web."
 
 msgid "Title"
 msgstr "Titre"

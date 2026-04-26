@@ -1,27 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
-# S 0l, 2022
-# Edu PM, 2024
-# Aimeos, 2025
-# 
 #, fuzzy
 msgid ""
 msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: es\n"
+"Language-Team: Spanish (https://app.transifex.com/aimeos/teams/39015/es/)\n"
+"Last-Translator: Aimeos, 2025\n"
+"MIME-Version: 1.0\n"
+"PO-Revision-Date: 2022-03-06 10:23+0000\n"
+"POT-Creation-Date: 2026-04-25 11:22+0200\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 13:05+0100\n"
-"PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Aimeos, 2025\n"
-"Language-Team: Spanish (https://app.transifex.com/aimeos/teams/39015/es/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid " "
 msgstr " "
@@ -104,12 +94,8 @@ msgstr "Generar imagen"
 msgid "ID"
 msgstr "ID"
 
-msgid ""
-"Images will only be shown for that language, useful if the media contains "
-"text or is language sepecific"
-msgstr ""
-"Las imágenes sólo se mostrarán en ese idioma, lo que resulta útil si el "
-"medio contiene texto o es específico de un idioma."
+msgid "Images will only be shown for that language, useful if the media contains text or is language sepecific"
+msgstr "Las imágenes sólo se mostrarán en ese idioma, lo que resulta útil si el medio contiene texto o es específico de un idioma."
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Insertar nueva entrada (Ctrl + I)"
@@ -131,12 +117,8 @@ msgstr "Cliente inválido \"%1$s\""
 msgid "Invalid reCAPTCHA response"
 msgstr "Respuesta reCAPTCHA no válida"
 
-msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
-msgstr ""
-"Las opciones de configuración específicas del artículo estarán disponibles "
-"como pares clave/valor en las plantillas."
+msgid "Item specific configuration options, will be available as key/value pairs in the templates"
+msgstr "Las opciones de configuración específicas del artículo estarán disponibles como pares clave/valor en las plantillas."
 
 msgid "Label"
 msgstr "Etiqueta"
@@ -183,12 +165,8 @@ msgstr "Opción"
 msgid "Order of the types in the frontend"
 msgstr "Orden de los tipos en el frontend"
 
-msgid ""
-"Page title, will be used on the web site if no title for the language is "
-"available"
-msgstr ""
-"Título de la página, se utilizará en el sitio web si no se dispone de título"
-" para el idioma"
+msgid "Page title, will be used on the web site if no title for the language is available"
+msgstr "Título de la página, se utilizará en el sitio web si no se dispone de título para el idioma"
 
 msgid "Please select"
 msgstr "Por favor seleccione"
@@ -228,16 +206,13 @@ msgid "Status"
 msgstr "Estado"
 
 msgid "The item is only shown on the web site after that date and time"
-msgstr ""
-"El artículo sólo se muestra en el sitio web después de esa fecha y hora"
+msgstr "El artículo sólo se muestra en el sitio web después de esa fecha y hora"
 
 msgid "The item is only shown on the web site until that date and time"
 msgstr "El artículo sólo se muestra en el sitio web hasta esa fecha y hora"
 
 msgid "The media title is used for the title tag of the media on the web site"
-msgstr ""
-"El título multimedia se utiliza para la etiqueta de título de los medios de "
-"comunicación en el sitio web"
+msgstr "El título multimedia se utiliza para la etiqueta de título de los medios de comunicación en el sitio web"
 
 msgid "Title"
 msgstr "Título"

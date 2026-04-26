@@ -1,27 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
-# Victor Oomens, 2022
-# Maurice Lourens <mlourens@gmail.com>, 2022
-# Aimeos, 2025
-# 
 #, fuzzy
 msgid ""
 msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: nl\n"
+"Language-Team: Dutch (https://app.transifex.com/aimeos/teams/39015/nl/)\n"
+"Last-Translator: Aimeos, 2025\n"
+"MIME-Version: 1.0\n"
+"PO-Revision-Date: 2022-03-06 10:23+0000\n"
+"POT-Creation-Date: 2026-04-25 11:22+0200\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 13:05+0100\n"
-"PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Aimeos, 2025\n"
-"Language-Team: Dutch (https://app.transifex.com/aimeos/teams/39015/nl/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid " "
 msgstr " "
@@ -104,12 +94,8 @@ msgstr "Afbeelding genereren"
 msgid "ID"
 msgstr "ID"
 
-msgid ""
-"Images will only be shown for that language, useful if the media contains "
-"text or is language sepecific"
-msgstr ""
-"Afbeeldingen worden alleen getoond voor die taal, handig als de media tekst "
-"bevat of taalspecifiek is."
+msgid "Images will only be shown for that language, useful if the media contains text or is language sepecific"
+msgstr "Afbeeldingen worden alleen getoond voor die taal, handig als de media tekst bevat of taalspecifiek is."
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Nieuwe aanmaken (Ctrl+I)"
@@ -131,12 +117,8 @@ msgstr "Ongeldige klant \"%1$s\""
 msgid "Invalid reCAPTCHA response"
 msgstr "Ongeldige reCAPTCHA reactie"
 
-msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
-msgstr ""
-"Item-specifieke configuratieopties zijn beschikbaar als key/value-paren in "
-"de sjablonen"
+msgid "Item specific configuration options, will be available as key/value pairs in the templates"
+msgstr "Item-specifieke configuratieopties zijn beschikbaar als key/value-paren in de sjablonen"
 
 msgid "Label"
 msgstr "Label"
@@ -183,12 +165,8 @@ msgstr "Optie"
 msgid "Order of the types in the frontend"
 msgstr "Volgorde van de types in de voorkant"
 
-msgid ""
-"Page title, will be used on the web site if no title for the language is "
-"available"
-msgstr ""
-"Paginatitel, wordt gebruikt op de website als er geen titel voor de taal "
-"beschikbaar is"
+msgid "Page title, will be used on the web site if no title for the language is available"
+msgstr "Paginatitel, wordt gebruikt op de website als er geen titel voor de taal beschikbaar is"
 
 msgid "Please select"
 msgstr "Selecteer"
@@ -234,8 +212,7 @@ msgid "The item is only shown on the web site until that date and time"
 msgstr "Het item wordt alleen op de website getoond tot die datum en tijd"
 
 msgid "The media title is used for the title tag of the media on the web site"
-msgstr ""
-"De mediatitel wordt gebruikt voor de title-tag van de media op de website."
+msgstr "De mediatitel wordt gebruikt voor de title-tag van de media op de website."
 
 msgid "Title"
 msgstr "Titel"

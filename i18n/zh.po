@@ -1,17 +1,26 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# stevechen <steve.stevechen@gmail.com>, 2022
+# Aimeos, 2025
+# 
 #, fuzzy
 msgid ""
 msgstr ""
-"Content-Transfer-Encoding: 8bit\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Language: zh\n"
-"Language-Team: Chinese (https://app.transifex.com/aimeos/teams/39015/zh/)\n"
-"Last-Translator: Aimeos, 2025\n"
-"MIME-Version: 1.0\n"
-"PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"POT-Creation-Date: 2026-04-25 11:22+0200\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-25 11:22+0200\n"
+"PO-Revision-Date: 2022-03-06 10:23+0000\n"
+"Last-Translator: Aimeos, 2025\n"
+"Language-Team: Chinese (https://app.transifex.com/aimeos/teams/39015/zh/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid " "
 msgstr " "
@@ -94,7 +103,9 @@ msgstr "生成图像"
 msgid "ID"
 msgstr "ID"
 
-msgid "Images will only be shown for that language, useful if the media contains text or is language sepecific"
+msgid ""
+"Images will only be shown for that language, useful if the media contains "
+"text or is language sepecific"
 msgstr "只显示该语言的图片，这在媒体包含文本或特定语言的情况下非常有用"
 
 msgid "Insert new entry (Ctrl+I)"
@@ -117,7 +128,9 @@ msgstr "无效客户端\"%1$s\""
 msgid "Invalid reCAPTCHA response"
 msgstr "无效的 reCAPTCHA 响应"
 
-msgid "Item specific configuration options, will be available as key/value pairs in the templates"
+msgid ""
+"Item specific configuration options, will be available as key/value pairs in"
+" the templates"
 msgstr "项目特定的配置选项，将以键/值对的形式出现在模板中"
 
 msgid "Label"
@@ -165,7 +178,9 @@ msgstr "選項"
 msgid "Order of the types in the frontend"
 msgstr "前台类型的顺序"
 
-msgid "Page title, will be used on the web site if no title for the language is available"
+msgid ""
+"Page title, will be used on the web site if no title for the language is "
+"available"
 msgstr "页面标题，如果没有该语言的标题，网站将使用该标题"
 
 msgid "Please select"

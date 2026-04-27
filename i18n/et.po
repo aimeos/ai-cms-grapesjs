@@ -1,17 +1,25 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Aimeos, 2025
+# 
 #, fuzzy
 msgid ""
 msgstr ""
-"Content-Transfer-Encoding: 8bit\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Language: et\n"
-"Language-Team: Estonian (https://app.transifex.com/aimeos/teams/39015/et/)\n"
-"Last-Translator: Aimeos, 2025\n"
-"MIME-Version: 1.0\n"
-"PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"POT-Creation-Date: 2026-04-25 11:22+0200\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-25 11:22+0200\n"
+"PO-Revision-Date: 2022-03-06 10:23+0000\n"
+"Last-Translator: Aimeos, 2025\n"
+"Language-Team: Estonian (https://app.transifex.com/aimeos/teams/39015/et/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: et\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid " "
 msgstr " "
@@ -94,8 +102,12 @@ msgstr "Pildi genereerimine"
 msgid "ID"
 msgstr "ID"
 
-msgid "Images will only be shown for that language, useful if the media contains text or is language sepecific"
-msgstr "Pilte näidatakse ainult selle keele jaoks, mis on kasulik, kui meedia sisaldab teksti või on keelespetsiifiline."
+msgid ""
+"Images will only be shown for that language, useful if the media contains "
+"text or is language sepecific"
+msgstr ""
+"Pilte näidatakse ainult selle keele jaoks, mis on kasulik, kui meedia "
+"sisaldab teksti või on keelespetsiifiline."
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Sisesta uus kirje (Ctrl+I)"
@@ -117,8 +129,12 @@ msgstr "Vale klient \"%1$s\""
 msgid "Invalid reCAPTCHA response"
 msgstr "Kehtetu reCAPTCHA vastus"
 
-msgid "Item specific configuration options, will be available as key/value pairs in the templates"
-msgstr "Objektispetsiifilised konfiguratsioonivalikud on mallide võtme/väärtuse paaridena kättesaadavad."
+msgid ""
+"Item specific configuration options, will be available as key/value pairs in"
+" the templates"
+msgstr ""
+"Objektispetsiifilised konfiguratsioonivalikud on mallide võtme/väärtuse "
+"paaridena kättesaadavad."
 
 msgid "Label"
 msgstr "Silt"
@@ -165,8 +181,11 @@ msgstr "Valik"
 msgid "Order of the types in the frontend"
 msgstr "Tüüpide järjestus eesosas"
 
-msgid "Page title, will be used on the web site if no title for the language is available"
-msgstr "Lehekülje pealkiri, mida kasutatakse veebilehel, kui keele pealkiri puudub."
+msgid ""
+"Page title, will be used on the web site if no title for the language is "
+"available"
+msgstr ""
+"Lehekülje pealkiri, mida kasutatakse veebilehel, kui keele pealkiri puudub."
 
 msgid "Please select"
 msgstr "Palun valige"
@@ -209,10 +228,12 @@ msgid "The item is only shown on the web site after that date and time"
 msgstr "Objekt kuvatakse veebisaidil alles pärast seda kuupäeva ja kellaaega."
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr "Objekt on veebisaidil näidatud ainult kuni selle kuupäevani ja kellaajani."
+msgstr ""
+"Objekt on veebisaidil näidatud ainult kuni selle kuupäevani ja kellaajani."
 
 msgid "The media title is used for the title tag of the media on the web site"
-msgstr "Meedia pealkirja kasutatakse veebisaidil oleva meedia pealkirjasildi jaoks."
+msgstr ""
+"Meedia pealkirja kasutatakse veebisaidil oleva meedia pealkirjasildi jaoks."
 
 msgid "Title"
 msgstr "Pealkiri"

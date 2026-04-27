@@ -4,8 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Kevin Purwito, 2022
-# Aimeos, 2025
+# Aimeos, 2026
 # 
 #, fuzzy
 msgid ""
@@ -14,91 +13,91 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-25 11:22+0200\n"
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
-"Last-Translator: Aimeos, 2025\n"
-"Language-Team: Indonesian (https://app.transifex.com/aimeos/teams/39015/id/)\n"
+"Last-Translator: Aimeos, 2026\n"
+"Language-Team: Bosnian (https://app.transifex.com/aimeos/teams/39015/bs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: id\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: bs\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 msgid " "
-msgstr " "
+msgstr ""
 
 msgid "Add"
-msgstr "Tambah"
+msgstr "Dodaj"
 
 msgid "Advanced"
-msgstr "Lanjutan"
+msgstr ""
 
 msgid "All"
-msgstr "Semua"
+msgstr ""
 
 msgid "Basic"
-msgstr "Dasar"
+msgstr "Osnovno"
 
 msgid "Bulk edit"
-msgstr "Sunting massal"
+msgstr "Masovna izmjena"
 
 msgid "CMS Lists Type"
-msgstr "CMS Lists Type"
+msgstr ""
 
 msgid "CMS Lists Types"
-msgstr "CMS Lists Types"
+msgstr ""
 
 msgid "CMS page"
-msgstr "laman CMS"
+msgstr ""
 
 msgid "CMS pages"
-msgstr "laman-laman CMS"
+msgstr ""
 
 msgid "Close"
-msgstr "Tutup"
+msgstr "Zatvori"
 
 msgid "Code"
-msgstr "Kode"
+msgstr ""
 
 msgid "Columns"
-msgstr "Kolom-kolom"
+msgstr "Kolumne"
 
 msgid "Copy"
-msgstr "Salin"
+msgstr "Kopiraj"
 
 msgid "Copy this entry"
-msgstr "Salin ini"
+msgstr "Kopiraj ovaj unos"
 
 msgid "Created"
-msgstr "Telah dibuat"
+msgstr "Kreirano"
 
 msgid "Delete"
-msgstr "Hapus"
+msgstr "Obriši"
 
 msgid "Delete selected entries"
-msgstr "Hapus yang dipilih"
+msgstr ""
 
 msgid "Delete this entry"
-msgstr "Hapus ini"
+msgstr "Izbriši ovaj unos"
 
 msgid "Description of the text content if it's in a foreign language"
-msgstr "Deskripsi dari konten berbahasa asing"
+msgstr ""
 
 msgid "Domain"
-msgstr "Domain"
+msgstr ""
 
 msgid "Duplicate entry (Ctrl+D)"
-msgstr "Duplikat ini (Ctrl+D)"
+msgstr ""
 
 msgid "Edit"
-msgstr "Sunting"
+msgstr "Uredi"
 
 msgid "Editor"
-msgstr "Editor"
+msgstr "Urednik"
 
 msgid "End date"
-msgstr "Tanggal akhir"
+msgstr ""
 
 msgid "Generate image"
-msgstr "Menghasilkan gambar"
+msgstr ""
 
 msgid "ID"
 msgstr "ID"
@@ -107,208 +106,202 @@ msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
 msgstr ""
-"Gambar akan muncul untuk bahasa tersebut, bermanfaat jika media mengandung "
-"kalimat dengan bahasa tertentu"
 
 msgid "Insert new entry (Ctrl+I)"
-msgstr "Tambah entri baru (Ctrl+I)"
+msgstr "Umetni novi unos (Ctrl+I)"
 
 msgid "Internal name (required)"
-msgstr "Nama internal (wajib diisi)"
+msgstr "Unutrašnje ime (obavezno)"
 
 msgid "Internal type name shown in the administration interface"
-msgstr "Nama tipe internal yang muncul di tampilan admin"
+msgstr ""
 
 #, php-format
 msgid "Invalid characters in class name \"%1$s\""
-msgstr "Karakter invalid dalam nama kelas \"%1$s\""
+msgstr ""
 
 #, php-format
 msgid "Invalid client \"%1$s\""
-msgstr "Klien tidak valid \"%1$s\""
+msgstr ""
 
 msgid "Invalid reCAPTCHA response"
-msgstr "Respons reCAPTCHA tidak valid"
+msgstr ""
 
 msgid ""
 "Item specific configuration options, will be available as key/value pairs in"
 " the templates"
 msgstr ""
-"Pilihan konfigurasi untuk benda tertentu, akan muncul sebagai key/value "
-"dalam template"
 
 msgid "Label"
-msgstr "Label"
+msgstr "Oznaka"
 
 msgid "Language"
-msgstr "Bahasa"
+msgstr "Jezik"
 
 msgid "Language of the entered text"
-msgstr "Bahasa dari kalimat yang dimasukkan"
+msgstr ""
 
 msgid "List type"
-msgstr "Tipe list"
+msgstr ""
 
 msgid "Media properties"
-msgstr "Properti media"
+msgstr ""
 
 msgid "Menu"
-msgstr "Menu"
+msgstr "Jelovnik"
 
 msgid "Message sent successfully"
-msgstr "Pesan berhasil terkirim"
+msgstr ""
 
 msgid "Modified"
-msgstr "Berubah"
+msgstr "Mijenjeno"
 
 msgid "Move this entry up/down"
-msgstr "Geser ini naik/turun"
+msgstr ""
 
 msgid "New"
-msgstr "Baru"
+msgstr "Novo"
 
 msgid "No items found"
-msgstr "Tidak ada item yang ditemukan"
+msgstr ""
 
 msgid "No recipient configured"
-msgstr "Tidak ada penerima yang dikonfigurasi"
+msgstr ""
 
 msgid "Non-shared properties for the media item"
-msgstr "Properti yang tidak dapat dibagikan"
+msgstr ""
 
 msgid "Option"
-msgstr "Pilihan"
+msgstr ""
 
 msgid "Order of the types in the frontend"
-msgstr "Urutan tipe-tipe di frontend"
+msgstr ""
 
 msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
-"Judul laman, akan digunakan di website jika judul pada bahasa tersebut "
-"tersedia"
 
 msgid "Please select"
-msgstr "Tolon pilih"
+msgstr "Molimo odaberite"
 
 msgid "Position"
-msgstr "Posisi"
+msgstr ""
 
 msgid "Property value (required)"
-msgstr "Isian properti (wajib diisi)"
+msgstr ""
 
 #, php-format
 msgid "Required parameter \"%1$s\" is missing"
-msgstr "Parameter wajib \"%1$s\" tidak ditemukan"
+msgstr "Potrebni parametar \"%1$s\" nedostaje"
 
 msgid "Save"
-msgstr "Simpan"
+msgstr "Sačuvaj"
 
 msgid "Second level type for grouping items"
-msgstr "Level tipe kedua untuk pengelompokan barang"
+msgstr ""
 
 msgid "Select file"
-msgstr "Pilih file"
+msgstr ""
 
 msgid "Show search form"
-msgstr "Munculkan form pencarian"
+msgstr "Prikaži obrazac za pretraživanje"
 
 msgid "Show/hide advanced data"
-msgstr "Munculkan/sembunyikan data lanjutan"
+msgstr ""
 
 msgid "Show/hide this entry"
-msgstr "Munculkan/sembunyikan ini"
+msgstr ""
 
 msgid "Start date"
-msgstr "Tanggal mulai"
+msgstr ""
 
 msgid "Status"
 msgstr "Status"
 
 msgid "The item is only shown on the web site after that date and time"
-msgstr "Item hanya dimunculkan di website setelah tanggal dan jam tersebut"
+msgstr ""
 
 msgid "The item is only shown on the web site until that date and time"
-msgstr "Item hanya dimunculkan di website sampai tanggal dan jam tersebut"
+msgstr ""
 
 msgid "The media title is used for the title tag of the media on the web site"
-msgstr "Judul media digunakan sebagai tag judul dari media di website"
+msgstr ""
 
 msgid "Title"
-msgstr "Judul"
+msgstr ""
 
 msgid "Translate text"
-msgstr "Terjemahkan kalimat"
+msgstr ""
 
 msgid "Type"
-msgstr "Tipe"
+msgstr "Tip"
 
 msgid "Type position (optional)"
-msgstr "Tipe posisi (opsional)"
+msgstr ""
 
 msgid "Types for additional images like icons"
-msgstr "Tipe untuk gambar tambahan seperti ikon"
+msgstr ""
 
 msgid "Types for additional texts like per one lb/kg or per month"
-msgstr "Tipe untuk kalimat tambahan seperti 1 lb/kg atau per bulan"
+msgstr ""
 
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #, php-format
 msgid "Unable to find CMS page \"%1$s\""
-msgstr "Tidak dapat menemukan halaman CMS \"%1$s\""
+msgstr ""
 
 msgid "Unique page URL (required)"
-msgstr "Laman URL unik (wajib diisi)"
+msgstr ""
 
 msgid "Unique page URL, e.g. \"/page-name\""
-msgstr "Laman URL unik, cth \"/nama-laman\""
+msgstr ""
 
 msgid "Unique type code"
-msgstr "Kode tipe unik"
+msgstr ""
 
 msgid "Unique type code (required)"
-msgstr "Kode tipe unik (wajib diisi)"
+msgstr ""
 
 msgid "Value"
-msgstr "Isian"
+msgstr ""
 
 msgid "YYYY-MM-DD hh:mm:ss (optional)"
-msgstr "YYYY-MM-DD hh:mm:ss (opsional)"
+msgstr ""
 
 msgid "Your request"
-msgstr "Permintaan Anda"
+msgstr ""
 
 msgid "Your request is likely spam and was not executed"
-msgstr "Permintaan Anda kemungkinan besar adalah spam dan tidak dieksekusi"
+msgstr ""
 
 #, php-format
 msgid "cms"
-msgstr "cms"
+msgstr ""
 
 #, php-format
 msgid "content"
-msgstr "konten"
+msgstr ""
 
 #, php-format
 msgid "media"
-msgstr "media"
+msgstr ""
 
 #, php-format
 msgid "property"
-msgstr "properti"
+msgstr ""
 
 msgid "reCAPTCHA token missing"
-msgstr "token reCAPTCHA hilang"
+msgstr ""
 
 msgid "selected"
-msgstr "dipilih"
+msgstr "odabrano"
 
 #, php-format
 msgid "seo"
-msgstr "seo"
+msgstr ""
 
 msgid "status:-1"
 msgstr "status:-1"
@@ -317,14 +310,14 @@ msgid "status:-2"
 msgstr "status:-2"
 
 msgid "status:0"
-msgstr "status:0"
+msgstr "stanje:0"
 
 msgid "status:1"
 msgstr "status:1"
 
 msgid "text"
-msgstr "kalimat"
+msgstr ""
 
 #, php-format
 msgid "type/cms/lists"
-msgstr "type/cms/lists"
+msgstr ""

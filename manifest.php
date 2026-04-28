@@ -5,7 +5,6 @@ return [
 	'depends' => [
 		'aimeos-core',
 		'ai-admin-jqadm',
-		'ai-admin-jsonadm',
 		'ai-client-html',
 		'ai-client-jsonapi',
 		'ai-controller-frontend',

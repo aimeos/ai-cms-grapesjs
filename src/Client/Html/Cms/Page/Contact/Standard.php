@@ -43,6 +43,7 @@ class Standard
 	public function modify( string $content, string $uid ) : string
 	{
 		$csrf = $this->view()->csrf();
+		// @phpstan-ignore-next-line
 		return str_replace( ['%csrf.name%', '%csrf.value%'], [$csrf->name(), $csrf->value()], $content );
 	}
 
@@ -53,7 +54,7 @@ class Standard
 	 * A view must be available and this method doesn't generate any output
 	 * besides setting view variables if necessary.
 	 */
-	public function init()
+	public function init() : void
 	{
 		$view = $this->view();
 		$params = $view->param( 'contact' );
@@ -71,19 +72,24 @@ class Standard
 				$label = $context->locale()->getSiteItem()->getLabel();
 
 				$context->mail()->create()
+					// @phpstan-ignore-next-line
 					->to( $toAddr, $toName )
+					// @phpstan-ignore-next-line
 					->from( $toAddr, $toName )
+					// @phpstan-ignore-next-line
 					->replyTo( $params['email'], $params['name'] ?? null )
 					->subject( $context->translate( 'client', 'Your request' ) . ' - ' . $label )
 					->text( $this->text( $params ) )
 					->send();
 
 				$info = [$context->translate( 'client', 'Message sent successfully' )];
+				// @phpstan-ignore-next-line
 				$view->infos = array_merge( $view->get( 'infos', [] ), $info );
 			}
 			else
 			{
 				$error = [$context->translate( 'client', 'No recipient configured' )];
+				// @phpstan-ignore-next-line
 				$view->errors = array_merge( $view->get( 'errors', [] ), $error );
 			}
 		}

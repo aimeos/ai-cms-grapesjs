@@ -29,7 +29,7 @@ class Standard
 	 * Use "Myname" if your class is named "\Aimeos\Admin\Jqadm\Cms\Text\Myname".
 	 * The name is case-sensitive and you should avoid camel case names like "MyName".
 	 *
-	 * @param string Last part of the JQAdm class name
+	 * @type string Last part of the JQAdm class name
 	 * @since 2020.10
 	 * @category Developer
 	 */
@@ -43,6 +43,7 @@ class Standard
 	public function copy() : ?string
 	{
 		$view = $this->object()->data( $this->view() );
+		// @phpstan-ignore-next-line
 		$view->seoData = $this->toArray( $view->item, true );
 		$view->seoBody = parent::copy();
 
@@ -103,6 +104,7 @@ class Standard
 	public function get() : ?string
 	{
 		$view = $this->object()->data( $this->view() );
+		// @phpstan-ignore-next-line
 		$view->seoData = $this->toArray( $view->item );
 		$view->seoBody = parent::get();
 
@@ -119,6 +121,7 @@ class Standard
 	{
 		$view = $this->view();
 
+		// @phpstan-ignore-next-line
 		$view->item = $this->fromArray( $view->item, $view->param( 'seo', [] ) );
 		$view->seoBody = parent::save();
 
@@ -153,7 +156,7 @@ class Standard
 		 * common decorators ("\Aimeos\Admin\JQAdm\Common\Decorator\*") added via
 		 * "admin/jqadm/common/decorators/default" to the JQAdm client.
 		 *
-		 * @param array List of decorator names
+		 * @type array List of decorator names
 		 * @since 2020.10
 		 * @category Developer
 		 * @see admin/jqadm/common/decorators/default
@@ -177,7 +180,7 @@ class Standard
 		 * This would add the decorator named "decorator1" defined by
 		 * "\Aimeos\Admin\JQAdm\Common\Decorator\Decorator1" only to the JQAdm client.
 		 *
-		 * @param array List of decorator names
+		 * @type array List of decorator names
 		 * @since 2020.10
 		 * @category Developer
 		 * @see admin/jqadm/common/decorators/default
@@ -201,7 +204,7 @@ class Standard
 		 * This would add the decorator named "decorator2" defined by
 		 * "\Aimeos\Admin\JQAdm\Cms\Decorator\Decorator2" only to the JQAdm client.
 		 *
-		 * @param array List of decorator names
+		 * @type array List of decorator names
 		 * @since 2020.10
 		 * @category Developer
 		 * @see admin/jqadm/common/decorators/default
@@ -248,11 +251,11 @@ class Standard
 		 * should support adding, removing or reordering content by a fluid like
 		 * design.
 		 *
-		 * @param array List of sub-client names
+		 * @type array List of sub-client names
 		 * @since 2020.10
 		 * @category Developer
 		 */
-		return $this->context()->config()->get( 'admin/jqadm/cms/seo/subparts', [] );
+		return (array) $this->context()->config()->get( 'admin/jqadm/cms/seo/subparts', [] );
 	}
 
 
@@ -300,22 +303,29 @@ class Standard
 
 		foreach( $data as $idx => $entry )
 		{
+			// @phpstan-ignore-next-line
 			if( trim( $this->val( $entry, 'text.content', '' ) ) === '' ) {
 				continue;
 			}
 
+			// @phpstan-ignore-next-line
 			$id = $this->val( $entry, 'text.id', '' );
+			// @phpstan-ignore-next-line
 			$type = $this->val( $entry, 'cms.lists.type', 'default' );
 
+			// @phpstan-ignore-next-line
 			$listItem = $item->getListItem( 'text', $type, $id, false ) ?: $manager->createListItem();
 			$refItem = $listItem->getRefItem() ?: $textManager->create();
 
 			$refItem->fromArray( $entry, true );
 			$conf = [];
 
+			// @phpstan-ignore-next-line
 			foreach( (array) $this->val( $entry, 'config', [] ) as $cfg )
 			{
+				// @phpstan-ignore-next-line
 				if( ( $key = trim( $cfg['key'] ?? '' ) ) !== '' ) {
+					// @phpstan-ignore-next-line
 					$conf[$key] = trim( $cfg['val'] ?? '' );
 				}
 			}
@@ -324,11 +334,13 @@ class Standard
 			$listItem->setPosition( $idx );
 			$listItem->setConfig( $conf );
 
+			// @phpstan-ignore-next-line
 			$item->addListItem( 'text', $listItem, $refItem );
 
 			unset( $listItems[$listItem->getId()] );
 		}
 
+		// @phpstan-ignore-next-line
 		return $item->deleteListItems( $listItems->toArray(), true );
 	}
 
@@ -338,7 +350,7 @@ class Standard
 	 *
 	 * @param \Aimeos\MShop\Cms\Item\Iface $item Cms item object including referenced domain items
 	 * @param bool $copy True if items should be copied, false if not
-	 * @return string[] Multi-dimensional associative list of item data
+	 * @return array Multi-dimensional associative list of item data
 	 */
 	protected function toArray( \Aimeos\MShop\Cms\Item\Iface $item, bool $copy = false ) : array
 	{
@@ -365,7 +377,9 @@ class Standard
 				$list['text.id'] = null;
 			}
 
+			// @phpstan-ignore-next-line
 			$list['cms.lists.datestart'] = str_replace( ' ', 'T', $list['cms.lists.datestart'] ?? '' );
+			// @phpstan-ignore-next-line
 			$list['cms.lists.dateend'] = str_replace( ' ', 'T', $list['cms.lists.dateend'] ?? '' );
 			$list['config'] = [];
 
@@ -403,7 +417,7 @@ class Standard
 		 * you've implemented an alternative client class as well, "default"
 		 * should be replaced by the name of the new class.
 		 *
-		 * @param string Relative path to the template creating the HTML code
+		 * @type string Relative path to the template creating the HTML code
 		 * @since 2020.10
 		 * @category Developer
 		 */

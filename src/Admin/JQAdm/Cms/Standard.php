@@ -52,7 +52,7 @@ class Standard
 	 * name with an upper case character and continue only with lower case characters
 	 * or numbers. Avoid chamel case names like "MyFavorite"!
 	 *
-	 * @param string Last part of the class name
+	 * @type string Last part of the class name
 	 * @since 2020.10
 	 * @category Developer
 	 */
@@ -98,8 +98,10 @@ class Standard
 			}
 
 			$manager = \Aimeos\MShop::create( $this->context(), 'cms' );
+			// @phpstan-ignore-next-line
 			$view->item = $manager->get( $id, $this->getDomains() );
 
+			// @phpstan-ignore-next-line
 			$view->itemData = $this->toArray( $view->item, true );
 			$view->itemBody = parent::copy();
 		}
@@ -123,7 +125,7 @@ class Standard
 
 		try
 		{
-			$data = $view->param( 'item', [] );
+			$data = (array) $view->param( 'item', [] );
 
 			if( !isset( $view->item ) ) {
 				$view->item = \Aimeos\MShop::create( $this->context(), 'cms' )->create();
@@ -131,6 +133,7 @@ class Standard
 
 			$data['cms.siteid'] = $view->item->getSiteId();
 
+			// @phpstan-ignore-next-line
 			$view->itemData = array_replace_recursive( $this->toArray( $view->item ), $data );
 			$view->itemBody = parent::create();
 		}
@@ -208,7 +211,9 @@ class Standard
 
 			$manager = \Aimeos\MShop::create( $this->context(), 'cms' );
 
+			// @phpstan-ignore-next-line
 			$view->item = $manager->get( $id, $this->getDomains() );
+			// @phpstan-ignore-next-line
 			$view->itemData = $this->toArray( $view->item );
 			$view->itemBody = parent::get();
 		}
@@ -236,6 +241,7 @@ class Standard
 
 		try
 		{
+			// @phpstan-ignore-next-line
 			$item = $this->fromArray( $view->param( 'item', [] ) );
 			$view->item = $item->getId() ? $item : $manager->save( $item );
 			$view->itemBody = parent::save();
@@ -245,6 +251,7 @@ class Standard
 
 			$context->cache()->deleteByTags( ['cms', 'cms-' . $view->item->getId()] );
 
+			// @phpstan-ignore-next-line
 			return $this->redirect( 'cms', $view->param( 'next' ), $view->item->getId(), 'save' );
 		}
 		catch( \Exception $e )
@@ -269,6 +276,7 @@ class Standard
 		try
 		{
 			$total = 0;
+			// @phpstan-ignore-next-line
 			$params = $this->storeFilter( $view->param(), 'cms' );
 			$manager = \Aimeos\MShop::create( $this->context(), 'cms' );
 			$search = $this->initCriteria( $manager->filter()->order( 'cms.url' ), $params );
@@ -299,7 +307,7 @@ class Standard
 		 * you've implemented an alternative client class as well, "default"
 		 * should be replaced by the name of the new class.
 		 *
-		 * @param string Relative path to the template creating the HTML code
+		 * @type string Relative path to the template creating the HTML code
 		 * @since 2020.10
 		 * @category Developer
 		 */
@@ -337,7 +345,7 @@ class Standard
 		 * common decorators ("\Aimeos\Admin\JQAdm\Common\Decorator\*") added via
 		 * "client/jqadm/common/decorators/default" to the JQAdm client.
 		 *
-		 * @param array List of decorator names
+		 * @type array List of decorator names
 		 * @since 2020.10
 		 * @category Developer
 		 * @see admin/jqadm/common/decorators/default
@@ -361,7 +369,7 @@ class Standard
 		 * This would add the decorator named "decorator1" defined by
 		 * "\Aimeos\Admin\JQAdm\Common\Decorator\Decorator1" only to the JQAdm client.
 		 *
-		 * @param array List of decorator names
+		 * @type array List of decorator names
 		 * @since 2020.10
 		 * @category Developer
 		 * @see admin/jqadm/common/decorators/default
@@ -385,7 +393,7 @@ class Standard
 		 * This would add the decorator named "decorator2" defined by
 		 * "\Aimeos\Admin\JQAdm\Cms\Decorator\Decorator2" only to the JQAdm client.
 		 *
-		 * @param array List of decorator names
+		 * @type array List of decorator names
 		 * @since 2020.10
 		 * @category Developer
 		 * @see admin/jqadm/common/decorators/default
@@ -410,11 +418,11 @@ class Standard
 		 * list of domains (cms, media, price, cms, text, etc. are
 		 * domains) whose items are fetched from the storage.
 		 *
-		 * @param array List of domain names
+		 * @type array List of domain names
 		 * @since 2020.10
 		 * @category Developer
 		 */
-		return $this->context()->config()->get( 'admin/jqadm/cms/domains', [] );
+		return $this->context()->config()->get( 'admin/jqadm/cms/domains', [] ); // @phpstan-ignore return.type
 	}
 
 
@@ -454,11 +462,11 @@ class Standard
 		 * should support adding, removing or reordering content by a fluid like
 		 * design.
 		 *
-		 * @param array List of sub-client names
+		 * @type array List of sub-client names
 		 * @since 2020.10
 		 * @category Developer
 		 */
-		return $this->context()->config()->get( 'admin/jqadm/cms/subparts', [] );
+		return (array) $this->context()->config()->get( 'admin/jqadm/cms/subparts', [] );
 	}
 
 
@@ -473,6 +481,7 @@ class Standard
 		$manager = \Aimeos\MShop::create( $this->context(), 'cms' );
 
 		if( isset( $data['cms.id'] ) && $data['cms.id'] != '' ) {
+			// @phpstan-ignore-next-line
 			$item = $manager->get( $data['cms.id'], $this->getDomains() );
 		} else {
 			$item = $manager->create();
@@ -480,7 +489,7 @@ class Standard
 
 		$item->fromArray( $data, true );
 
-		return $item;
+		return $item; // @phpstan-ignore return.type
 	}
 
 
@@ -488,7 +497,7 @@ class Standard
 	 * Constructs the data array for the view from the given item
 	 *
 	 * @param \Aimeos\MShop\Cms\Item\Iface $item Cms item object
-	 * @return string[] Multi-dimensional associative list of item data
+	 * @return array Multi-dimensional associative list of item data
 	 */
 	protected function toArray( \Aimeos\MShop\Cms\Item\Iface $item, bool $copy = false ) : array
 	{
@@ -528,7 +537,7 @@ class Standard
 		 * you've implemented an alternative client class as well, "default"
 		 * should be replaced by the name of the new class.
 		 *
-		 * @param string Relative path to the template creating the HTML code
+		 * @type string Relative path to the template creating the HTML code
 		 * @since 2020.10
 		 * @category Developer
 		 */

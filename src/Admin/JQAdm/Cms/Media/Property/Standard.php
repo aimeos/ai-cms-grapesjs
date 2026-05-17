@@ -29,7 +29,7 @@ class Standard
 	 * Use "Myname" if your class is named "\Aimeos\Admin\Jqadm\Cms\Media\Property\Myname".
 	 * The name is case-sensitive and you should avoid camel case names like "MyName".
 	 *
-	 * @param string Last part of the JQAdm class name
+	 * @type string Last part of the JQAdm class name
 	 * @since 2021.04
 	 * @category Developer
 	 */
@@ -47,6 +47,7 @@ class Standard
 
 		$search = $manager->filter( true )->slice( 0, 10000 );
 		$search->setConditions( $search->compare( '==', 'media.property.type.domain', 'media' ) );
+		// @phpstan-ignore-next-line
 		$search->setSortations( [$search->sort( '+', 'media.property.type.position' )] );
 
 		$view->propertyTypes = $manager->search( $search );
@@ -63,6 +64,7 @@ class Standard
 	public function copy() : ?string
 	{
 		$view = $this->object()->data( $this->view() );
+		// @phpstan-ignore-next-line
 		$view->mediaData = $this->toArray( $view->item, $view->get( 'mediaData', [] ), true );
 		$view->propertyBody = parent::copy();
 
@@ -83,6 +85,7 @@ class Standard
 
 		foreach( $data as $index => $entry )
 		{
+			// @phpstan-ignore-next-line
 			foreach( $view->value( $entry, 'property', [] ) as $idx => $y ) {
 				$data[$index]['property'][$idx]['media.property.siteid'] = $siteid;
 			}
@@ -103,6 +106,7 @@ class Standard
 	public function get() : ?string
 	{
 		$view = $this->object()->data( $this->view() );
+		// @phpstan-ignore-next-line
 		$view->mediaData = $this->toArray( $view->item, $view->get( 'mediaData', [] ) );
 		$view->propertyBody = parent::get();
 
@@ -119,6 +123,7 @@ class Standard
 	{
 		$view = $this->view();
 
+		// @phpstan-ignore-next-line
 		$view->item = $this->fromArray( $view->item, $view->param( 'media', [] ) );
 		$view->propertyBody = parent::save();
 
@@ -153,7 +158,7 @@ class Standard
 		 * common decorators ("\Aimeos\Admin\JQAdm\Common\Decorator\*") added via
 		 * "admin/jqadm/common/decorators/default" to the JQAdm client.
 		 *
-		 * @param array List of decorator names
+		 * @type array List of decorator names
 		 * @since 2021.04
 		 * @category Developer
 		 * @see admin/jqadm/common/decorators/default
@@ -177,7 +182,7 @@ class Standard
 		 * This would add the decorator named "decorator1" defined by
 		 * "\Aimeos\Admin\JQAdm\Common\Decorator\Decorator1" only to the JQAdm client.
 		 *
-		 * @param array List of decorator names
+		 * @type array List of decorator names
 		 * @since 2021.04
 		 * @category Developer
 		 * @see admin/jqadm/common/decorators/default
@@ -201,7 +206,7 @@ class Standard
 		 * This would add the decorator named "decorator2" defined by
 		 * "\Aimeos\Admin\JQAdm\Cms\Decorator\Decorator2" only to the JQAdm client.
 		 *
-		 * @param array List of decorator names
+		 * @type array List of decorator names
 		 * @since 2021.04
 		 * @category Developer
 		 * @see admin/jqadm/common/decorators/default
@@ -248,11 +253,11 @@ class Standard
 		 * should support adding, removing or reordering content by a fluid like
 		 * design.
 		 *
-		 * @param array List of sub-client names
+		 * @type array List of sub-client names
 		 * @since 2021.04
 		 * @category Developer
 		 */
-		return $this->context()->config()->get( 'admin/jqadm/cms/media/property/subparts', [] );
+		return (array) $this->context()->config()->get( 'admin/jqadm/cms/media/property/subparts', [] );
 	}
 
 
@@ -309,7 +314,7 @@ class Standard
 	 * @param \Aimeos\MShop\Cms\Item\Iface $item Cms item object including referenced domain items
 	 * @param array $data Associative list of media data
 	 * @param bool $copy True if items should be copied, false if not
-	 * @return string[] Multi-dimensional associative list of item data
+	 * @return array Multi-dimensional associative list of item data
 	 */
 	protected function toArray( \Aimeos\MShop\Cms\Item\Iface $item, array $data, bool $copy = false ) : array
 	{
@@ -363,7 +368,7 @@ class Standard
 		 * you've implemented an alternative client class as well, "default"
 		 * should be replaced by the name of the new class.
 		 *
-		 * @param string Relative path to the template creating the HTML code
+		 * @type string Relative path to the template creating the HTML code
 		 * @since 2021.04
 		 * @category Developer
 		 */

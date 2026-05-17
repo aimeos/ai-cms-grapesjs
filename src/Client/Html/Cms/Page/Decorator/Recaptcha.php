@@ -24,7 +24,7 @@ class Recaptcha
 	/**
 	 * Processes the input, e.g. store given values.
 	 */
-	public function init()
+	public function init() : void
 	{
 		$view = $this->view();
 		$context = $this->context();
@@ -37,7 +37,7 @@ class Recaptcha
 			}
 
 			$ip = $view->request()->getClientAddress();
-			$url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $key . '&response=' . $token . '&remoteip=' . $ip;
+			$url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $key . '&response=' . $token . '&remoteip=' . $ip; // @phpstan-ignore binaryOp.invalid, binaryOp.invalid
 
 			if( ( $result = file_get_contents( $url ) ) === false || ( $data = json_decode( $result ) ) === null ) {
 				throw new \Aimeos\Client\Html\Exception( $context->translate( 'client', 'Invalid reCAPTCHA response' ) );

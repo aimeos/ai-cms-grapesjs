@@ -34,7 +34,6 @@ interface Iface
 	 * Returns the cms for the given cms code
 	 *
 	 * @param string $code Unique cms code
-	 * @param string[] $domains Domain names of items that are associated with the cmss and that should be fetched too
 	 * @return \Aimeos\MShop\Cms\Item\Iface Cms item including the referenced domains items
 	 * @since 2021.04
 	 */
@@ -53,7 +52,6 @@ interface Iface
 	 * Returns the cms for the given cms ID
 	 *
 	 * @param string $id Unique cms ID
-	 * @param string[] $domains Domain names of items that are associated with the cmss and that should be fetched too
 	 * @return \Aimeos\MShop\Cms\Item\Iface Cms item including the referenced domains items
 	 * @since 2021.04
 	 */
@@ -65,7 +63,7 @@ interface Iface
 	 * @param string $domain Domain name of the referenced item, e.g. "attribute"
 	 * @param string|null $type Type code of the reference, e.g. "variant" or null for all types
 	 * @param string|null $refId ID of the referenced item of the given domain or null for all references
-	 * @return \Aimeos\Controller\Frontend\Product\Iface Product controller for fluent interface
+	 * @return \Aimeos\Controller\Frontend\Cms\Iface Cms controller for fluent interface
 	 * @since 2019.10
 	 */
 	public function has( string $domain, ?string $type = null, ?string $refId = null ) : Iface;
@@ -91,7 +89,7 @@ interface Iface
 	/**
 	 * Returns the cmss filtered by the previously assigned conditions
 	 *
-	 * @param int &$total Parameter where the total number of found cmss will be stored in
+	 * @type int &$total Parameter where the total number of found cmss will be stored in
 	 * @return \Aimeos\Map Ordered list of items implementing \Aimeos\MShop\Cms\Item\Iface
 	 * @since 2021.04
 	 */

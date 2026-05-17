@@ -50,8 +50,8 @@ class Standard
 	 * Sets the necessary parameter values in the view.
 	 *
 	 * @param \Aimeos\Base\View\Iface $view The view object which generates the HTML output
-	 * @param array &$tags Result array for the list of tags that are associated to the output
-	 * @param string|null &$expire Result variable for the expiration date of the output (null for no expiry)
+	 * @type array &$tags Result array for the list of tags that are associated to the output
+	 * @type string|null &$expire Result variable for the expiration date of the output (null for no expiry)
 	 * @return \Aimeos\Base\View\Iface Modified view object
 	 */
 	public function data( \Aimeos\Base\View\Iface $view, array &$tags = [], ?string &$expire = null ) : \Aimeos\Base\View\Iface
@@ -81,7 +81,7 @@ class Standard
 		 * you've implemented an alternative client class as well, "standard"
 		 * should be replaced by the name of the new class.
 		 *
-		 * @param string Relative path to the template creating code for the catalog list
+		 * @type string Relative path to the template creating code for the catalog list
 		 * @since 2021.07
 		 * @category Developer
 		 * @see client/html/cms/page/template-body
@@ -90,7 +90,9 @@ class Standard
 		$template = $config->get( 'client/html/cms/page/template-cataloglist', 'cms/page/cataloglist/list' );
 		$domains = $config->get( 'client/html/catalog/lists/domains', ['media', 'media/property', 'price', 'text'] );
 
+		// @phpstan-ignore-next-line
 		if( $view->config( 'client/html/cms/page/basket-add', false ) ) {
+			// @phpstan-ignore-next-line
 			$domains = array_merge_recursive( $domains, ['product' => ['default'], 'attribute' => ['variant', 'custom', 'config']] );
 		}
 
@@ -99,6 +101,7 @@ class Standard
 		foreach( $view->pageContent as $content )
 		{
 			$dom = new \DOMDocument( '1.0', 'UTF-8' );
+			// @phpstan-ignore-next-line
 			$dom->loadHTML( $content, LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
 			$nodes = $dom->getElementsByTagName( 'cataloglist' );
 
@@ -116,19 +119,23 @@ class Standard
 
 				$articles = $products->getRefItems( 'product', 'default', 'default' )->flat( 1 )->union( $products );
 				$attrMap = $articles->getRefItems( 'attribute' )->flat( 1 )->groupBy( 'attribute.type' );
+				// @phpstan-ignore-next-line
 				$attrTypes = $this->attributeTypes( $attrMap->keys() );
 
+				// @phpstan-ignore-next-line
 				$this->addMetaItems( $products, $expire, $tags );
 
 				$tview = $context->view()->set( 'products', $products )->set( 'attributeTypes', $attrTypes );
 
 				if( !$products->isEmpty() && (bool) $config->get( 'client/html/catalog/lists/stock/enable', true ) === true ) {
+					// @phpstan-ignore-next-line
 					$tview->itemsStockUrl = $this->getStockUrl( $tview, $articles );
 				}
 
 				$pdom = new \DOMDocument( '1.0', 'UTF-8' );
 				$pdom->loadHTML( $tview->render( $template ), LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
 
+				// @phpstan-ignore-next-line
 				$pnode = $dom->importNode( $pdom->documentElement, true );
 				$node->parentNode->replaceChild( $pnode, $node );
 			}

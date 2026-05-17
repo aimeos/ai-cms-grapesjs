@@ -50,7 +50,7 @@ class Standard
 	 * name with an upper case character and continue only with lower case characters
 	 * or numbers. Avoid chamel case names like "MyPage"!
 	 *
-	 * @param string Last part of the class name
+	 * @type string Last part of the class name
 	 * @since 2021.04
 	 * @category Developer
 	 */
@@ -84,7 +84,7 @@ class Standard
 	 * should support adding, removing or reordering content by a fluid like
 	 * design.
 	 *
-	 * @param array List of sub-client names
+	 * @type array List of sub-client names
 	 * @since 2021.04
 	 * @category Developer
 	 */
@@ -111,7 +111,7 @@ class Standard
 		 * entries to cache or if the component contains non-cacheable parts that
 		 * can't be replaced using the modify() method.
 		 *
-		 * @param boolean True to enable caching, false to disable
+		 * @type boolean True to enable caching, false to disable
 		 * @category Developer
 		 * @category User
 		 * @see client/html/cms/page/cache
@@ -125,13 +125,14 @@ class Standard
 		 * This returns all settings related to the page component.
 		 * Please refer to the single settings for pages.
 		 *
-		 * @param array Associative list of name/value settings
+		 * @type array Associative list of name/value settings
 		 * @category Developer
 		 * @see client/html/cms#page
 		 */
 		$confkey = 'client/html/cms/page';
 		$prefixes = [];
 
+		// @phpstan-ignore-next-line
 		$path = '/' . trim( $this->view()->param( 'path', '' ), '/' );
 
 		if( $html = $this->cached( 'body', $uid . '-' . $path, $prefixes, $confkey ) ) {
@@ -146,7 +147,7 @@ class Standard
 
 		$html = '';
 		foreach( $this->getSubClients() as $subclient ) {
-			$html .= $subclient->setView( $view )->body( $uid );
+			$html .= $subclient->setView( $view )->body( $uid ); // @phpstan-ignore assignOp.invalid
 		}
 
 		$template = $this->context()->config()->get( 'client/html/cms/page/template-body', 'cms/page/body' );
@@ -166,6 +167,7 @@ class Standard
 	 */
 	public function header( string $uid = '' ) : ?string
 	{
+		// @phpstan-ignore-next-line
 		$path = '/' . trim( $this->view()->param( 'path', '' ), '/' );
 		$confkey = 'client/html/cms/page';
 		$prefixes = [];
@@ -216,7 +218,7 @@ class Standard
 		 * common decorators ("\Aimeos\Client\Html\Common\Decorator\*") added via
 		 * "client/html/common/decorators/default" to the html client.
 		 *
-		 * @param array List of decorator names
+		 * @type array List of decorator names
 		 * @since 2021.04
 		 * @category Developer
 		 * @see client/html/common/decorators/default
@@ -240,7 +242,7 @@ class Standard
 		 * This would add the decorator named "decorator1" defined by
 		 * "\Aimeos\Client\Html\Common\Decorator\Decorator1" only to the html client.
 		 *
-		 * @param array List of decorator names
+		 * @type array List of decorator names
 		 * @since 2021.04
 		 * @category Developer
 		 * @see client/html/common/decorators/default
@@ -264,7 +266,7 @@ class Standard
 		 * This would add the decorator named "decorator2" defined by
 		 * "\Aimeos\Client\Html\Cms\Decorator\Decorator2" only to the html client.
 		 *
-		 * @param array List of decorator names
+		 * @type array List of decorator names
 		 * @since 2021.04
 		 * @category Developer
 		 * @see client/html/common/decorators/default
@@ -279,8 +281,8 @@ class Standard
 	 * Sets the necessary parameter values in the view.
 	 *
 	 * @param \Aimeos\Base\View\Iface $view The view object which generates the HTML output
-	 * @param array &$tags Result array for the list of tags that are associated to the output
-	 * @param string|null &$expire Result variable for the expiration date of the output (null for no expiry)
+	 * @type array &$tags Result array for the list of tags that are associated to the output
+	 * @type string|null &$expire Result variable for the expiration date of the output (null for no expiry)
 	 * @return \Aimeos\Base\View\Iface Modified view object
 	 */
 	public function data( \Aimeos\Base\View\Iface $view, array &$tags = [], ?string &$expire = null ) : \Aimeos\Base\View\Iface
@@ -298,22 +300,25 @@ class Standard
 		 * Please keep in mind that the more domains you add to the configuration,
 		 * the more time is required for fetching the content!
 		 *
-		 * @param array List of domain names
+		 * @type array List of domain names
 		 * @since 2021.04
 		 */
 		$domains = $context->config()->get( 'client/html/cms/page/domains', ['text'] );
 
 		$path = array_unique( [
+			// @phpstan-ignore-next-line
 			'/' . trim( $view->param( 'path', '' ), '/' ),
 			'/' . trim( $view->request()->getUri()->getPath(), '/' )
 		] );
 
 		if( $page = $controller->uses( $domains )->compare( '==', 'cms.url', $path )->search()->first() )
 		{
+			// @phpstan-ignore-next-line
 			$this->addMetaItems( $page, $expire, $tags );
 
 			$view->pageCmsItem = $page;
 			$view->pageContent = $page->getRefItems( 'text', 'content' )->map( function( $item ) {
+				// @phpstan-ignore-next-line
 				$data = ( $json = json_decode( $item->getContent(), true ) ) ? $json['html'] : $item->getContent();
 				return '<div class="cms-content">' . $data . '</div>';
 			} )->all();
@@ -330,7 +335,7 @@ class Standard
 	 */
 	protected function getSubClientNames() : array
 	{
-		return $this->context()->config()->get( $this->subPartPath, $this->subPartNames );
+		return (array) $this->context()->config()->get( $this->subPartPath, $this->subPartNames );
 	}
 
 
@@ -349,7 +354,7 @@ class Standard
 	 * you've implemented an alternative client class as well, "standard"
 	 * should be replaced by the name of the new class.
 	 *
-	 * @param string Relative path to the template creating code for the HTML page body
+	 * @type string Relative path to the template creating code for the HTML page body
 	 * @since 2021.04
 	 * @category Developer
 	 * @see client/html/cms/page/template-header
@@ -371,7 +376,7 @@ class Standard
 	 * you've implemented an alternative client class as well, "standard"
 	 * should be replaced by the name of the new class.
 	 *
-	 * @param string Relative path to the template creating code for the HTML page head
+	 * @type string Relative path to the template creating code for the HTML page head
 	 * @since 2021.04
 	 * @category Developer
 	 * @see client/html/cms/page/template-body

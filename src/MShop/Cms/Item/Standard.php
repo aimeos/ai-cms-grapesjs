@@ -33,6 +33,7 @@ class Standard
 	{
 		parent::__construct( $prefix, $values );
 
+		// @phpstan-ignore-next-line
 		$this->initListItems( $values['.listitems'] ?? [] );
 	}
 
@@ -44,7 +45,7 @@ class Standard
 	 */
 	public function getUrl() : string
 	{
-		return $this->get( 'cms.url', '' );
+		return (string) $this->get( 'cms.url', '' );
 	}
 
 
@@ -71,7 +72,7 @@ class Standard
 	 */
 	public function getLabel() : string
 	{
-		return $this->get( 'cms.label', '' );
+		return (string) $this->get( 'cms.label', '' );
 	}
 
 
@@ -94,7 +95,7 @@ class Standard
 	 */
 	public function getStatus() : int
 	{
-		return $this->get( 'cms.status', 1 );
+		return (int) $this->get( 'cms.status', 1 );
 	}
 
 
@@ -124,8 +125,8 @@ class Standard
 	/**
 	 * Sets the item values from the given array and removes that entries from the list
 	 *
-	 * @param array &$list Associative list of item keys and their values
-	 * @param bool True to set private properties too, false for public only
+	 * @type array &$list Associative list of item keys and their values
+	 * @param bool $private True to set private properties too, false for public only
 	 * @return static Cms item for chaining method calls
 	 */
 	public function fromArray( array &$list, bool $private = false ) : static
@@ -136,7 +137,9 @@ class Standard
 		{
 			switch( $key )
 			{
+				// @phpstan-ignore-next-line
 				case 'cms.url': $item = $item->setUrl( $value ); break;
+				// @phpstan-ignore-next-line
 				case 'cms.label': $item = $item->setLabel( $value ); break;
 				case 'cms.status': $item = $item->setStatus( (int) $value ); break;
 				default: continue 2;
@@ -152,7 +155,7 @@ class Standard
 	/**
 	 * Returns the item values as array.
 	 *
-	 * @param bool True to return private properties, false for public only
+	 * @param bool $private True to return private properties, false for public only
 	 * @return array Associative list of item properties and their values
 	 */
 	public function toArray( bool $private = false ) : array

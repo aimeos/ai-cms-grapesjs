@@ -50,7 +50,7 @@ class Standard
 	 * name with an upper case character and continue only with lower case characters
 	 * or numbers. Avoid chamel case names like "MyCms"!
 	 *
-	 * @param string Last part of the class name
+	 * @type string Last part of the class name
 	 * @since 2021.04
 	 * @category Developer
 	 */
@@ -73,7 +73,7 @@ class Standard
 	 * common decorators ("\Aimeos\Controller\Frontend\Common\Decorator\*") added via
 	 * "controller/frontend/common/decorators/default" for the cms frontend controller.
 	 *
-	 * @param array List of decorator names
+	 * @type array List of decorator names
 	 * @since 2021.04
 	 * @category Developer
 	 * @see controller/frontend/common/decorators/default
@@ -97,7 +97,7 @@ class Standard
 	 * This would add the decorator named "decorator1" defined by
 	 * "\Aimeos\Controller\Frontend\Common\Decorator\Decorator1" only to the frontend controller.
 	 *
-	 * @param array List of decorator names
+	 * @type array List of decorator names
 	 * @since 2021.04
 	 * @category Developer
 	 * @see controller/frontend/common/decorators/default
@@ -122,7 +122,7 @@ class Standard
 	 * "\Aimeos\Controller\Frontend\Cms\Decorator\Decorator2" only to the frontend
 	 * controller.
 	 *
-	 * @param array List of decorator names
+	 * @type array List of decorator names
 	 * @since 2021.04
 	 * @category Developer
 	 * @see controller/frontend/common/decorators/default
@@ -186,6 +186,7 @@ class Standard
 	 */
 	public function find( string $code ) : \Aimeos\MShop\Cms\Item\Iface
 	{
+		// @phpstan-ignore return.type
 		return $this->manager->find( $code, $this->domains, null, null, true );
 	}
 
@@ -212,6 +213,7 @@ class Standard
 	 */
 	public function get( string $id ) : \Aimeos\MShop\Cms\Item\Iface
 	{
+		// @phpstan-ignore-next-line
 		return $this->manager->get( $id, $this->domains, true );
 	}
 
@@ -265,12 +267,14 @@ class Standard
 	{
 		$search = $this->manager->filter( null )->add( 'cms.url', '==', '/' . trim( $name, '/' ) )->slice( 0, 1 );
 
+		// @phpstan-ignore-next-line
 		if( ( $item = $this->manager->search( $search, $this->domains )->first() ) === null )
 		{
 			$msg = $this->context()->translate( 'controller/frontend', 'Unable to find CMS page "%1$s"' );
 			throw new \Aimeos\Controller\Frontend\Cms\Exception( sprintf( $msg, $name ), 404 );
 		}
 
+		// @phpstan-ignore return.type
 		return $item;
 	}
 
@@ -278,13 +282,15 @@ class Standard
 	/**
 	 * Returns the cmss filtered by the previously assigned conditions
 	 *
-	 * @param int &$total Parameter where the total number of found cmss will be stored in
+	 * @type int &$total Parameter where the total number of found cmss will be stored in
 	 * @return \Aimeos\Map Ordered list of cms items implementing \Aimeos\MShop\Cms\Item\Iface
 	 * @since 2021.04
 	 */
 	public function search( ?int &$total = null ) : \Aimeos\Map
 	{
+		// @phpstan-ignore-next-line
 		$this->filter->setConditions( $this->filter->and( $this->conditions ) );
+		// @phpstan-ignore-next-line
 		return $this->manager->search( $this->filter, $this->domains, $total );
 	}
 
@@ -322,6 +328,7 @@ class Standard
 			$sort[] = $this->filter->sort( $direction, ltrim( $sortkey, '+-' ) );
 		}
 
+		// @phpstan-ignore-next-line
 		$this->filter->setSortations( $sort );
 		return $this;
 	}

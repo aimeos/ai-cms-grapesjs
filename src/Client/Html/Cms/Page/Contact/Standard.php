@@ -53,7 +53,7 @@ class Standard
 	 * A view must be available and this method doesn't generate any output
 	 * besides setting view variables if necessary.
 	 */
-	public function init()
+	public function init() : void
 	{
 		$view = $this->view();
 		$params = $view->param( 'contact' );

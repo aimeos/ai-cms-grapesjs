@@ -24,7 +24,7 @@ class Recaptcha
 	/**
 	 * Processes the input, e.g. store given values.
 	 */
-	public function init()
+	public function init() : void
 	{
 		$view = $this->view();
 		$context = $this->context();

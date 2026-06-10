@@ -41,10 +41,11 @@ class Standard
 	 * Removes multiple items.
 	 *
 	 * @param \Aimeos\MShop\Common\Item\Iface[]|string[] $items List of item objects or IDs of the items
-	 * @return \Aimeos\MShop\Text\Manager\Iface Manager object for chaining method calls
+	 * @return static Manager object for chaining method calls
 	 */
-	public function delete( $items ) : \Aimeos\MShop\Common\Manager\Iface
+	public function delete( $items ) : static
 	{
+		// @phpstan-ignore-next-line
 		return parent::delete( $items )->deleteRefItems( $items );
 	}
 

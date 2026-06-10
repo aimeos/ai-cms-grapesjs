@@ -98,13 +98,9 @@ class Standard
 
 		libxml_use_internal_errors( true );
 
-        $encodingXml = '<?xml encoding="UTF-8"?>';
-
 		foreach( $view->pageContent as $content )
 		{
-			$dom = new \DOMDocument( '1.0', 'UTF-8' );
-			// @phpstan-ignore-next-line
-			$dom->loadHTML( $encodingXml . $content, LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
+			$dom = $this->loadUTF8DOM( $content );
 			$nodes = $dom->getElementsByTagName( 'cataloglist' );
 
 			while( $nodes->length > 0 )
@@ -134,15 +130,14 @@ class Standard
 					$tview->itemsStockUrl = $this->getStockUrl( $tview, $articles );
 				}
 
-				$pdom = new \DOMDocument( '1.0', 'UTF-8' );
-				$pdom->loadHTML( $encodingXml . $tview->render( $template ), LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
+				$pdom = $this->loadUTF8DOM( $tview->render( $template ) );
 
 				// @phpstan-ignore-next-line
 				$pnode = $dom->importNode( $pdom->documentElement, true );
 				$node->parentNode->replaceChild( $pnode, $node );
 			}
 
-			$texts[] = str_replace( $encodingXml, '', $dom->saveHTML() );
+			$texts[] = $dom->saveHTML();
 		}
 
 		libxml_clear_errors();
@@ -150,6 +145,32 @@ class Standard
 		$view->pageContent = $texts;
 
 		return parent::data( $view, $tags, $expire );
+	}
+
+	/**
+	 * Loads HTML into a DOMDocument with proper UTF-8 encoding handling.
+	 *
+	 * @param string $content HTML content to load
+	 * @return \DOMDocument Loaded DOM document
+	 */
+	private function loadUTF8DOM( string $content ) : \DOMDocument
+	{
+		$encodingXml = '<?xml encoding="UTF-8"?>';
+		$dom = new \DOMDocument( '1.0', 'UTF-8' );
+
+		// @phpstan-ignore-next-line
+		$dom->loadHTML( $encodingXml . $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
+
+		foreach( $dom->childNodes as $item ) {
+			if( $item->nodeType == XML_PI_NODE ) {
+				$dom->removeChild( $item );
+				break;
+			}
+		}
+
+		$dom->encoding = 'UTF-8';
+
+		return $dom;
 	}
 
 

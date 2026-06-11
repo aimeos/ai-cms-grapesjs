@@ -322,11 +322,16 @@ class Standard
 				continue;
 			}
 
-			if( $el = json_decode( $content, true ) )
+			$allow = $context->config()->get( 'admin/cms/allow', [] );
+
+			if( is_array( $el = json_decode( $content, true ) ) )
 			{
-				$allow = $context->config()->get( 'admin/cms/allow', [] );
 				$el['html'] = \Aimeos\Sanitizer\Sane::html( $el['html'] ?? '', $allow );
 				$entry['text.content'] = json_encode( $el );
+			}
+			else
+			{
+				$entry['text.content'] = trim( \Aimeos\Sanitizer\Sane::html( $content, $allow ) );
 			}
 
 			$id = $this->val( $entry, 'text.id', '' );

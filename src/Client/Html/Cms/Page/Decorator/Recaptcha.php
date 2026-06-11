@@ -37,9 +37,16 @@ class Recaptcha
 			}
 
 			$ip = $view->request()->getClientAddress();
-			$url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $key . '&response=' . $token . '&remoteip=' . $ip;
+			$url = 'https://www.google.com/recaptcha/api/siteverify';
+			$body = http_build_query( ['secret' => $key, 'response' => $token, 'remoteip' => $ip] );
+			$ctx = stream_context_create( ['http' => [
+				'method' => 'POST',
+				'header' => 'Content-Type: application/x-www-form-urlencoded',
+				'content' => $body,
+				'ignore_errors' => true,
+			]] );
 
-			if( ( $result = file_get_contents( $url ) ) === false || ( $data = json_decode( $result ) ) === null ) {
+			if( ( $result = file_get_contents( $url, false, $ctx ) ) === false || ( $data = json_decode( $result ) ) === null ) {
 				throw new \Aimeos\Client\Html\Exception( $context->translate( 'client', 'Invalid reCAPTCHA response' ) );
 			}
 

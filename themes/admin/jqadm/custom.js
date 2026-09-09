@@ -7,14 +7,33 @@ Aimeos.components['grapesjs'] = {
 	template: `<div class="grapesjs-editor">
 		<input type="hidden" v-bind:name="name" v-bind:value="value" />
 		<div v-if="!readonly" class="gjs cms-preview"></div>
-		<iframe v-else v-bind:srcdoc="'<html><body><style>' + (parsed['css'] || '') + '</style>' + (parsed['html'] || '') + '</body></html>'" v-bind:tabindex="tabindex"></iframe>
+		<iframe v-else sandbox="" v-bind:srcdoc="preview" v-bind:tabindex="tabindex"></iframe>
 	</div>`,
 	props: ['setup', 'name', 'value', 'readonly', 'tabindex', 'update', 'media', 'mediaurl', 'config'],
 
 	data: function() {
 		return {
-			instance: null,
-			parsed: {}
+			instance: null
+		}
+	},
+
+	computed: {
+		preview() {
+			let data;
+			try {
+				data = JSON.parse(this.value);
+			} catch(e) {
+				return '';
+			}
+
+			if(!data || typeof data !== 'object' || Array.isArray(data)) {
+				return '';
+			}
+
+			const html = typeof data.html === 'string' ? data.html : '';
+			// CSS escapes preserve literal '<' characters without closing the style element.
+			const css = typeof data.css === 'string' ? data.css.replace(/</g, '\\3c ') : '';
+			return '<html><body><style>' + css + '</style>' + html + '</body></html>';
 		}
 	},
 
@@ -27,19 +46,27 @@ Aimeos.components['grapesjs'] = {
 
 	methods: {
 		setData(val) {
+			let html = typeof val === 'string' ? val : '';
+			let css;
+
 			try {
-				const json = JSON.parse(val);
-				this.instance.setComponents(json.html || '');
-				this.instance.setStyle((json.css || this.setup.styles));
+				const json = JSON.parse(html);
+				// Never pass untrusted component objects to GrapesJS: that skips its HTML parser.
+				html = json && typeof json.html === 'string' ? json.html : '';
+				css = json && typeof json.css === 'string' ? json.css : '';
 			} catch(e) {
-				this.instance.setComponents(val);
+				// Legacy non-JSON content is HTML and follows the same import policy.
+			}
+
+			this.instance.setComponents(html);
+			if(css !== undefined) {
+				this.instance.setStyle(css || this.setup.styles || '');
 			}
 		}
 	},
 
 	mounted: function() {
 		if(this.readonly) {
-			this.parsed = JSON.parse(this.value);
 			return;
 		}
 
@@ -48,13 +75,18 @@ Aimeos.components['grapesjs'] = {
 		});
 
 		this.instance = grapesjs.init(this.setup.config);
+		// Filter the parsed DOM before GrapesJS turns attributes into component props.
+		// This also covers later HTML imports, e.g. pasted content and editor commands.
+		this.instance.on('parse:html:root', ({root}) => {
+			Aimeos.CMSContent.sanitizeAttributes(root);
+		});
 		this.setup.initialize(this.instance, this.setup, this.media);
 		this.setData(this.value);
 	},
 
 	watch: {
 		value: function(val, oldval) {
-			if(val !== oldval) {
+			if(!this.readonly && val !== oldval) {
 				this.setData(val);
 			}
 		},
@@ -71,6 +103,37 @@ Aimeos.components['grapesjs'] = {
 
 
 Aimeos.CMSContent = {
+
+	// Keep the metadata policy in sync with Aimeos\MShop\Cms\Html.
+	sanitizeAttributes(root) {
+		const roots = [root];
+
+		while(roots.length) {
+			const current = roots.pop();
+			for(const node of [current, ...current.querySelectorAll('*')]) {
+				if(node.localName === 'template' && node.content) {
+					roots.push(node.content);
+				}
+
+				for(const attr of Array.from(node.attributes || [])) {
+					const name = attr.name.toLowerCase();
+					const value = attr.value;
+					let allowed = false;
+
+					if(name === 'data-gjs-name') {
+						allowed = /^[\p{L}\p{N} ._-]{1,128}$/u.test(value);
+					} else if(name === 'data-gjs-draggable' || name === 'data-gjs-droppable') {
+						allowed = value.length <= 256 && /^[.#]?[a-zA-Z0-9_-]+(?: *, *[.#]?[a-zA-Z0-9_-]+)*$/.test(value);
+					}
+
+					if(['data-counturl', 'data-infiniteurl', 'data-url', 'data-rmurl', 'data-options'].includes(name)
+						|| name.startsWith('data-gjs-') && !allowed) {
+						node.removeAttributeNode(attr);
+					}
+				}
+			}
+		}
+	},
 
 	GrapesJS: {
 		config: {
@@ -838,6 +901,34 @@ Aimeos.CMSContent = {
 
 
 		initialize: function(editor, setup, media) {
+
+			// The bundled select trait interpolates option labels into HTML.
+			// Keep its layout and update handling, but construct all options as DOM nodes.
+			const select = editor.TraitManager.getType('select').prototype;
+			editor.TraitManager.addType('select', {
+				init: select.init,
+				templateInput: select.templateInput,
+				createInput({trait}) {
+					const input = document.createElement('select');
+					const values = [];
+
+					for(const entry of trait.get('options') || []) {
+						const data = typeof entry === 'string' ? {value: entry, name: entry} : entry;
+						const option = document.createElement('option');
+						option.value = data.value ?? data.id ?? '';
+						option.textContent = this.em.t(`traitManager.traits.options.${trait.get('name')}.${option.value}`)
+							|| (data.name ?? data.label ?? data.value ?? data.id ?? '');
+						if(data.style) option.style.cssText = data.style;
+						values.push(option.value);
+						input.appendChild(option);
+					}
+
+					const current = trait.getTargetValue();
+					const value = values.includes(String(current)) ? current : trait.get('default');
+					if(value !== undefined) input.value = value;
+					return input;
+				}
+			});
 
 			editor.Components.addType('image', {
 				view: {

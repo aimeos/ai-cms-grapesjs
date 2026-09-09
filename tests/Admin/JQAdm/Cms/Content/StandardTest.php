@@ -133,6 +133,81 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
+	public function testSaveSanitizesStructuredContentAtJqadmBoundary()
+	{
+		$manager = \Aimeos\MShop::create( $this->context, 'cms' );
+		$item = $manager->create()->setLabel( 'Sanitizer test' )->setUrl( '/sanitizer-test' );
+		$content = (string) json_encode( [
+			'html' => '<section onclick="alert(1)">Safe</section><script>alert(2)</script>',
+			'css' => '.safe { color: green; }',
+		] );
+		$param = [
+			'site' => 'unittest',
+			'content' => [[
+				'text.id' => '',
+				'text.domain' => 'product',
+				'text.languageid' => 'en',
+				'text.content' => $content,
+				'cms.lists.type' => 'default',
+				'cms.lists.position' => 0,
+			]],
+		];
+
+		$this->view->addHelper( 'param', new \Aimeos\Base\View\Helper\Param\Standard( $this->view, $param ) );
+		$this->view->item = $item;
+		$this->object->save();
+
+		try
+		{
+			$manager->save( $item );
+			$text = $item->getRefItems( 'text', 'content', null, false )->first();
+			$result = json_decode( $text->getContent(), true );
+
+			$this->assertSame( 'cms', $text->getDomain() );
+			$this->assertSame( '<section>Safe</section>', $result['html'] );
+			$this->assertSame( '.safe { color: green; }', $result['css'] );
+		}
+		finally
+		{
+			if( $item->getId() ) {
+				$manager->delete( $item );
+			}
+		}
+	}
+
+
+	public function testSanitizePreservesStructuredContentObjects()
+	{
+		$method = new \ReflectionMethod( Standard::class, 'sanitize' );
+		$object = new Standard( $this->context );
+		$content = '{"html":"<p>Safe</p>","components":{},"data":{"empty":{},"list":[],"number":1.0}}';
+
+		$this->assertSame( $content, $method->invoke( $object, $content ) );
+	}
+
+
+	public function testSanitizePreservesStructuredContentWithoutHtml()
+	{
+		$method = new \ReflectionMethod( Standard::class, 'sanitize' );
+		$object = new Standard( $this->context );
+		$content = '{"css":".safe { color: green; }","data":{"label":"<plain>"}}';
+
+		$this->assertSame( $content, $method->invoke( $object, $content ) );
+	}
+
+
+	public function testSanitizeRejectsNonScalarStructuredHtml()
+	{
+		$method = new \ReflectionMethod( Standard::class, 'sanitize' );
+		$object = new Standard( $this->context );
+		$content = '{"html":{"unsafe":"<script>alert(1)</script>"},"css":".safe{}"}';
+		$result = json_decode( $method->invoke( $object, $content ), true );
+
+		$this->assertSame( '', $result['html'] );
+		$this->assertSame( '.safe{}', $result['css'] );
+	}
+
+
 	public function testSaveException()
 	{
 		$templates = \TestHelper::getAimeos()->getTemplatePaths( 'admin/jqadm/templates' );

@@ -325,11 +325,7 @@ class Standard
 				continue;
 			}
 
-			$config = \HTMLPurifier_Config::createDefault();
-			$config->set( 'Attr.AllowedFrameTargets', ['_blank', '_self'] );
-
-			$purifier = new \HTMLPurifier( $config );
-			$entry['text.content'] = $purifier->purify( $content );
+			$entry['text.content'] = $this->sanitize( $content );
 
 			$id = $this->val( $entry, 'text.id', '' );
 			$type = $this->val( $entry, 'cms.lists.type', 'default' );
@@ -337,7 +333,7 @@ class Standard
 			$listItem = $item->getListItem( 'text', $type, $id, false ) ?: $listManager->create();
 			$refItem = $listItem->getRefItem() ?: $textManager->create();
 
-			$refItem->fromArray( $entry, true )->setType( 'content' );
+			$refItem->fromArray( $entry, true )->setType( 'content' )->setDomain( 'cms' );
 			$conf = [];
 
 			foreach( (array) $this->val( $entry, 'config', [] ) as $cfg )
@@ -357,6 +353,34 @@ class Standard
 		}
 
 		return $item->deleteListItems( $listItems->toArray(), true );
+	}
+
+
+	/**
+	 * Sanitizes CMS editor content while preserving its structured data.
+	 *
+	 * @param string $content HTML or structured editor content
+	 * @return string Sanitized content
+	 */
+	protected function sanitize( string $content ) : string
+	{
+		$allow = \Aimeos\MShop\Cms\Html::getAllow( $this->context()->config() );
+		$data = json_decode( $content );
+
+		if( json_last_error() === JSON_ERROR_NONE && is_object( $data ) )
+		{
+			if( !property_exists( $data, 'html' ) ) {
+				return $content;
+			}
+
+			$data->html = is_string( $data->html )
+				? trim( \Aimeos\MShop\Cms\Html::sanitize( $data->html, $allow ) )
+				: '';
+
+			return json_encode( $data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZERO_FRACTION ) ?: '';
+		}
+
+		return trim( \Aimeos\MShop\Cms\Html::sanitize( $content, $allow ) );
 	}
 
 

@@ -78,6 +78,58 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
+	public function testContentSanitizesLegacyHtml()
+	{
+		$method = new \ReflectionMethod( Standard::class, 'content' );
+
+		foreach( [
+			'<p onclick="alert(1)">Safe</p><script>alert(2)</script>',
+			'{"html":"\u003cp onclick=alert(1)\u003eSafe\u003c/p\u003e"}',
+		] as $content ) {
+			$this->assertSame( '<p>Safe</p>', $method->invoke( $this->object, $content ) );
+		}
+	}
+
+
+	public function testDataSanitizesMismatchedTextDomain()
+	{
+		$text = \Aimeos\MShop::create( $this->context, 'text' )->create()->setType( 'content' )
+			->setContent( '{"html":"\u003cp onclick=alert(1)\u003eSafe\u003c/p\u003e"}' );
+		$manager = \Aimeos\MShop::create( $this->context, 'cms' );
+		$page = $manager->create()->addListItem( 'text', $manager->createListItem(), $text );
+		$text->setDomain( 'product' );
+		$controller = $this->getMockBuilder( \Aimeos\Controller\Frontend\Cms\Standard::class )
+			->setConstructorArgs( [$this->context] )->onlyMethods( ['uses', 'compare', 'search'] )->getMock();
+		$controller->expects( $this->once() )->method( 'uses' )->willReturnSelf();
+		$controller->expects( $this->once() )->method( 'compare' )->willReturnSelf();
+		$controller->expects( $this->once() )->method( 'search' )->willReturn( map( [$page] ) );
+
+		\Aimeos\Controller\Frontend::cache( true );
+		\Aimeos\Controller\Frontend::inject( \Aimeos\Controller\Frontend\Cms\Standard::class, $controller );
+
+		try
+		{
+			$view = $this->object->data( $this->view );
+			$this->assertSame( 'product', $text->getDomain() );
+			$this->assertSame( ['<div class="cms-content"><p>Safe</p></div>'], array_values( array_map( 'trim', $view->pageContent ) ) );
+		}
+		finally
+		{
+			\Aimeos\Controller\Frontend::cache( false );
+		}
+	}
+
+
+	public function testContentRejectsInvalidJsonShapes()
+	{
+		$method = new \ReflectionMethod( Standard::class, 'content' );
+
+		foreach( ['{"css":".safe{}"}', '"hello"', '[]', 'null', '{"html":[]}', '{"html":false}'] as $content ) {
+			$this->assertSame( '', $method->invoke( $this->object, $content ) );
+		}
+	}
+
+
 	public function testGetSubClientInvalidName()
 	{
 		$this->expectException( '\\Aimeos\\Client\\Html\\Exception' );

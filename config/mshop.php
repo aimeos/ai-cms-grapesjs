@@ -1,6 +1,13 @@
 <?php
 
 return [
+	'text' => [
+		'manager' => [
+			'sanitize' => [
+				'excludes' => ['content' => 'content'],
+			],
+		],
+	],
 	'cms' => [
 		'manager' => [
 			'lists' => [

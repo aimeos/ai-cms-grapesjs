@@ -319,12 +319,31 @@ class Standard
 			$view->pageCmsItem = $page;
 			$view->pageContent = $page->getRefItems( 'text', 'content' )->map( function( $item ) {
 				// @phpstan-ignore-next-line
-				$data = ( $json = json_decode( $item->getContent(), true ) ) ? $json['html'] : $item->getContent();
-				return '<div class="cms-content">' . $data . '</div>';
+				return '<div class="cms-content">' . $this->content( $item->getContent() ) . '</div>';
 			} )->all();
 		}
 
 		return parent::data( $view, $tags, $expire );
+	}
+
+
+	/**
+	 * Extracts and sanitizes CMS HTML, including legacy content and mismatched text domains.
+	 *
+	 * @param string $content HTML or structured editor content
+	 * @return string Sanitized HTML
+	 */
+	protected function content( string $content ) : string
+	{
+		$data = json_decode( $content );
+
+		if( json_last_error() === JSON_ERROR_NONE ) {
+			$content = is_object( $data ) && isset( $data->html ) && is_string( $data->html ) ? $data->html : '';
+		}
+
+		$allow = \Aimeos\MShop\Cms\Html::getAllow( $this->context()->config() );
+
+		return trim( \Aimeos\MShop\Cms\Html::sanitize( $content, $allow ) );
 	}
 
 

@@ -19,7 +19,7 @@ $entries = $this->get( 'pageContent', [] );
 	<section class="aimeos cms-page container-fluid" data-jsonurl="<?= $enc->attr( $this->link( 'client/jsonapi/url' ) ); ?>">
 
 		<?php foreach( $entries as $content ) : ?>
-			<?= $content ?>
+			<?= $enc->html( $content, $enc::TRUST ) ?>
 		<?php endforeach ?>
 
 	</section>

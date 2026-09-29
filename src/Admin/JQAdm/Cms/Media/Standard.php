@@ -336,6 +336,9 @@ class Standard
 
 		foreach( $data as $idx => $entry )
 		{
+			// disallow overwriting for security reasons
+			unset( $entry['media.url'], $entry['media.preview'], $entry['media.previews'] );
+
 			$id = $this->val( $entry, 'media.id', '' );
 			$type = $this->val( $entry, 'cms.lists.type', 'default' );
 

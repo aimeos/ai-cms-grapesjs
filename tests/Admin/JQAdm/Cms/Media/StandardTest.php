@@ -152,6 +152,53 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
+
+	public function testSaveIgnoresUrl()
+	{
+		$manager = \Aimeos\MShop::create( $this->context, 'cms' );
+		$this->view->item = $manager->create();
+
+		$param = array(
+			'site' => 'unittest',
+			'media' => [[
+				'media.id' => '',
+				'media.url' => 'http://127.0.0.1/test.png',
+				'media.preview' => 'http://127.0.0.1/preview.png',
+				'media.previews' => [1 => 'http://127.0.0.1/preview.png'],
+				'media.mimetype' => 'image/png',
+				'media.label' => 'test',
+				'cms.lists.type' => 'default',
+			]],
+		);
+
+		$helper = new \Aimeos\Base\View\Helper\Param\Standard( $this->view, $param );
+		$this->view->addHelper( 'param', $helper );
+
+		$name = 'AdminJQAdmCmsMediaSave';
+		$this->context->config()->set( 'controller/common/media/name', $name );
+
+		$cntlStub = $this->getMockBuilder( '\\Aimeos\\Controller\\Common\\Media\\Standard' )
+			->setConstructorArgs( array( $this->context ) )
+			->onlyMethods( array( 'copy' ) )
+			->getMock();
+
+		\Aimeos\Controller\Common\Media\Factory::inject( '\\Aimeos\\Controller\\Common\\Media\\' . $name, $cntlStub );
+
+		$cntlStub->expects( $this->never() )->method( 'copy' );
+
+
+		$this->object->save();
+
+
+		$this->assertEmpty( $this->view->get( 'errors' ) );
+
+		foreach( $this->view->item->getListItems( 'media' ) as $listItem )
+		{
+			$this->assertEquals( '', $listItem->getRefItem()->getUrl() );
+			$this->assertEquals( [], $listItem->getRefItem()->getPreviews() );
+		}
+	}
+
 	public function testSaveException()
 	{
 		$object = $this->getClientMock( 'fromArray' );

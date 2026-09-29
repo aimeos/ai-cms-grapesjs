@@ -339,6 +339,9 @@ class Standard
 
 		foreach( $data as $idx => $entry )
 		{
+			// disallow overwriting for security reasons
+			unset( $entry['media.url'], $entry['media.preview'], $entry['media.previews'] );
+
 			// @phpstan-ignore-next-line
 			$id = $this->val( $entry, 'media.id', '' );
 			// @phpstan-ignore-next-line

@@ -179,6 +179,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testSanitizePreservesStructuredContentObjects()
 	{
 		$method = new \ReflectionMethod( Standard::class, 'sanitize' );
+		$method->setAccessible( true );
 		$object = new Standard( $this->context );
 		$content = '{"html":"<p>Safe</p>","components":{},"data":{"empty":{},"list":[],"number":1.0}}';
 
@@ -189,6 +190,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testSanitizePreservesStructuredContentWithoutHtml()
 	{
 		$method = new \ReflectionMethod( Standard::class, 'sanitize' );
+		$method->setAccessible( true );
 		$object = new Standard( $this->context );
 		$content = '{"css":".safe { color: green; }","data":{"label":"<plain>"}}';
 
@@ -199,6 +201,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testSanitizeRejectsNonScalarStructuredHtml()
 	{
 		$method = new \ReflectionMethod( Standard::class, 'sanitize' );
+		$method->setAccessible( true );
 		$object = new Standard( $this->context );
 		$content = '{"html":{"unsafe":"<script>alert(1)</script>"},"css":".safe{}"}';
 		$result = json_decode( $method->invoke( $object, $content ), true );

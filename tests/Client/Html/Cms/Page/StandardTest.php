@@ -81,6 +81,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testContentSanitizesLegacyHtml()
 	{
 		$method = new \ReflectionMethod( Standard::class, 'content' );
+		$method->setAccessible( true );
 
 		foreach( [
 			'<p onclick="alert(1)">Safe</p><script>alert(2)</script>',
@@ -122,6 +123,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testContentRejectsInvalidJsonShapes()
 	{
 		$method = new \ReflectionMethod( Standard::class, 'content' );
+		$method->setAccessible( true );
 
 		foreach( ['{"css":".safe{}"}', '"hello"', '[]', 'null', '{"html":[]}', '{"html":false}'] as $content ) {
 			$this->assertSame( '', $method->invoke( $this->object, $content ) );

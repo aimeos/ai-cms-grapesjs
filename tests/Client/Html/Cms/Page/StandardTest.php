@@ -81,6 +81,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testContentSanitizesLegacyHtml()
 	{
 		$method = new \ReflectionMethod( Standard::class, 'content' );
+		$method->setAccessible( true );
 
 		foreach( [
 			'<p onclick="alert(1)">Safe</p><script>alert(2)</script>',
@@ -99,7 +100,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$page = $manager->create()->addListItem( 'text', $manager->createListItem(), $text );
 		$text->setDomain( 'product' );
 		$controller = $this->getMockBuilder( \Aimeos\Controller\Frontend\Cms\Standard::class )
-			->setConstructorArgs( [$this->context] )->onlyMethods( ['uses', 'compare', 'search'] )->getMock();
+			->setConstructorArgs( [$this->context] )->setMethods( ['uses', 'compare', 'search'] )->getMock();
 		$controller->expects( $this->once() )->method( 'uses' )->willReturnSelf();
 		$controller->expects( $this->once() )->method( 'compare' )->willReturnSelf();
 		$controller->expects( $this->once() )->method( 'search' )->willReturn( map( [$page] ) );
@@ -123,6 +124,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	public function testContentRejectsInvalidJsonShapes()
 	{
 		$method = new \ReflectionMethod( Standard::class, 'content' );
+		$method->setAccessible( true );
 
 		foreach( ['{"css":".safe{}"}', '"hello"', '[]', 'null', '{"html":[]}', '{"html":false}'] as $content ) {
 			$this->assertSame( '', $method->invoke( $this->object, $content ) );

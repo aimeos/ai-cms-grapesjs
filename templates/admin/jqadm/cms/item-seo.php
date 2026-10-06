@@ -25,7 +25,6 @@ $enc = $this->encoder();
 <div id="seo" class="item-seo tab-pane fade" role="tablist" aria-labelledby="seo">
 
 	<div id="item-text-group"
-		data-translate="<?= $enc->attr( $this->config( 'admin/jqadm/api/translate', [] ) ) ?>"
 		data-data="<?= $enc->attr( $this->get( 'seoData', [] ) ) ?>"
 		data-siteid="<?= $this->site()->siteid() ?>"
 		data-domain="cms" >

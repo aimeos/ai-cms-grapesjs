@@ -706,7 +706,7 @@ Aimeos.CMSContent = {
 
 								const catid = this.get('traits').where({name: 'catid'})[0];
 								catid.set('options', list);
-							})
+							}).catch(() => {})
 						},
 						onLimitChange() {
 							let items = '';

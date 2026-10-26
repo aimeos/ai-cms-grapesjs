@@ -28,7 +28,7 @@ class Standard
 	 * It's also possible to use the same database connection for different
 	 * data domains by configuring the same connection name using this setting.
 	 *
-	 * @type string Database connection name
+	 * @param string Database connection name
 	 * @since 2023.04
 	 */
 
@@ -45,7 +45,7 @@ class Standard
 	 * using the search keys of the sub-managers to further limit the
 	 * retrieved list of items.
 	 *
-	 * @type array List of sub-manager names
+	 * @param array List of sub-manager names
 	 * @since 2020.10
 	 * @category Developer
 	 */
@@ -79,7 +79,7 @@ class Standard
 	 * name with an upper case character and continue only with lower case characters
 	 * or numbers. Avoid chamel case names like "MyList"!
 	 *
-	 * @type string Last part of the class name
+	 * @param string Last part of the class name
 	 * @since 2020.10
 	 * @category Developer
 	 */
@@ -102,7 +102,7 @@ class Standard
 	 * common decorators ("\Aimeos\MShop\Common\Manager\Decorator\*") added via
 	 * "mshop/common/manager/decorators/default" for the cms list manager.
 	 *
-	 * @type array List of decorator names
+	 * @param array List of decorator names
 	 * @since 2020.10
 	 * @category Developer
 	 * @see mshop/common/manager/decorators/default
@@ -127,7 +127,7 @@ class Standard
 	 * "\Aimeos\MShop\Common\Manager\Decorator\Decorator1" only to the cms
 	 * list manager.
 	 *
-	 * @type array List of decorator names
+	 * @param array List of decorator names
 	 * @since 2020.10
 	 * @category Developer
 	 * @see mshop/common/manager/decorators/default
@@ -153,7 +153,7 @@ class Standard
 	 * "\Aimeos\MShop\Cms\Manager\Lists\Decorator\Decorator2" only to the cms
 	 * list manager.
 	 *
-	 * @type array List of decorator names
+	 * @param array List of decorator names
 	 * @since 2020.10
 	 * @category Developer
 	 * @see mshop/common/manager/decorators/default
@@ -187,7 +187,7 @@ class Standard
 	 * compatible with most relational database systems. This also
 	 * includes using double quotes for table and column names.
 	 *
-	 * @type string SQL statement for inserting records
+	 * @param string SQL statement for inserting records
 	 * @since 2020.10
 	 * @category Developer
 	 * @see mshop/cms/manager/lists/update/ansi
@@ -221,7 +221,7 @@ class Standard
 	 * compatible with most relational database systems. This also
 	 * includes using double quotes for table and column names.
 	 *
-	 * @type string SQL statement for updating records
+	 * @param string SQL statement for updating records
 	 * @since 2020.10
 	 * @category Developer
 	 * @see mshop/cms/manager/lists/insert/ansi
@@ -259,7 +259,7 @@ class Standard
 	 * fits for most database servers as they implement their own
 	 * specific way.
 	 *
-	 * @type string SQL statement for retrieving the last inserted record ID
+	 * @param string SQL statement for retrieving the last inserted record ID
 	 * @since 2020.10
 	 * @category Developer
 	 * @see mshop/cms/manager/lists/insert/ansi
@@ -291,7 +291,7 @@ class Standard
 	 * compatible with most relational database systems. This also
 	 * includes using double quotes for table and column names.
 	 *
-	 * @type string SQL statement for deleting items
+	 * @param string SQL statement for deleting items
 	 * @since 2020.10
 	 * @category Developer
 	 * @see mshop/cms/manager/lists/insert/ansi
@@ -350,7 +350,7 @@ class Standard
 	 * compatible with most relational database systems. This also
 	 * includes using double quotes for table and column names.
 	 *
-	 * @type string SQL statement for searching items
+	 * @param string SQL statement for searching items
 	 * @since 2020.10
 	 * @category Developer
 	 * @see mshop/cms/manager/lists/insert/ansi
@@ -403,7 +403,7 @@ class Standard
 	 * compatible with most relational database systems. This also
 	 * includes using double quotes for table and column names.
 	 *
-	 * @type string SQL statement for counting items
+	 * @param string SQL statement for counting items
 	 * @since 2020.10
 	 * @category Developer
 	 * @see mshop/cms/manager/lists/insert/ansi
@@ -453,7 +453,7 @@ class Standard
 	 * compatible with most relational database systems. This also
 	 * includes using double quotes for table and column names.
 	 *
-	 * @type string SQL statement for aggregating order items
+	 * @param string SQL statement for aggregating order items
 	 * @since 2020.10
 	 * @category Developer
 	 * @see mshop/cms/manager/lists/insert/ansi

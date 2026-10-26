@@ -15,24 +15,24 @@ return [
 	'graphql' => [
 		'resource' => [
 			'cms' => [
-				/** admin/graphql/resource/attribute/delete
-				 * List of user groups that are allowed to delete attribute items
+				/** admin/graphql/resource/cms/delete
+				 * List of user groups that are allowed to delete CMS items
 				 *
 				 * @param array List of user group names
 				 * @since 2022.10
 				 */
 				'delete' => ['admin', 'editor', 'super'],
 
-				/** admin/graphql/resource/attribute/save
-				 * List of user groups that are allowed to create and update attribute items
+				/** admin/graphql/resource/cms/save
+				 * List of user groups that are allowed to create and update CMS items
 				 *
 				 * @param array List of user group names
 				 * @since 2022.10
 				 */
 				'save' => ['admin', 'editor', 'super'],
 
-				/** admin/graphql/resource/attribute/get
-				 * List of user groups that are allowed to retrieve attribute items
+				/** admin/graphql/resource/cms/get
+				 * List of user groups that are allowed to retrieve CMS items
 				 *
 				 * @param array List of user group names
 				 * @since 2022.10
@@ -79,7 +79,7 @@ return [
 	'jsonadm' => [
 		'resource' => [
 			'cms' => [
-				/** admin/jqadm/resource/cms/groups
+				/** admin/jsonadm/resource/cms/groups
 				 * List of user groups that are allowed to access the CMS panel
 				 *
 				 * @param array List of user group names

@@ -164,7 +164,7 @@ abstract class Base
 	/**
 	 * Returns the cmss filtered by the previously assigned conditions
 	 *
-	 * @type int &$total Parameter where the total number of found cmss will be stored in
+	 * @param int &$total Parameter where the total number of found cmss will be stored in
 	 * @return \Aimeos\Map Ordered list of items implementing \Aimeos\MShop\Cms\Item\Iface
 	 * @since 2019.04
 	 */

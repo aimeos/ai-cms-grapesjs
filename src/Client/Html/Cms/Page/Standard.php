@@ -50,7 +50,7 @@ class Standard
 	 * name with an upper case character and continue only with lower case characters
 	 * or numbers. Avoid chamel case names like "MyPage"!
 	 *
-	 * @type string Last part of the class name
+	 * @param string Last part of the class name
 	 * @since 2021.04
 	 * @category Developer
 	 */
@@ -84,7 +84,7 @@ class Standard
 	 * should support adding, removing or reordering content by a fluid like
 	 * design.
 	 *
-	 * @type array List of sub-client names
+	 * @param array List of sub-client names
 	 * @since 2021.04
 	 * @category Developer
 	 */
@@ -111,7 +111,7 @@ class Standard
 		 * entries to cache or if the component contains non-cacheable parts that
 		 * can't be replaced using the modify() method.
 		 *
-		 * @type boolean True to enable caching, false to disable
+		 * @param boolean True to enable caching, false to disable
 		 * @category Developer
 		 * @category User
 		 * @see client/html/cms/page/cache
@@ -123,7 +123,7 @@ class Standard
 		 * This returns all settings related to the page component.
 		 * Please refer to the single settings for pages.
 		 *
-		 * @type array Associative list of name/value settings
+		 * @param array Associative list of name/value settings
 		 * @category Developer
 		 */
 		$confkey = 'client/html/cms/page';
@@ -215,7 +215,7 @@ class Standard
 		 * common decorators ("\Aimeos\Client\Html\Common\Decorator\*") added via
 		 * "client/html/common/decorators/default" to the html client.
 		 *
-		 * @type array List of decorator names
+		 * @param array List of decorator names
 		 * @since 2021.04
 		 * @category Developer
 		 * @see client/html/common/decorators/default
@@ -239,7 +239,7 @@ class Standard
 		 * This would add the decorator named "decorator1" defined by
 		 * "\Aimeos\Client\Html\Common\Decorator\Decorator1" only to the html client.
 		 *
-		 * @type array List of decorator names
+		 * @param array List of decorator names
 		 * @since 2021.04
 		 * @category Developer
 		 * @see client/html/common/decorators/default
@@ -263,7 +263,7 @@ class Standard
 		 * This would add the decorator named "decorator2" defined by
 		 * "\Aimeos\Client\Html\Cms\Decorator\Decorator2" only to the html client.
 		 *
-		 * @type array List of decorator names
+		 * @param array List of decorator names
 		 * @since 2021.04
 		 * @category Developer
 		 * @see client/html/common/decorators/default
@@ -278,8 +278,8 @@ class Standard
 	 * Sets the necessary parameter values in the view.
 	 *
 	 * @param \Aimeos\Base\View\Iface $view The view object which generates the HTML output
-	 * @type array &$tags Result array for the list of tags that are associated to the output
-	 * @type string|null &$expire Result variable for the expiration date of the output (null for no expiry)
+	 * @param array &$tags Result array for the list of tags that are associated to the output
+	 * @param string|null &$expire Result variable for the expiration date of the output (null for no expiry)
 	 * @return \Aimeos\Base\View\Iface Modified view object
 	 */
 	public function data( \Aimeos\Base\View\Iface $view, array &$tags = [], ?string &$expire = null ) : \Aimeos\Base\View\Iface
@@ -297,7 +297,7 @@ class Standard
 		 * Please keep in mind that the more domains you add to the configuration,
 		 * the more time is required for fetching the content!
 		 *
-		 * @type array List of domain names
+		 * @param array List of domain names
 		 * @since 2021.04
 		 */
 		$domains = $context->config()->get( 'client/html/cms/page/domains', ['text'] );
@@ -370,7 +370,7 @@ class Standard
 	 * you've implemented an alternative client class as well, "standard"
 	 * should be replaced by the name of the new class.
 	 *
-	 * @type string Relative path to the template creating code for the HTML page body
+	 * @param string Relative path to the template creating code for the HTML page body
 	 * @since 2021.04
 	 * @category Developer
 	 * @see client/html/cms/page/template-header
@@ -392,7 +392,7 @@ class Standard
 	 * you've implemented an alternative client class as well, "standard"
 	 * should be replaced by the name of the new class.
 	 *
-	 * @type string Relative path to the template creating code for the HTML page head
+	 * @param string Relative path to the template creating code for the HTML page head
 	 * @since 2021.04
 	 * @category Developer
 	 * @see client/html/cms/page/template-body

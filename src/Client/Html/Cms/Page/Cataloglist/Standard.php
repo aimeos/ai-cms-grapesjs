@@ -125,7 +125,7 @@ class Standard
 
 				$tview = $context->view()->set( 'products', $products )->set( 'attributeTypes', $attrTypes );
 
-				if( !$products->isEmpty() && (bool) $config->get( 'client/html/catalog/lists/stock/enable', true ) === true ) {
+				if( !$products->isEmpty() && (bool) $config->get( 'client/html/catalog/lists/stock', true ) === true ) {
 					// @phpstan-ignore-next-line
 					$tview->itemsStockUrl = $this->getStockUrl( $tview, $articles );
 				}

@@ -115,8 +115,6 @@ class Standard
 		 * @category Developer
 		 * @category User
 		 * @see client/html/cms/page/cache
-		 * @see client/html/cms/filter/cache
-		 * @see client/html/cms/lists/cache
 		 */
 
 		/** client/html/cms/page
@@ -127,7 +125,6 @@ class Standard
 		 *
 		 * @type array Associative list of name/value settings
 		 * @category Developer
-		 * @see client/html/cms#page
 		 */
 		$confkey = 'client/html/cms/page';
 		$prefixes = [];

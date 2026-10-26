@@ -22,7 +22,6 @@ $enc = $this->encoder();
  * @since 2021.01
  * @category Developer
  * @category User
- * @see client/html/cms/lists/metatags
  */
 
 if( ( $path = $this->pageCmsItem->getUrl() ) !== '/' ) {

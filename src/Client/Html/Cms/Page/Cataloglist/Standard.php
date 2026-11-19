@@ -60,7 +60,6 @@ class Standard
 			return parent::data( $view, $tags, $expire );
 		}
 
-		$texts = [];
 		$context = $this->context();
 		$config = $context->config();
 		$cntl = \Aimeos\Controller\Frontend::create( $context, 'product' );
@@ -94,77 +93,39 @@ class Standard
 			$domains = array_merge_recursive( $domains, ['product' => ['default'], 'attribute' => ['variant', 'custom', 'config']] );
 		}
 
-		libxml_use_internal_errors( true );
+		$render = function( \DOMElement $node ) use ( $context, $config, $cntl, $domains, $template, &$tags, &$expire ) {
+			$catid = $node->hasAttribute( 'catid' ) ? $node->getAttribute( 'catid' ) : null;
+			$type = $node->hasAttribute( 'type' ) ? $node->getAttribute( 'type' ) : 'default';
+			$limit = $node->hasAttribute( 'limit' ) ? $node->getAttribute( 'limit' ) : 3;
 
-		foreach( $view->pageContent as $content )
-		{
-			$dom = $this->loadUTF8DOM( $content );
-			$nodes = $dom->getElementsByTagName( 'cataloglist' );
+			$products = ( clone $cntl )->uses( $domains )
+				->category( $catid, $type )
+				->slice( 0, $limit )
+				->search();
 
-			while( $nodes->length > 0 )
-			{
-				$node = $nodes->item( 0 );
-				$catid = $node->hasAttribute( 'catid' ) ? $node->getAttribute( 'catid' ) : null;
-				$type = $node->hasAttribute( 'type' ) ? $node->getAttribute( 'type' ) : 'default';
-				$limit = $node->hasAttribute( 'limit' ) ? $node->getAttribute( 'limit' ) : 3;
+			$articles = $products->getRefItems( 'product', 'default', 'default' )->flat( 1 )->union( $products );
+			$attrMap = $articles->getRefItems( 'attribute' )->flat( 1 )->groupBy( 'attribute.type' );
+			// @phpstan-ignore-next-line
+			$attrTypes = $this->attributeTypes( $attrMap->keys() );
 
-				$products = ( clone $cntl )->uses( $domains )
-					->category( $catid, $type )
-					->slice( 0, $limit )
-					->search();
+			// @phpstan-ignore-next-line
+			$this->addMetaItems( $products, $expire, $tags );
 
-				$articles = $products->getRefItems( 'product', 'default', 'default' )->flat( 1 )->union( $products );
-				$attrMap = $articles->getRefItems( 'attribute' )->flat( 1 )->groupBy( 'attribute.type' );
-				$attrTypes = $this->attributeTypes( $attrMap->keys() );
+			$tview = $context->view()->set( 'products', $products )->set( 'attributeTypes', $attrTypes );
 
-				$this->addMetaItems( $products, $expire, $tags );
-
-				$tview = $context->view()->set( 'products', $products )->set( 'attributeTypes', $attrTypes );
-
-				if( !$products->isEmpty() && (bool) $config->get( 'client/html/catalog/lists/stock/enable', true ) === true ) {
-					$tview->itemsStockUrl = $this->getStockUrl( $tview, $articles );
-				}
-
-				$pdom = $this->loadUTF8DOM( $tview->render( $template ) );
-
-				$pnode = $dom->importNode( $pdom->documentElement, true );
-				$node->parentNode->replaceChild( $pnode, $node );
+			if( !$products->isEmpty() && (bool) $config->get( 'client/html/catalog/lists/stock/enable', true ) === true ) {
+				// @phpstan-ignore-next-line
+				$tview->itemsStockUrl = $this->getStockUrl( $tview, $articles );
 			}
 
-			$texts[] = $dom->saveHTML();
-		}
+			return $tview->render( $template );
+		};
 
-		libxml_clear_errors();
-
-		$view->pageContent = $texts;
+		$view->pageContent = array_map( function( $content ) use ( $render ) {
+			return \Aimeos\MShop\Cms\Html::replace( $content, 'cataloglist', $render );
+		}, $view->pageContent );
 
 		return parent::data( $view, $tags, $expire );
-	}
-
-	/**
-	 * Loads HTML into a DOMDocument with proper UTF-8 encoding handling.
-	 *
-	 * @param string $content HTML content to load
-	 * @return \DOMDocument Loaded DOM document
-	 */
-	private function loadUTF8DOM( string $content ) : \DOMDocument
-	{
-		$encodingXml = '<?xml encoding="UTF-8"?>';
-		$dom = new \DOMDocument( '1.0', 'UTF-8' );
-
-		// @phpstan-ignore-next-line
-		$dom->loadHTML( $encodingXml . $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
-
-		foreach( $dom->childNodes as $item ) {
-			if( $item->nodeType == XML_PI_NODE ) {
-				$dom->removeChild( $item );
-				break;
-			}
-		}
-
-		$dom->encoding = 'UTF-8';
-
-		return $dom;
 	}
 
 

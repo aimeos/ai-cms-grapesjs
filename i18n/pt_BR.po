@@ -87,6 +87,9 @@ msgstr "Domínio"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Duplicar registro (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-mail"
+
 msgid "Edit"
 msgstr "Editar"
 
@@ -148,6 +151,9 @@ msgstr "Propriedades de Mídia"
 msgid "Menu"
 msgstr "Menu"
 
+msgid "Message"
+msgstr "Mensagem"
+
 msgid "Message sent successfully"
 msgstr "Mensagem enviada com sucesso"
 
@@ -156,6 +162,9 @@ msgstr "Modificado"
 
 msgid "Move this entry up/down"
 msgstr "Mover este registro para cima/para baixo"
+
+msgid "Name"
+msgstr "Nome"
 
 msgid "New"
 msgstr "Novo"
@@ -218,6 +227,9 @@ msgstr "Data de início"
 
 msgid "Status"
 msgstr "Status"
+
+msgid "Submit"
+msgstr "Enviar"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "O item só é exibido no site após essa data e hora"

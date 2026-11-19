@@ -87,6 +87,9 @@ msgstr ""
 msgid "Duplicate entry (Ctrl+D)"
 msgstr ""
 
+msgid "E-Mail"
+msgstr "E-Mail"
+
 msgid "Edit"
 msgstr ""
 
@@ -144,6 +147,9 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
+msgid "Message"
+msgstr "Съобщение"
+
 msgid "Message sent successfully"
 msgstr ""
 
@@ -152,6 +158,9 @@ msgstr ""
 
 msgid "Move this entry up/down"
 msgstr ""
+
+msgid "Name"
+msgstr "Име"
 
 msgid "New"
 msgstr ""
@@ -212,6 +221,9 @@ msgstr ""
 
 msgid "Status"
 msgstr ""
+
+msgid "Submit"
+msgstr "Подаване на"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr ""

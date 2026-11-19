@@ -88,6 +88,9 @@ msgstr "Domain"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Bejegyzés duplikálása (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-mail"
+
 msgid "Edit"
 msgstr ""
 
@@ -149,6 +152,9 @@ msgstr "A média tulajdonságai"
 msgid "Menu"
 msgstr ""
 
+msgid "Message"
+msgstr "Üzenet"
+
 msgid "Message sent successfully"
 msgstr ""
 
@@ -157,6 +163,9 @@ msgstr "Módosított"
 
 msgid "Move this entry up/down"
 msgstr "Mozgassa ezt a bejegyzést fel/le"
+
+msgid "Name"
+msgstr "Név"
 
 msgid "New"
 msgstr "Új"
@@ -219,6 +228,9 @@ msgstr "Kezdő dátum"
 
 msgid "Status"
 msgstr "Állapot"
+
+msgid "Submit"
+msgstr "Beküldés"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Az elem csak az adott dátum és idő után jelenik meg a webhelyen"

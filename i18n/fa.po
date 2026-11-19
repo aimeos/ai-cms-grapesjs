@@ -88,6 +88,9 @@ msgstr ""
 msgid "Duplicate entry (Ctrl+D)"
 msgstr ""
 
+msgid "E-Mail"
+msgstr "پست الکترونیک"
+
 msgid "Edit"
 msgstr ""
 
@@ -145,6 +148,9 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
+msgid "Message"
+msgstr "پیام"
+
 msgid "Message sent successfully"
 msgstr ""
 
@@ -153,6 +159,9 @@ msgstr "تغییر یافته"
 
 msgid "Move this entry up/down"
 msgstr ""
+
+msgid "Name"
+msgstr "نام"
 
 msgid "New"
 msgstr "جدید"
@@ -213,6 +222,9 @@ msgstr ""
 
 msgid "Status"
 msgstr "وضعیت"
+
+msgid "Submit"
+msgstr "ارسال"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr ""

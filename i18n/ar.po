@@ -88,6 +88,9 @@ msgstr ""
 msgid "Duplicate entry (Ctrl+D)"
 msgstr ""
 
+msgid "E-Mail"
+msgstr "البريد الإلكتروني"
+
 msgid "Edit"
 msgstr ""
 
@@ -145,6 +148,9 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
+msgid "Message"
+msgstr "رسالة"
+
 msgid "Message sent successfully"
 msgstr ""
 
@@ -153,6 +159,9 @@ msgstr ""
 
 msgid "Move this entry up/down"
 msgstr ""
+
+msgid "Name"
+msgstr "الإسم"
 
 msgid "New"
 msgstr "جديد"
@@ -213,6 +222,9 @@ msgstr ""
 
 msgid "Status"
 msgstr "حالة"
+
+msgid "Submit"
+msgstr "إرسال"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr ""

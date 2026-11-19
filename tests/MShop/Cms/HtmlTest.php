@@ -155,4 +155,51 @@ class HtmlTest extends \PHPUnit\Framework\TestCase
 		$this->assertStringContainsString( 'src="https://www.youtube.com/embed/test"', $result );
 		$this->assertStringContainsString( 'sandbox=', $result );
 	}
+
+
+	public function testReplace()
+	{
+		$result = Html::replace( '<p>a</p><test x="1"></test><test x="2"></test>', 'test', function( \DOMElement $node ) {
+			return '<b>' . $node->getAttribute( 'x' ) . '</b><!-- marker -->';
+		} );
+
+		$this->assertSame( '<p>a</p><b>1</b><!-- marker --><b>2</b><!-- marker -->', $result );
+	}
+
+
+	public function testReplaceKeep()
+	{
+		$content = '<form action="/a"><input name="a"></form>';
+
+		$this->assertSame( $content, Html::replace( $content, 'form', fn() => null ) );
+	}
+
+
+	public function testReplaceNoElement()
+	{
+		$content = '<p a="b" >unchanged</p>';
+
+		$this->assertSame( $content, Html::replace( $content, 'test', fn() => 'x' ) );
+	}
+
+
+	public function testReplaceRemovesNestedInForm()
+	{
+		$content = '<form method="POST" action="/admin"><div><test></test></div><button>Go</button></form>';
+
+		$this->assertSame( '<form method="POST" action="/admin"><div></div><button>Go</button></form>',
+			Html::replace( $content, 'test', fn() => '<form><input name="token"></form>' ) );
+	}
+
+
+	public function testReplaceNested()
+	{
+		$count = 0;
+		$result = Html::replace( '<test><test></test></test>', 'test', function() use ( &$count ) {
+			return '<b>' . ++$count . '</b>';
+		} );
+
+		$this->assertSame( '<b>1</b>', $result );
+		$this->assertSame( 1, $count );
+	}
 }

@@ -60,7 +60,6 @@ class Standard
 			return parent::data( $view, $tags, $expire );
 		}
 
-		$texts = [];
 		$context = $this->context();
 		$config = $context->config();
 		$cntl = \Aimeos\Controller\Frontend::create( $context, 'product' );
@@ -94,47 +93,30 @@ class Standard
 			$domains = array_merge_recursive( $domains, ['product' => ['default'], 'attribute' => ['variant', 'custom', 'config']] );
 		}
 
-		libxml_use_internal_errors( true );
+		$render = function( \DOMElement $node ) use ( $context, $config, $cntl, $domains, $template, &$tags, &$expire ) {
+			$catid = $node->hasAttribute( 'catid' ) ? $node->getAttribute( 'catid' ) : null;
+			$type = $node->hasAttribute( 'type' ) ? $node->getAttribute( 'type' ) : 'default';
+			$limit = $node->hasAttribute( 'limit' ) ? $node->getAttribute( 'limit' ) : 3;
 
-		foreach( $view->pageContent as $content )
-		{
-			$dom = new \DOMDocument( '1.0', 'UTF-8' );
-			$dom->loadHTML( $content, LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
-			$nodes = $dom->getElementsByTagName( 'cataloglist' );
+			$products = ( clone $cntl )->uses( $domains )
+				->category( $catid, $type )
+				->slice( 0, $limit )
+				->search();
 
-			while( $nodes->length > 0 )
-			{
-				$node = $nodes->item( 0 );
-				$catid = $node->hasAttribute( 'catid' ) ? $node->getAttribute( 'catid' ) : null;
-				$type = $node->hasAttribute( 'type' ) ? $node->getAttribute( 'type' ) : 'default';
-				$limit = $node->hasAttribute( 'limit' ) ? $node->getAttribute( 'limit' ) : 3;
+			$this->addMetaItems( $products, $expire, $tags );
 
-				$products = ( clone $cntl )->uses( $domains )
-					->category( $catid, $type )
-					->slice( 0, $limit )
-					->search();
+			$tview = $context->view()->set( 'products', $products );
 
-				$this->addMetaItems( $products, $expire, $tags );
-
-				$tview = $context->view()->set( 'products', $products );
-
-				if( !$products->isEmpty() && (bool) $config->get( 'client/html/catalog/lists/stock/enable', true ) === true ) {
-					$tview->itemsStockUrl = $this->getStockUrl( $tview, $products );
-				}
-
-				$pdom = new \DOMDocument( '1.0', 'UTF-8' );
-				$pdom->loadHTML( $tview->render( $template ), LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD );
-
-				$pnode = $dom->importNode( $pdom->documentElement, true );
-				$node->parentNode->replaceChild( $pnode, $node );
+			if( !$products->isEmpty() && (bool) $config->get( 'client/html/catalog/lists/stock/enable', true ) === true ) {
+				$tview->itemsStockUrl = $this->getStockUrl( $tview, $products );
 			}
 
-			$texts[] = $dom->saveHTML();
-		}
+			return $tview->render( $template );
+		};
 
-		libxml_clear_errors();
-
-		$view->pageContent = $texts;
+		$view->pageContent = array_map( function( $content ) use ( $render ) {
+			return \Aimeos\MShop\Cms\Html::replace( $content, 'cataloglist', $render );
+		}, $view->pageContent );
 
 		return parent::data( $view, $tags, $expire );
 	}

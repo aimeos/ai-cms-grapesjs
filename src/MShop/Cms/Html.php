@@ -16,6 +16,9 @@ class Html
 	/** @var list<string> */
 	private const ACTIVE_ELEMENTS = ['base', 'link', 'meta', 'script', 'style'];
 
+	/** @var \Masterminds\HTML5|null */
+	private static $html5;
+
 
 	/**
 	 * Normalizes configured CMS HTML elements and URI prefixes.
@@ -64,8 +67,7 @@ class Html
 
 		// Use the HTML5 parser supplied by sanitizer 0.4, after its input limits
 		// and HTML policy have run. Do not filter HTML attributes with a regex.
-		$html5 = new \Masterminds\HTML5( ['disable_html_ns' => true] );
-		$doc = $html5->loadHTML( '<!DOCTYPE html><html><body>' . $content . '</body></html>' );
+		$doc = self::dom( $content );
 		$changed = false;
 
 		foreach( $doc->getElementsByTagName( '*' ) as $node )
@@ -88,13 +90,112 @@ class Html
 			return $content;
 		}
 
-		$result = '';
-		foreach( $doc->getElementsByTagName( 'body' )->item( 0 )->childNodes ?? [] as $node ) {
-			$result .= $html5->saveHTML( $node );
+		// Keep the HTML sanitizer authoritative after parsing/serializing again.
+		return \Aimeos\Sanitizer\Sane::html( self::html( $doc ), $allow );
+	}
+
+
+	/**
+	 * Replaces the elements with the given tag name by the HTML returned by the closure
+	 *
+	 * Elements inside forms are removed because browsers ignore nested forms and would
+	 * add the fields of the new HTML, e.g. CSRF tokens, to the outer form instead.
+	 *
+	 * @param string $content HTML content
+	 * @param string $tag Name of the elements which should be replaced
+	 * @param \Closure $fcn Closure receiving the DOM element and returning the new HTML or NULL to keep the element
+	 * @return string HTML content with replaced elements
+	 */
+	public static function replace( string $content, string $tag, \Closure $fcn ) : string
+	{
+		if( stripos( $content, '<' . $tag ) === false ) {
+			return $content;
 		}
 
-		// Keep the HTML sanitizer authoritative after parsing/serializing again.
-		return \Aimeos\Sanitizer\Sane::html( $result, $allow );
+		$doc = self::dom( $content );
+
+		foreach( iterator_to_array( $doc->getElementsByTagName( $tag ) ) as $node )
+		{
+			if( ( $parent = $node->parentNode ) === null ) {
+				continue;
+			}
+
+			if( self::skip( $node ) ) {
+				$parent->removeChild( $node );
+			} elseif( is_string( $html = $fcn( $node ) ) ) {
+				$parent->replaceChild( self::html5()->loadHTMLFragment( $html, ['target_document' => $doc] ), $node );
+			}
+		}
+
+		return self::html( $doc );
+	}
+
+
+	/**
+	 * Parses the HTML content into a DOM document
+	 *
+	 * @param string $content HTML content
+	 * @return \DOMDocument DOM document with the content as children of the body element
+	 */
+	private static function dom( string $content ) : \DOMDocument
+	{
+		return self::html5()->loadHTML( '<!DOCTYPE html><html><body>' . $content . '</body></html>' );
+	}
+
+
+	/**
+	 * Serializes the children of the body element of the DOM document
+	 *
+	 * @param \DOMDocument $doc DOM document created by dom()
+	 * @return string HTML content
+	 */
+	private static function html( \DOMDocument $doc ) : string
+	{
+		$result = '';
+
+		foreach( $doc->getElementsByTagName( 'body' )->item( 0 )->childNodes ?? [] as $node ) {
+			$result .= self::html5()->saveHTML( $node );
+		}
+
+		return $result;
+	}
+
+
+	/**
+	 * Returns the HTML5 parser and serializer
+	 *
+	 * @return \Masterminds\HTML5 HTML5 object
+	 */
+	private static function html5() : \Masterminds\HTML5
+	{
+		if( self::$html5 === null ) {
+			self::$html5 = new \Masterminds\HTML5( ['disable_html_ns' => true] );
+		}
+
+		return self::$html5;
+	}
+
+
+	/**
+	 * Tests if the node is inside a form or has been removed together with a replaced element
+	 *
+	 * @param \DOMNode $node DOM node
+	 * @return bool TRUE if the node must not be replaced, FALSE if not
+	 */
+	private static function skip( \DOMNode $node ) : bool
+	{
+		while( $node = $node->parentNode )
+		{
+			if( $node instanceof \DOMDocument ) {
+				return false;
+			}
+
+			if( strtolower( $node->nodeName ) === 'form' ) {
+				return true;
+			}
+		}
+
+		return true;
 	}
 
 

@@ -2,11 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Chiarra, 2024
 # Aimeos, 2025
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -16,10 +16,10 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
 "Language-Team: Bulgarian (https://app.transifex.com/aimeos/teams/39015/bg/)\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid " "
@@ -88,6 +88,9 @@ msgstr "Домейн"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Дублиране на записа (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-Mail"
+
 msgid "Edit"
 msgstr "Редактиране на"
 
@@ -107,8 +110,8 @@ msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
 msgstr ""
-"Изображенията ще се показват само за този език, което е полезно, ако медията"
-" съдържа текст или е специфична за даден език."
+"Изображенията ще се показват само за този език, което е полезно, ако медията "
+"съдържа текст или е специфична за даден език."
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Въведете нов запис (Ctrl+I)"
@@ -132,8 +135,8 @@ msgid "Invalid reCAPTCHA response"
 msgstr "Невалиден отговор на reCAPTCHA"
 
 msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
 msgstr ""
 "Специфичните за елемента опции за конфигуриране ще бъдат достъпни като "
 "двойки ключ/стойност в шаблоните"
@@ -156,6 +159,9 @@ msgstr "Свойства на медиите"
 msgid "Menu"
 msgstr "Меню"
 
+msgid "Message"
+msgstr "Съобщение"
+
 msgid "Message sent successfully"
 msgstr "Съобщението е изпратено успешно"
 
@@ -164,6 +170,9 @@ msgstr "Модифициран"
 
 msgid "Move this entry up/down"
 msgstr "Преместване на този запис нагоре/надолу"
+
+msgid "Name"
+msgstr "Име"
 
 msgid "New"
 msgstr "Нов"
@@ -226,6 +235,9 @@ msgstr "Начална дата"
 
 msgid "Status"
 msgstr "Статус"
+
+msgid "Submit"
+msgstr "Подаване на"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Елементът се показва на уебсайта само след тази дата и час."

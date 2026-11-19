@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ai-cms-grapesjs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-10 17:47+0100\n"
+"POT-Creation-Date: 2026-04-25 11:22+0200\n"
 "PO-Revision-Date: 2021-01-24 16:58+0100\n"
 "Last-Translator: Aimeos <aimeos@aimeos.org>\n"
 "Language-Team: LANGUAGE <aimeos@aimeos.org>\n"
@@ -77,6 +77,9 @@ msgstr ""
 msgid "Duplicate entry (Ctrl+D)"
 msgstr ""
 
+msgid "E-Mail"
+msgstr ""
+
 msgid "Edit"
 msgstr ""
 
@@ -140,6 +143,9 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
+msgid "Message"
+msgstr "Message"
+
 msgid "Message sent successfully"
 msgstr ""
 
@@ -147,6 +153,9 @@ msgid "Modified"
 msgstr ""
 
 msgid "Move this entry up/down"
+msgstr ""
+
+msgid "Name"
 msgstr ""
 
 msgid "New"
@@ -207,6 +216,9 @@ msgid "Start date"
 msgstr ""
 
 msgid "Status"
+msgstr ""
+
+msgid "Submit"
 msgstr ""
 
 msgid "The item is only shown on the web site after that date and time"

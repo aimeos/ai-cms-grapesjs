@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Nicolas Lapointe (ComradeNixco) <nixcocpp@gmail.com>, 2022
 # Amiskatonic, 2023
 # Aimeos, 2025
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -17,11 +17,12 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
 "Language-Team: French (https://app.transifex.com/aimeos/teams/39015/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
 msgid " "
 msgstr " "
@@ -90,6 +91,9 @@ msgstr "Domaine"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Dupliquer l'entrée (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-mail"
+
 msgid "Edit"
 msgstr "Editer"
 
@@ -109,8 +113,8 @@ msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
 msgstr ""
-"Les images ne seront affichées que dans cette langue, ce qui est utile si le"
-" média contient du texte ou est spécifique à une langue."
+"Les images ne seront affichées que dans cette langue, ce qui est utile si le "
+"média contient du texte ou est spécifique à une langue."
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "Insérer une nouvelle entrée (Ctrl+I)"
@@ -133,11 +137,11 @@ msgid "Invalid reCAPTCHA response"
 msgstr "Réponse reCAPTCHA invalide"
 
 msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
 msgstr ""
-"Les options de configuration spécifiques à l'élément seront disponibles sous"
-" forme de paires clé/valeur dans les modèles."
+"Les options de configuration spécifiques à l'élément seront disponibles sous "
+"forme de paires clé/valeur dans les modèles."
 
 msgid "Label"
 msgstr "Étiquette"
@@ -157,6 +161,9 @@ msgstr "Propriétés des médias"
 msgid "Menu"
 msgstr "Menu"
 
+msgid "Message"
+msgstr "Message"
+
 msgid "Message sent successfully"
 msgstr "Message envoyé avec succès"
 
@@ -165,6 +172,9 @@ msgstr "Modifié"
 
 msgid "Move this entry up/down"
 msgstr "Déplacer cette entrée vers le haut/bas"
+
+msgid "Name"
+msgstr "Nom"
 
 msgid "New"
 msgstr "Nouveau"
@@ -227,6 +237,9 @@ msgstr "Date de début"
 
 msgid "Status"
 msgstr "État"
+
+msgid "Submit"
+msgstr "Envoyer"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr ""

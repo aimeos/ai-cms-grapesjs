@@ -2,10 +2,10 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Aimeos, 2025
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -15,11 +15,13 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
 "Language-Team: Polish (https://app.transifex.com/aimeos/teams/39015/pl/)\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
+"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
+"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 msgid " "
 msgstr " "
@@ -87,6 +89,9 @@ msgstr "Domena"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Duplikat wpisu (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-mail"
+
 msgid "Edit"
 msgstr "Edytuj"
 
@@ -130,11 +135,11 @@ msgid "Invalid reCAPTCHA response"
 msgstr "Nieprawidłowa odpowiedź reCAPTCHA"
 
 msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
 msgstr ""
-"Opcje konfiguracji specyficzne dla elementu będą dostępne jako pary "
-"klucz/wartość w szablonach."
+"Opcje konfiguracji specyficzne dla elementu będą dostępne jako pary klucz/"
+"wartość w szablonach."
 
 msgid "Label"
 msgstr "Etykieta"
@@ -154,6 +159,9 @@ msgstr "Właściwości mediów"
 msgid "Menu"
 msgstr "Menu"
 
+msgid "Message"
+msgstr "Wiadomość"
+
 msgid "Message sent successfully"
 msgstr "Wiadomość wysłana pomyślnie"
 
@@ -162,6 +170,9 @@ msgstr "Zmodyfikowany"
 
 msgid "Move this entry up/down"
 msgstr "Przesuń ten wpis w górę/w dół"
+
+msgid "Name"
+msgstr "Nazwa"
 
 msgid "New"
 msgstr "Nowość"
@@ -185,8 +196,8 @@ msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
-"Tytuł strony, będzie używany na stronie internetowej, jeśli tytuł dla danego"
-" języka nie jest dostępny."
+"Tytuł strony, będzie używany na stronie internetowej, jeśli tytuł dla danego "
+"języka nie jest dostępny."
 
 msgid "Please select"
 msgstr "Wybierz"
@@ -225,6 +236,9 @@ msgstr "Data rozpoczęcia"
 msgid "Status"
 msgstr "Status"
 
+msgid "Submit"
+msgstr "Zatwierdź"
+
 msgid "The item is only shown on the web site after that date and time"
 msgstr ""
 "Pozycja jest wyświetlana na stronie internetowej dopiero po tej dacie i "
@@ -255,8 +269,7 @@ msgid "Types for additional images like icons"
 msgstr "Typy dla dodatkowych obrazów, takich jak ikony"
 
 msgid "Types for additional texts like per one lb/kg or per month"
-msgstr ""
-"Rodzaje dodatkowych tekstów, takie jak za jeden funt/kg lub za miesiąc"
+msgstr "Rodzaje dodatkowych tekstów, takie jak za jeden funt/kg lub za miesiąc"
 
 msgid "URL"
 msgstr "URL"

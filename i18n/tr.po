@@ -2,11 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Aimeos, 2022
 # Metal <meteoramic@yahoo.com>, 2025
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -16,10 +16,10 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Metal <meteoramic@yahoo.com>, 2025\n"
 "Language-Team: Turkish (https://app.transifex.com/aimeos/teams/39015/tr/)\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid " "
@@ -88,6 +88,9 @@ msgstr "Alan adı"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Girişi kopyala (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-Posta"
+
 msgid "Edit"
 msgstr "Düzenle"
 
@@ -131,8 +134,8 @@ msgid "Invalid reCAPTCHA response"
 msgstr "Geçersiz reCAPTCHA yanıtı"
 
 msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
 msgstr ""
 "Ürüne özgü yapılandırma seçenekleri; şablonlarda anahtar/değer çifti olarak "
 "bulunacak"
@@ -155,6 +158,9 @@ msgstr "Medya özellikleri"
 msgid "Menu"
 msgstr "Menü"
 
+msgid "Message"
+msgstr "Mesaj"
+
 msgid "Message sent successfully"
 msgstr "Mesaj başarıyla gönderildi"
 
@@ -163,6 +169,9 @@ msgstr "Düzenlendi"
 
 msgid "Move this entry up/down"
 msgstr "Bu girişi yukarı/aşağı taşıyın"
+
+msgid "Name"
+msgstr "Ad"
 
 msgid "New"
 msgstr "Yeni"
@@ -186,8 +195,7 @@ msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
-"Sayfa başlığı; dil için bir başlık girilmemişse web sitesinde "
-"kullanılacaktır"
+"Sayfa başlığı; dil için bir başlık girilmemişse web sitesinde kullanılacaktır"
 
 msgid "Please select"
 msgstr "Lütfen seçin"
@@ -225,6 +233,9 @@ msgstr "Başlangıç tarihi"
 
 msgid "Status"
 msgstr "Durum"
+
+msgid "Submit"
+msgstr "Gönder"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Ürün, web sitesinde yalnızca bu tarih ve saatten sonra gösterilir"

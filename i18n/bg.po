@@ -88,6 +88,9 @@ msgstr "Домейн"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Дублиране на записа (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-Mail"
+
 msgid "Edit"
 msgstr "Редактиране на"
 
@@ -156,6 +159,9 @@ msgstr "Свойства на медиите"
 msgid "Menu"
 msgstr "Меню"
 
+msgid "Message"
+msgstr "Съобщение"
+
 msgid "Message sent successfully"
 msgstr "Съобщението е изпратено успешно"
 
@@ -164,6 +170,9 @@ msgstr "Модифициран"
 
 msgid "Move this entry up/down"
 msgstr "Преместване на този запис нагоре/надолу"
+
+msgid "Name"
+msgstr "Име"
 
 msgid "New"
 msgstr "Нов"
@@ -226,6 +235,9 @@ msgstr "Начална дата"
 
 msgid "Status"
 msgstr "Статус"
+
+msgid "Submit"
+msgstr "Подаване на"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Елементът се показва на уебсайта само след тази дата и час."

@@ -87,6 +87,9 @@ msgstr "ドメイン"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "エントリーの複製 (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "メール"
+
 msgid "Edit"
 msgstr "編集"
 
@@ -150,6 +153,9 @@ msgstr "メディア・プロパティ"
 msgid "Menu"
 msgstr "メニュー"
 
+msgid "Message"
+msgstr "メッセージ"
+
 msgid "Message sent successfully"
 msgstr "メッセージは正常に送信された"
 
@@ -158,6 +164,9 @@ msgstr "変形"
 
 msgid "Move this entry up/down"
 msgstr "このエントリーを上下に移動する"
+
+msgid "Name"
+msgstr "名前"
 
 msgid "New"
 msgstr "新しい"
@@ -218,6 +227,9 @@ msgstr "開始日"
 
 msgid "Status"
 msgstr "ステータス"
+
+msgid "Submit"
+msgstr "投稿する"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "商品はその日時以降にのみウェブサイトに表示される"

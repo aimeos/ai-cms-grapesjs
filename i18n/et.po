@@ -87,6 +87,9 @@ msgstr "Domeen"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Kande dubleerimine (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-posti aadress"
+
 msgid "Edit"
 msgstr "Muuda"
 
@@ -154,6 +157,9 @@ msgstr "Meedia omadused"
 msgid "Menu"
 msgstr "Menüü"
 
+msgid "Message"
+msgstr "Sõnum"
+
 msgid "Message sent successfully"
 msgstr "Teade edukalt saadetud"
 
@@ -162,6 +168,9 @@ msgstr "Muudetud"
 
 msgid "Move this entry up/down"
 msgstr "Liigutage seda kirjet üles/alla"
+
+msgid "Name"
+msgstr "Nimi"
 
 msgid "New"
 msgstr "Uus"
@@ -223,6 +232,9 @@ msgstr "Alguskuupäev"
 
 msgid "Status"
 msgstr "Staatus"
+
+msgid "Submit"
+msgstr "Esita"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Objekt kuvatakse veebisaidil alles pärast seda kuupäeva ja kellaaega."

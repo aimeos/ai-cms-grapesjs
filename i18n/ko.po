@@ -87,6 +87,9 @@ msgstr "도메인"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "중복 항목(Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "이메일"
+
 msgid "Edit"
 msgstr "편집"
 
@@ -150,6 +153,9 @@ msgstr "미디어 속성"
 msgid "Menu"
 msgstr "메뉴"
 
+msgid "Message"
+msgstr "메시지"
+
 msgid "Message sent successfully"
 msgstr "메시지 전송 성공"
 
@@ -158,6 +164,9 @@ msgstr "수정됨"
 
 msgid "Move this entry up/down"
 msgstr "이 항목 위/아래로 이동"
+
+msgid "Name"
+msgstr "이름"
 
 msgid "New"
 msgstr "신규"
@@ -218,6 +227,9 @@ msgstr "시작 날짜"
 
 msgid "Status"
 msgstr "상태"
+
+msgid "Submit"
+msgstr "제출하기"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "해당 날짜 및 시간 이후에만 웹 사이트에 항목이 표시됩니다."

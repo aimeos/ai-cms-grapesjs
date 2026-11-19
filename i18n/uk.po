@@ -88,6 +88,9 @@ msgstr "Домен"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Продублювати запис (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-Mail"
+
 msgid "Edit"
 msgstr "Редагувати"
 
@@ -155,6 +158,9 @@ msgstr "Властивості медіа"
 msgid "Menu"
 msgstr "Меню"
 
+msgid "Message"
+msgstr "Повідомлення"
+
 msgid "Message sent successfully"
 msgstr "Повідомлення успішно відправлено"
 
@@ -163,6 +169,9 @@ msgstr "Змінено"
 
 msgid "Move this entry up/down"
 msgstr "Перемістити цей запис вгору/вниз"
+
+msgid "Name"
+msgstr "Назва"
 
 msgid "New"
 msgstr "Новий"
@@ -225,6 +234,9 @@ msgstr "Дата початку"
 
 msgid "Status"
 msgstr "Статус"
+
+msgid "Submit"
+msgstr "Надіслати"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Товар відображається на сайті тільки після цієї дати і часу"

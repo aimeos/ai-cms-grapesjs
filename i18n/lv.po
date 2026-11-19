@@ -87,6 +87,9 @@ msgstr "Domēns"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Ieraksta dublēšana (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-pasts"
+
 msgid "Edit"
 msgstr "Rediģēt"
 
@@ -154,6 +157,9 @@ msgstr "Mediju īpašības"
 msgid "Menu"
 msgstr "Izvēlne"
 
+msgid "Message"
+msgstr "Ziņojums"
+
 msgid "Message sent successfully"
 msgstr "Ziņojums ir veiksmīgi nosūtīts"
 
@@ -162,6 +168,9 @@ msgstr "Modificēts"
 
 msgid "Move this entry up/down"
 msgstr "Pārvietot šo ierakstu uz augšu/uz leju"
+
+msgid "Name"
+msgstr "Nosaukums"
 
 msgid "New"
 msgstr "Jauns"
@@ -224,6 +233,9 @@ msgstr "Sākuma datums"
 
 msgid "Status"
 msgstr "Statuss"
+
+msgid "Submit"
+msgstr "Iesniegt"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Prece tīmekļa vietnē tiek parādīta tikai pēc šī datuma un laika."

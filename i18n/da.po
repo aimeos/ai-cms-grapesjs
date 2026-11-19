@@ -87,6 +87,9 @@ msgstr "Domæne"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Dupliker post (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "Email"
+
 msgid "Edit"
 msgstr "Rediger"
 
@@ -154,6 +157,9 @@ msgstr "Mediernes egenskaber"
 msgid "Menu"
 msgstr "Menu"
 
+msgid "Message"
+msgstr "Besked"
+
 msgid "Message sent successfully"
 msgstr "Besked sendt med succes"
 
@@ -162,6 +168,9 @@ msgstr "Modificeret"
 
 msgid "Move this entry up/down"
 msgstr "Flyt denne post op/ned"
+
+msgid "Name"
+msgstr "Navn"
 
 msgid "New"
 msgstr "Ny"
@@ -224,6 +233,9 @@ msgstr "Startdato"
 
 msgid "Status"
 msgstr "Status"
+
+msgid "Submit"
+msgstr "Indsend"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Varen vises kun på webstedet efter denne dato og dette tidspunkt."

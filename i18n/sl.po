@@ -87,6 +87,9 @@ msgstr "Domena"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Podvojitev vnosa (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-Naslov"
+
 msgid "Edit"
 msgstr "Uredi"
 
@@ -154,6 +157,9 @@ msgstr "Lastnosti medijev"
 msgid "Menu"
 msgstr "Meni"
 
+msgid "Message"
+msgstr "Sporočilo"
+
 msgid "Message sent successfully"
 msgstr "Sporočilo je bilo uspešno poslano"
 
@@ -162,6 +168,9 @@ msgstr "Spremenjeno"
 
 msgid "Move this entry up/down"
 msgstr "Premikanje tega vnosa navzgor/navzdol"
+
+msgid "Name"
+msgstr "Ime"
 
 msgid "New"
 msgstr "Novo"
@@ -224,6 +233,9 @@ msgstr "Datum začetka"
 
 msgid "Status"
 msgstr "Status"
+
+msgid "Submit"
+msgstr "Pošlji"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Element je na spletnem mestu prikazan šele po tem datumu in uri."

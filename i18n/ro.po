@@ -89,6 +89,9 @@ msgstr "Domeniu"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Duplicarea intrării (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-mail"
+
 msgid "Edit"
 msgstr "Editare"
 
@@ -156,6 +159,9 @@ msgstr "Proprietăți media"
 msgid "Menu"
 msgstr "Meniu"
 
+msgid "Message"
+msgstr "Mesaj"
+
 msgid "Message sent successfully"
 msgstr "Mesaj trimis cu succes"
 
@@ -164,6 +170,9 @@ msgstr "Modificat"
 
 msgid "Move this entry up/down"
 msgstr "Mutați această intrare în sus/jos"
+
+msgid "Name"
+msgstr "Nume"
 
 msgid "New"
 msgstr "Nou"
@@ -226,6 +235,9 @@ msgstr "Data de începere"
 
 msgid "Status"
 msgstr "Statut"
+
+msgid "Submit"
+msgstr "Trimite"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Articolul este afișat pe site-ul web numai după această dată și oră"

@@ -87,6 +87,9 @@ msgstr "Doména"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Duplikovat položku (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-mail"
+
 msgid "Edit"
 msgstr "Upravit"
 
@@ -154,6 +157,9 @@ msgstr "Vlastnosti médií"
 msgid "Menu"
 msgstr "Nabídka"
 
+msgid "Message"
+msgstr "Zpráva"
+
 msgid "Message sent successfully"
 msgstr "Zpráva byla úspěšně odeslána"
 
@@ -162,6 +168,9 @@ msgstr "Upraveno"
 
 msgid "Move this entry up/down"
 msgstr "Přesunutí této položky nahoru/dolů"
+
+msgid "Name"
+msgstr "Jméno"
 
 msgid "New"
 msgstr "Nový"
@@ -224,6 +233,9 @@ msgstr "Datum zahájení"
 
 msgid "Status"
 msgstr "Stav"
+
+msgid "Submit"
+msgstr "Odeslat"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Položka se na webu zobrazí až po tomto datu a čase."

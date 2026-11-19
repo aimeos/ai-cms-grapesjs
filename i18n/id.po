@@ -88,6 +88,9 @@ msgstr "Domain"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Duplikat ini (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "Surat elektronik"
+
 msgid "Edit"
 msgstr "Sunting"
 
@@ -155,6 +158,9 @@ msgstr "Properti media"
 msgid "Menu"
 msgstr "Menu"
 
+msgid "Message"
+msgstr "Pesan"
+
 msgid "Message sent successfully"
 msgstr "Pesan berhasil terkirim"
 
@@ -163,6 +169,9 @@ msgstr "Berubah"
 
 msgid "Move this entry up/down"
 msgstr "Geser ini naik/turun"
+
+msgid "Name"
+msgstr "Nama"
 
 msgid "New"
 msgstr "Baru"
@@ -225,6 +234,9 @@ msgstr "Tanggal mulai"
 
 msgid "Status"
 msgstr "Status"
+
+msgid "Submit"
+msgstr "Kirim"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Item hanya dimunculkan di website setelah tanggal dan jam tersebut"

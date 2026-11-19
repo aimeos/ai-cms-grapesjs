@@ -89,6 +89,9 @@ msgstr "Domein"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Vermelding dupliceren (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-mail"
+
 msgid "Edit"
 msgstr "Bewerk"
 
@@ -156,6 +159,9 @@ msgstr "Eigenschappen van media"
 msgid "Menu"
 msgstr "Menu"
 
+msgid "Message"
+msgstr "Bericht"
+
 msgid "Message sent successfully"
 msgstr "Bericht succesvol verzonden"
 
@@ -164,6 +170,9 @@ msgstr "Aangepast"
 
 msgid "Move this entry up/down"
 msgstr "Verplaats dit item omhoog/omlaag"
+
+msgid "Name"
+msgstr "Naam"
 
 msgid "New"
 msgstr "Nieuw"
@@ -226,6 +235,9 @@ msgstr "Startdatum"
 
 msgid "Status"
 msgstr "Status"
+
+msgid "Submit"
+msgstr "Stuur  in"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Het item wordt alleen op de website weergegeven na die datum en tijd"

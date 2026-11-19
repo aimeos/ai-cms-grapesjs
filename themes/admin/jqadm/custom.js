@@ -423,29 +423,7 @@ Aimeos.CMSContent = {
 				category: 'Extra',
 				label: 'Contact',
 				attributes: { class: 'fa fa-envelope-o' },
-				content: `<form class="contact-form" method="POST" action="">
-					<!-- cms.page.contact.csrf -->
-					<input class="csrf-token" type="hidden" name="%csrf.name%" value="%csrf.value%" />
-					<!-- cms.page.contact.csrf -->
-					<div class="form-group row contact-name">
-						<label class="col-sm-4 form-control-label">Name</label>
-						<div class="col-sm-8"><input class="form-control" name="contact[name]" /></div>
-					</div>
-					<div class="form-group row contact-email">
-						<label class="col-sm-4 form-control-label">E-Mail</label>
-						<div class="col-sm-8"><input class="form-control" name="contact[email]" type="email" required /></div>
-					</div>
-					<div class="form-group row contact-message">
-						<label class="col-sm-4 form-control-label">Text</label>
-						<div class="col-sm-8"><textarea class="form-control" name="contact[message]" required rows="6"></textarea></div>
-					</div>
-					<div class="contact-pot" style="display: none">
-						<input name="contact[url]" />
-					</div>
-					<div class="form-group contact-button">
-						<button type="submit" class="btn btn-primary d-block mx-auto">Submit</button>
-					</div>
-				</form>`
+				content: `<contact></contact>`
 			},
 		},
 
@@ -725,6 +703,33 @@ Aimeos.CMSContent = {
 							if(property === 'components' && this.getAttributes().limit !== value.length) {
 								this.getTrait('limit').set('value', value.length);
 							}
+						}
+					}
+				});
+			},
+
+
+			'contact': function(editor) {
+				editor.DomComponents.addType('contact', {
+					isComponent: el => el.tagName === 'CONTACT' ? {type: 'contact'} : false,
+					model: {
+						defaults: {
+							tagName: 'contact',
+							draggable: true,
+							droppable: false,
+							attributes: {
+								class: 'contact',
+							},
+							styles: `
+								.contact {
+									display: block; min-height: 120px; padding: 48px 0; text-align: center; background-color: #E8ECEF;
+								}
+							`
+						}
+					},
+					view: {
+						onRender({el}) {
+							el.textContent = 'Contact form';
 						}
 					}
 				});

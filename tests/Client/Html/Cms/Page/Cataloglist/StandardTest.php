@@ -62,6 +62,16 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
+	public function testDataNested()
+	{
+		$this->view->pageContent = ['<form method="POST" action="/admin/x"><cataloglist limit="1"></cataloglist><button>Go</button></form>'];
+
+		$view = $this->object->data( $this->view );
+
+		$this->assertSame( ['<form method="POST" action="/admin/x"><button>Go</button></form>'], $view->pageContent );
+	}
+
+
 	public function testModify()
 	{
 		$output = 'BEFORE<!-- catalog.lists.items.csrf -->CSRF<!-- catalog.lists.items.csrf -->AFTER';

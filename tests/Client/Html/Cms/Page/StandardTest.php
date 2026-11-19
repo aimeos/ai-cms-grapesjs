@@ -29,6 +29,7 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	protected function tearDown() : void
 	{
+		\Aimeos\Controller\Frontend::cache( false );
 		unset( $this->object, $this->context, $this->view );
 	}
 
@@ -93,32 +94,58 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 
 	public function testDataSanitizesMismatchedTextDomain()
 	{
-		$text = new \Aimeos\MShop\Text\Item\Standard( 'text.', [
-			'text.type' => 'content',
-			'text.domain' => 'product',
-			'text.content' => '{"html":"\u003cp onclick=alert(1)\u003eSafe\u003c/p\u003e"}',
-		] );
-		$manager = \Aimeos\MShop::create( $this->context, 'cms' );
-		$page = $manager->create()->addListItem( 'text', $manager->createListItem(), $text );
-		$controller = $this->getMockBuilder( \Aimeos\Controller\Frontend\Cms\Standard::class )
-			->setConstructorArgs( [$this->context] )->onlyMethods( ['uses', 'compare', 'search'] )->getMock();
-		$controller->expects( $this->once() )->method( 'uses' )->willReturnSelf();
-		$controller->expects( $this->once() )->method( 'compare' )->willReturnSelf();
-		$controller->expects( $this->once() )->method( 'search' )->willReturn( map( [$page] ) );
+		$text = $this->page( '{"html":"\u003cp onclick=alert(1)\u003eSafe\u003c/p\u003e"}', 'product' );
 
-		\Aimeos\Controller\Frontend::cache( true );
-		\Aimeos\Controller\Frontend::inject( \Aimeos\Controller\Frontend\Cms\Standard::class, $controller );
+		$view = $this->object->data( $this->view );
+		$this->assertSame( 'product', $text->getDomain() );
+		$this->assertSame( ['<div class="cms-content"><p>Safe</p></div>'], array_values( array_map( 'trim', $view->pageContent ) ) );
+	}
 
-		try
-		{
-			$view = $this->object->data( $this->view );
-			$this->assertSame( 'product', $text->getDomain() );
-			$this->assertSame( ['<div class="cms-content"><p>Safe</p></div>'], array_values( array_map( 'trim', $view->pageContent ) ) );
-		}
-		finally
-		{
-			\Aimeos\Controller\Frontend::cache( false );
-		}
+
+	public function testBodyContactForm()
+	{
+		$this->page( '<form class="contact-form" method="POST" action=""><input name="%csrf.name%" value="%csrf.value%"></form>'
+			. '<form method="POST" action="/admin/x"><contact></contact><button>Go</button></form>' );
+
+		$output = $this->object->body();
+		$token = 'value="' . $this->view->csrf()->value() . '"';
+
+		$this->assertEquals( 1, substr_count( $output, 'class="contact-form"' ) );
+		$this->assertEquals( 1, substr_count( $output, $token ) );
+		$this->assertLessThan( strpos( $output, 'action="/admin/x"' ), strpos( $output, $token ) );
+		$this->assertStringNotContainsString( '%csrf.', $output );
+	}
+
+
+	public function testBodyForgedCsrfMarkers()
+	{
+		$this->page( '<form method="POST" action="/admin/x">'
+			. '<!-- cms.page.contact.csrf --><!-- cms.page.contact.csrf -->'
+			. '<!-- catalog.lists.items.csrf --><!-- catalog.lists.items.csrf -->'
+			. '<button>Go</button></form><contact></contact>' );
+
+		// modify() is applied to the cached output on every request
+		$output = $this->object->modify( $this->object->body(), '' );
+		$token = 'value="' . $this->view->csrf()->value() . '"';
+
+		$this->assertEquals( 1, substr_count( $output, $token ) );
+		$this->assertGreaterThan( strpos( $output, '</form>' ), strpos( $output, $token ) );
+		$this->assertEquals( 2, substr_count( $output, '<!-- cms.page.contact.csrf -->' ) );
+		$this->assertStringNotContainsString( 'catalog.lists.items.csrf', $output );
+	}
+
+
+	public function testBodyUnclosedForm()
+	{
+		$this->page( '<div><form method="POST" action="/admin/x"><button>Go</button></div><contact></contact>' );
+
+		$output = $this->object->modify( $this->object->body(), '' );
+		$token = 'value="' . $this->view->csrf()->value() . '"';
+
+		// browsers add fields after an unclosed form to that form
+		$this->assertEquals( 1, substr_count( $output, $token ) );
+		$this->assertStringContainsString( 'action="/admin/x"', $output );
+		$this->assertGreaterThan( strpos( $output, '</form>' ), strpos( $output, 'class="contact-form"' ) );
 	}
 
 
@@ -129,6 +156,26 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		foreach( ['{"css":".safe{}"}', '"hello"', '[]', 'null', '{"html":[]}', '{"html":false}'] as $content ) {
 			$this->assertSame( '', $method->invoke( $this->object, $content ) );
 		}
+	}
+
+
+	public function testContentRemovesCsrfMarkers()
+	{
+		$method = new \ReflectionMethod( Standard::class, 'content' );
+		$content = '<form method="POST" action="/admin"><!-- cms.page.contact.csrf --><!-- cms.page.contact.csrf --></form>';
+
+		$this->assertStringNotContainsString( 'cms.page.contact.csrf', $method->invoke( $this->object, $content ) );
+	}
+
+
+	public function testContentConvertsLegacyContactForm()
+	{
+		$method = new \ReflectionMethod( Standard::class, 'content' );
+		$content = '{"html":"<div><form class=\\"contact-form\\" method=\\"POST\\" action=\\"\\">'
+			. '<input class=\\"csrf-token\\" type=\\"hidden\\" name=\\"%csrf.name%\\" value=\\"%csrf.value%\\">'
+			. '<input name=\\"contact[name]\\"></form></div>"}';
+
+		$this->assertSame( '<div><contact></contact></div>', $method->invoke( $this->object, $content ) );
 	}
 
 
@@ -144,5 +191,29 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 		$this->object->init();
 
 		$this->assertEmpty( $this->view->get( 'errors' ) );
+	}
+
+
+	protected function page( string $content, string $domain = 'cms' ) : \Aimeos\MShop\Text\Item\Iface
+	{
+		$text = new \Aimeos\MShop\Text\Item\Standard( 'text.', [
+			'text.type' => 'content',
+			'text.domain' => $domain,
+			'text.content' => $content,
+		] );
+		$manager = \Aimeos\MShop::create( $this->context, 'cms' );
+		$page = $manager->create()->addListItem( 'text', $manager->createListItem(), $text );
+		$controller = $this->getMockBuilder( \Aimeos\Controller\Frontend\Cms\Standard::class )
+			->setConstructorArgs( [$this->context] )->onlyMethods( ['uses', 'compare', 'search'] )->getMock();
+		$controller->expects( $this->once() )->method( 'uses' )->willReturnSelf();
+		$controller->expects( $this->once() )->method( 'compare' )->willReturnSelf();
+		$controller->expects( $this->once() )->method( 'search' )->willReturn( map( [$page] ) );
+
+		// forms aren't allowed in CMS content by default
+		$this->context->config()->set( 'admin/cms/allow', ['form' => ['/', '#']] );
+		\Aimeos\Controller\Frontend::cache( true );
+		\Aimeos\Controller\Frontend::inject( \Aimeos\Controller\Frontend\Cms\Standard::class, $controller );
+
+		return $text;
 	}
 }

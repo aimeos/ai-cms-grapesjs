@@ -42,9 +42,55 @@ class Standard
 	 */
 	public function modify( string $content, string $uid ) : string
 	{
-		$csrf = $this->view()->csrf();
-		// @phpstan-ignore-next-line
-		return str_replace( ['%csrf.name%', '%csrf.value%'], [$csrf->name(), $csrf->value()], $content );
+		return $this->replaceSection( $content, $this->view()->csrf()->formfield(), 'cms.page.contact.csrf' );
+	}
+
+
+	/**
+	 * Sets the necessary parameter values in the view.
+	 *
+	 * Replaces the <contact> elements in the CMS content by the contact form. The
+	 * form is rendered from the template only, so CMS content can't add CSRF tokens
+	 * to forms posting to other routes.
+	 *
+	 * @param \Aimeos\Base\View\Iface $view The view object which generates the HTML output
+	 * @param array &$tags Result array for the list of tags that are associated to the output
+	 * @param string|null &$expire Result variable for the expiration date of the output (null for no expiry)
+	 * @return \Aimeos\Base\View\Iface Modified view object
+	 */
+	public function data( \Aimeos\Base\View\Iface $view, array &$tags = [], ?string &$expire = null ) : \Aimeos\Base\View\Iface
+	{
+		if( !isset( $view->pageContent ) ) {
+			return parent::data( $view, $tags, $expire );
+		}
+
+		/** client/html/cms/page/template-contact
+		 * Relative path to the HTML template of the page contact form client.
+		 *
+		 * The template file contains the HTML code and processing instructions
+		 * to generate the contact form that replaces the <contact> elements in
+		 * the CMS content. The configuration string is the path to the template
+		 * file relative to the templates directory (usually in client/html/templates).
+		 *
+		 * The CSRF token field must be enclosed by <!-- cms.page.contact.csrf -->
+		 * markers so it's replaced by the current token if the page is cached.
+		 *
+		 * @type string Relative path to the template creating the contact form
+		 * @since 2026.10
+		 * @see client/html/cms/page/template-cataloglist
+		 */
+		$template = $this->context()->config()->get( 'client/html/cms/page/template-contact', 'cms/page/contact/body' );
+		$form = null;
+
+		$render = function() use ( $view, $template, &$form ) {
+			return $form ??= $view->render( $template );
+		};
+
+		$view->pageContent = array_map( function( $content ) use ( $render ) {
+			return \Aimeos\MShop\Cms\Html::replace( $content, 'contact', $render );
+		}, $view->pageContent );
+
+		return parent::data( $view, $tags, $expire );
 	}
 
 

@@ -40,6 +40,44 @@ class StandardTest extends \PHPUnit\Framework\TestCase
 	}
 
 
+	public function testDataContact()
+	{
+		$this->view->pageContent = ['<p>Text</p><contact></contact>'];
+
+		$content = $this->object->data( $this->view )->pageContent[0];
+		$output = $this->object->modify( $content, '' );
+
+		$this->assertStringContainsString( '<p>Text</p><form class="contact-form" method="POST">', $content );
+		$this->assertStringContainsString( '<!-- cms.page.contact.csrf -->', $content );
+		$this->assertStringNotContainsString( '<contact', $content );
+		$this->assertEquals( 1, substr_count( $output, 'value="' . $this->view->csrf()->value() . '"' ) );
+	}
+
+
+	public function testDataNested()
+	{
+		$this->view->pageContent = ['<form method="POST" action="/admin/default/jqadm/save/settings"><contact></contact><button>Go</button></form>'];
+
+		$content = $this->object->data( $this->view )->pageContent[0];
+		$output = $this->object->modify( $content, '' );
+
+		$this->assertStringNotContainsString( 'contact', $output );
+		$this->assertStringNotContainsString( $this->view->csrf()->value(), $output );
+	}
+
+
+	public function testDataPlaceholder()
+	{
+		$this->view->pageContent = ['<form method="POST" action="/admin"><input name="%csrf.name%" value="%csrf.value%"></form>'];
+
+		$content = $this->object->data( $this->view )->pageContent[0];
+		$output = $this->object->modify( $content, '' );
+
+		$this->assertEquals( $this->view->pageContent[0], $output );
+		$this->assertStringNotContainsString( $this->view->csrf()->value(), $output );
+	}
+
+
 	public function testInit()
 	{
 		$this->context->config()->set( 'resource/email/from-email', 'rcpt@localhost' );

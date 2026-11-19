@@ -343,7 +343,21 @@ class Standard
 
 		$allow = \Aimeos\MShop\Cms\Html::getAllow( $this->context()->config() );
 
-		return trim( \Aimeos\MShop\Cms\Html::sanitize( $content, $allow ) );
+		return trim( \Aimeos\MShop\Cms\Html::sanitize( $this->legacy( $content ), $allow ) );
+	}
+
+
+	/**
+	 * Replaces contact forms stored by former editor versions by <contact> elements
+	 *
+	 * @param string $content HTML content
+	 * @return string HTML content with <contact> elements
+	 */
+	protected function legacy( string $content ) : string
+	{
+		return \Aimeos\MShop\Cms\Html::replace( $content, 'form', function( \DOMElement $node ) {
+			return in_array( 'contact-form', preg_split( '/\s+/', $node->getAttribute( 'class' ) ) ?: [], true ) ? '<contact></contact>' : null;
+		} );
 	}
 
 

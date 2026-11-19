@@ -88,6 +88,9 @@ msgstr "المجال"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "تكرار الإدخال (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "البريد الإلكتروني"
+
 msgid "Edit"
 msgstr "تحرير"
 
@@ -154,6 +157,9 @@ msgstr "الخصائص الإعلامية"
 msgid "Menu"
 msgstr "قائمة الطعام"
 
+msgid "Message"
+msgstr "رسالة"
+
 msgid "Message sent successfully"
 msgstr "تم إرسال الرسالة بنجاح"
 
@@ -162,6 +168,9 @@ msgstr "تم التعديل"
 
 msgid "Move this entry up/down"
 msgstr "نقل هذا الإدخال لأعلى/لأسفل"
+
+msgid "Name"
+msgstr "الإسم"
 
 msgid "New"
 msgstr "جديد"
@@ -224,6 +233,9 @@ msgstr "تاريخ البدء"
 
 msgid "Status"
 msgstr "حالة"
+
+msgid "Submit"
+msgstr "إرسال"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "يتم عرض العنصر على الموقع الإلكتروني فقط بعد ذلك التاريخ والوقت"

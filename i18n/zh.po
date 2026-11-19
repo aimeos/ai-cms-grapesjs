@@ -88,6 +88,9 @@ msgstr "域名"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "复制条目 (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "電子郵件"
+
 msgid "Edit"
 msgstr "编辑"
 
@@ -151,6 +154,9 @@ msgstr "媒体属性"
 msgid "Menu"
 msgstr "菜单"
 
+msgid "Message"
+msgstr "留言"
+
 msgid "Message sent successfully"
 msgstr "成功发送信息"
 
@@ -159,6 +165,9 @@ msgstr "改装"
 
 msgid "Move this entry up/down"
 msgstr "将此条目上移/下移"
+
+msgid "Name"
+msgstr "姓名"
 
 msgid "New"
 msgstr "新"
@@ -219,6 +228,9 @@ msgstr "开始日期"
 
 msgid "Status"
 msgstr "狀態"
+
+msgid "Submit"
+msgstr "提交"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "该项目仅在该日期和时间之后在网站上显示"

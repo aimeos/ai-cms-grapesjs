@@ -2,11 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # hasan hojjati <hojjati64@gmail.com>, 2022
 # Aimeos, 2026
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -16,10 +16,10 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2026\n"
 "Language-Team: Persian (https://app.transifex.com/aimeos/teams/39015/fa/)\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid " "
@@ -88,6 +88,9 @@ msgstr "دامنه"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "وارد کردن تکراری (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "پست الکترونیک"
+
 msgid "Edit"
 msgstr "ویرایش"
 
@@ -107,8 +110,8 @@ msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
 msgstr ""
-"تصاویر تنها برای آن زبان نمایش داده می‌شوند؛ این زمانی مفید است که رسانه "
-"حاوی متن باشد یا به زبان خاصی اختصاص داشته باشد."
+"تصاویر تنها برای آن زبان نمایش داده می‌شوند؛ این زمانی مفید است که رسانه حاوی "
+"متن باشد یا به زبان خاصی اختصاص داشته باشد."
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "قرار دادن ورودی جدید (Ctrl+I)"
@@ -131,11 +134,11 @@ msgid "Invalid reCAPTCHA response"
 msgstr "پاسخ نادرست reCAPTCHA"
 
 msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
 msgstr ""
-"گزینه‌های پیکربندی اختصاصی آیتم، به صورت جفت‌های کلید/مقدار در قالب‌ها در "
-"دسترس خواهند بود."
+"گزینه‌های پیکربندی اختصاصی آیتم، به صورت جفت‌های کلید/مقدار در قالب‌ها در دسترس "
+"خواهند بود."
 
 msgid "Label"
 msgstr "برچسب"
@@ -155,6 +158,9 @@ msgstr "ویژگی‌های رسانه"
 msgid "Menu"
 msgstr "منو"
 
+msgid "Message"
+msgstr "پیام"
+
 msgid "Message sent successfully"
 msgstr "پیام با موفقیت ارسال شد"
 
@@ -163,6 +169,9 @@ msgstr "تغییر یافته"
 
 msgid "Move this entry up/down"
 msgstr "این مدخل را بالا/پایین ببرید"
+
+msgid "Name"
+msgstr "نام"
 
 msgid "New"
 msgstr "جدید"
@@ -186,8 +195,8 @@ msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
-"عنوان صفحه در صورتی که برای آن زبان عنوانی در دسترس نباشد، در وب‌سایت "
-"استفاده خواهد شد."
+"عنوان صفحه در صورتی که برای آن زبان عنوانی در دسترس نباشد، در وب‌سایت استفاده "
+"خواهد شد."
 
 msgid "Please select"
 msgstr "لطفا انتخاب کنید"
@@ -225,6 +234,9 @@ msgstr "تاریخ شروع"
 
 msgid "Status"
 msgstr "وضعیت"
+
+msgid "Submit"
+msgstr "ارسال"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "این آیتم تنها پس از آن تاریخ و زمان در وب‌سایت نمایش داده می‌شود."

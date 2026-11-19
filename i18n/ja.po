@@ -2,10 +2,10 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Aimeos, 2025
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -15,10 +15,10 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
 "Language-Team: Japanese (https://app.transifex.com/aimeos/teams/39015/ja/)\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid " "
@@ -87,6 +87,9 @@ msgstr "ドメイン"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "エントリーの複製 (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "メール"
+
 msgid "Edit"
 msgstr "編集"
 
@@ -105,7 +108,9 @@ msgstr "身分証明書"
 msgid ""
 "Images will only be shown for that language, useful if the media contains "
 "text or is language sepecific"
-msgstr "画像はその言語のものだけが表示されます。メディアにテキストが含まれていたり、言語が特定されている場合に便利です。"
+msgstr ""
+"画像はその言語のものだけが表示されます。メディアにテキストが含まれていたり、"
+"言語が特定されている場合に便利です。"
 
 msgid "Insert new entry (Ctrl+I)"
 msgstr "新規エントリーの挿入 (Ctrl+I)"
@@ -128,9 +133,11 @@ msgid "Invalid reCAPTCHA response"
 msgstr "無効なreCAPTCHAレスポンス"
 
 msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
-msgstr "項目固有の設定オプションは、テンプレート内でキーと値のペアとして利用可能になります。"
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
+msgstr ""
+"項目固有の設定オプションは、テンプレート内でキーと値のペアとして利用可能にな"
+"ります。"
 
 msgid "Label"
 msgstr "ラベル"
@@ -150,6 +157,9 @@ msgstr "メディア・プロパティ"
 msgid "Menu"
 msgstr "メニュー"
 
+msgid "Message"
+msgstr "メッセージ"
+
 msgid "Message sent successfully"
 msgstr "メッセージは正常に送信された"
 
@@ -158,6 +168,9 @@ msgstr "変形"
 
 msgid "Move this entry up/down"
 msgstr "このエントリーを上下に移動する"
+
+msgid "Name"
+msgstr "名前"
 
 msgid "New"
 msgstr "新しい"
@@ -180,7 +193,8 @@ msgstr "フロントエンドでのタイプの並び順"
 msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
-msgstr "ページタイトル、その言語のタイトルがない場合、ウェブサイト上で使用されます。"
+msgstr ""
+"ページタイトル、その言語のタイトルがない場合、ウェブサイト上で使用されます。"
 
 msgid "Please select"
 msgstr "選択してください"
@@ -219,6 +233,9 @@ msgstr "開始日"
 msgid "Status"
 msgstr "ステータス"
 
+msgid "Submit"
+msgstr "投稿する"
+
 msgid "The item is only shown on the web site after that date and time"
 msgstr "商品はその日時以降にのみウェブサイトに表示される"
 
@@ -226,7 +243,8 @@ msgid "The item is only shown on the web site until that date and time"
 msgstr "商品はその日時までしかウェブサイトに表示されません。"
 
 msgid "The media title is used for the title tag of the media on the web site"
-msgstr "メディアのタイトルは、ウェブサイトのメディアのタイトルタグに使用されます。"
+msgstr ""
+"メディアのタイトルは、ウェブサイトのメディアのタイトルタグに使用されます。"
 
 msgid "Title"
 msgstr "タイトル"

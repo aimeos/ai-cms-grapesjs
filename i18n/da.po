@@ -2,10 +2,10 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Aimeos, 2025
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -15,10 +15,10 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
 "Language-Team: Danish (https://app.transifex.com/aimeos/teams/39015/da/)\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid " "
@@ -87,6 +87,9 @@ msgstr "Domæne"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Dupliker post (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "Email"
+
 msgid "Edit"
 msgstr "Rediger"
 
@@ -130,11 +133,11 @@ msgid "Invalid reCAPTCHA response"
 msgstr "Ugyldigt reCAPTCHA-svar"
 
 msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
 msgstr ""
-"Varespecifikke konfigurationsmuligheder vil være tilgængelige som "
-"nøgle/værdi-par i skabelonerne"
+"Varespecifikke konfigurationsmuligheder vil være tilgængelige som nøgle/"
+"værdi-par i skabelonerne"
 
 msgid "Label"
 msgstr "Etiket"
@@ -154,6 +157,9 @@ msgstr "Mediernes egenskaber"
 msgid "Menu"
 msgstr "Menu"
 
+msgid "Message"
+msgstr "Besked"
+
 msgid "Message sent successfully"
 msgstr "Besked sendt med succes"
 
@@ -162,6 +168,9 @@ msgstr "Modificeret"
 
 msgid "Move this entry up/down"
 msgstr "Flyt denne post op/ned"
+
+msgid "Name"
+msgstr "Navn"
 
 msgid "New"
 msgstr "Ny"
@@ -224,6 +233,9 @@ msgstr "Startdato"
 
 msgid "Status"
 msgstr "Status"
+
+msgid "Submit"
+msgstr "Indsend"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Varen vises kun på webstedet efter denne dato og dette tidspunkt."

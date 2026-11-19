@@ -2,10 +2,10 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Aimeos, 2025
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -15,11 +15,12 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
 "Language-Team: Slovenian (https://app.transifex.com/aimeos/teams/39015/sl/)\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3);\n"
 
 msgid " "
 msgstr " "
@@ -87,6 +88,9 @@ msgstr "Domena"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Podvojitev vnosa (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-Naslov"
+
 msgid "Edit"
 msgstr "Uredi"
 
@@ -130,11 +134,11 @@ msgid "Invalid reCAPTCHA response"
 msgstr "Nepravilen odziv reCAPTCHA"
 
 msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
 msgstr ""
-"Konfiguracijske možnosti za posamezne elemente bodo na voljo kot pari "
-"ključ/vrednost v predlogah."
+"Konfiguracijske možnosti za posamezne elemente bodo na voljo kot pari ključ/"
+"vrednost v predlogah."
 
 msgid "Label"
 msgstr "Oznaka"
@@ -154,6 +158,9 @@ msgstr "Lastnosti medijev"
 msgid "Menu"
 msgstr "Meni"
 
+msgid "Message"
+msgstr "Sporočilo"
+
 msgid "Message sent successfully"
 msgstr "Sporočilo je bilo uspešno poslano"
 
@@ -162,6 +169,9 @@ msgstr "Spremenjeno"
 
 msgid "Move this entry up/down"
 msgstr "Premikanje tega vnosa navzgor/navzdol"
+
+msgid "Name"
+msgstr "Ime"
 
 msgid "New"
 msgstr "Novo"
@@ -224,6 +234,9 @@ msgstr "Datum začetka"
 
 msgid "Status"
 msgstr "Status"
+
+msgid "Submit"
+msgstr "Pošlji"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Element je na spletnem mestu prikazan šele po tem datumu in uri."

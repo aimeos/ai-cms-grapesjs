@@ -2,11 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Patrik Szakos <szakos0208@gmail.com>, 2022
 # Aimeos, 2025
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -16,10 +16,10 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
 "Language-Team: Hungarian (https://app.transifex.com/aimeos/teams/39015/hu/)\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid " "
@@ -88,6 +88,9 @@ msgstr "Domain"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Bejegyzés duplikálása (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-mail"
+
 msgid "Edit"
 msgstr "Szerkesztés"
 
@@ -131,11 +134,11 @@ msgid "Invalid reCAPTCHA response"
 msgstr "Érvénytelen reCAPTCHA válasz"
 
 msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
 msgstr ""
-"Az egyes tételekre vonatkozó konfigurációs beállítások kulcs/érték párokként"
-" állnak rendelkezésre a sablonokban"
+"Az egyes tételekre vonatkozó konfigurációs beállítások kulcs/érték párokként "
+"állnak rendelkezésre a sablonokban"
 
 msgid "Label"
 msgstr "Címke"
@@ -155,6 +158,9 @@ msgstr "A média tulajdonságai"
 msgid "Menu"
 msgstr "Menü"
 
+msgid "Message"
+msgstr "Üzenet"
+
 msgid "Message sent successfully"
 msgstr "Sikeresen elküldött üzenet"
 
@@ -163,6 +169,9 @@ msgstr "Módosított"
 
 msgid "Move this entry up/down"
 msgstr "Mozgassa ezt a bejegyzést fel/le"
+
+msgid "Name"
+msgstr "Név"
 
 msgid "New"
 msgstr "Új"
@@ -186,8 +195,8 @@ msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
-"Az oldal címe, akkor kerül felhasználásra a webhelyen, ha a nyelvhez nem áll"
-" rendelkezésre cím"
+"Az oldal címe, akkor kerül felhasználásra a webhelyen, ha a nyelvhez nem áll "
+"rendelkezésre cím"
 
 msgid "Please select"
 msgstr "Kérem válasszon"
@@ -225,6 +234,9 @@ msgstr "Kezdő dátum"
 
 msgid "Status"
 msgstr "Állapot"
+
+msgid "Submit"
+msgstr "Beküldés"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Az elem csak az adott dátum és idő után jelenik meg a webhelyen"

@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # S 0l, 2022
 # Edu PM, 2024
 # Aimeos, 2025
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -17,11 +17,12 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
 "Language-Team: Spanish (https://app.transifex.com/aimeos/teams/39015/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
 msgid " "
 msgstr " "
@@ -89,6 +90,9 @@ msgstr "Dominio"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Duplicar entrada (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "Correo electrónico"
+
 msgid "Edit"
 msgstr "Editar"
 
@@ -132,8 +136,8 @@ msgid "Invalid reCAPTCHA response"
 msgstr "Respuesta reCAPTCHA no válida"
 
 msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
 msgstr ""
 "Las opciones de configuración específicas del artículo estarán disponibles "
 "como pares clave/valor en las plantillas."
@@ -156,6 +160,9 @@ msgstr "Propiedades de los medios de comunicación"
 msgid "Menu"
 msgstr "Menú"
 
+msgid "Message"
+msgstr "Mensaje"
+
 msgid "Message sent successfully"
 msgstr "Mensaje enviado correctamente"
 
@@ -164,6 +171,9 @@ msgstr "Modificado"
 
 msgid "Move this entry up/down"
 msgstr "Mover esta entrada arriba/abajo"
+
+msgid "Name"
+msgstr "Nombre"
 
 msgid "New"
 msgstr "Nuevo"
@@ -187,8 +197,8 @@ msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
-"Título de la página, se utilizará en el sitio web si no se dispone de título"
-" para el idioma"
+"Título de la página, se utilizará en el sitio web si no se dispone de título "
+"para el idioma"
 
 msgid "Please select"
 msgstr "Por favor seleccione"
@@ -226,6 +236,9 @@ msgstr "Fecha de inicio"
 
 msgid "Status"
 msgstr "Estado"
+
+msgid "Submit"
+msgstr "Enviar"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr ""

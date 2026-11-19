@@ -2,10 +2,10 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Aimeos, 2026
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -15,11 +15,12 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2026\n"
 "Language-Team: Hebrew (https://app.transifex.com/aimeos/teams/39015/he/)\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: he\n"
-"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
+"1 == 0) ? 1: 2;\n"
 
 msgid " "
 msgstr ""
@@ -87,6 +88,9 @@ msgstr ""
 msgid "Duplicate entry (Ctrl+D)"
 msgstr ""
 
+msgid "E-Mail"
+msgstr "דואר אלקטרוני"
+
 msgid "Edit"
 msgstr "ערוך"
 
@@ -128,8 +132,8 @@ msgid "Invalid reCAPTCHA response"
 msgstr ""
 
 msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
 msgstr ""
 
 msgid "Label"
@@ -150,6 +154,9 @@ msgstr ""
 msgid "Menu"
 msgstr "תפריט"
 
+msgid "Message"
+msgstr "הודעה"
+
 msgid "Message sent successfully"
 msgstr ""
 
@@ -158,6 +165,9 @@ msgstr "משונה"
 
 msgid "Move this entry up/down"
 msgstr ""
+
+msgid "Name"
+msgstr "שם"
 
 msgid "New"
 msgstr "חדש"
@@ -218,6 +228,9 @@ msgstr ""
 
 msgid "Status"
 msgstr "סטטוס"
+
+msgid "Submit"
+msgstr "שלח"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr ""

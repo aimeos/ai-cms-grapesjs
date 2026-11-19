@@ -2,11 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Федір Вільгота <fredy31415@gmail.com>, 2022
 # Aimeos, 2025
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -16,11 +16,14 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
 "Language-Team: Ukrainian (https://app.transifex.com/aimeos/teams/39015/uk/)\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 msgid " "
 msgstr " "
@@ -88,6 +91,9 @@ msgstr "Домен"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Продублювати запис (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-Mail"
+
 msgid "Edit"
 msgstr "Редагувати"
 
@@ -131,8 +137,8 @@ msgid "Invalid reCAPTCHA response"
 msgstr "Неправильна відповідь на reCAPTCHA"
 
 msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
 msgstr ""
 "Параметри конфігурації для конкретних елементів будуть доступні у вигляді "
 "пар ключ/значення в шаблонах"
@@ -155,6 +161,9 @@ msgstr "Властивості медіа"
 msgid "Menu"
 msgstr "Меню"
 
+msgid "Message"
+msgstr "Повідомлення"
+
 msgid "Message sent successfully"
 msgstr "Повідомлення успішно відправлено"
 
@@ -163,6 +172,9 @@ msgstr "Змінено"
 
 msgid "Move this entry up/down"
 msgstr "Перемістити цей запис вгору/вниз"
+
+msgid "Name"
+msgstr "Назва"
 
 msgid "New"
 msgstr "Новий"
@@ -225,6 +237,9 @@ msgstr "Дата початку"
 
 msgid "Status"
 msgstr "Статус"
+
+msgid "Submit"
+msgstr "Надіслати"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Товар відображається на сайті тільки після цієї дати і часу"

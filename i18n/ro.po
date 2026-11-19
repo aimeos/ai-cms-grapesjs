@@ -2,11 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # George Cojocaru, 2024
 # Aimeos, 2025
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -16,11 +16,12 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
 "Language-Team: Romanian (https://app.transifex.com/aimeos/teams/39015/ro/)\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
 
 msgid " "
 msgstr " "
@@ -89,6 +90,9 @@ msgstr "Domeniu"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Duplicarea intrării (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-mail"
+
 msgid "Edit"
 msgstr "Editare"
 
@@ -132,8 +136,8 @@ msgid "Invalid reCAPTCHA response"
 msgstr "Răspuns reCAPTCHA invalid"
 
 msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
 msgstr ""
 "Opțiuni de configurare specifice elementului, care vor fi disponibile ca "
 "perechi cheie/valoare în șabloane."
@@ -156,6 +160,9 @@ msgstr "Proprietăți media"
 msgid "Menu"
 msgstr "Meniu"
 
+msgid "Message"
+msgstr "Mesaj"
+
 msgid "Message sent successfully"
 msgstr "Mesaj trimis cu succes"
 
@@ -164,6 +171,9 @@ msgstr "Modificat"
 
 msgid "Move this entry up/down"
 msgstr "Mutați această intrare în sus/jos"
+
+msgid "Name"
+msgstr "Nume"
 
 msgid "New"
 msgstr "Nou"
@@ -187,8 +197,8 @@ msgid ""
 "Page title, will be used on the web site if no title for the language is "
 "available"
 msgstr ""
-"Titlul paginii, va fi utilizat pe site-ul web dacă nu este disponibil niciun"
-" titlu pentru limba respectivă"
+"Titlul paginii, va fi utilizat pe site-ul web dacă nu este disponibil niciun "
+"titlu pentru limba respectivă"
 
 msgid "Please select"
 msgstr "Vă rugăm să selectați"
@@ -227,6 +237,9 @@ msgstr "Data de începere"
 msgid "Status"
 msgstr "Statut"
 
+msgid "Submit"
+msgstr "Trimite"
+
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Articolul este afișat pe site-ul web numai după această dată și oră"
 
@@ -236,8 +249,7 @@ msgstr ""
 
 msgid "The media title is used for the title tag of the media on the web site"
 msgstr ""
-"Titlul media este utilizat pentru eticheta de titlu a media de pe site-ul "
-"web"
+"Titlul media este utilizat pentru eticheta de titlu a media de pe site-ul web"
 
 msgid "Title"
 msgstr "Titlu"

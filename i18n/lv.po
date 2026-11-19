@@ -2,10 +2,10 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Aimeos, 2025
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -15,11 +15,12 @@ msgstr ""
 "PO-Revision-Date: 2022-03-06 10:23+0000\n"
 "Last-Translator: Aimeos, 2025\n"
 "Language-Team: Latvian (https://app.transifex.com/aimeos/teams/39015/lv/)\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lv\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 
 msgid " "
 msgstr " "
@@ -87,6 +88,9 @@ msgstr "Domēns"
 msgid "Duplicate entry (Ctrl+D)"
 msgstr "Ieraksta dublēšana (Ctrl+D)"
 
+msgid "E-Mail"
+msgstr "E-pasts"
+
 msgid "Edit"
 msgstr "Rediģēt"
 
@@ -130,8 +134,8 @@ msgid "Invalid reCAPTCHA response"
 msgstr "Nederīga reCAPTCHA atbilde"
 
 msgid ""
-"Item specific configuration options, will be available as key/value pairs in"
-" the templates"
+"Item specific configuration options, will be available as key/value pairs in "
+"the templates"
 msgstr ""
 "Vienumam specifiskas konfigurācijas opcijas, kas veidnēs būs pieejamas kā "
 "atslēgu/vērtību pāri."
@@ -154,6 +158,9 @@ msgstr "Mediju īpašības"
 msgid "Menu"
 msgstr "Izvēlne"
 
+msgid "Message"
+msgstr "Ziņojums"
+
 msgid "Message sent successfully"
 msgstr "Ziņojums ir veiksmīgi nosūtīts"
 
@@ -162,6 +169,9 @@ msgstr "Modificēts"
 
 msgid "Move this entry up/down"
 msgstr "Pārvietot šo ierakstu uz augšu/uz leju"
+
+msgid "Name"
+msgstr "Nosaukums"
 
 msgid "New"
 msgstr "Jauns"
@@ -224,6 +234,9 @@ msgstr "Sākuma datums"
 
 msgid "Status"
 msgstr "Statuss"
+
+msgid "Submit"
+msgstr "Iesniegt"
 
 msgid "The item is only shown on the web site after that date and time"
 msgstr "Prece tīmekļa vietnē tiek parādīta tikai pēc šī datuma un laika."

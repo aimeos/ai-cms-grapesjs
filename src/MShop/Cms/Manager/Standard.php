@@ -118,34 +118,14 @@ class Standard
 	 */
 	public function getSearchAttributes( bool $withsub = true ) : array
 	{
-		$level = \Aimeos\MShop\Locale\Manager\Base::SITE_ALL;
-		$level = $this->context()->config()->get( 'mshop/cms/manager/sitemode', $level );
-
 		return array_replace( parent::getSearchAttributes( $withsub ), $this->createAttributes( [
 			'cms:has' => [
 				'code' => 'cms:has()',
-				'internalcode' => ':site AND :key AND mcmsli."id"',
 				'internaldeps' => ['LEFT JOIN "mshop_cms_list" AS mcmsli ON ( mcmsli."parentid" = mcms."id" )'],
 				'label' => 'Cms has list item, parameter(<domain>[,<list type>[,<reference ID>)]]',
 				'type' => 'null',
 				'public' => false,
-				'function' => function( &$source, array $params ) use ( $level ) {
-					$keys = [];
-
-					foreach( (array) ( $params[1] ?? '' ) as $type ) {
-						foreach( (array) ( $params[2] ?? '' ) as $id ) {
-							$keys[] = $params[0] . '|' . ( $type ? $type . '|' : '' ) . $id;
-						}
-					}
-
-					// @phpstan-ignore-next-line
-					$sitestr = $this->siteString( 'mcmsli."siteid"', $level );
-					$keystr = $this->toExpression( 'mcmsli."key"', $keys, ( $params[2] ?? null ) ? '==' : '=~' );
-					// @phpstan-ignore-next-line
-					$source = str_replace( [':site', ':key'], [$sitestr, $keystr], $source );
-
-					return $params;
-				}
+				'function' => $this->hasFunction( 'mcmsli' )
 			],
 		] ) );
 	}

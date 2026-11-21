@@ -19,6 +19,37 @@ class HtmlTest extends \PHPUnit\Framework\TestCase
 	}
 
 
+	public function testHtmlRemovesPostMethodFromForms()
+	{
+		$allow = ['form' => ['/']];
+		$content = '<form action="/admin/default/jqadm/save/customer" method="POST"><input name="q"></form>'
+			. '<form action="/search" method="get"><input name="q"></form>';
+		$expected = '<form action="/admin/default/jqadm/save/customer"><input name="q"></form>'
+			. '<form action="/search" method="get"><input name="q"></form>';
+
+		$this->assertSame( $expected, trim( Html::sanitize( $content, $allow ) ) );
+	}
+
+
+	public function testHtmlRemovesFormSubmitOverrides()
+	{
+		$allow = ['form' => ['/', '#']];
+		$content = '<form action="#"><button formaction="/admin/default/jqadm/save/settings" formmethod="post">Save</button></form>';
+		$expected = '<form action="#"><button formaction="/admin/default/jqadm/save/settings">Save</button></form>';
+
+		$this->assertSame( $expected, trim( Html::sanitize( $content, $allow ) ) );
+	}
+
+
+	public function testHtmlRemovesFormOwnerOverrides()
+	{
+		$content = '<input form="basket-standard-update" name="b_action" value="delete">'
+			. '<button form="basket-standard-update">Send</button>';
+
+		$this->assertSame( '<input name="b_action" value="delete"><button>Send</button>', trim( Html::sanitize( $content ) ) );
+	}
+
+
 	public function testHtmlRejectsActiveConfiguredElements()
 	{
 		$allow = [

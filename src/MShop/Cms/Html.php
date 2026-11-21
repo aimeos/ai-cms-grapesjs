@@ -61,7 +61,7 @@ class Html
 
 		$content = \Aimeos\Sanitizer\Sane::html( $content, $allow );
 
-		if( stripos( $content, 'data-' ) === false ) {
+		if( !preg_match( '/data-|<form|\sform(?:method)?\s*=/i', $content ) ) {
 			return $content;
 		}
 
@@ -74,11 +74,7 @@ class Html
 		{
 			foreach( iterator_to_array( $node->attributes ) as $attr )
 			{
-				$name = strtolower( $attr->name );
-
-				// CMS-authored HTML must not configure storefront widgets or active editor metadata.
-				if( in_array( $name, ['data-counturl', 'data-infiniteurl', 'data-url', 'data-rmurl', 'data-options'], true )
-					|| str_starts_with( $name, 'data-gjs-' ) && !self::allowed( $name, $attr->value ) )
+				if( self::remove( $node, strtolower( $attr->name ), $attr->value ) )
 				{
 					$node->removeAttributeNode( $attr );
 					$changed = true;
@@ -196,6 +192,41 @@ class Html
 		}
 
 		return true;
+	}
+
+
+	/**
+	 * Tests if the attribute must be removed from the CMS-authored HTML
+	 *
+	 * @param \DOMElement $node DOM element the attribute belongs to
+	 * @param string $name Attribute name in lower case
+	 * @param string $value Attribute value
+	 * @return bool TRUE if the attribute must be removed, FALSE if not
+	 */
+	private static function remove( \DOMElement $node, string $name, string $value ) : bool
+	{
+		// Must not configure storefront widgets
+		if( in_array( $name, ['data-counturl', 'data-infiniteurl', 'data-url', 'data-rmurl', 'data-options'], true ) ) {
+			return true;
+		}
+
+		// Must not contain active editor metadata
+		if( str_starts_with( $name, 'data-gjs-' ) ) {
+			return !self::allowed( $name, $value );
+		}
+
+		// Forms must only send GET requests like links because frameworks may accept
+		// same-origin POST requests without CSRF token, e.g. to admin endpoints
+		if( $name === 'formmethod' ) {
+			return true;
+		}
+
+		if( $name === 'method' ) {
+			return strtolower( $node->nodeName ) === 'form' && strcasecmp( trim( $value ), 'get' ) !== 0;
+		}
+
+		// Must not join or submit other forms of the page containing CSRF tokens
+		return $name === 'form';
 	}
 
 

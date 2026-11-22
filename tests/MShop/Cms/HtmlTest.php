@@ -50,6 +50,16 @@ class HtmlTest extends \PHPUnit\Framework\TestCase
 	}
 
 
+	public function testHtmlRemovesHyperlinkAuditing()
+	{
+		$content = '<a href="#" ping="/admin/default/jqadm/save/customer?item[customer.password]=x">Continue</a>'
+			. '<map name="m"><area href="#" ping="/admin/default/jqadm/save/settings"></map>';
+		$expected = '<a href="#">Continue</a><map name="m"><area href="#"></map>';
+
+		$this->assertSame( $expected, trim( Html::sanitize( $content ) ) );
+	}
+
+
 	public function testHtmlRejectsActiveConfiguredElements()
 	{
 		$allow = [

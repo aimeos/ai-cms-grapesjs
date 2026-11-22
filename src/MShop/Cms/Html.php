@@ -61,7 +61,7 @@ class Html
 
 		$content = \Aimeos\Sanitizer\Sane::html( $content, $allow );
 
-		if( !preg_match( '/data-|<form|\sform(?:method)?\s*=/i', $content ) ) {
+		if( !preg_match( '/data-|<form|\s(?:form(?:method)?|ping)\s*=/i', $content ) ) {
 			return $content;
 		}
 
@@ -223,6 +223,11 @@ class Html
 
 		if( $name === 'method' ) {
 			return strtolower( $node->nodeName ) === 'form' && strcasecmp( trim( $value ), 'get' ) !== 0;
+		}
+
+		// Hyperlink auditing sends same-origin POST requests when links are clicked
+		if( $name === 'ping' ) {
+			return true;
 		}
 
 		// Must not join or submit other forms of the page containing CSRF tokens
